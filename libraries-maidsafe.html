@@ -1,234 +1,295 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-<title>MaidSafe Meta Library</title>
-<meta name="description" content="A Super project that allows all MaidSafe libraries to be installed with most dependencies already in place." />
-<meta name="keywords" content="MaidSafe Meta Library"/>
-<meta name="author" content="MaidSafe" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-<meta name="robots" content="all" />
-<meta name="revisit-after" content="30 days" />
+  <title>MaidSafe Meta Library</title>
+  <meta name="description" content="A Super project that allows all MaidSafe libraries to be installed with most dependencies already in place." />
+  <meta name="keywords" content="MaidSafe Meta Library" />
+  <meta name="author" content="MaidSafe" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="robots" content="all" />
+  <meta name="revisit-after" content="30 days" />
 
-<!-- Favicons -->
-<link rel="shortcut icon" href="/images/favicon.ico" />
-<link rel="icon" type="image/ico" href="/images/favicon.ico" />
-  
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="css/rwdgrid.css"/>
-<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
 
-<!-- SureFile Download browser detect -->
-<script type="text/javascript" src="js/browserdetect.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
-<script type="text/javascript">
-document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
-</script>
+  <!-- SureFile Download browser detect -->
+  <script type="text/javascript" src="js/browserdetect.js"></script>
+
+  <script type="text/javascript">
+    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+  </script>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script>window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')</script>
-<script>
-jQuery( document ).ready( function( $ ) {
-	
-		$('body').addClass('js');
-		  var $menu = $('#menu'),
-		  	  $menulink = $('.menu-link'),
-		  	  $menuTrigger = $('.has-submenu > a');
+  <script>
+    window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  <script>
+    jQuery(document).ready(function ($) {
 
-		$menulink.click(function(e) {
-			e.preventDefault();
-			$menulink.toggleClass('active');
-			$menu.toggleClass('active');
-		});
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link'),
+        $menuTrigger = $('.has-submenu > a');
 
-		$menuTrigger.click(function(e) {
-			e.preventDefault();
-			var $this = $(this);
-			$this.toggleClass('active').next('ul').toggleClass('active');
-		});
+      $menulink.click(function (e) {
+        e.preventDefault();
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+      });
 
-		
-});
-</script>
+      $menuTrigger.click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass('active').next('ul').toggleClass('active');
+      });
 
-<!-- IE Fix for Sticky Footer -->
-<!--[if !IE 7]>
+
+    });
+  </script>
+
+  <!-- IE Fix for Sticky Footer -->
+  <!--[if !IE 7]>
 	<style type="text/css">
 		#wrap {display:table;height:100%}
 	</style>
 <![endif]-->
 
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32549768-1']);
+    _gaq.push(['_trackPageview']);
 
- var _gaq = _gaq || [];
- _gaq.push(['_setAccount', 'UA-32549768-1']);
- _gaq.push(['_trackPageview']);
-
- (function() {
-   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
- })();
-
-</script>
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
+
 <body id="libraries">
-<div id="container">
+  <div id="container">
     <div id="main">
-<header class="shadow">
-    <div class="container-12 fw">
-        <div class="grid-4">
-        	<a class="logo" href="index.html" title="Home"></a>
-        </div>
-        <div class="grid-8">
+      <header class="shadow">
+        <div class="container-12 fw">
+          <div class="grid-4">
+            <a class="logo" href="index.html" title="Home"></a>
+          </div>
+          <div class="grid-8">
             <a class="menu-link" href="#menu">Menu</a>
             <nav id="menu" class="menu">
-                <ul>
-                	<li class="platform single-link"><a href="open-source-platform.html">platform</a>
-                	<li class="has-submenu"><a href="#">platform</a>
+              <ul>
+                <li class="platform single-link"><a href="open-source-platform.html">platform</a>
+                  <li class="has-submenu"><a href="#">platform</a>
                     <ul class="sub-menu">
-                        <li><a href="open-source-platform.html">overview</a></li>
-                        <li><a href="distributed-network-features.html">features</a></li>
-                        <li><a href="maidsafe-network-platform-libraries.html">libraries</a></li>
-                        <li><a href="network-platform-use-cases.html">use cases</a></li>
-                        <li><a href="network-platform-licensing.html">licensing</a></li>
+                      <li><a href="open-source-platform.html">overview</a>
+                      </li>
+                      <li><a href="distributed-network-features.html">features</a>
+                      </li>
+                      <li><a href="maidsafe-network-platform-libraries.html">libraries</a>
+                      </li>
+                      <li><a href="network-platform-use-cases.html">use cases</a>
+                      </li>
+                      <li><a href="network-platform-licensing.html">licensing</a>
+                      </li>
                     </ul>
-                	</li>
-                    <li class="company"><a href="company-privacy-security-freedom.html">company</a></li>
-                    <li class="careers"><a href="careers.html">careers</a></li>
-                    <li class="stakeholders"><a href="stakeholders.html">stakeholders</a></li>
-                    <li class="blog"><a href="/blog">blog</a></li>
-                    <li class="contact"><a href="contact.html">contact</a></li>
-                </ul>
+                  </li>
+                  <li class="company"><a href="company-privacy-security-freedom.html">company</a>
+                  </li>
+                  <li class="careers"><a href="careers.html">careers</a>
+                  </li>
+                  <li class="stakeholders"><a href="stakeholders.html">stakeholders</a>
+                  </li>
+                  <li class="blog"><a href="/blog">blog</a>
+                  </li>
+                  <li class="contact"><a href="contact.html">contact</a>
+                  </li>
+              </ul>
             </nav>
+          </div>
         </div>
+      </header>
+      <div class="container-12">
+        <div class="grid-9 main-content">
+          <h1>MaidSafe</h1>
+          <h2>MaidSafe Meta Library</h2>
+
+
+          <h3>Description</h3>
+          <p>A Super project that allows all MaidSafe libraries to be installed with most dependencies already in place. This base container of dependent libraries and build system is designed to allow developers a very simple mechanism to install and use
+            these libraries and applications. This system allows users to install, build, compile, test and publish all test results publicly for all MaidSafe code.</p>
+          <h3>Features</h3>
+          <ul>
+            <li><a href="http://www.boost.org/" target="_blank">Boost C++ libraries</a>
+            </li>
+            <li><a href="http://www.cryptopp.com/" target="_blank">Crypto++ libraries</a>
+            </li>
+            <li><a href="https://developers.google.com/protocol-buffers/" target="_blank">Google Protocol Buffers</a>
+            </li>
+            <li><a href="http://code.google.com/p/leveldb/" target="_blank">Google LevelDB</a>
+            </li>
+            <li><a href="http://code.google.com/p/googletest/" target="_blank">Google Test</a>
+            </li>
+            <li><a href="http://code.google.com/p/googlemock/" target="_blank">Google Mock</a>
+            </li>
+            <li><a href="http://www.cmake.org/" target="_blank">CMake build system</a>
+            </li>
+            <li>Creates build configurations for MSVC, Xcode, Makefiles (for many build systems)</li>
+            <li>Cross platform</li>
+          </ul>
+
+          <h3>Programming languages</h3>
+          <h3>Core</h3>
+          <p>C++11 compatible with GCC (4.7 and above), Clang (3.3 and above) and MSVC 2012 (with no dependency on CTP releases). Tested on Windows 32/64 bit, Linux 32/64 bit (dependent on GCC version) and OSX (Mountain Lion and above).</p>
+
+          <h3>Others</h3>
+          <ul>
+            <li>Python (for QA scripts and test launchers)</li>
+            <li>CMake scripting</li>
+          </ul>
+
+          <h3>Status</h3>
+          <p>This library is considered BETA quality and is provided with a full test suite and QA suite.
+            <br/>This can be considered for use in production quality systems at this time.</p>
+
+          <h3>Roadmap</h3>
+          <ul>
+            <li>Include <a href="http://www.sfml-dev.org/" target="_blank">a graphics lib</a>&nbsp;for further graphically intensive testing</li>
+            <li>Implement further compiler setups, such as MinGW, Intel, embedded systems (ARM etc.)</li>
+            <li>Improve continuous integration setup</li>
+            <li>Relocate test dashboard</li>
+            <li>Integrate better mechanism to upgrade boost libs</li>
+            <li>Vastly improve documentation</li>
+          </ul>
+          <h3>Links</h3>
+          <ul>
+            <li><a href="https://github.com/maidsafe/MaidSafe/wiki" target="_blank">Wiki, including build instructions</a>
+            </li>
+            <li><a href="https://groups.google.com/forum/?fromgroups#!forum/maidsafe-development" target="_blank">Developer mailing list</a>
+            </li>
+            <li><a href="https://github.com/maidsafe/MaidSafe/issues?state=open" target="_blank">Issue tracker</a>
+            </li>
+            <li><a href="http://dash.maidsafe.net" target="_blank">Build Status</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid-3 rightnav">
+          <div class="rightnav-box github">
+            <a href="https://github.com/maidsafe/MaidSafe/wiki" target="_blank">
+              <!-- content -->
+              <p>View on GitHub</p>
+            </a>
+          </div>
+          <div class="rightnav-box back">
+            <a href="maidsafe-network-platform-libraries">
+              <p>Back to Libraries</p>
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+
     </div>
-</header>
-<div class="container-12">
-    <div class="grid-9 main-content">
-    <h1>MaidSafe</h1>
-<h2>MaidSafe Meta Library</h2>
 
-
-<h3>Description</h3>
-<p>A Super project that allows all MaidSafe libraries to be installed with most dependencies already in place. This base container of dependent libraries and build system is designed to allow developers a very simple mechanism to install and use these libraries and applications. This system allows users to install, build, compile, test and publish all test results publicly for all MaidSafe code.</p>
-<h3>Features</h3>
-<ul>
-<li><a href="http://www.boost.org/" target="_blank">Boost C++ libraries</a></li>
-<li><a href="http://www.cryptopp.com/" target="_blank">Crypto++ libraries</a></li>
-<li><a href="https://developers.google.com/protocol-buffers/" target="_blank">Google Protocol Buffers</a></li>
-<li><a href="http://code.google.com/p/leveldb/" target="_blank">Google LevelDB</a></li>
-<li><a href="http://code.google.com/p/googletest/" target="_blank">Google Test</a></li>
-<li><a href="http://code.google.com/p/googlemock/" target="_blank">Google Mock</a></li>
-<li><a href="http://www.cmake.org/" target="_blank">CMake build system</a></li>
-<li>Creates build configurations for MSVC, Xcode, Makefiles (for many build systems)</li>
-<li>Cross platform</li>
-</ul>
-
-<h3>Programming languages</h3>
-<h3>Core</h3>
-<p>C++11 compatible with GCC (4.7 and above), Clang (3.3 and above) and MSVC 2012 (with no dependency on CTP releases). Tested on Windows 32/64 bit, Linux 32/64 bit (dependent on GCC version) and OSX (Mountain Lion and above).</p>
-
-<h3>Others</h3>
-<ul>
-<li>Python (for QA scripts and test launchers)</li>
-<li>CMake scripting</li>
-</ul>
-
-<h3>Status</h3>
-<p>This library is considered BETA quality and is provided with a full test suite and QA suite.<br/>
-This can be considered for use in production quality systems at this time.</p>
-
-<h3>Roadmap</h3>
-<ul>
-<li>Include <a href="http://www.sfml-dev.org/" target="_blank">a graphics lib</a>&nbsp;for further graphically intensive testing</li>
-<li>Implement further compiler setups, such as MinGW, Intel, embedded systems (ARM etc.)</li>
-<li>Improve continuous integration setup</li>
-<li>Relocate test dashboard</li>
-<li>Integrate better mechanism to upgrade boost libs</li>
-<li>Vastly improve documentation</li>
-</ul>
-<h3>Links</h3>
-<ul>
-<li><a href="https://github.com/maidsafe/MaidSafe/wiki" target="_blank">Wiki, including build instructions</a></li>
-<li><a href="https://groups.google.com/forum/?fromgroups#!forum/maidsafe-development" target="_blank">Developer mailing list</a></li>
-<li><a href="https://github.com/maidsafe/MaidSafe/issues?state=open" target="_blank">Issue tracker</a></li>
-<li><a href="http://dash.maidsafe.net" target="_blank">Build Status</a></li>
-</ul>
-</div>
-
-<div class="grid-3 rightnav">
-<div class="rightnav-box github">
-<a href="https://github.com/maidsafe/MaidSafe/wiki" target="_blank"><!-- content --><p>View on GitHub</p></a>
-</div>
-<div class="rightnav-box back">
-<a href="maidsafe-network-platform-libraries"><p>Back to Libraries</p></a>
-</div>
-</div>
-    
-     
-</div>
-
-    </div>
-    
-</div>
-  </div>  
-</div>
-<footer>
+  </div>
+  </div>
+  </div>
+  <footer>
     <div class="container-12">
-        <div class="grid-2 footer-links">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="company-privacy-security-freedom.html">Company</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="stakeholders.html">Stakeholders</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="grid-2 footer-links">
-            <ul>
-                <li><a href="open-source-platform.html">MaidSafe Platform</a></li>
-                <li><a href="distributed-network-features.html">- Features</a></li>
-                <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a></li>
-                <li><a href="network-platform-use-cases.html">- Use Cases</a></li>
-                <li><a href="network-platform-licensing.html">- Licensing</a></li>
-            </ul>
-        </div>
-        <div class="grid-8">
-            <ul class="social-links">
-            	<li class="facebook-icon"><a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
-            		<img src="images/facebook-icon.png" alt="facebook" width="35" height="34"/>
-            	</a></li>
-            	<li class="google-icon"><a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
-            		<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
-            	</a></li>
-            	<li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a></li>
-            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </ul>
-            </div>
-    	</div>
-    
-    <div class="container-12">
-        <div class="grid-12">
-            <div class="footer-logos">
-            	<img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer"/>
-            
-            	<a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
-            		<img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge"/></a>
-            </div>
-            <p class="legal">©2013 MaidSafe.net. All rights reserved.
-            	<a href="disclaimer.html">DISCLAIMER</a>
-            	<a href="privacy.html">PRIVACY</a>
-            </p>
-        </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="/">Home</a>
+          </li>
+          <li><a href="company-privacy-security-freedom.html">Company</a>
+          </li>
+          <li><a href="careers.html">Careers</a>
+          </li>
+          <li><a href="stakeholders.html">Stakeholders</a>
+          </li>
+          <li><a href="/blog">Blog</a>
+          </li>
+          <li><a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="open-source-platform.html">MaidSafe Platform</a>
+          </li>
+          <li><a href="distributed-network-features.html">- Features</a>
+          </li>
+          <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a>
+          </li>
+          <li><a href="network-platform-use-cases.html">- Use Cases</a>
+          </li>
+          <li><a href="network-platform-licensing.html">- Licensing</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-8">
+        <ul class="social-links">
+          <li class="facebook-icon">
+            <a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
+              <img src="images/facebook-icon.png" alt="facebook" width="35" height="34" />
+            </a>
+          </li>
+          <li class="google-icon">
+            <a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+              <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" />
+            </a>
+          </li>
+          <li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a>
+          </li>
+          <script>
+            ! function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+          </script>
+        </ul>
+      </div>
     </div>
-</footer>
+
+    <div class="container-12">
+      <div class="grid-12">
+        <div class="footer-logos">
+          <img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer" />
+
+          <a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
+            <img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge" />
+          </a>
+        </div>
+        <p class="legal">©2013 MaidSafe.net. All rights reserved.
+          <a href="disclaimer.html">DISCLAIMER</a>
+          <a href="privacy.html">PRIVACY</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

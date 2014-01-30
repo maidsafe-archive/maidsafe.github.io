@@ -1,259 +1,334 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-<title>MaidSafe Network Platform Libraries, MaidSafe Platform</title>
-<meta name="description" content="An overview of the individual MaidSafe Platform libraries, technology that helps to ensure digital privacy, security and freedom for all." />
-<meta name="keywords" content="MaidSafe Network Platform Libraries, MaidSafe Platform"/>
-<meta name="author" content="MaidSafe" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-<meta name="robots" content="all" />
-<meta name="revisit-after" content="30 days" />
+  <title>MaidSafe Network Platform Libraries, MaidSafe Platform</title>
+  <meta name="description" content="An overview of the individual MaidSafe Platform libraries, technology that helps to ensure digital privacy, security and freedom for all." />
+  <meta name="keywords" content="MaidSafe Network Platform Libraries, MaidSafe Platform" />
+  <meta name="author" content="MaidSafe" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="robots" content="all" />
+  <meta name="revisit-after" content="30 days" />
 
-<!-- Favicons -->
-<link rel="shortcut icon" href="/images/favicon.ico" />
-<link rel="icon" type="image/ico" href="/images/favicon.ico" />
-  
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="css/rwdgrid.css"/>
-<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
 
-<!-- SureFile Download browser detect -->
-<script type="text/javascript" src="js/browserdetect.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
-<script type="text/javascript">
-document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
-</script>
+  <!-- SureFile Download browser detect -->
+  <script type="text/javascript" src="js/browserdetect.js"></script>
+
+  <script type="text/javascript">
+    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+  </script>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script>window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')</script>
-<script>
-jQuery( document ).ready( function( $ ) {
-	
-		$('body').addClass('js');
-		  var $menu = $('#menu'),
-		  	  $menulink = $('.menu-link'),
-		  	  $menuTrigger = $('.has-submenu > a');
+  <script>
+    window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  <script>
+    jQuery(document).ready(function ($) {
 
-		$menulink.click(function(e) {
-			e.preventDefault();
-			$menulink.toggleClass('active');
-			$menu.toggleClass('active');
-		});
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link'),
+        $menuTrigger = $('.has-submenu > a');
 
-		$menuTrigger.click(function(e) {
-			e.preventDefault();
-			var $this = $(this);
-			$this.toggleClass('active').next('ul').toggleClass('active');
-		});
+      $menulink.click(function (e) {
+        e.preventDefault();
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+      });
 
-		
-});
-</script>
+      $menuTrigger.click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass('active').next('ul').toggleClass('active');
+      });
 
-<!-- IE Fix for Sticky Footer -->
-<!--[if !IE 7]>
+
+    });
+  </script>
+
+  <!-- IE Fix for Sticky Footer -->
+  <!--[if !IE 7]>
 	<style type="text/css">
 		#wrap {display:table;height:100%}
 	</style>
 <![endif]-->
 
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32549768-1']);
+    _gaq.push(['_trackPageview']);
 
- var _gaq = _gaq || [];
- _gaq.push(['_setAccount', 'UA-32549768-1']);
- _gaq.push(['_trackPageview']);
-
- (function() {
-   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
- })();
-
-</script>
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
+
 <body id="platform-libraries">
-<div id="container">
+  <div id="container">
     <div id="main">
-<header class="shadow">
-    <div class="container-12 fw">
-        <div class="grid-4">
-        	<a class="logo" href="index.html" title="Home"></a>
-        </div>
-        <div class="grid-8">
+      <header class="shadow">
+        <div class="container-12 fw">
+          <div class="grid-4">
+            <a class="logo" href="index.html" title="Home"></a>
+          </div>
+          <div class="grid-8">
             <a class="menu-link" href="#menu">Menu</a>
             <nav id="menu" class="menu">
-                <ul>
-                	<li class="platform single-link"><a href="open-source-platform.html">platform</a>
-                	<li class="has-submenu"><a href="#">platform</a>
+              <ul>
+                <li class="platform single-link"><a href="open-source-platform.html">platform</a>
+                  <li class="has-submenu"><a href="#">platform</a>
                     <ul class="sub-menu">
-                        <li><a href="open-source-platform.html">overview</a></li>
-                        <li><a href="distributed-network-features.html">features</a></li>
-                        <li><a href="maidsafe-network-platform-libraries.html">libraries</a></li>
-                        <li><a href="network-platform-use-cases.html">use cases</a></li>
-                        <li><a href="network-platform-licensing.html">licensing</a></li>
+                      <li><a href="open-source-platform.html">overview</a>
+                      </li>
+                      <li><a href="distributed-network-features.html">features</a>
+                      </li>
+                      <li><a href="maidsafe-network-platform-libraries.html">libraries</a>
+                      </li>
+                      <li><a href="network-platform-use-cases.html">use cases</a>
+                      </li>
+                      <li><a href="network-platform-licensing.html">licensing</a>
+                      </li>
                     </ul>
-                	</li>
-                    <li class="company"><a href="company-privacy-security-freedom.html">company</a></li>
-                    <li class="careers"><a href="careers.html">careers</a></li>
-                    <li class="stakeholders"><a href="stakeholders.html">stakeholders</a></li>
-                    <li class="blog"><a href="/blog">blog</a></li>
-                    <li class="contact"><a href="contact.html">contact</a></li>
-                </ul>
+                  </li>
+                  <li class="company"><a href="company-privacy-security-freedom.html">company</a>
+                  </li>
+                  <li class="careers"><a href="careers.html">careers</a>
+                  </li>
+                  <li class="stakeholders"><a href="stakeholders.html">stakeholders</a>
+                  </li>
+                  <li class="blog"><a href="/blog">blog</a>
+                  </li>
+                  <li class="contact"><a href="contact.html">contact</a>
+                  </li>
+              </ul>
             </nav>
+          </div>
         </div>
-    </div>
-</header>
-<div class="container-12">
-    <div class="main-content">
-    <div class="grid-9">
-    	<section>
-        <h1>MaidSafe Platform Libraries</h1>
-    	<p>The MaidSafe Platform is enabled when the individual MaidSafe Libraries are combined.</p>
-      	</section>
-      	<section>
-       <h2 class="maidsafe-head">MaidSafe</h2>
-       <p>A Meta project that allows all MaidSafe libraries to be installed with most dependencies already in place. This base container of dependent libraries and build system is designed to allow developers a very simple mechanism to install and use these libraries and applications. This system allows users to install, build, compile, test and publish all test results publicly for all MaidSafe code.</p>
-       <p><a href="libraries-maidsafe"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="common-head">Common</h2>
-       <p>Utilities and common features for the majority of MaidSafe libraries.</p>
-       <p><a href="libraries-common"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="drive-head">Drive</h2>
-       <p>A cross platform virtual drive with an easy to use API. Uses <a class="nonblock" href="http://fuse.sourceforge.net" target="_blank">Fuse</a>&nbsp;for <span>Linux</span>&nbsp;systems, <a href="http://osxfuse.github.io" target="_blank">OSXFuse</a>&nbsp;for OSX and <a class="nonblock" href="https://www.eldos.com/cbfs" target="_blank">Eldos' Callback File System</a>&nbsp;for Windows.</p>
-       <p><a href="libraries-drive"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="rudp-head">Reliable UDP</h2>
-       <p>TCP is a reliable connection oriented protocol that cannot traverse NAT routers (with any real capability) UDP is an unreliable connectionless protocol that can traverse many NAT routers with ease.</p>
-		<p>MaidSafe-RUDP is a reliable pseudo connected protocol that can traverse more NAT routers than plain UDP when used in conjunction with MaidSafe-Routing. Impervious to 'man in the middle' attacks with no requirement for a key exchange protocol to exist at the network level.</p>
-       <p><a href="libraries-reliable-udp"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="routing-head">Routing</h2>
-       <p>A Distributed Hash Table (DHT) that utilises Kademlia-like routing tables for scalability with D1HT speed. Used in conjunction with RUDP this library will provide a very robust DHT implementation.</p>
-       <p><a href="libraries-routing"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="encrypt-head">Encrypt</h2>
-       <p>This is NOT an encryption algorithm per se', rather this is an algorithm that utilises existing very well tested algorithms (predominantly AES 256 in this case). The library provides a sliding window algorithm that can encrypt data of any length, even if written in a random manner (or parts overwritten during write). It is very useful for encrypting disk based storage of huge data or writing data encrypted to a key value store in a manner that cannot be algorithmically reversed (as in reversing AES or similar algorithms).</p>
-       <p>The chunks of data provided are self checking and the process is recursive, so the keys output can themselves be concatenated into a large file and passed back into the algorithm, creating a single key for any size of data set.</p>
-       <p><a href="libraries-encrypt"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="passport-head">Passport</h2>
-       <p>Creates cryptographically secure Public Key Infrastructure mechanism via a mixture of asymmetric encryption <a class="nonblock" href="http://en.wikipedia.org/wiki/RSA_(algorithm)" target="_blank">currently RSA</a>&nbsp;and secure hashing <a class="nonblock" href="http://en.wikipedia.org/wiki/SHA-2" target="_blank">currently SHA512</a>. With this library and a secure <a class="nonblock" href="http://en.wikipedia.org/wiki/Distributed_hash_table" target="_blank">DHT</a>&nbsp;such as MaidSafe&#45;Routing there is no requirement for a certificate authority.</p>
-       <p>Removing another server system and the related human administration, allows developers to create autonomous distributed secure systems. MaidSafe uses this feature to ensure nodes (and humans) can be securely validated and regulated in a mathematical manner that is as fair as the rules developers create and not via any human administrator.</p>
-       <p><a href="libraries-passport"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="nfs-head">Network Filesystem</h2>
-       <p>This library provides a RESTfull like API for clients to connect to a MaidSafe Platform network. Client interactivity with the network will create the appropriate policies to be passed to the policy based class design environment. This library can be considered a helper library to connect clients such as LifeStuff to distributed networks such as the MaidSafe Platform.</p>
-       <p><a href="libraries-network-file-system"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="vault-head">Vault</h2>
-       <p>A self healing, fully distributed data store that allows an exciting array of applications to be built. This library and associated components (all from the MaidSafe repositories) can provide fault tolerant, massively distributed networks that will allow application providers to consider data centres a thing of the past, increasing profitability and reliability as well as providing their customer base with absolute freedom, security and privacy (if used in conjunction with LifeStuff).</p>
-       <p>The Vault Library allows companies to effectively move their data centres to their clients, removing the requirement (and cost) for forward provisioning and planning of expensive, climate unfriendly buildings. More importantly application providers can focus on application provisioning and leave all the networking and security to MaidSafe.</p>
-       <p><a href="libraries-vault"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="lifestuff-head">Client</h2>
-       <p>Client is a relatively thin wrapper library that provides an API to the MaidSafe Platform. This allows data storage and manipulation (structured and unstructured), reliable and secure communications and the ultimate privacy protection for people using the network and associated applications.<br/>
+      </header>
+      <div class="container-12">
+        <div class="main-content">
+          <div class="grid-9">
+            <section>
+              <h1>MaidSafe Platform Libraries</h1>
+              <p>The MaidSafe Platform is enabled when the individual MaidSafe Libraries are combined.</p>
+            </section>
+            <section>
+              <h2 class="maidsafe-head">MaidSafe</h2>
+              <p>A Meta project that allows all MaidSafe libraries to be installed with most dependencies already in place. This base container of dependent libraries and build system is designed to allow developers a very simple mechanism to install and
+                use these libraries and applications. This system allows users to install, build, compile, test and publish all test results publicly for all MaidSafe code.</p>
+              <p><a href="libraries-maidsafe"><strong>> More Information</strong></a>
+              </p>
+            </section>
 
-This library provides the API that allows data sharing, both public and private. Public shares allow the creation and running of web sites, blogs, microblogs, social networks which in turn allow people to share ideas, research, suggestions and hope!<br/>
+            <section>
+              <h2 class="common-head">Common</h2>
+              <p>Utilities and common features for the majority of MaidSafe libraries.</p>
+              <p><a href="libraries-common"><strong>> More Information</strong></a>
+              </p>
+            </section>
 
-The Client library allows many applications to be built that can provide the features listed and much more, this is a prime reason to open up the complete suite of MaidSafe libraries and applications to every developer in the world.</p>
-       <p><a href="libraries-client"><strong>> More Information</strong></a></p>
-       </section>
-       
-       <section>
-       <h2 class="private-head">Private</h2>
-       <p>This library contains local data storage management and network managed data types. In addition this library includes the lifestuff manager API. This is an installed application that is responsible for checking for upgrades (in real time), installing and testing upgrades as well as starting and restarting any vaults (on failure or planned). The LifeStuff Manager manages private keys for vaults and passes keys through a local TCP network. This is a one-way mechanism and any vault compromised cannot read the keys of the local disk.</p>
-       <p>Prior to Open Sourcing, the library "Private" was used internally to maintain patented code that could not be released to the public (MaidSafe patents), so this library will potentially split and create new repositories or be subsumed into existing repositories.</p>
-       <p><a href="libraries-private"><strong>> More Information</strong></a></p>
-       </section>
-       </div>
+            <section>
+              <h2 class="drive-head">Drive</h2>
+              <p>A cross platform virtual drive with an easy to use API. Uses <a class="nonblock" href="http://fuse.sourceforge.net" target="_blank">Fuse</a>&nbsp;for <span>Linux</span>&nbsp;systems, <a href="http://osxfuse.github.io" target="_blank">OSXFuse</a>&nbsp;for
+                OSX and <a class="nonblock" href="https://www.eldos.com/cbfs" target="_blank">Eldos' Callback File System</a>&nbsp;for Windows.</p>
+              <p><a href="libraries-drive"><strong>> More Information</strong></a>
+              </p>
+            </section>
+
+            <section>
+              <h2 class="rudp-head">Reliable UDP</h2>
+              <p>TCP is a reliable connection oriented protocol that cannot traverse NAT routers (with any real capability) UDP is an unreliable connectionless protocol that can traverse many NAT routers with ease.</p>
+              <p>MaidSafe-RUDP is a reliable pseudo connected protocol that can traverse more NAT routers than plain UDP when used in conjunction with MaidSafe-Routing. Impervious to 'man in the middle' attacks with no requirement for a key exchange protocol
+                to exist at the network level.</p>
+              <p><a href="libraries-reliable-udp"><strong>> More Information</strong></a>
+              </p>
+            </section>
+
+            <section>
+              <h2 class="routing-head">Routing</h2>
+              <p>A Distributed Hash Table (DHT) that utilises Kademlia-like routing tables for scalability with D1HT speed. Used in conjunction with RUDP this library will provide a very robust DHT implementation.</p>
+              <p><a href="libraries-routing"><strong>> More Information</strong></a>
+              </p>
+            </section>
+
+            <section>
+              <h2 class="encrypt-head">Encrypt</h2>
+              <p>This is NOT an encryption algorithm per se', rather this is an algorithm that utilises existing very well tested algorithms (predominantly AES 256 in this case). The library provides a sliding window algorithm that can encrypt data of any
+                length, even if written in a random manner (or parts overwritten during write). It is very useful for encrypting disk based storage of huge data or writing data encrypted to a key value store in a manner that cannot be algorithmically
+                reversed (as in reversing AES or similar algorithms).</p>
+              <p>The chunks of data provided are self checking and the process is recursive, so the keys output can themselves be concatenated into a large file and passed back into the algorithm, creating a single key for any size of data set.</p>
+              <p><a href="libraries-encrypt"><strong>> More Information</strong></a>
+              </p>
+            </section>
+
+            <section>
+              <h2 class="passport-head">Passport</h2>
+              <p>Creates cryptographically secure Public Key Infrastructure mechanism via a mixture of asymmetric encryption <a class="nonblock" href="http://en.wikipedia.org/wiki/RSA_(algorithm)" target="_blank">currently RSA</a>&nbsp;and secure hashing
+                <a
+                class="nonblock" href="http://en.wikipedia.org/wiki/SHA-2" target="_blank">currently SHA512</a>. With this library and a secure <a class="nonblock" href="http://en.wikipedia.org/wiki/Distributed_hash_table" target="_blank">DHT</a>&nbsp;such as MaidSafe&#45;Routing there is no requirement for a certificate authority.</p>
+              <p>Removing another server system and the related human administration, allows developers to create autonomous distributed secure systems. MaidSafe uses this feature to ensure nodes (and humans) can be securely validated and regulated in a
+                mathematical manner that is as fair as the rules developers create and not via any human administrator.</p>
+              <p><a href="libraries-passport"><strong>> More Information</strong></a>
+              </p>
+            </section>
+
+            <section>
+              <h2 class="nfs-head">Network Filesystem</h2>
+              <p>This library provides a RESTfull like API for clients to connect to a MaidSafe Platform network. Client interactivity with the network will create the appropriate policies to be passed to the policy based class design environment. This library
+                can be considered a helper library to connect clients such as LifeStuff to distributed networks such as the MaidSafe Platform.</p>
+              <p><a href="libraries-network-file-system"><strong>> More Information</strong></a>
+              </p>
+            </section>
+
+            <section>
+              <h2 class="vault-head">Vault</h2>
+              <p>A self healing, fully distributed data store that allows an exciting array of applications to be built. This library and associated components (all from the MaidSafe repositories) can provide fault tolerant, massively distributed networks
+                that will allow application providers to consider data centres a thing of the past, increasing profitability and reliability as well as providing their customer base with absolute freedom, security and privacy (if used in conjunction with
+                LifeStuff).</p>
+              <p>The Vault Library allows companies to effectively move their data centres to their clients, removing the requirement (and cost) for forward provisioning and planning of expensive, climate unfriendly buildings. More importantly application
+                providers can focus on application provisioning and leave all the networking and security to MaidSafe.</p>
+              <p><a href="libraries-vault"><strong>> More Information</strong></a>
+              </p>
+            </section>
+
+            <section>
+              <h2 class="lifestuff-head">Client</h2>
+              <p>Client is a relatively thin wrapper library that provides an API to the MaidSafe Platform. This allows data storage and manipulation (structured and unstructured), reliable and secure communications and the ultimate privacy protection for
+                people using the network and associated applications.
+                <br/>This library provides the API that allows data sharing, both public and private. Public shares allow the creation and running of web sites, blogs, microblogs, social networks which in turn allow people to share ideas, research, suggestions
+                and hope!
+                <br/>The Client library allows many applications to be built that can provide the features listed and much more, this is a prime reason to open up the complete suite of MaidSafe libraries and applications to every developer in the world.</p>
+              <p><a href="libraries-client"><strong>> More Information</strong></a>
+              </p>
+            </section>
+
+            <section>
+              <h2 class="private-head">Private</h2>
+              <p>This library contains local data storage management and network managed data types. In addition this library includes the lifestuff manager API. This is an installed application that is responsible for checking for upgrades (in real time),
+                installing and testing upgrades as well as starting and restarting any vaults (on failure or planned). The LifeStuff Manager manages private keys for vaults and passes keys through a local TCP network. This is a one-way mechanism and any
+                vault compromised cannot read the keys of the local disk.</p>
+              <p>Prior to Open Sourcing, the library "Private" was used internally to maintain patented code that could not be released to the public (MaidSafe patents), so this library will potentially split and create new repositories or be subsumed into
+                existing repositories.</p>
+              <p><a href="libraries-private"><strong>> More Information</strong></a>
+              </p>
+            </section>
+          </div>
         </div>
-    <div class="grid-3 leftnav-shell">
-    <ul class="leftnav">
-    <li class="overview"><a href="open-source-platform.html">Overview</a></li>
-    <li class="features"><a href="distributed-network-features.html">Features</a></li>
-    <li class="libraries"><a href="maidsafe-network-platform-libraries.html">Libraries</a></li>
-    <li class="usecases"><a href="network-platform-use-cases.html">Use Cases</a></li>
-    <li class="licensing"><a href="network-platform-licensing.html">Licensing</a></li> 
-</ul>
+        <div class="grid-3 leftnav-shell">
+          <ul class="leftnav">
+            <li class="overview"><a href="open-source-platform.html">Overview</a>
+            </li>
+            <li class="features"><a href="distributed-network-features.html">Features</a>
+            </li>
+            <li class="libraries"><a href="maidsafe-network-platform-libraries.html">Libraries</a>
+            </li>
+            <li class="usecases"><a href="network-platform-use-cases.html">Use Cases</a>
+            </li>
+            <li class="licensing"><a href="network-platform-licensing.html">Licensing</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
-  </div>  
-</div>
-<footer>
+  </div>
+  <footer>
     <div class="container-12">
-        <div class="grid-2 footer-links">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="company-privacy-security-freedom.html">Company</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="stakeholders.html">Stakeholders</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="grid-2 footer-links">
-            <ul>
-                <li><a href="open-source-platform.html">MaidSafe Platform</a></li>
-                <li><a href="distributed-network-features.html">- Features</a></li>
-                <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a></li>
-                <li><a href="network-platform-use-cases.html">- Use Cases</a></li>
-                <li><a href="network-platform-licensing.html">- Licensing</a></li>
-            </ul>
-        </div>
-        <div class="grid-8">
-            <ul class="social-links">
-            	<li class="facebook-icon"><a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
-            		<img src="images/facebook-icon.png" alt="facebook" width="35" height="34"/>
-            	</a></li>
-            	<li class="google-icon"><a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
-            		<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
-            	</a></li>
-            	<li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a></li>
-            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </ul>
-            </div>
-    	</div>
-    
-    <div class="container-12">
-        <div class="grid-12">
-            <div class="footer-logos">
-            	<img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer"/>
-            
-            	<a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
-            		<img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge"/></a>
-            </div>
-            <p class="legal">©2013 MaidSafe.net. All rights reserved.
-            	<a href="disclaimer.html">DISCLAIMER</a>
-            	<a href="privacy.html">PRIVACY</a>
-            </p>
-        </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="/">Home</a>
+          </li>
+          <li><a href="company-privacy-security-freedom.html">Company</a>
+          </li>
+          <li><a href="careers.html">Careers</a>
+          </li>
+          <li><a href="stakeholders.html">Stakeholders</a>
+          </li>
+          <li><a href="/blog">Blog</a>
+          </li>
+          <li><a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="open-source-platform.html">MaidSafe Platform</a>
+          </li>
+          <li><a href="distributed-network-features.html">- Features</a>
+          </li>
+          <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a>
+          </li>
+          <li><a href="network-platform-use-cases.html">- Use Cases</a>
+          </li>
+          <li><a href="network-platform-licensing.html">- Licensing</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-8">
+        <ul class="social-links">
+          <li class="facebook-icon">
+            <a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
+              <img src="images/facebook-icon.png" alt="facebook" width="35" height="34" />
+            </a>
+          </li>
+          <li class="google-icon">
+            <a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+              <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" />
+            </a>
+          </li>
+          <li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a>
+          </li>
+          <script>
+            ! function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+          </script>
+        </ul>
+      </div>
     </div>
-</footer>
+
+    <div class="container-12">
+      <div class="grid-12">
+        <div class="footer-logos">
+          <img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer" />
+
+          <a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
+            <img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge" />
+          </a>
+        </div>
+        <p class="legal">©2013 MaidSafe.net. All rights reserved.
+          <a href="disclaimer.html">DISCLAIMER</a>
+          <a href="privacy.html">PRIVACY</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
