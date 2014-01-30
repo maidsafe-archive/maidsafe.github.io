@@ -1,328 +1,388 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-<title>Privacy Security Freedom, MaidSafe</title>
-<meta name="description" content="MaidSafe strive to deliver privacy, security and freedom online." />
-<meta name="keywords" content="Privacy Security Freedom, MaidSafe"/>
-<meta name="author" content="MaidSafe" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-<meta name="robots" content="all" />
-<meta name="revisit-after" content="30 days" />
+  <title>Privacy Security Freedom, MaidSafe</title>
+  <meta name="description" content="MaidSafe strive to deliver privacy, security and freedom online." />
+  <meta name="keywords" content="Privacy Security Freedom, MaidSafe" />
+  <meta name="author" content="MaidSafe" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="robots" content="all" />
+  <meta name="revisit-after" content="30 days" />
 
-<!-- Favicons -->
-<link rel="shortcut icon" href="/images/favicon.ico" />
-<link rel="icon" type="image/ico" href="/images/favicon.ico" />
-  
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="css/rwdgrid.css"/>
-<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
 
-<!-- SureFile Download browser detect -->
-<script type="text/javascript" src="js/browserdetect.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
-<script type="text/javascript">
-document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
-</script>
+  <!-- SureFile Download browser detect -->
+  <script type="text/javascript" src="js/browserdetect.js"></script>
 
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-<script>window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')</script>
-<script>
-jQuery( document ).ready( function( $ ) {
-	
-		$('body').addClass('js');
-		  var $menu = $('#menu'),
-		  	  $menulink = $('.menu-link'),
-		  	  $menuTrigger = $('.has-submenu > a');
-
-		$menulink.click(function(e) {
-			e.preventDefault();
-			$menulink.toggleClass('active');
-			$menu.toggleClass('active');
-		});
-
-		$menuTrigger.click(function(e) {
-			e.preventDefault();
-			var $this = $(this);
-			$this.toggleClass('active').next('ul').toggleClass('active');
-		});
-
-		
-});
-</script>
+  <script type="text/javascript">
+    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+  </script>
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	
-	$(".toggle_container").hide();
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-	$("h2.trigger").toggle(function(){
-		$(this).addClass("active"); 
-		}, function () {
-		$(this).removeClass("active");
-	});
-	
-	$("h2.trigger").click(function(){
-		$(this).next(".toggle_container").slideToggle("slow,");
-	});
+  <script>
+    window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  <script>
+    jQuery(document).ready(function ($) {
 
-});
-</script>
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link'),
+        $menuTrigger = $('.has-submenu > a');
 
-<!-- IE Fix for Sticky Footer -->
-<!--[if !IE 7]>
+      $menulink.click(function (e) {
+        e.preventDefault();
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+      });
+
+      $menuTrigger.click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass('active').next('ul').toggleClass('active');
+      });
+
+
+    });
+  </script>
+
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $(".toggle_container").hide();
+
+      $("h2.trigger").toggle(function () {
+        $(this).addClass("active");
+      }, function () {
+        $(this).removeClass("active");
+      });
+
+      $("h2.trigger").click(function () {
+        $(this).next(".toggle_container").slideToggle("slow,");
+      });
+
+    });
+  </script>
+
+  <!-- IE Fix for Sticky Footer -->
+  <!--[if !IE 7]>
 	<style type="text/css">
 		#wrap {display:table;height:100%}
 	</style>
 <![endif]-->
 
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32549768-1']);
+    _gaq.push(['_trackPageview']);
 
- var _gaq = _gaq || [];
- _gaq.push(['_setAccount', 'UA-32549768-1']);
- _gaq.push(['_trackPageview']);
-
- (function() {
-   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
- })();
-
-</script>
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
+
 <body id="company">
-<div id="container">
+  <div id="container">
     <div id="main">
-<header class="shadow">
-    <div class="container-12 fw">
-        <div class="grid-4">
-        	<a class="logo" href="index.html" title="Home"></a>
-        </div>
-        <div class="grid-8">
+      <header class="shadow">
+        <div class="container-12 fw">
+          <div class="grid-4">
+            <a class="logo" href="index.html" title="Home"></a>
+          </div>
+          <div class="grid-8">
             <a class="menu-link" href="#menu">Menu</a>
             <nav id="menu" class="menu">
-                <ul>
-                	<li class="platform single-link"><a href="open-source-platform.html">platform</a>
-                	<li class="has-submenu"><a href="#">platform</a>
+              <ul>
+                <li class="platform single-link"><a href="open-source-platform.html">platform</a>
+                  <li class="has-submenu"><a href="#">platform</a>
                     <ul class="sub-menu">
-                        <li><a href="open-source-platform.html">overview</a></li>
-                        <li><a href="distributed-network-features.html">features</a></li>
-                        <li><a href="maidsafe-network-platform-libraries.html">libraries</a></li>
-                        <li><a href="network-platform-use-cases.html">use cases</a></li>
-                        <li><a href="network-platform-licensing.html">licensing</a></li>
+                      <li><a href="open-source-platform.html">overview</a>
+                      </li>
+                      <li><a href="distributed-network-features.html">features</a>
+                      </li>
+                      <li><a href="maidsafe-network-platform-libraries.html">libraries</a>
+                      </li>
+                      <li><a href="network-platform-use-cases.html">use cases</a>
+                      </li>
+                      <li><a href="network-platform-licensing.html">licensing</a>
+                      </li>
                     </ul>
-                	</li>
-                    <li class="company"><a href="company-privacy-security-freedom.html">company</a></li>
-                    <li class="careers"><a href="careers.html">careers</a></li>
-                    <li class="stakeholders"><a href="stakeholders.html">stakeholders</a></li>
-                    <li class="blog"><a href="/blog">blog</a></li>
-                    <li class="contact"><a href="contact.html">contact</a></li>
-                </ul>
+                  </li>
+                  <li class="company"><a href="company-privacy-security-freedom.html">company</a>
+                  </li>
+                  <li class="careers"><a href="careers.html">careers</a>
+                  </li>
+                  <li class="stakeholders"><a href="stakeholders.html">stakeholders</a>
+                  </li>
+                  <li class="blog"><a href="/blog">blog</a>
+                  </li>
+                  <li class="contact"><a href="contact.html">contact</a>
+                  </li>
+              </ul>
             </nav>
+          </div>
         </div>
-    </div>
-</header>
-<div class="container-12">
-    <div class="main-content">
-    <h1>The MaidSafe Tenets</h1>
-    <div class="grid-4 l">
-    <div class="col-l">
-    <h2>Privacy</h2>
-    <p>We believe the ability to simply open a file or look at an image without divulging any information about yourself is key to the growth in data sharing and knowledge transfer. Yet we pay for many 'free systems' on the internet with the very privacy that we have guarded for years.</p>
-    <p>MaidSafe software represents a shift in this paradigm, enabling users to access information freely, without being tracked.</p>
-    <p>Our technology ensures there is no access wall to data such as web servers or traditional data access mechanisms that exist today.</p>
-    <p>The data in The MaidSafe Network is 'on your local disk' and appears as 'physical data' on the hard drive of your computer or any computer/mobile device you decide to login and use.</p>
-    </div>
-    </div>
-    <div class="grid-4">
-    <div class="col-m">
-    <h2>Security</h2>
-    <p>One of the first things new born babies look  for is security, the safety and comfort of their parents. Throughout  life security is important, as a feeling of insecurity leads to fear and  irrational behaviour.</p>
-    <p>In the digital world most of us do not realise what data should be secure and where potential problems may arise.</p>
-    <p>As users, we are generally satisfied to  see a word like security or encryption on a web page and believe that  the information is safe.</p>
-    <p>Surprisingly, even sites we perceive to  be beyond reproach such as our banks or favourite online stores retain  our financial and personal data with a view to building profiles on us  for future targeted marketing campaigns.</p>
-    <p>To ensure your complete security  MaidSafe's self encryption and authentication software is so powerful  that it is currently unbreakable by any existing means. You can safely  share folders and back up data with the absolute certainty that only  individuals with the correct password information are able to access it.</p>
-    </div>
-    </div>
-    <div class="grid-4 r">
-    <div class="col-r">
-    <h2>Freedom</h2>
-    <p>Freedom is a dream for many people today and  an illusion of many others. The freedom to think, freedom to roam and  the freedom to communicate thoughts and desires are either sought after  or perceived as already attained by the majority of us.</p>
-    <p>Freedom is an important issue and one which can allow amazing innovation and progress if allowed to flourish.</p>
-    <p>Increased creativity and innovation  through free will and freedom to learn will continue to drive forward  the human races' understanding of the universe around us, improving not  only our technological but emotional development.</p>
-    <p>Freedom is only possible when we are free from interference and feeling secure.</p>
-    <p>MaidSafe delivers freedom!</p>
-    </div>
-    </div>
-</div>
-</div>
-<div class="container-12">
-<h1>The MaidSafe Team</h1>
-	<div class="team-row">
-    <div class="grid-4 l">
-    <div class="col-l">
-    <h2>David Irvine</h2>
-    <h3>Joint CEO - Chairman</h3>
-    <p>David has in excess of 23 years experience in IT and 15 years running companies. He was previously responsible for Enterprise network design and project management and has worked on some of the world’s largest network projects. David is also a published author on papers in the fields of complex networking, distributed computing and cryptography related technologies. David enjoys sailing, engineering, camping and has a secret interest in intelligent robotics.</p>
-    </div>
-    </div>
-    <div class="grid-4">
-    <div class="col-m">
-    <h2>Fraser Hutchison</h2>
-    <h3>Director Research &amp; Development</h3>
-    <p>Further to studying computing science at University, Fraser&rsquo;s diverse  range of experience has seen him serve 14 years with the Oxfordshire  Fire Brigade and Strathclyde Fire and Rescue in addition to 10 years as a  director of a service business. Fraser has been a member of the  MaidSafe team for 4 years. Fraser is married and has a son. At weekends  he enjoys programming, hillwalking and playing football.</p>
-    </div>
-    </div>
-    <div class="grid-4 r">
-    <div class="col-r">
-    <h2>Nick Lambert</h2>
-    <h3>Chief Operating Officer</h3>
-    <p>Nick has an MSc in Marketing and has spent the last 10 years in senior  marketing positions. Prior to that he fulfilled project management roles  within large blue chip technology companies. Nick is responsible for  sales and marketing, intellectual property, user support and MaidSafe&rsquo;s  revenue streams.</p>
-    </div>
-    </div>
-    </div>
-    
-    <div class="team-row">
-    <div class="grid-4 l">
-    <div class="col-l">
-    <h2>Chandra Prakash</h2>
-    <h3>Systems Analyst</h3>
-    <p>Prakash completed his engineering degree in Electronics  &amp; Communication in India and worked there as a Software Developer  for a few years in a Telecom domain.</p>
-    <p>Later, he moved to the UK to pursue MBA from the  University of Sheffield. After graduating he became very excited by  MaidSafe's vision and joined the company in January 2011. As well as his  interest in computer hardware and gadgets, he likes playing chess,  travelling and watching movies.</p>
-    </div>
-    </div>
-    <div class="grid-4">
-    <div class="col-m">
-    <h2>Mahmoud Moadeli</h2>
-    <h3>Research Engineer</h3>
-    <p>Mahmoud received a BSc in Computer Hardware Engineering and an MSc in  Computer Systems Architecture whilst in Iran, he then came to the UK to  obtain his PhD in Computer Science from The University of Glasgow.  Before starting at MaidSafe he spent over 3 years working in the  software industry, followed by another 3 years working as a test  engineer in hardware manufacturing. His interests include Peer-to-Peer  networking, analytical modelling, interconnection networks and software  tools for manycore acceleration.</p>
-    </div>
-    </div>
-    <div class="grid-4" r>
-    <div class="col-r">
-    <h2>Viv Rajkumar</h2>
-    <h3>Research Engineer</h3>
-    <p>Viv qualified with a BEng(Hons) in Aerospace Engineering and  Astronautics at Kingston University. He previously spent time in IBM as a  Server Specialist and currently heads up the User Experience team at  MaidSafe dealing with WPF, Cocoa OSX and Qt UI Systems.</p>
-    </div>
-    </div>
-    </div>
-    
-    <div class="team-row">
-    <div class="grid-4 l">
-    <div class="col-l">
-    <h2>Qi Ma</h2>
-    <h3>Research Engineer</h3>
-    <p>Interested in the idea of creating a secure peer-to-peer network and  tempted by the outdoor activities Scotland has to offer, Qi joined  MaidSafe in 2011. With an impressive PhD in Health Informatics, MSc in  Computer Science, BEng in Electronic Engineering and over ten years  industry experience, Qi brings a wealth of knowledge to the team!</p>
-    </div>
-    </div>
-    <div class="grid-4">
-    <div class="col-m">
-    <h2>Lorraine McNally-Jones</h2>
-    <h3>Director</h3>
-    <p>Before joining MaidSafe, Lorraine spent over 17 years within Senior  Management in Air Traffic Control. She is also a Clinical Hypnotherapist  and Reiki Practitioner and used to run her own practice. Lorraine is  married with two children. She spends most of her free time horse riding  but also loves camping and all things outdoors!</p>
-    </div>
-    </div>
-    <div class="grid-4 r">
-    <div class="col-r">
-    <h2>Linda Rose</h2>
-    <h3>Administrator</h3>
-    <p>Linda has travelled extensively working as a Display Manager for Topshop  and Habitat. She then went on to graduate as a Bachelor of Science and  worked for South Ayrshire Council and Kilmarnock College before coming  to MaidSafe. Linda is renowned for her love of food (we don&rsquo;t know where  she puts it all!) and enjoys long walks along the beach with her  Yorkshire Terrier.</p>
-    </div>
-    </div>
-    </div>
-    
-    <div class="team-row">
-    <div class="grid-4 l">
-    <div class="col-l">
-    <h2>Shona Oldham</h2>
-    <h3>Visual Designer</h3>
-    <p>Shona has an HND in Graphic Design and is part of the User Experience  team. She previously spent 3 years working for a creative agency and is  now in her second year at MaidSafe. Her favourite things include family  movie nights, aerial silks, Instagram, doing handstands, chewing fruit  gums and hosting tea parties.</p>
-    </div>
-    </div>
-    <div class="grid-4">
-    <div class="col-m">
-    <h2>Scott Mackenzie</h2>
-    <h3>Front-End Developer</h3>
-    <p>Scott has almost 10 years experience in Graphic Design and Web  Development. He spent 3 years in his last role in a Glasgow company  before joining the team at MaidSafe. Scott enjoys playing football,  house music and a bit of golf. He lives a quiet life and you can  normally find him sitting in on a Saturday night reading a novel with a  cup of tea :)</p>
-    </div>
-    </div>
-    <div class="grid-4 r">
-    <div class="col-r">
-    <h2>Justine McLevy</h2>
-    <h3>HR Manager</h3>
-    <p>Justine has over 20 years experience in the catering and leisure sector  and during that time she has run her own business and obtained  qualifications in customer relations. Her favourite pastimes are  shopping and music (including camping at T in the Park). Justine also  undertakes the role as sports mum - just as long as shops are nearby and  can still do lunch!</p>
-    </div>
-    </div>
-    </div>
-     
-</div>
-
-     
-</div>
-
-    </div>
-    
-</div>
-  </div>  
-</div>
-
-<footer>
-    <div class="container-12">
-        <div class="grid-2 footer-links">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="company-privacy-security-freedom.html">Company</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="stakeholders.html">Stakeholders</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="grid-2 footer-links">
-            <ul>
-                <li><a href="open-source-platform.html">MaidSafe Platform</a></li>
-                <li><a href="distributed-network-features.html">- Features</a></li>
-                <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a></li>
-                <li><a href="network-platform-use-cases.html">- Use Cases</a></li>
-                <li><a href="network-platform-licensing.html">- Licensing</a></li>
-            </ul>
-        </div>
-        <div class="grid-8">
-            <ul class="social-links">
-            	<li class="facebook-icon"><a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
-            		<img src="images/facebook-icon.png" alt="facebook" width="35" height="34"/>
-            	</a></li>
-            	<li class="google-icon"><a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
-            		<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
-            	</a></li>
-            	<li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a></li>
-            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </ul>
+      </header>
+      <div class="container-12">
+        <div class="main-content">
+          <h1>The MaidSafe Tenets</h1>
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>Privacy</h2>
+              <p>We believe the ability to simply open a file or look at an image without divulging any information about yourself is key to the growth in data sharing and knowledge transfer. Yet we pay for many 'free systems' on the internet with the very
+                privacy that we have guarded for years.</p>
+              <p>MaidSafe software represents a shift in this paradigm, enabling users to access information freely, without being tracked.</p>
+              <p>Our technology ensures there is no access wall to data such as web servers or traditional data access mechanisms that exist today.</p>
+              <p>The data in The MaidSafe Network is 'on your local disk' and appears as 'physical data' on the hard drive of your computer or any computer/mobile device you decide to login and use.</p>
             </div>
-    	</div>
-    
-    <div class="container-12">
-        <div class="grid-12">
-            <div class="footer-logos">
-            	<img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer"/>
-            
-            	<a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
-            		<img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge"/></a>
+          </div>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Security</h2>
+              <p>One of the first things new born babies look for is security, the safety and comfort of their parents. Throughout life security is important, as a feeling of insecurity leads to fear and irrational behaviour.</p>
+              <p>In the digital world most of us do not realise what data should be secure and where potential problems may arise.</p>
+              <p>As users, we are generally satisfied to see a word like security or encryption on a web page and believe that the information is safe.</p>
+              <p>Surprisingly, even sites we perceive to be beyond reproach such as our banks or favourite online stores retain our financial and personal data with a view to building profiles on us for future targeted marketing campaigns.</p>
+              <p>To ensure your complete security MaidSafe's self encryption and authentication software is so powerful that it is currently unbreakable by any existing means. You can safely share folders and back up data with the absolute certainty that
+                only individuals with the correct password information are able to access it.</p>
             </div>
-            <p class="legal">©2013 MaidSafe.net. All rights reserved.
-            	<a href="disclaimer.html">DISCLAIMER</a>
-            	<a href="privacy.html">PRIVACY</a>
-            </p>
+          </div>
+          <div class="grid-4 r">
+            <div class="col-r">
+              <h2>Freedom</h2>
+              <p>Freedom is a dream for many people today and an illusion of many others. The freedom to think, freedom to roam and the freedom to communicate thoughts and desires are either sought after or perceived as already attained by the majority of
+                us.</p>
+              <p>Freedom is an important issue and one which can allow amazing innovation and progress if allowed to flourish.</p>
+              <p>Increased creativity and innovation through free will and freedom to learn will continue to drive forward the human races' understanding of the universe around us, improving not only our technological but emotional development.</p>
+              <p>Freedom is only possible when we are free from interference and feeling secure.</p>
+              <p>MaidSafe delivers freedom!</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="container-12">
+        <h1>The MaidSafe Team</h1>
+        <div class="team-row">
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>David Irvine</h2>
+              <h3>Joint CEO - Chairman</h3>
+              <p>David has in excess of 23 years experience in IT and 15 years running companies. He was previously responsible for Enterprise network design and project management and has worked on some of the world’s largest network projects. David is
+                also a published author on papers in the fields of complex networking, distributed computing and cryptography related technologies. David enjoys sailing, engineering, camping and has a secret interest in intelligent robotics.</p>
+            </div>
+          </div>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Fraser Hutchison</h2>
+              <h3>Director Research &amp; Development</h3>
+              <p>Further to studying computing science at University, Fraser&rsquo;s diverse range of experience has seen him serve 14 years with the Oxfordshire Fire Brigade and Strathclyde Fire and Rescue in addition to 10 years as a director of a service
+                business. Fraser has been a member of the MaidSafe team for 4 years. Fraser is married and has a son. At weekends he enjoys programming, hillwalking and playing football.</p>
+            </div>
+          </div>
+          <div class="grid-4 r">
+            <div class="col-r">
+              <h2>Nick Lambert</h2>
+              <h3>Chief Operating Officer</h3>
+              <p>Nick has an MSc in Marketing and has spent the last 10 years in senior marketing positions. Prior to that he fulfilled project management roles within large blue chip technology companies. Nick is responsible for sales and marketing, intellectual
+                property, user support and MaidSafe&rsquo;s revenue streams.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-row">
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>Chandra Prakash</h2>
+              <h3>Systems Analyst</h3>
+              <p>Prakash completed his engineering degree in Electronics &amp; Communication in India and worked there as a Software Developer for a few years in a Telecom domain.</p>
+              <p>Later, he moved to the UK to pursue MBA from the University of Sheffield. After graduating he became very excited by MaidSafe's vision and joined the company in January 2011. As well as his interest in computer hardware and gadgets, he likes
+                playing chess, travelling and watching movies.</p>
+            </div>
+          </div>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Mahmoud Moadeli</h2>
+              <h3>Research Engineer</h3>
+              <p>Mahmoud received a BSc in Computer Hardware Engineering and an MSc in Computer Systems Architecture whilst in Iran, he then came to the UK to obtain his PhD in Computer Science from The University of Glasgow. Before starting at MaidSafe
+                he spent over 3 years working in the software industry, followed by another 3 years working as a test engineer in hardware manufacturing. His interests include Peer-to-Peer networking, analytical modelling, interconnection networks and
+                software tools for manycore acceleration.</p>
+            </div>
+          </div>
+          <div class="grid-4" r>
+            <div class="col-r">
+              <h2>Viv Rajkumar</h2>
+              <h3>Research Engineer</h3>
+              <p>Viv qualified with a BEng(Hons) in Aerospace Engineering and Astronautics at Kingston University. He previously spent time in IBM as a Server Specialist and currently heads up the User Experience team at MaidSafe dealing with WPF, Cocoa
+                OSX and Qt UI Systems.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-row">
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>Qi Ma</h2>
+              <h3>Research Engineer</h3>
+              <p>Interested in the idea of creating a secure peer-to-peer network and tempted by the outdoor activities Scotland has to offer, Qi joined MaidSafe in 2011. With an impressive PhD in Health Informatics, MSc in Computer Science, BEng in Electronic
+                Engineering and over ten years industry experience, Qi brings a wealth of knowledge to the team!</p>
+            </div>
+          </div>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Lorraine McNally-Jones</h2>
+              <h3>Director</h3>
+              <p>Before joining MaidSafe, Lorraine spent over 17 years within Senior Management in Air Traffic Control. She is also a Clinical Hypnotherapist and Reiki Practitioner and used to run her own practice. Lorraine is married with two children.
+                She spends most of her free time horse riding but also loves camping and all things outdoors!</p>
+            </div>
+          </div>
+          <div class="grid-4 r">
+            <div class="col-r">
+              <h2>Linda Rose</h2>
+              <h3>Administrator</h3>
+              <p>Linda has travelled extensively working as a Display Manager for Topshop and Habitat. She then went on to graduate as a Bachelor of Science and worked for South Ayrshire Council and Kilmarnock College before coming to MaidSafe. Linda is
+                renowned for her love of food (we don&rsquo;t know where she puts it all!) and enjoys long walks along the beach with her Yorkshire Terrier.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-row">
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>Shona Oldham</h2>
+              <h3>Visual Designer</h3>
+              <p>Shona has an HND in Graphic Design and is part of the User Experience team. She previously spent 3 years working for a creative agency and is now in her second year at MaidSafe. Her favourite things include family movie nights, aerial silks,
+                Instagram, doing handstands, chewing fruit gums and hosting tea parties.</p>
+            </div>
+          </div>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Scott Mackenzie</h2>
+              <h3>Front-End Developer</h3>
+              <p>Scott has almost 10 years experience in Graphic Design and Web Development. He spent 3 years in his last role in a Glasgow company before joining the team at MaidSafe. Scott enjoys playing football, house music and a bit of golf. He lives
+                a quiet life and you can normally find him sitting in on a Saturday night reading a novel with a cup of tea :)</p>
+            </div>
+          </div>
+          <div class="grid-4 r">
+            <div class="col-r">
+              <h2>Justine McLevy</h2>
+              <h3>HR Manager</h3>
+              <p>Justine has over 20 years experience in the catering and leisure sector and during that time she has run her own business and obtained qualifications in customer relations. Her favourite pastimes are shopping and music (including camping
+                at T in the Park). Justine also undertakes the role as sports mum - just as long as shops are nearby and can still do lunch!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
     </div>
-</footer>
+
+  </div>
+
+  </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="container-12">
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="/">Home</a>
+          </li>
+          <li><a href="company-privacy-security-freedom.html">Company</a>
+          </li>
+          <li><a href="careers.html">Careers</a>
+          </li>
+          <li><a href="stakeholders.html">Stakeholders</a>
+          </li>
+          <li><a href="/blog">Blog</a>
+          </li>
+          <li><a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="open-source-platform.html">MaidSafe Platform</a>
+          </li>
+          <li><a href="distributed-network-features.html">- Features</a>
+          </li>
+          <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a>
+          </li>
+          <li><a href="network-platform-use-cases.html">- Use Cases</a>
+          </li>
+          <li><a href="network-platform-licensing.html">- Licensing</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-8">
+        <ul class="social-links">
+          <li class="facebook-icon">
+            <a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
+              <img src="images/facebook-icon.png" alt="facebook" width="35" height="34" />
+            </a>
+          </li>
+          <li class="google-icon">
+            <a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+              <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" />
+            </a>
+          </li>
+          <li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a>
+          </li>
+          <script>
+            ! function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+          </script>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-12">
+      <div class="grid-12">
+        <div class="footer-logos">
+          <img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer" />
+
+          <a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
+            <img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge" />
+          </a>
+        </div>
+        <p class="legal">©2013 MaidSafe.net. All rights reserved.
+          <a href="disclaimer.html">DISCLAIMER</a>
+          <a href="privacy.html">PRIVACY</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

@@ -1,186 +1,238 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-<title>Open Source Platform, Self Authentication, MaidSafe</title>
-<meta name="description" content="The MaidSafe Platform provides complete control of data, end to end encrypted data transfer and the ability to self join the network." />
-<meta name="keywords" content="Open Source Platform, Self Authentication, MaidSafe"/>
-<meta name="author" content="MaidSafe" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-<meta name="robots" content="all" />
-<meta name="revisit-after" content="30 days" />
+  <title>Open Source Platform, Self Authentication, MaidSafe</title>
+  <meta name="description" content="The MaidSafe Platform provides complete control of data, end to end encrypted data transfer and the ability to self join the network." />
+  <meta name="keywords" content="Open Source Platform, Self Authentication, MaidSafe" />
+  <meta name="author" content="MaidSafe" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="robots" content="all" />
+  <meta name="revisit-after" content="30 days" />
 
-<!-- Favicons -->
-<link rel="shortcut icon" href="/images/favicon.ico" />
-<link rel="icon" type="image/ico" href="/images/favicon.ico" />
-  
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="css/rwdgrid.css"/>
-<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
 
-<!-- SureFile Download browser detect -->
-<script type="text/javascript" src="js/browserdetect.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
-<script type="text/javascript">
-document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
-</script>
+  <!-- SureFile Download browser detect -->
+  <script type="text/javascript" src="js/browserdetect.js"></script>
+
+  <script type="text/javascript">
+    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+  </script>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script>window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')</script>
-<script>
-jQuery( document ).ready( function( $ ) {
-	
-		$('body').addClass('js');
-		  var $menu = $('#menu'),
-		  	  $menulink = $('.menu-link'),
-		  	  $menuTrigger = $('.has-submenu > a');
+  <script>
+    window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  <script>
+    jQuery(document).ready(function ($) {
 
-		$menulink.click(function(e) {
-			e.preventDefault();
-			$menulink.toggleClass('active');
-			$menu.toggleClass('active');
-		});
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link'),
+        $menuTrigger = $('.has-submenu > a');
 
-		$menuTrigger.click(function(e) {
-			e.preventDefault();
-			var $this = $(this);
-			$this.toggleClass('active').next('ul').toggleClass('active');
-		});
+      $menulink.click(function (e) {
+        e.preventDefault();
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+      });
 
-		
-});
-</script>
+      $menuTrigger.click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass('active').next('ul').toggleClass('active');
+      });
 
-<!-- IE Fix for Sticky Footer -->
-<!--[if !IE 7]>
+
+    });
+  </script>
+
+  <!-- IE Fix for Sticky Footer -->
+  <!--[if !IE 7]>
 	<style type="text/css">
 		#wrap {display:table;height:100%}
 	</style>
 <![endif]-->
 
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32549768-1']);
+    _gaq.push(['_trackPageview']);
 
- var _gaq = _gaq || [];
- _gaq.push(['_setAccount', 'UA-32549768-1']);
- _gaq.push(['_trackPageview']);
-
- (function() {
-   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
- })();
-
-</script>
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
+
 <body id="platform-overview">
-<div id="container">
+  <div id="container">
     <div id="main">
-		<header class="shadow">
-    <div class="container-12 fw">
-        <div class="grid-4">
-        	<a class="logo" href="index.html" title="Home"></a>
-        </div>
-        <div class="grid-8">
+      <header class="shadow">
+        <div class="container-12 fw">
+          <div class="grid-4">
+            <a class="logo" href="index.html" title="Home"></a>
+          </div>
+          <div class="grid-8">
             <a class="menu-link" href="#menu">Menu</a>
             <nav id="menu" class="menu">
-                <ul>
-                	<li class="platform single-link"><a href="open-source-platform.html">platform</a>
-                	<li class="has-submenu"><a href="#">platform</a>
+              <ul>
+                <li class="platform single-link"><a href="open-source-platform.html">platform</a>
+                  <li class="has-submenu"><a href="#">platform</a>
                     <ul class="sub-menu">
-                        <li><a href="open-source-platform.html">overview</a></li>
-                        <li><a href="distributed-network-features.html">features</a></li>
-                        <li><a href="maidsafe-network-platform-libraries.html">libraries</a></li>
-                        <li><a href="network-platform-use-cases.html">use cases</a></li>
-                        <li><a href="network-platform-licensing.html">licensing</a></li>
+                      <li><a href="open-source-platform.html">overview</a>
+                      </li>
+                      <li><a href="distributed-network-features.html">features</a>
+                      </li>
+                      <li><a href="maidsafe-network-platform-libraries.html">libraries</a>
+                      </li>
+                      <li><a href="network-platform-use-cases.html">use cases</a>
+                      </li>
+                      <li><a href="network-platform-licensing.html">licensing</a>
+                      </li>
                     </ul>
-                	</li>
-                    <li class="company"><a href="company-privacy-security-freedom.html">company</a></li>
-                    <li class="careers"><a href="careers.html">careers</a></li>
-                    <li class="stakeholders"><a href="stakeholders.html">stakeholders</a></li>
-                    <li class="blog"><a href="/blog">blog</a></li>
-                    <li class="contact"><a href="contact.html">contact</a></li>
-                </ul>
+                  </li>
+                  <li class="company"><a href="company-privacy-security-freedom.html">company</a>
+                  </li>
+                  <li class="careers"><a href="careers.html">careers</a>
+                  </li>
+                  <li class="stakeholders"><a href="stakeholders.html">stakeholders</a>
+                  </li>
+                  <li class="blog"><a href="/blog">blog</a>
+                  </li>
+                  <li class="contact"><a href="contact.html">contact</a>
+                  </li>
+              </ul>
             </nav>
+          </div>
         </div>
+      </header>
+      <div class="container-12">
+        <div class="grid-9 main-content">
+          <h1>The MaidSafe Platform</h1>
+          <h2>Privacy</h2>
+          <p>Self Authentication allows everyone to be in complete control of all data, beyond encryption to include physical access. In essence, nobody knows where any data is located, thereby providing completely private and unilateral access by individuals.
+            As all communications and data at rest are also encrypted, nobody can tell who is using the system, what they are doing or where they are.</p>
+          <h2>Security</h2>
+          <p>End to end encrypted data transfer and communications with encryption injected above layer 3, thereby evading 'man in the middle attacks'. Data at rest encryption, beyond today's highest levels of military grade algorithms on an open source
+            platform that stores no passwords or representations of passwords.</p>
+          <h2>Freedom</h2>
+          <p>The ability to 'self join' the network, enabling users to manage their own data, identity, contacts, shares or any information completely free of any third party involvement. Users can store, share, chat and publish 100% under their own control
+            and knowledge.</p>
+        </div>
+        <div class="grid-3 leftnav-shell">
+          <ul class="leftnav">
+            <li class="overview"><a href="open-source-platform.html">Overview</a>
+            </li>
+            <li class="features"><a href="distributed-network-features.html">Features</a>
+            </li>
+            <li class="libraries"><a href="maidsafe-network-platform-libraries.html">Libraries</a>
+            </li>
+            <li class="usecases"><a href="network-platform-use-cases.html">Use Cases</a>
+            </li>
+            <li class="licensing"><a href="network-platform-licensing.html">Licensing</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</header>
-        <div class="container-12">
-            <div class="grid-9 main-content">
-                <h1>The MaidSafe Platform</h1>
-                <h2>Privacy</h2>
-                    <p>Self Authentication allows everyone to be in complete control of all data, beyond encryption to include physical access. In essence, nobody knows where any data is located, thereby providing completely private and unilateral access by individuals. As all communications and data at rest are also encrypted, nobody can tell who is using the system, what they are doing or where they are.</p>
-                <h2>Security</h2>
-                    <p>End to end encrypted data transfer and communications with encryption injected above layer 3, thereby evading 'man in the middle attacks'. Data at rest encryption, beyond today's highest levels of military grade algorithms on an open source platform that stores no passwords or representations of passwords.</p>
-                <h2>Freedom</h2>
-                    <p>The ability to 'self join' the network, enabling users to manage their own data, identity, contacts, shares or any information completely free of any third party involvement. Users can store, share, chat and publish 100% under their own control and knowledge.</p>
-            </div>
-            <div class="grid-3 leftnav-shell">
-            <ul class="leftnav">
-    <li class="overview"><a href="open-source-platform.html">Overview</a></li>
-    <li class="features"><a href="distributed-network-features.html">Features</a></li>
-    <li class="libraries"><a href="maidsafe-network-platform-libraries.html">Libraries</a></li>
-    <li class="usecases"><a href="network-platform-use-cases.html">Use Cases</a></li>
-    <li class="licensing"><a href="network-platform-licensing.html">Licensing</a></li> 
-</ul>
-            </div>
-        </div>
-</div>
-</div>
-<footer>
+  </div>
+  <footer>
     <div class="container-12">
-        <div class="grid-2 footer-links">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="company-privacy-security-freedom.html">Company</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="stakeholders.html">Stakeholders</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="grid-2 footer-links">
-            <ul>
-                <li><a href="open-source-platform.html">MaidSafe Platform</a></li>
-                <li><a href="distributed-network-features.html">- Features</a></li>
-                <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a></li>
-                <li><a href="network-platform-use-cases.html">- Use Cases</a></li>
-                <li><a href="network-platform-licensing.html">- Licensing</a></li>
-            </ul>
-        </div>
-        <div class="grid-8">
-            <ul class="social-links">
-            	<li class="facebook-icon"><a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
-            		<img src="images/facebook-icon.png" alt="facebook" width="35" height="34"/>
-            	</a></li>
-            	<li class="google-icon"><a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
-            		<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
-            	</a></li>
-            	<li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a></li>
-            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </ul>
-            </div>
-    	</div>
-    
-    <div class="container-12">
-        <div class="grid-12">
-            <div class="footer-logos">
-            	<img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer"/>
-            
-            	<a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
-            		<img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge"/></a>
-            </div>
-            <p class="legal">©2013 MaidSafe.net. All rights reserved.
-            	<a href="disclaimer.html">DISCLAIMER</a>
-            	<a href="privacy.html">PRIVACY</a>
-            </p>
-        </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="/">Home</a>
+          </li>
+          <li><a href="company-privacy-security-freedom.html">Company</a>
+          </li>
+          <li><a href="careers.html">Careers</a>
+          </li>
+          <li><a href="stakeholders.html">Stakeholders</a>
+          </li>
+          <li><a href="/blog">Blog</a>
+          </li>
+          <li><a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="open-source-platform.html">MaidSafe Platform</a>
+          </li>
+          <li><a href="distributed-network-features.html">- Features</a>
+          </li>
+          <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a>
+          </li>
+          <li><a href="network-platform-use-cases.html">- Use Cases</a>
+          </li>
+          <li><a href="network-platform-licensing.html">- Licensing</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-8">
+        <ul class="social-links">
+          <li class="facebook-icon">
+            <a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
+              <img src="images/facebook-icon.png" alt="facebook" width="35" height="34" />
+            </a>
+          </li>
+          <li class="google-icon">
+            <a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+              <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" />
+            </a>
+          </li>
+          <li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a>
+          </li>
+          <script>
+            ! function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+          </script>
+        </ul>
+      </div>
     </div>
-</footer>
+
+    <div class="container-12">
+      <div class="grid-12">
+        <div class="footer-logos">
+          <img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer" />
+
+          <a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
+            <img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge" />
+          </a>
+        </div>
+        <p class="legal">©2013 MaidSafe.net. All rights reserved.
+          <a href="disclaimer.html">DISCLAIMER</a>
+          <a href="privacy.html">PRIVACY</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
