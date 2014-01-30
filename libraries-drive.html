@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+<title>Virtual Drive, MaidSafe Drive</title>
+<meta name="description" content="A cross platform virtual drive with an easy to use API." />
+<meta name="keywords" content="Virtual Drive, MaidSafe Drive"/>
+<meta name="author" content="MaidSafe" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="robots" content="all" />
+<meta name="revisit-after" content="30 days" />
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="icon" type="image/ico" href="/images/favicon.ico" />
+  
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="css/rwdgrid.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+<!-- SureFile Download browser detect -->
+<script type="text/javascript" src="js/browserdetect.js"></script>
+
+<script type="text/javascript">
+document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+</script>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')</script>
+<script>
+jQuery( document ).ready( function( $ ) {
+	
+		$('body').addClass('js');
+		  var $menu = $('#menu'),
+		  	  $menulink = $('.menu-link'),
+		  	  $menuTrigger = $('.has-submenu > a');
+
+		$menulink.click(function(e) {
+			e.preventDefault();
+			$menulink.toggleClass('active');
+			$menu.toggleClass('active');
+		});
+
+		$menuTrigger.click(function(e) {
+			e.preventDefault();
+			var $this = $(this);
+			$this.toggleClass('active').next('ul').toggleClass('active');
+		});
+
+		
+});
+</script>
+
+<!-- IE Fix for Sticky Footer -->
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+
+
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-32549768-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+</head>
+<body id="libraries">
+<div id="container">
+    <div id="main">
+<header class="shadow">
+    <div class="container-12 fw">
+        <div class="grid-4">
+        	<a class="logo" href="index.html" title="Home"></a>
+        </div>
+        <div class="grid-8">
+            <a class="menu-link" href="#menu">Menu</a>
+            <nav id="menu" class="menu">
+                <ul>
+                	<li class="platform single-link"><a href="open-source-platform.html">platform</a>
+                	<li class="has-submenu"><a href="#">platform</a>
+                    <ul class="sub-menu">
+                        <li><a href="open-source-platform.html">overview</a></li>
+                        <li><a href="distributed-network-features.html">features</a></li>
+                        <li><a href="maidsafe-network-platform-libraries.html">libraries</a></li>
+                        <li><a href="network-platform-use-cases.html">use cases</a></li>
+                        <li><a href="network-platform-licensing.html">licensing</a></li>
+                    </ul>
+                	</li>
+                    <li class="company"><a href="company-privacy-security-freedom.html">company</a></li>
+                    <li class="careers"><a href="careers.html">careers</a></li>
+                    <li class="stakeholders"><a href="stakeholders.html">stakeholders</a></li>
+                    <li class="blog"><a href="/blog">blog</a></li>
+                    <li class="contact"><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="container-12">
+    <div class="grid-9 main-content">
+    <h1>MaidSafe-Drive</h1>
+<h2>MaidSafe Network Filesystem Library</h2>
+
+
+<h3>Description</h3>
+<p>A cross platform virtual drive with an easy to use API. Uses <a href="http://fuse.sourceforge.net/" target="_blank">Fuse</a> for Linux systems, <a href="http://osxfuse.github.io/" target="_blank">OSXFuse</a> for OSX and Eldos' <a href="https://www.eldos.com/cbfs/" target="_blank">Callback File System</a> for Windows.</p>
+<h3>Features</h3>
+<ul>
+  <li>Create directory containers for virtual filesystems</li>
+  <li>Allow native access to virtual files and directories</li>
+  <li>Directory versioning capabilities</li>
+  <li>Handles user-created data types</li>
+  <li>Links to <a href="http://www.maidsafe.net/libraries-encrypt.html">Maidsafe-Encrypt</a> for encrypted data storage</li>
+</ul>
+<h3>Programming languages</h3>
+<h3>Core</h3>
+<p>C++11 compatible with GCC (4.7 and above), Clang (3.3 and above) and  MSVC 2012 (with no dependency on CTP releases). Tested on Windows 32/64  bit, Linux 32/64 bit (dependent on GCC version) and OSX (Mountain Lion  and above).</p>
+<h3>Status</h3>
+<p>This library is considered <strong>BETA</strong> quality and  is provided with a full test suite and QA suite. This can be considered  for use in production quality systems at this time.</p>
+
+<h3>Roadmap</h3>
+<ul>
+  <li>Consideration for linking (hard/soft) to be added to API</li>
+  <li>Make API agnostic to Data Store</li>
+  <li>Allow re-rooting of directories if machine MAX directory length exceeded</li>
+  <li>Refactor for generic programming</li>
+  <li>Refactor for type safety</li>
+  <li>Refactor for exception safety</li>
+  <li>Consider an API that allows application API as well as disk (Posix) API (drive-demo command line)</li>
+  <li>Implement read ahead</li>
+</ul>
+<h3>Links</h3>
+<ul>
+  <li><a href="https://github.com/maidsafe/MaidSafe-Drive/wiki" target="_blank">Wiki, including build instructions</a></li>
+  <li><a href="https://groups.google.com/forum/?fromgroups#%21forum/maidsafe-development" target="_blank">Developer mailing list</a></li>
+  <li><a href="https://github.com/maidsafe/MaidSafe-Drive/issues?state=open" target="_blank">Issue tracker</a></li>
+  <li><a href="http://dash.maidsafe.net" target="_blank">Build Status</a></li>
+</ul>
+    </div>
+
+<div class="grid-3 rightnav">
+<div class="rightnav-box github">
+<a href="https://github.com/maidsafe/MaidSafe-Drive/wiki" target="_blank"><!-- content --><p>View on GitHub</p></a>
+</div>
+<div class="rightnav-box back">
+<a href="maidsafe-network-platform-libraries"><p>Back to Libraries</p></a>
+</div>
+</div>
+    
+     
+</div>
+
+    </div>
+    
+</div>
+  </div>  
+</div>
+<footer>
+    <div class="container-12">
+        <div class="grid-2 footer-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="company-privacy-security-freedom.html">Company</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="stakeholders.html">Stakeholders</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="grid-2 footer-links">
+            <ul>
+                <li><a href="open-source-platform.html">MaidSafe Platform</a></li>
+                <li><a href="distributed-network-features.html">- Features</a></li>
+                <li><a href="maidsafe-network-platform-libraries.html">- Libraries</a></li>
+                <li><a href="network-platform-use-cases.html">- Use Cases</a></li>
+                <li><a href="network-platform-licensing.html">- Licensing</a></li>
+            </ul>
+        </div>
+        <div class="grid-8">
+            <ul class="social-links">
+            	<li class="facebook-icon"><a href="https://www.facebook.com/GetMaidSafe" target="_blank" title="MaidSafe Facebook Page">
+            		<img src="images/facebook-icon.png" alt="facebook" width="35" height="34"/>
+            	</a></li>
+            	<li class="google-icon"><a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+            		<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
+            	</a></li>
+            	<li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a></li>
+            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </ul>
+            </div>
+    	</div>
+    
+    <div class="container-12">
+        <div class="grid-12">
+            <div class="footer-logos">
+            	<img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer"/>
+            
+            	<a class="" href="http://internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
+            		<img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge"/></a>
+            </div>
+            <p class="legal">©2013 MaidSafe.net. All rights reserved.
+            	<a href="disclaimer.html">DISCLAIMER</a>
+            	<a href="privacy.html">PRIVACY</a>
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
