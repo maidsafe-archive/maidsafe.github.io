@@ -1470,76 +1470,6 @@ h2.active {background-position: left bottom; color:rgba(204,204,204,1.00);}
 	clear: both;
 }
 
-
-/*
-.download-col {
-	display: inline; 
-	float: left; 
-	width: 320px; 
-	text-align: center; 
-	margin: 40px 0;
-}
-.download-col h3 {
-	font-size: 30px;
-	color:rgb(85,147,215);
-	margin-bottom: 12px;
-}
-.download-col h4 {
-	font-size:12px;
-}
-.download-col img {
-	margin-bottom: 20px;
-}
-
-#versions {
-	background:rgb(212,227,244); 
-	font-size: 14px; 
-	font-weight: bold; 
-	margin: 20px auto; 
-	width: 230px;
-}
-#versions td {
-	border:4px solid rgb(255,255,255);
-	padding: 10px 0px;
-}
-#versions td:hover {
-	background: rgb(84,146,214);
-	color: rgb(255,255,255);
-}
-#versions a {
-	color:rgb(0,0,0)!important; 
-	padding:10px 12px;
-}
-#versions a:hover {
-	color: rgb(255,255,255)!important;
-}
-td.system {
-	background: rgb(201,201,201); 
-	font-weight: normal; 
-	text-align:left; 
-	font-size: 14px; 
-	min-width: 70px; 
-	padding:0px 10px!important;
-}
-td.system:hover {
-	background: rgb(201,201,201)!important; 
-	color: rgb(0,0,0)!important;
-}
-td.nohover {
-	background:rgb(212,227,244)!important; 
-	color: rgb(0,0,0)!important;
-}
-
-.eula {
-	line-height: 22px;
-}
-.eula p {
-	margin-bottom: 30px;
-}
-.eula ol li {
-	margin-bottom: 30px!important;
-}
-*/
 .downloadShell {
 	padding:0px 0px 90px 0px;
     margin: 40px auto 10px;
@@ -2898,8 +2828,57 @@ label {
 	display:none;
 }
 
+/************* SureFile Download Page Styles ****************/
+
+#surefile-download h1 {
+	width:200px;
+	height:45px;
+	background-size:200px 45px;
+	margin:0 auto 30px auto;
+}
+
+#surefile-download h2 {
+    font-size: 20px;
+}
+
+.download-box h3 {
+	text-align:center;
+}
+
+#surefile-download .main-content {
+	margin-bottom:20px;
+}
+
+#surefile-download #main p {
+	font-size: 16px;
+}
+
+p.sub-text {
+	font-size:12px!important;
+}
+
+a.button-blue {
+    padding: 10px 15px 10px 15px;
+}
+
+a.button-blue .button-text {
+	font-size: 22px;
+}
+
+#surefile-download p.legal,
+#surefile-download p.tel  {
+	text-align:center;
+}
+
 /********************* Footer **************************/
-footer {	text-align:center;}
+
+footer {
+    clear: both;
+    height: 260px;
+    margin-top: -220px;
+    position: relative;
+	text-align:center;
+}
 
 footer p {
 	text-align:center;
@@ -2961,7 +2940,7 @@ p.legal {
 	float:none;
 	position: relative;
     right: 113px;
-    top: 100px;
+    top: 150px;
 }
 }
 

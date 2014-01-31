@@ -66,8 +66,10 @@
     $('#downloadBox').addClass('surefile_download_link_soon');
     $('.downloadSoon span').html('Linux');
     $('.downloadSoon').show();
+	$('.download-shell .button-blue').hide();
   } else {
     $('#downloadBox').addClass('hidden');
+	$('.download-shell .button-blue').hide();
   }
 /*
   $('.win_8.x86_32').click(function () {
