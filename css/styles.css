@@ -451,63 +451,6 @@ header {
 	color:#5593D7;
 }
 
-/*
-nav {
-	float:right;
-	position:relative;
-	right:0px;
-	top:76px;
-}
-nav li {
-	display: inline-block;
-	margin-left:28px;
-}
-nav li a:hover {
-	color:#333333;
-}
-
-.nav-collapse,
-.nav-collapse * {
-  	-moz-box-sizing: border-box;
-  	-webkit-box-sizing: border-box;
-  	box-sizing: border-box;
-}
-
-.nav-collapse,
-.nav-collapse ul {
-  	list-style: none;
-  	width: 100%;
-  	float: left;
-}
-
-.nav-collapse a {
-  	text-decoration: none;
-}
-
-.nav-collapse ul ul a {
-  	padding-left: 2em;
-}
-
-ul.subnav {
-	display:none;
-}
-.nav-toggle {
-  	-webkit-touch-callout: none;
-  	-webkit-user-select: none;
-  	-moz-user-select: none;
-  	-ms-user-select: none;
-  	user-select: none;
-  	width: 35px;
-  	height: 30px;
-  	float: right;
- 	text-indent: -9999px;
-  	overflow: hidden;
-  	background:url(imgs/nav_icon.png) no-repeat 50% 33%;
-}
-
-
-*/
-
 
 /*******************************************************************************
 
@@ -656,9 +599,9 @@ Home Page Styles
 }
 
 #home h2 {
-	color:#808080;
+	color:#000;
 	font-family:'OpenSansRegular', Arial, sans-serif;
-	font-size:28px;
+	font-size:20px;
 	margin-bottom:10px;
 	text-align:center;
 }
@@ -684,7 +627,23 @@ video {
 	margin-bottom:50px;
 }
 
-#home .para p {
+#home .para-l h2 {padding-right:20px;}
+#home .para-r h2 {padding-left:20px;}
+
+#home .para-l p {padding: 2% 20px 0;}
+#home .para-r p {padding: 2% 0 0 20px;}
+
+#home .para-l p,
+#home .para-r p {
+	color: #464646;
+    font-family: 'OpenSansRegular', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    
+}
+
+#home .para {
 	color: #464646;
     font-family: 'OpenSansRegular', Arial, sans-serif;
     font-size: 16px;
@@ -698,17 +657,10 @@ video {
 	border-color: rgba(0, 0, 0, 0);
 	border-style: none;
 	box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-	
-	/*
-	padding: 20px 15px 20px 15px;
-	*/
 	position: relative;
-	/*
-	width: 269px;*/
 	display:block;
 	float:left;
-	margin-bottom:60px;
-	
+	margin-bottom:60px;	
 }
 
 .home-box p {
@@ -850,7 +802,8 @@ ul.leftnav li ul li a { font-size:14px;}
 #platform-features ul.leftnav .features a,
 #platform-libraries ul.leftnav .libraries a,
 #use-cases ul.leftnav .usecases a,
-#licensing ul.leftnav .licensing a {
+#licensing ul.leftnav .licensing a,
+#developers ul.leftnav .developers a {
 	color:#5593D7;
 }
 
@@ -1346,17 +1299,26 @@ SureFile Download Page Styles
 	font-size: 18px;
 }
 
+p.sub-warning {
+	color: #ED1C24;
+	margin-bottom:20px!important;
+}
+p.sub-text {
+	font-size:12px!important;
+	margin-top:15px!important;
+}
+
 .download-shell {
 	text-align:center;
 	margin-top:50px;
 	margin-bottom:20px;
 }
 a.button-blue {
-    background: #5593D7 url(imgs/download_icon.png) no-repeat 22px 18px;
+    background: #5593D7;
     border-color: rgba(0, 0, 0, 0);
     border-radius: 5px;
     border-style: none;
-    padding: 20px 30px 20px 105px;
+    padding: 15px 20px 15px 20px;
     position: relative;
 	color:#FFFFFF!important;
 	text-decoration:none;
@@ -1373,8 +1335,6 @@ a.button-blue .button-text {
 	cursor:pointer;
 }
 
-.downloadbtn {
-}
 
 #downloadBox p { 
 	margin:0 auto; 
@@ -1382,15 +1342,7 @@ a.button-blue .button-text {
 	font-weight:normal;
 }
 
-#downloadArchitecture {}
 
-.shadow-download {
-	background: url(imgs/shadow_download.png) repeat-x 0 0;
-    clear: both;
-    display: block;
-    height:30px;
-	padding-top: 70px;
-}
 
 #surefile-download .col-l {
 	margin:0 0px 30px 0;
@@ -1407,10 +1359,16 @@ a.button-blue .button-text {
 
 #surefile-download .grid-4.l {
 	margin-left:0px;
+	margin-top:50px;
+}
+
+#surefile-download .grid-4.m {
+	margin-top:50px;
 }
 
 #surefile-download .grid-4.r {
 	margin-right:0px;
+	margin-top:50px;
 }
 
 .download-box {
@@ -1452,7 +1410,19 @@ a.button-blue .button-text {
 	background-color:#29578A;
 }
 
-#surefile-download .legal p {
+.download-box li.unavailable {
+	cursor:default;
+	background-color:rgba(204,204,204,1.00);
+	border-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    border-style: none;
+    padding: 10px;
+	display:block;
+	color:rgba(255,255,255,1.00);
+}
+
+#surefile-download p.legal,
+#surefile-download p.tel  {
 	text-align:left;
 }
 
@@ -1464,6 +1434,41 @@ a.button-blue .button-text {
 }
 
 
+h2.trigger {
+	padding: 0 0 0 20px;
+	margin:0 auto 50px auto!important;
+	background: url(imgs/arrow_another_download.png) no-repeat;
+	height: 18px;
+	line-height: 46px;
+	width: 180px;
+	font-size: 18px;
+	font-weight: normal;
+	line-height:16px;
+	text-align:center;
+	display:block;
+	clear:both;
+}
+h2.trigger a {
+	color: #464646;
+	text-decoration: none;
+	display: block;
+	font-size:18px;
+	text-align:center;
+	margin: 0 auto;
+	display:block;
+}
+h2.trigger a:hover {
+	color:#5593D7;
+}
+h2.active {background-position: left bottom; color:rgba(204,204,204,1.00);}
+
+.toggle_container {
+	margin: 0;
+	padding:0;
+	background: url(imgs/shadow_download.png) repeat-x 0 0;
+	overflow: hidden;
+	clear: both;
+}
 
 
 /*
@@ -1546,6 +1551,7 @@ td.nohover {
 	margin:0 auto; 
 	text-align:center; 
 	font-weight:normal;
+	font-size:24px;
 }
 #downloadBox img { 
 	float:left;
@@ -1555,32 +1561,25 @@ td.nohover {
 }
 .downloadText {
 	font-size:18px; 
-	color:rgb(75, 75, 75);
+	color:#5593D7;
+	clear:both;
 }
 #downloadInfo {
 	font-size:18px;	
 }
 
-/*
-.surefile_download_link_mac {
-	background:red;
-	width:535px; 
-	height:30px; 
-	padding-top:200px;
+#downloadOS  {
+	text-align:center;
+	color:#5593D7;
 }
-.surefile_download_link_win {
-	background:blue;
-	width:535px;
-	height:30px; 
-	padding-top:200px;
+
+#downloadArchitecture {
+	color:#5593D7;
 }
-.surefile_download_link_linux {
-	background:green;
-	width:535px; 
-	height:30px; 
-	padding-top:200px;
+
+.hidden {
+	display:none;
 }
-*/
 
 
 .surefile_download_link_mac:not(.surefile_download_link_soon) .downloadSoon,
@@ -1601,6 +1600,7 @@ td.nohover {
 	display:none;
 }
 
+/*
 .surefile_download_link_soon a.button-grey,
 .surefile_download_link_soon a.button-grey:hover,
 .surefile_download_link_soon a.button-grey:active {
@@ -1609,6 +1609,7 @@ td.nohover {
 	cursor:default; 
 	color:rgb(84, 146, 214);
 }
+*/
 
 
 /*******************************************************************************
@@ -2718,6 +2719,18 @@ p.alpha-testers {
 	margin-bottom:30px;
 }
 
+#home .para-l h2,
+#home .para-r h2 {
+	font-size:18px;
+	margin-bottom:20px;
+	padding:0px;
+}
+
+#home .para-l p,
+#home .para-r p {
+	padding:0px;
+}
+
 .blog-box {
 	padding:5% 5% 2% 5%;
 }
@@ -2979,6 +2992,18 @@ p.legal {
 #home h2 {
 	font-size:10px;
 	margin-bottom:20px;
+}
+
+#home .para-l h2,
+#home .para-r h2 {
+	font-size:20px;
+	margin-bottom:20px;
+	padding:0px;
+}
+
+#home .para-l p,
+#home .para-r p {
+	padding:0px;
 }
 
 
