@@ -5,19 +5,37 @@
     $('.downloadSoon').hide();
     if (LS.SystemDetector.isWin7()) {
       $('#downloadOS').html('Windows 7');
-      $('#downloadArchitecture').html(((LS.SystemDetector.isWinx64() == true) ? "(64 Bit)" : "(32 Bit)"));
-      $('#downloadBox .button-grey').addClass('win_7');
-      $('#downloadBox .button-grey').addClass(cpu_type);
+	  if (LS.SystemDetector.isWinx64()) {
+		// 64 bit
+		  $('#downloadArchitecture').html("(64 Bit)");
+		  $('.download-shell .button-blue').attr('href', $('.win_7.x86_64').attr('href'));
+	  } else {
+		// 32 bit  
+		$('#downloadArchitecture').html("(32 Bit)");
+       $('.download-shell .button-blue').attr('href', $('.win_7.x86_32').attr('href'));
+	  }
     } else if (LS.SystemDetector.isWinVista()) {
       $('#downloadOS').html('Windows Vista');
-      $('#downloadArchitecture').html(((LS.SystemDetector.isWinx64() == true) ? "(64 Bit)" : "(32 Bit)"));
-      $('#downloadBox .button-grey').addClass('win_vista');
-      $('#downloadBox .button-grey').addClass(cpu_type);
+	  if (LS.SystemDetector.isWinx64()) {
+		// 64 bit
+		  $('#downloadArchitecture').html("(64 Bit)");
+		  $('.download-shell .button-blue').attr('href', $('.win_vista.x86_64').attr('href'));
+	  } else {
+		// 32 bit  
+		$('#downloadArchitecture').html("(32 Bit)");
+       $('.download-shell .button-blue').attr('href', $('.win_vista.x86_32').attr('href'));
+	  }
     } else if (LS.SystemDetector.isWin8()) {
       $('#downloadOS').html('Windows 8');
-      $('#downloadArchitecture').html(((LS.SystemDetector.isWinx64() == true) ? "(64 Bit)" : "(32 Bit)"));
-      $('#downloadBox').addClass('win_8');
-      $('#downloadBox').addClass(cpu_type);
+	  if (LS.SystemDetector.isWinx64()) {
+		// 64 bit
+		  $('#downloadArchitecture').html("(64 Bit)");
+		  $('.download-shell .button-blue').attr('href', $('.win_8.x86_64').attr('href'));
+	  } else {
+		// 32 bit  
+		$('#downloadArchitecture').html("(32 Bit)");
+       $('.download-shell .button-blue').attr('href', $('.win_8.x86_32').attr('href'));
+	  }
     } else {
       $('.downloadSoon').show();
       $('#downloadBox').addClass('surefile_download_link_soon');
@@ -26,14 +44,19 @@
   } else if (LS.SystemDetector.isMac()) {
     $('.downloadSoon').hide();
     $('#downloadBox').addClass('surefile_download_link_mac');
-    if (LS.SystemDetector.isMountainLion()) {
-      $('#downloadOS').html('Mountain Lion');
-      $('#downloadBox .button-grey').addClass('osx_10_8');
+    if (LS.SystemDetector.isMavericks()) {
+      $('#downloadOS').html('Mac OS X Mavericks');
+      $('.download-shell .button-blue').attr('href', $('.osx_10_9').attr('href'));
+	  /*
     } else if (LS.SystemDetector.isLion()) {
       $('#downloadOS').html('Lion');
-      $('#downloadBox .button-grey').addClass('osx_10_7');
+      $('#downloadBox').addClass('osx_10_9');*/
+	  /*} else if (LS.SystemDetector.isLion()) {
+      $('#downloadOS').html('Lion');
+      $('#downloadBox').addClass('osx_10_9');*/
     } else {
       $('.downloadSoon').show();
+      $('.download-shell .button-blue').hide();
       $('#downloadBox').addClass('surefile_download_link_soon');
       $('.downloadSoon span').html('Mac');
     }
