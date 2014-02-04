@@ -339,6 +339,11 @@ strong { font-weight:bold; font-style:normal;}
     text-align: center;
 }
 
+.iframe {
+	width:80%;
+	height:350px;
+}
+
 /*******************************************************************************
 
 Header Styles
@@ -788,7 +793,7 @@ Inner Page Styles
     height: 130px;
 }
 .leftnav-shell { float:left;}
-ul.leftnav {}
+ul.leftnav { padding-right:30px;}
 ul.leftnav {}
 ul.leftnav li { margin-bottom:15px;}
 ul.leftnav li a { color:#7F7F7F; font-size:16px;}
@@ -891,6 +896,41 @@ h2.private-head {
 	color: #3A93D7;
     font-size: 30px;
 }
+
+
+/*******************************************************************************
+
+Developers Page Styles
+
+*******************************************************************************/
+
+a.get-started-button {
+	background:#5593D7 url(imgs/hammer_icon.png) no-repeat 195px 10px;
+	font-size: 22px;
+    font-weight: 400;
+	color:#FFFFFF!important;
+	cursor:pointer;
+	text-decoration:none;
+	border-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    border-style: none;
+    padding: 10px 55px 10px 15px;
+	display: inline-block;
+	float:right;
+	
+}
+a.get-started-button:hover {
+	background-color:#29578A;
+}
+
+a.button-blue {
+	font-size: 36px;
+    font-weight: 400;
+	color:#FFFFFF!important;
+	cursor:pointer;
+}
+
+
 /*******************************************************************************
 
 Libraries Page Styles

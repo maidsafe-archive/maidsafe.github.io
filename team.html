@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-  <title>Secure Hashing, MaidSafe Passport</title>
-  <meta name="description" content="Creates cryptographically secure Public Key Infrastructure mechanism via a mixture of asymmetric encryption currently RSA and secure hashing currently SHA512." />
-  <meta name="keywords" content="Secure Hashing, MaidSafe Passport" />
+  <title>Privacy Security Freedom, MaidSafe</title>
+  <meta name="description" content="MaidSafe strive to deliver privacy, security and freedom online." />
+  <meta name="keywords" content="Privacy Security Freedom, MaidSafe" />
   <meta name="author" content="MaidSafe" />
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
@@ -56,6 +56,21 @@
     });
   </script>
 
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".toggle_container").hide();
+      $("h2.trigger").toggle(function () {
+        $(this).addClass("active");
+      }, function () {
+        $(this).removeClass("active");
+      });
+      $("h2.trigger").click(function () {
+        $(this).next(".toggle_container").slideToggle("slow,");
+      });
+    });
+  </script>
+
   <!-- IE Fix for Sticky Footer -->
   <!--[if !IE 7]>
 	<style type="text/css">
@@ -79,7 +94,7 @@
   </script>
 </head>
 
-<body id="libraries">
+<body id="company">
   <div id="container">
     <div id="main">
     <header class="shadow">
@@ -141,59 +156,118 @@
       </div>
     </header>
       <div class="container-12">
-        <div class="grid-9 main-content">
-          <h1>MaidSafe-Passport</h1>
-          <h2>MaidSafe Passport Library</h2>
-          <h3>Description</h3>
-          <p id="u1863-12">Creates cryptographically secure Public Key Infrastructure mechanism via a mixture of asymmetric encryption currently <a href="http://en.wikipedia.org/wiki/RSA_%28algorithm%29" target="_blank">RSA</a> and secure hashing currently <a href="http://en.wikipedia.org/wiki/SHA-2"
-            target="_blank">SHA512</a>.</p>
-          <p id="u1863-22">With this library and a secure <a href="http://en.wikipedia.org/wiki/Distributed_hash_table" target="_blank">DHT</a> such as <a href="http://www.maidsafe.net/libraries-routing.html">MaidSafe-Routing</a> there is no requirement for a certificate
-            authority. Removing another server system and the related human administration, allows developers to create autonomous distributed secure systems.</p>
-          <p id="u1863-24">MaidSafe uses this feature to ensure nodes (and humans) can be securely validated and regulated in a mathematical manner that is as fair as the rules developers create and not via any human administrator.</p>
-          <h3>Features</h3>
-          <ul>
-            <li>Fully encapsulated and tested security system</li>
-            <li>Identify network assets with clarity and confidence</li>
-            <li>Remove certificate authorities and associated security weaknesses (and payments)</li>
-            <li>Includes key revocation capability when in conjunction with <a href="http://www.maidsafe.net/libraries-routing.html">MaidSafe-Routing</a> and <a href="http://www.maidsafe.net/libraries-vault.html">MaidSafe-Vault</a> via <a href="http://www.maidsafe.net/libraries-network-file-system.html">MaidSafe-Network-Filesystem</a>.</li>
-          </ul>
-          <h3>Programming languages</h3>
-          <h3>Core</h3>
-          <p>C++11 compatible with GCC (4.7 and above), Clang (3.3 and above) and MSVC 2012 (with no dependency on CTP releases). Tested on Windows 32/64 bit, Linux 32/64 bit (dependent on GCC version) and OSX (Mountain Lion and above).</p>
-          <h3>Status</h3>
-          <p>This library is considered <strong>BETA</strong> quality and is provided with a full test suite and QA suite. This can be considered for use in production quality systems at this time.</p>
-          <h3>Roadmap</h3>
-          <ul>
-            <li>Constantly investigate asymmetric algorithms for improvements</li>
-            <li>Improve revocation capability (i.e. include API for key crippling)</li>
-          </ul>
-          <h3>Links</h3>
-          <ul>
-            <li><a href="https://github.com/maidsafe/MaidSafe-Passport/wiki" target="_blank">Wiki, including build instructions</a>
-            </li>
-            <li><a href="https://groups.google.com/forum/?fromgroups#%21forum/maidsafe-development" target="_blank">Developer mailing list</a>
-            </li>
-            <li><a href="https://github.com/maidsafe/MaidSafe-Passport/issues?state=open" target="_blank">Issue tracker</a>
-            </li>
-            <li><a href="http://dash.maidsafe.net" target="_blank">Build Status</a>
-            </li>
-          </ul>
-        </div>
-        <div class="grid-3 rightnav">
-          <div class="rightnav-box github">
-            <a href="https://github.com/maidsafe/MaidSafe-Passport/wiki" target="_blank">
-              <!-- content -->
-              <p>View on GitHub</p>
-            </a>
+        <h1>The MaidSafe Team</h1>
+        <div class="team-row">
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>David Irvine</h2>
+              <h3>Joint CEO - Chairman</h3>
+              <p>David has in excess of 23 years experience in IT and 15 years running companies. He was previously responsible for Enterprise network design and project management and has worked on some of the world’s largest network projects. David is
+                also a published author on papers in the fields of complex networking, distributed computing and cryptography related technologies. David enjoys sailing, engineering, camping and has a secret interest in intelligent robotics.</p>
+            </div>
           </div>
-          <div class="rightnav-box back">
-            <a href="maidsafe-network-platform-libraries">
-              <p>Back to Libraries</p>
-            </a>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Fraser Hutchison</h2>
+              <h3>Director Research &amp; Development</h3>
+              <p>Further to studying computing science at University, Fraser&rsquo;s diverse range of experience has seen him serve 14 years with the Oxfordshire Fire Brigade and Strathclyde Fire and Rescue in addition to 10 years as a director of a service
+                business. Fraser has been a member of the MaidSafe team for 4 years. Fraser is married and has a son. At weekends he enjoys programming, hillwalking and playing football.</p>
+            </div>
+          </div>
+          <div class="grid-4 r">
+            <div class="col-r">
+              <h2>Nick Lambert</h2>
+              <h3>Chief Operating Officer</h3>
+              <p>Nick has an MSc in Marketing and has spent the last 10 years in senior marketing positions. Prior to that he fulfilled project management roles within large blue chip technology companies. Nick is responsible for sales and marketing, intellectual
+                property, user support and MaidSafe&rsquo;s revenue streams.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-row">
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>Chandra Prakash</h2>
+              <h3>Systems Analyst</h3>
+              <p>Prakash completed his engineering degree in Electronics &amp; Communication in India and worked there as a Software Developer for a few years in a Telecom domain.</p>
+              <p>Later, he moved to the UK to pursue MBA from the University of Sheffield. After graduating he became very excited by MaidSafe's vision and joined the company in January 2011. As well as his interest in computer hardware and gadgets, he likes
+                playing chess, travelling and watching movies.</p>
+            </div>
+          </div>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Mahmoud Moadeli</h2>
+              <h3>Research Engineer</h3>
+              <p>Mahmoud received a BSc in Computer Hardware Engineering and an MSc in Computer Systems Architecture whilst in Iran, he then came to the UK to obtain his PhD in Computer Science from The University of Glasgow. Before starting at MaidSafe
+                he spent over 3 years working in the software industry, followed by another 3 years working as a test engineer in hardware manufacturing. His interests include Peer-to-Peer networking, analytical modelling, interconnection networks and
+                software tools for manycore acceleration.</p>
+            </div>
+          </div>
+          <div class="grid-4" r>
+            <div class="col-r">
+              <h2>Viv Rajkumar</h2>
+              <h3>Research Engineer</h3>
+              <p>Viv qualified with a BEng(Hons) in Aerospace Engineering and Astronautics at Kingston University. He previously spent time in IBM as a Server Specialist and currently heads up the User Experience team at MaidSafe dealing with WPF, Cocoa
+                OSX and Qt UI Systems.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-row">
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>Qi Ma</h2>
+              <h3>Research Engineer</h3>
+              <p>Interested in the idea of creating a secure peer-to-peer network and tempted by the outdoor activities Scotland has to offer, Qi joined MaidSafe in 2011. With an impressive PhD in Health Informatics, MSc in Computer Science, BEng in Electronic
+                Engineering and over ten years industry experience, Qi brings a wealth of knowledge to the team!</p>
+            </div>
+          </div>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Lorraine McNally-Jones</h2>
+              <h3>Director</h3>
+              <p>Before joining MaidSafe, Lorraine spent over 17 years within Senior Management in Air Traffic Control. She is also a Clinical Hypnotherapist and Reiki Practitioner and used to run her own practice. Lorraine is married with two children.
+                She spends most of her free time horse riding but also loves camping and all things outdoors!</p>
+            </div>
+          </div>
+          <div class="grid-4 r">
+            <div class="col-r">
+              <h2>Linda Rose</h2>
+              <h3>Administrator</h3>
+              <p>Linda has travelled extensively working as a Display Manager for Topshop and Habitat. She then went on to graduate as a Bachelor of Science and worked for South Ayrshire Council and Kilmarnock College before coming to MaidSafe. Linda is
+                renowned for her love of food (we don&rsquo;t know where she puts it all!) and enjoys long walks along the beach with her Yorkshire Terrier.</p>
+            </div>
+          </div>
+        </div>
+        <div class="team-row">
+          <div class="grid-4 l">
+            <div class="col-l">
+              <h2>Shona Oldham</h2>
+              <h3>Visual Designer</h3>
+              <p>Shona has an HND in Graphic Design and is part of the User Experience team. She previously spent 3 years working for a creative agency and is now in her second year at MaidSafe. Her favourite things include family movie nights, aerial silks,
+                Instagram, doing handstands, chewing fruit gums and hosting tea parties.</p>
+            </div>
+          </div>
+          <div class="grid-4">
+            <div class="col-m">
+              <h2>Scott Mackenzie</h2>
+              <h3>Front-End Developer</h3>
+              <p>Scott has almost 10 years experience in Graphic Design and Web Development. He spent 3 years in his last role in a Glasgow company before joining the team at MaidSafe. Scott enjoys playing football, house music and a bit of golf. He lives
+                a quiet life and you can normally find him sitting in on a Saturday night reading a novel with a cup of tea :)</p>
+            </div>
+          </div>
+          <div class="grid-4 r">
+            <div class="col-r">
+              <h2>Justine McLevy</h2>
+              <h3>HR Manager</h3>
+              <p>Justine has over 20 years experience in the catering and leisure sector and during that time she has run her own business and obtained qualifications in customer relations. Her favourite pastimes are shopping and music (including camping
+                at T in the Park). Justine also undertakes the role as sports mum - just as long as shops are nearby and can still do lunch!</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   </div>
   </div>
