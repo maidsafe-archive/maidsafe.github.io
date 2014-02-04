@@ -1,97 +1,87 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-<title>404, MaidSafe</title>
-<meta name="description" content="MaidSafe 404." />
-<meta name="keywords" content="404, MaidSafe"/>
-<meta name="author" content="MaidSafe" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-<meta name="robots" content="all" />
-<meta name="revisit-after" content="30 days" />
+  <title>MaidSafe Press</title>
+  <meta name="description" content="The MaidSafe Platform is protected by a patent portfolio and is distributed under 2 different types of license, Open Source and Commercial." />
+  <meta name="keywords" content="MaidSafe Licensing" />
+  <meta name="author" content="MaidSafe" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="robots" content="all" />
+  <meta name="revisit-after" content="30 days" />
 
-<!-- Favicons -->
-<link rel="shortcut icon" href="/images/favicon.ico" />
-<link rel="icon" type="image/ico" href="/images/favicon.ico" />
-  
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="css/rwdgrid.css"/>
-<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
 
-<!-- SureFile Download browser detect -->
-<script type="text/javascript" src="js/browserdetect.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
-<script type="text/javascript">
-document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
-</script>
+  <!-- SureFile Download browser detect -->
+  <script type="text/javascript" src="js/browserdetect.js"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-<script>window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')</script>
-<script>
-jQuery( document ).ready( function( $ ) {
-	
-		$('body').addClass('js');
-		  var $menu = $('#menu'),
-		  	  $menulink = $('.menu-link'),
-		  	  $menuTrigger = $('.has-submenu > a');
-
-		$menulink.click(function(e) {
-			e.preventDefault();
-			$menulink.toggleClass('active');
-			$menu.toggleClass('active');
-		});
-
-		$menuTrigger.click(function(e) {
-			e.preventDefault();
-			var $this = $(this);
-			$this.toggleClass('active').next('ul').toggleClass('active');
-		});	
-});
-</script>
+  <script type="text/javascript">
+    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+  </script>
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$(".toggle_container").hide();
-	$("h2.trigger").toggle(function(){
-		$(this).addClass("active"); 
-		}, function () {
-		$(this).removeClass("active");
-	});
-	$("h2.trigger").click(function(){
-		$(this).next(".toggle_container").slideToggle("slow,");
-	});
-});
-</script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<!-- IE Fix for Sticky Footer -->
-<!--[if !IE 7]>
+  <script>
+    window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  <script>
+    jQuery(document).ready(function ($) {
+
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link'),
+        $menuTrigger = $('.has-submenu > a');
+
+      $menulink.click(function (e) {
+        e.preventDefault();
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+      });
+
+      $menuTrigger.click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass('active').next('ul').toggleClass('active');
+      });
+    });
+  </script>
+
+  <!-- IE Fix for Sticky Footer -->
+  <!--[if !IE 7]>
 	<style type="text/css">
 		#wrap {display:table;height:100%}
 	</style>
 <![endif]-->
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32549768-1']);
+    _gaq.push(['_trackPageview']);
 
- var _gaq = _gaq || [];
- _gaq.push(['_setAccount', 'UA-32549768-1']);
- _gaq.push(['_trackPageview']);
-
- (function() {
-   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
- })();
-
-</script>
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
-<body id="error">
-<div id="container">
+
+<body id="press">
+  <div id="container">
     <div id="main">
     <header class="shadow">
       <div class="container-12 fw">
@@ -109,7 +99,7 @@ $(document).ready(function(){
                     </li>
                     <li><a href="distributed-network-features">features</a>
                     </li>
-                    <li><a href="faqs">faqs</a>
+                    <li><a href="maidsafe-network-platform-libraries">libraries</a>
                     </li>
                     <li><a href="network-platform-use-cases">use cases</a>
                     </li>
@@ -137,9 +127,8 @@ $(document).ready(function(){
                     </li>
                     <li><a href="team">team</a>
                     </li>
-                    
                   </ul>
-                </li> 
+                </li>
                 <li class="press"><a href="press">press</a>
                 </li>
                 <li class="blog"><a href="http://maidsafeplatform.wordpress.com/" target="_blank">blog</a>
@@ -151,14 +140,25 @@ $(document).ready(function(){
         </div>
       </div>
     </header>
-        <div class="container-12">
-        	<div class="main-content">
-           <iframe src="http://notfound-static.fwebservices.be/404/index.html?&amp;key=81bff893fc9b0dc1811456cf63bdd7be" width="100%" height="650" frameborder="0" class="grid-12"></iframe>
-            </div> 
+      <div class="container-12">
+        <div class="grid-9 main-content">
+            <h1>Press</h1>
+            <p>MaidSafe press overview and introduction.</p>
+            <p>The frictionless decentralized development platform</p>
         </div>
-  	</div>  
-</div>
-<footer>
+        <div class="grid-3 leftnav-shell">
+        	<h3>Press Archive</h3>
+          <ul class="leftnav">
+            <li class="maidsafe-bitcloud"><a href="maidsafe-bitcloud">Scottish company Maidsafe claims to have built a Bitcloud-like system</a>
+            </li>
+            <li class="revolutionise-internet"><a href="scottish-company-plans-revolutionise-internet">New network could &lsquo;revolutionise&rsquo; the Internet by eliminating viruses, hacking and surveillance</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      </div>
+  <footer>
   <div class="container-12">
     <div class="grid-2 footer-links">
       <ul>
@@ -166,7 +166,6 @@ $(document).ready(function(){
         </li>
         <li><a href="company-privacy-security-freedom">Company</a>
         </li>
-        
         <li><a href="press">Press</a>
         </li>
         <li><a href="http://maidsafeplatform.wordpress.com/" target="_blank">Blog</a>
