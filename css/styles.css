@@ -442,7 +442,11 @@ header {
 #careers .menu .careers a,
 #stakeholders .menu .stakeholders a,
 #blog .menu .blog a,
-#contact .menu .contact a {
+#contact .menu .contact a,
+#press .menu .press a,
+#maidsafe-bitcloud .menu .press a,
+#revolutionise-internet .menu .press a,
+#calling-developers .menu .press a {
 	color: #5593D7;
 }
 
@@ -453,6 +457,12 @@ header {
 #platform-libraries ul.leftnav .libraries a,
 #use-cases ul.leftnav .usecases a,
 #licensing ul.leftnav .licensing a {
+	color:#5593D7;
+}
+
+#maidsafe-bitcloud ul.leftnav .maidsafe-bitcloud a,
+#revolutionise-internet ul.leftnav .revolutionise-internet a,
+#calling-developers ul.leftnav .calling-developers a {
 	color:#5593D7;
 }
 
