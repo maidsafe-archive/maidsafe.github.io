@@ -35,6 +35,9 @@ LS.SystemDetector = {
     }
     return version
   },
+  isMavericks: function () {
+    return this.isMac() && (this.macVersion().indexOf("10.9") != -1)
+  },
   isMountainLion: function () {
     return this.isMac() && (this.macVersion().indexOf("10.8") != -1)
   },
@@ -46,7 +49,7 @@ LS.SystemDetector = {
     return !!this.getAgent().match(/win/i)
   },
   isWin8: function () {
-    return this.isWin() && (this.getAgent().match(/nt\s*6\.2([0-9]{0,2})?/i))
+    return this.isWin() && (this.getAgent().match(/nt\s*6\.[23]([0-9]{0,2})?/i))
   },
   isWin7: function () {
     return this.isWin() && (this.getAgent().match(/nt\s*6\.1([0-9]{0,2})?/i))
