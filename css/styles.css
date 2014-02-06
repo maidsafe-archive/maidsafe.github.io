@@ -425,6 +425,7 @@ header {
 .menu ul li a { 
 	display: block;
 	text-decoration: none;
+	color: #808080;
 }
 .menu ul li > a { 
 	
