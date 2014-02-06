@@ -786,7 +786,7 @@ blockquote.quote span {
 	background-image: url(imgs/close_quote.png);
 	background-repeat: no-repeat;
 	background-position: bottom right;
-	padding-right: 30px;
+	padding-right: 50px;
 }
 
 .quote-box p {
@@ -814,8 +814,6 @@ p.quoter {
     z-index: 168;
 	
 }
-
-
 
 .blog-box h1 {
 	background:url(imgs/fromtheblog_quotemarks.png) no-repeat top center;
