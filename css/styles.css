@@ -436,11 +436,9 @@ header {
 #platform-faqs .menu .overview a,
 #platform-use-cases .menu .overview a,
 #licensing-platform .menu .overview a,
-
 #developers .menu .developers a,
 #platform-libraries .menu .developers a,
 #licensing-developers .menu .developers a,
-
 #company .menu .company a,
 #careers .menu .careers a,
 #stakeholders .menu .stakeholders a,
@@ -460,7 +458,6 @@ header {
 #platform-libraries ul.leftnav .faqs a,
 #platform-use-cases ul.leftnav .usecases a,
 #licensing-platform ul.leftnav .licensing a,
-
 #developers ul.leftnav .overview a,
 #platform-libraries ul.leftnav .libraries a,
 #licensing-developers ul.leftnav .licensing a, {
