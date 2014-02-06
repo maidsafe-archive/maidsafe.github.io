@@ -1233,6 +1233,7 @@ Company Page Styles
 #company .grid-4.r {
 	margin-right:0px;
 }
+
 /*******************************************************************************
 
 Careers Page Styles
@@ -1263,22 +1264,15 @@ Careers Page Styles
 
 /*******************************************************************************
 
-Stakeholders Page Styles
+Press Page Styles
 
 *******************************************************************************/
-#stakeholders .col-l {
-	border-right:1px dashed rgba(223,223,223,1.00);
-}
-#stakeholders .col-l p, #stakeholders .col-l form {
-	padding-right:30px;
-}
-#stakeholders .col-r p, #stakeholders .col-r h1, #stakeholders .col-r form {
-	padding-left:30px;
+
+.pr-image {
+	float:right;
+	margin:0 0 20px 20px;
 }
 
-#stakeholders .container-12 .grid-6 {
-    width: 459px;
-}
 /*******************************************************************************
 
 Contact Page Styles
