@@ -649,6 +649,10 @@ video {
 	background-color:rgba(255,255,255,1.00);
 }
 
+.video-container {
+	margin:20px 0 30px 0;
+}
+
 .mobile-video {
 	margin-bottom:50px;
 }
