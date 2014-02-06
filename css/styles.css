@@ -440,7 +440,7 @@ header {
 #platform-libraries .menu .developers a,
 #licensing-developers .menu .developers a,
 #company .menu .company a,
-#careers .menu .careers a,
+#careers .menu .company a,
 #stakeholders .menu .stakeholders a,
 #blog .menu .blog a,
 #contact .menu .contact a,
@@ -460,13 +460,19 @@ header {
 #licensing-platform ul.leftnav .licensing a,
 #developers ul.leftnav .overview a,
 #platform-libraries ul.leftnav .libraries a,
-#licensing-developers ul.leftnav .licensing a, {
+#licensing-developers ul.leftnav .licensing a {
 	color:#5593D7;
 }
 
 #maidsafe-bitcloud ul.leftnav .maidsafe-bitcloud a,
 #revolutionise-internet ul.leftnav .revolutionise-internet a,
 #calling-developers ul.leftnav .calling-developers a {
+	color:#5593D7;
+}
+
+#company ul.leftnav .overview a,
+#team ul.leftnav .team a,
+#careers ul.leftnav .careers a {
 	color:#5593D7;
 }
 
