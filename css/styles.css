@@ -44,8 +44,6 @@ table {
 	border-spacing: 0;
 }
 
-
-
 .clearfix:after {
     content: ".";
     display: block;
@@ -433,11 +431,16 @@ header {
 	padding: 19px 12px;*/	
 }
 
-#platform-overview .menu .platform a,
-#platform-features .menu .platform a,
-#platform-libraries .menu .platform a,
-#use-cases .menu .platform a,
-#licensing .menu .platform a,
+#platform-overview .menu .overview a,
+#platform-features .menu .overview a,
+#platform-faqs .menu .overview a,
+#platform-use-cases .menu .overview a,
+#licensing-platform .menu .overview a,
+
+#developers .menu .developers a,
+#platform-libraries .menu .developers a,
+#licensing-developers .menu .developers a,
+
 #company .menu .company a,
 #careers .menu .careers a,
 #stakeholders .menu .stakeholders a,
@@ -454,9 +457,13 @@ header {
 
 #platform-overview ul.leftnav .overview a,
 #platform-features ul.leftnav .features a,
+#platform-libraries ul.leftnav .faqs a,
+#platform-use-cases ul.leftnav .usecases a,
+#licensing-platform ul.leftnav .licensing a,
+
+#developers ul.leftnav .overview a,
 #platform-libraries ul.leftnav .libraries a,
-#use-cases ul.leftnav .usecases a,
-#licensing ul.leftnav .licensing a {
+#licensing-developers ul.leftnav .licensing a, {
 	color:#5593D7;
 }
 
@@ -748,6 +755,50 @@ p.alpha-testers {
 	margin:0 auto;
 }
 
+
+.quote-box {
+	background-color:rgba(233,233,233,1.00);
+	box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
+	margin:6% 0;
+	padding:2% 3% 2% 3%;
+    position: relative;
+    z-index: 168;
+}
+
+blockquote.quote {
+	font-family: 'OpenSansLight', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+	font-size:18px;
+	padding: 8px;
+	margin: 5px;
+	background-image: url(imgs/open_quote.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	text-indent: 53px;
+}
+blockquote.quote span {
+	display: block;
+	background-image: url(imgs/close_quote.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	padding-right: 30px;
+}
+
+.quote-box p {
+	font-family: 'OpenSansLight', Arial, sans-serif;
+    line-height: 1.4;
+    padding-top: 0;
+	margin-bottom:0px;
+}
+
+p.quoter {
+	font-size:14px;
+	font-weight:bold;
+	text-align:right;
+}
+
 .blog-box {
 	background-color: #FFFFFF;
     border-color: rgba(0, 0, 0, 0);
@@ -760,6 +811,8 @@ p.alpha-testers {
     z-index: 168;
 	
 }
+
+
 
 .blog-box h1 {
 	background:url(imgs/fromtheblog_quotemarks.png) no-repeat top center;
@@ -1894,6 +1947,31 @@ p.alpha-testers {
 .article-1 {  padding-right:35px;}
 .article-2 {  padding-left:15px;}
 
+
+.quote-box {
+	margin:4% 0;
+	padding:2% 3% 2% 3%;
+}
+
+blockquote.quote {
+	font-size:16px;
+	padding: 8px;
+	margin: 5px;
+	text-indent: 43px;
+	background-size:30px 23px;
+}
+blockquote.quote span {
+	background-size:30px 23px;
+}
+
+p.quoter {
+	font-size:14px;
+	font-weight:bold;
+	text-align:right;
+}
+
+
+
 /*********** Careers Page ***************/
 .vacancies {
 	padding:20px;
@@ -2201,7 +2279,27 @@ ul.leftnav li ul li a {
 	padding-left:15px;
 }
 
+.quote-box {
+	margin:4% 0;
+	padding:2% 3% 2% 3%;
+}
 
+blockquote.quote {
+	font-size:16px;
+	padding: 8px;
+	margin: 5px;
+	text-indent: 43px;
+	background-size:30px 23px;
+}
+blockquote.quote span {
+	background-size:30px 23px;
+}
+
+p.quoter {
+	font-size:12px;
+	font-weight:bold;
+	text-align:right;
+}
 
 .blog-box h1 {
 	margin-bottom:20px!important;
@@ -2709,6 +2807,28 @@ p.alpha-testers {
 #home .para-l p,
 #home .para-r p {
 	padding:0px;
+}
+
+.quote-box {
+	margin:4% 0;
+	padding:2% 3% 2% 3%;
+}
+
+blockquote.quote {
+	font-size:16px;
+	padding: 8px;
+	margin: 5px;
+	text-indent: 43px;
+	background-size:30px 23px;
+}
+blockquote.quote span {
+	background-size:30px 23px;
+}
+
+p.quoter {
+	font-size:12px!important;
+	font-weight:bold;
+	text-align:right;
 }
 
 .blog-box {
