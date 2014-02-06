@@ -148,15 +148,17 @@
         </div>
       </div>
       <div class="container-12">
-        <div class="grid-12">
+        <div class="grid-12 video-container">
           <h2>"MaidSafe will do for data what Bitcoin does for trade"</h2>
           <a href="decentralised-internet-is-here" title="Press Release : The Decentralised Internet is Here." class="cent">Press Release : The Decentralised Internet is Here.</a>
+          <iframe width="560" height="315" src="http://www.youtube.com/embed/RdGH40oUVDY" frameborder="0" allowfullscreen></iframe>
+          <!--
           <video id="video" poster="video/poster-mobile.png" tabindex="0" class="video-box" preload="auto" controls>
             <source src="video/MaidSafe_Technology_Overview.mp4" type="video/mp4">
               <source src="video/MaidSafe_Technology_Overview.ogv" type="video/ogv">
                 <source src="video/MaidSafe_Technology_Overview.webm" type="video/webm">
                   Your browser does not support the video tag.
-          </video>
+          </video>-->
         </div>
       </div>
       <div class="container-12">
@@ -183,14 +185,10 @@
         </section>
         <div class="grid-12">
           <div class="quote-box">
-            <div class="clearfix">
-             
-             <blockquote class="quote"><span>This revolutionary technology provides a highly scalable, secure data storage and access solution which avoids network bottlenecks and central points of failure. It will fundamentally change the way we think about storing data.</span></blockquote>
-             
+            <div class="clearfix">      
+             <blockquote class="quote"><span>This revolutionary technology provides a highly scalable, secure data storage and access solution which avoids network bottlenecks and central points of failure. It will fundamentally change the way we think about storing data.</span></blockquote>  
                 <p class="quoter"><strong>Dr Mario Kolberg SMIEEE, Senior Lecturer Computing Science, University of Stirling</strong>
                 </p>
-              
-             
             </div>
           </div>
         </div>
@@ -282,5 +280,12 @@
     </div>
   </div>
 </footer>
+<script src="js/jquery.fitvids.js"></script>
+      <script>
+        // Basic FitVids Test
+        $(".video-container").fitVids();
+        // Custom selector and No-Double-Wrapping Prevention Test
+        $(".video-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
+      </script>
 </body>
 </html>
