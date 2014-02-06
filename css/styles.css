@@ -449,11 +449,10 @@ header {
 #press .menu .press a,
 #maidsafe-bitcloud .menu .press a,
 #revolutionise-internet .menu .press a,
-#calling-developers .menu .press a {
+#calling-developers .menu .press a,
+#ieee .menu .press a {
 	color: #5593D7;
 }
-
-
 
 #platform-overview ul.leftnav .overview a,
 #platform-features ul.leftnav .features a,
@@ -468,7 +467,8 @@ header {
 
 #maidsafe-bitcloud ul.leftnav .maidsafe-bitcloud a,
 #revolutionise-internet ul.leftnav .revolutionise-internet a,
-#calling-developers ul.leftnav .calling-developers a {
+#calling-developers ul.leftnav .calling-developers a,
+#ieee ul.leftnav .ieee a {
 	color:#5593D7;
 }
 
