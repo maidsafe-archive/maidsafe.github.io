@@ -146,7 +146,7 @@
           <h1>MaidSafe-Encrypt</h1>
           <h2>MaidSafe Encrypt Library</h2>
           <h3>Description</h3>
-          <p id="u1797-4">This is <strong>NOT</strong> an encryption algorithm per se, rather this is an algorithm that utilises existing very well tested algorithms (predominantly AES 256 in this case). The library provides a sliding window algorithm that can encrypt
+          <p>This is <strong>NOT</strong> an encryption algorithm per se, rather this is an algorithm that utilises existing very well tested algorithms (predominantly AES 256 in this case). The library provides a sliding window algorithm that can encrypt
             data of any length, even if written in a random manner (or parts overwritten during write). It is very useful for encrypting disk based storage of huge data or writing data encrypted to a key value store in a manner that cannot be algorithmically
             reversed (as in reversing AES or similar algorithms). The chunks of data provided are self checking and the process is recursive, so the keys output can themselves be concatenated into a large file and passed back into the algorithm, creating
             a single key for any size of data set.</p>
@@ -155,7 +155,7 @@
             chunks (cyclically) to produce keying material to encrypt that chunk. This chaining obfuscates common file fragments. The resulting encrypted chunk is the data stored in the network, and its hash stored in the data map. The system uses an
             underlying peer to peer network based on a Kademlia DHT. This is a very efficient hash table implementation that has been widely deployed in many networks of millions of nodes. Unlike standard peer to peer networks, data can be deleted from
             the network under instruction from authorised clients with the appropriate digital signature and validated ID.</p>
-          <img src="images/opportunistic-caching.png" width="600" height="527" alt="" />
+          <img src="images/opportunistic-caching.png" width="600" height="527" alt="" id="end-to-end-encryption" />
           <p>Encrypt overview Encryption is based on the file content and so known plaintext attacks are possible. However, this is a requirement of deduplication, and is only possible when the adversary already has a copy of the file. It is possible to
             recognise chunks belonging to particular files, and therefore the presence of particular known files on the system, but it is not possible to tie those chunks to a particular user.</p>
           <p id="u1832-30">Files are always split into a minimum of three chunks (smaller files are encoded within the data map directly for efficiency), so the probability of simultaneous collisions on all file chunk hashes are small enough to be ignored.</p>
