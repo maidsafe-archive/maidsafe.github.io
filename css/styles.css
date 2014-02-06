@@ -238,8 +238,9 @@ body {
 	word-wrap: break-word;
 }
 a:link
-{
-	color: #808080;
+{		
+	color: #5593D7;
+	/*color: #808080;*/
 	text-decoration: inherit;
 }
 
@@ -251,7 +252,7 @@ a:visited
 
 a:hover
 {
-	color: #5593D7;
+	color: #326fb3;
 	text-decoration: inherit;
 }
 
