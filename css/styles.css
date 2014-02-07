@@ -691,51 +691,55 @@ video {
 	position: relative;
 	display:block;
 	float:left;
-	margin-bottom:60px;	
+	margin-bottom:60px;
+	text-align:center;
 }
-
+.home-box h2 {
+	margin-bottom: 100px !important;
+    padding-top: 10px;
+	color:#5593d7!important;
+}
 .home-box p {
 	text-align:center;
-	font-family: 'OpenSansRegular', Arial, sans-serif;
-	font-size: 18px;
+	font-family: 'OpenSansLight', Arial, sans-serif;
+	font-size: 16px;
 	font-weight: 400;
-	color:#5593D7;
+	color:#5a5a5a;
 	margin:0px;
+	padding-top:50px;
 }
-
-.home-box h2 {
-	text-indent:-9999px;
-	margin-bottom:20px;
-}
-
 
 .first {
-	width:430px;
-	padding:15px;
+	padding:20px 30px;
 	margin-right:5px;
-	min-height:200px;
-	/*margin-right:20px;*/
 }
 
 .middle {
-	background-color:#E6F0FA;
-	padding:20px;
-	width:250px;
-	min-height:190px;
+	padding:20px 30px;
 	margin:0 10px;
 }
 
-.middle p {
-	color:rgba(0,0,0,1.00);
+.last {
+	padding:20px 30px;
+	margin-left:10px;
 }
 
-.last {
-	padding:20px;
-	width:420px;
-	min-height:190px;
-	margin-left:10px;
-	/*margin-left:20px;*/
+.developer-area {
+	background:url(imgs/developer_home_icon.png) no-repeat center;
+	background-size:179px 114px;
 }
+
+.press-area {
+	background:url(imgs/press_home_icon.png) no-repeat center;
+	background-size:193px 114px;
+}
+
+.github-area {
+	background:url(imgs/github_home_icon.png) no-repeat center;
+	background-size:127px 123px;
+}
+
+
 
 .maidsafe-platform {
 	background:url(imgs/maidsafe-platform-logo.png) no-repeat 0 0; width:264px; height:150px;
@@ -747,8 +751,7 @@ video {
 	background:url(imgs/surefile-logo.png) no-repeat 0 0; width:150px; height:78px;
 	background-size:150px 78px;
 	display:block;
-	margin:0 auto;
-	
+	margin:0 auto;	
 }
 
 p.alpha-testers {
@@ -1867,46 +1870,56 @@ input, textarea {
 
 
 
-#home h2 {
-	font-size:22px;
-	margin-bottom:40px;
-}
 
-.home-box {
-	margin-bottom:40px;
-}
 
 .home-box p {
-	font-size: 18px;
+	font-size: 14px;
+}
+
+.home-box h2 {
+    margin-bottom: 80px !important;
+    padding-top: 10px;
 }
 
 .first {
-	width:300px;
-	padding:15px;
+	padding:15px 20px;
 	margin-right:5px;
-	min-height:176px;
 }
 
 .middle {
-	padding:20px;
-	width:180px;
-	min-height:168px;
-	margin:0 5px;
+	padding:15px 20px;
+	margin:0 10px;
 }
-
 
 .last {
-	padding:20px;
-	width:290px;
-	min-height:168px;
-	margin-left:5px;
+	padding:15px 20px;
+	margin-left:10px;
 }
+
+.developer-area {
+	background-size:130px 83px;
+}
+
+.press-area {
+	background-size:140px 83px;
+}
+
+.github-area {
+	background-size:90px 87px;
+}
+
 
 p.alpha-testers {
 	font-size: 28px;
 	font-family:'OpenSansBold', Arial, sans-serif;
 	margin-bottom:8px;
 	line-height:32px;
+}
+
+
+p.alpha-testers {
+	font-size: 24px;
+	margin-bottom:10px;
 }
 
 .maidsafe-platform {
@@ -1931,19 +1944,7 @@ ul.leftnav li a { font-size:14px;}
 ul.leftnav li ul li a { font-size:12px;}
 
 
-.home-box p {
-	font-size: 16px;
-}
 
-.middle h2 {
-	margin-bottom:4%;
-}
-
-
-p.alpha-testers {
-	font-size: 24px;
-	margin-bottom:10px;
-}
 
 .article-1 {  padding-right:35px;}
 .article-2 {  padding-left:15px;}
@@ -2201,44 +2202,45 @@ video {
 	display:none;
 }
 
-.home-box {
-	margin-bottom:30px;
-}
 
-
-.first {
-	width:225px;
-	padding:10px;
-	margin-right:0px;
-	min-height:130px;
-}
-
-.middle {
-	padding:15px;
-	width:130px;
-	min-height:152px;
-	margin:0 5px 0px 2px;
-}
-
-
-.last {
-	padding:15px;
-	width:215px;
-	min-height:120px;
-	margin-left:5px;
-}
-
-#home h2 {
-	font-size:18px;
-	margin-bottom:30px;
-}
 .home-box p {
 	font-size: 12px;
 }
 
-.middle h2 {
-	margin-bottom:10px;
+.home-box h2 {
+    margin-bottom: 50px !important;
+    padding-top: 10px;
+	font-size: 18px!important;
 }
+
+.first {
+	padding:10px;
+	margin-right:5px;
+}
+
+.middle {
+	padding:10px;
+	margin:0px;
+}
+
+.last {
+	padding:10px;
+	margin-left:5px;
+}
+
+.developer-area {
+	background-size:100px 64px;
+}
+
+.press-area {
+	background-size:105px 62px;
+}
+
+.github-area {
+	background-size:70px 68px;
+}
+
+
 
 .maidsafe-platform {
 	background-size:140px 80px;
@@ -2738,7 +2740,12 @@ input, textarea {
 
 }
 .home-box h2 {
-    margin-bottom: 10px;
+	margin-bottom:160px!important;
+	font-size: 22px!important;
+}
+
+.home-box p {
+	padding-top:15px;
 }
 
 #home p {
