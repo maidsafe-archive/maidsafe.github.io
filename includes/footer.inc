@@ -41,7 +41,7 @@
             	<a class="" href="http://www.internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
             		<img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge"/></a>
             </div>
-            <p class="legal">©2013 MaidSafe.net. All rights reserved.
+            <p class="legal">©2014 MaidSafe.net. All rights reserved.
             	<a href="disclaimer">DISCLAIMER</a>
             	<a href="privacy">PRIVACY</a>
             </p>
