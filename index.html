@@ -20,15 +20,30 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
 
   <!-- SureFile Download browser detect -->
   <script type="text/javascript" src="js/browserdetect.js"></script>
-
+  <script src="js/jquery.bxslider.min.js"></script>
   <script type="text/javascript">
     document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
   </script>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/jquery.bxslider.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(function() {
+  $('.bxslider').bxSlider({
+                            auto: true,
+                            autoControls: true,
+                            speed: 1000,
+                            pager: true,
+                            controls: false,
+                            tickerHover: true
+                          });
+});
+
+  </script>
 
   <script>
     window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
@@ -140,16 +155,67 @@
         </div>
       </div>
     </header>
-      <div class="banner">
-        <div class="container-12">
-          <h1>The Decentralised Internet is Here.</h1>
-
-          <div class="plane2" title="privacy secutiry freedom"></div>
+<!-- ###########################Banner Start########################################### -->
+      <ul class="bxslider">
+        <li> <img src=css/imgs/home_plane.png alt="plane from freedom" />
+        <h1>The Decentralised Internet is here!"</h1>
+        </li>
+        <li> <div class="clearfix">
+          <blockquote class="quote"><span>To my knowledge, this technology should revolutionise
+               the way data is managed, optimizing security, data validation and storage space 
+               requirements beyond any solution currently available in the industry</span>
+          </blockquote>  
+          <p class="quoter"><strong>Professor Bimal Kumar, Glasgow Caledonian University, 
+            Visiting Professor National University of Singapore and Stanford University USA
+          </strong>
+          </p>
         </div>
-      </div>
+        </li>
+        <li> <img src=css/imgs/home_plane.png alt="plane from freedom" />
+        <h1>"MaidSafe will do for data what Bitcoin does for trade"</h1>
+        </li>
+        <li> <div class="clearfix">
+          <blockquote class="quote"><span>This revolutionary technology provides a highly 
+              scalable, secure data storage and access solution which avoids network 
+              bottlenecks and central points of failure. It will fundamentally change 
+              the way we think about storing data.</span>
+          </blockquote>  
+          <p class="quoter"><strong>Dr Mario Kolberg SMIEEE,
+            Senior Lecturer Computing Science, University of Stirling
+          </strong>
+          </p>
+        </div>
+        </li>
+        <li><a href="https://github.com/maidsafe/MaidSafe/wiki"> <img src=css/imgs/github-octocat.png alt="Github logo" />
+            <h1>"Get the code now, proud to be Open Source!"</h1></a>
+        </li>
+        <li> <div class="clearfix">
+          <blockquote class="quote"><span>This technologyoffers a highly innovative and 
+              secure solution which through its distributed architecture simplifies data 
+              sharing and increases the resilience of the system to attack.</span>
+          </blockquote>  
+          <p class="quoter"><strong>Dr James Irvine,
+            , University of Strathclyde
+          </strong>
+          </p>
+        </div>
+        </li>
+        <li> <div class="clearfix">
+          <blockquote class="quote"><span>This network is a huge step forward in handling 
+              private data that will definitely change our attitude to privacy in the Internet 
+              -- that is the stored data is not controlled or analysed or associated with their 
+              owner but is simply kept as 0s and 1s. Isn't that great! </span>
+          </blockquote>  
+          <p class="quoter"><strong>Dr Natalia Chechina,
+            Research Associate at the University of Glasgow.
+          </strong>
+          </p>
+        </div>
+        </li>
+      </ul>
+<!-- #####################Banner finish####################################### -->
       <div class="container-12">
         <div class="grid-12">
-          <h2>"MaidSafe will do for data what Bitcoin does for trade"</h2>
           <a href="decentralised-internet-is-here" title="Press Release : The Decentralised Internet is Here." class="cent">Press Release : The Decentralised Internet is Here.</a>
           <div class="video-container">
           <iframe width="560" height="315" src="http://www.youtube.com/embed/RdGH40oUVDY" frameborder="0" allowfullscreen></iframe>
@@ -185,15 +251,6 @@
             </p>
           </div>
         </section>
-        <div class="grid-12">
-          <div class="quote-box">
-            <div class="clearfix">      
-             <blockquote class="quote"><span>This revolutionary technology provides a highly scalable, secure data storage and access solution which avoids network bottlenecks and central points of failure. It will fundamentally change the way we think about storing data.</span></blockquote>  
-                <p class="quoter"><strong>Dr Mario Kolberg SMIEEE, Senior Lecturer Computing Science, University of Stirling</strong>
-                </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
