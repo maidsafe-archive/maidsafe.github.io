@@ -240,13 +240,12 @@ body {
 a:link
 {		
 	color: #5593D7;
-	/*color: #808080;*/
 	text-decoration: inherit;
 }
 
 a:visited
 {
-	color: #808080;
+	color: #5593D7;
 	text-decoration: none;
 }
 
