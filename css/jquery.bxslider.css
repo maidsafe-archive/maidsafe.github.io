@@ -10,6 +10,11 @@
  * http://bxcreative.com
  */
 
+.bxslider {
+	text-align:center;
+}
+
+
 
 /** RESET AND LAYOUT
 ===================================*/
@@ -17,7 +22,7 @@
 .bx-wrapper {
 	position: relative;
 	margin: 0 auto 60px;
-	padding: 0;
+	padding: 35px 0 0;
 	*zoom: 1;
 }
 
@@ -30,12 +35,12 @@
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	-moz-box-shadow: 0 0 5px #ccc;
+	/*-moz-box-shadow: 0 0 5px #ccc;
 	-webkit-box-shadow: 0 0 5px #ccc;
 	box-shadow: 0 0 5px #ccc;
 	border: solid #fff 5px;
 	left: -5px;
-	background: #fff;
+	background: #fff;*/
 }
 
 .bx-wrapper .bx-pager,
@@ -77,7 +82,7 @@
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a {
-	background: #666;
+	background: #DBDBDB;
 	text-indent: -9999px;
 	display: block;
 	width: 10px;
@@ -91,7 +96,7 @@
 
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
-	background: #000;
+	background: #9A9A9B;
 }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
