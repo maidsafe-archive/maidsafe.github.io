@@ -319,7 +319,6 @@ p {
 }
 
 blockquote {
-	background-color:rgba(235,235,235,1.00);
 	padding:15px;
 	margin-bottom:30px;
 }
@@ -332,6 +331,7 @@ blockquote p {
 strong { font-weight:bold; font-style:normal;}
 
 .bdrr { border-right:1px solid #CCCCCC; }
+
 .cent {
 	display: block;
     text-align: center;
@@ -353,7 +353,7 @@ header {
 	font-family: 'OpenSansRegular', Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
-	padding: 0px;
+	padding: 20px 0 0 0;
 	margin-bottom:50px;
 	display:block;
 	background-color:rgba(255,255,255,1.00);
@@ -483,131 +483,166 @@ header {
 Banner Styles
 
 *******************************************************************************/
+
 .banner {
-	background-color:#5593D7;
-	height:250px;
-	margin-bottom:40px;
+	background:url(imgs/banner_shadow_top.png) repeat-x left top;
+	height:180px;
+	display:block;
+}
+blockquote.quote {
+	font-family: 'OpenSansLight', Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+	font-size:22px;
+	padding: 8px;
+	margin: 5px;
+	background-image: url(imgs/open_quote.png);
+	background-repeat: no-repeat;
+	background-size:34px 26px;
+}
+blockquote.quote span {
+	display: block;
+	background-image: url(imgs/close_quote.png);
+	background-repeat: no-repeat;
+	background-size:34px 26px;
+	padding-right: 45px;
+	padding-left:45px;
 }
 
-.banner img {
-	position:relative;
-	left:355px;
-	top:77px;
+.quote-box p {
+	font-family: 'OpenSansLight', Arial, sans-serif;
+    line-height: 1.4;
+    padding-top: 0;
+	margin-bottom:0px;
 }
 
-.banner h1 {
-	color:rgba(255,255,255,1.00);
-	font-size:48px;
-	font-family: 'OpenSansRegular',Arial,sans-serif;
-	padding-top:70px;
-	margin-bottom:40px;
+p.quoter {
+	font-size:13px;
+	font-weight:bold;
+	color:rgba(161,161,161,1.00);
 }
 
+/************************** Banner 1 ***************************/
+.banner-1 {
+	padding:25px 0 0 0;
+}
+.banner-1 h1 {
+	font-size:40px;
+	color:rgba(76,76,76,1.00);
+}
+.download-blue {
+	background:url(imgs/arrow_down_blue_icon.png) no-repeat 0 5px;
+	background-size:21px 21px;
+	padding-left:25px;
+	line-height:24px;
+	text-transform:uppercase;
+	font-size:22px;
+	font-family: 'OpenSansBold', Arial, sans-serif;
+}
+/************************** Banner 2 ***************************/
+.banner-2 {
+	padding:0px 40px 0 40px;
+}
+.banner-2 blockquote.quote {
+	background-position: 45px 5px;
+}
+.banner-2 blockquote.quote span {
+	background-position: 775px 60px;
+}
+.banner-2 p.quoter {
+	padding:0 180px;
+}
+/************************** Banner 3 ***************************/
+.banner-3 {
+	padding:20px 0 0 0;
+}
+.banner-3 h1 {
+	font-size:31px;
+	color:#5593D7;
+}
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
-	width:728px;
-	height:117px;
-	background-size:728px 117px;
+	width:423px;
+	height:68px;
+	background-size:423px 68px;
 	position:relative;
-	left:205px;
-	top:77px;
+	margin:0px auto 10px auto;
 }
-
-.plane2 {
-	background:url(imgs/home_plane.png) no-repeat 0 0;
-	width:270px;
-	height:43px;
-	background-size:270px 43px;
-	position:relative;
-	margin:10px auto 0 auto;
+/************************** Banner 4 ***************************/
+.banner-4 {
+	padding:5px 40px 0 40px;
 }
-
-/*******************************************************************************
-
-Form Styles
-
-*******************************************************************************/
-.row {
-	display:block;
-	margin-bottom:20px;
+.banner-4 blockquote.quote {
+	background-position: 10px 5px;
 }
-label {
-	display:block;
+.banner-4 blockquote.quote span {
+	background-position: 805px 60px;
 }
-input, textarea {
-	font-family: 'OpenSansRegular', Arial, sans-serif;
-	font-size:13px;
-	padding:6px;
-	background-color:rgba(242,242,242,1);
-	border:1px solid rgba(196,196,196,1); 
-	width:90%;
+.banner-4 p.quoter {
+	padding:0 150px;
 }
-
-
-.form-submit {
-	clear:both;
-	margin:20px 0;
+/************************** Banner 5 ***************************/
+.banner-5 {
+	padding:25px 0 0 0;
 }
-
-.form-submit input, .form-submit label {
-	display:inline;
+.banner-5 h1 {
+	font-size:31px;
+	color:#5593D7;
+	line-height: 110px;
 }
-
-.form-submit input {
-	width:auto;
-}
-
-.submit {
-	width:100px;
-	padding:8px 10px;
-	cursor:pointer;
-	float:right;
-}
-
-.submit-btn {
-	cursor:pointer;
-	border:1px solid rgba(107,107,107,1.00);
-	background-color:rgba(255,255,255,1.00);
-	width:120px;
-}
-
-.submit-btn:hover {
-	background-color:rgba(242,242,242,1.00);
-}
-
-/********* Validation styles *********/
-.validation-advice {
-	float:right; 
-	background:url(form-error.png) no-repeat 0px 5px;
-	color:rgb(255,0,0);
-	padding:5px 0 0 0px;
-	margin:2px 0 0 0;
-	font-size:12px;
-	min-width:17px;
-	min-height:15px;
-	position:relative;
-	left:-42px;
-	top:-28px;
-}
-
-input[type=text].validation-failed, textarea.validation-failed {
-	border-color:rgb(255,0,0);
-	color:rgb(255,0,0);
-}
-
-#advice-required-agree_commercial_license { position:relative; top:-5px; left:-140px}
-
-.required-field {
-	color:rgba(228,0,3,1)
-}
-
-#foo {
+.github-icon {
+	background:url(imgs/github-octocat.png) no-repeat 362px 0px;
 	width:100%;
 	height:100%;
-	background-color:rgba(3,3,3,1.00);
+	background-size:126px 110px;
 }
 
-
+.spacer {
+	display:inline-block;
+	width:150px;
+	height:40px;
+}
+/************************** Banner 6 ***************************/
+.banner-6 {
+	padding:5px 110px 0 110px;
+}
+.banner-6 blockquote.quote {
+	background-position: 10px 5px;
+}
+.banner-6 blockquote.quote span {
+	background-position: 670px 60px;
+}
+.banner-6 p.quoter {
+	padding:0 150px;
+}
+/************************** Banner 7 ***************************/
+.banner-7 {
+	padding:20px 0 0 0;
+}
+.banner-7 h1 {
+	font-size:40px;
+	color:#5593D7;
+}
+.maidsafe-platform-banner {
+	background:url(imgs/banner_maidsafe_platform.png) no-repeat top center;
+	width:404px;
+	height:48px;
+	margin:0 auto 20px auto;
+}
+/************************** Banner 8 ***************************/
+.banner-8 {
+	padding:15px 0px 0 0px;
+}
+.banner-8 blockquote.quote {
+	background-position: 10px 5px;
+	padding:0px;
+}
+.banner-8 blockquote.quote span {
+	background-position: 910px 60px;
+}
+.banner-8 p.quoter {
+	padding:0 150px;
+}
 
 /*******************************************************************************
 
@@ -619,7 +654,9 @@ Home Page Styles
 	height:110px;
 }
 
-#home .shadow { background-image:none;}
+#home .shadow {
+	background:url(imgs/nav_shadow-2.png) repeat-x 0 0;
+}
 #home h1 {
 	text-align:center;	
 }
@@ -650,7 +687,7 @@ video {
 }
 
 .video-container {
-	margin:20px 0 30px 0;
+	margin:0px 0 40px 0;
 }
 
 .mobile-video {
@@ -736,115 +773,6 @@ video {
 	/*margin-left:20px;*/
 }
 
-.maidsafe-platform {
-	background:url(imgs/maidsafe-platform-logo.png) no-repeat 0 0; width:264px; height:150px;
-	display:block;
-	margin:0 auto;
-}
-
-.surefile-test {
-	background:url(imgs/surefile-logo.png) no-repeat 0 0; width:150px; height:78px;
-	background-size:150px 78px;
-	display:block;
-	margin:0 auto;
-	
-}
-
-p.alpha-testers {
-	font-size: 30px;
-	font-family:'OpenSansBold', Arial, sans-serif;
-	margin-bottom:10px;
-	line-height:36px;
-}
-
-.github-code {
-	background:url(imgs/github-octocat.png) no-repeat 0 0; width:159px; height:140px;
-	display:block;
-	margin:0 auto;
-}
-
-
-.quote-box {
-	background-color:rgba(233,233,233,1.00);
-	box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-	margin:6% 0;
-	padding:2% 3% 2% 3%;
-    position: relative;
-    z-index: 168;
-}
-
-blockquote.quote {
-	font-family: 'OpenSansLight', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.4;
-	font-size:18px;
-	padding: 8px;
-	margin: 5px;
-	background-image: url(imgs/open_quote.png);
-	background-position: top left;
-	background-repeat: no-repeat;
-	text-indent: 53px;
-}
-blockquote.quote span {
-	display: block;
-	background-image: url(imgs/close_quote.png);
-	background-repeat: no-repeat;
-	background-position: bottom right;
-	padding-right: 50px;
-}
-
-.quote-box p {
-	font-family: 'OpenSansLight', Arial, sans-serif;
-    line-height: 1.4;
-    padding-top: 0;
-	margin-bottom:0px;
-}
-
-p.quoter {
-	font-size:14px;
-	font-weight:bold;
-	text-align:right;
-}
-
-.blog-box {
-	background-color: #FFFFFF;
-    border-color: rgba(0, 0, 0, 0);
-    border-style: none;
-    box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-	margin:6% 0;
-	padding:3% 3% 3% 3%;
-    /*padding: 19px 49px 25px;*/
-    position: relative;
-    z-index: 168;
-	
-}
-
-.blog-box h1 {
-	background:url(imgs/fromtheblog_quotemarks.png) no-repeat top center;
-	font-family: 'OpenSansBold', Arial, sans-serif;
-	margin-bottom:3%!important;
-}
-
-.blog-box p {
-	font-family: 'OpenSansLight', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.4;
-    padding-top: 0;
-    text-align: left;
-	font-size:18px;
-	margin-bottom:0px;
-}
-
-.blog-box p a {
-	font-family: 'OpenSansRegular', Arial, sans-serif;
-	font-style:normal;
-	font-size:14px;
-	margin-top:4%;
-	display:block;
-}
-
 .article-1 { float:left; border-right:1px solid #cccccc; padding-right:45px;}
 .article-2 { float:right; padding-left:25px;}
 
@@ -856,7 +784,7 @@ Inner Page Styles
 
 *******************************************************************************/
 .shadow {
-	background:url(imgs/nav_shadow-2.png) repeat-x 0 0;
+	background:url(imgs/nav_shadow-2.png) repeat-x 0 20px;
 	clear: both;
     display: block;
     height: 130px;
@@ -914,10 +842,6 @@ ul.leftnav li ul li a { font-size:14px;}
 p {
 	margin-bottom:30px;
 }
-
-/*
-.grid-9 { padding-bottom:60px;}
-*/
 
 /*******************************************************************************
 
@@ -1091,44 +1015,6 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 	padding:20px 20px 0px 150px;
 }
 
-
-
-/*******************************************************************************
-
-License Sign-Up Page Styles
-
-*******************************************************************************/
-#license-signup .main-content {
-    margin-bottom:20px;
-}
-
-.commercial-license-form {
-	float:right;
-	margin-bottom:40px;
-}
-
-.commercial-license-form .grid-4 {
-	margin:0px 100px 0 0;
-	
-}
-
-.last-col {
-	margin:0px!important;
-}
-form {
-	
-}
-.pl {
-	padding-left:25px;
-	float:right;
-}
-.pr {
-	padding-right:25px;
-}
-
-#license-signup .submit {
-	margin-right:20px;
-}
 
 /*******************************************************************************
 
@@ -1723,7 +1609,7 @@ ul.social-links li a {
 .legal {
 	font-size: 12px;
 	font-weight: 400;
-	padding-top:0px;
+	padding-top:25px;
 	width:60%;
 	float:left;
 	line-height: 20px;
@@ -1777,9 +1663,14 @@ Header Styles
 
 *******************************************************************************/
 #home header {
-	height:80px;
+	height:90px;
 	font-size: 14px;
 }
+
+#home .shadow {
+    background-position:0px -25px ;
+}
+
 header {
 	height:80px;
 	font-size: 14px;
@@ -1806,54 +1697,141 @@ header {
 	margin-left:18px;
 }
 
+
+/************************ Banner Styles **************************/
+
 .banner {
-	height:150px;
-	margin-bottom:30px;
+	height:180px;
+}
+blockquote.quote {
+	font-size:18px;
+	padding: 8px;
+	margin: 5px;
+	background-size:28px 21px;
+}
+blockquote.quote span {
+	background-size:28px 21px;
+	padding-right: 25px;
+	padding-left:25px;
 }
 
-.banner h1 {
+p.quoter {
+	font-size:13px;
+}
+
+/************************** Banner 1 ***************************/
+.banner-1 {
+	padding:40px 0 0 0;
+}
+.banner-1 h1 {
 	font-size:36px;
-	padding-top:35px;
-	margin-bottom:20px;
 }
-
+.download-blue {
+	background:url(imgs/arrow_down_blue_icon.png) no-repeat 0 5px;
+	background-size:18px 18px;
+	padding-left:25px;
+	line-height:24px;
+	font-size:20px;
+}
+/************************** Banner 2 ***************************/
+.banner-2 {
+	padding:0px 10px 0 10px;
+}
+.banner-2 blockquote.quote {
+	background-position: 15px 10px;
+}
+.banner-2 blockquote.quote span {
+	background-position: 610px 50px;
+}
+.banner-2 p.quoter {
+	padding:0 80px;
+	text-align:center;
+}
+/************************** Banner 3 ***************************/
+.banner-3 {
+	padding:30px 0 0 0;
+}
+.banner-3 h1 {
+	font-size:26px;
+	color:#5593D7;
+}
 .plane {
-	width:500px;
-	height:80px;
-	background-size:500px 80px;
-	position:relative;
-	left:135px;
-	top:37px;
+	background:url(imgs/home_plane.png) no-repeat 0 0;
+	width:423px;
+	height:68px;
+	background-size:423px 68px;
+	margin:0px auto 10px auto;
 }
-
-.plane2 {
-	width:200px;
-	height:32px;
-	background-size:200px 32px;
+/************************** Banner 4 ***************************/
+.banner-4 {
+	padding:5px 40px 0 40px;
 }
-/***************** Form Styles *********************/
-.row {
-	margin-bottom:20px;
+.banner-4 blockquote.quote {
+	background-position: 10px 5px;
 }
-input, textarea {
-	font-size:12px;
-	padding:5px;
+.banner-4 blockquote.quote span {
+	background-position: 565px 50px;
 }
-
-.form-submit {
-	margin:20px 0;
+.banner-4 p.quoter {
+	padding:0 40px;
 }
-
-.submit {
-	width:80px;
-	padding:6px 8px;
-	font-size:12px;
+/************************** Banner 5 ***************************/
+.banner-5 {
+	padding:35px 0 0 0;
 }
-
-.submit-btn {
+.banner-5 h1 {
+	font-size:26px;
+}
+.github-icon {
+	background-position: 254px 0px;
+	background-size:100px 88px;
+}
+.spacer {
+	display:inline-block;
 	width:100px;
-	font-size:12px;
 }
+/************************** Banner 6 ***************************/
+.banner-6 {
+	padding:15px 40px 0 40px;
+}
+.banner-6 blockquote.quote {
+	background-position: 10px 5px;
+}
+.banner-6 blockquote.quote span {
+	background-position: 537px 55px;
+}
+.banner-6 p.quoter {
+	padding:0 100px;
+}
+/************************** Banner 7 ***************************/
+.banner-7 {
+	padding:35px 0 0 0;
+}
+.banner-7 h1 {
+	font-size:30px;
+	color:#5593D7;
+}
+.maidsafe-platform-banner {
+	background-size:320px 38px;
+	width:320px;
+	height:38px;
+	margin:0 auto 15px auto;
+}
+/************************** Banner 8 ***************************/
+.banner-8 {
+	padding:15px 40px 0 40px;
+}
+.banner-8 blockquote.quote {
+	background-position: 0px 0px;
+	padding:0px;
+}
+.banner-8 blockquote.quote span {
+	background-position: 530px 80px;
+}
+.banner-8 p.quoter {
+	padding:0 50px;
+}
+
 
 
 .video-box {
@@ -1948,29 +1926,6 @@ p.alpha-testers {
 .article-2 {  padding-left:15px;}
 
 
-.quote-box {
-	margin:4% 0;
-	padding:2% 3% 2% 3%;
-}
-
-blockquote.quote {
-	font-size:16px;
-	padding: 8px;
-	margin: 5px;
-	text-indent: 43px;
-	background-size:30px 23px;
-}
-blockquote.quote span {
-	background-size:30px 23px;
-}
-
-p.quoter {
-	font-size:14px;
-	font-weight:bold;
-	text-align:right;
-}
-
-
 
 /*********** Careers Page ***************/
 .vacancies {
@@ -2003,26 +1958,6 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 	margin:0px 0px 30px 0;
 }
 
-/******* License Sign-Up Page Styles ********/
-.commercial-license-form .grid-4 {
-    margin: 0 80px 0 0;
-}
-.form-submit label {
-	font-size: 11px;
-}
-
-label {
-	font-size:12px;
-}
-
-.required-field {
-   font-size:12px;
-}
-
-#license-signup .submit {
-	margin-right:10px;
-}
-
 /******* Libraries Page Styles ********/
 .rightnav {
 	float:right;
@@ -2047,20 +1982,6 @@ label {
 	background-position:5px 10px;
 	padding:12px 0 0 46px;
 	background-size:36px 41px;
-}
-/************* Stakeholders Page Styles ***************/
-#stakeholders h1 {
-	font-size:24px!important;
-}
-#stakeholders .col-l p, #stakeholders .col-l form {
-	padding-right:20px;
-}
-#stakeholders .col-r p, #stakeholders .col-r h1, #stakeholders .col-r form {
-	padding-left:20px;
-}
-
-#stakeholders .container-12 .grid-6 {
-    width: 339px;
 }
 
 /************* Contact Page Styles ***************/
@@ -2104,8 +2025,12 @@ p {
 	font-size:12px;
 }
 #home header {
-	height:80px;
+	height:90px;
 	font-size: 14px;
+}
+
+#home .shadow {
+    background-position:0px -25px ;
 }
 header {
 	height:80px;
@@ -2137,57 +2062,140 @@ header {
 	font-size:12px;
 }
 
+/************************ Banner Styles **************************/
+
 .banner {
-	height:150px;
-	margin-bottom:30px;
+	height:160px;
+}
+blockquote.quote {
+	font-size:16px;
+	padding: 8px;
+	margin: 0px 5px;
+	background-size:18px 14px;
+}
+blockquote.quote span {
+	background-size:18px 14px;
+	padding-right: 25px;
+	padding-left:25px;
 }
 
-.banner h1 {
-	font-size:28px;
-	padding-top:35px;
-	margin-bottom:20px;
+p.quoter {
+	font-size:11px;
 }
 
+/************************** Banner 1 ***************************/
+.banner-1 {
+	padding:25px 0 0 0;
+}
+.banner-1 h1 {
+	font-size:30px;
+}
+.download-blue {
+	background:url(imgs/arrow_down_blue_icon.png) no-repeat 0 5px;
+	background-size:18px 18px;
+	padding-left:25px;
+	line-height:24px;
+	font-size:18px;
+}
+/************************** Banner 2 ***************************/
+.banner-2 {
+	padding:0px;
+}
+.banner-2 blockquote.quote {
+	background-position: 15px 10px;
+}
+.banner-2 blockquote.quote span {
+	background-position: 455px 70px;
+}
+.banner-2 p.quoter {
+	padding:0 20px;
+	text-align:center;
+}
+/************************** Banner 3 ***************************/
+.banner-3 {
+	padding:30px 0 0 0;
+}
+.banner-3 h1 {
+	font-size:20px;
+	color:#5593D7;
+}
 .plane {
-	width:500px;
-	height:80px;
-	background-size:500px 80px;
-	position:relative;
-	left:15px;
-	top:37px;
+	background:url(imgs/home_plane.png) no-repeat 0 0;
+	width:323px;
+	height:52px;
+	background-size:323px 52px;
+	margin:0px auto 10px auto;
+}
+/************************** Banner 4 ***************************/
+.banner-4 {
+	padding:5px 0 0 0px;
+}
+.banner-4 blockquote.quote {
+	background-position: 30px 10px;
+}
+.banner-4 blockquote.quote span {
+	background-position: 465px 70px;
+}
+.banner-4 p.quoter {
+	padding:0 20px;
+}
+/************************** Banner 5 ***************************/
+.banner-5 {
+	padding:15px 0 0 0;
+}
+.banner-5 h1 {
+	font-size:20px;
+}
+.github-icon {
+	background-position: 180px 15px;
+	background-size:80px 70px;
+}
+.spacer {
+	display:inline-block;
+	width:90px;
+}
+/************************** Banner 6 ***************************/
+.banner-6 {
+	padding:15px 0px 0 0px;
+}
+.banner-6 blockquote.quote {
+	background-position: 10px 10px;
+}
+.banner-6 blockquote.quote span {
+	background-position: 465px 45px;
+}
+.banner-6 p.quoter {
+	padding:0 20px;
+}
+/************************** Banner 7 ***************************/
+.banner-7 {
+	padding:35px 0 0 0;
+}
+.banner-7 h1 {
+	font-size:26px;
+	color:#5593D7;
+}
+.maidsafe-platform-banner {
+	background-size:260px 31px;
+	width:260px;
+	height:31px;
+	margin:0 auto 15px auto;
+}
+/************************** Banner 8 ***************************/
+.banner-8 {
+	padding:15px 20px 0 20px;
+}
+.banner-8 blockquote.quote {
+	background-position: 10px 0px;
+	padding:0px;
+}
+.banner-8 blockquote.quote span {
+	background-position: 440px 90px;
+}
+.banner-8 p.quoter {
+	padding:0 20px;
 }
 
-.plane2 {
-	width:160px;
-	height:25px;
-	background-size:160px 25px;
-	margin:10px auto 0 auto;
-}
-
-
-/***************** Form Styles *********************/
-.row {
-	margin-bottom:20px;
-}
-input, textarea {
-	font-size:11px;
-	padding:4px;
-}
-
-.form-submit {
-	margin:20px 0;
-}
-
-.submit {
-	width:60px;
-	padding:5px 7px;
-	font-size:11px;
-}
-
-.submit-btn {
-	width:80px;
-	font-size:11px;
-}
 .video-box {
 	height:293px;
 }
@@ -2279,42 +2287,6 @@ ul.leftnav li ul li a {
 	padding-left:15px;
 }
 
-.quote-box {
-	margin:4% 0;
-	padding:2% 3% 2% 3%;
-}
-
-blockquote.quote {
-	font-size:16px;
-	padding: 8px;
-	margin: 5px;
-	text-indent: 43px;
-	background-size:30px 23px;
-}
-blockquote.quote span {
-	background-size:30px 23px;
-}
-
-p.quoter {
-	font-size:12px;
-	font-weight:bold;
-	text-align:right;
-}
-
-.blog-box h1 {
-	margin-bottom:20px!important;
-	font-size:24px;
-	background-size:250px 26px;
-}
-
-.blog-box p {
-    font-size: 14px;
-    
-}
-.blog-box p a {
-    font-size: 12px;
-    margin-top: 10px;
-}
 
 .main-content {
 	padding-bottom:20px;
@@ -2370,31 +2342,6 @@ section .grid-4 {
 }
 
 
-
-/******* License Sign-Up Page Styles ********/
-.commercial-license-form .grid-4 {
-	width:100%!important;
-	margin:0px 0 0 0!important;
-}
-
-.form-submit label {
-    display: inline-flex;
-    font-size: 11px;
-    width: 277px;
-}
-
-label {
-	font-size:12px;
-}
-
-.required-field {
-   font-size:12px;
-}
-
-#license-signup .submit {
-	margin-right:25px;
-}
-
 /******* Libraries Page Styles ********/
 .rightnav {
 	float:right;
@@ -2443,20 +2390,6 @@ label {
 }
 #company .col-r {
 	margin:0 0 20px 20px;
-}
-
-/*********** Stakeholder Page Styles *************/
-#stakeholders h1 {
-	font-size:22px!important;
-}
-#stakeholders .col-l p, #stakeholders .col-l form {
-	padding-right:20px;
-}
-#stakeholders .col-r p, #stakeholders .col-r h1, #stakeholders .col-r form {
-	padding-left:20px;
-}
-#stakeholders .container-12 .grid-6 {
-    width: 249px;
 }
 
 /************* Contact Page Styles ***************/
@@ -2561,7 +2494,11 @@ header {
 }
 
 #home header {
-	height:80px;
+	height:90px;
+}
+
+#home .shadow {
+    background-position:0px -25px ;
 }
 
 .shadow {
@@ -2678,44 +2615,143 @@ a.menu-link {
 	border:none;
 }
 
+/************************ Banner Styles **************************/
+
 .banner {
-	height:100px;
-	margin-bottom:30px;
-	width:100%;
-	display:block;
-	position:relative;
-	clear:both;
-	  top: 8px;
+	height:180px;
+}
+blockquote.quote {
+	font-size:14px;
+	padding: 8px;
+	margin: 5px;
+	background-size:18px 14px;
+}
+blockquote.quote span {
+	background-size:18px 14px;
+	padding-right: 10px;
+	padding-left:10px;
 }
 
-.banner h1 {
-	font-size:26px;
-	padding-top:20px;
-	margin-bottom:10px;
+p.quoter {
+	font-size:10px!important;
+	line-height:14px!important;
 }
 
-
+/************************** Banner 1 ***************************/
+.banner-1 {
+	padding:40px 0 0 0;
+}
+.banner-1 h1 {
+	font-size:22px;
+}
+.download-blue {
+	background:url(imgs/arrow_down_blue_icon.png) no-repeat 0 2px;
+	background-size:14px 14px;
+	padding-left:20px;
+	line-height:24px;
+	font-size:14px;
+}
+/************************** Banner 2 ***************************/
+.banner-2 {
+	padding:0px;
+}
+.banner-2 blockquote.quote {
+	background-position: 0px 8px;
+}
+.banner-2 blockquote.quote span {
+	background-position: 315px 80px;
+}
+.banner-2 p.quoter {
+	padding:0px;
+	text-align:center;
+}
+/************************** Banner 3 ***************************/
+.banner-3 {
+	padding:40px 0 0 0;
+}
+.banner-3 h1 {
+	font-size:16px;
+	color:#5593D7;
+}
 .plane {
-    background-size: 250px 40px;
-    height: 40px;
-    left: 5%;
-    position: relative;
-    top: 30px;
-    width: 250px;
+	background:url(imgs/home_plane.png) no-repeat 0 0;
+	width:280px;
+	height:45px;
+	background-size:280px 45px;
+	margin:0px auto 10px auto;
+}
+/************************** Banner 4 ***************************/
+.banner-4 {
+	padding:5px 0 0 0px;
+}
+.banner-4 blockquote.quote {
+	background-position: 10px 5px;
+}
+.banner-4 blockquote.quote span {
+	background-position: 320px 80px;
+}
+.banner-4 p.quoter {
+	padding:0 20px;
+}
+/************************** Banner 5 ***************************/
+.banner-5 {
+	padding:0;
+}
+.banner-5 h1 {
+	font-size:18px;
+	height: 140px;
+}
+.github-icon {
+	background-position: center 85px;
+	background-size:60px 53px;
+}
+.spacer {
+	display: none;
+	width:60px;
+}
+/************************** Banner 6 ***************************/
+.banner-6 {
+	padding:15px 0px 0 0px;
+}
+.banner-6 blockquote.quote {
+	background-position: 0px 6px;
+}
+.banner-6 blockquote.quote span {
+	background-position: 320px 60px;
+}
+.banner-6 p.quoter {
+	padding:0 20px;
+}
+/************************** Banner 7 ***************************/
+.banner-7 {
+	padding:45px 0 0 0;
+}
+.banner-7 h1 {
+	font-size:18px;
+	color:#5593D7;
+}
+.maidsafe-platform-banner {
+	background-size:260px 31px;
+	width:260px;
+	height:31px;
+	margin:0 auto 15px auto;
+}
+/************************** Banner 8 ***************************/
+.banner-8 {
+	padding:15px 0px 0 0px;
+}
+.banner-8 blockquote.quote {
+	background-position: 0px 0px;
+	padding:0px;
+	text-indent:10px;
+}
+.banner-8 blockquote.quote span {
+	background-position: 310px 80px;
+}
+.banner-8 p.quoter {
+	padding:0 20px;
 }
 
-.plane2 {
-	width:160px;
-	height:25px;
-	background-size:160px 25px;
-	margin:10px auto 0 auto;
-}
-
-
-/*************** Form Styles ******************/
-input, textarea { 
-	width:95%;
-}
 
 .main-content {
 	margin-top:30px;
@@ -2814,42 +2850,6 @@ p.alpha-testers {
 	padding:2% 3% 2% 3%;
 }
 
-blockquote.quote {
-	font-size:16px;
-	padding: 8px;
-	margin: 5px;
-	text-indent: 43px;
-	background-size:30px 23px;
-}
-blockquote.quote span {
-	background-size:30px 23px;
-}
-
-p.quoter {
-	font-size:12px!important;
-	font-weight:bold;
-	text-align:right;
-}
-
-.blog-box {
-	padding:5% 5% 2% 5%;
-}
-.blog-box h1 {
-	margin-bottom:30px!important;
-	font-size:20px;
-	background-size:220px 23px;
-}
-.blog-box .grid-5 {
-	margin-bottom:20px;
-}
-.blog-box p {
-	font-size:14px;
-}
-.blog-box p a {
-    font-size: 12px;
-    margin-top: 10px;
-}
-
 .article-1 {
 	border-right:none;
 	padding:0px;
@@ -2918,25 +2918,6 @@ p {
 	padding:20px 20px 0px 110px;
 }
 
-/******* License Sign-Up Page Styles ********/
-.form-submit label {
-    display: inline-flex;
-    font-size: 11px;
-    width: 277px;
-}
-
-label {
-	font-size:12px;
-}
-
-.required-field {
-   font-size:12px;
-}
-
-#license-signup .submit {
-	margin-right:5px;
-}
-
 /*********** Company Page Styles *************/
 
 #company .main-content {
@@ -2954,27 +2935,6 @@ label {
 	margin:0 0 20px 0px;
 }
 
-/*********** Stakeholder Page Styles *************/
-#stakeholders .container-12 .grid-6 {
-    width: 95%;
-}
-
-#stakeholders .col-l {
-    border-right: none;
-}
-
-#stakeholders .col-l p, #stakeholders .col-l form {
-	padding-right:0px;
-}
-#stakeholders .col-r p, #stakeholders .col-r h1, #stakeholders .col-r form {
-	padding-left:0px;
-}
-#stakeholders .main-content {
-    margin-bottom: 0px;
-}
-#stakeholders form {
-	margin-bottom:50px;
-}
 
 /************* Contact Page Styles ***************/
 
@@ -3125,18 +3085,6 @@ p.legal {
 	height:162px;
 }
 
-.banner h1 {
-	font-size:14px;
-	padding-top:20px;
-	margin-bottom:10px;
-}
-
-.plane2 {
-	width:160px;
-	height:25px;
-	background-size:160px 25px;
-	margin:10px auto 0 auto;
-}
 
 #home h2 {
 	font-size:10px;
