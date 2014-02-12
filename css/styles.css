@@ -784,6 +784,7 @@ Inner Page Styles
 
 *******************************************************************************/
 .shadow {
+	
 	background:url(imgs/nav_shadow-2.png) repeat-x 0 20px;
 	clear: both;
     display: block;
@@ -898,7 +899,8 @@ Developers Page Styles
 *******************************************************************************/
 
 a.get-started-button {
-	background:#5593D7 url(imgs/hammer_icon.png) no-repeat 195px 10px;
+	/*background:#5593D7 url(imgs/hammer_icon.png) no-repeat 195px 10px;*/
+	background:#5593D7;
 	font-size: 22px;
     font-weight: 400;
 	color:#FFFFFF!important;
@@ -907,7 +909,7 @@ a.get-started-button {
 	border-color: rgba(0, 0, 0, 0);
     border-radius: 5px;
     border-style: none;
-    padding: 10px 55px 10px 15px;
+    padding: 10px 15px 10px 15px;
 	display: inline-block;
 	float:right;
 	
