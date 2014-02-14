@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <title>MaidSafe Press</title>
+  <meta name="description" content="The MaidSafe Platform is protected by a patent portfolio and is distributed under 2 different types of license, Open Source and Commercial." />
+  <meta name="keywords" content="MaidSafe Licensing" />
+  <meta name="author" content="MaidSafe" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="robots" content="all" />
+  <meta name="revisit-after" content="30 days" />
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+  <!-- SureFile Download browser detect -->
+  <script type="text/javascript" src="js/browserdetect.js"></script>
+
+  <script type="text/javascript">
+    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+  </script>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <script>
+    window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  <script>
+    jQuery(document).ready(function ($) {
+
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link'),
+        $menuTrigger = $('.has-submenu > a');
+
+      $menulink.click(function (e) {
+        e.preventDefault();
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+      });
+
+      $menuTrigger.click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass('active').next('ul').toggleClass('active');
+      });
+    });
+  </script>
+
+  <!-- IE Fix for Sticky Footer -->
+  <!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32549768-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body id="imperica">
+  <div id="container">
+    <div id="main">
+      <header class="shadow">
+        <div class="container-12 fw">
+          <div class="grid-4">
+            <a class="logo" href="/" title="Home"></a>
+          </div>
+          <div class="grid-8">
+            <a class="menu-link" href="#menu">Menu</a>
+            <nav id="menu" class="menu">
+              <ul>
+                <li class="overview single-link"><a href="overview">overview</a>
+                  <li class="has-submenu"><a href="#">overview</a>
+                    <ul class="sub-menu">
+                      <li><a href="overview">overview</a>
+                      </li>
+                      <li><a href="distributed-network-features">features</a>
+                      </li>
+                      <li><a href="maidsafe-network-platform-libraries">libraries</a>
+                      </li>
+                      <li><a href="network-platform-use-cases">use cases</a>
+                      </li>
+                      <li><a href="network-platform-licensing">licensing</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="developers single-link"><a href="network-platform-developers">developers</a>
+                    <li class="has-submenu"><a href="#">developers</a>
+                      <ul class="sub-menu">
+                        <li><a href="network-platform-developers">overview</a>
+                        </li>
+                        <li><a href="maidsafe-network-platform-libraries">libraries</a>
+                        </li>
+
+                        <li><a href="network-platform-licensing">licensing</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="company single-link"><a href="company-privacy-security-freedom">company</a>
+                      <li class="has-submenu"><a href="#">company</a>
+                        <ul class="sub-menu">
+                          <li><a href="company-privacy-security-freedom">overview</a>
+                          </li>
+                          <li><a href="team">team</a>
+                          </li>
+                          <li><a href="careers">careers</a>
+                          </li>
+
+                        </ul>
+                      </li>
+                      <li class="press"><a href="press">press</a>
+                      </li>
+                      <li class="blog"><a href="http://blog.maidsafe.net/" target="_blank">blog</a>
+                      </li>
+                      <li class="contact"><a href="contact">contact</a>
+                      </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="container-12">
+        <div class="grid-9 main-content">
+          <h1>Imperica - The breathing network </h1>
+          <p>11 February 2014</p>
+          <a href="http://www.imperica.com/en/features/maidsafe-breathing-network-david-irvine" target="_blank">
+            <img src="images/pr-imperica-breathing-network.png" class="responsive pr-image">
+          </a>
+
+          <p>As the Internet continues its exponential growth, it is starting to show the creak of middle age. Its design, using a traditional open client-server relationship, is now unnoticed by us – it's how you accessed this article, for example. However,
+            it becomes apparent when the design is infiltrated by Ddos attacks, Government surveillance, or the privatisation of once-public space. As these challenges become answered by decentralised networks, <strong>David Irvine</strong> of Scotland's <strong>Maidsafe</strong> is
+            leading the development of what might become a true alternative to the Internet.</p>
+          <p>Irvine started out as a network designer and engineer. His company, <a href="http://sourceforge.net/projects/eboxit/">Eboxit</a>, provided &ldquo;server-in-a-box&rdquo; products and grew rapidly until it became the subject of a bitter shareholder
+            dispute. The timing was commercially painful, given that a similar company, <a href="http://en.wikipedia.org/wiki/Cobalt_Networks">Cobalt</a>, was acquired by Sun for $2bn. Eboxit fizzled out and left Irvine with some time to reflect on the
+            business, and whether selling client-server products in general was the best and most fair way to offer access to networks. The result was a consideration that the inherent problem in many network infrastructures is not one type of server
+            over another; it's the fact that servers exist at all. Natural paradigms such as ant colonies and cell division prove that life can work without such a methodology. A controlling authority doesn't inherently create weakness. Ergo, client-server
+            is quite an &ldquo;unnatural&rdquo; way to design a network – it's inefficient. The methodology exists because of its commercial legacy; thin client-based LANs, where the server was the only computer with a hard drive, still exist but the
+            majority of network installations are based on lots of PCs and phones, all packed to the rafters with memory, processing power and hard disk space... much of which remains unused and irrelevant to the network.</p>
+          <p>The consideration which Irvine had made was that in a more effective network, complete decentralisation had to be done. The computer almost has to be &ldquo;alive&rdquo;, and the code has to connect to the network itself, and to become part
+            of it. The computer, in other words, will have to benefit from becoming part of the network. Between 2004 and 2006, Irvine worked on the methodology which became a working demonstration, using a few million lines of Python and with a level
+            of detail sufficient enough to apply for patents. The final product has since been reworked into a few hundred thousand lines of C++ by a 15-strong team (with the cryptocurrency modules replaced by Bitcoin), and they have created the Subreddit
+            <a
+            href="http://www.reddit.com/r/decentralisedinternet/">Decentralised Internet</a> to facilitate further discussion.</p>
+          <p>Maidsafe is a business which owns the patents. One per cent of the revenue from the commercial use of Maidsafe, however derived, goes back into the business. Given the increased commercialisation of the &ldquo;online commons&rdquo; then, how
+            can this position tally with the public Internet, which doesn't have a single owner? Irvine is surprisingly relaxed about this.</p>
+          <p>&ldquo;If you base a tech company around a revenue model, you'll bend the technology. We have looked at everything from two aspects: the first is for the system to be logically and mathematically correct, consistent, and complete. The second
+            is fairness. If the system is fair, then it distributes resources to people providing resources. We have looked at it from the point that if we are focussed on that, then we will design something that's mathematically correct.</p>
+          <p>&rdquo;We will never stop anyone from using the system. If you're using the system and you profit from it, then one per cent of the revenue is paid back to Maidsafe. So, if you use it and don't want to contribute back code and just want to build
+            a commercial app, then you can freely use our code. But once you get revenue, there's a small donation. It's like the mobile app market but it isn't 30 per cent, it's one per cent to ensure continued development.&rdquo;</p>
+          <h3>The technology</h3>
+          <p>Maidsafe provides a decentralised network which carries third-party applications. It uses TCP/IP underneath, as does the Internet; from there, the two networks diverge. Data is spread and churned across the Maidsafe network, rather than available
+            from one specific point to another as the client-server architecture demands. It means, in theory, that you could go to any computer (or, indeed, any phone) connected to Maidsafe, log in, and fully retrieve your environment and data. The data
+            is not held in one single place, with the data exchange occurring at the level of the disk API rather than, say, through HTTP.</p>
+          <p>Developers on the Internet would normally require an API key which cannot become part their source code. Maidsafe has no such key; you just use the API in a seamless, frictionless way.</p>
+          <p>Data is encrypted through a key exchange at the point of entry to the network. It means that routers don't know what is passing through them. This design makes MITM attacks impossible, and surveillance becomes impossible to conduct. It also
+            provides edge caching out-of-the-box. If your data is accessed from a different part of the world, the data caches through FIFO registers in each intermediate node. The next person that tries to read it will get a cached copy; the next after
+            that gets a closer cached copy, and so on. As Irvine says, &ldquo;It's like the network breathing&rdquo;.</p>
+          <p>&ldquo;If you go to a locksmith, he won't ask you for your name and the door's address, and require you to phone him up before you enter or exit your house. The transaction is both secure and private. It's important that the company does not
+            know you. That is why we don't believe in the web of trust, and that trust should be mathematic. You're not connecting to another computer, you're joining a mathematically-complete system.</p>
+          <p>&ldquo;You have to have security and privacy at the core of the design. You can't just take the Bitcoin network, for example, and put a data provisioning platform on top of it. That network was created for trade. If it [privacy and security]
+            isn't at the core, then it's broken. If you step back again to the server market, there is a complete lack of privacy in the design of networks. You're sharing on a platform owned by someone else, and your identity is there too. How do we
+            try to secure servers? With bomb shelters, high-tolerance routers, strong firewalls, lots of admins... these are lots of sticking plasters. Security and privacy are not at the core of the design.&rdquo;</p>
+
+          <div class="video-container">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/RdGH40oUVDY" allowfullscreen></iframe>
+          </div>
+          <h3>The business model</h3>
+          <p>The business model developed as the product evolved, as Irvine wanted to focus on the correctness of his approach. The key to any future success of Maidsafe is to ensure that data and users are treated fairly, and everything is available to
+            all. The patents, Irvine explains, are defensive, in that he sees Maidsafe as the first development of its kind, rather than an attempt to block out any further attempts to work with, or in competition to, the network.</p>
+          <p>Such is the youth of attempts to create decentralised networks in this way that there is a long journey for both Maidsafe and its patents to travel.</p>
+          <p>Because of the focus on privacy and security, Irvine has tried to ensure that the company is as open as it can be. Both the full source code and the development of it are open (in that day-to-day development can be viewed). As development continues,
+            investors may be nervous about their return, but Irvine is relaxed about it, placing Maidsafe's work in a wider context.</p>
+          <p>&ldquo;People can donate some of their disk space to the Maidsafe Foundation for Innovation and to the One Laptop Per Child project. The return on investment is a significant, humanitarian one. The financial return must come through, providing
+            incredible value. We're trying to make the business as logical as the network. We will never use profit or patents to crush or to stop innovation.&rdquo;</p>
+          <p>The initial investments into Maidsafe, combining seed funding with the one per cent revenue share, also gives a different funding model to the &ldquo;traditional&rdquo; series-based funding rounds which tech companies in Western cities are so
+            used to. As Maidsafe is based in Troon, they don't necessarily have immediate access to a Level39 or Index Ventures, but Irvine sees that as an advantage.</p>
+          <p>&ldquo;If you try to start up Google or Facebook, then the initial capital costs for acquisition are huge. If you don't have an investor cycle as Silicon Valley has, and you take the requirement away, you amortise the innovation throughout the
+            world, which is what we have with Maidsafe. Silicon Valley is not innovative per se, but we're not surprised when innovation comes out of it - because it's the only place where such high levels of innovation can attract investment.&rdquo;</p>
+          <p>After several years, Irvine is now confident that Maidsafe is robust enough to be offered out to the public, and for it to be offered in a wider context where there is sufficient concern about the future of the incumbent Internet network that
+            Maidsafe can provide a genuine alternative.</p>
+          <p>&rdquo;After eight years, we need to put it in the hands of others, and to push it out. People will have a decentralised Internet, and it's up to us to provide it in a completely frictionless way.&rdquo;</p>
+
+          <p><strong>Original article</strong> : <a href="http://www.imperica.com/en/features/maidsafe-breathing-network-david-irvine" target="_blank">Here</a>
+          </p>
+        </div>
+        <div class="grid-3 leftnav-shell">
+          <h3>Press Archive</h3>
+          <ul class="leftnav">
+            <li class="imperica"><a href="imperica-breathing-network">Imperica - The breathing network</a>
+            </li>
+            <li class="maidsafe-bitcloud"><a href="maidsafe-bitcloud">Scottish company Maidsafe claims to have built a Bitcloud-like system</a>
+            </li>
+            <li class="revolutionise-internet"><a href="scottish-company-plans-revolutionise-internet">New network could &lsquo;revolutionise&rsquo; the Internet by eliminating viruses, hacking and surveillance</a>
+            </li>
+            <li class="ieee"><a href="ieee">IEEE - A Survey, Cloud File Sharing, and Object Augmentation</a>
+            </li>
+            <li class="calling-developers"><a href="developers">Calling Decentralised Application Developers</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container-12">
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="/">Home</a>
+          </li>
+          <li><a href="company-privacy-security-freedom">Company</a>
+          </li>
+          <li><a href="press">Press</a>
+          </li>
+          <li><a href="http://blog.maidsafe.net/" target="_blank">Blog</a>
+          </li>
+          <li><a href="contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="overview">Overview</a>
+          </li>
+          <li><a href="distributed-network-features">- Features</a>
+          </li>
+          <li><a href="faqs">- FAQs</a>
+          </li>
+          <li><a href="network-platform-use-cases">- Use Cases</a>
+          </li>
+          <li><a href="network-platform-licensing">- Licensing</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-2 footer-links">
+        <ul>
+          <li><a href="network-platform-developers">Developers</a>
+          </li>
+          <li><a href="maidsafe-network-platform-libraries">- Libraries</a>
+          </li>
+          <li><a href="developers-licensing">- Licensing</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-6">
+        <ul class="social-links">
+
+          <li class="google-icon">
+            <a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+              <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" />
+            </a>
+          </li>
+          <li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a>
+          </li>
+          <script>
+            ! function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+          </script>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-12">
+      <div class="grid-12">
+        <div class="footer-logos">
+          <img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer" />
+
+          <a class="" href="http://www.internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
+            <img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge" />
+          </a>
+        </div>
+        <p class="legal">©2014 MaidSafe.net. All rights reserved.
+          <a href="disclaimer">DISCLAIMER</a>
+          <a href="privacy">PRIVACY</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
