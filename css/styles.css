@@ -450,7 +450,8 @@ header {
 #revolutionise-internet .menu .press a,
 #calling-developers .menu .press a,
 #ieee .menu .press a,
-#imperica .menu .press a {
+#imperica .menu .press a,
+#pocket-lint .menu .press a {
 	color: #5593D7;
 }
 
@@ -469,7 +470,8 @@ header {
 #revolutionise-internet ul.leftnav .revolutionise-internet a,
 #calling-developers ul.leftnav .calling-developers a,
 #ieee ul.leftnav .ieee a,
-#imperica ul.leftnav .imperica a {
+#imperica ul.leftnav .imperica a,
+#pocket-lint ul.leftnav .pocket-lint a {
 	color:#5593D7;
 }
 
