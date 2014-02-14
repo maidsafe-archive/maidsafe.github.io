@@ -449,7 +449,8 @@ header {
 #maidsafe-bitcloud .menu .press a,
 #revolutionise-internet .menu .press a,
 #calling-developers .menu .press a,
-#ieee .menu .press a {
+#ieee .menu .press a,
+#imperica .menu .press a {
 	color: #5593D7;
 }
 
@@ -467,7 +468,8 @@ header {
 #maidsafe-bitcloud ul.leftnav .maidsafe-bitcloud a,
 #revolutionise-internet ul.leftnav .revolutionise-internet a,
 #calling-developers ul.leftnav .calling-developers a,
-#ieee ul.leftnav .ieee a {
+#ieee ul.leftnav .ieee a,
+#imperica ul.leftnav .imperica a {
 	color:#5593D7;
 }
 
@@ -1465,7 +1467,6 @@ h2.active {background-position: left bottom; color:rgba(204,204,204,1.00);}
 	padding:0px 0px 90px 0px;
     margin: 40px auto 10px;
 	text-align:center;
-	background: url(imgs/solo_shadow.png) no-repeat 0px 300px;
 }
 
 #downloadBox { 
