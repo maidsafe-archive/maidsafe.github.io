@@ -446,12 +446,11 @@ header {
 #blog .menu .blog a,
 #contact .menu .contact a,
 #press .menu .press a,
-#maidsafe-bitcloud .menu .press a,
-#revolutionise-internet .menu .press a,
-#calling-developers .menu .press a,
-#ieee .menu .press a,
-#imperica .menu .press a,
-#pocket-lint .menu .press a {
+#article-maidsafe-bitcloud .menu .press a,
+#article-revolutionise-internet .menu .press a,
+#article-ieee .menu .press a,
+#article-imperica .menu .press a,
+#article-pocket-lint .menu .press a {
 	color: #5593D7;
 }
 
@@ -466,12 +465,11 @@ header {
 	color:#5593D7;
 }
 
-#maidsafe-bitcloud ul.leftnav .maidsafe-bitcloud a,
-#revolutionise-internet ul.leftnav .revolutionise-internet a,
-#calling-developers ul.leftnav .calling-developers a,
-#ieee ul.leftnav .ieee a,
-#imperica ul.leftnav .imperica a,
-#pocket-lint ul.leftnav .pocket-lint a {
+#article-maidsafe-bitcloud ul.leftnav .maidsafe-bitcloud a,
+#article-revolutionise-internet ul.leftnav .revolutionise-internet a,
+#article-ieee ul.leftnav .ieee a,
+#article-imperica ul.leftnav .imperica a,
+#article-pocket-lint ul.leftnav .pocket-lint a {
 	color:#5593D7;
 }
 
