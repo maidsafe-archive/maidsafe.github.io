@@ -451,7 +451,8 @@ header {
 #article-ieee .menu .press a,
 #article-imperica .menu .press a,
 #article-pocket-lint .menu .press a,
-#article-decentralized-internet-is-here .menu .press a {
+#article-decentralized-internet-is-here .menu .press a,
+#article-article-new-age-internet .menu .press a {
 	color: #5593D7;
 }
 
@@ -471,7 +472,8 @@ header {
 #article-ieee ul.leftnav .article-ieee a,
 #article-imperica ul.leftnav .article-imperica a,
 #article-pocket-lint ul.leftnav .article-pocket-lint a,
-#article-decentralized-internet-is-here ul.leftnav .article-decentralized-internet-is-here a {
+#article-decentralized-internet-is-here ul.leftnav .article-decentralized-internet-is-here a,
+#article-article-new-age-internet ul.leftnav .article-article-new-age-internet a {
 	color:#5593D7;
 }
 
@@ -1168,6 +1170,11 @@ Press Page Styles
 .pr-image {
 	margin:0 0 20px 20px;
 	float:right;
+}
+
+.press-article {
+	display:inline-block;
+	min-height:370px;
 }
 
 /*******************************************************************************
