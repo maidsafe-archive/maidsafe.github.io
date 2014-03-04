@@ -875,8 +875,8 @@ h2.encrypt-head {background:url(imgs/icon-encrypt.png) no-repeat 0 0; }
 h2.passport-head {background:url(imgs/icon-passport.png) no-repeat 0 0;}
 h2.nfs-head {background:url(imgs/icon-nfs.png) no-repeat 0 0;}
 h2.vault-head {background:url(imgs/icon-vault.png) no-repeat 0 0;}
-h2.lifestuff-head {background:url(imgs/icon-lifestuff.png) no-repeat 0 0;}
-h2.private-head {background:url(imgs/icon-private.png) no-repeat 0 0;}
+h2.api-head {background:url(imgs/icon-api.png) no-repeat 0 0;}
+h2.manager-head {background:url(imgs/icon-manager.png) no-repeat 0 0;}
 
 h2.maidsafe-head,
 h2.common-head,
@@ -887,8 +887,8 @@ h2.encrypt-head,
 h2.passport-head,
 h2.nfs-head,
 h2.vault-head,
-h2.lifestuff-head,
-h2.private-head {
+h2.api-head,
+h2.manager-head {
 	font-family: 'OpenSansLight', Arial, sans-serif!important;
 	background-size:30px 30px;
 	line-height:30px;
