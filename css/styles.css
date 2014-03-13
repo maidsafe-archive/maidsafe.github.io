@@ -342,6 +342,10 @@ strong { font-weight:bold; font-style:normal;}
 	height:350px;
 }
 
+.bold {
+	font-family: 'OpenSansSemiBold', Arial, sans-serif;
+}
+
 /*******************************************************************************
 
 Header Styles
@@ -648,6 +652,22 @@ p.quoter {
 }
 .banner-8 p.quoter {
 	padding:0 150px;
+}
+
+/************************** Banner 9 ***************************/
+.banner-9 {
+	padding:25px 0 0 0;
+}
+.banner-9 h1 {
+	font-size:28px;
+	color:rgba(76,76,76,1.00);
+}
+.banner-logo {
+	background:url(imgs/banner_logo.png) no-repeat 0 5px;
+	background-size:198px 62px;
+	width:198px;
+	height:62px;
+	margin:0 auto 20px auto;
 }
 
 /*******************************************************************************
@@ -1850,7 +1870,19 @@ p.quoter {
 	padding:0 50px;
 }
 
-
+/************************** Banner 9 ***************************/
+.banner-9 {
+	padding:15px 0 0 0;
+}
+.banner-9 h1 {
+	font-size:20px;
+}
+.banner-logo {
+	background-size:155px 49px;
+	width:155px;
+	height:49px;
+	margin:0 auto 20px auto;
+}
 
 .video-box {
 	height:394px;
@@ -2212,6 +2244,20 @@ p.quoter {
 }
 .banner-8 p.quoter {
 	padding:0 20px;
+}
+
+/************************** Banner 9 ***************************/
+.banner-9 {
+	padding:15px 0 0 0;
+}
+.banner-9 h1 {
+	font-size:18px;
+}
+.banner-logo {
+	background-size:125px 39px;
+	width:125px;
+	height:39px;
+	margin:0 auto 20px auto;
 }
 
 .video-box {
@@ -2777,6 +2823,20 @@ p.quoter {
 }
 .banner-8 p.quoter {
 	padding:0 20px;
+}
+
+/************************** Banner 9 ***************************/
+.banner-9 {
+	padding:15px 0 0 0;
+}
+.banner-9 h1 {
+	font-size:20px;
+}
+.banner-logo {
+	background-size:155px 49px;
+	width:155px;
+	height:49px;
+	margin:0 auto 20px auto;
 }
 
 
