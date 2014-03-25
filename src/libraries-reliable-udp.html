@@ -1,0 +1,68 @@
+[%  INCLUDE header
+      title = "MaidSafe - MaidSafe-RUDP",
+       description = "A networking infrastructure that uses UDP to achieve many of the benefits of a connection&#45;based protocol like TCP, but allows NAT traversal where TCP cannot.",
+      keywords = "Reliable UDP, NAT traversal, MaidSafe RUDP"
+%]
+
+<body id="libraries">
+  [%  INCLUDE nav %]
+      <div class="container-12">
+        <div class="grid-9 main-content">
+          <h1>MaidSafe-RUDP</h1>
+          <h2>Implementation of Reliable UDP</h2>
+          <h3>Description</h3>
+          <p id="u1797-4">TCP is a reliable connection oriented protocol that cannot traverse NAT routers (with any real capability) UDP is an unreliable connectionless protocol that can traverse many NAT routers with ease.</p>
+          <p id="u1797-10">MaidSafe-RUDP is a reliable pseudo connected protocol that can traverse more NAT routers than plain UDP when used in conjunction with <a href="http://maidsafe.net/libraries-routing">MaidSafe-Routing</a>. It is impervious to 'man in the
+            middle' attacks with no requirement for a key exchange protocol to exist at the network level.</p>
+          <h3>Features</h3>
+          <ul>
+            <li>Implements hundreds / thousands of connections per computer (depending on hardware)</li>
+            <li>Provides encrypted communications (keys can be passed into API per connection)</li>
+            <li>Used in conjunction with <a href="http://maidsafe.net/libraries-routing">MaidSafe-Routing</a> this library implements a network that is entirely resistant to 'man in the middle' attacks</li>
+            <li>Used in conjunction with <a href="http://maidsafe.net/libraries-routing">MaidSafe-Routing</a> this library implements a network that can traverse even symmetric NAT routers</li>
+            <li>Capable of multiplexing multiple RUDP connections to single UDP port (increasing connection capabilities)</li>
+          </ul>
+          <h3>Programming languages</h3>
+          <h3>Core</h3>
+          <p>C++11 compatible with GCC (4.7 and above), Clang (3.3 and above) and MSVC 2012 (with no dependency on CTP releases). Tested on Windows 32/64 bit, Linux 32/64 bit (dependent on GCC version) and OSX (Mountain Lion and above).</p>
+          <h3>Status</h3>
+          <p>This library is considered <strong>BETA</strong> quality and is provided with a full test suite and QA suite. This can be considered for use in production quality systems at this time. There is currently a limit on message size that requires
+            attention at the earliest convenience.</p>
+
+          <h3>Roadmap</h3>
+          <ul>
+            <li>Refactor for type safety</li>
+            <li>Refactor for exception handling</li>
+            <li>Implement a data channel or interleaved message handling (to remove any size restrictions)</li>
+            <li>Further work on rejecting slowing nodes (potential damage caused by hack attempts including slowing connections down)</li>
+            <li>Improve messages per second capability (throughput), which is currently circa 8000 for 100 Byte messages</li>
+          </ul>
+          <h3>Links</h3>
+          <ul>
+            <li><a href="https://github.com/maidsafe/MaidSafe-RUDP/wiki" target="_blank">Wiki, including build instructions</a>
+            </li>
+            <li><a href="https://groups.google.com/forum/?fromgroups#%21forum/maidsafe-development" target="_blank">Developer mailing list</a>
+            </li>
+            <li><a href="https://github.com/maidsafe/MaidSafe-RUDP/issues?state=open" target="_blank">Issue tracker</a>
+            </li>
+            <li><a href="http://dash.maidsafe.net" target="_blank">Build Status</a>
+            </li>
+          </ul>
+        </div>
+        <div class="grid-3 rightnav">
+          <div class="rightnav-box github">
+            <a href="https://github.com/maidsafe/MaidSafe-RUDP/wiki" target="_blank">
+              <!-- content -->
+              <p>View on GitHub</p>
+            </a>
+          </div>
+          <div class="rightnav-box back">
+            <a href="maidsafe-network-platform-libraries">
+              <p>Back to Libraries</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  [%  INCLUDE footer %]
