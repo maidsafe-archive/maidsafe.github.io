@@ -1,129 +1,99 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <title>MaidSafe - Page Not Found</title>
-  <meta name="description" content="MaidSafe's distributed platform enables the creation of fast and secure applications that help ensure digital privacy, security and freedom for all." />
-  <meta name="keywords" content="Distributed Platform, MaidSafe" />
-  <meta name="author" content="MaidSafe" />
-  <meta name="robots" content="index, follow" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="robots" content="all" />
-  <meta name="revisit-after" content="30 days" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-  <!-- Favicons -->
-  <link rel="shortcut icon" href="/images/favicon.ico" />
-  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
+<title>MaidSafe - Page Not Found</title>
+<meta name="description" content="MaidSafe 404." />
+<meta name="keywords" content="404, MaidSafe"/>
+<meta name="author" content="MaidSafe" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="robots" content="all" />
+<meta name="revisit-after" content="30 days" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
- 
+<!-- Favicons -->
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="icon" type="image/ico" href="/images/favicon.ico" />
+  
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="css/rwdgrid.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
 
-  <!-- SureFile Download browser detect --> 
-   <script type="text/javascript" src="js/browserdetect.js"></script>
+<!-- SureFile Download browser detect -->
+<script type="text/javascript" src="js/browserdetect.js"></script>
 
-  
-  <!-- Web font -->
-  <script type="text/javascript">
-    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
-  </script>
-  
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
-  </script>
-  
-  
-  <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
-  <script src="js/jquery.bxslider.js" type="text/javascript"></script>
-  <script type="text/javascript">
-  $(function() {
-  $('.bxslider').bxSlider({
-                            auto: true,
-								mode: 'fade',
-                            autoControls: false,
-                            speed: 1000,
-                            pause: 8000,
-                            pager: true,
-                            controls: false,
-                            tickerHover: true
-                          });
-  });
-  </script>
-  
-  
-  <script>
-    jQuery(document).ready(function ($) {
+<script type="text/javascript">
+document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+</script>
 
-      $('body').addClass('js');
-      var $menu = $('#menu'),
-        $menulink = $('.menu-link'),
-        $menuTrigger = $('.has-submenu > a');
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-      $menulink.click(function (e) {
-        e.preventDefault();
-        $menulink.toggleClass('active');
-        $menu.toggleClass('active');
-      });
+<script>window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')</script>
+<script>
+jQuery( document ).ready( function( $ ) {
+	
+		$('body').addClass('js');
+		  var $menu = $('#menu'),
+		  	  $menulink = $('.menu-link'),
+		  	  $menuTrigger = $('.has-submenu > a');
 
-      $menuTrigger.click(function (e) {
-        e.preventDefault();
-        var $this = $(this);
-        $this.toggleClass('active').next('ul').toggleClass('active');
-      });
-    });
-  </script>
-  
-  
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript">
-    $(document).ready(function(){
-        
-        $(".toggle_container").hide();
-    
-        $("h2.trigger").toggle(function(){
-            $(this).addClass("active"); 
-            }, function () {
-            $(this).removeClass("active");
-        });
-        
-        $("h2.trigger").click(function(){
-            $(this).next(".toggle_container").slideToggle("slow,");
-        });
-    
-    });
-    </script>
-    
+		$menulink.click(function(e) {
+			e.preventDefault();
+			$menulink.toggleClass('active');
+			$menu.toggleClass('active');
+		});
 
-  <!-- IE Fix for Sticky Footer -->
-  <!--[if !IE 7]>
+		$menuTrigger.click(function(e) {
+			e.preventDefault();
+			var $this = $(this);
+			$this.toggleClass('active').next('ul').toggleClass('active');
+		});	
+});
+</script>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".toggle_container").hide();
+	$("h2.trigger").toggle(function(){
+		$(this).addClass("active"); 
+		}, function () {
+		$(this).removeClass("active");
+	});
+	$("h2.trigger").click(function(){
+		$(this).next(".toggle_container").slideToggle("slow,");
+	});
+});
+</script>
+
+<!-- IE Fix for Sticky Footer -->
+<!--[if !IE 7]>
 	<style type="text/css">
 		#wrap {display:table;height:100%}
 	</style>
 <![endif]-->
 
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-32549768-1']);
-    _gaq.push(['_trackPageview']);
+<script type="text/javascript">
 
-    (function () {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-32549768-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
 </head>
-
 <body id="error">
-  <div id="container">
+<div id="container">
     <div id="main">
-    <header>
+    <header class="shadow">
       <div class="container-12 fw">
         <div class="grid-4">
           <a class="logo" href="/" title="Home"></a>
@@ -139,7 +109,7 @@
                     </li>
                     <li><a href="distributed-network-features">features</a>
                     </li>
-                    <li><a href="maidsafe-network-platform-libraries">libraries</a>
+                    <li><a href="faqs">faqs</a>
                     </li>
                     <li><a href="network-platform-use-cases">use cases</a>
                     </li>
@@ -168,8 +138,9 @@
                     </li>
 <li><a href="careers">careers</a>
                     </li>
+                    
                   </ul>
-                </li>
+                </li> 
                 <li class="press"><a href="press">press</a>
                 </li>
                 <li class="blog"><a href="http://blog.maidsafe.net/" target="_blank">blog</a>
@@ -188,7 +159,7 @@
         </div>
   	</div>  
 </div>
-  <footer>
+<footer>
   <div class="container-12">
     <div class="grid-2 footer-links">
       <ul>
@@ -230,8 +201,8 @@
       </ul>
     </div>
     <div class="grid-6">
-
       <ul class="social-links">
+        
         <li class="google-icon">
           <a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
             <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" />
@@ -271,15 +242,6 @@
     </div>
   </div>
 </footer>
-
-
-<script src="js/jquery.fitvids.js"></script>
-      <script>
-        // Basic FitVids Test
-        $(".video-container").fitVids();
-        // Custom selector and No-Double-Wrapping Prevention Test
-        $(".video-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
-      </script>
-
 </body>
+
 </html>
