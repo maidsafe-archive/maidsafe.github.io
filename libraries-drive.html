@@ -1,10 +1,8 @@
 <!doctype html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-
   <title>MaidSafe - MaidSafe-Drive</title>
   <meta name="description" content="A cross platform virtual drive with an easy to use API." />
   <meta name="keywords" content="Virtual Drive, MaidSafe Drive" />
@@ -21,19 +19,41 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
+ 
 
-  <!-- SureFile Download browser detect -->
-  <script type="text/javascript" src="js/browserdetect.js"></script>
+  <!-- SureFile Download browser detect --> 
+   <script type="text/javascript" src="js/browserdetect.js"></script>
 
+  
+  <!-- Web font -->
   <script type="text/javascript">
     document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
   </script>
-
+  
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
   <script>
     window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
   </script>
+  
+  
+  <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+  <script src="js/jquery.bxslider.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  $(function() {
+  $('.bxslider').bxSlider({
+                            auto: true,
+								mode: 'fade',
+                            autoControls: false,
+                            speed: 1000,
+                            pause: 8000,
+                            pager: true,
+                            controls: false,
+                            tickerHover: true
+                          });
+  });
+  </script>
+  
+  
   <script>
     jQuery(document).ready(function ($) {
 
@@ -55,6 +75,27 @@
       });
     });
   </script>
+  
+  
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript">
+    $(document).ready(function(){
+        
+        $(".toggle_container").hide();
+    
+        $("h2.trigger").toggle(function(){
+            $(this).addClass("active"); 
+            }, function () {
+            $(this).removeClass("active");
+        });
+        
+        $("h2.trigger").click(function(){
+            $(this).next(".toggle_container").slideToggle("slow,");
+        });
+    
+    });
+    </script>
+    
 
   <!-- IE Fix for Sticky Footer -->
   <!--[if !IE 7]>
@@ -80,9 +121,9 @@
 </head>
 
 <body id="libraries">
-  <div id="container">
+   <div id="container">
     <div id="main">
-    <header class="shadow">
+    <header>
       <div class="container-12 fw">
         <div class="grid-4">
           <a class="logo" href="/" title="Home"></a>
@@ -127,7 +168,6 @@
                     </li>
 <li><a href="careers">careers</a>
                     </li>
-                    
                   </ul>
                 </li>
                 <li class="press"><a href="press">press</a>
@@ -201,7 +241,7 @@
       </div>
     </div>
   </div>
-  <footer>
+    <footer>
   <div class="container-12">
     <div class="grid-2 footer-links">
       <ul>
@@ -243,8 +283,8 @@
       </ul>
     </div>
     <div class="grid-6">
+
       <ul class="social-links">
-        
         <li class="google-icon">
           <a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
             <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" />
@@ -284,6 +324,15 @@
     </div>
   </div>
 </footer>
-</body>
 
+
+<script src="js/jquery.fitvids.js"></script>
+      <script>
+        // Basic FitVids Test
+        $(".video-container").fitVids();
+        // Custom selector and No-Double-Wrapping Prevention Test
+        $(".video-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
+      </script>
+
+</body>
 </html>

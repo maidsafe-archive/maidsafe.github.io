@@ -1,0 +1,60 @@
+  <div id="container">
+    <div id="main">
+    <header>
+      <div class="container-12 fw">
+        <div class="grid-4">
+          <a class="logo" href="/" title="Home"></a>
+        </div>
+        <div class="grid-8">
+          <a class="menu-link" href="#menu">Menu</a>
+          <nav id="menu" class="menu">
+            <ul>
+              <li class="overview single-link"><a href="overview">overview</a>
+                <li class="has-submenu"><a href="#">overview</a>
+                  <ul class="sub-menu">
+                    <li><a href="overview">overview</a>
+                    </li>
+                    <li><a href="distributed-network-features">features</a>
+                    </li>
+                    <li><a href="maidsafe-network-platform-libraries">libraries</a>
+                    </li>
+                    <li><a href="network-platform-use-cases">use cases</a>
+                    </li>
+                    <li><a href="network-platform-licensing">licensing</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="developers single-link"><a href="network-platform-developers">developers</a>
+                <li class="has-submenu"><a href="#">developers</a>
+                  <ul class="sub-menu">
+                    <li><a href="network-platform-developers">overview</a>
+                    </li>
+                    <li><a href="maidsafe-network-platform-libraries">libraries</a>
+                    </li>
+                    
+                    <li><a href="network-platform-licensing">licensing</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="company single-link"><a href="company-privacy-security-freedom">company</a>
+                <li class="has-submenu"><a href="#">company</a>
+                  <ul class="sub-menu">
+                    <li><a href="company-privacy-security-freedom">overview</a>
+                    </li>
+                    <li><a href="team">team</a>
+                    </li>
+<li><a href="careers">careers</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="press"><a href="press">press</a>
+                </li>
+                <li class="blog"><a href="http://blog.maidsafe.net/" target="_blank">blog</a>
+                </li>
+                <li class="contact"><a href="contact">contact</a>
+                </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
