@@ -813,8 +813,7 @@ video {
 Inner Page Styles
 
 *******************************************************************************/
-.shadow {
-	
+.shadow {	
 	background:url(imgs/nav_shadow-2.png) repeat-x 0 20px;
 	clear: both;
     display: block;
@@ -1200,6 +1199,8 @@ Press Page Styles
 	display:inline-block;
 	min-height:370px;
 }
+
+#article-sovryn-tech-interview iframe { width:100%;}
 
 /*******************************************************************************
 
