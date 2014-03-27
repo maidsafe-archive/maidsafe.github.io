@@ -457,7 +457,8 @@ header {
 #article-pocket-lint .menu .press a,
 #article-decentralized-internet-is-here .menu .press a,
 #article-new-age-internet .menu .press a,
-#article-ernest-hancock-radio-interview .menu .press a {
+#article-ernest-hancock-radio-interview .menu .press a,
+#article-sovryn-tech-interview .menu .press a {
 	color: #5593D7;
 }
 
@@ -479,7 +480,8 @@ header {
 #article-pocket-lint ul.leftnav .article-pocket-lint a,
 #article-decentralized-internet-is-here ul.leftnav .article-decentralized-internet-is-here a,
 #article-new-age-internet ul.leftnav .article-new-age-internet a,
-#article-ernest-hancock-radio-interview ul.leftnav .article-ernest-hancock-radio-interview a {
+#article-ernest-hancock-radio-interview ul.leftnav .article-ernest-hancock-radio-interview a,
+#article-sovryn-tech-interview ul.leftnav .article-sovryn-tech-interview a {
 	color:#5593D7;
 }
 
