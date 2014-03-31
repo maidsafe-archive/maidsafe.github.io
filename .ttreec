@@ -63,11 +63,11 @@ copy = \.gif$
 # be applied every time you run ttree.
 #------------------------------------------------------------------------
 # # directory containing source page templates
- src = -/src
+ src = /src
 #
 # # directory where output files should be written
- dest = -/
+ dest = /
 # 
 # # additional directories of library templates
- lib = -/lib
+ lib = /lib
 
