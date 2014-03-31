@@ -145,14 +145,24 @@
       <div class="container-12">
         <div class="grid-9 main-content">
           <h1>Distributed Platform Overview</h1>
-          <p>MaidSafe differs from many of the organisations and products in our space as we have the decentralized Internet at the core of our design. We provide an easy to use fully distributed platform with enhanced performance where all the security is inherent.</p>
-<p>The MaidSafe platform is designed for third party application providers to create their own application environment.  Our platform removes developer risk for startups and new projects. You might say we provide a frictionless startup platform. </p>
-          <h2>Privacy</h2>
-          <p>Self Authentication allows everyone to be in complete control of all data, beyond encryption to include physical access. In essence, nobody knows where any data is located, thereby providing completely private and unilateral access by individuals. As all communications and data at rest are also encrypted, nobody can tell who is using the system, what they are doing or where they are. </p>
-          <h2>Security</h2>
-          <p>End to end encrypted data transfer and communications with encryption injected above layer 3, thereby evading 'man in the middle attacks'. Data at rest encryption, beyond today's highest levels of military grade algorithms on an open source platform that stores no passwords or representations of passwords.</p>
-          <h2>Freedom</h2>
-          <p>The ability to 'self join' the network, enabling users to manage their own data, identity, contacts, shares or any information completely free of any third party involvement. Users can store, share, chat and publish 100% under their own control and knowledge.</p>
+          <p>MaidSafe consists of two key parts. The network and the client applications. </p>
+<p>The SAFE (Secure Access for Everyone) network can be best described as a fully distributed data management service. This network manages static and dynamic data as well as communications. Importantly the data held is either :</p>
+<ol>
+  <li>Encrypted by clients</li>
+  <li>Cryptographically signed by clients </li>
+</ol>
+<p>In either case the network cannot decrypt any of the data on the network. This can be thought of as a decentralized server that performs the tasks of today's httpd, ssh, scp, ftp, smtp, pop3, imap etc. servers.</p>
+<p>The SAFE network is made up of unused hard drive space, CPU and communications capabilities of commodity computers. These computers are likely owned by the very users of the system, but need not be limited to that. Each computer will effectively mine for credits which can be traded for many other goods and services. These credits are called safecoin.<br>
+  <br>
+  MaidSafe client applications access this network via some innovative steps including:</p>
+<ol>
+  <li>Self encrypting data</li>
+  <li>Access and create cryptographically secured id's on a decentralized PKI</li>
+  <li><a href="https://github.com/maidsafe/MaidSafe/wiki/unpublished_papers/SelfAuthentication.pdf?raw=true">Self authentication</a>.</li>
+</ol>
+<p>Client applications can access, store, mutate and communicate on the network. The clients allow people to anonymously join the network and cannot prevent people joining. Data is presented to clients as virtual drives mounted on their machines, application data, internal to applications, communication data as well as dynamic data that is manipulated via client applications depending on the programming methods employed. </p>
+<p>Examples of client apps are; cloud storage, encrypted messaging, web sites, crypto wallets, document processing of any data provided by any program, distributed databases, research sharing of documents, research and ideas with IPR protection if required, document signing, contract signing, decentralized co-operative groups or companies, trading mechanisms and many others. The clients can access every Internet service known today and introduce many services currently not possible with a centralised architecture.</p>
+<p>These clients, when accessing the network, will ensure that users never type another password to access any further services. The client contains many cryptographically secured key pairs and can use these automatically sign requests for session management or membership of any network service. Therefore, a website with membership can present a join button and merely clicking that would sign an authority and allow access in the future.  Digital voting, aggregated news, knowledge transfer of even very secret information is now all possible, and this is just the beginning!</p>
         </div>
         <div class="grid-3 leftnav-shell">
           <ul class="leftnav">
