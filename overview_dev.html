@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>MaidSafe - Distributed Platform</title>
+  <meta name="description" content="The MaidSafe Platform provides complete control of data, end to end encrypted data transfer and the ability to self join the network." />
+  <meta name="keywords" content="Open Source Platform, Self Authentication, MaidSafe" />
+  <meta name="author" content="MaidSafe" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="robots" content="all" />
+  <meta name="revisit-after" content="30 days" />
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+ 
+
+  
+  <!-- Web font -->
+  <script type="text/javascript">
+    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/open-sans:n4,n7,n3,i3:all.js" type="text/javascript">\x3C/script>');
+  </script>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="library/js/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  
+  
+  
+  <script>
+    jQuery(document).ready(function ($) {
+
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link'),
+        $menuTrigger = $('.has-submenu > a');
+
+      $menulink.click(function (e) {
+        e.preventDefault();
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+      });
+
+      $menuTrigger.click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass('active').next('ul').toggleClass('active');
+      });
+    });
+  </script>
+  
+  
+
+  <!-- IE Fix for Sticky Footer -->
+  <!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32549768-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body id="platform-overview">
+    <div id="container">
+    <div id="main">
+    <header>
+      <div class="container-12 fw">
+        <div class="grid-4">
+          <a class="logo" href="/" title="Home"></a>
+        </div>
+        <div class="grid-8">
+          <a class="menu-link" href="#menu">Menu</a>
+          <nav id="menu" class="menu">
+            <ul>
+              <li class="overview single-link"><a href="overview">overview</a>
+                <li class="has-submenu"><a href="#">overview</a>
+                  <ul class="sub-menu">
+                    <li><a href="overview">overview</a>
+                    </li>
+                    <li><a href="distributed-network-features">features</a>
+                    </li>
+                    <li><a href="maidsafe-network-platform-libraries">libraries</a>
+                    </li>
+                    <li><a href="network-platform-use-cases">use cases</a>
+                    </li>
+                    <li><a href="network-platform-licensing">licensing</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="developers single-link"><a href="network-platform-developers">developers</a>
+                <li class="has-submenu"><a href="#">developers</a>
+                  <ul class="sub-menu">
+                    <li><a href="network-platform-developers">overview</a>
+                    </li>
+                    <li><a href="maidsafe-network-platform-libraries">libraries</a>
+                    </li>
+                    
+                    <li><a href="network-platform-licensing">licensing</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="company single-link"><a href="company-privacy-security-freedom">company</a>
+                <li class="has-submenu"><a href="#">company</a>
+                  <ul class="sub-menu">
+                    <li><a href="company-privacy-security-freedom">overview</a>
+                    </li>
+                    <li><a href="team">team</a>
+                    </li>
+<li><a href="careers">careers</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="press"><a href="press">press</a>
+                </li>
+                <li class="blog"><a href="http://blog.maidsafe.net/" target="_blank">blog</a>
+                </li>
+                <li class="contact"><a href="contact">contact</a>
+                </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+      <div class="container-12">
+        <div class="grid-9 main-content">
+          <h1>Distributed Platform Overview</h1>
+          <p>MaidSafe consists of two key parts. The network and the client applications. </p>
+<p>The SAFE (Secure Access for Everyone) network can be best described as a fully distributed data management service. This network manages static and dynamic data as well as communications. Importantly the data held is either :</p>
+<ol>
+  <li>Encrypted by clients</li>
+  <li>Cryptographically signed by clients </li>
+</ol>
+<p>In either case the network cannot decrypt any of the data on the network. This can be thought of as a decentralised server that performs the tasks of todays httpd, ssh, scp, ftp, smtp, pop3, imap etc. servers.</p>
+<p>The SAFE network is made up of unused hard drive space, CPU and communications capabilities of commodity computers. These computers are likely owned by the very users of the system, but need not be limited to that. Each computer will effectively mine for credits which can be traded for many other goods and services. These credits are called safecoin.<br>
+  <br>
+  MaidSafe client applications access this network via some innovative steps including:</p>
+<ol>
+  <li>Self encrypting data</li>
+  <li>Access and create cryptographically secured id's on a decentralised PKI</li>
+  <li>Self authentication. (Insert link to the github wiki paper)</li>
+</ol>
+<p>Client applications can access, store, mutate and communicate on the network. The clients allow people to anonymously join the network and cannot prevent people joining. Data is presented to clients as virtual drives mounted on their machines, application data, internal to applications, communication data as well as dynamic data that is manipulated via client applications depending on the applications programmed methods. </p>
+<p>Examples of client apps are; cloud storage, encrypted messaging, web sites, crypto wallets, document processing of any data provided by any program, distributed databases, research sharing of documents, research and ideas with IPR protection if required, document signing, contract signing, decentralised co-operative groups or companies, trading mechanisms and many others. The clients can access every Internet service known today and introduce many services currently not possible with a centralised architecture.</p>
+<p>These clients, when accessing the network, will ensure that users never type another password to access any further services. The client contains many cryptographically secured key pairs and can use these automatically sign requests for session management or membership of any network service. Therefore, a website with membership can present a join button and merely clicking that would sign an authority and allow access in the future.  Digital voting, aggregated news, knowledge transfer of even very secret information is now all possible, and this is just the beginning!</p>
+        </div>
+        <div class="grid-3 leftnav-shell">
+          <ul class="leftnav">
+            <li class="overview"><a href="overview">Overview</a>
+            </li>
+            <li class="features"><a href="distributed-network-features">Features</a>
+            </li>
+            <li class="faqs"><a href="faqs">FAQs</a>
+            </li>
+            <li class="usecases"><a href="network-platform-use-cases">Use Cases</a>
+            </li>
+            <li class="licensing"><a href="network-platform-licensing">Licensing</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    <footer>
+  <div class="container-12">
+    <div class="grid-2 footer-links">
+      <ul>
+        <li><a href="/">Home</a>
+        </li>
+        <li><a href="company-privacy-security-freedom">Company</a>
+        </li>
+        
+        <li><a href="press">Press</a>
+        </li>
+        <li><a href="http://blog.maidsafe.net/" target="_blank">Blog</a>
+        </li>
+        <li><a href="contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <div class="grid-2 footer-links">
+      <ul>
+        <li><a href="overview">Overview</a>
+        </li>
+        <li><a href="distributed-network-features">- Features</a>
+        </li>
+        <li><a href="faqs">- FAQs</a>
+        </li>
+        <li><a href="network-platform-use-cases">- Use Cases</a>
+        </li>
+        <li><a href="network-platform-licensing">- Licensing</a>
+        </li>
+      </ul>
+    </div>
+    <div class="grid-2 footer-links">
+      <ul>
+        <li><a href="network-platform-developers">Developers</a>
+        </li>
+        <li><a href="maidsafe-network-platform-libraries">- Libraries</a>
+        </li>
+        <li><a href="developers-licensing">- Licensing</a>
+        </li>
+      </ul>
+    </div>
+    <div class="grid-6">
+
+      <ul class="social-links">
+        <li class="google-icon">
+          <a href="//plus.google.com/116247028454443786165?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;">
+            <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;" />
+          </a>
+        </li>
+        <li><a href="https://twitter.com/maidsafe" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @maidsafe</a>
+        </li>
+        <script>
+          ! function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+              p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+              js = d.createElement(s);
+              js.id = id;
+              js.src = p + '://platform.twitter.com/widgets.js';
+              fjs.parentNode.insertBefore(js, fjs);
+            }
+          }(document, 'script', 'twitter-wjs');
+        </script>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container-12">
+    <div class="grid-12">
+      <div class="footer-logos">
+        <img src="images/footer_logo.png" alt="maidsafe" width="182" height="52" class="logo-footer" />
+
+        <a class="" href="http://www.internetdefenseleague.org" target="_blank" title="Go to the Internet Defense League">
+          <img src="images/idlbadge.png" alt="Internet Defense League" width="60" height="35" class="idl-badge" />
+        </a>
+      </div>
+      <p class="legal">©2014 MaidSafe.net. All rights reserved.
+        <a href="disclaimer">DISCLAIMER</a>
+        <a href="privacy">PRIVACY</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/jquery.fitvids.js"></script>
+      <script>
+        // Basic FitVids Test
+        $(".video-container").fitVids();
+        // Custom selector and No-Double-Wrapping Prevention Test
+        $(".video-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
+      </script>
+
+</body>
+</html>

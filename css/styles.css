@@ -346,6 +346,17 @@ strong { font-weight:bold; font-style:normal;}
 	font-family: 'OpenSansSemiBold', Arial, sans-serif;
 }
 
+ol {
+	margin:0 0 30px 20px;
+	font-size:14px;
+	color: #464646;
+}
+
+ol li {
+	list-style:decimal;
+	margin-bottom:5px;
+}
+
 /*******************************************************************************
 
 Header Styles
