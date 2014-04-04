@@ -412,6 +412,48 @@ footer .grid-1, footer .grid-2, footer .grid-3, footer .grid-4, footer .grid-5, 
 .container-16 .grid-1, .container-16 .grid-2, .container-16 .grid-3, .container-16 .grid-4, .container-16 .grid-5, .container-16 .grid-6, .container-16 .grid-7, .container-16 .grid-8, .container-16 .grid-9, .container-16 .grid-10, .container-16 .grid-11, .container-16 .grid-12, .container-16 .grid-13, .container-16 .grid-14, .container-16 .grid-15, .container-16 .grid-16, .container-12 .grid-1, .container-12 .grid-2, .container-12 .grid-3, .container-12 .grid-4, .container-12 .grid-5, .container-12 .grid-6, .container-12 .grid-7, .container-12 .grid-8, .container-12 .grid-9, .container-12 .grid-10, .container-12 .grid-11, .container-12 .grid-12 {
 	width:100%;
 }
+
+
+#developers .container-16, #developers .container-12 {
+	width: 90%;
+}
+#developers .container-12 .diagram .grid-1 {
+	width:25px;
+}
+#developers .container-12 .diagram .grid-2 {
+	width:70px;
+}
+#developers .container-12 .diagram .grid-3 {
+	width:115px;
+}
+#developers .container-12 .diagram .grid-4 {
+	width:160px;
+}
+#developers .container-12 .diagram .grid-5 {
+	width:205px;
+}
+#developers .container-12 .diagram .grid-6 {
+	width:250px;
+}
+#developers .container-12 .diagram .grid-7 {
+	width:295px;
+}
+#developers .container-12 .diagram .grid-8 {
+	width:340px;
+}
+#developers .container-12 .diagram .grid-9 {
+	width:385px;
+}
+#developers .container-12 .diagram .grid-10 {
+	width:430px;
+}
+#developers .container-12 .diagram .grid-11 {
+	width:475px;
+}
+#developers .container-12 .diagram .grid-12 {
+	width:520px;
+}
+
 }
 
 

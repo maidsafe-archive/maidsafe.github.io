@@ -940,6 +940,8 @@ Developers Page Styles
 
 *******************************************************************************/
 
+
+
 a.get-started-button {
 	/*background:#5593D7 url(imgs/hammer_icon.png) no-repeat 195px 10px;*/
 	background:#5593D7;
@@ -965,6 +967,53 @@ a.button-blue {
     font-weight: 400;
 	color:#FFFFFF!important;
 	cursor:pointer;
+}
+
+#developers h1 {
+	margin-bottom:50px;
+}
+#developers h2 {
+	text-align:center;
+}
+
+a.light-button, a.light-button-full {
+	background-color:#c5d9f1;
+	font-size:18px;
+	text-align:center;
+	margin:5px 6px;
+	text-decoration:none;
+}
+
+a.light-button:hover, a.light-button-full:hover {
+	background-color:#5593D7;
+	color:#ffffff;
+}
+
+a.light-button {
+	padding:20px 0;
+}
+
+a.light-button-full {
+	padding:20px 31px;
+}
+
+a.last-button {
+	margin-bottom:40px;
+}
+
+.diagram {
+	padding-top:90px;
+	margin-bottom:30px;
+}
+
+.app-stack {
+	background:url(imgs/arrows-stack-diagram.png) no-repeat;
+	background-position:330px 180px;
+}
+
+.app-stack-spacer {
+	height:50px;
+	margin:5px 6px;
 }
 
 
@@ -1994,6 +2043,42 @@ p.alpha-testers {
 .article-2 {  padding-left:15px;}
 
 
+/*********** Developers Page **************/
+
+a.get-started-button {
+	font-size: 18px;
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 8px 12px 8px 12px;
+	float:right;
+}
+
+a.button-blue {
+	font-size: 36px;
+    font-weight: 400;
+}
+
+#developers h1 {
+	margin-bottom:50px;
+}
+
+a.light-button, a.light-button-full {
+	font-size:16px;
+	margin:5px 6px;
+
+}
+
+a.light-button-full {
+	padding:20px 22px;
+}
+
+.diagram {
+	padding-top:90px;
+}
+
+.app-stack {
+	background-position: 230px 215px;
+}
 
 /*********** Careers Page ***************/
 .vacancies {
@@ -2372,6 +2457,39 @@ ul.leftnav li ul li a {
 
 .main-content {
 	padding-bottom:20px;
+}
+
+/*********** Developers Page **************/
+
+a.get-started-button {
+	font-size: 14px;
+    font-weight: 300;
+    border-radius: 3px;
+    padding: 6px 10px 6px 10px;
+	float:right;
+}
+
+#developers h1 {
+	margin-bottom:50px;
+}
+
+a.light-button, a.light-button-full {
+	font-size:14px;
+	margin:5px 6px;
+
+}
+
+a.light-button-full {
+	padding:20px 15px;
+}
+
+.diagram {
+	padding-top:70px;
+}
+
+.app-stack {
+	background-position: 170px 205px;
+	background-size:180px 132px;
 }
 
 /*********** Careeres Page ***************/
@@ -2982,6 +3100,42 @@ ul.leftnav {
 p {
 	text-align:left;
 }
+
+/*********** Developers Page **************/
+
+a.get-started-button {
+	font-size: 14px;
+    font-weight: 300;
+    border-radius: 3px;
+    padding: 6px 10px 6px 10px;
+	float:right;
+}
+
+#developers h1 {
+	margin-bottom:50px;
+}
+
+a.light-button, a.light-button-full {
+	font-size:14px;
+	margin:5px 6px;
+
+}
+
+a.light-button-full {
+	padding:20px 15px;
+}
+
+.diagram {
+	padding-top:70px;
+	width:500px;
+	margin: 0 auto;
+}
+
+.app-stack {
+	background-position: 170px 240px;
+	background-size:180px 132px;
+}
+
 
 /******************* Careers Page *********************/
 .vacancies {
