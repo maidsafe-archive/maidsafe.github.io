@@ -557,11 +557,61 @@ p.quoter {
 	color:rgba(161,161,161,1.00);
 }
 
+/************************** Banner safecoin ***************************/
+.banner-safecoin {
+	padding:5px 0 0 0;
+}
+.banner-safecoin h1 {
+	font-size:31px;
+	color:#231f20;
+	margin-bottom:10px;
+}
+
+.banner-safecoin p {
+	color:#a0a1a3;
+	font-size:22px;
+	font-family: 'OpenSansSemiBold', Arial, sans-serif;
+}
+
+.safecoin-logo {
+	background:url(imgs/safecoin-banner-logo.png) no-repeat 0 0;
+	width:260px;
+	height:82px;
+	background-size:260px 82px;
+	position:relative;
+	margin:0px auto 10px auto;
+}
+
+/************************** Banner news ***************************/
+.banner-news {
+	padding:5px 0 0 0;
+}
+.banner-news h1 {
+	font-size:31px;
+	color:#231f20;
+	margin-bottom:10px;
+}
+
+.banner-news p {
+	color:#a0a1a3;
+	font-size:22px;
+	font-family: 'OpenSansSemiBold', Arial, sans-serif;
+}
+
+.news-graphic {
+	background:url(imgs/news_graphic.png) no-repeat 0 0;
+	width:202px;
+	height:86px;
+	background-size:202px 86px;
+	position:relative;
+	margin:0px auto 10px auto;
+}
+
 /************************** Banner 1 ***************************/
-.banner-1 {
+.banner-decentralized {
 	padding:25px 0 0 0;
 }
-.banner-1 h1 {
+.banner-decentralized h1 {
 	font-size:40px;
 	color:rgba(76,76,76,1.00);
 }
@@ -575,23 +625,23 @@ p.quoter {
 	font-family: 'OpenSansBold', Arial, sans-serif;
 }
 /************************** Banner 2 ***************************/
-.banner-2 {
+.banner-quote-kumar {
 	padding:0px 40px 0 40px;
 }
-.banner-2 blockquote.quote {
+.banner-quote-kumar blockquote.quote {
 	background-position: 45px 5px;
 }
-.banner-2 blockquote.quote span {
+.banner-quote-kumar blockquote.quote span {
 	background-position: 775px 60px;
 }
-.banner-2 p.quoter {
+.banner-quote-kumar p.quoter {
 	padding:0 180px;
 }
 /************************** Banner 3 ***************************/
-.banner-3 {
+.banner-plane {
 	padding:20px 0 0 0;
 }
-.banner-3 h1 {
+.banner-plane h1 {
 	font-size:31px;
 	color:#5593D7;
 }
@@ -604,23 +654,23 @@ p.quoter {
 	margin:0px auto 10px auto;
 }
 /************************** Banner 4 ***************************/
-.banner-4 {
+.banner-quote-kolberg {
 	padding:5px 40px 0 40px;
 }
-.banner-4 blockquote.quote {
+.banner-quote-kolberg blockquote.quote {
 	background-position: 10px 5px;
 }
-.banner-4 blockquote.quote span {
+.banner-quote-kolberg blockquote.quote span {
 	background-position: 805px 60px;
 }
-.banner-4 p.quoter {
+.banner-quote-kolberg p.quoter {
 	padding:0 150px;
 }
 /************************** Banner 5 ***************************/
-.banner-5 {
+.banner-getcode {
 	padding:25px 0 0 0;
 }
-.banner-5 h1 {
+.banner-getcode h1 {
 	font-size:31px;
 	color:#5593D7;
 	line-height: 110px;
@@ -638,23 +688,23 @@ p.quoter {
 	height:40px;
 }
 /************************** Banner 6 ***************************/
-.banner-6 {
+.banner-quote-irvine {
 	padding:5px 110px 0 110px;
 }
-.banner-6 blockquote.quote {
+.banner-quote-irvine blockquote.quote {
 	background-position: 10px 5px;
 }
-.banner-6 blockquote.quote span {
+.banner-quote-irvine blockquote.quote span {
 	background-position: 670px 60px;
 }
-.banner-6 p.quoter {
+.banner-quote-irvine p.quoter {
 	padding:0 150px;
 }
 /************************** Banner 7 ***************************/
-.banner-7 {
+.banner-developers {
 	padding:20px 0 0 0;
 }
-.banner-7 h1 {
+.banner-developers h1 {
 	font-size:40px;
 	color:#5593D7;
 }
@@ -665,17 +715,17 @@ p.quoter {
 	margin:0 auto 20px auto;
 }
 /************************** Banner 8 ***************************/
-.banner-8 {
+.banner-quote-natalia {
 	padding:15px 0px 0 0px;
 }
-.banner-8 blockquote.quote {
+.banner-quote-natalia blockquote.quote {
 	background-position: 10px 5px;
 	padding:0px;
 }
-.banner-8 blockquote.quote span {
+.banner-quote-natalia blockquote.quote span {
 	background-position: 910px 60px;
 }
-.banner-8 p.quoter {
+.banner-quote-natalia p.quoter {
 	padding:0 150px;
 }
 
@@ -1832,11 +1882,51 @@ p.quoter {
 	font-size:13px;
 }
 
+/************************** Banner safecoin ***************************/
+.banner-safecoin {
+	padding:5px 0 0 0;
+}
+.banner-safecoin h1 {
+	font-size:26px;
+	margin-bottom:10px;
+}
+
+.banner-safecoin p {
+	font-size:20px;
+}
+
+.safecoin-logo {
+	width:260px;
+	height:82px;
+	background-size:260px 82px;
+	margin:0px auto 10px auto;
+}
+
+/************************** Banner news ***************************/
+.banner-news {
+	padding:5px 0 0 0;
+}
+.banner-news h1 {
+	font-size:26px;
+	margin-bottom:10px;
+}
+
+.banner-news p {
+	font-size:20px;
+}
+
+.news-graphic {
+	width:202px;
+	height:86px;
+	background-size:202px 86px;
+	margin:0px auto 10px auto;
+}
+
 /************************** Banner 1 ***************************/
-.banner-1 {
+.banner-decentralized {
 	padding:40px 0 0 0;
 }
-.banner-1 h1 {
+.banner-decentralized h1 {
 	font-size:36px;
 }
 .download-blue {
@@ -1847,24 +1937,24 @@ p.quoter {
 	font-size:20px;
 }
 /************************** Banner 2 ***************************/
-.banner-2 {
+.banner-quote-kumar {
 	padding:0px 10px 0 10px;
 }
-.banner-2 blockquote.quote {
+.banner-quote-kumar blockquote.quote {
 	background-position: 15px 10px;
 }
-.banner-2 blockquote.quote span {
+.banner-quote-kumar blockquote.quote span {
 	background-position: 610px 50px;
 }
-.banner-2 p.quoter {
+.banner-quote-kumar p.quoter {
 	padding:0 80px;
 	text-align:center;
 }
 /************************** Banner 3 ***************************/
-.banner-3 {
+.banner-plane {
 	padding:30px 0 0 0;
 }
-.banner-3 h1 {
+.banner-plane h1 {
 	font-size:26px;
 	color:#5593D7;
 }
@@ -1876,23 +1966,23 @@ p.quoter {
 	margin:0px auto 10px auto;
 }
 /************************** Banner 4 ***************************/
-.banner-4 {
+.banner-quote-kolberg {
 	padding:5px 40px 0 40px;
 }
-.banner-4 blockquote.quote {
+.banner-quote-kolberg blockquote.quote {
 	background-position: 10px 5px;
 }
-.banner-4 blockquote.quote span {
+.banner-quote-kolberg blockquote.quote span {
 	background-position: 565px 50px;
 }
-.banner-4 p.quoter {
+.banner-quote-kolberg p.quoter {
 	padding:0 40px;
 }
 /************************** Banner 5 ***************************/
-.banner-5 {
+.banner-getcode {
 	padding:35px 0 0 0;
 }
-.banner-5 h1 {
+.banner-getcode h1 {
 	font-size:26px;
 }
 .github-icon {
@@ -1904,23 +1994,23 @@ p.quoter {
 	width:100px;
 }
 /************************** Banner 6 ***************************/
-.banner-6 {
+.banner-quote-irvine {
 	padding:15px 40px 0 40px;
 }
-.banner-6 blockquote.quote {
+.banner-quote-irvine blockquote.quote {
 	background-position: 10px 5px;
 }
-.banner-6 blockquote.quote span {
+.banner-quote-irvine blockquote.quote span {
 	background-position: 537px 55px;
 }
-.banner-6 p.quoter {
+.banner-quote-irvine p.quoter {
 	padding:0 100px;
 }
 /************************** Banner 7 ***************************/
-.banner-7 {
+.banner-developers {
 	padding:35px 0 0 0;
 }
-.banner-7 h1 {
+.banner-developers h1 {
 	font-size:30px;
 	color:#5593D7;
 }
@@ -1931,17 +2021,17 @@ p.quoter {
 	margin:0 auto 15px auto;
 }
 /************************** Banner 8 ***************************/
-.banner-8 {
+.banner-quote-natalia {
 	padding:15px 40px 0 40px;
 }
-.banner-8 blockquote.quote {
+.banner-quote-natalia blockquote.quote {
 	background-position: 0px 0px;
 	padding:0px;
 }
-.banner-8 blockquote.quote span {
+.banner-quote-natalia blockquote.quote span {
 	background-position: 530px 80px;
 }
-.banner-8 p.quoter {
+.banner-quote-natalia p.quoter {
 	padding:0 50px;
 }
 
@@ -2244,11 +2334,51 @@ p.quoter {
 	font-size:11px;
 }
 
+/************************** Banner safecoin ***************************/
+.banner-safecoin {
+	padding:5px 0 0 0;
+}
+.banner-safecoin h1 {
+	font-size:20px;
+	margin-bottom:10px;
+}
+
+.banner-safecoin p {
+	font-size:14px;
+}
+
+.safecoin-logo {
+	width:180px;
+	height:57px;
+	background-size:180px 57px;
+	margin:0px auto 10px auto;
+}
+
+/************************** Banner news ***************************/
+.banner-news {
+	padding:5px 0 0 0;
+}
+.banner-news h1 {
+	font-size:20px;
+	margin-bottom:10px;
+}
+
+.banner-news p {
+	font-size:14px;
+}
+
+.news-graphic {
+	width:160px;
+	height:68px;
+	background-size:160px 68px;
+	margin:0px auto 10px auto;
+}
+
 /************************** Banner 1 ***************************/
-.banner-1 {
+.banner-decentralized {
 	padding:25px 0 0 0;
 }
-.banner-1 h1 {
+.banner-decentralized h1 {
 	font-size:30px;
 }
 .download-blue {
@@ -2259,24 +2389,24 @@ p.quoter {
 	font-size:18px;
 }
 /************************** Banner 2 ***************************/
-.banner-2 {
+.banner-quote-kumar {
 	padding:0px;
 }
-.banner-2 blockquote.quote {
+.banner-quote-kumar blockquote.quote {
 	background-position: 15px 10px;
 }
-.banner-2 blockquote.quote span {
+.banner-quote-kumar blockquote.quote span {
 	background-position: 455px 70px;
 }
-.banner-2 p.quoter {
+.banner-quote-kumar p.quoter {
 	padding:0 20px;
 	text-align:center;
 }
 /************************** Banner 3 ***************************/
-.banner-3 {
+.banner-plane {
 	padding:30px 0 0 0;
 }
-.banner-3 h1 {
+.banner-plane h1 {
 	font-size:20px;
 	color:#5593D7;
 }
@@ -2288,23 +2418,23 @@ p.quoter {
 	margin:0px auto 10px auto;
 }
 /************************** Banner 4 ***************************/
-.banner-4 {
+.banner-quote-kolberg {
 	padding:5px 0 0 0px;
 }
-.banner-4 blockquote.quote {
+.banner-quote-kolberg blockquote.quote {
 	background-position: 30px 10px;
 }
-.banner-4 blockquote.quote span {
+.banner-quote-kolberg blockquote.quote span {
 	background-position: 465px 70px;
 }
-.banner-4 p.quoter {
+.banner-quote-kolberg p.quoter {
 	padding:0 20px;
 }
 /************************** Banner 5 ***************************/
-.banner-5 {
+.banner-getcode {
 	padding:15px 0 0 0;
 }
-.banner-5 h1 {
+.banner-getcode h1 {
 	font-size:20px;
 }
 .github-icon {
@@ -2316,23 +2446,23 @@ p.quoter {
 	width:90px;
 }
 /************************** Banner 6 ***************************/
-.banner-6 {
+.banner-quote-irvine {
 	padding:15px 0px 0 0px;
 }
-.banner-6 blockquote.quote {
+.banner-quote-irvine blockquote.quote {
 	background-position: 10px 10px;
 }
-.banner-6 blockquote.quote span {
+.banner-quote-irvine blockquote.quote span {
 	background-position: 465px 45px;
 }
-.banner-6 p.quoter {
+.banner-quote-irvine p.quoter {
 	padding:0 20px;
 }
 /************************** Banner 7 ***************************/
-.banner-7 {
+.banner-developers {
 	padding:35px 0 0 0;
 }
-.banner-7 h1 {
+.banner-developers h1 {
 	font-size:26px;
 	color:#5593D7;
 }
@@ -2343,17 +2473,17 @@ p.quoter {
 	margin:0 auto 15px auto;
 }
 /************************** Banner 8 ***************************/
-.banner-8 {
+.banner-quote-natalia {
 	padding:15px 20px 0 20px;
 }
-.banner-8 blockquote.quote {
+.banner-quote-natalia blockquote.quote {
 	background-position: 10px 0px;
 	padding:0px;
 }
-.banner-8 blockquote.quote span {
+.banner-quote-natalia blockquote.quote span {
 	background-position: 440px 90px;
 }
-.banner-8 p.quoter {
+.banner-quote-natalia p.quoter {
 	padding:0 20px;
 }
 
@@ -2854,11 +2984,51 @@ p.quoter {
 	line-height:14px!important;
 }
 
+/************************** Banner safecoin ***************************/
+.banner-safecoin {
+	padding:5px 0 0 0;
+}
+.banner-safecoin h1 {
+	font-size:20px;
+	margin-bottom:10px;
+}
+
+.banner-safecoin p {
+	font-size:11px!important;
+}
+
+.safecoin-logo {
+	width:180px;
+	height:57px;
+	background-size:180px 57px;
+	margin:0px auto 10px auto;
+}
+
+/************************** Banner news ***************************/
+.banner-news {
+	padding:5px 0 0 0;
+}
+.banner-news h1 {
+	font-size:20px;
+	margin-bottom:10px;
+}
+
+.banner-news p {
+	font-size:11px!important;
+}
+
+.news-graphic {
+	width:160px;
+	height:68px;
+	background-size:160px 68px;
+	margin:0px auto 10px auto;
+}
+
 /************************** Banner 1 ***************************/
-.banner-1 {
+.banner-decentralized {
 	padding:40px 0 0 0;
 }
-.banner-1 h1 {
+.banner-decentralized h1 {
 	font-size:22px;
 }
 .download-blue {
@@ -2869,24 +3039,24 @@ p.quoter {
 	font-size:14px;
 }
 /************************** Banner 2 ***************************/
-.banner-2 {
+.banner-quote-kumar {
 	padding:0px;
 }
-.banner-2 blockquote.quote {
+.banner-quote-kumar blockquote.quote {
 	background-position: 0px 8px;
 }
-.banner-2 blockquote.quote span {
+.banner-quote-kumar blockquote.quote span {
 	background-position: 315px 80px;
 }
-.banner-2 p.quoter {
+.banner-quote-kumar p.quoter {
 	padding:0px;
 	text-align:center;
 }
 /************************** Banner 3 ***************************/
-.banner-3 {
+.banner-plane {
 	padding:40px 0 0 0;
 }
-.banner-3 h1 {
+.banner-plane h1 {
 	font-size:16px;
 	color:#5593D7;
 }
@@ -2898,23 +3068,23 @@ p.quoter {
 	margin:0px auto 10px auto;
 }
 /************************** Banner 4 ***************************/
-.banner-4 {
+.banner-quote-kolberg {
 	padding:5px 0 0 0px;
 }
-.banner-4 blockquote.quote {
+.banner-quote-kolberg blockquote.quote {
 	background-position: 10px 5px;
 }
-.banner-4 blockquote.quote span {
+.banner-quote-kolberg blockquote.quote span {
 	background-position: 320px 80px;
 }
-.banner-4 p.quoter {
+.banner-quote-kolberg p.quoter {
 	padding:0 20px;
 }
 /************************** Banner 5 ***************************/
-.banner-5 {
+.banner-getcode {
 	padding:0;
 }
-.banner-5 h1 {
+.banner-getcode h1 {
 	font-size:18px;
 	height: 140px;
 }
@@ -2927,23 +3097,23 @@ p.quoter {
 	width:60px;
 }
 /************************** Banner 6 ***************************/
-.banner-6 {
+.banner-quote-irvine {
 	padding:15px 0px 0 0px;
 }
-.banner-6 blockquote.quote {
+.banner-quote-irvine blockquote.quote {
 	background-position: 0px 6px;
 }
-.banner-6 blockquote.quote span {
+.banner-quote-irvine blockquote.quote span {
 	background-position: 320px 60px;
 }
-.banner-6 p.quoter {
+.banner-quote-irvine p.quoter {
 	padding:0 20px;
 }
 /************************** Banner 7 ***************************/
-.banner-7 {
+.banner-developers {
 	padding:45px 0 0 0;
 }
-.banner-7 h1 {
+.banner-developers h1 {
 	font-size:18px;
 	color:#5593D7;
 }
@@ -2954,18 +3124,18 @@ p.quoter {
 	margin:0 auto 15px auto;
 }
 /************************** Banner 8 ***************************/
-.banner-8 {
+.banner-quote-natalia {
 	padding:15px 0px 0 0px;
 }
-.banner-8 blockquote.quote {
+.banner-quote-natalia blockquote.quote {
 	background-position: 0px 0px;
 	padding:0px;
 	text-indent:10px;
 }
-.banner-8 blockquote.quote span {
+.banner-quote-natalia blockquote.quote span {
 	background-position: 310px 80px;
 }
-.banner-8 p.quoter {
+.banner-quote-natalia p.quoter {
 	padding:0 20px;
 }
 
