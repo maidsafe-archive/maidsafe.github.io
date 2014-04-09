@@ -470,7 +470,11 @@ header {
 #article-new-age-internet .menu .press a,
 #article-ernest-hancock-radio-interview .menu .press a,
 #article-sovryn-tech-interview .menu .press a,
-#article-libertarian-building-galts-gulch .menu .press a {
+#article-libertarian-building-galts-gulch .menu .press a,
+#article-transformpr-yahoo .menu .press a,
+#article-coin-report .menu .press a,
+#article-wall-street-journal-bitbeat .menu .press a,
+#article-forbes-beyond-bitcoin .menu .press a {
 	color: #5593D7;
 }
 
@@ -494,7 +498,11 @@ header {
 #article-new-age-internet ul.leftnav .article-new-age-internet a,
 #article-ernest-hancock-radio-interview ul.leftnav .article-ernest-hancock-radio-interview a,
 #article-sovryn-tech-interview ul.leftnav .article-sovryn-tech-interview a,
-#article-libertarian-building-galts-gulch ul.leftnav .article-libertarian-building-galts-gulch a {
+#article-libertarian-building-galts-gulch ul.leftnav .article-libertarian-building-galts-gulch a,
+#article-transformpr-yahoo ul.leftnav .article-transformpr-yahoo a,
+#article-coin-report ul.leftnav .article-coin-report a,
+#article-wall-street-journal-bitbeat ul.leftnav .article-wall-street-journal-bitbeat a,
+#article-forbes-beyond-bitcoin ul.leftnav .article-forbes-beyond-bitcoin a {
 	color:#5593D7;
 }
 
