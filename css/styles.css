@@ -474,7 +474,8 @@ header {
 #article-transformpr-yahoo .menu .press a,
 #article-coin-report .menu .press a,
 #article-wall-street-journal-bitbeat .menu .press a,
-#article-forbes-beyond-bitcoin .menu .press a {
+#article-forbes-beyond-bitcoin .menu .press a,
+#article-ernest-hancock-radio-interview-2 .menu .press a {
 	color: #5593D7;
 }
 
@@ -502,7 +503,8 @@ header {
 #article-transformpr-yahoo ul.leftnav .article-transformpr-yahoo a,
 #article-coin-report ul.leftnav .article-coin-report a,
 #article-wall-street-journal-bitbeat ul.leftnav .article-wall-street-journal-bitbeat a,
-#article-forbes-beyond-bitcoin ul.leftnav .article-forbes-beyond-bitcoin a {
+#article-forbes-beyond-bitcoin ul.leftnav .article-forbes-beyond-bitcoin a,
+#article-ernest-hancock-radio-interview-2 ul.leftnav .article-ernest-hancock-radio-interview-2 a {
 	color:#5593D7;
 }
 
