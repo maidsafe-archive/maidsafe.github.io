@@ -475,7 +475,10 @@ header {
 #article-coin-report .menu .press a,
 #article-wall-street-journal-bitbeat .menu .press a,
 #article-forbes-beyond-bitcoin .menu .press a,
-#article-ernest-hancock-radio-interview-2 .menu .press a {
+#article-ernest-hancock-radio-interview-2 .menu .press a,
+#article-ernest-hancock-launch-interview .menu .press a,
+#article-cointelegraph-interview .menu .press a
+ {
 	color: #5593D7;
 }
 
@@ -504,7 +507,9 @@ header {
 #article-coin-report ul.leftnav .article-coin-report a,
 #article-wall-street-journal-bitbeat ul.leftnav .article-wall-street-journal-bitbeat a,
 #article-forbes-beyond-bitcoin ul.leftnav .article-forbes-beyond-bitcoin a,
-#article-ernest-hancock-radio-interview-2 ul.leftnav .article-ernest-hancock-radio-interview-2 a {
+#article-ernest-hancock-radio-interview-2 ul.leftnav .article-ernest-hancock-radio-interview-2 a,
+#article-ernest-hancock-launch-interview ul.leftnav .article-ernest-hancock-launch-interview a,
+#article-cointelegraph-interview ul.leftnav .article-cointelegraph-interview a {
 	color:#5593D7;
 }
 
@@ -1271,6 +1276,51 @@ Company Page Styles
 #company .grid-4.r {
 	margin-right:0px;
 }
+
+.team-pic {
+	width:224px;
+	height:224px;
+	background-size:224px 224px;
+}
+
+.mosaic-block {
+	float:left;
+	position:relative;
+	overflow:hidden;
+	width:224px;
+	height:224px;
+	margin:10px;
+	border:1px solid #fff;
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+}
+
+	.mosaic-backdrop {
+		display:none;
+		position:absolute;
+		top:0;
+		height:100%;
+		width:100%;
+		background:#111;
+	}
+	
+	.mosaic-overlay {
+		display:none;
+		z-index:5;
+		position:absolute;
+		width:100%;
+		height:100%;
+		background:#111;
+	}
+	
+		
+		.fade .mosaic-overlay {
+			opacity:0;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+			filter:alpha(opacity=00);
+			background:url(imgs/bg-black.png);
+		}
+		
+	
 
 /*******************************************************************************
 
