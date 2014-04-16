@@ -1288,11 +1288,12 @@ Company Page Styles
 	position:relative;
 	overflow:hidden;
 	width:224px;
-	height:224px;
-	margin:10px;
-	border:1px solid #fff;
-	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+	height:176px;
+	/*-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);*/
 }
+.mosaic-block h2 { color:#fff; }
+.mosaic-block a { text-decoration:none;}
+.mosaic-block p {color:#fff;}
 
 	.mosaic-backdrop {
 		display:none;
@@ -1317,6 +1318,32 @@ Company Page Styles
 			opacity:0;
 			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
 			filter:alpha(opacity=00);
+			background:url(imgs/bg-black.png);
+		}
+		
+		.bar .mosaic-overlay {
+			bottom:-145px;
+			height:175px;
+			background:url(imgs/bg-black.png);
+		}
+		
+		.bar2 .mosaic-overlay {
+			bottom:-50px;
+			height:100px;
+			opacity:0.8;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+			filter:alpha(opacity=80);
+		}
+		
+			.bar2 .mosaic-overlay:hover {
+				opacity:1;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+				filter:alpha(opacity=100);
+			}
+		
+		.bar3 .mosaic-overlay {
+			top:-100px;
+			height:100px;
 			background:url(imgs/bg-black.png);
 		}
 		
@@ -1355,9 +1382,10 @@ Careers Page Styles
 Press Page Styles
 
 *******************************************************************************/
+#press h2 { margin-bottom:5px;}
 
 #press .pr-image {
-	margin:0 0 20px 0px;
+	margin:0 0 12px 0px;
 	border:1px solid #ccc;
 	float:none;
 }
@@ -1369,7 +1397,7 @@ Press Page Styles
 
 .press-article {
 	display:inline-block;
-	min-height:370px;
+	min-height:330px;
 }
 
 #article-sovryn-tech-interview iframe { width:100%;}
