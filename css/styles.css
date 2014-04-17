@@ -1289,6 +1289,7 @@ Company Page Styles
 	overflow:hidden;
 	width:224px;
 	height:176px;
+	margin-bottom:30px;
 	/*-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);*/
 }
 .mosaic-block h2 { color:#fff; }
@@ -1384,6 +1385,22 @@ Press Page Styles
 *******************************************************************************/
 #press h2 { margin-bottom:5px;}
 
+#press .main-content { float:none;}
+
+#press .main-content ul li { 
+    padding-left: 0px;
+	margin-bottom:0px; 
+    text-indent: 0em;
+	color: #464646;
+    font-family: 'OpenSansRegular', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#press .main-content ul li:before {
+    content: "";
+}
+
 #press .pr-image {
 	margin:0 0 12px 0px;
 	border:1px solid #ccc;
@@ -1397,10 +1414,68 @@ Press Page Styles
 
 .press-article {
 	display:inline-block;
-	min-height:330px;
+	min-height:380px;
 }
 
+.press-article a { text-decoration:none;}
+
 #article-sovryn-tech-interview iframe { width:100%;}
+
+
+/***** Asynchronous Grid load Press Articles ******/
+
+.grid li {
+	opacity: 0;
+}
+
+.grid li.shown,
+.no-js .grid li,
+.no-cssanimations .grid li {
+	opacity: 1;
+}
+
+.grid li a,
+.grid li img {
+	outline: none;
+	border: none;
+	display: block;
+	max-width: 100%;
+}
+
+/* Effect 8:  */
+.grid.effect-8 {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.grid.effect-8 li.animate {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+	-webkit-animation: popUp .8s ease-in forwards;
+	-moz-animation: popUp .8s ease-in forwards;
+	animation: popUp .8s ease-in forwards;
+}
+
+@-webkit-keyframes popUp {
+	70% { -webkit-transform: scale(1.1); opacity: .8; -webkit-animation-timing-function: ease-out; }
+	100% { -webkit-transform: scale(1); opacity: 1; }
+}
+
+@-moz-keyframes popUp {
+	70% { -moz-transform: scale(1.1); opacity: .8; -moz-animation-timing-function: ease-out; }
+	100% { -moz-transform: scale(1); opacity: 1; }
+}
+
+@keyframes popUp {
+	70% { transform: scale(1.1); opacity: .8; animation-timing-function: ease-out; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
 
 /*******************************************************************************
 
