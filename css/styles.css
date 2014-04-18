@@ -494,24 +494,24 @@ header {
 	color:#5593D7;
 }
 
-#article-maidsafe-bitcloud ul.leftnav .article-maidsafe-bitcloud a,
-#article-revolutionise-internet ul.leftnav .article-revolutionise-internet a,
-#article-ieee ul.leftnav .article-ieee a,
-#article-imperica ul.leftnav .article-imperica a,
-#article-pocket-lint ul.leftnav .article-pocket-lint a,
-#article-decentralized-internet-is-here ul.leftnav .article-decentralized-internet-is-here a,
-#article-new-age-internet ul.leftnav .article-new-age-internet a,
-#article-ernest-hancock-radio-interview ul.leftnav .article-ernest-hancock-radio-interview a,
-#article-sovryn-tech-interview ul.leftnav .article-sovryn-tech-interview a,
-#article-libertarian-building-galts-gulch ul.leftnav .article-libertarian-building-galts-gulch a,
-#article-transformpr-yahoo ul.leftnav .article-transformpr-yahoo a,
-#article-coin-report ul.leftnav .article-coin-report a,
-#article-wall-street-journal-bitbeat ul.leftnav .article-wall-street-journal-bitbeat a,
-#article-forbes-beyond-bitcoin ul.leftnav .article-forbes-beyond-bitcoin a,
-#article-ernest-hancock-radio-interview-2 ul.leftnav .article-ernest-hancock-radio-interview-2 a,
-#article-ernest-hancock-launch-interview ul.leftnav .article-ernest-hancock-launch-interview a,
-#article-cointelegraph-interview ul.leftnav .article-cointelegraph-interview a,
-#article-bitcoin-magazine ul.leftnav .article-bitcoin-magazine a {
+#article-maidsafe-bitcloud ul.pressnav .article-maidsafe-bitcloud a,
+#article-revolutionise-internet ul.pressnav .article-revolutionise-internet a,
+#article-ieee ul.pressnav .article-ieee a,
+#article-imperica ul.pressnav .article-imperica a,
+#article-pocket-lint ul.pressnav .article-pocket-lint a,
+#article-decentralized-internet-is-here ul.pressnav .article-decentralized-internet-is-here a,
+#article-new-age-internet ul.pressnav .article-new-age-internet a,
+#article-ernest-hancock-radio-interview ul.pressnav .article-ernest-hancock-radio-interview a,
+#article-sovryn-tech-interview ul.pressnav .article-sovryn-tech-interview a,
+#article-libertarian-building-galts-gulch ul.pressnav .article-libertarian-building-galts-gulch a,
+#article-transformpr-yahoo ul.pressnav .article-transformpr-yahoo a,
+#article-coin-report ul.pressnav .article-coin-report a,
+#article-wall-street-journal-bitbeat ul.pressnav .article-wall-street-journal-bitbeat a,
+#article-forbes-beyond-bitcoin ul.pressnav .article-forbes-beyond-bitcoin a,
+#article-ernest-hancock-radio-interview-2 ul.pressnav .article-ernest-hancock-radio-interview-2 a,
+#article-ernest-hancock-launch-interview ul.pressnav .article-ernest-hancock-launch-interview a,
+#article-cointelegraph-interview ul.pressnav .article-cointelegraph-interview a,
+#article-bitcoin-magazine ul.pressnav .article-bitcoin-magazine a {
 	color:#5593D7;
 }
 
@@ -1386,6 +1386,8 @@ Press Page Styles
 
 *******************************************************************************/
 #press h2 { margin-bottom:5px;}
+
+a h3 { color:inherit;}
 
 #press .main-content { float:none;}
 
