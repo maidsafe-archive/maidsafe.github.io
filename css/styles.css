@@ -478,7 +478,9 @@ header {
 #article-ernest-hancock-radio-interview-2 .menu .press a,
 #article-ernest-hancock-launch-interview .menu .press a,
 #article-cointelegraph-interview .menu .press a,
-#article-bitcoin-magazine .menu .press a
+#article-bitcoin-magazine .menu .press a,
+#article-coindesk .menu .press a,
+#article-marketwatch .menu .press a
  {
 	color: #5593D7;
 }
@@ -511,7 +513,9 @@ header {
 #article-ernest-hancock-radio-interview-2 ul.pressnav .article-ernest-hancock-radio-interview-2 a,
 #article-ernest-hancock-launch-interview ul.pressnav .article-ernest-hancock-launch-interview a,
 #article-cointelegraph-interview ul.pressnav .article-cointelegraph-interview a,
-#article-bitcoin-magazine ul.pressnav .article-bitcoin-magazine a {
+#article-bitcoin-magazine ul.pressnav .article-bitcoin-magazine a,
+#article-coindesk ul.pressnav .article-coindesk a,
+#article-marketwatch ul.pressnav .article-marketwatch a  {
 	color:#5593D7;
 }
 
