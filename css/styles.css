@@ -480,7 +480,10 @@ header {
 #article-cointelegraph-interview .menu .press a,
 #article-bitcoin-magazine .menu .press a,
 #article-coindesk .menu .press a,
-#article-marketwatch .menu .press a
+#article-marketwatch .menu .press a,
+#article-lets-talk-bitcoin .menu .press a,
+#article-coins-source .menu .press a,
+#article-launch-it .menu .press a
  {
 	color: #5593D7;
 }
@@ -515,7 +518,10 @@ header {
 #article-cointelegraph-interview ul.pressnav .article-cointelegraph-interview a,
 #article-bitcoin-magazine ul.pressnav .article-bitcoin-magazine a,
 #article-coindesk ul.pressnav .article-coindesk a,
-#article-marketwatch ul.pressnav .article-marketwatch a  {
+#article-marketwatch ul.pressnav .article-marketwatch a,
+#article-lets-talk-bitcoin ul.pressnav .article-lets-talk-bitcoin a,
+#article-coins-source ul.pressnav .article-coins-source a,
+#article-launch-it ul.pressnav .article-launch-it a  {
 	color:#5593D7;
 }
 
