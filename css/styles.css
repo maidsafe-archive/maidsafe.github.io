@@ -1294,13 +1294,16 @@ Company Page Styles
 	position:relative;
 	overflow:hidden;
 	width:224px;
-	height:176px;
+	height:224px;
 	margin-bottom:30px;
 	/*-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);*/
 }
+
+.mosaic-block .details { padding:15px;}
 .mosaic-block h2 { color:#fff; }
+.mosaic-block h4 { margin-bottom:10px; color:#fff;}
 .mosaic-block a { text-decoration:none;}
-.mosaic-block p {color:#fff;}
+.mosaic-block p {color:#fff; font-size:12px; line-height:16px;}
 
 	.mosaic-backdrop {
 		display:none;
