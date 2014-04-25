@@ -483,7 +483,9 @@ header {
 #article-marketwatch .menu .press a,
 #article-lets-talk-bitcoin .menu .press a,
 #article-coins-source .menu .press a,
-#article-launch-it .menu .press a
+#article-launch-it .menu .press a,
+#article-wall-street-journal-24-04-14 .menu .press a,
+#article-motherboard .menu .press a
  {
 	color: #5593D7;
 }
@@ -521,7 +523,9 @@ header {
 #article-marketwatch ul.pressnav .article-marketwatch a,
 #article-lets-talk-bitcoin ul.pressnav .article-lets-talk-bitcoin a,
 #article-coins-source ul.pressnav .article-coins-source a,
-#article-launch-it ul.pressnav .article-launch-it a  {
+#article-launch-it ul.pressnav .article-launch-it a,
+#article-wall-street-journal-24-04-14 ul.pressnav .article-wall-street-journal-24-04-14 a,
+#article-motherboard ul.pressnav .article-motherboard a  {
 	color:#5593D7;
 }
 
@@ -865,12 +869,12 @@ video {
 }
 
 
+/*
 .first {
 	width:430px;
 	padding:15px;
 	margin-right:5px;
 	min-height:200px;
-	/*margin-right:20px;*/
 }
 
 .middle {
@@ -890,8 +894,8 @@ video {
 	width:420px;
 	min-height:190px;
 	margin-left:10px;
-	/*margin-left:20px;*/
 }
+*/
 
 .article-1 { float:left; border-right:1px solid #cccccc; padding-right:45px;}
 .article-2 { float:right; padding-left:25px;}
@@ -919,6 +923,8 @@ ul.leftnav li a:hover, ul.pressnav li a:hover { color:#333333;}
 ul.leftnav li ul, ul.pressnav li ul { margin-top:15px; margin-bottom:20px;}
 ul.leftnav li ul li, ul.pressnav li ul li { margin-bottom:10px;}
 ul.leftnav li ul li a, ul.pressnav li ul li a { font-size:14px;}
+
+ul.pressnav { height:550px; margin-bottom:40px;}
 
 #platform-overview ul.leftnav .overview a,
 #platform-features ul.leftnav .features a,
@@ -2248,7 +2254,7 @@ p.quoter {
 .home-box p {
 	font-size: 18px;
 }
-
+/*
 .first {
 	width:300px;
 	padding:15px;
@@ -2270,6 +2276,7 @@ p.quoter {
 	min-height:168px;
 	margin-left:5px;
 }
+*/
 
 p.alpha-testers {
 	font-size: 28px;
@@ -2694,7 +2701,7 @@ video {
 	margin-bottom:30px;
 }
 
-
+/*
 .first {
 	width:225px;
 	padding:10px;
@@ -2716,6 +2723,7 @@ video {
 	min-height:120px;
 	margin-left:5px;
 }
+*/
 
 #home h2 {
 	font-size:18px;
@@ -3358,7 +3366,7 @@ p.quoter {
 	font-size:16px;
     line-height:20px;
 }
-
+/*
 .first {
 	width:92%;
 	padding:4%;
@@ -3381,6 +3389,7 @@ p.quoter {
 	min-height:134px;
 	margin-left:0px;
 }
+*/
 
 .maidsafe-platform {
 	width:150px;
