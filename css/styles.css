@@ -3587,7 +3587,7 @@ a.light-button-full {
 #team h3 { font-size:12px;}
 
 .mosaic-block {
-    min-height: 300px;
+    min-height: 280px;
     width: 100%;
 }
 
@@ -3598,12 +3598,12 @@ a.light-button-full {
 }
 
 .mosaic-block p {
-    font-size: 10px;
-    line-height: 13px;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 .mosaic-block .details {
-    padding: 10px;
+    padding: 16px;
 }
 
 
