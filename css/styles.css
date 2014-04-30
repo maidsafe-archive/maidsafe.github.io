@@ -1287,6 +1287,9 @@ Company Page Styles
 }
 */
 
+
+
+
 #company .grid-4.l {
 	margin-left:0px;
 }
@@ -1301,21 +1304,34 @@ Company Page Styles
 	background-size:224px 224px;
 }
 
+#team .grid-9 {
+	width:732px;
+	margin:0px;
+}
+
+#team  h3 {
+	font-family: 'OpenSansRegular', Arial, sans-serif;
+	text-align:center;
+	color:rgba(150,150,150,1.00);
+	font-size:16px;
+	margin-bottom:30px;
+}
+
 .mosaic-block {
 	float:left;
 	position:relative;
 	overflow:hidden;
 	width:224px;
 	height:224px;
-	margin-bottom:30px;
+	margin-bottom:15px;
 	/*-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);*/
 }
 
-.mosaic-block .details { padding:15px;}
+.mosaic-block .details { padding:16px;}
 .mosaic-block h2 { color:#fff; }
 .mosaic-block h4 { margin-bottom:10px; color:#fff;}
 .mosaic-block a { text-decoration:none;}
-.mosaic-block p {color:#fff; font-size:12px; line-height:16px;}
+.mosaic-block p {color:#fff; font-size:13px; line-height:18px;}
 
 	.mosaic-backdrop {
 		display:none;
@@ -2362,6 +2378,31 @@ a.light-button-full {
 	background-position: 230px 215px;
 }
 
+/*********** Team Page ***************/
+#team .grid-9 {
+	width:540px;
+	margin:0px;
+}
+
+.mosaic-block {
+    height: 160px;
+    width: 160px;
+}
+
+.mosaic-block img {
+	height: 160px;
+    width: 160px;
+}
+
+.mosaic-block p {
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.mosaic-block .details {
+    padding: 10px;
+}
+
 /*********** Careers Page ***************/
 .vacancies {
 	padding:20px;
@@ -2814,6 +2855,39 @@ a.light-button-full {
 	background-position: 170px 205px;
 	background-size:180px 132px;
 }
+
+
+/*********** Team Page ***************/
+#team .grid-9 {
+	width:360px;
+	margin:0px;
+}
+
+.container-12 .grid-3 {
+    width: 160px;
+}
+
+#team h3 { font-size:12px;}
+
+.mosaic-block {
+    height: 160px;
+    width: 160px;
+}
+
+.mosaic-block img {
+	height: 160px;
+    width: 160px;
+}
+
+.mosaic-block p {
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.mosaic-block .details {
+    padding: 10px;
+}
+
 
 /*********** Careeres Page ***************/
 .vacancies {
@@ -3499,6 +3573,39 @@ a.light-button-full {
 	background-position: 170px 240px;
 	background-size:180px 132px;
 }
+
+/*********** Team Page ***************/
+#team .grid-9 {
+	width:auto;
+	margin:0px;
+}
+
+.container-12 .grid-3 {
+    width: 100%;
+}
+
+#team h3 { font-size:12px;}
+
+.mosaic-block {
+    min-height: 300px;
+    width: 100%;
+}
+
+.mosaic-block img {
+	height: auto;
+    width: 100%;
+	display:block;
+}
+
+.mosaic-block p {
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.mosaic-block .details {
+    padding: 10px;
+}
+
 
 
 /******************* Careers Page *********************/
