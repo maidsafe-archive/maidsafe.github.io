@@ -1317,6 +1317,30 @@ Company Page Styles
 	margin-bottom:30px;
 }
 
+a.twitter-button {
+	background:url(imgs/twitter_icon.png) no-repeat top left!important;
+	width:28px;
+	height:23px;
+	display:inline-block;
+	text-indent:-9999px;
+	float:left;
+	margin:2px;
+}
+
+a.twitter-button:hover { background-position:bottom left;}
+
+a.wordpress-button {
+	background:url(imgs/wordpress_icon.png) no-repeat top left!important;
+	width:28px;
+	height:28px;
+	display:inline-block;
+	text-indent:-9999px;
+	float:left;
+	margin:0px 10px;
+}
+
+a.wordpress-button:hover { background-position:bottom left;}
+
 .mosaic-block {
 	float:left;
 	position:relative;
@@ -3584,7 +3608,7 @@ a.light-button-full {
     width: 100%;
 }
 
-#team h3 { font-size:12px;}
+#team h3 { font-size:18px;}
 
 .mosaic-block {
     min-height: 280px;
