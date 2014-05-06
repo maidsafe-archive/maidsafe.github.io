@@ -485,7 +485,8 @@ header {
 #article-coins-source .menu .press a,
 #article-launch-it .menu .press a,
 #article-wall-street-journal-24-04-14 .menu .press a,
-#article-motherboard .menu .press a
+#article-motherboard .menu .press a,
+#article-ernest-hancock-safecoin-interview .menu .press a
  {
 	color: #5593D7;
 }
@@ -525,7 +526,8 @@ header {
 #article-coins-source ul.pressnav .article-coins-source a,
 #article-launch-it ul.pressnav .article-launch-it a,
 #article-wall-street-journal-24-04-14 ul.pressnav .article-wall-street-journal-24-04-14 a,
-#article-motherboard ul.pressnav .article-motherboard a  {
+#article-motherboard ul.pressnav .article-motherboard a,
+#article-ernest-hancock-safecoin-interview ul.pressnav .article-ernest-hancock-safecoin-interview a  {
 	color:#5593D7;
 }
 
@@ -924,7 +926,7 @@ ul.leftnav li ul, ul.pressnav li ul { margin-top:15px; margin-bottom:20px;}
 ul.leftnav li ul li, ul.pressnav li ul li { margin-bottom:10px;}
 ul.leftnav li ul li a, ul.pressnav li ul li a { font-size:14px;}
 
-ul.pressnav { height:550px; margin-bottom:40px;}
+ul.pressnav {margin-bottom:40px;}
 
 #platform-overview ul.leftnav .overview a,
 #platform-features ul.leftnav .features a,
