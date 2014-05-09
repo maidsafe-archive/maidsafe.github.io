@@ -486,7 +486,8 @@ header {
 #article-launch-it .menu .press a,
 #article-wall-street-journal-24-04-14 .menu .press a,
 #article-motherboard .menu .press a,
-#article-ernest-hancock-safecoin-interview .menu .press a
+#article-ernest-hancock-safecoin-interview .menu .press a,
+#article-daily-dot-08-05-14 .menu .press a
  {
 	color: #5593D7;
 }
@@ -527,7 +528,8 @@ header {
 #article-launch-it ul.pressnav .article-launch-it a,
 #article-wall-street-journal-24-04-14 ul.pressnav .article-wall-street-journal-24-04-14 a,
 #article-motherboard ul.pressnav .article-motherboard a,
-#article-ernest-hancock-safecoin-interview ul.pressnav .article-ernest-hancock-safecoin-interview a  {
+#article-ernest-hancock-safecoin-interview ul.pressnav .article-ernest-hancock-safecoin-interview a,
+#article-daily-dot-08-05-14 ul.pressnav .article-daily-dot-08-05-14 a  {
 	color:#5593D7;
 }
 
