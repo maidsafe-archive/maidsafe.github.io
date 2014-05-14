@@ -322,6 +322,8 @@
 		/**
 		 * Returns the calculated height of the viewport, used to determine either adaptiveHeight or the maxHeight value
 		 */
+		
+		
 		var getViewportHeight = function(){
 			var height = 0;
 			// first determine which children (slides) should be used in our height calculation
@@ -351,6 +353,7 @@
 				}
 			}
 			// if "vertical" mode, calculate the sum of the heights of the children
+			/*
 			if(slider.settings.mode == 'vertical'){
 				children.each(function(index) {
 				  height += $(this).outerHeight();
@@ -367,6 +370,15 @@
 			}
 			return height;
 		}
+		*/
+		if(slider.settings.mode == 'horizontal'){
+			height = Math.max.apply(Math, children.map(function(){
+					return $(this).outerHeight(false);
+				}).get());
+			}
+			return;
+			}
+		
 
 		/**
 		 * Returns the calculated width to be used for the outer wrapper / viewport
