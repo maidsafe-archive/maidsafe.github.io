@@ -447,62 +447,50 @@ header {
 	padding: 19px 12px;*/	
 }
 
+
+/******** Top nav selected state styles ********/
 #platform-overview .menu .overview a,
 #platform-features .menu .overview a,
 #platform-faqs .menu .overview a,
 #platform-use-cases .menu .overview a,
 #licensing-platform .menu .overview a,
+#testimonials .menu .overview a,
 #developers .menu .developers a,
 #platform-libraries .menu .developers a,
-#licensing-developers .menu .developers a,
-#testimonials .menu .overview a,
 #company .menu .company a,
 #careers .menu .company a,
 #stakeholders .menu .stakeholders a,
 #blog .menu .blog a,
 #contact .menu .contact a,
 #press .menu .press a,
-#article-maidsafe-bitcloud .menu .press a,
-#article-revolutionise-internet .menu .press a,
-#article-ieee .menu .press a,
-#article-imperica .menu .press a,
-#article-pocket-lint .menu .press a,
-#article-decentralized-internet-is-here .menu .press a,
-#article-new-age-internet .menu .press a,
-#article-ernest-hancock-radio-interview .menu .press a,
-#article-sovryn-tech-interview .menu .press a,
-#article-libertarian-building-galts-gulch .menu .press a,
-#article-transformpr-yahoo .menu .press a,
-#article-coin-report .menu .press a,
-#article-wall-street-journal-bitbeat .menu .press a,
-#article-forbes-beyond-bitcoin .menu .press a,
-#article-ernest-hancock-radio-interview-2 .menu .press a,
-#article-ernest-hancock-launch-interview .menu .press a,
-#article-cointelegraph-interview .menu .press a,
-#article-bitcoin-magazine .menu .press a,
-#article-coindesk .menu .press a,
-#article-marketwatch .menu .press a,
-#article-lets-talk-bitcoin .menu .press a,
-#article-coins-source .menu .press a,
-#article-launch-it .menu .press a,
-#article-wall-street-journal-24-04-14 .menu .press a,
-#article-motherboard .menu .press a,
-#article-ernest-hancock-safecoin-interview .menu .press a,
-#article-daily-dot-08-05-14 .menu .press a {
+.article .menu .press a {
 	color: #5593D7;
 }
 
+/******** Overview - Left nav selected state styles ********/
 #platform-overview ul.leftnav .overview a,
 #platform-features ul.leftnav .features a,
 #platform-faqs ul.leftnav .faqs a,
 #platform-use-cases ul.leftnav .usecases a,
 #licensing-platform ul.leftnav .licensing a,
-#developers ul.leftnav .overview a,
-#platform-libraries ul.leftnav .libraries a,
-#licensing-developers ul.leftnav .licensing a {
+#testimonials ul.leftnav .testimonials a  {
 	color:#5593D7;
 }
 
+/******** Developers - Left nav selected state styles ********/
+#developers ul.leftnav .developers a,
+#platform-libraries ul.leftnav .libraries a {
+	color:#5593D7;
+}
+
+/******** Company - Left nav selected state styles ********/
+#company ul.leftnav .overview a,
+#team ul.leftnav .team a,
+#careers ul.leftnav .careers a {
+	color:#5593D7;
+}
+
+/******** Press articles - Left nav selected state styles ********/
 #article-maidsafe-bitcloud ul.pressnav .article-maidsafe-bitcloud a,
 #article-revolutionise-internet ul.pressnav .article-revolutionise-internet a,
 #article-ieee ul.pressnav .article-ieee a,
@@ -529,18 +517,9 @@ header {
 #article-wall-street-journal-24-04-14 ul.pressnav .article-wall-street-journal-24-04-14 a,
 #article-motherboard ul.pressnav .article-motherboard a,
 #article-ernest-hancock-safecoin-interview ul.pressnav .article-ernest-hancock-safecoin-interview a,
-#article-daily-dot-08-05-14 ul.pressnav .article-daily-dot-08-05-14 a,
-#testimonials ul.pressnav .testimonials a  {
+#article-daily-dot-08-05-14 ul.pressnav .article-daily-dot-08-05-14 a  {
 	color:#5593D7;
 }
-
-#company ul.leftnav .overview a,
-#team ul.leftnav .team a,
-#careers ul.leftnav .careers a,
-#testimonials ul.leftnav .testimonials a {
-	color:#5593D7;
-}
-
 
 /*******************************************************************************
 
@@ -832,15 +811,6 @@ ul.leftnav li ul li, ul.pressnav li ul li { margin-bottom:10px;}
 ul.leftnav li ul li a, ul.pressnav li ul li a { font-size:14px;}
 
 ul.pressnav {margin-bottom:40px;}
-
-#platform-overview ul.leftnav .overview a,
-#platform-features ul.leftnav .features a,
-#platform-libraries ul.leftnav .libraries a,
-#use-cases ul.leftnav .usecases a,
-#licensing ul.leftnav .licensing a,
-#developers ul.leftnav .developers a {
-	color:#5593D7;
-}
 
 .main-content {
 	float:right;
