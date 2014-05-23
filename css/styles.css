@@ -518,7 +518,10 @@ header {
 #article-motherboard ul.pressnav .article-motherboard a,
 #article-ernest-hancock-safecoin-interview ul.pressnav .article-ernest-hancock-safecoin-interview a,
 #article-daily-dot-08-05-14 ul.pressnav .article-daily-dot-08-05-14 a,
-#article-upstart-14-05-14 ul.pressnav .article-upstart-14-05-14 a  {
+#article-upstart-14-05-14 ul.pressnav .article-upstart-14-05-14 a,
+#article-coindesk-23-05-14 ul.pressnav .article-coindesk-23-05-14 a,
+#article-gigaom ul.pressnav .article-gigaom a,
+#article-redecentralize-interview ul.pressnav .article-redecentralize-interview a  {
 	color:#5593D7;
 }
 
