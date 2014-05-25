@@ -521,7 +521,9 @@ header {
 #article-upstart-14-05-14 ul.pressnav .article-upstart-14-05-14 a,
 #article-coindesk-23-05-14 ul.pressnav .article-coindesk-23-05-14 a,
 #article-gigaom ul.pressnav .article-gigaom a,
-#article-redecentralize-interview ul.pressnav .article-redecentralize-interview a  {
+#article-redecentralize-interview ul.pressnav .article-redecentralize-interview a,
+#article-coin-artist ul.pressnav .article-coin-artist a,
+#article-cryptocoins-news ul.pressnav .article-cryptocoins-news a  {
 	color:#5593D7;
 }
 
