@@ -92,6 +92,11 @@
       s.parentNode.insertBefore(ga, s);
     })();
   </script>
+
+<!-- ClickJacking Defense begin --> 
+<style id="antiClickjack">body{display:none !important;}</style>
+<script>(function(w){if(w.top===w.self){var a=w.document.getElementById('antiClickjack');a.parentNode.removeChild(a);}else{w.top.location=w.self.location;}}(window));</script>
+<!-- ClickJacking Defense end -->
 </head>
 <body id="article-bitcoin-magazine" class="article">
   <div id="container">
