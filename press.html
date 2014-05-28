@@ -92,6 +92,11 @@
       s.parentNode.insertBefore(ga, s);
     })();
   </script>
+
+<!-- ClickJacking Defense begin --> 
+<style id="antiClickjack">body{display:none !important;}</style>
+<script>(function(w){if(w.top===w.self){var a=w.document.getElementById('antiClickjack');a.parentNode.removeChild(a);}else{w.top.location=w.self.location;}}(window));</script>
+<!-- ClickJacking Defense end -->
 </head>
 <body id="press">
    <div id="container">
@@ -161,22 +166,6 @@
             
   
             <ul class="grid effect-8" id="grid"> 
-            
-            <li>
-            <div class="grid-4 press-article">
-                <a href="article-cryptocoins-news">
-                <img src="images/pr-cryptocoins-news.png" class="responsive pr-image" title="500 Developers Join MaidSafe Project" alt="CryptoCoinsNews">
-                </a>
-                <h2>CryptoCoinsNews</h2><a href="article-cryptocoins-news"><p>500 Developers Join MaidSafe Project</p></a>
-            </div>
-            </li>
-            
-            
-            
-            
-            
-            
-            
             <li>
             <div class="grid-4 press-article">
                 <a href="article-gigaom">
@@ -219,15 +208,6 @@
                 <img src="images/pr-dailydot-08-05-14.png" class="responsive pr-image" title="The future of the open Internet is decentralized" alt="Daily Dot Article 08 May 2014">
                 </a>
                 <h2>Daily Dot</h2><a href="article-daily-dot-08-05-14"><p>The future of the open Internet is decentralized</p></a>
-            </div>
-            </li>
-            
-            <li>
-            <div class="grid-4 press-article">
-                <a href="article-coin-artist">
-                <img src="images/pr-coin-artist.png" class="responsive pr-image" title="Interview with David Irvine and Andreas Antonopoulos" alt="Coin_Artist">
-                </a>
-                <h2>Coin_Artist</h2><a href="article-coin-artist"><p>Interview with David Irvine and Andreas Antonopoulos</p></a>
             </div>
             </li>
             
