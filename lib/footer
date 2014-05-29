@@ -104,5 +104,11 @@
 			} );
   </script>
 [% END %]
+
+[% IF includeTabulousScripts == true %]
+<script type="text/javascript" src="js/tabulous.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+[% END %]
+
 </body>
 </html>

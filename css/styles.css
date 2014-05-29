@@ -491,39 +491,39 @@ header {
 }
 
 /******** Press articles - Left nav selected state styles ********/
-#article-maidsafe-bitcloud ul.pressnav .article-maidsafe-bitcloud a,
-#article-revolutionise-internet ul.pressnav .article-revolutionise-internet a,
-#article-ieee ul.pressnav .article-ieee a,
-#article-imperica ul.pressnav .article-imperica a,
-#article-pocket-lint ul.pressnav .article-pocket-lint a,
-#article-decentralized-internet-is-here ul.pressnav .article-decentralized-internet-is-here a,
-#article-new-age-internet ul.pressnav .article-new-age-internet a,
-#article-ernest-hancock-radio-interview ul.pressnav .article-ernest-hancock-radio-interview a,
-#article-sovryn-tech-interview ul.pressnav .article-sovryn-tech-interview a,
-#article-libertarian-building-galts-gulch ul.pressnav .article-libertarian-building-galts-gulch a,
-#article-transformpr-yahoo ul.pressnav .article-transformpr-yahoo a,
-#article-coin-report ul.pressnav .article-coin-report a,
-#article-wall-street-journal-bitbeat ul.pressnav .article-wall-street-journal-bitbeat a,
-#article-forbes-beyond-bitcoin ul.pressnav .article-forbes-beyond-bitcoin a,
-#article-ernest-hancock-radio-interview-2 ul.pressnav .article-ernest-hancock-radio-interview-2 a,
-#article-ernest-hancock-launch-interview ul.pressnav .article-ernest-hancock-launch-interview a,
-#article-cointelegraph-interview ul.pressnav .article-cointelegraph-interview a,
-#article-bitcoin-magazine ul.pressnav .article-bitcoin-magazine a,
-#article-coindesk ul.pressnav .article-coindesk a,
-#article-marketwatch ul.pressnav .article-marketwatch a,
-#article-lets-talk-bitcoin ul.pressnav .article-lets-talk-bitcoin a,
-#article-coins-source ul.pressnav .article-coins-source a,
-#article-launch-it ul.pressnav .article-launch-it a,
-#article-wall-street-journal-24-04-14 ul.pressnav .article-wall-street-journal-24-04-14 a,
-#article-motherboard ul.pressnav .article-motherboard a,
-#article-ernest-hancock-safecoin-interview ul.pressnav .article-ernest-hancock-safecoin-interview a,
-#article-daily-dot-08-05-14 ul.pressnav .article-daily-dot-08-05-14 a,
-#article-upstart-14-05-14 ul.pressnav .article-upstart-14-05-14 a,
-#article-coindesk-23-05-14 ul.pressnav .article-coindesk-23-05-14 a,
-#article-gigaom ul.pressnav .article-gigaom a,
-#article-redecentralize-interview ul.pressnav .article-redecentralize-interview a,
-#article-coin-artist ul.pressnav .article-coin-artist a,
-#article-cryptocoins-news ul.pressnav .article-cryptocoins-news a  {
+#article-maidsafe-bitcloud .pressnav .article-maidsafe-bitcloud a,
+#article-revolutionise-internet .pressnav .article-revolutionise-internet a,
+#article-ieee .pressnav .article-ieee a,
+#article-imperica .pressnav .article-imperica a,
+#article-pocket-lint .pressnav .article-pocket-lint a,
+#article-decentralized-internet-is-here .pressnav .article-decentralized-internet-is-here a,
+#article-new-age-internet .pressnav .article-new-age-internet a,
+#article-ernest-hancock-radio-interview .pressnav .article-ernest-hancock-radio-interview a,
+#article-sovryn-tech-interview .pressnav .article-sovryn-tech-interview a,
+#article-libertarian-building-galts-gulch .pressnav .article-libertarian-building-galts-gulch a,
+#article-transformpr-yahoo .pressnav .article-transformpr-yahoo a,
+#article-coin-report .pressnav .article-coin-report a,
+#article-wall-street-journal-bitbeat .pressnav .article-wall-street-journal-bitbeat a,
+#article-forbes-beyond-bitcoin .pressnav .article-forbes-beyond-bitcoin a,
+#article-ernest-hancock-radio-interview-2 .pressnav .article-ernest-hancock-radio-interview-2 a,
+#article-ernest-hancock-launch-interview .pressnav .article-ernest-hancock-launch-interview a,
+#article-cointelegraph-interview .pressnav .article-cointelegraph-interview a,
+#article-bitcoin-magazine .pressnav .article-bitcoin-magazine a,
+#article-coindesk .pressnav .article-coindesk a,
+#article-marketwatch .pressnav .article-marketwatch a,
+#article-lets-talk-bitcoin .pressnav .article-lets-talk-bitcoin a,
+#article-coins-source .pressnav .article-coins-source a,
+#article-launch-it .pressnav .article-launch-it a,
+#article-wall-street-journal-24-04-14 .pressnav .article-wall-street-journal-24-04-14 a,
+#article-motherboard .pressnav .article-motherboard a,
+#article-ernest-hancock-safecoin-interview .pressnav .article-ernest-hancock-safecoin-interview a,
+#article-daily-dot-08-05-14 .pressnav .article-daily-dot-08-05-14 a,
+#article-upstart-14-05-14 .pressnav .article-upstart-14-05-14 a,
+#article-coindesk-23-05-14 .pressnav .article-coindesk-23-05-14 a,
+#article-gigaom .pressnav .article-gigaom a,
+#article-redecentralize-interview .pressnav .article-redecentralize-interview a,
+#article-coin-artist .pressnav .article-coin-artist a,
+#article-cryptocoins-news .pressnav .article-cryptocoins-news a  {
 	color:#5593D7;
 }
 
@@ -806,15 +806,15 @@ Inner Page Styles
     height: 130px;
 }
 .leftnav-shell, .pressnav-shell { float:left;}
-ul.leftnav, ul.pressnav { padding-right:30px;}
-ul.leftnav li, ul.pressnav li { margin-bottom:15px;}
+ul.leftnav, .pressnav { padding-right:30px;}
+ul.leftnav li, .pressnav ul li { margin-bottom:15px;}
 ul.leftnav li a { color:#7F7F7F; font-size:16px;}
-ul.pressnav li a { color:#7F7F7F; font-size:12px;}
-ul.leftnav li a:hover, ul.pressnav li a:hover { color:#333333;}
+.pressnav li a { color:#7F7F7F; font-size:12px;}
+ul.leftnav li a:hover, .pressnav li a:hover { color:#333333;}
 /* subnav */
-ul.leftnav li ul, ul.pressnav li ul { margin-top:15px; margin-bottom:20px;}
-ul.leftnav li ul li, ul.pressnav li ul li { margin-bottom:10px;}
-ul.leftnav li ul li a, ul.pressnav li ul li a { font-size:14px;}
+ul.leftnav li ul, .pressnav li ul { margin-top:15px; margin-bottom:20px;}
+ul.leftnav li ul li, .pressnav li ul li { margin-bottom:10px;}
+ul.leftnav li ul li a, .pressnav li ul li a { font-size:14px;}
 
 ul.pressnav {margin-bottom:40px;}
 
@@ -1458,7 +1458,7 @@ a h3 { color:inherit;}
 #article-sovryn-tech-interview iframe { width:100%;}
 
 
-ul.pressnav li h3 {
+.pressnav li h3 {
     margin-bottom: 0px;
 }
 
