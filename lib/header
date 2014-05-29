@@ -36,6 +36,10 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  
+  [% IF includeTabulousCSS == true %]
+  <link href="css/tabulous.css" rel="stylesheet" type="text/css">
+  [% END %]
  
 [% IF includeBrowserDetect == true %]
   <!-- SureFile Download browser detect --> 
