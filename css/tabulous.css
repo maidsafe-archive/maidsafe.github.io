@@ -8,7 +8,7 @@
 	margin-right: 2px;
 }
 
-#tabs ul li a,#latest div a,#top div a,#tabs4 li a,#tabs5 li a {
+#tabs ul li a {
 	display: block;
 	padding: 5px 8px;
 	font-size:12px;
@@ -18,12 +18,14 @@
 	text-transform:uppercase;
 }
 
-/* #tabs ul#latest li a, #tabs ul#top li a { text-transform:none;} */
+#tabs #latest li a, #tabs #top li a { text-transform:none; padding:0px; line-height:16px;}
 
-#tabs ul li a:hover,#tabs2 li a:hover,#tabs3 li a:hover,#tabs4 li a:hover,#tabs5 li a:hover {
+#tabs ul li a:hover {
 	background: #5593d7;
 	color:#fff;
 }
+
+#tabs #latest li a:hover, #tabs #top li a:hover { background:none; color:inherit;}
 
 #tabs_container {
 	padding: 5px 0px;
