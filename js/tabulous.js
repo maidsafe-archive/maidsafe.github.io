@@ -49,7 +49,7 @@
 
             var alldivs = this.$elem.find('div:first').find('div');
 
-            alldivs.css({'position': 'absolute','top':'30px'});
+            alldivs.css({'position': 'absolute','top':'20px'});
 
             firstdiv.css('height',firstdivheight+'px');
 
