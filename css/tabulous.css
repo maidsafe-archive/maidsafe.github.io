@@ -88,6 +88,7 @@
 	-o-transition-delay: .3s;
 	-ms-transition-delay: .3s;
 	transition-delay: .3s;
+	display:block; /* added */
 }
 
 .hideleft {
