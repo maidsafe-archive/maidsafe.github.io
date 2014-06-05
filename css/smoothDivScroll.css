@@ -26,9 +26,6 @@ div.scrollingHotSpotLeft
 	min-width: 75px;
 	width: 10%;
 	height: 100%;
-	/* There is a big background image and it's used to solve some problems I experienced
-    in Internet Explorer 6. */
-	background-image: url(imgs/big_transparent.gif);
 	background-repeat: repeat;
 	background-position: center center;
 	position: absolute;
@@ -62,7 +59,7 @@ div.scrollingHotSpotRight
 	position: absolute;
 	z-index: 200;
 	right: 0;
-	cursor: url(imgs/cursors/cursor_arrow_right.png), url(../images/cursors/cursor_arrow_right.cur),e-resize;
+	cursor: url(imgs/cursors/cursor_arrow_right.png), url(imgs/cursors/cursor_arrow_right.cur),e-resize;
 }
 
 /* Visible right hotspot */
