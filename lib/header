@@ -37,6 +37,8 @@
   <link rel="stylesheet" type="text/css" href="css/rwdgrid.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
   
+  <link rel="stylesheet" type="text/css" href="css/smoothDivScroll.css" />
+  
   [% IF includeTabulousCSS == true %]
   <link href="css/tabulous.css" rel="stylesheet" type="text/css">
   [% END %]
