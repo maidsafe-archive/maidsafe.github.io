@@ -6,7 +6,8 @@
       includeHomeBanners = "False",
       includeToggle = "False",
       includeTwitterCard = True,
-      includeDeveloperTwitterCard = "False"
+      includeDeveloperTwitterCard = "False",
+      includeTabulousCSS = "False"
 %]
 <body id="platform-overview">
   [%  INCLUDE nav %]
@@ -14,14 +15,11 @@
         <div class="grid-9 main-content">
           <h1>The MaidSafe Platform</h1>
           <h2>Privacy</h2>
-          <p>Self Authentication allows everyone to be in complete control of all data, beyond encryption to include physical access. In essence, nobody knows where any data is located, thereby providing completely private and unilateral access by individuals.
-            As all communications and data at rest are also encrypted, nobody can tell who is using the system, what they are doing or where they are.</p>
+          <p>Self Authentication allows everyone to be in complete control of all data, beyond encryption to include physical access. In essence, nobody knows where any data is located, thereby providing completely private and unilateral access by individuals. As all communications and data at rest are also encrypted, nobody can tell who is using the system, what they are doing or where they are.</p>
           <h2>Security</h2>
-          <p>End to end encrypted data transfer and communications with encryption injected above layer 3, thereby evading 'man in the middle attacks'. Data at rest encryption, beyond today's highest levels of military grade algorithms on an open source
-            platform that stores no passwords or representations of passwords.</p>
+          <p>End to end encrypted data transfer and communications with encryption injected above layer 3, thereby evading 'man in the middle attacks'. Data at rest encryption, beyond today's highest levels of military grade algorithms on an open source platform that stores no passwords or representations of passwords.</p>
           <h2>Freedom</h2>
-          <p>The ability to 'self join' the network, enabling users to manage their own data, identity, contacts, shares or any information completely free of any third party involvement. Users can store, share, chat and publish 100% under their own control
-            and knowledge.</p>
+          <p>The ability to 'self join' the network, enabling users to manage their own data, identity, contacts, shares or any information completely free of any third party involvement. Users can store, share, chat and publish 100% under their own control and knowledge.</p>
         </div>
         <div class="grid-3 leftnav-shell">
           <ul class="leftnav">
@@ -41,5 +39,7 @@
     </div>
   </div>
   [%  INCLUDE footer 
-includeGridLoad = "False" 
+	includeGridLoad = "False",
+    includeResponsiveVideo = "False",
+    includeTabulousScripts = "False"
 %]
