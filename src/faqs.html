@@ -6,7 +6,8 @@
       includeHomeBanners = "False",
       includeToggle = "False",
       includeTwitterCard = True,
-      includeDeveloperTwitterCard = "False"
+      includeDeveloperTwitterCard = "False",
+      includeTabulousCSS = "False"
 %]
 <body id="platform-faqs">
 [%  INCLUDE nav %]
@@ -35,6 +36,7 @@
             <h2 id="data-redundancy"><a href="#data-redundancy">How does the network deal with data redundancy, to ensure whatever data is shared remains accessible?</a></h2>
             <p>Each file is encrypted and split into chunks during our encryption process (Self Encryption). The network keeps and maintains 4 copies of each encrypted chunk and moves these fragments around the network as nodes become unavailable, either through failure or power down. In order to cope with this churn, the network is able to reconfigure globally extremely quickly (possibly as fast as 20 milliseconds). These steps ensure data is always available, provided the user retrieving the data has an Internet connection and the correct credentials.</p> 
         </div>
+       
         <div class="grid-3 leftnav-shell">
           <ul class="leftnav">
             <li class="overview"><a href="overview">Overview</a>
@@ -55,6 +57,8 @@
     </div>
   </div>
   [%  INCLUDE footer 
-includeGridLoad = "False" 
+	includeGridLoad = "False",
+    includeResponsiveVideo = "False",
+    includeTabulousScripts = "False"
 %]
 

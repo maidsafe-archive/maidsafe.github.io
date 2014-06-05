@@ -6,7 +6,8 @@
       includeHomeBanners = "False",
       includeToggle = "False",
       includeTwitterCard = True,
-      includeDeveloperTwitterCard = "False"
+      includeDeveloperTwitterCard = "False",
+      includeTabulousCSS = "False"
 %]
 <body id="libraries">
   [%  INCLUDE nav %]
@@ -15,7 +16,7 @@
           <h1>MaidSafe-Vault-Manager</h1>
           <h2>MaidSafe Vault Manager Library</h2>
           <h3>Description</h3>
-          <p id="u1949-4">This project implements the Vault-Manager. This is an installed  application that is responsible for checking for upgrades (in real time)  to vaults, installing and testing upgrades as well as starting and  restarting any vaults (on failure or planned). The Vault-Manager manages  private keys for vaults and passes keys through a local TCP network.  This is a one-way mechanism and any vault compromised cannot read the  keys of the local disk.          </p>
+          <p>This project implements the Vault-Manager. This is an installed  application that is responsible for checking for upgrades (in real time)  to vaults, installing and testing upgrades as well as starting and  restarting any vaults (on failure or planned). The Vault-Manager manages  private keys for vaults and passes keys through a local TCP network.  This is a one-way mechanism and any vault compromised cannot read the  keys of the local disk.          </p>
           <h3>Programming languages</h3>
           <h3>Core</h3>
           <p>C++11 compatible with GCC (4.7 and above), Clang (3.3 and above) and  MSVC 2012 (with no dependency on CTP releases). Tested on Windows 32/64  bit, Linux 32/64 bit (dependent on GCC version) and OSX (Mountain Lion  and above).</p>
@@ -53,5 +54,7 @@
     </div>
   </div>
   [%  INCLUDE footer 
-includeGridLoad = "False" 
+	includeGridLoad = "False",
+    includeResponsiveVideo = "False",
+    includeTabulousScripts = "False"
 %]

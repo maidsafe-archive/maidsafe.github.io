@@ -6,8 +6,8 @@
       includeToggle = True,
       includeHomeBanners = "False",
       includeTwitterCard = True,
-      includeDeveloperTwitterCard = "False"
-
+      includeDeveloperTwitterCard = "False",
+      includeTabulousCSS = "False"
 %]
 <body id="surefile-download">
   [%  INCLUDE nav %]
@@ -15,8 +15,6 @@
         <div class="grid-12 main-content">
 
           <h1>Download SureFile</h1>
-
-
           <h2>PUBLIC ALPHA RELEASE</h2>
           <p class="sub-warning">This is Alpha code, we expect bugs, we cannot be held liable if this code loses any data, please test as Alpha code.</p>
           <p>Please feel free to try the app out, but be aware SureFile is a very technical application aimed at
@@ -37,10 +35,6 @@
 
           </div>
         </div>
-
-
-
-
       </div>
 
       <h2 class="trigger"><a href="#">Get another version</a></h2>
@@ -93,5 +87,7 @@
   </div>
   <script type="text/javascript" src="js/download.js"></script>
   [%  INCLUDE footer 
-includeGridLoad = "False" 
+	includeGridLoad = "False",
+    includeResponsiveVideo = "False",
+    includeTabulousScripts = "False"
 %]
