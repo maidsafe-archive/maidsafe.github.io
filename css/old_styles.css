@@ -211,19 +211,8 @@ Fonts
          url('fonts/OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraboldItalic') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
-}
-@font-face {
-        font-family: "Dax";
-        src: url('fonts/dax_light.eot');
-        src: url('fonts/dax_light.eot?#iefix') format('embedded-opentype'),
-        url('fonts/dax_light.svg#Dax') format('svg'),
-        url('fonts/dax_light.woff') format('woff'),
-        url('fonts/dax_light.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-}
-	
 p.style1 {font: 18px/27px 'OpenSansLight', Arial, sans-serif;}
 p.style2 {font: 18px/27px 'OpenSansLightItalic', Arial, sans-serif;}
 p.style3 {font: 18px/27px 'OpenSansRegular', Arial, sans-serif;}
@@ -466,11 +455,9 @@ header {
 #platform-use-cases .menu .overview a,
 #licensing-platform .menu .overview a,
 #testimonials .menu .overview a,
-#core-developer .menu .core-developer a,
-#app-builder .menu .core-developer a,
-#platform-libraries .menu .core-developer a,
+#developers .menu .developers a,
+#platform-libraries .menu .developers a,
 #company .menu .company a,
-#farmers .menu .farmers a,
 #careers .menu .company a,
 #stakeholders .menu .stakeholders a,
 #blog .menu .blog a,
@@ -491,9 +478,8 @@ header {
 }
 
 /******** Developers - Left nav selected state styles ********/
-#core-developer ul.leftnav .core-developer a,
-#platform-libraries ul.leftnav .libraries a,
-#app-builder ul.leftnav .app-builder a {
+#developers ul.leftnav .developers a,
+#platform-libraries ul.leftnav .libraries a {
 	color:#5593D7;
 }
 
@@ -700,70 +686,6 @@ Home Page Styles
 	font-size:20px;
 	margin-bottom:10px;
 	text-align:center;
-}
-
-.home-tabs {
-	border-top: 1px solid #E2E2E2;
-	border-bottom: 1px solid #E2E2E2;
-	clear:both;
-	margin-bottom:30px;
-}
-
-.home-tabs .grid-12, .home-tabs .grid-4 { margin:0;}
-
-.home-tabs p {
-	font-family: "Dax";
-	font-size:32px;
-	text-align:center;
-	padding:115px 70px 25px 70px;
-	line-height:32px;
-	color:#5D5D5D;
-	margin-bottom:0px;
-}
-
-.home-tabs p:hover {
-	color:#5593D7;
-}
-
-.home-tabs .grid-4 { }
-
-.core-dev-tab {
-	background: url(imgs/home-tab-core-dev-icon.png) no-repeat center 35px;
-	margin:10px 0!important;
-}
-
-.core-dev-tab:hover {
-	background: url(imgs/home-tab-core-dev-icon-hover.png) no-repeat center 35px;
-}
-
-.app-builder-tab {
-	background: url(imgs/home-tab-app-builder-icon.png) no-repeat center 35px;
-	border-left: 1px solid #E2E2E2;
-	border-right: 1px solid #E2E2E2;
-	margin:10px 20px!important;
-}
-
-.app-builder-tab:hover {
-	background: url(imgs/home-tab-app-builder-icon-hover.png) no-repeat center 35px;
-}
-
-.farmer-tab {
-	background: url(imgs/home-tab-farmer-icon.png) no-repeat center 35px;
-	margin:10px 0!important;	
-}
-
-.farmer-tab:hover {
-	background: url(imgs/home-tab-farmer-icon-hover.png) no-repeat center 35px;
-}
-
-.tell-me-more-tab {
-	border-top: 1px solid #E2E2E2;
-	display:block;
-	clear:both;
-}
-
-.tell-me-more-tab p {
-	padding:20px;
 }
 
 .video-box {
@@ -1023,8 +945,7 @@ a.button-blue {
 	text-align:center;
 }
 
-a.light-button, a.light-button-full,
-a.green-button, a.green-button-full {
+a.light-button, a.light-button-full {
 	background-color:#c5d9f1;
 	font-size:18px;
 	text-align:center;
@@ -1032,17 +953,16 @@ a.green-button, a.green-button-full {
 	text-decoration:none;
 }
 
-a.light-button:hover, a.light-button-full:hover,
-a.green-button:hover, a.green-button-full:hover {
+a.light-button:hover, a.light-button-full:hover {
 	background-color:#5593D7;
 	color:#ffffff;
 }
 
-a.light-button, a.green-button {
+a.light-button {
 	padding:20px 0;
 }
 
-a.light-button-full, a.green-button-full {
+a.light-button-full {
 	padding:20px 31px;
 }
 
@@ -1057,25 +977,12 @@ a.last-button {
 
 .app-stack {
 	background:url(imgs/arrows-stack-diagram.png) no-repeat;
-	background-position:330px 160px;
+	background-position:330px 180px;
 }
 
 .app-stack-spacer {
 	height:50px;
 	margin:5px 6px;
-}
-
-#core-developer .app-stack {
-	background:url(imgs/arrows-stack-diagram.png) no-repeat;
-	background-position:330px 690px;
-}
-
-a.green-button, a.green-button-full {
-	background-color:#d3f4d4;
-}
-
-a.green-button:hover, a.green-button-full:hover {
-	background-color:#94d798;
 }
 
 
@@ -1231,6 +1138,34 @@ li.list-quote {
 }
 .list-quote p.quoter {
 	padding:0 60px;
+}
+
+/************************** Banner quote kolberg **************************
+.banner-quote-kolberg {
+	padding:5px 40px 0 40px;
+}
+.banner-quote-kolberg blockquote.quote {
+	background-position: 10px 5px;
+}
+.banner-quote-kolberg blockquote.quote span {
+	background-position: 805px 60px;
+}
+.banner-quote-kolberg p.quoter {
+	padding:0 150px;
+}
+
+/************************** Banner quote irvine ************************
+.banner-quote-irvine {
+	padding:5px 110px 0 110px;
+}
+.banner-quote-irvine blockquote.quote {
+	background-position: 10px 5px;
+}
+.banner-quote-irvine blockquote.quote span {
+	background-position: 670px 60px;
+}
+.banner-quote-irvine p.quoter {
+	padding:0 150px;
 }
 
 /*******************************************************************************
@@ -2228,49 +2163,6 @@ p.quoter {
 	width:100px;
 }
 
-.home-tabs p {
-	font-size:22px;
-	padding:95px 50px 15px 50px;
-	line-height:24px;
-}
-
-.core-dev-tab {
-	background-position: center 25px;
-	background-size:48px 48px;
-	margin:10px 0!important;
-}
-
-.core-dev-tab:hover {
-	background-position: center 25px;
-	background-size:48px 48px;
-}
-
-.app-builder-tab {
-	background-position: center 25px;
-	background-size:54px 43px;
-	margin:10px 18px!important;
-}
-
-.app-builder-tab:hover {
-	background-position: center 25px;
-	background-size:54px 43px;
-}
-
-.farmer-tab {
-	background-position: center 25px;
-	background-size:57px 42px;
-	margin:10px 0!important;	
-}
-
-.farmer-tab:hover {
-	background-position: center 25px;
-	background-size:57px 42px;
-}
-
-.tell-me-more-tab p {
-	padding:20px;
-}
-
 .video-box {
 	height:394px;
 }
@@ -2376,10 +2268,6 @@ a.light-button-full {
 
 .app-stack {
 	background-position: 230px 215px;
-}
-
-#core-developer .app-stack {
-	background-position:230px 860px;
 }
 
 /*********** Team Page ***************/
@@ -2646,51 +2534,6 @@ p.quoter {
 	width:90px;
 }
 
-.home-tabs p {
-	font-size:18px;
-	padding:95px 40px 15px 40px;
-	line-height:24px;
-}
-
-.core-dev-tab {
-	background-position: center 25px;
-	background-size:48px 48px;
-	margin:10px 0!important;
-}
-
-.core-dev-tab:hover {
-	background-position: center 25px;
-	background-size:48px 48px;
-}
-
-.app-builder-tab {
-	background-position: center 25px;
-	background-size:54px 43px;
-	margin:10px 18px!important;
-}
-
-.app-builder-tab:hover {
-	background-position: center 25px;
-	background-size:54px 43px;
-}
-
-.farmer-tab {
-	background-position: center 25px;
-	background-size:57px 42px;
-	margin:10px 0!important;	
-}
-
-.farmer-tab:hover {
-	background-position: center 25px;
-	background-size:57px 42px;
-}
-
-.tell-me-more-tab p {
-	padding:20px;
-}
-
-
-
 .video-box {
 	height:293px;
 }
@@ -2794,11 +2637,6 @@ a.light-button-full {
 
 .app-stack {
 	background-position: 170px 205px;
-	background-size:180px 132px;
-}
-
-#core-developer .app-stack {
-	background-position:170px 910px;
 	background-size:180px 132px;
 }
 
@@ -3280,43 +3118,7 @@ p.quoter {
 	margin-top:30px;
 }
 
-.home-tabs p {
-	font-size:18px;
-	padding:95px 40px 15px 40px;
-	line-height:24px;
-}
 
-.core-dev-tab {
-	background-position: center 25px;
-	margin:10px 0!important;
-}
-
-.core-dev-tab:hover {
-	background-position: center 25px;
-}
-
-.app-builder-tab {
-	background-position: center 25px;
-	margin:10px 0px!important;
-	border:none;
-}
-
-.app-builder-tab:hover {
-	background-position: center 25px;
-}
-
-.farmer-tab {
-	background-position: center 25px;
-	margin:10px 0!important;	
-}
-
-.farmer-tab:hover {
-	background-position: center 25px;
-}
-
-.tell-me-more-tab p {
-	padding:20px;
-}
 
 .video-box {
 	/*max-height:162px;*/
@@ -3470,11 +3272,6 @@ a.light-button-full {
 
 .app-stack {
 	background-position: 170px 240px;
-	background-size:180px 132px;
-}
-
-#core-developer .app-stack {
-	background-position:170px 1110px;
 	background-size:180px 132px;
 }
 
