@@ -213,13 +213,14 @@ Fonts
     font-style: normal;
 
 }
+
 @font-face {
         font-family: 'Dax';
         src: url('fonts/dax_light.eot');
         src: url('fonts/dax_light.eot?#iefix') format('embedded-opentype'),
-        	  url('fonts/dax_light.svg#Dax') format('svg'),
-        	  url('fonts/dax_light.woff') format('woff'),
-        	  url('fonts/dax_light.ttf') format('truetype');
+          	  url('fonts/dax_light.woff') format('woff'),
+        	  url('fonts/dax_light.ttf') format('truetype'),
+			  url('fonts/dax_light.svg#Dax') format('svg');
         font-weight: normal;
         font-style: normal;
 }
