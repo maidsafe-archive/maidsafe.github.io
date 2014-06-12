@@ -24,10 +24,10 @@
                     </li>
                   </ul>
                 </li>
-                <li class="core-developer single-link"><a href="core-developers">core developers</a>
-                <li class="has-submenu"><a href="#">core developers</a>
+                <li class="core-developer single-link"><a href="core-developers">developers</a>
+                <li class="has-submenu"><a href="#">developers</a>
                   <ul class="sub-menu">
-                    <li><a href="core-developers">core developers overview</a>
+                    <li><a href="core-developers">developers overview</a>
                     </li>
                     <li><a href="app-builder">app-builder</a>
                     </li>
