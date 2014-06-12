@@ -971,6 +971,8 @@ ul.pressnav {margin-bottom:40px;}
 	margin-bottom:50px;
 }
 
+.main-content h2 { margin-top:50px;}
+
 .main-content a {
 	color: #464646;
     text-decoration: underline;
@@ -997,7 +999,7 @@ ul.pressnav {margin-bottom:40px;}
 }
 
 p {
-	margin-bottom:30px;
+	margin-bottom:20px;
 }
 
 /*******************************************************************************
