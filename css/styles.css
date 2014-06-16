@@ -542,8 +542,8 @@ header {
 #article-siliconangle .pressnav .article-siliconangle a,
 #article-business-insider-01-06-14 .pressnav .article-business-insider-01-06-14 a,
 #article-the-scotsman-15-06-14 .pressnav .article-the-scotsman-15-06-14 a,
-#article-bitcoin-uk-media-15-06-14 .pressnav .article-bitcoin-uk-media-15-06-14 a,  {
-	color:#5593D7;
+#article-bitcoin-uk-media-15-06-14 .pressnav .article-bitcoin-uk-media-15-06-14 a  {
+	color:#5593D7!important;
 }
 
 /*******************************************************************************
@@ -731,66 +731,6 @@ Home Page Styles
 	color:#5593D7;
 }
 
-.home-tabs .grid-4 { }
-
-/*
-.app-builder-tab p {
-	border-left: 1px solid #E2E2E2;
-	border-right: 1px solid #E2E2E2;
-
-}
-
-.core-dev-tab {
-	background: url(imgs/home-tab-core-dev-icon.png) no-repeat center top;
-	margin:25px 20px 120px 0!important;
-	width:60px;
-	height:40px;
-	padding-top:20px;
-	
-}
-
-.core-dev-tab:hover {
-	background: url(imgs/home-tab-core-dev-icon.png) no-repeat center bottom;
-	height:60px;
-}
-
-.app-builder-tab {
-	background: url(imgs/home-tab-app-builder-icon.png) no-repeat center top;
-	width:76px;
-	height:60px;
-	margin:25px 0px 120px 0px!important;
-}
-
-.app-builder-tab:hover {
-	background: url(imgs/home-tab-app-builder-icon.png) no-repeat center bottom;
-	height:60px;
-}
-
-.farmer-tab {
-	background: url(imgs/home-tab-farmer-icon.png) no-repeat center top;
-	margin:25px 0 45px 20px!important;
-	width:77px;
-	height:57px;
-}
-
-.farmer-tab:hover {
-	background: url(imgs/home-tab-farmer-icon.png) no-repeat center bottom;
-	height:57px;
-}
-
-.tell-me-more-tab {
-	border-top: 1px solid #E2E2E2;
-	display:block;
-	clear:both;
-}
-
-.tell-me-more-tab p {
-	padding:20px;
-}
-*/
-
-
-
 .core-dev-tab {
 	background: url(imgs/home-tab-core-dev-icon.png) no-repeat center 35px;
 	margin:10px 0!important;
@@ -959,7 +899,6 @@ Inner Page Styles
 ul.leftnav, .pressnav { padding-right:30px;}
 ul.leftnav li, .pressnav ul li { margin-bottom:15px;}
 ul.leftnav li a { color:#7F7F7F; font-size:16px;}
-.pressnav li a { color:#7F7F7F; font-size:12px;}
 ul.leftnav li a:hover, .pressnav li a:hover { color:#333333;}
 /* subnav */
 ul.leftnav li ul, .pressnav li ul { margin-top:15px; margin-bottom:20px;}
