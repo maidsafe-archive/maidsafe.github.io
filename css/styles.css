@@ -1560,6 +1560,8 @@ a h3 { color:inherit;}
 
 #press .main-content { float:none;}
 
+#press .main-content h2 { margin-top:0px;}
+
 #press .main-content ul li { 
     padding-left: 0px;
 	margin-bottom:0px; 
