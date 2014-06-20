@@ -1325,20 +1325,21 @@ Company Page Styles
 	margin:0 0 30px 0px;
 	padding:0 0 0 30px;
 }
-/*
-#company .col-l p {
-	padding-right:10px;
-}
-#company .col-m p {
-	padding-right:10px;
-	padding-left:10px;
-}
-#company .col-r p {
-	padding-left:10px;
-}
-*/
 
+.main-content .col-3 {
+	width:212px;
+	/*padding:0px 0px;*/
+}
 
+.main-content .left-col {
+	padding:0 30px 0 0;
+	margin:0 10px 0 0;
+}
+
+.main-content .right-col {
+	padding:0 0 0 30px;
+	margin:0 0 0 10px;
+}
 
 
 #company .grid-4.l {
