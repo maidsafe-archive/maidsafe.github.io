@@ -1026,10 +1026,10 @@ a.button-blue {
 	cursor:pointer;
 }
 
-#developers h1 {
+#core-developer h1, #app-builder h1 {
 	margin-bottom:50px;
 }
-#developers h2 {
+#core-developer h2, #app-builder h2 {
 	text-align:center;
 }
 
@@ -1067,7 +1067,7 @@ a.last-button {
 
 .app-stack {
 	background:url(imgs/arrows-stack-diagram.png) no-repeat;
-	background-position:330px 160px;
+	background-position:330px 200px;
 }
 
 .app-stack-spacer {
@@ -1077,15 +1077,7 @@ a.last-button {
 
 #core-developer .app-stack {
 	background:url(imgs/arrows-stack-diagram.png) no-repeat;
-	background-position:330px 690px;
-}
-
-a.green-button, a.green-button-full {
-	background-color:#d3f4d4;
-}
-
-a.green-button:hover, a.green-button-full:hover {
-	background-color:#94d798;
+	background-position:330px 700px;
 }
 
 
