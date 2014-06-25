@@ -1173,11 +1173,6 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 	padding:20px 20px 0px 150px;
 }
 
-
-
-
-
-
 /*******************************************************************************
 
 Testimonials Page Styles
@@ -1421,6 +1416,71 @@ Careers Page Styles
 
 #careers .col-r {
 	float:right;
+}
+
+.current-jobs {
+	padding:15px;
+	background-color:#89b2df;
+	position:relative;
+	top:-10px;
+}
+.current-jobs h1 {
+	color:#fff;
+	font-size:22px;
+}
+.current-jobs h2 {
+	color:#fff;
+	font-size:14px;
+	font-family: 'OpenSansBold', Arial, sans-serif;
+	margin:0px 0px 20px 0;
+	padding:0px;
+	clear:both;
+}
+.current-jobs p, .current-jobs ul li {
+	color:#fff;
+	font-size:12px;
+	text-indent:0em;
+	padding-left:0px;
+}
+
+.current-jobs p { }
+
+.current-jobs ul li:before {
+	content:"";
+}
+
+/*
+.main-content .grid-3 { width:100%; float:left; clear:both;}
+*/
+.applynow {
+	background:url(imgs/applynow.png) no-repeat 0 0;
+	width:67px;
+	height:66px;
+	float:right;
+	position:relative;
+	top:-20px;
+	right:-20px;
+}
+a.applyhere {
+	background:url(imgs/applyhere_btn.png) no-repeat top left;
+	width:121px;
+	height:37px;
+	display:block;
+	float:;
+	position:relative;
+	right:-64px;
+	text-transform:uppercase;
+	text-decoration:none;
+	padding:15px;
+}
+
+a.applyhere:hover {
+	background-position:bottom left;
+}
+
+.apply-text {
+	font-size:18px;
+	letter-spacing:-0.5px;
 }
 
 /*******************************************************************************
@@ -2376,6 +2436,46 @@ a.light-button-full {
 #careers .col-l {
 	margin-right:70px;
 }
+.current-jobs {
+	padding:10px;
+	top:-10px;
+}
+.current-jobs h1 {
+	font-size:17px;
+}
+.current-jobs h2 {
+	font-size:12px;
+	margin:0px 0px 15px 0;
+}
+.current-jobs p, .current-jobs ul li {
+	font-size:11px;
+}
+
+.applynow {
+	background-size:41px 40px;
+	width:41px;
+	height:40px;
+	top:-14px;
+	right:-14px;
+}
+a.applyhere {
+	background-size:100px 88px;
+	width:86px;
+	height:24px;
+	display:block;
+	float:;
+	position:relative;
+	right:-54px;
+	text-transform:uppercase;
+	text-decoration:none;
+	padding:10px 6px;
+	font-size:11px;
+}
+
+.apply-text {
+	font-size:13px;
+	letter-spacing:-0.5px;
+}
 /*********** Use Cases Page Styles *************/
 #use-cases section .grid-4 {
 	margin:0px 40px 0 0;
@@ -2811,6 +2911,44 @@ a.light-button-full {
 
 #careers .col-l {
 	margin-right:55px;
+}
+
+.current-jobs {
+	padding:7px;
+	top:-10px;
+}
+.current-jobs h1 {
+	font-size:17px;
+}
+.current-jobs h2 {
+	font-size:12px;
+	margin:0px 0px 15px 0;
+}
+.current-jobs p, .current-jobs ul li {
+	font-size:11px;
+}
+
+.applynow {
+	background-size:41px 40px;
+	width:41px;
+	height:40px;
+	top:-11px;
+	right:-11px;
+}
+a.applyhere {
+	background-size:100px 88px;
+	width:86px;
+	height:24px;
+	right:-12px;
+	text-transform:uppercase;
+	text-decoration:none;
+	padding:10px 6px;
+	font-size:11px;
+}
+
+.apply-text {
+	font-size:13px;
+	letter-spacing:-0.5px;
 }
 
 /*********** Use Cases Page Styles *************/
@@ -3511,6 +3649,15 @@ a.light-button-full {
 
 #careers .col-r {
 	float:right;
+}
+
+
+a.applyhere {
+	position:absolute;
+	bottom:6px;
+	right:-6px;
+	margin:20px 0 0 20px;
+
 }
 
 /******************* Libraries Page **********************/
