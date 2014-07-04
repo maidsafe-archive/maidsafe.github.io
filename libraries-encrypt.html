@@ -123,24 +123,42 @@
                     </li>
                     <li><a href="maidsafe-network-platform-libraries">libraries</a>
                     </li>
-                    <li><a href="network-platform-use-cases">use cases</a>
+                    <li><a href="applications">applications</a>
                     </li>
                     <li><a href="network-platform-licensing">licensing</a>
                     </li>
+                    <li><a href="safecoin">safecoin</a>
+                    </li>
                   </ul>
                 </li>
-                <li class="core-developer single-link"><a href="core-developers">developers</a>
-                <li class="has-submenu"><a href="#">developers</a>
+                <li class="get-involved single-link"><a href="get-involved">get involved</a>
+                <li class="has-submenu"><a href="#">get involved</a>
                   <ul class="sub-menu">
-                    <li><a href="core-developers">developers overview</a>
+                    <li><a href="get-involved">overview</a>
+                    </li>
+                    <li><a href="core-developers">core developers</a>
                     </li>
                     <li><a href="app-builder">app-builder</a>
+                    </li>
+                    <li><a href="farmers">farmers</a>
                     </li>
                     <li><a href="maidsafe-network-platform-libraries">libraries</a>
                     </li>
                   </ul>
                 </li>
-                <li class="farmers"><a href="farmers">farmers</a>
+                <li class="documents single-link"><a href="documents">documents</a>
+                <li class="has-submenu"><a href="#">documents</a>
+                  <ul class="sub-menu">
+                    <li><a href="examples">examples</a>
+                    </li>
+                    <li><a href="system-docs">system docs</a>
+                    </li>
+                    <li><a href="developer-wiki">developer wiki</a>
+                    </li>
+                    <li><a href="papers-publications">papers &amp; 0publications</a>
+                    </li>
+                  </ul>
+                </li>
                 <li class="company single-link"><a href="company-privacy-security-freedom">company</a>
                 <li class="has-submenu"><a href="#">company</a>
                   <ul class="sub-menu">
@@ -170,7 +188,7 @@
             data of any length, even if written in a random manner (or parts overwritten during write). It is very useful for encrypting disk based storage of huge data or writing data encrypted to a key value store in a manner that cannot be algorithmically
             reversed (as in reversing AES or similar algorithms). The chunks of data provided are self checking and the process is recursive, so the keys output can themselves be concatenated into a large file and passed back into the algorithm, creating
             a single key for any size of data set.</p>
-          <h3>Overview of use in the MaidSafe Platform</h3>
+          <h3>Overview of use in the SAFE Platform</h3>
           <p>Data encryption in the prototype implementation uses a combination of cryptographically secure hashing and AES256 symmetric encryption. Files are chunked, hashed, and then the hash of each chunk is combined with the hashes of the preceding two
             chunks (cyclically) to produce keying material to encrypt that chunk. This chaining obfuscates common file fragments. The resulting encrypted chunk is the data stored in the network, and its hash stored in the data map. The system uses an
             underlying peer to peer network based on a Kademlia DHT. This is a very efficient hash table implementation that has been widely deployed in many networks of millions of nodes. Unlike standard peer to peer networks, data can be deleted from
@@ -247,7 +265,7 @@
         </li>
         <li><a href="faqs">- FAQs</a>
         </li>
-        <li><a href="network-platform-use-cases">- Use Cases</a>
+        <li><a href="applications">- Applications</a>
         </li>
         <li><a href="network-platform-licensing">- Licensing</a>
         </li>
@@ -257,14 +275,18 @@
     </div>
     <div class="grid-2 footer-links">
       <ul>
-        <li><a href="core-developers">Developers</a>
+      	 <li><a href="get-involved">Get Involved</a>
         </li>
-        <li><a href="app-builder">- App Builder</a>
+        <li><a href="core-developers">- Core Developers</a>
+        </li>
+        <li><a href="app-builders">- App Builders</a>
+        </li>
+        <li><a href="farmers">- Farmers</a>
         </li>
         <li><a href="maidsafe-network-platform-libraries">- Libraries</a>
-        </li>
-        <li><br/></li>
-        <li><a href="farmers">Farmers</a>
+        </li>  
+        <li><br /></li>
+        <li><a href="documents">Documents</a>
         </li>
       </ul>
     </div>
@@ -322,6 +344,8 @@
     </div>
   </div>
 </footer>
+
+
 
 
 
