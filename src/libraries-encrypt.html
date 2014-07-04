@@ -20,7 +20,7 @@
             data of any length, even if written in a random manner (or parts overwritten during write). It is very useful for encrypting disk based storage of huge data or writing data encrypted to a key value store in a manner that cannot be algorithmically
             reversed (as in reversing AES or similar algorithms). The chunks of data provided are self checking and the process is recursive, so the keys output can themselves be concatenated into a large file and passed back into the algorithm, creating
             a single key for any size of data set.</p>
-          <h3>Overview of use in the MaidSafe Platform</h3>
+          <h3>Overview of use in the SAFE Platform</h3>
           <p>Data encryption in the prototype implementation uses a combination of cryptographically secure hashing and AES256 symmetric encryption. Files are chunked, hashed, and then the hash of each chunk is combined with the hashes of the preceding two
             chunks (cyclically) to produce keying material to encrypt that chunk. This chaining obfuscates common file fragments. The resulting encrypted chunk is the data stored in the network, and its hash stored in the data map. The system uses an
             underlying peer to peer network based on a Kademlia DHT. This is a very efficient hash table implementation that has been widely deployed in many networks of millions of nodes. Unlike standard peer to peer networks, data can be deleted from
@@ -78,5 +78,6 @@
   [%  INCLUDE footer 
 	includeGridLoad = "False",
     includeResponsiveVideo = "False",
-    includeTabulousScripts = "False"
+    includeTabulousScripts = "False",
+    includeSearch = "False"
 %]

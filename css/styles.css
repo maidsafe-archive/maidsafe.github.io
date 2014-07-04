@@ -463,6 +463,22 @@ header {
 #platform-overview .menu .overview a,
 #platform-features .menu .overview a,
 #platform-faqs .menu .overview a,
+#applications .menu .overview a,
+#licensing-platform .menu .overview a,
+#testimonials .menu .overview a,
+#safecoin .menu .overview a,
+#get-involved .menu .get-involved a,
+#core-developer .menu .get-involved a,
+#app-builder .menu .get-involved a,
+#farmers .menu .get-involved a,
+#platform-libraries .menu .get-involved a,
+#documents .menu .documents a,
+#examples .menu .documents a,
+#system-docs .menu .documents a,
+#developer-wiki .menu .documents a,
+#papers-publications .menu .documents a,
+#company .menu .company a,
+/*
 #platform-use-cases .menu .overview a,
 #licensing-platform .menu .overview a,
 #testimonials .menu .overview a,
@@ -471,6 +487,7 @@ header {
 #platform-libraries .menu .core-developer a,
 #company .menu .company a,
 #farmers .menu .farmers a,
+*/
 #careers .menu .company a,
 #stakeholders .menu .stakeholders a,
 #blog .menu .blog a,
@@ -484,16 +501,28 @@ header {
 #platform-overview ul.leftnav .overview a,
 #platform-features ul.leftnav .features a,
 #platform-faqs ul.leftnav .faqs a,
-#platform-use-cases ul.leftnav .usecases a,
+#applications ul.leftnav .applications a,
 #licensing-platform ul.leftnav .licensing a,
-#testimonials ul.leftnav .testimonials a  {
+#testimonials ul.leftnav .testimonials a,
+#safecoin ul.leftnav .safecoin a  {
 	color:#5593D7;
 }
 
-/******** Developers - Left nav selected state styles ********/
+/******** Get Involved - Left nav selected state styles ********/
+#get-involved ul.leftnav .get-involved a,
 #core-developer ul.leftnav .core-developer a,
 #platform-libraries ul.leftnav .libraries a,
-#app-builder ul.leftnav .app-builder a {
+#app-builder ul.leftnav .app-builder a,
+#farmers ul.leftnav .farmers a {
+	color:#5593D7;
+}
+
+/******** Documents - Left nav selected state styles ********/
+#documents ul.leftnav .documents a,
+#examples ul.leftnav .examples a,
+#system-docs ul.leftnav .system-docs a,
+#developer-wiki ul.leftnav .developer-wiki a,
+#papers-publications ul.leftnav .papers-publications a {
 	color:#5593D7;
 }
 
@@ -1037,8 +1066,7 @@ a.button-blue {
 	text-align:center;
 }
 
-a.light-button, a.light-button-full,
-a.green-button, a.green-button-full {
+a.light-button, a.light-button-full {
 	background-color:#c5d9f1;
 	font-size:18px;
 	text-align:center;
@@ -1046,17 +1074,16 @@ a.green-button, a.green-button-full {
 	text-decoration:none;
 }
 
-a.light-button:hover, a.light-button-full:hover,
-a.green-button:hover, a.green-button-full:hover {
+a.light-button:hover, a.light-button-full:hover {
 	background-color:#5593D7;
 	color:#ffffff;
 }
 
-a.light-button, a.green-button {
+a.light-button {
 	padding:20px 0;
 }
 
-a.light-button-full, a.green-button-full {
+a.light-button-full {
 	padding:20px 31px;
 }
 
@@ -1082,6 +1109,95 @@ a.last-button {
 #core-developer .app-stack {
 	background:url(imgs/arrows-stack-diagram.png) no-repeat;
 	background-position:330px 700px;
+}
+
+
+/*******************************************************************************
+
+Get Involved Page Styles
+
+*******************************************************************************/
+
+.farmers-text {
+	padding:0;
+}
+.farmers-text img {
+	display:inline-block;
+	float:left;
+	margin:5px 30px 20px 0;
+}
+
+.app-builders-text img {
+	display:inline-block;
+	float:left;
+	margin:5px 30px 10px 0;
+}
+
+.core-developers-text img {
+	display:inline-block;
+	float:left;
+	margin:5px 38px 40px 8px;
+}
+
+.app-builders-text {
+	padding:0;
+}
+
+.core-developers-text {
+	padding:0;
+}
+
+/*******************************************************************************
+
+Farmers Page Styles
+
+*******************************************************************************/
+
+.por-diagram {
+	margin: 0 auto;
+	display:block;
+}
+
+/*******************************************************************************
+
+Safecoin Page Styles
+
+*******************************************************************************/
+
+h1.safecoin-head {
+	background:url(imgs/safecoin_head.png) 0 0 no-repeat;
+	display:block;
+	text-indent:-9999px;
+}
+#safecoin h2 { text-align:center;}
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table thead th {
+  vertical-align: bottom;
 }
 
 
@@ -1122,6 +1238,83 @@ Use Cases Page Styles
 	margin-bottom:25px;
 }
 
+/*******************************************************************************
+
+FAQs Page Styles
+
+*******************************************************************************/
+h2.faq-developers, h2.faq-general, h2.faq-technical {
+	height:40px;
+	padding:12px 0 0 70px;
+	width:100%;
+	font-family: 'OpenSansLight', Arial, sans-serif;
+	color: #5593D7;
+	text-transform:uppercase;
+	font-size:18px;
+	margin-top:20px;
+}
+h2.faq-developers {
+	background:url(imgs/faq_developers_head.png) no-repeat 0 0;
+}
+h2.faq-general {
+	background:url(imgs/faq_general_head.png) no-repeat 0 0;
+}
+h2.faq-technical {
+	background:url(imgs/faq_technical_head.png) no-repeat 0 0;
+}
+
+#platform-faqs .main-content h2 {
+	clear:both;
+	margin:40px 0px 10px 0px;
+	float:left;
+}
+
+#platform-faqs .main-content ul li { margin-bottom:0px;}
+
+h3.question {
+	margin:10px 0 5px 0;
+	font-size:16px;
+	clear:both;
+	float:left;
+	font-family: 'OpenSansRegular', Arial, sans-serif;
+}
+h3.question a {
+	text-decoration: none;
+	display: block;
+}
+
+.toggle_answer {
+	margin: 10px 0 20px 0px;
+	padding: 0;
+	border-bottom: 1px solid #d6d6d6;
+	overflow: hidden;
+	width: 710px;
+	clear: both;
+}
+
+.toggle_answer p {
+	padding:10px 0 20px 0;
+	margin:0px;
+}
+
+#platform-faqs .main-content ul li {
+    padding-left: 0px;
+    text-indent: 0em;
+}
+
+#platform-faqs .main-content ul li:before {
+    content: normal;
+}
+
+.search-box {
+	margin:0px;
+}
+
+.search {
+	font-size: 14px;
+    padding: 4px 10px;
+	width:90%;
+}
 
 /*******************************************************************************
 
@@ -1281,6 +1474,64 @@ Libraries Page Styles
 	background:url(imgs/back_arrow.png) no-repeat 15px 15px;
 	padding:15px 0 0 75px;
 }
+
+/*******************************************************************************
+
+Documents Page Styles
+
+*******************************************************************************/
+
+
+.examples-tab, .system-docs-tab, .developer-wiki-tab, .papers-publications-tab {
+	height:140px;
+	margin-top:30px;
+}
+.examples-tab h2, .system-docs-tab h2, .developer-wiki-tab h2, .papers-publications-tab h2 {
+	font-family: 'OpenSansLight', Arial, sans-serif;
+	margin:0px;
+	color: #5593D7;
+	font-size:14px;
+}
+a.examples-tab, a.system-docs-tab, a.developer-wiki-tab, a.papers-publications-tab {
+	text-decoration:none;
+	text-align:center;
+}
+
+.examples-tab {
+	background:url(imgs/documents_examples_icon.png) no-repeat center 40px;
+}
+.system-docs-tab {
+	background:url(imgs/documents_system_docs_icon.png) no-repeat center 30px;
+}
+.developer-wiki-tab {
+	background:url(imgs/documents_developer_wiki_icon.png) no-repeat center 30px;
+}
+.papers-publications-tab {
+	background:url(imgs/documents_papers_publications_icon.png) no-repeat center 35px;
+}
+
+
+/*******************************************************************************
+
+Papers and Publication Page Styles
+
+*******************************************************************************/
+
+ul.pdf-group li { list-style:none;}
+
+ul.pdf-group li:before {
+	content:"";
+	background:url(imgs/pdf_icon.png) no-repeat 0 0;
+	display:inline-block;
+	width:20px;
+	height:21px;
+	margin-right:10px;
+	position:relative;
+	top:4px;
+}
+
+ul.pdf-group li  a { }
+
 
 /*******************************************************************************
 
@@ -1600,7 +1851,7 @@ Contact Page Styles
 
 *******************************************************************************/
 #contact .col-l {
-	padding-right:20px;
+	padding-right:70px;
 }
 #contact .col-m {
     padding: 0 80px;
@@ -1615,7 +1866,6 @@ Contact Page Styles
 }
 #contact .main-content a {
 	margin-bottom:40px;
-	font-size:12px;
 	display:block;
 }
 #contact textarea {
@@ -1623,6 +1873,31 @@ Contact Page Styles
 }
 
 #contact p.tel { margin-bottom:20px;}
+
+ul.social li {text-indent: 3.4em;}
+
+ul.social li:before {
+	content:"";
+}
+
+ul.social li a {
+	font-size:16px;
+	text-decoration:none;
+	height:40px;
+	margin-bottom:20px!important;
+}
+.twitter-icon {
+	background:url(imgs/icon_twitter.png) no-repeat 0 0;
+	padding-top:5px;
+}
+.contact-icon {
+	background:url(imgs/icon_contact.png) no-repeat 0 0;
+	padding-top:2px;
+}
+.mumble-icon {
+	background:url(imgs/icon_mumble.png) no-repeat 0 0;
+	padding-top:8px;
+}
 
 /*******************************************************************************
 
@@ -2044,7 +2319,7 @@ ul.social-links li a {
 .legal {
 	font-size: 12px;
 	font-weight: 400;
-	padding-top:25px;
+	padding-top:20px;
 	width:60%;
 	float:left;
 	line-height: 20px;
@@ -2129,7 +2404,7 @@ header {
 
 .menu ul li {
 	display: inline-block;
-	margin-left:18px;
+	margin-left:16px;
 }
 
 
@@ -2390,6 +2665,20 @@ a.light-button-full {
 	background-position:230px 860px;
 }
 
+/********* Get Involved Page ************/
+.get-involved-tabs {
+	margin-bottom:30px;
+}
+
+.get-involved-tabs p {
+	font-size:22px;
+	padding:95px 20px 25px 20px;
+	line-height:26px;
+}
+
+.tell-me-more-tab p {
+	padding:20px;
+}
 /*********** Company Page ***************/
 .main-content .col-3 {
 	width: 146px;
@@ -2599,7 +2888,7 @@ header {
 
 .menu ul li {
 	display: inline-block;
-	margin-left:6px;
+	margin-left:5px;
 }
 
 .menu ul li a {
@@ -2864,6 +3153,21 @@ a.light-button-full {
 #core-developer .app-stack {
 	background-position:170px 910px;
 	background-size:180px 132px;
+}
+
+/********* Get Involved Page ************/
+.get-involved-tabs {
+	margin-bottom:30px;
+}
+
+.get-involved-tabs p {
+	font-size:18px;
+	padding:95px 10px 25px 10px;
+	line-height:22px;
+}
+
+.tell-me-more-tab p {
+	padding:20px;
 }
 
 /*********** Company Page ***************/
@@ -3586,6 +3890,21 @@ a.light-button-full {
 #core-developer .app-stack {
 	background-position:170px 1110px;
 	background-size:180px 132px;
+}
+
+/********* Get Involved Page ************/
+
+.get-involved-tabs p {
+	border-bottom:1px solid #E2E2E2;
+}
+
+
+.farmer-tab {
+    height: auto;
+}
+
+.tell-me-more-tab {
+	border-top:0;
 }
 
 /*********** Company Page ***************/

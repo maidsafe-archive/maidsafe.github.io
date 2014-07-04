@@ -17,14 +17,16 @@
           <h2>Implementation of Reliable UDP</h2>
           <h3>Description</h3>
           <p id="u1797-4">TCP is a reliable connection oriented protocol that cannot traverse NAT routers (with any real capability) UDP is an unreliable connectionless protocol that can traverse many NAT routers with ease.</p>
-          <p id="u1797-10">MaidSafe-RUDP is a reliable pseudo connected protocol that can traverse more NAT routers than plain UDP when used in conjunction with <a href="http://maidsafe.net/libraries-routing">MaidSafe-Routing</a>. It is impervious to 'man in the
+
+          <p id="u1797-10">MaidSafe-RUDP is a reliable pseudo connected protocol that can traverse more NAT routers than plain UDP when used in conjunction with <a href="libraries-routing">MaidSafe-Routing</a>. It is impervious to 'man in the
             middle' attacks with no requirement for a key exchange protocol to exist at the network level.</p>
           <h3>Features</h3>
           <ul>
             <li>Implements hundreds / thousands of connections per computer (depending on hardware)</li>
             <li>Provides encrypted communications (keys can be passed into API per connection)</li>
-            <li>Used in conjunction with <a href="http://maidsafe.net/libraries-routing">MaidSafe-Routing</a> this library implements a network that is entirely resistant to 'man in the middle' attacks</li>
-            <li>Used in conjunction with <a href="http://maidsafe.net/libraries-routing">MaidSafe-Routing</a> this library implements a network that can traverse even symmetric NAT routers</li>
+            <li>Used in conjunction with <a href="libraries-routing">MaidSafe-Routing</a> this library implements a network that is entirely resistant to 'man in the middle' attacks</li>
+            <li>Used in conjunction with <a href="libraries-routing">MaidSafe-Routing</a> this library implements a network that can traverse even symmetric NAT routers</li>
+
             <li>Capable of multiplexing multiple RUDP connections to single UDP port (increasing connection capabilities)</li>
           </ul>
           <h3>Programming languages</h3>
@@ -72,5 +74,6 @@
   [%  INCLUDE footer 
 	includeGridLoad = "False",
     includeResponsiveVideo = "False",
-    includeTabulousScripts = "False"
+    includeTabulousScripts = "False",
+    includeSearch = "False"
 %]

@@ -4,7 +4,7 @@
       keywords = "MaidSafe FAQs",
       includeBrowserDetect = "False",
       includeHomeBanners = "False",
-      includeToggle = "False",
+      includeToggle = True,
       includeTwitterCard = True,
       includeDeveloperTwitterCard = "False",
       includeTabulousCSS = "False"
@@ -12,29 +12,103 @@
 <body id="platform-faqs">
 [%  INCLUDE nav %]
       <div class="container-12">
-        <div class="grid-9 main-content">
-            <h1>FAQs</h1>
-            <p>The following questions are ones we have been asked directly, or our staff have come across online. The list is not exhaustive, so if there is anything you want to know write to us at <a href="mailto:info@maidsafe.net">info@maidsafe.net </a></p>
-            <h2 id="difference"><a href="#difference">What makes MaidSafe stand out from other projects that promise a decentralized Internet (BitCloud, Meshnet, Freenet, etc.)?</a></h2>
-            <p>We differ from many of the organisations and products in our space as we have the decentralized Internet at the core of our design. Some of these projects are currently trying to add components that bend them into the shape of a decentralized Internet, but this is not what they were designed for. As a result, many of these projects require significant set up and only work on certain platforms. It is worth noting that MaidSafe supports any project that backs a decentralized Internet, however we don't see any with the same vision as MaidSafe: Privacy, Security and Freedom for everyone!</p>
-            <h2 id="who-owns"><a href="#who-owns">Who owns the MaidSafe platform?</a></h2>
-            <p>No one, it is a resource there for all users of the Internet. The MaidSafe network is completely anonymous, secure and aims to repel human intervention of any kind; it cannot be controlled or 'owned'. We feel very strongly about this and have written a <a href="http://blog.maidsafe.net/2014/02/07/owning-the-network/" target="_blank">blog post</a> on the subject: </p>
-            <h2 id="patents"><a href="#patents">A truly autonomous distributed network shouldn't need patents to protect it, right?</a></h2>
-            <p>Our patents exist in a purely defensive capacity, to protect MaidSafe and the developers that use the platform. MaidSafe do not own the patents, they only have the rights to use them, royalty free and in perpetuity. The MaidSafe Foundation, a registered charity, actually own the patents.</p>
-            <h2 id="old-technology"><a href="#old-technology">MaidSafe technology is nothing new; isn't this company just throwing up marketing hype around it then mentioning Bitcoin?</a></h2>
-            <p>Our papers, patents and design documents describe crypto currencies being crucial to a distributed network (otherwise identity leaks are inevitable). They're all available online with early design specifications (such as Perpetual Coin) and were published in 2006, as were many of our initial patents.</p>
-            <h2 id="why-the-name"><a href="#why-the-name">Why the name MaidSafe?</a></h2>
-            <p>It's an acronym; "Massive Array of Internet Disks, Secure Access For Everyone".</p>
-            <h2 id="how-to-start"><a href="#how-to-start">How can I start to use MaidSafe?</a></h2>
-            <p>First, it will help to understand that MaidSafe is not a product, it's a platform. We provide the distributed infrastructure on which developers will build applications.  As developers start to create these apps, we will all have access to products that enable complete privacy and security in a data-centre-free environment.</p>
-            <h2 id="research"><a href="#research">What kind of research and validation has been done to affirm that this system is robust and secure, at least in theory?</a></h2>
-            <p>With such a radical solution, validation is extremely important. MaidSafe's technology has been peer reviewed with papers published and presented at the Wireless World Research Forum and the IEEE Computer Society. During development, MaidSafe has engaged with Scotland's leading technical Universities; Stirling, Strathclyde, St Andrews and the University of Abertay. Furthermore, MaidSafe's founder, David Irvine, has showcased the company's technology at the Google Scalability conference and at the British Computer Society's (Scotland) 50th Anniversary Christmas lecture.</p>
-            <h2 id="connection"><a href="#connection">Does MaidSafe require continuous Internet connection from all participants?</a></h2>
-            <p>No, the network will rate each connection type and adjust for the resources it provides, in order to account for unavailability (through powering off or device failure). It's not a problem to be disconnected for shorter periods, however.  If your node is unavailble for longer periods it will negatively impact on the service you receive from the network.</p>
-            <h2 id="compromise-or-disruption"><a href="#compromise-or-disruption">Is there any way to compromise or disrupt MaidSafe, such as setting up a very large number of computers with poor upload speeds but huge hard drives?</a></h2>
-            <p>The number of computers would have to massively outnumber the network nodes. When a node joins, its ID is altered by existing nodes and put at a random location. You would have to add a significant number of nodes and be extremely lucky in getting 4 close to each other in the address space. Even then the damage may be limited to a single chunk group.</p>
-            <h2 id="data-redundancy"><a href="#data-redundancy">How does the network deal with data redundancy, to ensure whatever data is shared remains accessible?</a></h2>
-            <p>Each file is encrypted and split into chunks during our encryption process (Self Encryption). The network keeps and maintains 4 copies of each encrypted chunk and moves these fragments around the network as nodes become unavailable, either through failure or power down. In order to cope with this churn, the network is able to reconfigure globally extremely quickly (possibly as fast as 20 milliseconds). These steps ensure data is always available, provided the user retrieving the data has an Internet connection and the correct credentials.</p> 
+        <div id="faqs" class="grid-9 main-content">
+        <h1>FAQs</h1>
+        <p>The following questions are ones we have been asked directly, or our staff have come across online. The list is not exhaustive, so if there is anything you want to know write to us at <a href="mailto:info@maidsafe.net">info@maidsafe.net </a></p>
+        
+        <div class="grid-4 search-box">
+        <input class="search" placeholder="Search" />
+        </div>
+        <h2 class="faq-developers">Developers</h2>
+        <ul class="list">
+        <li>
+        <h3 class="question"><a href="#">I am a developer and want to build an application on the SAFE network. How do I set up a development environment, and what API docs/examples exist?</a></h3>
+        <div class="toggle_answer">
+        <p>You can get started right now by going to the <a href="https://github.com/maidsafe/MaidSafe/wiki" target="_blank">Github Wiki</a> and following the instructions to set up the build environment and get the sub-modules built. The <a href="http://examples.maidsafe.net/" target="_blank">SAFE examples</a> focus on how to use the API project to build apps and explore the different parts of the system. Please note that this work is on-going so be ready for more and more updates to the examples project. For support, please go to our <a href="https://groups.google.com/forum/#!forum/maidsafe-development" target="_blank">dev mailing list </a>or to the <a href="http://www.maidsafe.org" target="_blank">forum</a>.</p>
+        </div>
+        </li>
+        <li>
+        <h2 class="faq-general">General</h2>
+        <h3 class="question"><a href="#">Why the name MaidSafe?</a></h3>
+        <div class="toggle_answer">
+        <p>It’s an acronym: Massive Array of Internet Disks, Secure Access For Everyone.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">How can I start to use MaidSafe?</a></h3>
+        <div class="toggle_answer">
+        <p>First, it will help to understand that MaidSafe is not a product, it's a platform. We provide the distributed infrastructure on which developers will build applications. As developers start to create these apps, we will all have access to products that enable complete privacy and security in a data-centre-free environment.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">Does MaidSafe require continuous Internet connection from all participants?</a></h3>
+        <div class="toggle_answer">
+        <p>No, the network will rate each connection type and adjust for the resources it provides, in order to account for unavailability (through powering off or device failure). It's not a problem to be disconnected for shorter periods, however. If your node is unavailable for longer periods it will negatively impact on the service you receive from the network.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">What kind of research and validation has been carried out to affirm that the SAFE network will live up to the claims?</a></h3>
+        <div class="toggle_answer">
+        <p>With such a radical solution, validation is extremely important. MaidSafe's technology has been peer reviewed with papers published and presented at the Wireless World Research Forum and the IEEE Computer Society. During development, MaidSafe has engaged with Scotland's leading technical Universities; Stirling, Strathclyde, St Andrews and the University of Abertay. Furthermore, MaidSafe's founder, David Irvine, has showcased the company's technology at the Google Scalability conference and at the British Computer Society's (Scotland) 50th Anniversary Christmas lecture.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">Who owns the MaidSafe platform?</a></h3>
+        <div class="toggle_answer">
+        <p>We all do! The SAFE network is an Open Source resource there for all users of the Internet. The network is completely anonymous, secure and aims to repel human intervention of any kind; it cannot be controlled or 'owned'. We feel very strongly about this and have written a <a href="http://blog.maidsafe.net/2014/02/07/owning-the-network/" target="_blank">blog post</a> on the subject</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">A truly autonomous distributed network shouldn't need patents to protect it, right?</a></h3>
+        <div class="toggle_answer">
+        <p>Our patents exist in a purely defensive capacity, to protect MaidSafe and the developers that use the platform. MaidSafe do not own the patents, they only have the rights to use them, royalty free and in perpetuity. The MaidSafe Foundation, a registered charity, actually own the patents.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">MaidSafe technology is nothing new; are you just throwing up marketing hype around it then mentioning Bitcoin?</a></h3>
+        <div class="toggle_answer">
+        <p>Our papers, patents and design documents describe crypto currencies being crucial to a distributed network (otherwise identity leaks are inevitable). They're all available online with early design specifications (such as Perpetual Coin) and were published in 2006, as were many of our initial patents.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">The web as it is needs no gatekeeper, shouldn't your system be designed this way as well?</a></h3>
+        <div class="toggle_answer">
+        <p>We agree that the Internet should never have a gate keeper and we don't intend to start, that is why all our code is Open Source and we have transferred ownership to all the people of the world. The SAFE network is also completely free from human intervention (the weakest and most corruptible part of any system), relying totally on maths and logic.</p>
+        </div>
+        </li>
+        <li>
+        <h2 class="faq-technical">Technical</h2>
+        <h3 class="question"><a href="#">Is there any way to compromise or disrupt MaidSafe, such as setting up a very large number of computers with poor upload speeds but huge hard drives?</a></h3>
+        <div class="toggle_answer">
+        <p>The number of computers would have to massively outnumber the network nodes. When a node joins, its ID is altered by existing nodes and put at a random location. You would have to add a significant number of nodes and be extremely lucky in getting 4 close to each other in the address space. Even then the damage may be limited to a single chunk group.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">How does the network deal with data redundancy, to ensure whatever data is shared remains accessible?</a></h3>
+        <div class="toggle_answer">
+        <p>Each file is encrypted and split into chunks during our encryption process (Self Encryption). The network keeps and maintains 4 copies of each encrypted chunk and moves these fragments around the network as nodes become unavailable, either through failure or power down. In order to cope with this churn, the network is able to reconfigure globally extremely quickly (as fast as 20 milliseconds). These steps ensure data is always available, provided the user retrieving the data has an Internet connection and the correct credentials.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">How you deal with the latency inherit in a distributed network like SAFE?</a></h3>
+        <div class="toggle_answer">
+        <p>Multiple things facilitate the solution here. Firstly, not one person stores a chunk of data, there are multiple copies of a chunk kept at any given time with a minimum of 4. Furthermore, the network also ranks nodes, for example, if a vault node fails to retrieve a piece of data then a new node replaces it as the holder and the original node gets deranked. If the issue persists, this node will get de-ranked to a point where in future it will not be asked to store any more data. So the network ends up determining which node is effective for storing data. Finally, if a piece of data you’re requesting becomes popular and is retrieved often, it will be cached in more nodes, making the retrieval times even faster. </p>
+        <p>All this will ensure that popular data gets retrieved more quickly.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">Why would a distributed network be more secure than a traditional server with the same encryption that you use within SAFE?</a></h3>
+        <div class="toggle_answer">
+        <p>This is where physical security plays a big part. Firstly, giving full control of a file to one entity lets them either decrypt it and read it’s content or delete your data. Conversely, decentralisation spreads the data providing multiple sources for each file. Furthermore, actions in the network are also a made based on group consensus, so just one node wanting to do something doesn't enable the task to be completed. Only by majority group agreement are tasks carried out. This makes SAFE extremely robust as the effort to get a group of close nodes together in this network is extremely unlikely.</p>
+        </div>
+        </li>
+        <li>
+        <h3 class="question"><a href="#">How does the network know that a safecoin is unique, can’t be copied, faked or double spent?</a></h3>
+        <div class="toggle_answer">
+        <p>Coins can be retrieved by the network but cannot be used out with the network. The coin will have current and previous address fields recorded. Spending it means the current owner signs it over to the new owner and the addresses change, the new owner can check this is done and that is the exchange complete. If another user requests that coin in an attempt to double spend it, the network provides the coin stored in many known locations, these copies are useless as the network will not take any notice of these copies for transfer. All this is synchronised between all store nodes and then integrity checked by a managing group to ensure the exchange happens across all copies the network requires. The coin is validatable by a mix of signatures, hash (of the coin itself) and network validation, based on consensus.</p>
+        </div>
+        </li>
+        </ul>
         </div>
        
         <div class="grid-3 leftnav-shell">
@@ -45,11 +119,13 @@
             </li>
             <li class="faqs"><a href="faqs">FAQs</a>
             </li>
-            <li class="usecases"><a href="network-platform-use-cases">Use Cases</a>
+            <li class="applications"><a href="applications">Applications</a>
             </li>
             <li class="licensing"><a href="network-platform-licensing">Licensing</a>
             </li>
             <li class="testimonials"><a href="testimonials">Testimonials</a>
+            </li>
+            <li class="safecoin"><a href="safecoin">Safecoin</a>
             </li>
           </ul>
         </div>
@@ -59,6 +135,7 @@
   [%  INCLUDE footer 
 	includeGridLoad = "False",
     includeResponsiveVideo = "False",
-    includeTabulousScripts = "False"
+    includeTabulousScripts = "False",
+    includeSearch = True
 %]
 
