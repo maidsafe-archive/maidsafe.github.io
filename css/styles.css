@@ -1481,6 +1481,8 @@ Documents Page Styles
 
 *******************************************************************************/
 
+.doc-box { padding:20px 15px 10px 15px; background-color:#eef4fa; margin-bottom:20px;}
+.doc-box h2 { margin-top:0px;}
 
 .examples-tab, .system-docs-tab, .developer-wiki-tab, .papers-publications-tab {
 	height:140px;
