@@ -1481,8 +1481,36 @@ Documents Page Styles
 
 *******************************************************************************/
 
-.doc-box { padding:20px 15px 10px 15px; background-color:#eef4fa; margin-bottom:20px;}
-.doc-box h2 { margin-top:0px;}
+.doc-box-examples,
+.doc-box-system-docs,
+.doc-box-dev-wiki,
+.doc-box-papers-publications { 
+	padding:20px 0px 10px 0px;
+	background-color:#eef4fa;
+	margin-bottom:20px;
+}
+
+.doc-box-examples {min-height:230px}
+
+.doc-box-examples h2,
+.doc-box-system-docs h2,
+.doc-box-dev-wiki h2,
+.doc-box-papers-publications h2 {
+	margin-top:0px;
+	padding:0 15px;
+}
+
+.doc-box-examples p,
+.doc-box-system-docs p,
+.doc-box-dev-wiki p,
+.doc-box-papers-publications p {
+	padding:0 15px;
+}
+
+.doc-box-examples ul,
+.doc-box-system-docs ul,
+.doc-box-dev-wiki ul,
+.doc-box-papers-publications ul {padding:0 15px;}
 
 .examples-tab, .system-docs-tab, .developer-wiki-tab, .papers-publications-tab {
 	height:140px;
