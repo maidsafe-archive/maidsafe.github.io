@@ -1490,7 +1490,7 @@ Documents Page Styles
 	margin-bottom:20px;
 }
 
-.doc-box-examples {min-height:230px}
+.doc-box-dev-wiki { clear:both;}
 
 .doc-box-examples h2,
 .doc-box-system-docs h2,
