@@ -18,8 +18,6 @@
         </li>
         <li><a href="distributed-network-features">- Features</a>
         </li>
-        <li><a href="faqs">- FAQs</a>
-        </li>
         <li><a href="applications">- Applications</a>
         </li>
         <li><a href="network-platform-licensing">- Licensing</a>
@@ -128,16 +126,6 @@
 [% IF includeTabulousScripts == true %]
 <script type="text/javascript" src="js/tabulous.js"></script>
 <script type="text/javascript" src="js/js.js"></script>
-[% END %]
-
-[% IF includeSearch == true %]
-<script src="js/list.js"></script>
-<script>
-var options = {
-  valueNames: [ 'question', 'toggle_answer' ]
-};
-var userList = new List('faqs', options);
-</script>
 [% END %]
 
 </body>
