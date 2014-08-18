@@ -7,7 +7,8 @@
       includeToggle = "False",
       includeTwitterCard = True,
       includeDeveloperTwitterCard = "False",
-      includeTabulousCSS = "False"
+      includeTabulousCSS = "False",
+      includeMapPopUp = "False"
 %]
 <body id="platform-features">
 [%  INCLUDE nav %]
@@ -16,56 +17,74 @@
           <h1>Distributed Network Features</h1>
           <p>The MaidSafe vision is to replace today's existing server centric and intrusive systems with a fully distributed, safe, secure and private network. A network with no third party being able to intercept, copy, steal, sell or otherwise access the network’s data.</p>
 <p>The SAFE platform provides a distributed network that allows developers to create fast and secure applications of any kind. With no API key to be purchased and no infrastructure required, developers are not exposed to any financial risk with significantly reduced customer acquisition costs. </p>
-          <h2>No Servers</h2>
+			
+            
+           <div class="grid-4">
+          <h2 class="noservers-head">No Servers</h2>
           <ul>
-            <li>No servers = no data centres</li>
+            <li class="heavy">No servers = no data centres</li>
             <li>100% server security (there are no servers)</li>
-            <li>Impervious to web censoring (no DNS)</li>
-            <li>Denial of Service attacks rendered invalid via opportunistic caching &#45; <a class="nonblock" href="opportunistic-caching">See diagram</a>
-            </li>
-            <li>Unlimited data storage with no monetary cost and no transactions</li>
+            <li class="heavy">Impervious to web censoring (no DNS)</li>
+            <li>Denial of Service attacks rendered invalid via opportunistic caching &#45; <a class="nonblock" href="opportunistic-caching">See diagram</a></li>
+            <li class="heavy">Unlimited data storage with no monetary cost and no transactions</li>
           </ul>
-          <h2>No Administrators &#45; Only Users</h2>
+          </div>
+          
+          <div class="grid-4 last-col">
+          <h2 class="administrators-head">No Administrators &#45; Only Users</h2>
           <ul>
-            <li>Network automatically configures and reconfigures in near real time</li>
+            <li class="heavy">Network automatically configures and reconfigures in near real time</li>
             <li>Privacy and data protection via thousands of algorithms on hundreds of nodes working in tandem</li>
-            <li>Network decides in real time where data is stored</li>
+            <li class="heavy">Network decides in real time where data is stored</li>
             <li>Data caches close to users in real time</li>
-            <li>Remove need for network provisioning and planning (hint, computers are better at this than us)</li>
+            <li class="heavy">Remove need for network provisioning and planning (hint, computers are better at this than us)</li>
             <li>No data centres, so no data centre staff</li>
           </ul>
-          <h2>Data Management Security</h2>
+          </div>
+          
+          <div class="grid-4">
+          <h2 class="datamanage-head">Data Management Security</h2>
           <ul>
-            <li>Invisible to users, all data is encrypted in real time</li>
+            <li class="heavy">Invisible to users, all data is encrypted in real time</li>
             <li>Real time data de&#45;duplication, reduces amount of data stored</li>
-            <li>Real time replication, recovery and corruption repair</li>
+            <li class="heavy">Real time replication, recovery and corruption repair</li>
             <li>Geographic distribution of 'replicant' data (allowing mass network outage at zero loss)</li>
-            <li>Cryptographically secure signatures and key's ensure ownership</li>
+            <li class="heavy">Cryptographically secure signatures and key's ensure ownership</li>
             <li>Nobody has access to anyone else's data unless specifically shared</li>
           </ul>
-          <h2>Password and Key Security</h2>
+          </div>
+          
+          <div class="grid-4 last-col">
+          <h2 class="password-head">Password and Key Security</h2>
           <ul>
-            <li>100% protection against passwords being stolen in transit (they are never transmitted)</li>
+            <li class="heavy">100% protection against passwords being stolen in transit (they are never transmitted)</li>
             <li>Three (minimum) distinct system areas with separate keys and IDs (no network link between them)</li>
-            <li>Login to system with username, pin and password</li>
+            <li class="heavy">Login to system with username, pin and password</li>
             <li>Store, retrieve and manipulate your data with another ID (cryptographic key set)</li>
-            <li>Communicate with others through another ID</li>
+            <li class="heavy">Communicate with others through another ID</li>
             <li>For every private share, another key chain is created and shared</li>
           </ul>
-          <h2>Share any Kind of Data</h2>
+          </div>
+          
+          <div class="grid-4">
+          <h2 class="sharedata-head">Share any Kind of Data</h2>
           <ul>
-            <li>Create private shares between friends and colleagues (instantly and securely)</li>
+            <li class="heavy">Create private shares between friends and colleagues (instantly and securely)</li>
             <li>Create any number of public shares for public data (thin web sites)</li>
-            <li>Create micro&#45;blogging systems</li>
+            <li class="heavy">Create micro&#45;blogging systems</li>
             <li>Create social networking systems</li>
-            <li>Share anything, music, programmes, photos, even operating systems with no size limits</li>
+            <li class="heavy">Share anything, music, programmes, photos, even operating systems with no size limits</li>
           </ul>
-          <h2>Distribute Applications</h2>
+          </div>
+          
+          <div class="grid-4 last-col">
+          <h2 class="distribute-head">Distribute Applications</h2>
           <ul>
-            <li>Allow enormous apps on the smallest of devices</li>
+            <li class="heavy">Allow enormous apps on the smallest of devices</li>
             <li>Share processing, storage and memory across the network, distributing each of them automatically</li>
-            <li>Structured data versioning allows roll back, automatic and manual merging as appropriate to your application</li>
+            <li class="heavy">Structured data versioning allows roll back, automatic and manual merging as appropriate to your application</li>
           </ul>
+          </div>
         </div>
         <div class="grid-3 leftnav-shell">
           <ul class="leftnav">

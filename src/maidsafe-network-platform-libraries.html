@@ -7,7 +7,8 @@
       includeToggle = "False",
       includeTwitterCard = True,
       includeDeveloperTwitterCard = "False",
-      includeTabulousCSS = "False"
+      includeTabulousCSS = "False",
+      includeMapPopUp = "False"
 %]
 <body id="platform-libraries">
   [%  INCLUDE nav %]
@@ -19,97 +20,132 @@
               <p>The SAFE Network is made up of 11 component libraries. Developers can combine these libraries in different ways to suit the functionality and design of your application. For further information please visit our <a href="core-developers">Developer</a> page or <a href="mailto:maidsafe-development@googlegroups.com">get in touch</a> with our developers. They’d be happy to help and they’re a friendly bunch!</p>
             </section>
             <section>
-              <h2 class="maidsafe-head">MaidSafe</h2>
+            <div class="grid-8">
+              <h2>MaidSafe</h2>
               <p>A Meta project that allows all SAFE libraries to be installed with most dependencies already in place. This base container of dependent libraries and build system is designed to allow developers a very simple mechanism to install and
-                use these libraries and applications. This system allows users to install, build, compile, test and publish all test results publicly for all SAFE code.</p>
-              <p><a href="libraries-maidsafe"><strong>> More Information</strong></a>
-              </p>
+                use these libraries and applications. This system allows users to install, build, compile, test and publish all test results publicly for all SAFE code.</p>  
+                </div>
+                <div class="grid-1 libraries-maidsafe">
+                <a href="libraries-maidsafe" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
             <section>
-              <h2 class="common-head">Common</h2>
+            <div class="grid-8">
+              <h2>Common</h2>
               <p>Utilities and common features for the majority of SAFE libraries.</p>
-              <p><a href="libraries-common"><strong>> More Information</strong></a>
-              </p>
+              </div>
+              <div class="grid-1 libraries-common">
+                <a href="libraries-common" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
+            
+            
             <section>
-              <h2 class="drive-head">Drive</h2>
+            <div class="grid-8">
+              <h2>Drive</h2>
               <p>A cross platform virtual drive with an easy to use API. Uses <a class="nonblock" href="http://fuse.sourceforge.net/" target="_blank">Fuse</a>&nbsp;for <span>Linux</span>&nbsp;systems, <a href="http://osxfuse.github.io" target="_blank">OSXFuse</a>&nbsp;for
                 OSX and <a class="nonblock" href="https://www.eldos.com/cbfs" target="_blank">Eldos' Callback File System</a>&nbsp;for Windows.</p>
-              <p><a href="libraries-drive"><strong>> More Information</strong></a>
-              </p>
+                </div>
+                <div class="grid-1 libraries-drive">
+                <a href="libraries-drive" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
             <section>
-              <h2 class="rudp-head">Reliable UDP</h2>
+            <div class="grid-8">
+              <h2>Reliable UDP</h2>
               <p>TCP is a reliable connection oriented protocol that cannot traverse NAT routers (with any real capability) UDP is an unreliable connectionless protocol that can traverse many NAT routers with ease.</p>
               <p>MaidSafe-RUDP is a reliable pseudo connected protocol that can traverse more NAT routers than plain UDP when used in conjunction with MaidSafe-Routing. Impervious to 'man in the middle' attacks with no requirement for a key exchange protocol
                 to exist at the network level.</p>
-              <p><a href="libraries-reliable-udp"><strong>> More Information</strong></a>
-              </p>
+                </div>
+                <div class="grid-1 libraries-reliable-udp">
+                <a href="libraries-reliable-udp" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
             <section>
-              <h2 class="routing-head">Routing</h2>
+            <div class="grid-8">
+              <h2>Routing</h2>
               <p>A Distributed Hash Table (DHT) that utilises Kademlia-like routing tables for scalability with D1HT speed. Used in conjunction with RUDP this library will provide a very robust DHT implementation.</p>
-              <p><a href="libraries-routing"><strong>> More Information</strong></a>
-              </p>
+              </div>
+                <div class="grid-1 libraries-routing">
+                <a href="libraries-routing" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
             <section>
-              <h2 class="encrypt-head">Encrypt</h2>
+            <div class="grid-8">
+              <h2>Encrypt</h2>
               <p>This is NOT an encryption algorithm per se', rather this is an algorithm that utilises existing very well tested algorithms (predominantly AES 256 in this case). The library provides a sliding window algorithm that can encrypt data of any
                 length, even if written in a random manner (or parts overwritten during write). It is very useful for encrypting disk based storage of huge data or writing data encrypted to a key value store in a manner that cannot be algorithmically
                 reversed (as in reversing AES or similar algorithms).</p>
               <p>The chunks of data provided are self checking and the process is recursive, so the keys output can themselves be concatenated into a large file and passed back into the algorithm, creating a single key for any size of data set.</p>
-              <p><a href="libraries-encrypt"><strong>> More Information</strong></a>
-              </p>
+              </div>
+                <div class="grid-1 libraries-encrypt">
+                <a href="libraries-encrypt" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
             <section>
-              <h2 class="passport-head">Passport</h2>
+            <div class="grid-8">
+              <h2>Passport</h2>
               <p>Creates cryptographically secure Public Key Infrastructure mechanism via a mixture of asymmetric encryption <a class="nonblock" href="http://en.wikipedia.org/wiki/RSA_(algorithm)" target="_blank">currently RSA</a>&nbsp;and secure hashing
                 <a
                 class="nonblock" href="http://en.wikipedia.org/wiki/SHA-2" target="_blank">currently SHA512</a>. With this library and a secure <a class="nonblock" href="http://en.wikipedia.org/wiki/Distributed_hash_table" target="_blank">DHT</a>&nbsp;such as MaidSafe&#45;Routing there is no requirement for a certificate authority.</p>
               <p>Removing another server system and the related human administration, allows developers to create autonomous distributed secure systems. MaidSafe uses this feature to ensure nodes (and humans) can be securely validated and regulated in a
                 mathematical manner that is as fair as the rules developers create and not via any human administrator.</p>
-              <p><a href="libraries-passport"><strong>> More Information</strong></a>
-              </p>
+                </div>
+                <div class="grid-1 libraries-passport">
+                <a href="libraries-passport" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
             <section>
-              <h2 class="nfs-head">Network Filesystem</h2>
+            <div class="grid-8">
+              <h2>Network Filesystem</h2>
               <p>This library provides a RESTful-like API for clients to connect to a SAFE network. Client interactivity with the network will create the appropriate policies to be passed to the policy based class design environment. This library
                 can be considered a helper library to connect clients to distributed networks such as the SAFE network.</p>
-              <p><a href="libraries-network-file-system"><strong>> More Information</strong></a>
-              </p>
+                </div>
+                <div class="grid-1 libraries-network-file-system">
+                <a href="libraries-network-file-system" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
             <section>
-              <h2 class="vault-head">Vault</h2>
+            <div class="grid-8">
+              <h2>Vault</h2>
               <p>A self healing, fully distributed data store that allows an exciting array of applications to be built. This library and associated components (all from the MaidSafe repositories) can provide fault tolerant, massively distributed networks
                 that will allow application providers to consider data centres a thing of the past, increasing profitability and reliability as well as providing their customer base with absolute freedom, security and privacy (if used in conjunction with
                 LifeStuff).</p>
               <p>The Vault Library allows companies to effectively move their data centres to their clients, removing the requirement (and cost) for forward provisioning and planning of expensive, climate unfriendly buildings. More importantly application
                 providers can focus on application provisioning and leave all the networking and security to MaidSafe.</p>
-              <p><a href="libraries-vault"><strong>> More Information</strong></a>
-              </p>
+                </div>
+                <div class="grid-1 libraries-vault">
+                <a href="libraries-vault" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
             
             <section>
-              <h2 class="manager-head">Vault Manager</h2>
+            <div class="grid-8">
+              <h2>Vault Manager</h2>
               <p>This project implements the Vault-Manager. This is an installed  application that is responsible for checking for upgrades (in real time)  to vaults, installing and testing upgrades as well as starting and  restarting any vaults (on failure or planned). The Vault-Manager manages  private keys for vaults and passes keys through a local TCP network.  This is a one-way mechanism and any vault compromised cannot read the  keys of the local disk.</p>
-              <p><a href="libraries-vault-manager"><strong>> More Information</strong></a>
-              </p>
+              </div>
+                <div class="grid-1 libraries-vault-manager">
+                <a href="libraries-vault-manager" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
             <section>
-              <h2 class="api-head">API</h2>
+            <div class="grid-8">
+              <h2>API</h2>
               <p>This library provides an API to the SAFE network. This allows  data storage and manipulation (structured and unstructured), reliable  and secure communications and the ultimate privacy protection for people  using the network and associated applications. This library provides  the API that allows data sharing, both public and private.</p>
               <p>Public shares allow the creation and running of web sites, blogs,  microblogs, social networks which in turn allow people to share ideas,  research, suggestions and hope!</p>
               <p>This library allows many applications to be built that can provide  the features listed and much more, this is a prime reason to open up the  complete suite of SAFE libraries and applications to every  developer in the world.</p>
-              <p><a href="libraries-api"><strong>> More Information</strong></a>
-              </p>
+              </div>
+                <div class="grid-1 libraries-api">
+                <a href="libraries-api" class="moreinfo"><div>more info</div></a>
+                </div>
             </section>
 
           </div>
@@ -125,6 +161,8 @@
             <li class="farmers"><a href="farmers">Farmers</a>
             </li>
             <li class="libraries"><a href="maidsafe-network-platform-libraries">Libraries</a>
+            </li>
+            <li class="safe-pods"><a href="safe-pods">SAFE Pods</a>
             </li>
           </ul>
         </div>

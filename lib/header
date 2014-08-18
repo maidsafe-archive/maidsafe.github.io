@@ -117,6 +117,29 @@
     });
     </script>
     [% END %]
+    
+    [% IF includeMapPopUp == true %]
+     <!-- Add jQuery library -->
+	<script type="text/javascript" src="js/fancybox/jquery-1.10.1.min.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="js/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+	
+			$("#map-popup").click(function() {
+				$.fancybox.open({
+					href : 'map.html',
+					type : 'iframe',
+					padding : 0,
+					autoSize : 'false'
+				});
+			});
+		});
+	</script>
+    [% END %]
 
   <!-- IE Fix for Sticky Footer -->
   <!--[if !IE 7]>
