@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+body { margin:0; padding:0;}
+#pod-map {
+	display:block;
+	width:991px;
+	height:631px;
+	background:url(images/map.png); 
+	position:relative; 
+	z-index: 0;
+}
+
+#pod-map dd {position:absolute; padding:0; margin:0;}
+#pod-map #pod-1 {left:166px; top:239px; z-index:20;}
+#pod-map #pod-2 {left:274px; top:236px; z-index:20;}
+#pod-map #pod-3 {left:289px; top:208px; z-index:20;}
+
+#pod-map a#sanfrancisco, #pod-map a#boston, #pod-map a#montreal {
+	display:block;
+	width:31px;
+	height:37px;
+	text-decoration:none;
+	z-index:20;
+}
+
+#pod-map a div, #pod-map a:visited div {
+	display:none;
+	color:#585858;
+}
+
+#pod-map a#sanfrancisco:hover, #pod-map a#boston:hover, #pod-map a#montreal:hover {background:url(css/imgs/pod_icon_hover.png) no-repeat 0 0;}
+
+#pod-map a:hover div {
+	position:fixed;
+	bottom: 300px;
+	left:20px;
+	height: 20px;
+	width:98px; display: block;
+	font-family:arial;
+	font-size:14px;
+	padding:5px 0px;
+	z-index: 500;
+	background:#fff;
+	padding-left:8px;
+}
+
+#pod-map a#sanfrancisco:hover div {
+	left:206px;
+	top:260px;
+}
+
+#pod-map a#boston:hover div {
+	left:315px;
+	top:257px;
+}
+
+#pod-map a#montreal:hover div {
+	left:330px;
+	top:228px;
+}
+</style>
+</head>
+<body>
+
+
+<dl id="pod-map">
+<dd id="pod-1"><a id="sanfrancisco" href="#nogo"><div>San Francisco</div></a></dd>
+<dd id="pod-2"><a id="boston" href="#nogo"><div>Boston</div></a></dd>
+<dd id="pod-3"><a id="montreal" href="#nogo"><div>Montreal</div></a></dd>
+</dl>
+
+
+</body>
+</html>

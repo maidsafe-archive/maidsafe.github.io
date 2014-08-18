@@ -472,6 +472,7 @@ header {
 #app-builder .menu .get-involved a,
 #farmers .menu .get-involved a,
 #platform-libraries .menu .get-involved a,
+#safe-pods .menu .get-involved a,
 #documents .menu .documents a,
 #examples .menu .documents a,
 #system-docs .menu .documents a,
@@ -513,7 +514,8 @@ header {
 #core-developer ul.leftnav .core-developer a,
 #platform-libraries ul.leftnav .libraries a,
 #app-builder ul.leftnav .app-builder a,
-#farmers ul.leftnav .farmers a {
+#farmers ul.leftnav .farmers a,
+#safe-pods ul.leftnav .safe-pods a {
 	color:#5593D7;
 }
 
@@ -715,6 +717,84 @@ Banner Styles
 	display:inline-block;
 	width:150px;
 	height:40px;
+}
+
+/*******************************************************************************
+
+Sidebar Styles
+
+*******************************************************************************/
+
+.sidebar { float:right; /*width:156px!important;*/}
+.sidebar img {
+	margin:10px 0;
+}
+
+a.visit-blog {
+	background:url(imgs/sidebar_blog.png) no-repeat top left;
+	display:block;
+	width:156px;
+	height:88px;
+	margin:10px 0;
+}
+
+a.visit-blog:hover {
+	background-position:bottom left;
+}
+
+a.maidsafe-dev {
+	background:url(imgs/sidebar_maidsafe_dev.png) no-repeat top left;
+	display:block;
+	width:156px;
+	height:46px;
+	margin:10px 0;
+	
+}
+a.maidsafe-dev:hover {
+	background-position:bottom left;
+}
+
+a.maidsafe-org {
+	background:url(imgs/sidebar_maidsafe_org.png) no-repeat top left;
+	display:block;
+	width:156px;
+	height:48px;
+	margin:10px 0;
+}
+a.maidsafe-org:hover {
+	background-position:bottom left;
+}
+
+a.mumble {
+	background:url(imgs/sidebar_mumble.png) no-repeat top left;
+	width:156px;
+	height:118px;
+	display:block;
+	margin:10px 0;
+}
+a.mumble:hover {
+	background-position:bottom left;
+}
+
+.sidebar p {
+	font-family: 'OpenSansLight', Arial, sans-serif;
+	color:#5593D7;
+	text-align:center;
+	font-size:18px;
+	margin-bottom:0px;
+	padding:0px!important;
+}
+
+.sidebar .divider {
+	background:url(imgs/sidebar_arrow_divider.png) no-repeat 0 0;
+	width:100%; /*156*/
+	height:15px;
+	margin:10px 0;
+}
+.community-text {
+	border-top:1px solid #E2E2E2;
+	padding-top:20px;
+	padding-bottom:10px;
 }
 
 /*******************************************************************************
@@ -986,47 +1066,79 @@ p {
 Platform Page Styles
 
 *******************************************************************************/
+#platform-libraries .main-content h2 { margin-top:5px!important;}
 
 #platform-features h2 {
 	font-family: 'OpenSansRegular', Arial, sans-serif;
 }
 
-#platform-features section {
+#platform-libraries section {
 	background:url(imgs/content_divider.png) repeat-x bottom center;
 	padding-bottom:5px;
-	margin-bottom:25px;
+	margin-bottom:10px;
 }
 
-h2.maidsafe-head {background:url(imgs/icon-maidsafe.png) no-repeat 0 0;}
-h2.common-head {background:url(imgs/icon-common.png) no-repeat 0 0; }
-h2.drive-head {background:url(imgs/icon-drive.png) no-repeat 0 0; }
-h2.rudp-head {background:url(imgs/icon-rudp.png) no-repeat 0 0; }
-h2.routing-head {background:url(imgs/icon-routing.png) no-repeat 0 0; }
-h2.encrypt-head {background:url(imgs/icon-encrypt.png) no-repeat 0 0; }
-h2.passport-head {background:url(imgs/icon-passport.png) no-repeat 0 0;}
-h2.nfs-head {background:url(imgs/icon-nfs.png) no-repeat 0 0;}
-h2.vault-head {background:url(imgs/icon-vault.png) no-repeat 0 0;}
-h2.api-head {background:url(imgs/icon-api.png) no-repeat 0 0;}
-h2.manager-head {background:url(imgs/icon-manager.png) no-repeat 0 0;}
-
-h2.maidsafe-head,
-h2.common-head,
-h2.drive-head,
-h2.rudp-head,
-h2.routing-head,
-h2.encrypt-head,
-h2.passport-head,
-h2.nfs-head,
-h2.vault-head,
-h2.api-head,
-h2.manager-head {
+#platform-libraries h2 {
 	font-family: 'OpenSansLight', Arial, sans-serif!important;
 	background-size:30px 30px;
 	line-height:30px;
-	padding-left:40px;
 	color: #3A93D7;
     font-size: 30px;
 }
+
+#platform-libraries section { float:left;}
+#platform-libraries section div { margin:0;}
+#platform-libraries section p { padding-right:60px;}
+
+/*
+.more-info { padding-top:16%;}
+*/
+
+a.moreinfo {
+    width:100%;
+	float:right;
+	margin:0 0 30px 50px;
+}
+
+a.moreinfo:hover:after {
+	background: #4679BD;
+}
+
+a.moreinfo:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+	background:#CBE1F4;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+a.moreinfo div {
+    float:left;
+    width:100%;
+    padding-top:50%;
+    line-height: 15px;
+    margin-top: -14px!important;
+    text-align:center;
+    color:#5593D7;
+}
+
+a.moreinfo div:hover {color:white;}
+
+.libraries-maidsafe { position:relative; top:50px;}
+.libraries-common { position:relative; top:6px;}
+.libraries-drive { position:relative; top:17px;}
+.libraries-reliable-udp { position:relative; top:85px;}
+.libraries-routing { position:relative; top:30px;}
+.libraries-encrypt { position:relative; top:115px;}
+.libraries-passport { position:relative; top:115px;}
+.libraries-network-file-system { position:relative; top:45px;}
+.libraries-vault { position:relative; top:115px;}
+.libraries-vault-manager { position:relative; top:60px;}
+.libraries-api { position:relative; top:120px;}
 
 
 /*******************************************************************************
@@ -1034,8 +1146,6 @@ h2.manager-head {
 Developers Page Styles
 
 *******************************************************************************/
-
-
 
 a.get-started-button {
 	/*background:#5593D7 url(imgs/hammer_icon.png) no-repeat 195px 10px;*/
@@ -1113,7 +1223,7 @@ a.last-button {
 
 #core-developer .app-stack {
 	background:url(imgs/arrows-stack-diagram.png) no-repeat;
-	background-position:330px 700px;
+	background-position:330px 720px;
 }
 
 
@@ -1125,32 +1235,45 @@ Get Involved Page Styles
 
 .farmers-text {
 	padding:0;
+	clear:both;
 }
 .farmers-text img {
 	display:inline-block;
 	float:left;
-	margin:5px 30px 20px 0;
+	margin:35px 30px 25px 0;
+	width:48px;
+	height:37px;
 }
 
 .app-builders-text img {
 	display:inline-block;
 	float:left;
-	margin:5px 30px 10px 0;
+	margin:30px 30px 55px 0;
+	width:48px;
+	height:37px;
 }
 
 .core-developers-text img {
 	display:inline-block;
 	float:left;
-	margin:5px 38px 40px 8px;
+	margin:10px 38px 40px 8px;
+	width:40px;
+	height:40px;
 }
 
 .app-builders-text {
-	padding:0;
+	clear:both;
 }
 
 .core-developers-text {
-	padding:0;
+	clear:both;
 }
+
+#get-involved p {
+	padding:0 40px 0 0;
+}
+
+
 
 /*******************************************************************************
 
@@ -1161,6 +1284,7 @@ Farmers Page Styles
 .por-diagram {
 	margin: 0 auto;
 	display:block;
+	float:right;
 }
 
 /*******************************************************************************
@@ -1203,6 +1327,81 @@ table {
 
 .table thead th {
   vertical-align: bottom;
+}
+
+/*******************************************************************************
+
+Features Page Styles
+
+*******************************************************************************/
+
+#platform-features .main-content .grid-4 {
+	margin-left:0px;
+}
+
+#platform-features .main-content ul li {
+	text-indent:0px;
+	padding-left:0px;
+}
+
+#platform-features .main-content ul li:before {
+	content:"";
+}
+
+#platform-features .heavy {
+	font-family:'OpenSansBold', Arial, sans-serif;
+}
+
+.last-col {
+	margin-left:50px!important;
+}
+
+h2.noservers-head {
+	background:url(imgs/features_noservers_header.png) no-repeat 0 0;
+	padding:10px 0 23px 15px;
+	font-size:22px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+h2.administrators-head {
+	background:url(imgs/features_administrators_header.png) no-repeat 0 0;
+	padding:8px 75px 13px 15px;
+	font-size:16px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+h2.datamanage-head {
+	background:url(imgs/features_datamanage_header.png) no-repeat 0 0;
+	padding:4px 60px 23px 15px;
+	font-size:16px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+h2.password-head {
+	background:url(imgs/features_password_header.png) no-repeat 0 0;
+	padding:6px 62px 21px 15px;
+	font-size:16px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+h2.sharedata-head {
+	background:url(imgs/features_sharedata_header.png) no-repeat 0 0;
+	padding:5px 170px 23px 15px;
+	font-size:16px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+h2.distribute-head {
+	background:url(imgs/features_distribute_header.png) no-repeat 0 0;
+	padding:7px 92px 19px 15px;
+	font-size:16px;
+	color:#fff;
+	text-transform:uppercase;
 }
 
 
@@ -1434,6 +1633,16 @@ li.list-quote {
 
 /*******************************************************************************
 
+SAFE Pods Page Styles
+
+*******************************************************************************/
+
+#safe-pods .main-content p {
+	padding-right:50px;
+}
+
+/*******************************************************************************
+
 Libraries Page Styles
 
 *******************************************************************************/
@@ -1490,12 +1699,16 @@ Documents Page Styles
 .doc-box-system-docs,
 .doc-box-dev-wiki,
 .doc-box-papers-publications { 
-	padding:20px 0px 10px 0px;
+	padding:20px 0px 0px 0px;
 	background-color:#eef4fa;
 	margin-bottom:20px;
 }
 
-.doc-box-dev-wiki { clear:both;}
+.doc-box-papers-publications {
+	float:right;
+	background:#eef4fa url(imgs/page_top_right.png) no-repeat top right;
+	height:623px;
+}
 
 .doc-box-examples h2,
 .doc-box-system-docs h2,
@@ -1510,6 +1723,13 @@ Documents Page Styles
 .doc-box-dev-wiki p,
 .doc-box-papers-publications p {
 	padding:0 15px;
+}
+
+.doc-box-examples a,
+.doc-box-system-docs a,
+.doc-box-dev-wiki a,
+.doc-box-papers-publications a {
+	text-decoration:none;
 }
 
 .doc-box-examples ul,
@@ -1543,6 +1763,30 @@ a.examples-tab, a.system-docs-tab, a.developer-wiki-tab, a.papers-publications-t
 }
 .papers-publications-tab {
 	background:url(imgs/documents_papers_publications_icon.png) no-repeat center 35px;
+}
+
+p.call-to {
+	background:#C9E0F2;
+	padding:10px 0px;
+	margin-bottom:0px;
+	text-transform:uppercase;
+	
+}
+
+p.call-to a {
+	margin-left:20px;
+	text-decoration:none;
+	color:rgba(85,147,215,1);
+	padding:0 30px;
+	background:url(imgs/arrow_link_bg.png) no-repeat top left;
+	height:22px;
+	display:block;
+	line-height:23px;
+}
+
+p.call-to a:hover {
+	color:#000;
+	background-position:bottom left;
 }
 
 
@@ -1797,6 +2041,33 @@ a h3 { color:inherit;}
 
 #press .main-content ul li:before {
     content: "";
+}
+
+h2.top-stories-head {
+	font-family: 'OpenSansLight', Arial, sans-serif;
+	padding:10px;
+	background:rgba(85,147,215,0.18);
+	color:rgba(85,147,215,1);
+	display:block;
+	float:right;
+  	-webkit-border-radius: 5px 5px 0px 0px; 
+  	-moz-border-radius: 5px 5px 0px 0px;
+ 	 border-radius: 5px 5px 0px 0px; 
+}
+
+#press h2.top-stories-head {
+	margin-bottom:0px;
+}
+
+ul.top-stories {
+	background:rgba(85,147,215,0.18);
+	display:block;
+	clear:both;
+	padding-top:10px;
+}
+
+ul.top-stories .press-article {
+	min-height:0px;
 }
 
 #press .pr-image {
@@ -2659,6 +2930,43 @@ p.alpha-testers {
 .article-2 {  padding-left:15px;}
 
 
+/*********** Sidebar **************/
+
+.sidebar p {
+	font-size:14px;
+}
+
+.sidebar .divider {
+	width:100%; /*156*/
+	height:10px;
+	background-size:100px 10px;
+}
+
+a.visit-blog {
+	width:102px;
+	height:58px;
+	background-size:102px 116px;
+
+}
+
+a.maidsafe-dev {
+	width:102px;
+	height:30px;
+	background-size:102px 60px;
+}
+
+a.maidsafe-org {
+	width:102px;
+	height:31px;
+	background-size:102px 62px;
+}
+
+a.mumble {
+	width:102px;
+	height:77px;
+	background-size:102px 154px; 
+}
+
 /*********** Developers Page **************/
 
 a.get-started-button {
@@ -2714,6 +3022,32 @@ a.light-button-full {
 .tell-me-more-tab p {
 	padding:20px;
 }
+
+.farmers-text img {
+	width:46px;
+	height:35px;
+	margin:65px 30px 55px 0;
+}
+
+.app-builders-text img {
+	width:46px;
+	height:36px;
+	margin:50px 30px 55px 0;
+}
+
+.core-developers-text img {
+	width:40px;
+	height:40px;
+	margin:33px 25px 40px 8px;
+}
+
+
+/*********** Documents Page ***************/
+
+.doc-box-papers-publications {
+	height:727px;
+}
+
 /*********** Company Page ***************/
 .main-content .col-3 {
 	width: 146px;
@@ -2826,6 +3160,55 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 	margin:0px 0px 30px 0;
 }
 
+/*********** Features Page Styles *************/
+
+.last-col {
+	margin-left:20px;
+}
+
+
+#platform-features h2 {
+	background-size:220px 49px;
+}
+
+
+h2.noservers-head {
+	padding:8px 0 23px 15px;
+	font-size:20px;
+}
+
+h2.administrators-head {
+	padding:3px 58px 18px 15px;
+	font-size:14px;
+}
+
+h2.datamanage-head {
+	padding:4px 60px 23px 15px;
+	font-size:14px;
+}
+
+h2.password-head {
+	padding:4px 62px 21px 15px;
+	font-size:14px;
+}
+
+h2.sharedata-head {
+	padding:4px 95px 23px 15px;
+	font-size:14px;
+}
+
+h2.distribute-head {
+	padding:4px 92px 21px 15px;
+	font-size:14px;
+}
+
+
+/******* Libraries Platform Page Styles ********/
+
+a.moreinfo div {
+    font-size:11px;
+}
+
 /******* Libraries Page Styles ********/
 .rightnav {
 	float:right;
@@ -2929,6 +3312,8 @@ header {
 .menu ul li a {
 	font-size:12px;
 }
+
+.main-content ul li { font-size:12px;}
 
 /************************ Banner Styles **************************/
 
@@ -3152,6 +3537,49 @@ ul.leftnav li ul li a {
 	padding-bottom:20px;
 }
 
+/*********** Sidebar **************/
+
+.sidebar img {margin:5px 0;}
+.sidebar p {
+	font-size:12px;
+}
+
+.sidebar .divider {
+	width:100%; /*156*/
+	height:7px;
+	background-size:70px 7px;
+	margin:5px 0;
+}
+.community-text {
+	padding-top:15px;
+	padding-bottom:5px;
+}
+a.visit-blog {
+	width:70px;
+	height:39px;
+	background-size:70px 78px;
+
+}
+
+a.maidsafe-dev {
+	width:70px;
+	height:21px;
+	background-size:70px 42px;
+}
+
+a.maidsafe-org {
+	width:70px;
+	height:22px;
+	background-size:70px 44px;
+}
+
+a.mumble {
+	width:70px;
+	height:53px;
+	background-size:70px 106px; 
+}
+
+
 /*********** Developers Page **************/
 
 a.get-started-button {
@@ -3203,6 +3631,56 @@ a.light-button-full {
 
 .tell-me-more-tab p {
 	padding:20px;
+}
+
+.farmers-text img {
+	width:46px;
+	height:35px;
+	margin:75px 30px 75px 0;
+}
+
+.app-builders-text img {
+	width:46px;
+	height:36px;
+	margin:60px 30px 55px 0;
+}
+
+.core-developers-text img {
+	width:40px;
+	height:40px;
+	margin:40px 30px 75px 0;
+}
+
+/********* Documents Page ************/
+
+.doc-box-papers-publications {
+    height: 701px;
+}
+
+.doc-box-examples a,
+.doc-box-system-docs a,
+.doc-box-dev-wiki a,
+.doc-box-papers-publications a {
+	font-size:12px;
+}
+
+.doc-box-papers-publications li a { 
+	font-size:11px;
+	margin:0px;
+	text-indent:0px;
+} 
+
+ul.pdf-group li:before {
+	background-size:12px 15px;
+    height: 20px;
+    margin-right: 2px;
+    top: 8px;
+    width: 15px;
+}
+
+#documents .main-content ul li {
+	padding-left:0px;
+	text-indent:0px;
 }
 
 /*********** Company Page ***************/
@@ -3339,6 +3817,78 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 
 section .grid-4 {
 	width:100%!important;
+}
+
+/*********** Features Page Styles *************/
+
+.last-col {
+	margin-left:20px;
+}
+
+#platform-features h2 {
+	background-size:160px 39px;
+}
+
+h2.noservers-head {
+	padding:10px 0 11px 10px;
+	font-size:14px;	
+}
+
+h2.administrators-head {
+	padding:4px 11px 8px 10px;
+	font-size:11px;
+}
+
+h2.datamanage-head {
+	padding:2px 60px 0 10px;
+	font-size:11px;
+}
+
+h2.password-head {
+	padding:2px 62px 0px 10px;
+	font-size:11px;
+}
+
+h2.sharedata-head {
+	padding:3px 95px 0px 10px;
+	font-size:11px;
+}
+
+h2.distribute-head {
+	padding:3px 50px 14px 10px;
+	font-size:11px;
+}
+
+/******* Libraries Platform Page Styles ********/
+
+#platform-libraries .grid-1 { width:40px;}
+
+a.moreinfo {
+    width:100%;
+	float:right;
+	margin:0 0 30px 50px;
+}
+
+a.moreinfo:after {
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    background: #4679BD;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+a.moreinfo div {
+    float:left;
+    width:100%;
+    padding-top:50%;
+    line-height: 15px;
+    margin-top: -14px!important;
+    text-align:center;
+    color:white;
+	font-size:12px;
 }
 
 
@@ -3614,6 +4164,37 @@ a.menu-link {
 	left: auto; top:auto;
 	box-shadow: none; 
 	border:none;
+}
+
+/*********** Sidebar **************/
+
+.sidebar img {margin:5px auto; text-align:center; display:block;}
+
+.sidebar .divider {
+	width:100%; /*156*/
+	margin:10px auto;
+	background-position:center;
+}
+.community-text {
+	padding-top:15px;
+	padding-bottom:5px;
+}
+
+a.visit-blog {
+	margin:10px auto;
+
+}
+
+a.maidsafe-dev {
+	margin:10px auto;
+}
+
+a.maidsafe-org {
+	margin:10px auto;
+}
+
+a.mumble {
+	margin:10px auto;
 }
 
 /************************ Banner Styles **************************/
@@ -4017,10 +4598,83 @@ a.applyhere {
 
 }
 
+/******************* Documents Page **********************/
+
+.doc-box-papers-publications {
+    height:auto;
+}
+
 /******************* Libraries Page **********************/
 #libraries .main-content {
 	margin-bottom:0px;
 }
+
+/******* Libraries Platform Page Styles ********/
+
+#platform-libraries .grid-1 { }
+
+a.moreinfo {
+    width:20%;
+	float:right;
+	padding-right: 40%;
+}
+
+a.moreinfo div {
+	font-size:14px;
+}
+
+.libraries-maidsafe {top:0px;}
+.libraries-common {  top:0px;}
+.libraries-drive { top:0px;}
+.libraries-reliable-udp { top:0px;}
+.libraries-routing { top:0px;}
+.libraries-encrypt { top:0px;}
+.libraries-passport { top:0px;}
+.libraries-network-file-system {top:0px;}
+.libraries-vault {top:0px;}
+.libraries-vault-manager {top:0px;}
+.libraries-api { top:0px;}
+
+/*********** Features Page Styles *************/
+
+.last-col {
+	margin-left:0px;
+}
+
+
+
+h2.noservers-head {
+	
+}
+
+h2.administrators-head {
+	padding-right:46%;
+	display:block;
+}
+
+h2.datamanage-head {
+	padding-right:46%;
+	display:block;
+
+}
+
+h2.password-head {
+	padding-right:46%;
+	display:block;
+	
+}
+
+h2.sharedata-head {
+	padding-right:46%;
+	display:block;
+}
+
+h2.distribute-head {
+	padding-right:46%;
+	display:block;
+}
+
+
 /*********** License Page Styles *************/
 #licensing .main-content {
     margin-bottom:0px;
@@ -4056,6 +4710,26 @@ a.applyhere {
 #company .col-r {
 	margin:0 0 20px 0px;
 }
+
+
+/*********** Press Page Styles *************/
+ul.top-stories .press-article {
+	margin: 0 auto;
+	text-align:center;
+	padding:0 5%;
+	width:90%;
+}
+
+.press-article { margin-bottom:30px;}
+
+/*
+ul.grid {
+	width:90%;
+	padding:0 5%;
+}
+*/
+
+
 
 
 /************* Contact Page Styles ***************/
