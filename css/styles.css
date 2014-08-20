@@ -1207,7 +1207,6 @@ a.last-button {
 }
 
 .diagram {
-	padding-top:90px;
 	margin-bottom:30px;
 }
 
@@ -1221,10 +1220,7 @@ a.last-button {
 	margin:5px 6px;
 }
 
-#core-developer .app-stack {
-	background:url(imgs/arrows-stack-diagram.png) no-repeat;
-	background-position:330px 720px;
-}
+
 
 
 /*******************************************************************************
@@ -1240,7 +1236,7 @@ Get Involved Page Styles
 .farmers-text img {
 	display:inline-block;
 	float:left;
-	margin:35px 30px 25px 0;
+	margin:35px 30px 35px 0;
 	width:48px;
 	height:37px;
 }
@@ -1271,6 +1267,26 @@ Get Involved Page Styles
 
 #get-involved p {
 	padding:0 40px 0 0;
+}
+
+/*******************************************************************************
+
+Core Developer Page Styles
+
+*******************************************************************************/
+
+.app-arrows {
+	background:url(imgs/arrows-stack-diagram.png) no-repeat;
+	width:227px;
+	height:167px;
+	margin:0 auto;
+	position:relative;
+	left:70px;
+}
+
+.diagram {
+	position:relative;
+	top:-50px;
 }
 
 
@@ -1366,7 +1382,7 @@ h2.noservers-head {
 
 h2.administrators-head {
 	background:url(imgs/features_administrators_header.png) no-repeat 0 0;
-	padding:8px 75px 13px 15px;
+	padding:8px 80px 13px 15px;
 	font-size:16px;
 	color:#fff;
 	text-transform:uppercase;
@@ -3822,7 +3838,7 @@ section .grid-4 {
 /*********** Features Page Styles *************/
 
 .last-col {
-	margin-left:20px;
+	margin-left:20px!important;
 }
 
 #platform-features h2 {
@@ -4638,7 +4654,7 @@ a.moreinfo div {
 /*********** Features Page Styles *************/
 
 .last-col {
-	margin-left:0px;
+	margin-left:0px!important;
 }
 
 
@@ -4648,7 +4664,7 @@ h2.noservers-head {
 }
 
 h2.administrators-head {
-	padding-right:46%;
+	padding-right:50%;
 	display:block;
 }
 
