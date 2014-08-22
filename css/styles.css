@@ -3264,6 +3264,8 @@ a.moreinfo div {
 .legal {
 	width:58%;
 }
+
+.footer {height: 250px;}
 .footer-logos img {
     margin-left: 20px;
 }
