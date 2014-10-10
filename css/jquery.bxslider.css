@@ -37,7 +37,11 @@
 .bx-wrapper .bx-viewport {
 	height:228px;
 }
-
+@media only screen and (max-width: 719px) {
+	.bx-wrapper .bx-viewport {
+	height:178px;
+}
+}
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
 	position: absolute;

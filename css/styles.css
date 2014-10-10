@@ -594,7 +594,7 @@ Banner Styles
 
 .banner {
 	background:url(imgs/banner_shadow_top.png) repeat-x left top;
-	height:180px;
+	height:300px;
 	display:block;
 }
 
@@ -1001,6 +1001,36 @@ video {
 .article-2 { float:right; padding-left:25px;}
 
 .article-1 p, .article-2 p { padding-right: 0px;}
+
+.notification{
+	background-color: #CEE3F2;
+	text-align: center;
+	height: 30px;
+	width: auto;
+	margin-bottom: 20px;
+	position: relative;
+}
+.notification p{
+	margin-top: 22px;
+	font-size: 18px;
+}
+.left-caret{
+	position: absolute;
+	display: block;
+	left: -1px;
+	background-image: url(../images/caret_left_30.png);
+	height: 30px;
+	width:15px;
+}
+.right-caret{
+	position: absolute;
+	display: block;
+	right: 0;
+	background-image: url(../images/caret_right_30.png);
+	height: 30px;
+	width:15px;
+}
+.notification a{font-family: 'OpenSansBold';}
 
 /*******************************************************************************
 
@@ -2729,7 +2759,7 @@ header {
 /************************ Banner Styles **************************/
 
 .banner {
-	height:180px;
+	height:300px;
 }
 blockquote.quote {
 	font-size:18px;
@@ -2828,6 +2858,7 @@ p.quoter {
 	display:inline-block;
 	width:100px;
 }
+
 
 .home-tabs p {
 	font-size:22px;
@@ -2941,6 +2972,9 @@ p.alpha-testers {
 .article-1 {  padding-right:35px;}
 .article-2 {  padding-left:15px;}
 
+.notification p{
+	font-size: 16px;
+}
 
 /*********** Sidebar **************/
 
@@ -3332,7 +3366,7 @@ header {
 /************************ Banner Styles **************************/
 
 .banner {
-	height:160px;
+	height:250px;
 }
 blockquote.quote {
 	font-size:16px;
@@ -3549,6 +3583,31 @@ ul.leftnav li ul li a {
 
 .main-content {
 	padding-bottom:20px;
+}
+
+.notification{
+	height: 50px;
+}
+.notification p{
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 14px;
+}
+.left-caret{
+	position: absolute;
+	display: block;
+	left: -1px;
+	background-image: url(../images/caret_left_50.png);
+	height: 50px;
+	width:25px;
+}
+.right-caret{
+	position: absolute;
+	display: block;
+	right: 0;
+	background-image: url(../images/caret_right_50.png);
+	height: 50px;
+	width:25px;
 }
 
 /*********** Sidebar **************/
@@ -4214,7 +4273,7 @@ a.mumble {
 /************************ Banner Styles **************************/
 
 .banner {
-	height:180px;
+	height:250px;
 }
 blockquote.quote {
 	font-size:14px;
@@ -4480,6 +4539,31 @@ ul.leftnav {
 
 p {
 	text-align:left;
+}
+
+.notification{
+	height: 50px;
+}
+.notification p{
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 12px !important;
+}
+.left-caret{
+	position: absolute;
+	display: block;
+	left: -1px;
+	background-image: url(../images/caret_left_50.png);
+	height: 50px;
+	width:25px;
+}
+.right-caret{
+	position: absolute;
+	display: block;
+	right: 0;
+	background-image: url(../images/caret_right_50.png);
+	height: 50px;
+	width:25px;
 }
 
 /*********** Developers Page **************/
