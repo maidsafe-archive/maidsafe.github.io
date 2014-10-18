@@ -1010,9 +1010,10 @@ video {
 	margin-bottom: 20px;
 	position: relative;
 }
-.notification p{
+.notification p {
 	margin-top: 22px;
 	font-size: 18px;
+	color: #808080;
 }
 .left-caret{
 	position: absolute;
