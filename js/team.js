@@ -7,7 +7,7 @@ var benBio = "After five years of research in theoretical physics at Ghent Unive
 var mahmoudBio = "Mahmoud received a BSc in Computer Hardware Engineering and an MSc in Computer Systems Architecture whilst in Iran, he then came to the UK to obtain his PhD in Computer Science from The University of Glasgow. Before starting at MaidSafe he spent over 3 years working in the software industry, followed by another 3 years working as a test engineer in hardware manufacturing. His interests include Peer-to-Peer networking, analytical modelling, interconnection networks and software tools for manycore acceleration.";
 var rossBio = "Ross has a degree in Behavioural Sciences and a Postgraduate Diploma in Information Technology. He has over 11 years IT experience, 9 spent as part of the Oracle team within Motorola as an Apps DBA. He loves music, photography, being in the middle of nowhere and his most recent obsession is windsurfing, where he is currently trying to spend more time on top of the water and less under it.";
 var vivBio = "Viv qualified with a BEng(Hons) in Aerospace Engineering and Astronautics at Kingston University. He previously spent time in IBM as a Server Specialist and currently heads up the User Experience team at MaidSafe dealing with WPF, Cocoa OSX and Qt UI Systems.";
-var brianBio = "";
+var podBio = "SAFE Pods are hubs of innovation that focus on building and expanding the Safe network infrastructure and ecosystem. <a href='/safe-pods'>Learn more</a> about how MaidSafe is decentralizing network and application development.";
 var niallBio = "Niall holds graduate and post-graduate qualifications from a number of Universities in subjects including Education, Management, Economics, Pure Maths, Complexity, Information Systems and of course Software. He has contributed more than 60k lines of code to multiple open source projects since the early 1990s, and is currently also part of the Boost C++ Libraries development and administrative teams. When not working, Niall's favourite thing is anything involving his wife and daughter.";
 var shonaBio = "Shona has an HND in Graphic Design and is part of the User Experience team. She previously spent 3 years working for a creative agency and is now in her second year at MaidSafe. Her favourite things include family movie nights, aerial silks, Instagram, doing handstands, chewing fruit gums and hosting tea parties.";
 var justineBio = "Justine has over 20 years experience in the catering and leisure sector and during that time she has run her own business and obtained qualifications in customer relations. Her favourite pastimes are shopping and music (including camping at T in the Park). Justine also undertakes the role as sports mum - just as long as shops are nearby and can still do lunch!";
@@ -26,7 +26,7 @@ $(document).ready(function () {
 	$("#mahmoud").click(function(){displayBio(this, "Mahmoud Moadeli", mahmoudBio, null, null);});
 	$("#ross").click(function(){displayBio(this, "Ross Muir", rossBio, "RosscoMuir", null);});
 	$("#viv").click(function(){displayBio(this, "Viv Rajkumar", vivBio, null, null);});
-	$("#brian").click(function(){displayBio(this, "Brian", brianBio, null, null);});
+	$("#pod").click(function(){displayBio(this, "Safe Pod", podBio, null, null);});
 	$("#niall").click(function(){displayBio(this, "Niall Douglas", niallBio, null, null);});
 
 	$("#shona").click(function(){displayBio(this, "Shona Oldham", shonaBio, "shonalot", null);});
