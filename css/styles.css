@@ -1995,7 +1995,7 @@ a.wordpress-button:hover { background-position:bottom left;}
 	background-repeat: no-repeat;
 	background-size: contain;
 	width: 460px;
-	height: 530px;
+	height: 600px;
 	position: relative;
 }
 .team-icon {
@@ -2028,7 +2028,9 @@ a.wordpress-button:hover { background-position:bottom left;}
 #ross { top: 385px; left: 150px; }
 #viv { top: 330px; left: 269px; }
 #pod { top: 290px; left: 383px; }
-#niall { top: 478px; left: 240px; }
+#niall { top: 458px; left: 240px; }
+#peter { top:545px; left:135px;}
+#lee {top:505px; left:355px;}
 
 #shona { top:138px; left:150px; }
 
@@ -3221,7 +3223,7 @@ a.light-button-full {
 }
 .team-map {
 	width: 340px;
-	height: 392px;
+	height: 470px;
 	margin-left: -10px;
 }
 .team-icon {
@@ -3237,7 +3239,9 @@ a.light-button-full {
 #ross { top: 285px; left: 113px; }
 #viv { top: 246px; left: 200px; }
 #pod { top: 215px; left: 285px; }
-#niall { top: 353px; left: 175px; }
+#niall { top: 338px; left: 175px; }
+#peter { top: 375px; left: 262px; }
+#lee { top: 402px; left: 102px; }
 
 #shona { top:101px; left:112px; }
 
@@ -3999,7 +4003,7 @@ ul.pdf-group li:before {
 
 .team-map {
 	width: 340px;
-	height: 392px;
+	height: 470px;
 	margin-left: -10px;
 }
 .team-icon {
