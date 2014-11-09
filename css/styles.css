@@ -1395,6 +1395,101 @@ table {
 
 /*******************************************************************************
 
+Roadmap Page Styles
+
+*******************************************************************************/
+
+div.roadmap {
+	background-image: url("../images/roadmap/roadmap.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 700px;
+	height: 380px;
+	position: relative;
+}
+.roadmap-stage {
+	position: absolute;
+	display: block;
+	width:120px;
+	height:120px;
+	color:#fff;
+}
+
+.roadmap-stage h2{
+	margin:0;
+	text-align: center;
+	font-size: 24px;
+	font-family: 'OpenSansLight';
+	color: inherit;
+}
+
+.roadmap-stage p{
+	margin-top:5px;
+	text-align: center;
+	font-size: 12px;
+	color: inherit;
+}
+
+.roadmap-stage:hover {
+	color: #808080;
+	cursor: pointer; 
+	cursor: hand; 
+}
+
+#testnet0{top:25px;left: 15px;}
+#testnet1{top:255px;left: 153px;}
+#testnet2{top:25px;left: 290px;}
+#testnet3{top:255px;left: 430px;}
+#betalaunch{top:25px;left: 565px;}
+
+.bullet h2{
+	margin:0;
+	display: block;
+	padding:15px 0;
+}
+
+.complete h2, .progress h2{
+	font-family: 'OpenSansRegular';
+}
+
+.end{margin-bottom: 15px;}
+
+.long h2{
+	padding: 5px 0;
+}
+
+.bullet-icon {
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 52px;
+	height: 50px;
+	display: block;
+	float: left;
+	padding-right: 10px;
+}
+.backwards {color:#5593D7;}
+.backwards:hover {
+	color: #808080;
+	cursor: pointer; 
+	cursor: hand; 
+}
+.backwards img{
+	float:left;
+	padding-right: 10px;
+}
+.backwards p{
+	color: inherit;
+}
+
+div.start.active .bullet-icon{ background-image: url("../images/roadmap/start_active.png");}
+div.start.idle .bullet-icon{ background-image: url("../images/roadmap/start_idle.png");}
+div.complete .bullet-icon{ background-image: url("../images/roadmap/complete.png");}
+div.progress .bullet-icon{ background-image: url("../images/roadmap/progress.png");}
+div.end.active .bullet-icon{ background-image: url("../images/roadmap/end_active.png");}
+div.end.idle .bullet-icon{ background-image: url("../images/roadmap/end_idle.png");}
+
+/*******************************************************************************
+
 Features Page Styles
 
 *******************************************************************************/
@@ -2003,8 +2098,8 @@ a.wordpress-button:hover { background-position:bottom left;}
 	background-size: contain;
 	position: absolute;
 	display: block;
-	width: 54px;
-	height: 55px;
+	width: 56px;
+	height: 56px;
 }
 
 .cog-icon:hover, .cog-icon.icon-active {background-image: url('../images/team/team_cog_dk.png') !important;}
@@ -3332,6 +3427,31 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 	margin:0px 0px 30px 0;
 }
 
+/*********** Roadmap Page Styles **************/
+
+div.roadmap{
+	width:500px;
+}
+
+.roadmap-stage {
+	width:90px;
+	height:90px;
+}
+
+.roadmap-stage h2{
+	font-size: 18px;
+}
+
+.roadmap-stage p{
+	margin-top: 0px;
+}
+
+#testnet0{top:20px;left: 10px;}
+#testnet1{top:175px;left: 110px;}
+#testnet2{top:10px;left: 205px;}
+#testnet3{top:175px;left: 305px;}
+#betalaunch{top:20px;left: 400px;}
+
 /*********** Features Page Styles *************/
 
 .last-col {
@@ -4130,6 +4250,34 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 section .grid-4 {
 	width:100%!important;
 }
+
+/*********** Roadmap Page Styles **************/
+
+#roadmap #viewer {width:96%;}
+
+div.roadmap{
+	width:500px;
+}
+
+.roadmap-stage {
+	width:90px;
+	height:90px;
+}
+
+.roadmap-stage h2{
+	font-size: 18px;
+}
+
+.roadmap-stage p{
+	margin-top: 0px;
+}
+
+#testnet0{top:20px;left: 10px;}
+#testnet1{top:175px;left: 110px;}
+#testnet2{top:10px;left: 205px;}
+#testnet3{top:175px;left: 305px;}
+#betalaunch{top:20px;left: 400px;}
+
 
 /*********** Features Page Styles *************/
 
@@ -5029,6 +5177,40 @@ a.moreinfo div {
 .libraries-vault {top:0px;}
 .libraries-vault-manager {top:0px;}
 .libraries-api { top:0px;}
+
+/*********** Roadmap Page Styles **************/
+
+#roadmap #viewer {width:96%;}
+
+div.roadmap{
+	width:321px;
+	background: url("../images/roadmap/roadmap-mobile.png");
+	margin:0 auto;
+}
+
+.roadmap-stage {
+	width:auto;
+	height:auto;
+	//position: relative;
+	//color:#808080;
+	//margin: 0 0 20px 0;
+}
+//.roadmap-stage:hover{color: #5593D7;}
+
+.roadmap-stage h2{
+	font-size: 24px;
+}
+
+.roadmap-stage p{
+	margin: 0px;
+}
+
+#testnet0{top:8px;left:20px;}
+#testnet1{top:82px;left:50px;}
+#testnet2{top:162px;left:50px;}
+#testnet3{top:242px;left:50px;}
+#betalaunch{top:330px;left:20px;}
+
 
 /*********** Features Page Styles *************/
 
