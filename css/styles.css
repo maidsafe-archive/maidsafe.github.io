@@ -458,6 +458,9 @@ header {
 	padding: 19px 12px;*/	
 }
 
+ul.topnav {
+	display:none;
+}
 
 /******** Top nav selected state styles ********/
 #platform-overview .menu .overview a,
@@ -508,7 +511,6 @@ header {
 #safecoin ul.leftnav .safecoin a  {
 	color:#5593D7;
 }
-
 /******** Get Involved - Left nav selected state styles ********/
 #get-involved ul.leftnav .get-involved a,
 #core-developer ul.leftnav .core-developer a,
@@ -718,7 +720,22 @@ Banner Styles
 	width:150px;
 	height:40px;
 }
-
+/************************** Banner plane ***************************/
+.banner-contest {
+	padding:45px 0 0 0;
+}
+.banner-contest h1 {
+	font-size:36px;
+	color:#5593D7;
+}
+.contest-icon {
+	background:url(imgs/coin_contest.png) no-repeat 0 0;
+	width:234px;
+	height:117px;
+	background-size:234px 117px;
+	position:relative;
+	margin:0px auto 10px auto;
+}
 /*******************************************************************************
 
 Sidebar Styles
@@ -1378,6 +1395,101 @@ table {
 
 /*******************************************************************************
 
+Roadmap Page Styles
+
+*******************************************************************************/
+
+div.roadmap {
+	background-image: url("../images/roadmap/roadmap.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 700px;
+	height: 380px;
+	position: relative;
+}
+.roadmap-stage {
+	position: absolute;
+	display: block;
+	width:120px;
+	height:120px;
+	color:#fff;
+}
+
+.roadmap-stage h2{
+	margin:0;
+	text-align: center;
+	font-size: 24px;
+	font-family: 'OpenSansLight';
+	color: inherit;
+}
+
+.roadmap-stage p{
+	margin-top:5px;
+	text-align: center;
+	font-size: 12px;
+	color: inherit;
+}
+
+.roadmap-stage:hover {
+	color: #808080;
+	cursor: pointer; 
+	cursor: hand; 
+}
+
+#testnet0{top:25px;left: 15px;}
+#testnet1{top:255px;left: 153px;}
+#testnet2{top:25px;left: 290px;}
+#testnet3{top:255px;left: 430px;}
+#betalaunch{top:25px;left: 565px;}
+
+.bullet h2{
+	margin:0;
+	display: block;
+	padding:15px 0;
+}
+
+.complete h2, .progress h2{
+	font-family: 'OpenSansRegular';
+}
+
+.end{margin-bottom: 15px;}
+
+.long h2{
+	padding: 5px 0;
+}
+
+.bullet-icon {
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 52px;
+	height: 50px;
+	display: block;
+	float: left;
+	padding-right: 10px;
+}
+.backwards {color:#5593D7;}
+.backwards:hover {
+	color: #808080;
+	cursor: pointer; 
+	cursor: hand; 
+}
+.backwards img{
+	float:left;
+	padding-right: 10px;
+}
+.backwards p{
+	color: inherit;
+}
+
+div.start.active .bullet-icon{ background-image: url("../images/roadmap/start_active.png");}
+div.start.idle .bullet-icon{ background-image: url("../images/roadmap/start_idle.png");}
+div.complete .bullet-icon{ background-image: url("../images/roadmap/complete.png");}
+div.progress .bullet-icon{ background-image: url("../images/roadmap/progress.png");}
+div.end.active .bullet-icon{ background-image: url("../images/roadmap/end_active.png");}
+div.end.idle .bullet-icon{ background-image: url("../images/roadmap/end_idle.png");}
+
+/*******************************************************************************
+
 Features Page Styles
 
 *******************************************************************************/
@@ -1940,6 +2052,10 @@ Company Page Styles
 	margin-bottom:30px;
 }
 
+#team .main-content {
+	padding-bottom: 20px;
+}
+
 a.twitter-button {
 	background:url(imgs/twitter_icon.png) no-repeat top left!important;
 	width:28px;
@@ -1969,6 +2085,61 @@ a.wordpress-button:hover { background-position:bottom left;}
 	float:left;
 }
 	
+.team-map {
+	background-image: url('../images/team/team_map.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 460px;
+	height: 600px;
+	position: relative;
+}
+.team-icon {
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	display: block;
+	width: 56px;
+	height: 56px;
+}
+
+.cog-icon:hover, .cog-icon.icon-active {background-image: url('../images/team/team_cog_dk.png') !important;}
+.cog-icon {background-image: url('../images/team/team_cog_lt.png');}
+.dev-icon:hover, .dev-icon.icon-active {background-image: url('../images/team/team_dev_dk.png') !important;}
+.dev-icon {background-image: url('../images/team/team_dev_lt.png');}
+.strat-icon:hover, .strat-icon.icon-active {background-image: url('../images/team/team_strat_dk.png') !important;}
+.strat-icon {background-image: url('../images/team/team_strat_lt.png');}
+.design-icon:hover, .design-icon.icon-active {background-image: url('../images/team/team_design_dk.png') !important;}
+.design-icon {background-image: url('../images/team/team_design_lt.png');}
+.admin-icon:hover, .admin-icon.icon-active {background-image: url('../images/team/team_admin_dk.png') !important;}
+.admin-icon {background-image: url('../images/team/team_admin_lt.png');}
+
+#boss { top: 200px; left: 268px; }
+#david { top: 47px; left: 42px; }
+#fraser { top: 22px; left: 173px; }
+#qi { top: 73px; left: 274px; }
+#prakash { top: 17px; left: 370px; }
+#ben { top: 253px; left: 135px; }
+#mahmoud { top: 325px; left: 49px; }
+#ross { top: 385px; left: 150px; }
+#viv { top: 330px; left: 269px; }
+#pod { top: 290px; left: 383px; }
+#niall { top: 458px; left: 240px; }
+#peter { top:545px; left:135px;}
+#lee {top:505px; left:355px;}
+
+#shona { top:138px; left:150px; }
+
+#justine { top:177px; left:14px; }
+#linda { top:472px; left:43px; }
+
+#nick { top:160px; left:394px; }
+#paige { top:421px; left:397px; }
+
+.profile-info {
+	width: 216px !important;
+	padding: 0 !important;
+}
+.profile-mobile{display: none;}
 
 /*******************************************************************************
 
@@ -2859,7 +3030,14 @@ p.quoter {
 	display:inline-block;
 	width:100px;
 }
-
+/************************** Banner contest ***************************/
+.banner-contest {
+	padding:10px 0 0 0;
+}
+.banner-contest h1 {
+	font-size:26px;
+	color:#5593D7;
+}
 
 .home-tabs p {
 	font-size:22px;
@@ -3116,6 +3294,9 @@ a.light-button-full {
 	width:540px;
 	margin:0px;
 }
+#team h1 {
+	font-size: 21px;
+}
 
 .mosaic-block {
     height: 160px;
@@ -3135,7 +3316,46 @@ a.light-button-full {
 .mosaic-block .details {
     padding: 10px;
 }
+.team-map {
+	width: 340px;
+	height: 470px;
+	margin-left: -10px;
+}
+.team-icon {
+	width: 40px;
+}
+#boss { top: 150px; left: 198px; }
+#david { top: 37px; left: 32px; }
+#fraser { top: 17px; left: 128px; }
+#qi { top: 53px; left: 204px; }
+#prakash { top: 12px; left: 275px; }
+#ben { top: 185px; left: 101px; }
+#mahmoud { top: 240px; left: 34px; }
+#ross { top: 285px; left: 113px; }
+#viv { top: 246px; left: 200px; }
+#pod { top: 215px; left: 285px; }
+#niall { top: 338px; left: 175px; }
+#peter { top: 375px; left: 262px; }
+#lee { top: 402px; left: 102px; }
 
+#shona { top:101px; left:112px; }
+
+#justine { top:130px; left:12px; }
+#linda { top:347px; left:33px; }
+
+#nick { top:118px; left:291px; }
+#paige { top:312px; left:294px; }
+
+.profile-info {
+	display: block;
+	width: 160px !important;
+}
+.profile-info h2 {
+	margin-top: 0;
+}
+.profile-info p{
+	font-size: 12px;
+}
 /*********** Careers Page ***************/
 .vacancies {
 	padding:20px;
@@ -3206,6 +3426,31 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 .download-license-box-last {
 	margin:0px 0px 30px 0;
 }
+
+/*********** Roadmap Page Styles **************/
+
+div.roadmap{
+	width:500px;
+}
+
+.roadmap-stage {
+	width:90px;
+	height:90px;
+}
+
+.roadmap-stage h2{
+	font-size: 18px;
+}
+
+.roadmap-stage p{
+	margin-top: 0px;
+}
+
+#testnet0{top:20px;left: 10px;}
+#testnet1{top:175px;left: 110px;}
+#testnet2{top:10px;left: 205px;}
+#testnet3{top:175px;left: 305px;}
+#betalaunch{top:20px;left: 400px;}
 
 /*********** Features Page Styles *************/
 
@@ -3335,6 +3580,7 @@ p {
 header {
 	height:80px;
 	font-size: 14px;
+	margin-bottom: 10px;
 }
 
 .shadow {
@@ -3467,6 +3713,13 @@ p.quoter {
 	display:inline-block;
 	width:90px;
 }
+/************************** Banner contest ***************************/
+.banner-contest {
+	padding:0px 0 0 0;
+}
+.banner-contest h1 {
+	font-size:20px;
+}
 
 .home-tabs p {
 	font-size:18px;
@@ -3566,13 +3819,78 @@ p.alpha-testers {
 	margin-bottom:10px;
 }
 
-ul.leftnav li a {
+.leftnav-shell{
+	display:none;
+}
+
+.topnav-shell{
+	//margin: 0 auto;
+	padding-bottom: 30px;
+	display: block;
+	float: right;
+}
+
+ul.topnav {
+	display: inline-block;
+	float: right;
+}
+ul.topnav li {
+	padding: 0px;
+	display: inline-block;
+	margin-left:28px;
+}
+ul.topnav > li { 
+	display: inline-block;
+}
+ul.topnav li a { 
+	display: block;
+	text-decoration: none;
+	color: #808080;
+}
+
+/******** Overview - Left nav selected state styles ********/
+#platform-overview ul.topnav .overview a,
+#platform-features ul.topnav .features a,
+#platform-faqs ul.topnav .faqs a,
+#applications ul.topnav .applications a,
+#licensing-platform ul.topnav .licensing a,
+#testimonials ul.topnav .testimonials a,
+#safecoin ul.topnav .safecoin a  {
+	color:#5593D7;
+}
+/******** Get Involved - Left nav selected state styles ********/
+#get-involved ul.topnav .get-involved a,
+#core-developer ul.topnav .core-developer a,
+#platform-libraries ul.topnav .libraries a,
+#app-builder ul.topnav .app-builder a,
+#farmers ul.topnav .farmers a,
+#safe-pods ul.topnav .safe-pods a {
+	color:#5593D7;
+}
+
+/******** Documents - Left nav selected state styles ********/
+#documents ul.topnav .documents a,
+#examples ul.topnav .examples a,
+#system-docs ul.topnav .system-docs a,
+#developer-wiki ul.topnav .developer-wiki a,
+#papers-publications ul.topnav .papers-publications a {
+	color:#5593D7;
+}
+
+/******** Company - Left nav selected state styles ********/
+#company ul.topnav .overview a,
+#team ul.topnav .team a,
+#careers ul.topnav .careers a {
+	color:#5593D7;
+}
+
+/*ul.leftnav li a {
 	font-size:14px;
 }
 
 ul.leftnav li ul li a {
 	font-size:12px;
-}
+}*/
 
 .article-1 {
 	padding-right:21px;
@@ -3775,8 +4093,14 @@ ul.pdf-group li:before {
 
 /*********** Team Page ***************/
 
+#team h1 {font-size: 21px;}
 
 #team h3 { font-size:12px;}
+
+#team .main-content {
+	float: left;
+	width: 100%;
+}
 
 .mosaic-block {
     height: 160px;
@@ -3797,6 +4121,40 @@ ul.pdf-group li:before {
     padding: 10px;
 }
 
+.team-map {
+	width: 340px;
+	height: 470px;
+	margin-left: -10px;
+}
+.team-icon {
+	width: 40px;
+}
+#boss { top: 150px; left: 198px; }
+#david { top: 37px; left: 32px; }
+#fraser { top: 17px; left: 128px; }
+#qi { top: 53px; left: 204px; }
+#prakash { top: 12px; left: 275px; }
+#ben { top: 185px; left: 101px; }
+#mahmoud { top: 240px; left: 34px; }
+#ross { top: 285px; left: 113px; }
+#viv { top: 246px; left: 200px; }
+#pod { top: 215px; left: 285px; }
+#niall { top: 353px; left: 175px; }
+#peter { top: 375px; left: 262px; }
+#lee { top: 402px; left: 102px; }
+
+#shona { top:101px; left:112px; }
+
+#justine { top:130px; left:12px; }
+#linda { top:347px; left:33px; }
+
+#nick { top:118px; left:291px; }
+#paige { top:312px; left:294px; }
+
+.profile-info{
+	width: 175px !important;
+	float: right;
+}
 
 /*********** Careeres Page ***************/
 .vacancies {
@@ -3892,6 +4250,34 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 section .grid-4 {
 	width:100%!important;
 }
+
+/*********** Roadmap Page Styles **************/
+
+#roadmap #viewer {width:96%;}
+
+div.roadmap{
+	width:500px;
+}
+
+.roadmap-stage {
+	width:90px;
+	height:90px;
+}
+
+.roadmap-stage h2{
+	font-size: 18px;
+}
+
+.roadmap-stage p{
+	margin-top: 0px;
+}
+
+#testnet0{top:20px;left: 10px;}
+#testnet1{top:175px;left: 110px;}
+#testnet2{top:10px;left: 205px;}
+#testnet3{top:175px;left: 305px;}
+#betalaunch{top:20px;left: 400px;}
+
 
 /*********** Features Page Styles *************/
 
@@ -4378,7 +4764,21 @@ p.quoter {
 	display: none;
 	width:60px;
 }
-
+/************************** Banner contest ***************************/
+.banner-contest {
+	padding:40px 0 0 0;
+}
+.banner-contest h1 {
+	font-size:16px;
+	color:#5593D7;
+}
+.contest-icon {
+	background:url(imgs/coin_contest.png) no-repeat 0 0;
+	width:117px;
+	height:58px;
+	background-size:117px 58px;
+	margin:0px auto 10px auto;
+}
 
 .main-content {
 	margin-top:30px;
@@ -4669,7 +5069,51 @@ a.light-button-full {
     padding: 16px;
 }
 
+.team-map {
+	display:none;
+	/*width: 340px;
+	height: 392px;
+	margin: 0 auto;*/
+}
+.team-icon {
+	position: relative;
+	float: left;
+}
+/*#boss { top: 150px; left: 198px; }
+#david { top: 37px; left: 32px; }
+#fraser { top: 17px; left: 128px; }
+#qi { top: 53px; left: 204px; }
+#prakash { top: 12px; left: 275px; }
+#ben { top: 185px; left: 101px; }
+#mahmoud { top: 240px; left: 34px; }
+#ross { top: 285px; left: 113px; }
+#viv { top: 246px; left: 200px; }
+#brian { top: 215px; left: 285px; }
+#niall { top: 353px; left: 175px; }
 
+#shona { top:101px; left:112px; }
+
+#justine { top:130px; left:12px; }
+#linda { top:347px; left:33px; }
+
+#nick { top:118px; left:291px; }
+#paige { top:312px; left:294px; }*/
+
+.profile-info {
+	display: none;
+}
+.profile-mobile {display: block;}
+.profile-mobile h2 {
+	margin: 20px 0 5px 60px;
+}
+.profile-mobile p {
+	font-size: 12px;
+	margin-left: 60px;
+	margin-bottom: 10px;
+}
+.profile-mobile iframe{
+	margin-left: 60px;
+}
 
 /******************* Careers Page *********************/
 .vacancies {
@@ -4733,6 +5177,40 @@ a.moreinfo div {
 .libraries-vault {top:0px;}
 .libraries-vault-manager {top:0px;}
 .libraries-api { top:0px;}
+
+/*********** Roadmap Page Styles **************/
+
+#roadmap #viewer {width:96%;}
+
+div.roadmap{
+	width:321px;
+	background: url("../images/roadmap/roadmap-mobile.png");
+	margin:0 auto;
+}
+
+.roadmap-stage {
+	width:auto;
+	height:auto;
+	//position: relative;
+	//color:#808080;
+	//margin: 0 0 20px 0;
+}
+//.roadmap-stage:hover{color: #5593D7;}
+
+.roadmap-stage h2{
+	font-size: 24px;
+}
+
+.roadmap-stage p{
+	margin: 0px;
+}
+
+#testnet0{top:8px;left:20px;}
+#testnet1{top:82px;left:50px;}
+#testnet2{top:162px;left:50px;}
+#testnet3{top:242px;left:50px;}
+#betalaunch{top:330px;left:20px;}
+
 
 /*********** Features Page Styles *************/
 
