@@ -1442,21 +1442,23 @@ div.roadmap {
 #testnet3{top:255px;left: 430px;}
 #betalaunch{top:25px;left: 565px;}
 
-.bullet h2{
-	margin:0;
-	display: block;
-	padding:15px 0;
+.bullet{
+	height:50px;
+	display: table;
 }
 
+.bullet h2{
+	margin:0;
+	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
+}
 .complete h2, .progress h2{
 	font-family: 'OpenSansRegular';
 }
 
 .end{margin-bottom: 15px;}
 
-.long h2{
-	padding: 5px 0;
-}
 
 .bullet-icon {
 	background-repeat: no-repeat;
@@ -3335,8 +3337,8 @@ a.light-button-full {
 #viv { top: 246px; left: 200px; }
 #pod { top: 215px; left: 285px; }
 #niall { top: 338px; left: 175px; }
-#peter { top: 375px; left: 262px; }
-#lee { top: 402px; left: 102px; }
+#peter { top: 402px; left: 102px; }
+#lee { top: 375px; left: 262px; }
 
 #shona { top:101px; left:112px; }
 
@@ -3452,6 +3454,30 @@ div.roadmap{
 #testnet3{top:175px;left: 305px;}
 #betalaunch{top:20px;left: 400px;}
 
+.bullet h2{
+	padding:10px 0;
+}
+.complete, .progress{
+	height: 40px;
+	display:table;
+}
+
+.complete h2, .progress h2{
+	font-size: 14px;
+	padding: 0;
+	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.end{margin-bottom: 15px;}
+
+
+.bullet-icon {
+	width: 42px;
+	height: 40px;
+	padding-right: 10px;
+}
 /*********** Features Page Styles *************/
 
 .last-col {
@@ -4140,8 +4166,8 @@ ul.pdf-group li:before {
 #viv { top: 246px; left: 200px; }
 #pod { top: 215px; left: 285px; }
 #niall { top: 353px; left: 175px; }
-#peter { top: 375px; left: 262px; }
-#lee { top: 402px; left: 102px; }
+#peter { top: 402px; left: 102px; }
+#lee { top: 375px; left: 262px; }
 
 #shona { top:101px; left:112px; }
 
