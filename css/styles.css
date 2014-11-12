@@ -720,7 +720,7 @@ Banner Styles
 	width:150px;
 	height:40px;
 }
-/************************** Banner plane ***************************/
+/************************** Banner contest ***************************/
 .banner-contest {
 	padding:45px 0 0 0;
 }
@@ -732,6 +732,7 @@ Banner Styles
 	background:url(imgs/coin_contest.png) no-repeat 0 0;
 	width:234px;
 	height:117px;
+	display: inline-block;
 	background-size:234px 117px;
 	position:relative;
 	margin:0px auto 10px auto;
