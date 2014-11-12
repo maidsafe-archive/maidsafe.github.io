@@ -145,6 +145,9 @@
     <script type="text/javascript" src="js/team.js"></script>
     [% END %]
 
+    [% IF includeRoadmapSelection == true %]
+    <script type="text/javascript" src="js/roadmap.js"></script>
+    [% END %]
   <!-- IE Fix for Sticky Footer -->
   <!--[if !IE 7]>
 	<style type="text/css">
