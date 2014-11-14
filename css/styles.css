@@ -2146,6 +2146,48 @@ a.wordpress-button:hover { background-position:bottom left;}
 
 /*******************************************************************************
 
+Credits Page Styles
+
+*******************************************************************************/
+
+.credit-logo {
+	height: 90px;
+	margin: 0 auto;
+}
+
+.credit-logo div{
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.advanced-installer{ 
+	background-image: url("../images/credits/advanced-installer-logo.jpg");
+	width: 90px;
+	height: 90px;
+}
+.atlassian-jira{ 
+	background-image: url("../images/credits/atlassian-jira-logo.jpg");
+	width: 90px;
+	height: 90px;
+}
+.github-credit{
+	background-image: url("imgs/github-octocat.png");
+	width: 90px;
+	height: 90px;
+}
+.jetbrains{
+	background-image: url("../images/credits/jetbrains-logo.png");
+	width: 120px;
+	height: 40px;
+	margin-top: 25px;
+}
+.xamarin{ 
+	background-image: url("../images/credits/xamarin-logo.png");
+	width: 90px;
+	height: 90px;
+}
+/*******************************************************************************
+
 Careers Page Styles
 
 *******************************************************************************/
