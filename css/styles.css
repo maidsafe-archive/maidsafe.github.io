@@ -661,8 +661,8 @@ Banner Styles
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:423px;
-	height:68px;
-	background-size:423px 68px;
+	height:127px;
+	background-size:423px 127px;
 	position:relative;
 	margin:0px auto 10px auto;
 }
