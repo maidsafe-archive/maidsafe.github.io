@@ -5258,7 +5258,7 @@ a.light-button-full {
 }
 /*********** Credits Page ***************/
 #credits section{
-	height: 120px;
+	height: 140px;
 }
 .credit-logo{
 	width: 30% !important;
@@ -5267,7 +5267,14 @@ a.light-button-full {
 	width: 70% !important;
 	float: right;
 }
-
+.credit-logo{
+	padding-top: 10px;
+}
+.jetbrains{
+	padding-top: 40px;
+	width:90px;
+	height: 30px;
+}
 /******************* Careers Page *********************/
 .vacancies {
 	padding:2%;
