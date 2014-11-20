@@ -754,12 +754,13 @@ Banner Styles
 }
 .contest-icon {
 	background:url(imgs/coin_contest.png) no-repeat 0 0;
-	width:234px;
-	height:117px;
+	width:180px;
+	height:90px;
 	display: inline-block;
-	background-size:234px 117px;
+	background-size:180px 90px;
 	position:relative;
 	margin:0px auto 10px auto;
+	padding: 15px 0;
 }
 /*******************************************************************************
 
