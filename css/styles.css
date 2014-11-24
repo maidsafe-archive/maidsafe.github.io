@@ -652,24 +652,25 @@ Banner Styles
 
 /************************** Banner plane ***************************/
 .banner-plane {
-	padding:45px 0 0 0;
+	padding:60px 0 0 0;
 }
 .banner-plane h1 {
 	font-size:36px;
 	color:#5593D7;
+	margin:20px 0 0 0;
 }
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:423px;
-	height:127px;
-	background-size:423px 127px;
+	height:75px;
+	background-size:423px 75px;
 	position:relative;
 	margin:0px auto 10px auto;
 }
 
 /************************** Banner community ***************************/
 .banner-community {
-	padding:45px 0 0 0;
+	padding:60px 0 0 0;
 }
 .banner-community h1 {
 	font-size:36px;
@@ -681,6 +682,7 @@ Banner Styles
 	width:280px;
 	height:46px;
 	display:inline-block;
+	margin:20px 0 0 0;
 }
 
 .community-org {
@@ -688,7 +690,7 @@ Banner Styles
 	width:225px;
 	height:46px;
 	display:inline-block;
-	margin:0px 40px;
+	margin:20px 40px 0 40px;
 }
 
 .community-safecoin {
@@ -2183,16 +2185,10 @@ Credits Page Styles
 	height:100px;
 }
 
-.credit-text a{
-	text-decoration: none;
-	color: #5593D7;
-}
-.credit-text a:hover{
-	color: #333333;
-}
 .credit-text h3{
 	font-family: 'OpenSansLight', Arial, sans-serif !important;
 	font-size: 16px;
+	color: #5593D7;
 }
 
 .credit-logo{
@@ -3072,7 +3068,7 @@ p.quoter {
 
 /************************** Banner community ***************************/
 .banner-community {
-	padding:25px 0 0 0;
+	padding:40px 0 0 0;
 }
 .banner-community h1 {
 	font-size:26px;
@@ -3081,12 +3077,13 @@ p.quoter {
 .community-development {
 	width:280px;
 	height:46px;
+	margin:30px 0 0 0;
 }
 
 .community-org {
 	width:225px;
 	height:46px;
-	margin:0px 40px;
+	margin:30px 40px 0 40px;
 }
 
 .community-safecoin {
@@ -3097,23 +3094,24 @@ p.quoter {
 
 /************************** Banner plane ***************************/
 .banner-plane {
-	padding:30px 0 0 0;
+	padding:40px 0 0 0;
 }
 .banner-plane h1 {
 	font-size:26px;
 	color:#5593D7;
+	margin:30px 0 0 0;
 }
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:423px;
-	height:127px;
-	background-size:423px 127px;
+	height:75px;
+	background-size:423px 75px;
 	margin:0px auto 10px auto;
 }
 
 /************************** Banner getcode ***************************/
 .banner-getcode {
-	padding:35px 0 0 0;
+	padding:65px 0 0 0;
 }
 .banner-getcode h1 {
 	font-size:26px;
@@ -3785,7 +3783,7 @@ p.quoter {
 
 /************************** Banner community ***************************/
 .banner-community {
-	padding:25px 0 0 0;
+	padding:35px 0 0 0;
 }
 .banner-community h1 {
 	font-size:20px;
@@ -3812,23 +3810,24 @@ p.quoter {
 
 /************************** Banner plane ***************************/
 .banner-plane {
-	padding:30px 0 0 0;
+	padding:25px 0 0 0;
 }
 .banner-plane h1 {
 	font-size:20px;
 	color:#5593D7;
+	margin:30px 0 0 0;
 }
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:323px;
-	height:96px;
-	background-size:323px 96px;
+	height:58px;
+	background-size:323px 58px;
 	margin:0px auto 10px auto;
 }
 
 /************************** Banner getcode ***************************/
 .banner-getcode {
-	padding:15px 0 0 0;
+	padding:40px 0 0 0;
 }
 .banner-getcode h1 {
 	font-size:20px;
@@ -4830,7 +4829,7 @@ p.quoter {
 	padding:5px 0 0 0;
 }
 .banner-news h1 {
-	font-size:20px;
+	font-size:16px;
 	margin-bottom:10px;
 }
 
@@ -4851,6 +4850,7 @@ p.quoter {
 }
 .banner-community h1 {
 	font-size:16px;
+	margin:20px 0 0 0;
 }
 
 .community-development {
@@ -4883,8 +4883,8 @@ p.quoter {
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:280px;
-	height:84px;
-	background-size:280px 84px;
+	height:50px;
+	background-size:280px 50px;
 	margin:0px auto 10px auto;
 }
 
