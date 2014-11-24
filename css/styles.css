@@ -4411,7 +4411,12 @@ div.roadmap{
 #testnet2{top:30px;left: 205px;}
 #testnet3{top:185px;left: 305px;}
 #betalaunch{top:30px;left: 400px;}
-
+.bullet{height:40px;}
+.bullet-icon {
+	width: 42px;
+	height: 40px;
+	padding-right: 10px;
+}
 
 /*********** Features Page Styles *************/
 
@@ -5335,7 +5340,7 @@ a.moreinfo div {
 
 /*********** Roadmap Page Styles **************/
 
-#roadmap #viewer {width:96%;}
+//#roadmap #viewer {width:96%;}
 
 #roadmap #viewer > p{font-size: 14px;}
 
@@ -5367,8 +5372,13 @@ div.roadmap{
 #testnet2{top:170px;left:50px;}
 #testnet3{top:250px;left:50px;}
 #betalaunch{top:330px;left:60px;}
+.bullet{max-height: 50px;}
 
-
+.bullet-icon {
+	width: 52px;
+	height: 50px;
+	padding-right: 5px;
+}
 /*********** Features Page Styles *************/
 
 .last-col {
