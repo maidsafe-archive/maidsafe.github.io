@@ -1,8 +1,8 @@
 var maind="<p>Currently we are working through Testnet 2.</br>View the various stages of development in more detail... </p>";
 var test1d="<p>See what we completed in Testnet 1.</p>";
-var test2d="<p>Track the progress of Testnet 2's main objectives below. </br> For a more technical analysis, see our <a href='https://maidsafe.atlassian.net' target='_blank'>Jira Roadmap</a>.";
+var test2d="<p>Track the progress of Testnet 2's main objectives below.</p>";
 var test3d="<p>See what we have planned for Testnet 3.</p>";
-var launchd="<p>The work doesn't stop at Beta. See what we have planned for launch.</p>";
+var launchd="<p>The work doesn't stop at Beta. See what we have planned for after launch.</p>";
 
 $(document).ready(function () {
 	$(".backwards").click(function(){displayPhase(this, "Project SAFE Roadmap", maind, "roadmap", "phase-group");});
