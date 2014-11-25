@@ -1514,6 +1514,8 @@ div.progress .bullet-icon{ background-image: url("../images/roadmap/progress.png
 div.end.active .bullet-icon{ background-image: url("../images/roadmap/end_active.png");}
 div.end.idle .bullet-icon{ background-image: url("../images/roadmap/end_idle.png");}
 
+#tech-roadmap p{padding:60px 0 0 0;}
+
 /*******************************************************************************
 
 Features Page Styles
