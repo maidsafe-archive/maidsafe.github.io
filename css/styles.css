@@ -1431,7 +1431,7 @@ div.roadmap {
 	background-image: url("../images/roadmap/roadmap.png");
 	background-repeat: no-repeat;
 	background-size: contain;
-	width: 700px;
+	width: 540px;
 	height: 380px;
 	position: relative;
 }
@@ -1451,7 +1451,7 @@ div.roadmap {
 	color: inherit;
 }
 
-#roadmap #viewer > p{font-size: 18px;}
+//#roadmap #viewer > p{font-size: 1px;}
 #roadmap #viewer > h1{margin:0 0 10px 0;}
 
 .roadmap-stage:hover {
@@ -1460,11 +1460,10 @@ div.roadmap {
 	cursor: hand; 
 }
 
-#testnet0{top:25px;left: 15px;}
-#testnet1{top:265px;left: 153px;}
-#testnet2{top:35px;left: 290px;}
-#testnet3{top:265px;left: 430px;}
-#betalaunch{top:35px;left: 565px;}
+#testnet1{top:35px;left: 15px;}
+#testnet2{top:265px;left: 147px;}
+#testnet3{top:35px;left: 277px;}
+#betalaunch{top:265px;left: 407px;}
 
 .bullet{
 	height:50px;
@@ -3528,28 +3527,10 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
 
 /*********** Roadmap Page Styles **************/
 
-div.roadmap{
-	width:500px;
-}
-
-.roadmap-stage {
-	width:90px;
-	height:90px;
-}
-
-.roadmap-stage h2{
-	font-size: 18px;
-}
-
-.roadmap-stage p{
-	margin-top: 0px;
-}
-
-#testnet0{top:20px;left: 10px;}
-#testnet1{top:185px;left: 110px;}
-#testnet2{top:30px;left: 205px;}
-#testnet3{top:185px;left: 305px;}
-#betalaunch{top:30px;left: 400px;}
+#testnet1{top:35px;left: 15px;}
+#testnet2{top:265px;left: 147px;}
+#testnet3{top:35px;left: 277px;}
+#betalaunch{top:265px;left: 407px;}
 
 .bullet h2{
 	font-size: 14px;
@@ -4387,12 +4368,12 @@ section .grid-4 {
 
 /*********** Roadmap Page Styles **************/
 
-#roadmap #viewer {width:96%;}
+#roadmap #viewer {width:98%;}
 
 div.roadmap{
-	width:500px;
+	width:540px;
 }
-
+/*
 .roadmap-stage {
 	width:90px;
 	height:90px;
@@ -4400,17 +4381,18 @@ div.roadmap{
 
 .roadmap-stage h2{
 	font-size: 18px;
-}
+}*/
 
 .roadmap-stage p{
 	margin-top: 0px;
 }
 
-#testnet0{top:20px;left: 10px;}
-#testnet1{top:185px;left: 110px;}
-#testnet2{top:30px;left: 205px;}
-#testnet3{top:185px;left: 305px;}
-#betalaunch{top:30px;left: 400px;}
+
+#testnet1{top:35px;left: 15px;}
+#testnet2{top:265px;left: 147px;}
+#testnet3{top:35px;left: 277px;}
+#betalaunch{top:265px;left: 407px;}
+
 .bullet{height:40px;}
 .bullet-icon {
 	width: 42px;
@@ -5340,9 +5322,7 @@ a.moreinfo div {
 
 /*********** Roadmap Page Styles **************/
 
-//#roadmap #viewer {width:96%;}
-
-#roadmap #viewer > p{font-size: 14px;}
+#roadmap #viewer {width:96%;}
 
 div.roadmap{
 	width:321px;
@@ -5367,11 +5347,11 @@ div.roadmap{
 	margin: 0px;
 }
 
-#testnet0{top:8px;left:20px;}
-#testnet1{top:90px;left:50px;}
-#testnet2{top:170px;left:50px;}
-#testnet3{top:250px;left:50px;}
-#betalaunch{top:330px;left:60px;}
+#testnet1{top:10px;left:50px;}
+#testnet2{top:90px;left:50px;}
+#testnet3{top:170px;left:50px;}
+#betalaunch{top:250px;left:60px;}
+
 .bullet{max-height: 50px;}
 
 .bullet-icon {
