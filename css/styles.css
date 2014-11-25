@@ -528,9 +528,9 @@ ul.topnav li a {
 /******** Overview - Left nav selected state styles ********/
 #platform-overview ul.leftnav .overview a,
 #platform-features ul.leftnav .features a,
-#platform-faqs ul.leftnav .faqs a,
 #applications ul.leftnav .applications a,
 #licensing-platform ul.leftnav .licensing a,
+#roadmap ul.leftnav .roadmap a,
 #testimonials ul.leftnav .testimonials a,
 #safecoin ul.leftnav .safecoin a  {
 	color:#5593D7;
