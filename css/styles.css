@@ -461,6 +461,30 @@ header {
 ul.topnav {
 	display:none;
 }
+#timeline .topnav-shell{
+	margin-top: -30px;
+	padding-bottom: 30px;
+	display: block;
+	float: right;
+}
+
+#timeline ul.topnav {
+	display: inline-block;
+	float: right;
+}
+ul.topnav li {
+	padding: 0px;
+	display: inline-block;
+	margin-left:28px;
+}
+ul.topnav > li { 
+	display: inline-block;
+}
+ul.topnav li a { 
+	display: block;
+	text-decoration: none;
+	color: #808080;
+}
 
 /******** Top nav selected state styles ********/
 #platform-overview .menu .overview a,
@@ -628,24 +652,25 @@ Banner Styles
 
 /************************** Banner plane ***************************/
 .banner-plane {
-	padding:45px 0 0 0;
+	padding:60px 0 0 0;
 }
 .banner-plane h1 {
 	font-size:36px;
 	color:#5593D7;
+	margin:20px 0 0 0;
 }
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:423px;
-	height:68px;
-	background-size:423px 68px;
+	height:75px;
+	background-size:423px 75px;
 	position:relative;
 	margin:0px auto 10px auto;
 }
 
 /************************** Banner community ***************************/
 .banner-community {
-	padding:45px 0 0 0;
+	padding:60px 0 0 0;
 }
 .banner-community h1 {
 	font-size:36px;
@@ -657,6 +682,7 @@ Banner Styles
 	width:280px;
 	height:46px;
 	display:inline-block;
+	margin:20px 0 0 0;
 }
 
 .community-org {
@@ -664,7 +690,7 @@ Banner Styles
 	width:225px;
 	height:46px;
 	display:inline-block;
-	margin:0px 40px;
+	margin:20px 40px 0 40px;
 }
 
 .community-safecoin {
@@ -730,12 +756,13 @@ Banner Styles
 }
 .contest-icon {
 	background:url(imgs/coin_contest.png) no-repeat 0 0;
-	width:234px;
-	height:117px;
+	width:180px;
+	height:90px;
 	display: inline-block;
-	background-size:234px 117px;
+	background-size:180px 90px;
 	position:relative;
 	margin:0px auto 10px auto;
+	padding: 15px 0;
 }
 /*******************************************************************************
 
@@ -2146,6 +2173,68 @@ a.wordpress-button:hover { background-position:bottom left;}
 
 /*******************************************************************************
 
+Credits Page Styles
+
+*******************************************************************************/
+
+
+#credits section{
+	background:url(imgs/content_divider.png) repeat-x bottom center;
+	padding-bottom:5px;
+	margin-bottom:20px;
+	height:100px;
+}
+
+.credit-text h3{
+	font-family: 'OpenSansLight', Arial, sans-serif !important;
+	font-size: 16px;
+	color: #5593D7;
+}
+
+.credit-logo{
+	height: 90px;
+	margin: 0 auto;
+}
+
+.credit-logo div{
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin:0 auto;
+}
+
+.advanced-installer{ 
+	background-image: url("../images/credits/advanced-installer-logo.jpg");
+	width: 90px;
+	height: 90px;
+}
+.atlassian-jira{ 
+	background-image: url("../images/credits/atlassian-jira-logo.jpg");
+	width: 90px;
+	height: 90px;
+}
+.github-credit{
+	background-image: url("imgs/github-octocat.png");
+	width: 90px;
+	height: 90px;
+}
+.jetbrains{
+	background-image: url("../images/credits/jetbrains-logo.png");
+	width: 120px;
+	height: 40px;
+	margin-top: 25px !important;
+}
+.xamarin{ 
+	background-image: url("../images/credits/xamarin-logo.png");
+	width: 90px;
+	height: 90px;
+}
+.sauce-labs{ 
+	background-image: url("../images/credits/sauce-labs-logo.jpg");
+	width: 82px;
+	height: 90px;
+}
+/*******************************************************************************
+
 Careers Page Styles
 
 *******************************************************************************/
@@ -2979,7 +3068,7 @@ p.quoter {
 
 /************************** Banner community ***************************/
 .banner-community {
-	padding:25px 0 0 0;
+	padding:40px 0 0 0;
 }
 .banner-community h1 {
 	font-size:26px;
@@ -2988,12 +3077,13 @@ p.quoter {
 .community-development {
 	width:280px;
 	height:46px;
+	margin:30px 0 0 0;
 }
 
 .community-org {
 	width:225px;
 	height:46px;
-	margin:0px 40px;
+	margin:30px 40px 0 40px;
 }
 
 .community-safecoin {
@@ -3004,23 +3094,24 @@ p.quoter {
 
 /************************** Banner plane ***************************/
 .banner-plane {
-	padding:30px 0 0 0;
+	padding:40px 0 0 0;
 }
 .banner-plane h1 {
 	font-size:26px;
 	color:#5593D7;
+	margin:30px 0 0 0;
 }
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:423px;
-	height:68px;
-	background-size:423px 68px;
+	height:75px;
+	background-size:423px 75px;
 	margin:0px auto 10px auto;
 }
 
 /************************** Banner getcode ***************************/
 .banner-getcode {
-	padding:35px 0 0 0;
+	padding:65px 0 0 0;
 }
 .banner-getcode h1 {
 	font-size:26px;
@@ -3359,6 +3450,14 @@ a.light-button-full {
 .profile-info p{
 	font-size: 12px;
 }
+
+/*********** Credits Page ***************/
+.jetbrains{
+	width: 100px;
+	height: 30px;
+	margin-top: 25px !important;
+}
+
 /*********** Careers Page ***************/
 .vacancies {
 	padding:20px;
@@ -3684,7 +3783,7 @@ p.quoter {
 
 /************************** Banner community ***************************/
 .banner-community {
-	padding:25px 0 0 0;
+	padding:35px 0 0 0;
 }
 .banner-community h1 {
 	font-size:20px;
@@ -3711,23 +3810,24 @@ p.quoter {
 
 /************************** Banner plane ***************************/
 .banner-plane {
-	padding:30px 0 0 0;
+	padding:25px 0 0 0;
 }
 .banner-plane h1 {
 	font-size:20px;
 	color:#5593D7;
+	margin:30px 0 0 0;
 }
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:323px;
-	height:52px;
-	background-size:323px 52px;
+	height:58px;
+	background-size:323px 58px;
 	margin:0px auto 10px auto;
 }
 
 /************************** Banner getcode ***************************/
 .banner-getcode {
-	padding:15px 0 0 0;
+	padding:40px 0 0 0;
 }
 .banner-getcode h1 {
 	font-size:20px;
@@ -3846,15 +3946,18 @@ p.alpha-testers {
 	margin-bottom:10px;
 }
 
-.leftnav-shell{
+#team .leftnav-shell, #roadmap .leftnav-shell{
 	display:none;
 }
 
-.topnav-shell{
+#team .topnav-shell{
 	//margin: 0 auto;
 	padding-bottom: 30px;
 	display: block;
 	float: right;
+}
+#timeline .topnav-shell{
+	margin-top: 0
 }
 
 ul.topnav {
@@ -4182,8 +4285,17 @@ ul.pdf-group li:before {
 	width: 175px !important;
 	float: right;
 }
-
-/*********** Careeres Page ***************/
+/*********** Credits Page ***************/
+.credit-logo div{
+	width: 70px;
+	height: 70px;
+}
+.jetbrains{
+	width: 70px;
+	height: 22px;
+	margin-top: 25px !important;
+}
+/*********** Careers Page ***************/
 .vacancies {
 	padding:15px;
 }
@@ -4717,7 +4829,7 @@ p.quoter {
 	padding:5px 0 0 0;
 }
 .banner-news h1 {
-	font-size:20px;
+	font-size:16px;
 	margin-bottom:10px;
 }
 
@@ -4738,6 +4850,7 @@ p.quoter {
 }
 .banner-community h1 {
 	font-size:16px;
+	margin:20px 0 0 0;
 }
 
 .community-development {
@@ -4770,8 +4883,8 @@ p.quoter {
 .plane {
 	background:url(imgs/home_plane.png) no-repeat 0 0;
 	width:280px;
-	height:45px;
-	background-size:280px 45px;
+	height:50px;
+	background-size:280px 50px;
 	margin:0px auto 10px auto;
 }
 
@@ -4957,6 +5070,8 @@ ul.leftnav {
 	display:none;
 }
 
+#timeline .topnav-shell{display: none;}
+
 #surefile-tutorial ul.leftnav {
 	display:block;
 }
@@ -5141,7 +5256,25 @@ a.light-button-full {
 .profile-mobile iframe{
 	margin-left: 60px;
 }
-
+/*********** Credits Page ***************/
+#credits section{
+	height: 140px;
+}
+.credit-logo{
+	width: 30% !important;
+}
+.credit-text{
+	width: 70% !important;
+	float: right;
+}
+.credit-logo{
+	padding-top: 10px;
+}
+.jetbrains{
+	padding-top: 40px;
+	width:90px;
+	height: 30px;
+}
 /******************* Careers Page *********************/
 .vacancies {
 	padding:2%;
