@@ -20,6 +20,10 @@
                     </li>
                     <li><a href="network-platform-licensing">licensing</a>
                     </li>
+                    <li class="roadmap"><a href="roadmap">roadmap</a>
+                    </li>
+                    <li class="testimonials"><a href="testimonials">testimonials</a>
+                    </li>
                     <li><a href="safecoin">safecoin</a>
                     </li>
                   </ul>
@@ -48,6 +52,8 @@
                     <li><a href="team">team</a>
                     </li>
                     <li><a href="careers">careers</a>
+                    </li>
+                    <li><a href="timeline">timeline</a>
                     </li>
                     <li><a href="credits">credits</a>
                     </li>
