@@ -3,7 +3,8 @@ var test1d="<p>See what we completed in Testnet 1.</p>";
 var test2d="<p>Track the progress of Testnet 2's main objectives below.</p>";
 var test3d="<p>See what we have planned for Testnet 3.</p>";
 var launchd="<p>The work doesn't stop at Beta. See what we have planned for after launch.</p>";
-
+var long1=".phase-group .long1 h2";
+var long2=".phase-group .long2 h2";
 $(document).ready(function () {
 	$(".backwards").click(function(){displayPhase(this, "Project SAFE Roadmap", maind, "roadmap", "phase-group");});
 	$("#testnet1").click(function(){displayPhase(this, "Testnet 1 Overview", test1d, "testnet1", "roadmap");});
@@ -20,9 +21,14 @@ function displayPhase (obj, title, desc, show, hide){
 	$("div."+hide).addClass("hidden");
 	$("div."+show).removeClass("hidden");
 	$("#viewer").get(0).scrollIntoView();
-	if ($("#viewer").width()<500 && show=="testnet2"){
-		$(".phase-group .long1 h2").replaceWith("<h2>Reworking vault accounts to reduce account transfer, memory requirements and ability to handle much higher churn</h2>");
-		$(".phase-group .long2 h2").replaceWith("<h2>Advances in Routing group and quorum for security levels well beyond network size and increased sybil attack defence</h2>");
+	if ($("#viewer").width()<500 && show=="testnet2" && !$("#viewer").hasClass("mobile-version")){
+		$(long1).replaceWith("<h2>Reworking vault accounts to reduce account transfer, memory requirements and ability to handle much higher churn</h2>");
+		$(long2).replaceWith("<h2>Advances in Routing group and quorum for security levels well beyond network size and increased sybil attack defence</h2>");
+		$("#viewer").addClass("mobile-version");
+	} else if ($("#viewer").width()>500 && show=="testnet2" && $("#viewer").hasClass("mobile-version")){
+		$(long1).replaceWith("<h2>Reworking of all vault accounts to reduce account transfer, memory requirements and ability to handle much higher churn levels</h2>");
+		$(long2).replaceWith("<h2>Advances in Routing group and quorum for security levels well beyond network size and make sybil attacks inordinately difficult</h2>");
+		$("#viewer").removeClass("mobile-version");
 	}
 }
 
