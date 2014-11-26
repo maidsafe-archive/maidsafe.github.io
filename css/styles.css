@@ -557,7 +557,9 @@ ul.topnav li a {
 /******** Company - Left nav selected state styles ********/
 #company ul.leftnav .overview a,
 #team ul.leftnav .team a,
-#careers ul.leftnav .careers a {
+#careers ul.leftnav .careers a,
+#credits ul.leftnav .credits a,
+#timeline ul.leftnav .timeline a {
 	color:#5593D7;
 }
 
@@ -3949,6 +3951,7 @@ ul.topnav li {
 }
 ul.topnav > li { 
 	display: inline-block;
+	padding-top: 10px;
 }
 ul.topnav li a { 
 	display: block;
@@ -4375,6 +4378,8 @@ section .grid-4 {
 div.roadmap{
 	width:540px;
 }
+
+#roadmap p{font-size: 14px;}
 /*
 .roadmap-stage {
 	width:90px;
