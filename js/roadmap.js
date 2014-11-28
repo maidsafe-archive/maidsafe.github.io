@@ -2,7 +2,7 @@ var maind="<p>Currently we are working through Testnet 2.</br>View the various s
 var test1d="<p>See what we completed in Testnet 1.</p>";
 var test2d="<p>Track the progress of Testnet 2's main objectives below.</p>";
 var test3d="<p>See what we have planned for Testnet 3.</p>";
-var launchd="<p>The work doesn't stop at Beta. See what we have planned for after launch.</p>";
+var launchd="<p>See what we have planned for beta.</p>";
 var long1=".phase-group .long1 h2";
 var long2=".phase-group .long2 h2";
 $(document).ready(function () {
