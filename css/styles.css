@@ -748,23 +748,23 @@ Banner Styles
 	width:150px;
 	height:40px;
 }
-/************************** Banner contest ***************************/
-.banner-contest {
-	padding:45px 0 0 0;
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
+	padding:40px 0 0 0;
 }
-.banner-contest h1 {
+.banner-roadmap h1 {
 	font-size:36px;
 	color:#5593D7;
 }
-.contest-icon {
-	background:url(imgs/coin_contest.png) no-repeat 0 0;
-	width:180px;
-	height:90px;
+.roadmap-preview {
+	background:url(imgs/roadmap.png) no-repeat 0 0;
+	width:509px;
+	height:98px;
 	display: inline-block;
-	background-size:180px 90px;
+	background-size:509px 98px;
 	position:relative;
-	margin:0px auto 10px auto;
-	padding: 15px 0;
+	margin:0px auto;
+	padding: 7px 0;
 }
 /*******************************************************************************
 
@@ -3124,11 +3124,11 @@ p.quoter {
 	display:inline-block;
 	width:100px;
 }
-/************************** Banner contest ***************************/
-.banner-contest {
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
 	padding:10px 0 0 0;
 }
-.banner-contest h1 {
+.banner-roadmap h1 {
 	font-size:26px;
 	color:#5593D7;
 }
@@ -3820,11 +3820,11 @@ p.quoter {
 	display:inline-block;
 	width:90px;
 }
-/************************** Banner contest ***************************/
-.banner-contest {
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
 	padding:0px 0 0 0;
 }
-.banner-contest h1 {
+.banner-roadmap h1 {
 	font-size:20px;
 }
 
@@ -4893,20 +4893,18 @@ p.quoter {
 	display: none;
 	width:60px;
 }
-/************************** Banner contest ***************************/
-.banner-contest {
-	padding:40px 0 0 0;
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
+	padding:25px 0 0 0;
 }
-.banner-contest h1 {
+.banner-roadmap h1 {
 	font-size:16px;
 	color:#5593D7;
 }
-.contest-icon {
-	background:url(imgs/coin_contest.png) no-repeat 0 0;
-	width:117px;
-	height:58px;
-	background-size:117px 58px;
-	margin:0px auto 10px auto;
+.roadmap-preview {
+	width:350px;
+	height:67px;
+	background-size:350px 67px;
 }
 
 .main-content {
