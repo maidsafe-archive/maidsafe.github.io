@@ -5304,6 +5304,9 @@ a.light-button-full {
 	float:right;
 }
 
+.current-jobs {
+	padding-bottom: 60px;
+}
 
 a.applyhere {
 	position:absolute;
