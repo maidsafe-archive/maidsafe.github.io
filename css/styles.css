@@ -758,10 +758,10 @@ Banner Styles
 }
 .roadmap-preview {
 	background:url(imgs/roadmap.png) no-repeat 0 0;
-	width:509px;
-	height:98px;
+	width:213px;
+	height:106px;
 	display: inline-block;
-	background-size:509px 98px;
+	background-size:213px 106px;
 	position:relative;
 	margin:0px auto;
 	padding: 7px 0;
@@ -2289,7 +2289,10 @@ Careers Page Styles
 .current-jobs p { }
 
 .current-jobs ul li:before {
-	content:"";
+	//content:"";
+}
+.current-jobs ul{
+	margin-bottom: 10px;
 }
 
 /*
@@ -2324,6 +2327,27 @@ a.applyhere:hover {
 .apply-text {
 	font-size:18px;
 	letter-spacing:-0.5px;
+}
+
+/*******************************************************************************
+
+Assets Page Styles
+
+*******************************************************************************/
+#assets .thumbnail {
+	border:solid 2px #7F7F7F;
+	padding: 5px;
+	margin: 15px 25px 15px 0;
+	height: 150px;
+}
+#assets .thumbnail.right-col{
+	margin-right: 0;
+}
+
+#assets .thumbnail p{
+	text-align: center;
+	font-size: 16px;
+	color: #464646;
 }
 
 /*******************************************************************************
@@ -4895,16 +4919,17 @@ p.quoter {
 }
 /************************** Banner roadmap ***************************/
 .banner-roadmap {
-	padding:25px 0 0 0;
+	padding:35px 0 0 0;
 }
 .banner-roadmap h1 {
 	font-size:16px;
 	color:#5593D7;
+	padding-top:10px;
 }
 .roadmap-preview {
-	width:350px;
-	height:67px;
-	background-size:350px 67px;
+	width:106px;
+	height:53px;
+	background-size:106px 53px;
 }
 
 .main-content {
