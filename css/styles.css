@@ -748,23 +748,23 @@ Banner Styles
 	width:150px;
 	height:40px;
 }
-/************************** Banner contest ***************************/
-.banner-contest {
-	padding:45px 0 0 0;
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
+	padding:40px 0 0 0;
 }
-.banner-contest h1 {
+.banner-roadmap h1 {
 	font-size:36px;
 	color:#5593D7;
 }
-.contest-icon {
-	background:url(imgs/coin_contest.png) no-repeat 0 0;
-	width:180px;
-	height:90px;
+.roadmap-preview {
+	background:url(imgs/roadmap.png) no-repeat 0 0;
+	width:213px;
+	height:106px;
 	display: inline-block;
-	background-size:180px 90px;
+	background-size:213px 106px;
 	position:relative;
-	margin:0px auto 10px auto;
-	padding: 15px 0;
+	margin:0px auto;
+	padding: 7px 0;
 }
 /*******************************************************************************
 
@@ -2289,7 +2289,10 @@ Careers Page Styles
 .current-jobs p { }
 
 .current-jobs ul li:before {
-	content:"";
+	//content:"";
+}
+.current-jobs ul{
+	margin-bottom: 10px;
 }
 
 /*
@@ -2324,6 +2327,27 @@ a.applyhere:hover {
 .apply-text {
 	font-size:18px;
 	letter-spacing:-0.5px;
+}
+
+/*******************************************************************************
+
+Assets Page Styles
+
+*******************************************************************************/
+#assets .thumbnail {
+	border:solid 2px #7F7F7F;
+	padding: 5px;
+	margin: 15px 25px 15px 0;
+	height: 150px;
+}
+#assets .thumbnail.right-col{
+	margin-right: 0;
+}
+
+#assets .thumbnail p{
+	text-align: center;
+	font-size: 16px;
+	color: #464646;
 }
 
 /*******************************************************************************
@@ -3124,11 +3148,11 @@ p.quoter {
 	display:inline-block;
 	width:100px;
 }
-/************************** Banner contest ***************************/
-.banner-contest {
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
 	padding:10px 0 0 0;
 }
-.banner-contest h1 {
+.banner-roadmap h1 {
 	font-size:26px;
 	color:#5593D7;
 }
@@ -3820,11 +3844,11 @@ p.quoter {
 	display:inline-block;
 	width:90px;
 }
-/************************** Banner contest ***************************/
-.banner-contest {
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
 	padding:0px 0 0 0;
 }
-.banner-contest h1 {
+.banner-roadmap h1 {
 	font-size:20px;
 }
 
@@ -4818,7 +4842,7 @@ p.quoter {
 	padding:5px 0 0 0;
 }
 .banner-news h1 {
-	font-size:16px;
+	font-size:14px;
 	margin-bottom:10px;
 }
 
@@ -4893,20 +4917,19 @@ p.quoter {
 	display: none;
 	width:60px;
 }
-/************************** Banner contest ***************************/
-.banner-contest {
-	padding:40px 0 0 0;
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
+	padding:35px 0 0 0;
 }
-.banner-contest h1 {
+.banner-roadmap h1 {
 	font-size:16px;
 	color:#5593D7;
+	padding-top:10px;
 }
-.contest-icon {
-	background:url(imgs/coin_contest.png) no-repeat 0 0;
-	width:117px;
-	height:58px;
-	background-size:117px 58px;
-	margin:0px auto 10px auto;
+.roadmap-preview {
+	width:106px;
+	height:53px;
+	background-size:106px 53px;
 }
 
 .main-content {
@@ -5281,6 +5304,9 @@ a.light-button-full {
 	float:right;
 }
 
+.current-jobs {
+	padding-bottom: 60px;
+}
 
 a.applyhere {
 	position:absolute;
