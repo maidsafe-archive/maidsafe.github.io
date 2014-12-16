@@ -5579,9 +5579,14 @@ h2.distribute-head {
 #company .col-r {
 	margin:0 0 20px 0px;
 }
-
-
+/*********** Assets Page Styles *************/
+#assets ul.topnav{
+	display: none;
+}
 /*********** Press Page Styles *************/
+#press ul.topnav{
+	display: none;
+}
 ul.top-stories .press-article {
 	margin: 0 auto;
 	text-align:center;
