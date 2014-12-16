@@ -461,14 +461,14 @@ header {
 ul.topnav {
 	display:none;
 }
-#timeline .topnav-shell{
+#timeline .topnav-shell, #press .topnav-shell, #assets .topnav-shell{
 	margin-top: -30px;
 	padding-bottom: 30px;
 	display: block;
 	float: right;
 }
 
-#timeline ul.topnav {
+#timeline ul.topnav, #press ul.topnav, #assets ul.topnav {
 	display: inline-block;
 	float: right;
 }
@@ -494,6 +494,7 @@ ul.topnav li a {
 #licensing-platform .menu .overview a,
 #testimonials .menu .overview a,
 #safecoin .menu .overview a,
+#roadmap .menu .overview a,
 #get-involved .menu .get-involved a,
 #core-developer .menu .get-involved a,
 #app-builder .menu .get-involved a,
@@ -506,6 +507,7 @@ ul.topnav li a {
 #developer-wiki .menu .documents a,
 #papers-publications .menu .documents a,
 #company .menu .company a,
+#team .menu .company a,
 /*
 #platform-use-cases .menu .overview a,
 #licensing-platform .menu .overview a,
@@ -517,15 +519,18 @@ ul.topnav li a {
 #farmers .menu .farmers a,
 */
 #careers .menu .company a,
+#timeline .menu .company a,
+#credits .menu .company a,
 #stakeholders .menu .stakeholders a,
 #blog .menu .blog a,
 #contact .menu .contact a,
 #press .menu .press a,
+#assets .menu .press a,
 .article .menu .press a {
 	color: #5593D7;
 }
 
-/******** Overview - Left nav selected state styles ********/
+/******** Overview - Left/top nav selected state styles ********/
 #platform-overview ul.leftnav .overview a,
 #platform-features ul.leftnav .features a,
 #applications ul.leftnav .applications a,
@@ -534,6 +539,9 @@ ul.topnav li a {
 #testimonials ul.leftnav .testimonials a,
 #safecoin ul.leftnav .safecoin a  {
 	color:#5593D7;
+}
+#roadmap ul.topnav .roadmap a{
+	color:#5593D7;	
 }
 /******** Get Involved - Left nav selected state styles ********/
 #get-involved ul.leftnav .get-involved a,
@@ -558,11 +566,18 @@ ul.topnav li a {
 #company ul.leftnav .overview a,
 #team ul.leftnav .team a,
 #careers ul.leftnav .careers a,
-#credits ul.leftnav .credits a,
-#timeline ul.leftnav .timeline a {
+#credits ul.leftnav .credits a{
 	color:#5593D7;
 }
-
+#team ul.topnav .team a,
+#timeline ul.topnav .timeline a {
+	color:#5593D7;
+}
+/******** Press - Top nav selected state styles ********/
+#press ul.topnav .press a,
+#assets ul.topnav .assets a {
+	color:#5593D7;
+}
 /******** Press articles - Left nav selected state styles ********/
 #article-maidsafe-bitcloud .pressnav .article-maidsafe-bitcloud a,
 #article-revolutionise-internet .pressnav .article-revolutionise-internet a,
@@ -2334,13 +2349,17 @@ a.applyhere:hover {
 Assets Page Styles
 
 *******************************************************************************/
-#assets .thumbnail {
-	border:solid 2px #7F7F7F;
-	padding: 5px;
-	margin: 15px 25px 15px 0;
-	height: 150px;
+#assets .asset {
+	margin: 15px 20px 15px 0;
+	padding: 5px 0;
 }
-#assets .thumbnail.right-col{
+#assets .thumbnail{
+	border:solid 2px #7F7F7F;
+	height: 150px;
+	width: 99%;
+	overflow: hidden;
+}
+#assets .asset.right-col{
 	margin-right: 0;
 }
 
@@ -2348,6 +2367,99 @@ Assets Page Styles
 	text-align: center;
 	font-size: 16px;
 	color: #464646;
+	margin-bottom: 15px;
+}
+
+#assets #wee-plane p, 
+#assets #twitter-cover p, 
+#assets #meetup-cover p, 
+#assets #advert p,
+#assets #david-nick p,
+#assets #team-photo p {
+	margin-bottom: 5px;
+}
+
+#maidsafe-brand img{
+	width: inherit;
+	height: auto;
+}
+#maidsafe-logo img{
+	width: auto;
+	height: 100px;
+	margin: 0 auto;
+	display: block;
+}
+#wee-plane img{
+	width: 100%;
+	height: auto;
+}
+#safecoin-brand img{
+	width: inherit;
+	height: auto;
+}
+#safecoin-logo img{
+	width: auto;
+	height: 110px;
+	margin: 0 auto;
+	display: block;
+}
+#tshirt-design img{
+	height: 120px;
+}
+#twitter-cover img{
+	height: auto;
+	width: 100%;
+}
+#meetup-cover img{
+	height: 70px;
+	margin: 0 0 0 -70px;
+}
+#advert img{
+	height: 70px;
+}
+#twitter-cover .thumbnail, #meetup-cover .thumbnail, #advert .thumbnail{
+	height: 100px;
+}
+#david-nick img{
+	width: inherit;
+	height: auto;
+}
+#david-nick .thumbnail p{
+	font-size: 15px;
+}
+#team-photo img{
+	width: inherit;
+	height: auto;
+}
+.half-button, .full-button{
+	height: 25px;
+	padding: 8px 0 4px;
+	margin-top: 5px;
+	text-align: center;
+	display: inline-block;
+	font-family: 'OpenSansRegular';
+
+}
+.half-button{
+	width:49%;
+}
+.full-button{
+	width: 100%;
+}
+
+.flat-button{
+	background-color: #99BDE5;
+	color: #464646;
+}
+.vector-button{
+	background-color: #5790CC;
+	color: #fff;
+}
+.vector-button.half-button{
+	float: right;
+}
+.half-button small, .full-button small{
+	font-size: 11px;
 }
 
 /*******************************************************************************
@@ -3983,41 +4095,41 @@ ul.topnav li a {
 	color: #808080;
 }
 
-/******** Overview - Left nav selected state styles ********/
-#platform-overview ul.topnav .overview a,
-#platform-features ul.topnav .features a,
-#platform-faqs ul.topnav .faqs a,
-#applications ul.topnav .applications a,
-#licensing-platform ul.topnav .licensing a,
-#testimonials ul.topnav .testimonials a,
-#safecoin ul.topnav .safecoin a  {
-	color:#5593D7;
-}
+/********* Overview - Left nav selected state styles ********/
+/*#platform-overview ul.topnav .overview a,*/
+/*#platform-features ul.topnav .features a,*/
+/*#platform-faqs ul.topnav .faqs a,*/
+/*#applications ul.topnav .applications a,*/
+/*#licensing-platform ul.topnav .licensing a,*/
+/*#testimonials ul.topnav .testimonials a,*/
+/*#safecoin ul.topnav .safecoin a  {*/
+	/*color:#5593D7;*/
+/*}*/
 /******** Get Involved - Left nav selected state styles ********/
-#get-involved ul.topnav .get-involved a,
-#core-developer ul.topnav .core-developer a,
-#platform-libraries ul.topnav .libraries a,
-#app-builder ul.topnav .app-builder a,
-#farmers ul.topnav .farmers a,
-#safe-pods ul.topnav .safe-pods a {
-	color:#5593D7;
-}
+/*#get-involved ul.topnav .get-involved a,*/
+/*#core-developer ul.topnav .core-developer a,*/
+/*#platform-libraries ul.topnav .libraries a,*/
+/*#app-builder ul.topnav .app-builder a,*/
+/*#farmers ul.topnav .farmers a,*/
+/*#safe-pods ul.topnav .safe-pods a {*/
+	/*color:#5593D7;*/
+/*}*/
 
 /******** Documents - Left nav selected state styles ********/
-#documents ul.topnav .documents a,
-#examples ul.topnav .examples a,
-#system-docs ul.topnav .system-docs a,
-#developer-wiki ul.topnav .developer-wiki a,
-#papers-publications ul.topnav .papers-publications a {
-	color:#5593D7;
-}
+/*#documents ul.topnav .documents a,*/
+/*#examples ul.topnav .examples a,*/
+/*#system-docs ul.topnav .system-docs a,*/
+/*#developer-wiki ul.topnav .developer-wiki a,*/
+/*#papers-publications ul.topnav .papers-publications a {*/
+	/*color:#5593D7;*/
+/*}*/
 
 /******** Company - Left nav selected state styles ********/
-#company ul.topnav .overview a,
-#team ul.topnav .team a,
-#careers ul.topnav .careers a {
-	color:#5593D7;
-}
+/*#company ul.topnav .overview a,*/
+/*#team ul.topnav .team a,*/
+/*#careers ul.topnav .careers a {*/
+	/*color:#5593D7;*/
+/*}*/
 
 /*ul.leftnav li a {
 	font-size:14px;
