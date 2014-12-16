@@ -60,6 +60,12 @@
                   </ul>
                 </li>
                 <li class="press"><a href="press">press</a>
+                    <ul class="sub-menu">
+                    <li><a href="press">articles</a>
+                    </li>
+                    <li><a href="team">assets</a>
+                    </li>
+                  </ul>
                 </li>
                 <li class="blog"><a href="http://blog.maidsafe.net/" target="_blank">blog</a>
                 </li>
