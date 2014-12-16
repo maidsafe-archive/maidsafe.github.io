@@ -2393,6 +2393,9 @@ Assets Page Styles
 	width: 100%;
 	height: auto;
 }
+#assets .wee-plane-sm{
+	display: none;
+}
 #safecoin-brand img{
 	width: inherit;
 	height: auto;
@@ -2406,9 +2409,15 @@ Assets Page Styles
 #tshirt-design img{
 	height: 120px;
 }
+#assets .tshirt-design-sm{
+	display: none;
+}
 #twitter-cover img{
 	height: auto;
 	width: 100%;
+}
+#assets .twitter-cover-sm{
+	display: none;
 }
 #meetup-cover img{
 	height: 70px;
@@ -2421,14 +2430,14 @@ Assets Page Styles
 	height: 100px;
 }
 #david-nick img{
-	width: inherit;
+	width: 100%;
 	height: auto;
 }
 #david-nick .thumbnail p{
 	font-size: 15px;
 }
 #team-photo img{
-	width: inherit;
+	width: 100%;
 	height: auto;
 }
 .half-button, .full-button{
@@ -3781,6 +3790,25 @@ a.moreinfo div {
 #contact .col-r {
 	padding-left:10px;
 }
+/*********** Assets Page Styles *************/
+#assets #wee-plane img{
+	height:120px;
+	width: auto;
+	margin-left: -30px;
+}
+#assets #safecoin-brand img {
+	margin-top: 20px;
+}
+#assets #twitter-cover img, #assets #advert img{
+	height:70px;
+	width: auto;
+	margin-top: 2px;
+}
+#assets #meetup-cover img{
+	margin: 2px -100px;
+}
+
+/*********** Press Page Styles *************/
 
 /************* Footer Styles ***************/
 .legal {
@@ -4677,6 +4705,26 @@ a.moreinfo div {
 }
 #contact .col-r {
 	padding-left:10px;
+}
+/*********** Assets Page Styles *************/
+#assets #wee-plane img{
+	height:120px;
+	width: auto;
+	margin-left: -70px;
+}
+#assets #safecoin-brand img {
+	margin-top: 20px;
+}
+#assets #twitter-cover img{
+	height:70px;
+	width: auto;
+	margin: 2px 0 0 -50px;
+}
+#assets #advert img{
+	margin-top:2px;
+}
+#assets #meetup-cover img{
+	margin: 2px -100px;
 }
 /*********** Footer Styles *************/
 
@@ -5669,7 +5717,74 @@ a.button-blue .button-text {
 #surefile-download p.tel  {
 	text-align:center;
 }
-
+/*********** Assets Page Styles *************/
+#assets #maidsafe-brand img{
+	height:100px;
+	width: auto;
+	margin: 0 auto;
+	display: block;
+}
+#assets #wee-plane img{
+	height:130px;
+	width: auto;
+	margin: 0 auto;
+}
+#assets .wee-plane-sm{
+	display: block;
+}
+#assets .wee-plane-md{
+	display: none;
+}
+#assets #safecoin-brand img {
+	margin-top: 20px;
+	height:100px;
+	width: auto;
+	margin: 0 auto;
+	display: block;
+}
+#assets .tshirt-design-sm{
+	display: block;
+	border-top: 2px solid #7F7F7F;
+}
+#assets .tshirt-design-md{
+	display: none;
+}
+#assets #twitter-cover img{
+	height:80px;
+	width: auto;
+	margin: 2px 0 0 0px;
+}
+#assets .twitter-cover-sm{
+	display: block;
+}
+#assets .twitter-cover-md{
+	display: none;
+}
+#assets #advert img{
+	margin-top:2px;
+}
+#assets #meetup-cover img{
+	margin: 2px 0 0 0;
+	width: auto;
+	height: 80px;
+}
+#assets #advert img{
+	margin: 2px 0 0 0;
+	width: 100%;
+	height: auto;
+}
+#assets #david-nick img{
+	margin: 20px auto 0;
+	width: auto;
+	height: 100%;
+	display: block;
+}
+#assets #team-photo img{
+	margin: 20px auto 0;
+	width: auto;
+	height: 100%;
+	display: block;
+}
 /********************* Footer **************************/
 
 footer {
