@@ -59,8 +59,8 @@
                     </li>
                   </ul>
                 </li>
-                <li class="press"><a href="press">press</a>
-                    <ul class="sub-menu">
+                <li class="has-submenu"><a href="press">press</a>
+                  <ul class="sub-menu">
                     <li><a href="press">articles</a>
                     </li>
                     <li><a href="team">assets</a>
