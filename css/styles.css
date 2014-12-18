@@ -521,11 +521,11 @@ ul.topnav li a {
 #careers .menu .company a,
 #timeline .menu .company a,
 #credits .menu .company a,
+#assets .menu .company a,
 #stakeholders .menu .stakeholders a,
 #blog .menu .blog a,
 #contact .menu .contact a,
 #press .menu .press a,
-#assets .menu .press a,
 .article .menu .press a {
 	color: #5593D7;
 }
@@ -566,16 +566,10 @@ ul.topnav li a {
 #company ul.leftnav .overview a,
 #team ul.leftnav .team a,
 #careers ul.leftnav .careers a,
-#credits ul.leftnav .credits a{
-	color:#5593D7;
-}
+#credits ul.leftnav .credits a,
 #team ul.topnav .team a,
-#timeline ul.topnav .timeline a {
-	color:#5593D7;
-}
-/******** Press - Top nav selected state styles ********/
-#press ul.topnav .press a,
-#assets ul.topnav .assets a {
+#timeline ul.topnav .timeline a,
+#assets ul.leftnav .assets a  {
 	color:#5593D7;
 }
 /******** Press articles - Left nav selected state styles ********/
@@ -2390,15 +2384,17 @@ Assets Page Styles
 	display: block;
 }
 #wee-plane img{
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: 120px;
+	margin-left:-40px;
 }
 #assets .wee-plane-sm{
 	display: none;
 }
 #safecoin-brand img{
-	width: inherit;
+	width: 100%;
 	height: auto;
+	margin-top: 20px;
 }
 #safecoin-logo img{
 	width: auto;
@@ -2413,18 +2409,21 @@ Assets Page Styles
 	display: none;
 }
 #twitter-cover img{
-	height: auto;
-	width: 100%;
+	height: 70px;
+	width: auto;
+	margin: 2px 0 0 -20px;
 }
 #assets .twitter-cover-sm{
 	display: none;
 }
 #meetup-cover img{
 	height: 70px;
-	margin: 0 0 0 -70px;
+	width: auto;
+	margin: 2px 0 0 -90px;
 }
 #advert img{
 	height: 70px;
+	margin-top: 2px;
 }
 #twitter-cover .thumbnail, #meetup-cover .thumbnail, #advert .thumbnail{
 	height: 100px;
@@ -3795,17 +3794,16 @@ a.moreinfo div {
 }
 /*********** Assets Page Styles *************/
 #assets #wee-plane img{
-	height:120px;
-	width: auto;
-	margin-left: -30px;
+	margin-left: -70px;
 }
 #assets #safecoin-brand img {
-	margin-top: 20px;
+	margin-top: 10px;
 }
-#assets #twitter-cover img, #assets #advert img{
-	height:70px;
-	width: auto;
+#assets #advert img{
 	margin-top: 2px;
+}
+#assets #twitter-cover img {
+	margin: 2px 0 0 -60px;
 }
 #assets #meetup-cover img{
 	margin: 2px -100px;
@@ -4710,24 +4708,69 @@ a.moreinfo div {
 	padding-left:10px;
 }
 /*********** Assets Page Styles *************/
+#assets .asset{
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top: -10px;
+}
+#assets .thumbnail {
+	width: inherit;
+}
+#assets #maidsafe-brand img{
+	margin-top: -20px;
+}
 #assets #wee-plane img{
 	height:120px;
 	width: auto;
-	margin-left: -70px;
+	margin-left: 0px;
+}
+#assets .wee-plane-sm{
+	display: block;
+}
+#assets .wee-plane-md{
+	display: none;
 }
 #assets #safecoin-brand img {
-	margin-top: 20px;
+	margin-top: 0px;
+}
+#assets .tshirt-design-sm{
+	display: block;
+	border-top: 2px solid #7F7F7F;
+}
+#assets .tshirt-design-md{
+	display: none;
 }
 #assets #twitter-cover img{
-	height:70px;
+	height:80px;
 	width: auto;
-	margin: 2px 0 0 -50px;
+	margin: 0;
+}
+#assets .twitter-cover-sm{
+	display: block;
+}
+#assets .twitter-cover-md{
+	display: none;
 }
 #assets #advert img{
-	margin-top:2px;
+	margin: 2px 0 0 0;
+	width: 100%;
+	height: auto;
 }
 #assets #meetup-cover img{
-	margin: 2px -100px;
+	margin: 2px -30px;
+}
+#assets #david-nick img{
+	margin: 20px auto 0;
+	width: auto;
+	height: 100%;
+	display: block;
+}
+#assets #team-photo img{
+	margin: 20px auto 0;
+	width: auto;
+	height: 100%;
+	display: block;
 }
 /*********** Footer Styles *************/
 
