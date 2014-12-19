@@ -16,6 +16,12 @@ $(document).ready(function () {
 });
 
 function displayPhase (obj, title, desc, show, hide){
+	if (hide=="phase-group"){
+		$(".backwards#top-back").addClass("hidden");
+	}
+	else if (hide=="roadmap"){
+		$(".backwards#top-back").removeClass("hidden");
+	}
 	$("#roadmap #viewer > h1").replaceWith("<h1>"+title+"</h1>");
 	$("#roadmap #viewer > p").replaceWith(desc);
 	$("div."+hide).addClass("hidden");
