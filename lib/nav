@@ -55,12 +55,13 @@
                     </li>
                     <li><a href="timeline">timeline</a>
                     </li>
+                    <li><a href="assets">assets</a>
+                    </li>
                     <li><a href="credits">credits</a>
                     </li>
                   </ul>
                 </li>
-                <li class="press"><a href="press">press</a>
-                </li>
+                <li class="press single-link"><a href="press">press</a>
                 <li class="blog"><a href="http://blog.maidsafe.net/" target="_blank">blog</a>
                 </li>
             </ul>
