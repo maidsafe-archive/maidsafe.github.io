@@ -2036,15 +2036,38 @@ Company Page Styles
 	margin:0 0px 30px 0;
 	padding:0 30px 0 0;
 }
+#company .left-col h2{
+	background-image: url('../images/company-pink.png');
+}
 #company .col-m {
 	margin:0 0px 30px 0px;
 	padding:0 10px 0 10px;
+}
+#company .middle-col h2{
+	background-image: url('../images/company-orange.png');
 }
 #company .col-r {
 	margin:0 0 30px 0px;
 	padding:0 0 0 30px;
 }
-
+#company .right-col h2{
+	background-image: url('../images/company-teal.png');
+}
+#company .main-content .col-3 h2{
+	color:#fff;
+	text-align: center;
+	padding-top: 7px;
+	background-repeat: no-repeat;
+	width: 205px;
+	height: 44px;
+	background-size: 205px 44px;
+	font-family: 'OpenSansRegular';
+}
+#company .plane-banner{
+	width: 300px;
+	height: auto;
+	float: right;
+}
 .main-content .col-3 {
 	width:205px;
 	/*padding:0px 0px;*/
@@ -3528,7 +3551,13 @@ a.light-button-full {
 	padding:0 0 0 20px;
 	margin:0 0 0 10px;
 }
-
+#company .main-content .col-3 h2{
+	padding-top: 4px;
+	width: 146px;
+	height: 31px;
+	background-size: 146px 31px;
+	font-size: 16px;
+}
 
 /*********** Team Page ***************/
 #team .grid-9 {
@@ -4353,7 +4382,7 @@ ul.pdf-group li:before {
 
 /*********** Company Page ***************/
 .main-content .col-3 {
-	width: 108px;
+	width: 100%;
 }
 
 .main-content .left-col {
@@ -4366,6 +4395,17 @@ ul.pdf-group li:before {
 	margin:0 0 0 10px;
 }
 
+#company .main-content .col-3 h2{
+	padding-top: 5px;
+	width: 200px;
+	height: 35px;
+	background-size: 200px 35px;
+	font-size: 16px;
+	margin: 20px auto 20px;
+}
+#company .plane-banner{
+	width: 225px;
+}
 
 /*********** Team Page ***************/
 
@@ -4694,7 +4734,6 @@ a.moreinfo div {
 #company .col-r {
 	margin:0 0 20px 20px;
 }
-
 /************* Contact Page Styles ***************/
 
 #contact .col-l {
@@ -5396,6 +5435,14 @@ a.light-button-full {
 	padding:0;
 	margin:0;
 }
+#company .main-content .col-3 h2{
+	padding-top: 5px;
+	width: 200px;
+	height: 35px;
+	background-size: 200px 35px;
+	font-size: 16px;
+	margin: 20px auto 20px;
+}
 
 /*********** Team Page ***************/
 #team .grid-9 {
@@ -5934,6 +5981,9 @@ p.legal {
 	padding:0px;
 }
 
+#company .plane-banner{
+	width: 225px;
+}
 
 }
 
@@ -5952,5 +6002,9 @@ p.legal {
 	height:130px;
 	width: auto;
 	margin-left:-70px;
+}
+
+#company .plane-banner{
+	display:none;
 }
 }
