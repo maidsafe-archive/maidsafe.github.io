@@ -1,5 +1,5 @@
 var GithubAPI = require('./github.api');
-var GitCLI = require('./GitCLI');
+var GitCLI = require('./github.cli');
 
 exports.Helper = function(accessToken) {
   var api;
