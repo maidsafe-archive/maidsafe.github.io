@@ -1,9 +1,7 @@
 module.exports = function(grunt) {
   var gitHelper;
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-livereload');
-  grunt.loadNpmTasks('grunt-regarde');
-  grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-prompt');
 
@@ -16,21 +14,22 @@ module.exports = function(grunt) {
     repo: 'maidsafe.github.io',
     baseBranch: 'master'
   };
-
   gitHelper = new require('./grunt_helper/github').Helper();
+  
   grunt.initConfig({
 
     // grunt-contrib-connect will serve the files of the project
     // on specified port and hostname
     connect: {
-      all: {
-        options:{
-          port: 9000,
-          hostname: "0.0.0.0",
-          // No need for keepalive anymore as watch will keep Grunt running
-          //keepalive: true,
-          // Livereload needs connect to insert a cJavascript snippet
-          // in the pages it serves. This requires using a custom connect middleware
+      options: {
+        port: 9000,
+        // Change this to '0.0.0.0' to access the server from outside.
+        hostname: 'localhost',
+        livereload: 35729
+      },
+      livereload: {
+        options: {
+          open: true,
           middleware: function(connect, options) {
             return [
               function(req, res, next) {
@@ -42,12 +41,25 @@ module.exports = function(grunt) {
               },
               // Load the middleware provided by the livereload plugin
               // that will take care of inserting the snippet,
-              require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
+              //require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
               // Serve the project folder
               connect.static(options.base + '/')
             ];
           }
         }
+      }
+    },
+    watch: {
+      livereload: {
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        },
+        files: [
+          '{,*/}*.html',
+          '{,*/}*.css',
+          '/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+        ],
+        tasks: []
       }
     },
     open: {
@@ -97,46 +109,46 @@ module.exports = function(grunt) {
       }
     },
     exec: {
-        gitCheckout: {
-          cmd: function(branch) {
-            return gitHelper.CLI.checkout(branch || selectedPR);
-          }
-        },
-        gitPullForPR: {
-          cmd: function() {
-            return gitHelper.pullForPR(selectedPR);
-          }
-        },
-        gitPull: {
-          cmd: gitHelper.CLI.pull
-        },
-        gitBranch: {
-          cmd: function(branch) {
-            return gitHelper.CLI.branch(branch || selectedPR);
-          },
-          exitCode : [0, 128]
-        },
-        gitBranchList: {
-          cmd: 'git branch',
-          callback: gitHelper.branchListHandler
-        },
-        gitDeleteBranch: {
-          cmd: function() {
-            return 'git branch -D ' + grunt.config(BRANCH_KEY);
-          }
-        },
-        gitStatus: {
-          cmd: 'git status'
-        },
-        echoSelection: {
-          cmd: function() {
-            selectedPR = grunt.config(OPTION_ISSUE_KEY);
-            if (selectedPR && selectedPR !== 'undefined') {
-              return 'echo PR Selected - ' + selectedPR;
-            }
-            return 'echo PR not selected && exit 1';
-          }
+      gitCheckout: {
+        cmd: function(branch) {
+          return gitHelper.CLI.checkout(branch || selectedPR);
         }
+      },
+      gitPullForPR: {
+        cmd: function() {
+          return gitHelper.pullForPR(selectedPR);
+        }
+      },
+      gitPull: {
+        cmd: gitHelper.CLI.pull
+      },
+      gitBranch: {
+        cmd: function(branch) {
+          return gitHelper.CLI.branch(branch || selectedPR);
+        },
+        exitCode : [0, 128]
+      },
+      gitBranchList: {
+        cmd: 'git branch',
+        callback: gitHelper.branchListHandler
+      },
+      gitDeleteBranch: {
+        cmd: function() {
+          return 'git branch -D ' + grunt.config(BRANCH_KEY);
+        }
+      },
+      gitStatus: {
+        cmd: 'git status'
+      },
+      echoSelection: {
+        cmd: function() {
+          selectedPR = grunt.config(OPTION_ISSUE_KEY);
+          if (selectedPR && selectedPR !== 'undefined') {
+            return 'echo PR Selected - ' + selectedPR;
+          }
+          return 'echo PR not selected && exit 1';
+        }
+      }
     }
   });
 
@@ -155,26 +167,20 @@ module.exports = function(grunt) {
     'exec:gitBranch',
     'exec:gitCheckout',
     'exec:gitPullForPR',
-    'livereload-start',
-    'connect',
-    'open',
-    'regarde'
+    'connect:livereload',
+    'watch'
   ]);
 
   grunt.registerTask('default', [
     'exec:gitCheckout:' + CONFIG.baseBranch,
     'exec:gitPull',
-    'livereload-start',
-    'connect',
-    'open',
-    'regarde'
+    'connect:livereload',
+    'watch'
   ]);
 
   grunt.registerTask('serve', [
     'exec:gitStatus',
-    'livereload-start',
-    'connect',
-    'open',
-    'regarde'
+    'connect:livereload',
+    'watch'
   ]);
 };
