@@ -31,12 +31,12 @@ div.scrollingHotSpotLeft {
 	z-index: 200;
 	left: 0;
 	/*  The first url is for Firefox and other browsers, the second is for Internet Explorer */
-	cursor: url(imgs/cursors/cursor_arrow_left.png), url(imgs/cursors/cursor_arrow_left.cur),w-resize;
+	cursor: url(/img/cursors/cursor_arrow_left.png), url(/img/cursors/cursor_arrow_left.cur),w-resize;
 }
 
 /* Visible left hotspot */
 div.scrollingHotSpotLeftVisible {
-	background-image: url(imgs/arrow_left.gif);				
+	background-image: url(/img/arrow_left.gif);
 	background-color: #fff;
 	background-repeat: no-repeat;
 	opacity: 0.35; /* Standard CSS3 opacity setting */
@@ -55,12 +55,12 @@ div.scrollingHotSpotRight {
 	position: absolute;
 	z-index: 200;
 	right: 0;
-	cursor: url(imgs/cursors/cursor_arrow_right.png), url(imgs/cursors/cursor_arrow_right.cur),e-resize;
+	cursor: url(/img/cursors/cursor_arrow_right.png), url(/img/cursors/cursor_arrow_right.cur),e-resize;
 }
 
 /* Visible right hotspot */
 div.scrollingHotSpotRightVisible {
-	background-image: url(imgs/arrow_right.gif);
+	background-image: url(/img/arrow_right.gif);
 	background-color: #fff;
 	background-repeat: no-repeat;
 	opacity: 0.35;
