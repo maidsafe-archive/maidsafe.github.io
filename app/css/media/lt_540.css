@@ -1,0 +1,1065 @@
+@media only screen and (max-width: 540px) {
+
+
+  #home h1, #home h2, #home h3 { text-align:center;}
+
+  h1, h2, h3 { text-align:left;}
+
+  header {
+    height:80px;
+    margin-bottom:0px;
+    padding:0px;
+  }
+
+  #home header {
+    height:82px;
+  }
+
+  #home .shadow {
+    background-position:0px -25px ;
+  }
+
+  .shadow {
+    background-position: 0 -28px;
+    height: 90px;
+  }
+
+  .logo {
+    width:152px;
+    height:44px;
+    background-size:152px 44px;
+    position:relative;
+    top:23px;
+    left:30px;
+    display:block;
+  }
+
+  .fw {
+    width:100%!important;
+  }
+
+  a.menu-link {
+    display: block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    width: 35px;
+    height: 23px;
+    float: right;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url(/img/nav_icon_retina.png);
+    -webkit-background-size: 35px 23px;
+    -moz-background-size: 35px 23px;
+    -o-background-size: 35px 23px;
+    background-size: 35px 23px;
+  }
+  .menu {
+    clear: both;
+    min-width: inherit;
+    float: none;
+    top:8px;
+  }
+  .menu, .menu > ul ul {
+    overflow: hidden;
+    max-height: 0;
+    background-color: #f4f4f4;
+  }
+  .sub-menu, .has-submenu {
+    display:block!important;
+  }
+  .single-link {
+    display:none!important;
+  }
+  .menu > li > ul.sub-menu {
+    padding: 0px;
+    border: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+  }
+  .menu.active, .menu > ul ul.active {
+    max-height: 155em;
+  }
+  .menu ul {
+    display: inline;
+  }
+  .menu ul li {
+    display: block;
+    margin-left: 0px;
+  }
+
+  .menu > ul {
+    border-top: 1px solid #808080;
+  }
+  .menu li, .menu > ul > li {
+    display: block;
+  }
+  .menu li a {
+    display: block;
+    padding: 0.8em;
+    border-bottom: 1px solid #fff;
+    position: relative;
+  }
+
+  .menu li.has-submenu > a:after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    padding: 0.8em 1em;
+  }
+  .menu li.has-submenu > a.active:after {
+    content: '\25B2';
+  }
+
+  .menu ul ul > li a {
+    background-color: #e4e4e4;
+    padding: 14px 18px 14px 30px;
+  }
+  .menu ul ul, .menu ul ul ul {
+    display: inherit;
+    position: relative;
+    left: auto; top:auto;
+    box-shadow: none;
+    border:none;
+  }
+
+  /*********** Sidebar **************/
+
+  .sidebar img {margin:5px auto; text-align:center; display:block;}
+
+  .sidebar .divider {
+    width:100%; /*156*/
+    margin:10px auto;
+    background-position:center;
+  }
+  .community-text {
+    padding-top:15px;
+    padding-bottom:5px;
+  }
+
+  a.visit-blog {
+    margin:10px auto;
+
+  }
+
+  a.maidsafe-dev {
+    margin:10px auto;
+  }
+
+  a.maidsafe-org {
+    margin:10px auto;
+  }
+
+  a.mumble {
+    margin:10px auto;
+  }
+
+  /************************ Banner Styles **************************/
+
+  .banner {
+    background: url(/img/banner_shadow_top.png) repeat-x left top;
+    height: 300px;
+    display: block;
+  }
+  blockquote.quote {
+    font-size:14px;
+    padding: 8px;
+    margin: 5px;
+    background-size:18px 14px;
+  }
+  blockquote.quote span {
+    background-size:18px 14px;
+    padding-right: 10px;
+    padding-left:10px;
+  }
+
+  p.quoter {
+    font-size:10px!important;
+    line-height:14px!important;
+  }
+
+  .list-quote blockquote.quote span {
+    background-position: 100% 92%;
+  }
+
+
+
+  /************************** Banner news ***************************/
+  .banner-news {
+    padding:5px 0 0 0;
+  }
+  .banner-news h1 {
+    font-size:14px;
+    margin-bottom:10px;
+  }
+
+  .banner-news p {
+    font-size:11px!important;
+  }
+
+  .news-graphic {
+    width:160px;
+    height:68px;
+    background-size:160px 68px;
+    margin:0px auto 10px auto;
+  }
+
+  /************************** Banner community ***************************/
+  .banner-community {
+    padding:25px 0 0 0;
+  }
+  .banner-community h1 {
+    font-size:16px;
+    margin:20px 0 0 0;
+  }
+
+  .community-development {
+    width:219px;
+    height:36px;
+    background-size:219px 36px;
+  }
+
+  .community-org {
+    width:176px;
+    height:36px;
+    background-size:176px 36px;
+    margin:0px 40px;
+  }
+
+  .community-safecoin {
+    width:188px;
+    height:36px;
+    background-size:188px 36px;
+  }
+
+  /************************** Banner plane ***************************/
+  .banner-plane {
+    padding:40px 0 0 0;
+  }
+  .banner-plane h1 {
+    font-size:16px;
+    color:#5593D7;
+  }
+  .plane {
+    background:url(/img/home_plane.png) no-repeat 0 0;
+    width:280px;
+    height:50px;
+    background-size:280px 50px;
+    margin:0px auto 10px auto;
+  }
+
+  /************************** Banner getcode ***************************/
+  .banner-getcode {
+    padding:0;
+  }
+  .banner-getcode h1 {
+    font-size:18px;
+    height: 140px;
+  }
+  .github-icon {
+    background-position: center 85px;
+    background-size:60px 53px;
+  }
+  .spacer {
+    display: none;
+    width:60px;
+  }
+  /************************** Banner roadmap ***************************/
+  .banner-roadmap {
+    padding:35px 0 0 0;
+  }
+  .banner-roadmap h1 {
+    font-size:16px;
+    color:#5593D7;
+    padding-top:10px;
+  }
+  .roadmap-preview {
+    width:106px;
+    height:53px;
+    background-size:106px 53px;
+  }
+
+  .main-content {
+    margin-top:30px;
+  }
+
+  .home-tabs p {
+    font-size:18px;
+    padding:95px 40px 15px 40px;
+    line-height:24px;
+  }
+
+  .core-dev-tab {
+    background-position: center 25px;
+    margin:10px 0!important;
+  }
+
+  .core-dev-tab:hover {
+    background-position: center 25px;
+  }
+
+  .app-builder-tab {
+    background-position: center 25px;
+    margin:10px 0px!important;
+    border:none;
+  }
+
+  .app-builder-tab:hover {
+    background-position: center 25px;
+  }
+
+  .farmer-tab {
+    background-position: center 25px;
+    margin:10px 0!important;
+  }
+
+  .farmer-tab:hover {
+    background-position: center 25px;
+  }
+
+  .tell-me-more-tab p {
+    padding:20px;
+  }
+
+  .video-box {
+    /*max-height:162px;*/
+    height:auto;
+  }
+
+  #inline1 {
+    display:none;
+  }
+
+  .home-box {
+    margin-bottom: 8%;
+
+  }
+  .home-box h2 {
+    margin-bottom: 10px;
+  }
+
+  #home p {
+    font-size:16px;
+    line-height:20px;
+  }
+  /*
+.first {
+	width:92%;
+	padding:4%;
+	margin-left:0px;
+	min-height:140px;
+}
+
+.middle {
+	padding:5%;
+	width:90%;
+	margin-left:0px;
+	min-height:134px;
+
+}
+
+
+.last {
+	padding:5%;
+	width:90%;
+	min-height:134px;
+	margin-left:0px;
+}
+*/
+
+  .maidsafe-platform {
+    width:150px;
+    height:85px;
+    background-size:150px 85px;
+  }
+
+  .surefile-test {
+    width:120px;
+    height:62px;
+    background-size:120px 62px;
+  }
+
+  p.alpha-testers {
+    font-size: 30px;
+    margin-bottom:5px;
+    line-height:36px;
+  }
+
+  .github-code {
+    width:100px;
+    height:88px;
+    background-size:100px 88px;
+  }
+
+  #home h2 {
+    font-size:18px;
+    margin-bottom:30px;
+  }
+
+  #home .para-l h2,
+  #home .para-r h2 {
+    font-size:18px;
+    margin-bottom:20px;
+    padding:0px;
+  }
+
+  #home .para-l p,
+  #home .para-r p {
+    padding:0px;
+  }
+
+  .quote-box {
+    margin:4% 0;
+    padding:2% 3% 2% 3%;
+  }
+
+  .article-1 {
+    border-right:none;
+    padding:0px;
+  }
+  .article-2 {
+    padding:0px;
+  }
+
+  .main-content {
+    padding-bottom:20px;
+  }
+
+  ul.leftnav {
+    display:none;
+  }
+
+  #timeline .topnav-shell{display: none;}
+
+  #surefile-tutorial ul.leftnav {
+    display:block;
+  }
+
+  #home p {
+    text-align:center;
+  }
+
+  p {
+    text-align:left;
+  }
+
+  .notification{
+    height: 50px;
+  }
+  .notification p{
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 12px !important;
+  }
+  .left-caret{
+    position: absolute;
+    display: block;
+    left: -1px;
+    background-image: url(/img/caret_left_50.png);
+    height: 50px;
+    width:25px;
+  }
+  .right-caret{
+    position: absolute;
+    display: block;
+    right: 0;
+    background-image: url(/img/caret_right_50.png);
+    height: 50px;
+    width:25px;
+  }
+
+  /*********** Developers Page **************/
+
+  a.get-started-button {
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 3px;
+    padding: 6px 10px 6px 10px;
+    float:right;
+  }
+
+  #developers h1 {
+    margin-bottom:50px;
+  }
+
+  a.light-button, a.light-button-full {
+    font-size:14px;
+    margin:5px 6px;
+
+  }
+
+  a.light-button-full {
+    padding:20px 15px;
+  }
+
+  .diagram {
+    padding-top:70px;
+    width:500px;
+    margin: 0 auto;
+  }
+
+  .app-stack {
+    background-position: 170px 240px;
+    background-size:180px 132px;
+  }
+
+  #core-developer .app-stack {
+    background-position:170px 1110px;
+    background-size:180px 132px;
+  }
+
+  /********* Get Involved Page ************/
+
+  .get-involved-tabs p {
+    border-bottom:1px solid #E2E2E2;
+  }
+
+
+  .farmer-tab {
+    height: auto;
+  }
+
+  .tell-me-more-tab {
+    border-top:0;
+  }
+
+  /*********** Company Page ***************/
+  .main-content .col-3 {
+    width: 90%;
+  }
+
+  .main-content .left-col {
+    padding:0;
+    margin:0;
+  }
+
+  .main-content .right-col {
+    padding:0;
+    margin:0;
+  }
+  #company .main-content .col-3 h2{
+    padding-top: 5px;
+    width: 200px;
+    height: 35px;
+    background-size: 200px 35px;
+    font-size: 16px;
+    margin: 20px auto 20px;
+  }
+
+  /*********** Team Page ***************/
+  #team .grid-9 {
+    width:auto;
+    margin:0px;
+  }
+
+  .container-12 .grid-3 {
+    width: 100%;
+  }
+
+  #team h3 { font-size:18px;}
+
+  .mosaic-block {
+    min-height: 280px;
+    width: 100%;
+  }
+
+  .mosaic-block img {
+    height: auto;
+    width: 100%;
+    display:block;
+  }
+
+  .mosaic-block p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .mosaic-block .details {
+    padding: 16px;
+  }
+
+  .team-map {
+    display:none;
+    /*width: 340px;
+	height: 392px;
+	margin: 0 auto;*/
+  }
+  .team-icon {
+    position: relative;
+    float: left;
+  }
+  /*#boss { top: 150px; left: 198px; }
+#david { top: 37px; left: 32px; }
+#fraser { top: 17px; left: 128px; }
+#qi { top: 53px; left: 204px; }
+#prakash { top: 12px; left: 275px; }
+#ben { top: 185px; left: 101px; }
+#mahmoud { top: 240px; left: 34px; }
+#ross { top: 285px; left: 113px; }
+#viv { top: 246px; left: 200px; }
+#brian { top: 215px; left: 285px; }
+#niall { top: 353px; left: 175px; }
+
+#shona { top:101px; left:112px; }
+
+#justine { top:130px; left:12px; }
+#linda { top:347px; left:33px; }
+
+#nick { top:118px; left:291px; }
+#paige { top:312px; left:294px; }*/
+
+  .profile-info {
+    display: none;
+  }
+  .profile-mobile {display: block;}
+  .profile-mobile h2 {
+    margin: 20px 0 5px 60px;
+  }
+  .profile-mobile p {
+    font-size: 12px;
+    margin-left: 60px;
+    margin-bottom: 10px;
+  }
+  .profile-mobile iframe{
+    margin-left: 60px;
+  }
+  /*********** Credits Page ***************/
+  #credits section{
+    height: 140px;
+  }
+  .credit-logo{
+    width: 30% !important;
+  }
+  .credit-text{
+    width: 70% !important;
+    float: right;
+  }
+  .credit-logo{
+    padding-top: 10px;
+  }
+  .jetbrains{
+    padding-top: 40px;
+    width:90px;
+    height: 30px;
+  }
+  /******************* Careers Page *********************/
+  .vacancies {
+    padding:2%;
+    position:relative;
+    top:20px;
+
+  }
+
+  #careers .col-l {
+    float:left;
+    margin-right:0px;
+  }
+
+  #careers .col-r {
+    float:right;
+  }
+
+  .current-jobs {
+    padding-bottom: 60px;
+  }
+
+  a.applyhere {
+    position:absolute;
+    bottom:6px;
+    right:-6px;
+    margin:20px 0 0 20px;
+
+  }
+
+  /******************* Documents Page **********************/
+
+  .doc-box-papers-publications {
+    height:auto;
+  }
+
+  /******************* Libraries Page **********************/
+  #libraries .main-content {
+    margin-bottom:0px;
+  }
+
+  /******* Libraries Platform Page Styles ********/
+
+  #platform-libraries .grid-1 { }
+
+  a.moreinfo {
+    width:20%;
+    float:right;
+    padding-right: 40%;
+  }
+
+  a.moreinfo div {
+    font-size:14px;
+  }
+
+  .libraries-maidsafe {top:0px;}
+  .libraries-common {  top:0px;}
+  .libraries-drive { top:0px;}
+  .libraries-reliable-udp { top:0px;}
+  .libraries-routing { top:0px;}
+  .libraries-encrypt { top:0px;}
+  .libraries-passport { top:0px;}
+  .libraries-network-file-system {top:0px;}
+  .libraries-vault {top:0px;}
+  .libraries-vault-manager {top:0px;}
+  .libraries-api { top:0px;}
+
+  /*********** Roadmap Page Styles **************/
+
+  #roadmap #viewer {width:96%;}
+
+  div.roadmap{
+    width:321px;
+    background: url("/img/roadmap/roadmap-mobile.png") no-repeat;
+    margin:0 auto;
+  }
+
+  .roadmap-stage {
+    width:auto;
+    height:auto;
+  //position: relative;
+  //color:#808080;
+  //margin: 0 0 20px 0;
+  }
+  .roadmap-stage:hover{color: #5593D7;}
+
+  .roadmap-stage h2{
+    font-size: 24px;
+  }
+
+  .roadmap-stage p{
+    margin: 0px;
+  }
+
+  #testnet1{top:10px;left:50px;}
+  #testnet2{top:90px;left:50px;}
+  #testnet3{top:170px;left:50px;}
+  #betalaunch{top:250px;left:60px;}
+
+  .bullet{max-height: 50px;}
+
+  .bullet-icon {
+    width: 52px;
+    height: 50px;
+    padding-right: 5px;
+  }
+  /*********** Features Page Styles *************/
+
+  .last-col {
+    margin-left:0px!important;
+  }
+
+
+
+  h2.noservers-head {
+
+  }
+
+  h2.administrators-head {
+    padding-right:50%;
+    display:block;
+  }
+
+  h2.datamanage-head {
+    padding-right:46%;
+    display:block;
+
+  }
+
+  h2.password-head {
+    padding-right:46%;
+    display:block;
+
+  }
+
+  h2.sharedata-head {
+    padding-right:46%;
+    display:block;
+  }
+
+  h2.distribute-head {
+    padding-right:46%;
+    display:block;
+  }
+
+
+  /*********** License Page Styles *************/
+  #licensing .main-content {
+    margin-bottom:0px;
+  }
+
+  #licensing h2 {
+    font-size: 24px;
+  }
+
+  .online-reg-box {
+    background-size:55px 61px;
+    background-position:20px 20px;
+    margin-bottom:40px;
+  }
+
+  .license-reg {
+    padding:20px 20px 0px 110px;
+  }
+
+  /*********** Company Page Styles *************/
+
+  #company .main-content {
+    margin-bottom: 0px;
+  }
+
+
+  #company .col-l {
+    margin:0 0px 20px 0;
+  }
+  #company .col-m {
+    margin:0 0px 20px 0px;
+  }
+  #company .col-r {
+    margin:0 0 20px 0px;
+  }
+  /*********** Assets Page Styles *************/
+  #assets ul.topnav{
+    display: none;
+  }
+  /*********** Press Page Styles *************/
+  #press ul.topnav{
+    display: none;
+  }
+  ul.top-stories .press-article {
+    margin: 0 auto;
+    text-align:center;
+    padding:0 5%;
+    width:90%;
+  }
+
+  .press-article { margin-bottom:30px;}
+
+  /*
+ul.grid {
+	width:90%;
+	padding:0 5%;
+}
+*/
+
+
+
+
+  /************* Contact Page Styles ***************/
+
+  #contact .col-l {
+    padding-right:0px;
+  }
+  #contact .col-m {
+    padding: 0 0px;
+    width: 100%;
+  }
+  #contact .col-r {
+    padding-left:0px;
+  }
+  #contact form {
+    margin-bottom:50px;
+  }
+
+
+  /************* Surefile Tutorial Page Styles ***************/
+  .sticky {
+    display:none;
+  }
+
+  /************* SureFile Download Page Styles ****************/
+
+  #surefile-download h1 {
+    width:200px;
+    height:45px;
+    background-size:200px 45px;
+    margin:0 auto 30px auto;
+  }
+
+  #surefile-download h2 {
+    font-size: 20px;
+  }
+
+  .download-box h3 {
+    text-align:center;
+  }
+
+  #surefile-download .main-content {
+    margin-bottom:20px;
+  }
+
+  #surefile-download #main p {
+    font-size: 16px;
+  }
+
+  p.sub-text {
+    font-size:12px!important;
+  }
+
+  a.button-blue {
+    padding: 10px 15px 10px 15px;
+  }
+
+  a.button-blue .button-text {
+    font-size: 22px;
+  }
+
+  #surefile-download p.legal,
+  #surefile-download p.tel  {
+    text-align:center;
+  }
+  /*********** Assets Page Styles *************/
+  #assets #maidsafe-brand img{
+    height:100px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  #assets #wee-plane img{
+    height:130px;
+    width: auto;
+    margin: 0 auto;
+  }
+  #assets .wee-plane-sm{
+    display: block;
+  }
+  #assets .wee-plane-md{
+    display: none;
+  }
+  #assets #safecoin-brand img {
+    margin-top: 20px;
+    height:100px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  #assets .tshirt-design-sm{
+    display: block;
+    border-top: 2px solid #7F7F7F;
+  }
+  #assets .tshirt-design-md{
+    display: none;
+  }
+  #assets #twitter-cover img{
+    height:80px;
+    width: auto;
+    margin: 2px 0 0 0px;
+  }
+  #assets .twitter-cover-sm{
+    display: block;
+  }
+  #assets .twitter-cover-md{
+    display: none;
+  }
+  #assets #advert img{
+    margin-top:2px;
+  }
+  #assets #meetup-cover img{
+    margin: 2px 0 0 0;
+    width: auto;
+    height: 80px;
+  }
+  #assets #advert img{
+    margin: 2px 0 0 0;
+    width: 100%;
+    height: auto;
+  }
+  #assets #david-nick img{
+    margin: 20px auto 0;
+    width: auto;
+    height: 100%;
+    display: block;
+  }
+  #assets #team-photo img{
+    margin: 20px auto 0;
+    width: auto;
+    height: 100%;
+    display: block;
+  }
+  /********************* Footer **************************/
+
+  footer {
+    clear: both;
+    height: 260px;
+    margin-top: -220px;
+    position: relative;
+    text-align:center;
+  }
+
+  footer p {
+    text-align:center;
+  }
+
+  .footer-links { display:none;}
+
+  footer img { display:inline-block!important;}
+
+  footer ul {
+    margin-bottom:30px;
+  }
+
+  ul.social-links {
+    float:none;
+    margin:0;
+  }
+  ul.social-links li {
+    display:inline;
+  }
+  ul.social-links li a {
+    display:inline-block!important;
+    margin:0px;
+    padding:0px;
+  }
+  .legal {
+    padding-top:0px;
+    width:100%;
+  }
+
+  p.legal {
+    font-size:12px!important;
+  }
+
+  .legal a {
+
+    background:none!important;
+    padding: 10px 0px 10px 20px!important;
+  }
+
+  .footer-logos {
+    padding-top:38px;
+    float:none;
+  }
+
+  .footer-logos a {display:inline-block!important; background:none!important; }
+
+  .footer-logos img {
+    margin-left:20px;
+  }
+
+  .logo-footer {
+    float:none;
+    position:relative;
+    left:31px
+  }
+
+  .idl-badge {
+    float:none;
+    position: relative;
+    right: 113px;
+    top: 150px;
+  }
+}
