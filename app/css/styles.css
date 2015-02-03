@@ -1454,7 +1454,7 @@ Roadmap Page Styles
 *******************************************************************************/
 
 div.roadmap {
-  background-image: url("images/roadmap/roadmap.png");
+  background-image: url("/img/roadmap/roadmap.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 540px;
@@ -1533,12 +1533,12 @@ div.roadmap {
   color: inherit;
 }
 
-div.start.active .bullet-icon{ background-image: url("images/roadmap/start_active.png");}
-div.start.idle .bullet-icon{ background-image: url("images/roadmap/start_idle.png");}
-div.complete .bullet-icon{ background-image: url("images/roadmap/complete.png");}
-div.progress .bullet-icon{ background-image: url("images/roadmap/progress.png");}
-div.end.active .bullet-icon{ background-image: url("images/roadmap/end_active.png");}
-div.end.idle .bullet-icon{ background-image: url("images/roadmap/end_idle.png");}
+div.start.active .bullet-icon{ background-image: url("/img/roadmap/start_active.png");}
+div.start.idle .bullet-icon{ background-image: url("/img/roadmap/start_idle.png");}
+div.complete .bullet-icon{ background-image: url("/img/roadmap/complete.png");}
+div.progress .bullet-icon{ background-image: url("/img/roadmap/progress.png");}
+div.end.active .bullet-icon{ background-image: url("/img/roadmap/end_active.png");}
+div.end.idle .bullet-icon{ background-image: url("/img/roadmap/end_idle.png");}
 
 #tech-roadmap p{padding:60px 0 0 0;}
 
@@ -2052,21 +2052,21 @@ Company Page Styles
   padding:0 30px 0 0;
 }
 #company .left-col h2{
-  background-image: url('images/company-pink.png');
+  background-image: url('/img/company-pink.png');
 }
 #company .col-m {
   margin:0 0px 30px 0px;
   padding:0 10px 0 10px;
 }
 #company .middle-col h2{
-  background-image: url('images/company-orange.png');
+  background-image: url('/img/company-orange.png');
 }
 #company .col-r {
   margin:0 0 30px 0px;
   padding:0 0 0 30px;
 }
 #company .right-col h2{
-  background-image: url('images/company-teal.png');
+  background-image: url('/img/company-teal.png');
 }
 #company .main-content .col-3 h2{
   color:#fff;
@@ -2163,7 +2163,7 @@ a.wordpress-button:hover { background-position:bottom left;}
 }
 
 .team-map {
-  background-image: url('images/team/team_map.png');
+  background-image: url('/img/team/team_map.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 460px;
@@ -2179,16 +2179,16 @@ a.wordpress-button:hover { background-position:bottom left;}
   height: 56px;
 }
 
-.cog-icon:hover, .cog-icon.icon-active {background-image: url('images/team/team_cog_dk.png') !important;}
-.cog-icon {background-image: url('images/team/team_cog_lt.png');}
-.dev-icon:hover, .dev-icon.icon-active {background-image: url('images/team/team_dev_dk.png') !important;}
-.dev-icon {background-image: url('images/team/team_dev_lt.png');}
-.strat-icon:hover, .strat-icon.icon-active {background-image: url('images/team/team_strat_dk.png') !important;}
-.strat-icon {background-image: url('images/team/team_strat_lt.png');}
-.design-icon:hover, .design-icon.icon-active {background-image: url('images/team/team_design_dk.png') !important;}
-.design-icon {background-image: url('images/team/team_design_lt.png');}
-.admin-icon:hover, .admin-icon.icon-active {background-image: url('images/team/team_admin_dk.png') !important;}
-.admin-icon {background-image: url('images/team/team_admin_lt.png');}
+.cog-icon:hover, .cog-icon.icon-active {background-image: url('/img/team/team_cog_dk.png') !important;}
+.cog-icon {background-image: url('/img/team/team_cog_lt.png');}
+.dev-icon:hover, .dev-icon.icon-active {background-image: url('/img/team/team_dev_dk.png') !important;}
+.dev-icon {background-image: url('/img/team/team_dev_lt.png');}
+.strat-icon:hover, .strat-icon.icon-active {background-image: url('/img/team/team_strat_dk.png') !important;}
+.strat-icon {background-image: url('/img/team/team_strat_lt.png');}
+.design-icon:hover, .design-icon.icon-active {background-image: url('/img/team/team_design_dk.png') !important;}
+.design-icon {background-image: url('/img/team/team_design_lt.png');}
+.admin-icon:hover, .admin-icon.icon-active {background-image: url('/img/team/team_admin_dk.png') !important;}
+.admin-icon {background-image: url('/img/team/team_admin_lt.png');}
 
 #boss { top: 200px; left: 268px; }
 #david { top: 47px; left: 42px; }
@@ -2250,12 +2250,12 @@ Credits Page Styles
 }
 
 .advanced-installer{
-  background-image: url("images/credits/advanced-installer-logo.jpg");
+  background-image: url("/img/credits/advanced-installer-logo.jpg");
   width: 90px;
   height: 90px;
 }
 .atlassian-jira{
-  background-image: url("images/credits/atlassian-jira-logo.jpg");
+  background-image: url("/img/credits/atlassian-jira-logo.jpg");
   width: 90px;
   height: 90px;
 }
@@ -2265,18 +2265,18 @@ Credits Page Styles
   height: 90px;
 }
 .jetbrains{
-  background-image: url("images/credits/jetbrains-logo.png");
+  background-image: url("/img/credits/jetbrains-logo.png");
   width: 120px;
   height: 40px;
   margin-top: 25px !important;
 }
 .xamarin{
-  background-image: url("images/credits/xamarin-logo.png");
+  background-image: url("/img/credits/xamarin-logo.png");
   width: 90px;
   height: 90px;
 }
 .sauce-labs{
-  background-image: url("images/credits/sauce-labs-logo.jpg");
+  background-image: url("/img/credits/sauce-labs-logo.jpg");
   width: 82px;
   height: 90px;
 }
