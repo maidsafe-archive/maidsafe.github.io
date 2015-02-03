@@ -49,7 +49,14 @@ module.exports = function (grunt) {
               ".jekyll",
               ".tmp",
               "<%= yeoman.app %>"
-            ]
+            ],
+            middleware: function (req, res, next) {
+              var urlSplitted = req.url.split('/');
+              if (urlSplitted[urlSplitted.length - 1] && urlSplitted[urlSplitted.length - 1].split('.').length === 1) {
+                req.url += '.html';
+              }
+              next();
+            }
           },
           watchTask: true
         }
