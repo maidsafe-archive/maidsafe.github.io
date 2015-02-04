@@ -200,7 +200,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.svg',
+          src: ['**/*.svg', '!**/fonts/**'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -256,8 +256,8 @@ module.exports = function (grunt) {
     buildcontrol: {
       dist: {
         options: {
-          remote: '../',
-          branch: 'serve',
+          remote: 'https://github.com/krishnaIndia/maidsafe.github.io.git',
+          branch: 'Deploy',
           commit: true,
           push: true
         }
@@ -355,7 +355,7 @@ module.exports = function (grunt) {
     ]);
 
   grunt.registerTask('deploy', [
-    'check',
+    //'check',
     'test',
     'build',
     'buildcontrol'
