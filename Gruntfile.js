@@ -279,8 +279,8 @@ module.exports = function (grunt) {
       dist: {
         options: {
           dir: 'dist',
-          remote: 'git@github.com:krishnaIndia/maidsafe.github.io.git',
-          branch: 'deploy',
+          remote: 'git@github.com:' + CONFIG.owner + '/' + CONFIG.repo + '.git',
+          remoteBranch: 'deploy-bed',
           commit: true,
           push: true
         }
