@@ -9,8 +9,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -21,7 +21,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -77,7 +77,7 @@ footer {
 	margin-top: -225px; /* negative value of footer height */
 	height: 225px;
 	clear:both;
-} 
+}
 
 /*Opera Fix*/
 body:before {/* thanks to Maleika (Kohoutec)*/
@@ -223,7 +223,7 @@ Fonts
         font-weight: normal;
         font-style: normal;
 }
-	
+
 p.style1 {font: 18px/27px 'OpenSansLight', Arial, sans-serif;}
 p.style2 {font: 18px/27px 'OpenSansLightItalic', Arial, sans-serif;}
 p.style3 {font: 18px/27px 'OpenSansRegular', Arial, sans-serif;}
@@ -234,7 +234,7 @@ p.style7 {font: 18px/27px 'OpenSansBold', Arial, sans-serif;}
 p.style8 {font: 18px/27px 'OpenSansBoldItalic', Arial, sans-serif;}
 p.style9 {font: 18px/27px 'OpenSansExtrabold', Arial, sans-serif;}
 p.style10 {font: 18px/27px 'OpenSansExtraboldItalic', Arial, sans-serif;}
-		
+
 
 /*******************************************************************************
 
@@ -249,7 +249,7 @@ body {
 	word-wrap: break-word;
 }
 a:link
-{		
+{
 	color: #5593D7;
 	text-decoration: inherit;
 }
@@ -400,15 +400,15 @@ header {
 	float: right;
 	text-decoration: none;
 	margin-right:20px;
-	
+
 }
-.menu { 
+.menu {
 	float: right;
 	position:relative;
 	right:0px;
 	top:76px;
 }
-.menu ul { 
+.menu ul {
 	padding: 0px;
 	margin: 0px;
 	list-style: none;
@@ -444,18 +444,18 @@ header {
 	display: inline-block;
 	margin-left:28px;
 }
-.menu > ul > li { 
+.menu > ul > li {
 	display: inline-block;
 }
-.menu ul li a { 
+.menu ul li a {
 	display: block;
 	text-decoration: none;
 	color: #808080;
 }
-.menu ul li > a { 
-	
+.menu ul li > a {
+
 	/*height:58px;
-	padding: 19px 12px;*/	
+	padding: 19px 12px;*/
 }
 
 ul.topnav {
@@ -477,10 +477,10 @@ ul.topnav li {
 	display: inline-block;
 	margin-left:28px;
 }
-ul.topnav > li { 
+ul.topnav > li {
 	display: inline-block;
 }
-ul.topnav li a { 
+ul.topnav li a {
 	display: block;
 	text-decoration: none;
 	color: #808080;
@@ -541,7 +541,7 @@ ul.topnav li a {
 	color:#5593D7;
 }
 #roadmap ul.topnav .roadmap a{
-	color:#5593D7;	
+	color:#5593D7;
 }
 /******** Get Involved - Left nav selected state styles ********/
 #get-involved ul.leftnav .get-involved a,
@@ -725,6 +725,7 @@ Banner Styles
 	color:#a0a1a3;
 	font-size:22px;
 	font-family: 'OpenSansSemiBold', Arial, sans-serif;
+  text-align: center;
 }
 
 .news-graphic {
@@ -804,7 +805,7 @@ a.maidsafe-dev {
 	width:156px;
 	height:46px;
 	margin:10px 0;
-	
+
 }
 a.maidsafe-dev:hover {
 	background-position:bottom left;
@@ -867,7 +868,7 @@ Home Page Styles
 	background:url(imgs/nav_shadow-2.png) repeat-x 0 0;
 }
 #home h1 {
-	text-align:center;	
+	text-align:center;
 }
 
 #home h2 {
@@ -987,7 +988,7 @@ video {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    
+
 }
 
 #home .para {
@@ -1007,7 +1008,7 @@ video {
 	position: relative;
 	display:block;
 	float:left;
-	margin-bottom:60px;	
+	margin-bottom:60px;
 }
 
 .home-box p {
@@ -1094,7 +1095,7 @@ video {
 Inner Page Styles
 
 *******************************************************************************/
-.shadow {	
+.shadow {
 	background:url(imgs/nav_shadow-2.png) repeat-x 0 20px;
 	clear: both;
     display: block;
@@ -1129,9 +1130,9 @@ ul.pressnav {margin-bottom:40px;}
 .main-content ul {
 	margin-bottom:40px;
 }
-.main-content ul li { 
+.main-content ul li {
     padding-left: 10px;
-	margin-bottom:10px; 
+	margin-bottom:10px;
     text-indent: -.7em;
 	color: #464646;
     font-family: 'OpenSansRegular', Arial, sans-serif;
@@ -1248,7 +1249,7 @@ a.get-started-button {
     padding: 10px 15px 10px 15px;
 	display: inline-block;
 	float:right;
-	
+
 }
 a.get-started-button:hover {
 	background-color:#29578A;
@@ -1467,8 +1468,8 @@ div.roadmap {
 
 .roadmap-stage:hover {
 	color: #808080;
-	cursor: pointer; 
-	cursor: hand; 
+	cursor: pointer;
+	cursor: hand;
 }
 
 #testnet1{top:35px;left: 15px;}
@@ -1507,8 +1508,8 @@ div.roadmap {
 .backwards {color:#5593D7;}
 .backwards:hover {
 	color: #808080;
-	cursor: pointer; 
-	cursor: hand; 
+	cursor: pointer;
+	cursor: hand;
 }
 .backwards img{
 	float:left;
@@ -1896,7 +1897,7 @@ Documents Page Styles
 .doc-box-examples,
 .doc-box-system-docs,
 .doc-box-dev-wiki,
-.doc-box-papers-publications { 
+.doc-box-papers-publications {
 	padding:20px 0px 0px 0px;
 	background-color:#eef4fa;
 	margin-bottom:20px;
@@ -1968,7 +1969,7 @@ p.call-to {
 	padding:10px 0px;
 	margin-bottom:0px;
 	text-transform:uppercase;
-	
+
 }
 
 p.call-to a {
@@ -2146,7 +2147,7 @@ a.wordpress-button:hover { background-position:bottom left;}
 	display:block;
 	float:left;
 }
-	
+
 .team-map {
 	background-image: url('../images/team/team_map.png');
 	background-repeat: no-repeat;
@@ -2234,12 +2235,12 @@ Credits Page Styles
 	margin:0 auto;
 }
 
-.advanced-installer{ 
+.advanced-installer{
 	background-image: url("../images/credits/advanced-installer-logo.jpg");
 	width: 90px;
 	height: 90px;
 }
-.atlassian-jira{ 
+.atlassian-jira{
 	background-image: url("../images/credits/atlassian-jira-logo.jpg");
 	width: 90px;
 	height: 90px;
@@ -2255,12 +2256,12 @@ Credits Page Styles
 	height: 40px;
 	margin-top: 25px !important;
 }
-.xamarin{ 
+.xamarin{
 	background-image: url("../images/credits/xamarin-logo.png");
 	width: 90px;
 	height: 90px;
 }
-.sauce-labs{ 
+.sauce-labs{
 	background-image: url("../images/credits/sauce-labs-logo.jpg");
 	width: 82px;
 	height: 90px;
@@ -2387,9 +2388,9 @@ Assets Page Styles
 	margin-bottom: 15px;
 }
 
-#assets #wee-plane p, 
-#assets #twitter-cover p, 
-#assets #meetup-cover p, 
+#assets #wee-plane p,
+#assets #twitter-cover p,
+#assets #meetup-cover p,
 #assets #advert p,
 #assets #david-nick p,
 #assets #team-photo p {
@@ -2506,9 +2507,9 @@ a h3 { color:inherit;}
 
 #press .main-content h2 { margin-top:0px;}
 
-#press .main-content ul li { 
+#press .main-content ul li {
     padding-left: 0px;
-	margin-bottom:0px; 
+	margin-bottom:0px;
     text-indent: 0em;
 	color: #464646;
     font-family: 'OpenSansRegular', Arial, sans-serif;
@@ -2527,9 +2528,9 @@ h2.top-stories-head {
 	color:rgba(85,147,215,1);
 	display:block;
 	float:right;
-  	-webkit-border-radius: 5px 5px 0px 0px; 
+  	-webkit-border-radius: 5px 5px 0px 0px;
   	-moz-border-radius: 5px 5px 0px 0px;
- 	 border-radius: 5px 5px 0px 0px; 
+ 	 border-radius: 5px 5px 0px 0px;
 }
 
 #press h2.top-stories-head {
@@ -2701,7 +2702,7 @@ SureFile Tutorial Page Styles
 
 #surefile-tutorial img {
 	margin-bottom:2em;
-	
+
 }
 .note-text {
 	color:#C1272D;
@@ -2822,9 +2823,9 @@ a.button-blue .button-text {
 }
 
 
-#downloadBox p { 
-	margin:0 auto; 
-	text-align:center; 
+#downloadBox p {
+	margin:0 auto;
+	text-align:center;
 	font-weight:normal;
 }
 
@@ -2913,8 +2914,8 @@ a.button-blue .button-text {
 }
 
 
-#surefile-download p, 
-#surefile-download h1, 
+#surefile-download p,
+#surefile-download h1,
 #surefile-download h2 {
 	text-align:center;
 }
@@ -2962,25 +2963,25 @@ h2.active {background-position: left bottom; color:rgba(204,204,204,1.00);}
 	text-align:center;
 }
 
-#downloadBox { 
-	margin:0 auto; 
-	text-align:center; 
+#downloadBox {
+	margin:0 auto;
+	text-align:center;
 	font-weight:normal;
 	font-size:24px;
 }
-#downloadBox img { 
+#downloadBox img {
 	float:left;
 }
 #downloadBox .button-grey {
 	position:relative; top:20px;
 }
 .downloadText {
-	font-size:18px; 
+	font-size:18px;
 	color:#5593D7;
 	clear:both;
 }
 #downloadInfo {
-	font-size:18px;	
+	font-size:18px;
 }
 
 #downloadOS  {
@@ -2999,7 +3000,7 @@ h2.active {background-position: left bottom; color:rgba(204,204,204,1.00);}
 
 .surefile_download_link_mac:not(.surefile_download_link_soon) .downloadSoon,
 .surefile_download_link_win:not(.surefile_download_link_soon) .downloadSoon,
-.surefile_download_link_linux:not(.surefile_download_link_soon) .downloadSoon { 
+.surefile_download_link_linux:not(.surefile_download_link_soon) .downloadSoon {
 	display:none;
 }
 
@@ -3019,9 +3020,9 @@ h2.active {background-position: left bottom; color:rgba(204,204,204,1.00);}
 .surefile_download_link_soon a.button-grey,
 .surefile_download_link_soon a.button-grey:hover,
 .surefile_download_link_soon a.button-grey:active {
-	border:none; 
-	background:none; 
-	cursor:default; 
+	border:none;
+	background:none;
+	cursor:default;
 	color:rgb(84, 146, 214);
 }
 */
@@ -3109,7 +3110,7 @@ ul.social-links li a {
 
 .legal a {
 	display:inline-block!important;
-	padding: 10px 0px 10px 20px!important; 
+	padding: 10px 0px 10px 20px!important;
 }
 
 .footer-logos {
@@ -3130,23 +3131,23 @@ ul.social-links li a {
 }
 
 
-/********************************************************************************************* 
+/*********************************************************************************************
 
-2.  960px 
+2.  960px
 
-*********************************************************************************************/  
+*********************************************************************************************/
 
 @media only screen and (min-width: 960px) and (max-width: 1199px) {
 
 
 }
-	
 
-/********************************************************************************************* 
 
-3.  720px 
+/*********************************************************************************************
 
-*********************************************************************************************/ 
+3.  720px
+
+*********************************************************************************************/
 
 @media only screen and (min-width: 720px) and (max-width: 959px) {
 /*******************************************************************************
@@ -3334,7 +3335,7 @@ p.quoter {
 .farmer-tab {
 	background-position: center 25px;
 	background-size:57px 42px;
-	margin:10px 0!important;	
+	margin:10px 0!important;
 }
 
 .farmer-tab:hover {
@@ -3453,7 +3454,7 @@ a.maidsafe-org {
 a.mumble {
 	width:102px;
 	height:77px;
-	background-size:102px 154px; 
+	background-size:102px 154px;
 }
 
 /*********** Developers Page **************/
@@ -3788,7 +3789,7 @@ a.moreinfo div {
 	float:right;
 }
 
-.rightnav-box { 
+.rightnav-box {
 	min-height:40px;
 	margin-bottom:30px;
 }
@@ -3850,13 +3851,13 @@ a.moreinfo div {
     margin-left: 20px;
 }
 }
- 
- 
-/********************************************************************************************* 
 
-4.  lt 720px 
 
-*********************************************************************************************/ 
+/*********************************************************************************************
+
+4.  lt 720px
+
+*********************************************************************************************/
 
 @media only screen and (min-width: 541px) and (max-width: 719px) {
 h2 {
@@ -4053,7 +4054,7 @@ p.quoter {
 .farmer-tab {
 	background-position: center 25px;
 	background-size:57px 42px;
-	margin:10px 0!important;	
+	margin:10px 0!important;
 }
 
 .farmer-tab:hover {
@@ -4143,11 +4144,11 @@ ul.topnav li {
 	display: inline-block;
 	margin-left:28px;
 }
-ul.topnav > li { 
+ul.topnav > li {
 	display: inline-block;
 	padding-top: 10px;
 }
-ul.topnav li a { 
+ul.topnav li a {
 	display: block;
 	text-decoration: none;
 	color: #808080;
@@ -4273,7 +4274,7 @@ a.maidsafe-org {
 a.mumble {
 	width:70px;
 	height:53px;
-	background-size:70px 106px; 
+	background-size:70px 106px;
 }
 
 
@@ -4361,11 +4362,11 @@ a.light-button-full {
 	font-size:12px;
 }
 
-.doc-box-papers-publications li a { 
+.doc-box-papers-publications li a {
 	font-size:11px;
 	margin:0px;
 	text-indent:0px;
-} 
+}
 
 ul.pdf-group li:before {
 	background-size:12px 15px;
@@ -4624,7 +4625,7 @@ div.roadmap{
 
 h2.noservers-head {
 	padding:10px 0 11px 10px;
-	font-size:14px;	
+	font-size:14px;
 }
 
 h2.administrators-head {
@@ -4690,7 +4691,7 @@ a.moreinfo div {
 	float:right;
 }
 
-.rightnav-box { 
+.rightnav-box {
 	min-height:40px;
 	margin-bottom:30px;
 }
@@ -4835,7 +4836,7 @@ ul.social-links {
 
 ul.social-links li {
 	display:inline;
-	
+
 	margin:5px;
 }
 
@@ -4852,7 +4853,7 @@ ul.social-links li a {
 .legal a {
 	font-size:12px!important;
 	background:none!important;
-	padding: 10px 0px 10px 20px!important; 
+	padding: 10px 0px 10px 20px!important;
 }
 
 .footer-logos {
@@ -4866,7 +4867,7 @@ ul.social-links li a {
 }
 
 .footer-logos img {
-	margin-left:20px;	
+	margin-left:20px;
 }
 
 .logo-footer {
@@ -4882,14 +4883,14 @@ ul.social-links li a {
     top: 100px;
 }
 }
-/********************************************************************************************* 
+/*********************************************************************************************
 
-4.  lt 540px 
+4.  lt 540px
 
-*********************************************************************************************/ 
+*********************************************************************************************/
 
 @media only screen and (max-width: 540px) {
-	
+
 
 #home h1, #home h2, #home h3 { text-align:center;}
 
@@ -5019,7 +5020,7 @@ a.menu-link {
 	display: inherit;
 	position: relative;
 	left: auto; top:auto;
-	box-shadow: none; 
+	box-shadow: none;
 	border:none;
 }
 
@@ -5208,7 +5209,7 @@ p.quoter {
 
 .farmer-tab {
 	background-position: center 25px;
-	margin:10px 0!important;	
+	margin:10px 0!important;
 }
 
 .farmer-tab:hover {
@@ -5221,7 +5222,7 @@ p.quoter {
 
 .video-box {
 	/*max-height:162px;*/
-	height:auto;	
+	height:auto;
 }
 
 #inline1 {
@@ -5253,7 +5254,7 @@ p.quoter {
 	width:90%;
 	margin-left:0px;
 	min-height:134px;
-	
+
 }
 
 
@@ -5654,7 +5655,7 @@ div.roadmap{
 
 
 h2.noservers-head {
-	
+
 }
 
 h2.administrators-head {
@@ -5671,7 +5672,7 @@ h2.datamanage-head {
 h2.password-head {
 	padding-right:46%;
 	display:block;
-	
+
 }
 
 h2.sharedata-head {
@@ -5922,9 +5923,9 @@ p.legal {
 }
 
 .legal a {
-	
+
 	background:none!important;
-	padding: 10px 0px 10px 20px!important; 
+	padding: 10px 0px 10px 20px!important;
 }
 
 .footer-logos {
@@ -5935,7 +5936,7 @@ p.legal {
 .footer-logos a {display:inline-block!important; background:none!important; }
 
 .footer-logos img {
-	margin-left:20px;	
+	margin-left:20px;
 }
 
 .logo-footer {
@@ -5952,11 +5953,11 @@ p.legal {
 }
 }
 
-/********************************************************************************************* 
+/*********************************************************************************************
 
-4.  lt 480px 
+4.  lt 480px
 
-*********************************************************************************************/ 
+*********************************************************************************************/
 
 @media only screen and (max-width: 480px) {
 .video-box {
