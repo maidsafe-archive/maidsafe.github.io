@@ -272,7 +272,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           dir: 'dist',
-          remote: 'git@github.com:krishnaIndia/maidsafe.github.io.git',
+          remote: 'https://github.com/krishnaIndia/maidsafe.github.io.git',
           branch: 'deploy',
           commit: true,
           push: true
@@ -415,6 +415,7 @@ module.exports = function (grunt) {
   //   'clean:server',
   //   'concurrent:test',
   //   'browserSync:test'
+    'buildcontrol'
   ]);
 
   grunt.registerTask('check', [
