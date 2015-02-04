@@ -256,7 +256,8 @@ module.exports = function (grunt) {
     buildcontrol: {
       dist: {
         options: {
-          remote: 'https://github.com/krishnaIndia/maidsafe.github.io.git',
+          dir: 'dist',
+          remote: 'git@github.com:krishnaIndia/maidsafe.github.io.git',
           branch: 'Deploy',
           commit: true,
           push: true
