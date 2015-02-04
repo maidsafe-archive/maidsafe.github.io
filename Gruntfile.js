@@ -280,7 +280,7 @@ module.exports = function (grunt) {
         options: {
           dir: 'dist',
           remote: 'git@github.com:' + CONFIG.owner + '/' + CONFIG.repo + '.git',
-          remoteBranch: 'deploy-bed',
+          branch: 'deploy-bed',
           commit: true,
           push: true
         }
