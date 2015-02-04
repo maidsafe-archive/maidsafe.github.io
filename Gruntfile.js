@@ -79,7 +79,14 @@ module.exports = function (grunt) {
       dist: {
         options: {
           server: {
-            baseDir: "<%= yeoman.dist %>"
+            baseDir: "<%= yeoman.dist %>",
+            middleware: function (req, res, next) {
+              var urlSplitted = req.url.split('/');
+              if (urlSplitted[urlSplitted.length - 1] && urlSplitted[urlSplitted.length - 1].split('.').length === 1) {
+                req.url += '.html';
+              }
+              next();
+            }
           }
         }
       },
@@ -272,7 +279,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           dir: 'dist',
-          remote: 'https://github.com/krishnaIndia/maidsafe.github.io.git',
+          remote: 'git@github.com:krishnaIndia/maidsafe.github.io.git',
           branch: 'deploy',
           commit: true,
           push: true
