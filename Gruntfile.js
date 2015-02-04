@@ -422,7 +422,6 @@ module.exports = function (grunt) {
   //   'clean:server',
   //   'concurrent:test',
   //   'browserSync:test'
-    'buildcontrol'
   ]);
 
   grunt.registerTask('check', [
@@ -451,7 +450,7 @@ module.exports = function (grunt) {
     ]);
 
   grunt.registerTask('deploy', [
-    //'check',
+   // 'check', // this is commented bcz it breaks on windows, to be supported soon
     'test',
     'build',
     'buildcontrol'

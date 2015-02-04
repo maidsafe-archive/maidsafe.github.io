@@ -1,5 +1,3 @@
-'use strict';
-
 $(function() {
   $('.bxslider').bxSlider({
     auto: true,
@@ -28,4 +26,5 @@ jQuery(document).ready(function ($) {
     var $this = $(this);
     $this.toggleClass('active');
   });
+  alert('red')
 });
