@@ -8,3 +8,4 @@
 /.jekyll
 /app/_bower_components
 /dist
+/.editorconfig
