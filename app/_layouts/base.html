@@ -14,3 +14,7 @@ layout: default
 {% include html/footer.html %}
 {% include vendor_js.html %}
 {% include scripts.html %}
+
+{% for resource in page.resources %}
+  {% include {{ resource }} %}
+{% endfor %}
