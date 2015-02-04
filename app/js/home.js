@@ -26,5 +26,4 @@ jQuery(document).ready(function ($) {
     var $this = $(this);
     $this.toggleClass('active');
   });
-  alert('red')
 });
