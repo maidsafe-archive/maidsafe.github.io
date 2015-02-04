@@ -448,13 +448,12 @@ module.exports = function (grunt) {
     'buildcontrol'
     ]);
 
-
-  grunt.registerTask('clean', [
+  grunt.registerTask('clean-branch', [
     'exec:gitCheckout:' + CONFIG.baseBranch,
     'exec:gitBranchList',
     'prompt:clean',
     'exec:gitDeleteBranch'
-  ]);
+    ]);
 
   grunt.registerTask('pr', [
     'prompt:pr',
@@ -469,7 +468,7 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'browserSync:server',
     'watch'
-  ]);
+    ]);
   /*
    * Checks out to latest master branch and serves files
    */
@@ -481,5 +480,5 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'browserSync:server',
     'watch'
-  ]);
+    ]);
 };
