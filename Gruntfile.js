@@ -8,10 +8,25 @@
 //   fonts: fonts
 
 module.exports = function (grunt) {
+  var selectedPR;
+  var gitHelper;
+  var OPTION_ISSUE_KEY = 'pr.key';
+  var BRANCH_KEY = 'local_branch';
+
+  var CONFIG = {
+    owner: 'krishnaindia',
+    repo: 'maidsafe.github.io',
+    baseBranch: 'master'
+  };
+
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
+  grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-prompt');
+
+  gitHelper = new require('./grunt_helper/github').Helper();
 
   grunt.initConfig({
     // Configurable paths
@@ -299,6 +314,78 @@ module.exports = function (grunt) {
       dist: [
         'copy:dist'
       ]
+    },
+    prompt: {
+      pr: {
+        options: {
+          questions: [
+            {
+              config: OPTION_ISSUE_KEY, // arbitrary name or config for any other grunt task
+              type: 'list', // list, checkbox, confirm, input, password
+              message: 'Select the PR to build', // Question to ask the user, function needs to return a string,
+              choices: function() {
+                return gitHelper.getOpenPRList(CONFIG.owner, CONFIG.repo);
+              }
+            }
+          ]
+        }
+      },
+      clean: {
+        options: {
+          questions: [
+            {
+              config: BRANCH_KEY, // arbitrary name or config for any other grunt task
+              type: 'list', // list, checkbox, confirm, input, password
+              message: 'Select the Branch to delete', // Question to ask the user, function needs to return a string,
+              choices: function() {
+                return gitHelper.getLocalBranches();
+              }
+            }
+          ]
+        }
+      }
+    },
+    exec: {
+      gitCheckout: {
+        cmd: function(branch) {
+          return gitHelper.CLI.checkout(branch || selectedPR);
+        }
+      },
+      gitPullForPR: {
+        cmd: function() {
+          return gitHelper.pullForPR(selectedPR);
+        }
+      },
+      gitPull: {
+        cmd: gitHelper.CLI.pull
+      },
+      gitBranch: {
+        cmd: function(branch) {
+          return gitHelper.CLI.branch(branch || selectedPR);
+        },
+        exitCode : [0, 128]
+      },
+      gitBranchList: {
+        cmd: 'git branch',
+        callback: gitHelper.branchListHandler
+      },
+      gitDeleteBranch: {
+        cmd: function() {
+          return 'git branch -D ' + grunt.config(BRANCH_KEY);
+        }
+      },
+      gitStatus: {
+        cmd: 'git status'
+      },
+      echoSelection: {
+        cmd: function() {
+          selectedPR = grunt.config(OPTION_ISSUE_KEY);
+          if (selectedPR && selectedPR !== 'undefined') {
+            return 'echo PR Selected - ' + selectedPR;
+          }
+          return 'echo PR not selected && exit 1';
+        }
+      }
     }
   });
 
@@ -361,9 +448,38 @@ module.exports = function (grunt) {
     'buildcontrol'
     ]);
 
+
+  grunt.registerTask('clean', [
+    'exec:gitCheckout:' + CONFIG.baseBranch,
+    'exec:gitBranchList',
+    'prompt:clean',
+    'exec:gitDeleteBranch'
+  ]);
+
+  grunt.registerTask('pr', [
+    'prompt:pr',
+    'exec:echoSelection',
+    'exec:gitCheckout:' + CONFIG.baseBranch,
+    'exec:gitPull',
+    'exec:gitBranch',
+    'exec:gitCheckout',
+    'exec:gitPullForPR',
+    'clean:server',
+    'concurrent:server',
+    'autoprefixer:dist',
+    'browserSync:server',
+    'watch'
+  ]);
+  /*
+   * Checks out to latest master branch and serves files
+   */
   grunt.registerTask('default', [
-    'check',
-    'test',
-    'build'
+    'exec:gitCheckout:' + CONFIG.baseBranch,
+    'exec:gitPull',
+    'clean:server',
+    'concurrent:server',
+    'autoprefixer:dist',
+    'browserSync:server',
+    'watch'
   ]);
 };
