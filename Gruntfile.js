@@ -61,9 +61,9 @@ module.exports = function (grunt) {
         options: {
           server: {
             baseDir: [
-              ".jekyll",
-              ".tmp",
-              "<%= yeoman.app %>"
+              '.jekyll',
+              '.tmp',
+              '<%= yeoman.app %>'
             ],
             middleware: function (req, res, next) {
               var urlSplitted = req.url.split('/');
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           server: {
-            baseDir: "<%= yeoman.dist %>",
+            baseDir: '<%= yeoman.dist %>',
             middleware: function (req, res, next) {
               var urlSplitted = req.url.split('/');
               if (urlSplitted[urlSplitted.length - 1] && urlSplitted[urlSplitted.length - 1].split('.').length === 1) {
@@ -103,9 +103,9 @@ module.exports = function (grunt) {
         options: {
           server: {
             baseDir: [
-              ".jekyll",
-              ".tmp",
-              "<%= yeoman.app %>"
+              '.jekyll',
+              '.tmp',
+              '<%= yeoman.app %>'
             ]
           },
           watchTask: true
@@ -168,7 +168,8 @@ module.exports = function (grunt) {
         dest: '<%= yeoman.dist %>'
       },
       html: ['<%= yeoman.dist %>/index.html', '<%= yeoman.dist %>/roadmap.html', '<%= yeoman.dist %>/press.html',
-        '<%= yeoman.dist %>/timeline.html', '<%= yeoman.dist %>/article-bitcoin-magazine.html', '<%= yeoman.dist %>/team.html']
+        '<%= yeoman.dist %>/timeline.html', '<%= yeoman.dist %>/article-bitcoin-magazine.html',
+        '<%= yeoman.dist %>/team.html']
     },
     usemin: {
       options: {
@@ -295,6 +296,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/js/**/*.js',
+        '!<%= yeoman.app %>/js/third-party/*.js',
         'test/spec/**/*.js'
       ]
     },
@@ -423,6 +425,7 @@ module.exports = function (grunt) {
   //   'clean:server',
   //   'concurrent:test',
   //   'browserSync:test'
+    'jshint:all',
   ]);
 
   grunt.registerTask('check', [
