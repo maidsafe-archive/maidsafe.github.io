@@ -9,11 +9,22 @@ var long1='.phase-group .long1 h2';
 var long2='.phase-group .long2 h2';
 var displayPhase;
 $(document).ready(function () {
-  $('.backwards').click(function(){displayPhase(this, 'Project SAFE Roadmap', maind, 'roadmap', 'phase-group');});
-  $('#testnet1').click(function(){displayPhase(this, 'Testnet 1 Overview', test1d, 'testnet1', 'roadmap');});
-  $('#testnet2').click(function(){displayPhase(this, 'Testnet 2 Overview', test2d, 'testnet2', 'roadmap');});
-  $('#testnet3').click(function(){displayPhase(this, 'Testnet 3 Overview', test3d, 'testnet3', 'roadmap');});
-  $('#betalaunch').click(function(){displayPhase(this, 'BETA Launch', launchd, 'betalaunch', 'roadmap');});
+  $('.backwards').click(function(){
+    displayPhase(this, 'Project SAFE Roadmap', maind, 'roadmap', 'phase-group');
+  });
+  $('#testnet1').click(function(){
+    displayPhase(this, 'Testnet 1 Overview', test1d, 'testnet1', 'roadmap');
+  });
+  $('#testnet2').click(function(){
+    displayPhase(this, 'Testnet 2 Overview', test2d, 'testnet2', 'roadmap');
+  });
+  $('#testnet3').click(function(){
+    displayPhase(this, 'Testnet 3 Overview', test3d, 'testnet3', 'roadmap');
+  });
+  $('#betalaunch').click(function(){
+    displayPhase(this, 'BETA Launch', launchd, 'betalaunch', 'roadmap');
+  });
+  autoToggle();
 });
 displayPhase = function(obj, title, desc, show, hide ){
   if (hide === 'phase-group') {
@@ -39,5 +50,15 @@ displayPhase = function(obj, title, desc, show, hide ){
     $(long2).replaceWith('<h2>Advances in Routing group and quorum for security levels well beyond network size and ' +
     'make sybil attacks inordinately difficult</h2>');
     $('#viewer').removeClass('mobile-version');
+  }
+};
+var autoToggle = function() {
+  var phaseUrl;
+  phaseUrl = window.location.href.split('#');
+  if (phaseUrl && phaseUrl.length === 2) {
+    var element = $('#' + phaseUrl[1]);
+    if (element) {
+      element.click();
+    }
   }
 };
