@@ -128,6 +128,9 @@ module.exports = function (grunt) {
       server: [
         '.tmp',
         '.jekyll'
+      ],
+      bundler: [
+        '<%= yeoman.dist %>/bundler.html'
       ]
     },
     autoprefixer: {
@@ -167,9 +170,7 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= yeoman.dist %>'
       },
-      html: ['<%= yeoman.dist %>/index.html', '<%= yeoman.dist %>/roadmap.html', '<%= yeoman.dist %>/press.html',
-        '<%= yeoman.dist %>/timeline.html', '<%= yeoman.dist %>/article-bitcoin-magazine.html',
-        '<%= yeoman.dist %>/team.html']
+      html: ['<%= yeoman.dist %>/bundler.html']
     },
     usemin: {
       options: {
@@ -425,7 +426,7 @@ module.exports = function (grunt) {
   //   'clean:server',
   //   'concurrent:test',
   //   'browserSync:test'
-    'jshint:all',
+    'jshint:all'
   ]);
 
   grunt.registerTask('check', [
@@ -450,6 +451,7 @@ module.exports = function (grunt) {
     'svgmin',
     'filerev',
     'usemin',
+    'clean:bundler',
     'htmlmin'
     ]);
 

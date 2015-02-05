@@ -12,5 +12,9 @@ layout: default
   </div>
 </div>
 {% include html/footer.html %}
-{% include vendor_js.html %}
+{% include vendor.html %}
 {% include scripts.html %}
+
+{% for resource in page.includes %}
+  {% include {{resource}} %}
+{% endfor %}
