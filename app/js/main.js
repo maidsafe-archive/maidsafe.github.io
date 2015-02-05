@@ -1,3 +1,4 @@
+/* jshint undef: false*/
 $('body').addClass('js');
 var $menu = $('#menu'),
   $menulink = $('.menu-link'),

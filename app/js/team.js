@@ -1,3 +1,4 @@
+/* jshint undef: false*/
 var bossBio = 'Logic is the boss at MaidSafe and forces decision making based on well considered reasoning.' +
   ' The input of our team is judged based on the validity of their analysis rather than the job title they' +
   ' hold. This flat and inclusive structure ensures that we get the best out of the entire team and while ' +
@@ -85,6 +86,7 @@ var paigeBio = 'While working towards a BFA in Interrelated Media from Massachus
   ' This experience helped to map her interest in natural decentralized systems onto concepts ' +
   'within technology. She currently co-organizes the largest bitcoin meetup in the US in San Francisco' +
   ' and fills various roles at MaidSafe with a focus on community, communication and web development.  ';
+var displayBio;
 
 $(document).ready(function () {
 	$('#boss').click(function(){displayBio(this, 'The Boss', bossBio, null, null);});
@@ -111,7 +113,7 @@ $(document).ready(function () {
 	$('#paige').click(function(){displayBio(this, 'Paige Peterson', paigeBio, 'ioptio', null);});
 });
 
-function displayBio(obj, name, bio, twitter, wp) {
+displayBio = function(obj, name, bio, twitter, wp) {
 	if (!$(obj).hasClass('icon-active')) {
 		$( 'div.team-map' ).children( '.icon-active' ).removeClass( 'icon-active' );
 		$(obj).addClass('icon-active');
@@ -121,7 +123,6 @@ function displayBio(obj, name, bio, twitter, wp) {
 	$('.profile-twitter').addClass('hidden');
 	if (twitter!=null) {
 		$('.twitter-'+twitter).removeClass('hidden');
-		//$('div.profile-twitter').replaceWith('<div class='profile-twitter'><a href='https://twitter.com/'+twitter+'' target='_blank' class='twitter-follow-button' data-show-count='false'>Follow @'+twitter+'</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script></div>');
 	}
 	if (wp==null) {
 		if (!$('.profile-wp').hasClass('hidden')){
@@ -130,4 +131,4 @@ function displayBio(obj, name, bio, twitter, wp) {
 	} else {
 		$('.profile-wp').removeClass('hidden');
 	}
-}
+};

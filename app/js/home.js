@@ -1,3 +1,4 @@
+/* jshint undef: false*/
 $(function() {
   $('.bxslider').bxSlider({
     auto: true,
@@ -11,7 +12,7 @@ $(function() {
   });
 });
 // Custom selector and No-Double-Wrapping Prevention Test
-$(".video-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
+$('.video-container').fitVids({ customSelector: 'iframe[src^="http://socialcam.com"]'});
 // Navbar initialization for Responsiveness
 jQuery(document).ready(function ($) {
   $('body').addClass('js');
