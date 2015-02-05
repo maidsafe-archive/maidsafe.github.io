@@ -283,7 +283,7 @@ module.exports = function (grunt) {
         options: {
           dir: 'dist',
           remote: 'git@github.com:' + CONFIG.owner + '/' + CONFIG.repo + '.git',
-          branch: 'deploy',
+          branch: 'gh-pages',
           commit: true,
           push: true
         }
@@ -296,8 +296,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/js/**/*.js',
-        '!<%= yeoman.app %>/js/third-party/*.js',
+        '<%= yeoman.app %>/js/*.js',
         'test/spec/**/*.js'
       ]
     },
@@ -456,7 +455,7 @@ module.exports = function (grunt) {
     ]);
 
   grunt.registerTask('deploy', [
-   // 'check', // this is commented bcz it breaks on windows, to be supported soon
+   // 'check', // this is commented because it breaks on windows, to be supported soon
     'test',
     'build',
     'buildcontrol'
