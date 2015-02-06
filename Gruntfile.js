@@ -15,8 +15,8 @@ module.exports = function (grunt) {
 
   var CONFIG = {
     owner: 'krishnaindia',
-    repo: 'krishnaindia.github.io',
-    baseBranch: 'master'
+    repo: 'maidsafe.github.io',
+    baseBranch: 'next'
   };
 
   // Show elapsed time after tasks run
