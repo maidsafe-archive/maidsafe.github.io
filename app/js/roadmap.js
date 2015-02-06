@@ -8,6 +8,17 @@ var launchd='<p>See what we have planned for beta.</p>';
 var long1='.phase-group .long1 h2';
 var long2='.phase-group .long2 h2';
 var displayPhase;
+var autoToggle = function() {
+  var phaseUrl;
+  phaseUrl = window.location.href.split('#');
+  if (!phaseUrl && phaseUrl.length !== 2) {
+    return;
+  }
+  var element = $('#' + phaseUrl[1]);
+  if (element) {
+    element.click();
+  }
+};
 $(document).ready(function () {
   $('.backwards').click(function(){
     displayPhase(this, 'Project SAFE Roadmap', maind, 'roadmap', 'phase-group');
@@ -50,16 +61,5 @@ displayPhase = function(obj, title, desc, show, hide ){
     $(long2).replaceWith('<h2>Advances in Routing group and quorum for security levels well beyond network size and ' +
     'make sybil attacks inordinately difficult</h2>');
     $('#viewer').removeClass('mobile-version');
-  }
-};
-var autoToggle = function() {
-  var phaseUrl;
-  phaseUrl = window.location.href.split('#');
-  if (!phaseUrl && phaseUrl.length != 2) {
-    return;
-  }
-  var element = $('#' + phaseUrl[1]);
-  if (element) {
-    element.click();
   }
 };

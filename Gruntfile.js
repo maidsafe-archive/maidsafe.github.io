@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 
   var CONFIG = {
     owner: 'krishnaindia',
-    repo: 'maidsafe.github.io',
+    repo: 'DroneIntegration',
     baseBranch: 'master'
   };
 
