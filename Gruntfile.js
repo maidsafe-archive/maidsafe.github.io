@@ -282,7 +282,7 @@ module.exports = function (grunt) {
         options: {
           dir: 'dist',
           remote: 'git@github.com:' + CONFIG.owner + '/' + CONFIG.repo + '.git',
-          branch: 'master',
+          branch: 'next',
           commit: true,
           push: true
         }
