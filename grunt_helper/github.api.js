@@ -7,7 +7,7 @@ exports.API = function(accessToken) {
   var getHeaders = function() {
     var headers = {'User-Agent': USER_AGENT};
     if (accessToken) {
-      headers['Authorization'] = 'token ' + accessToken
+      headers.Authorization = 'token ' + accessToken;
     }
     return headers;
   };
