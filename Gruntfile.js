@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 
   var CONFIG = {
     owner: 'krishnaindia',
-    repo: 'DroneIntegration',
+    repo: 'krishnaindia.github.io',
     baseBranch: 'master'
   };
 
