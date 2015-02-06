@@ -39,11 +39,14 @@ exports.Helper = function(accessToken) {
   };
   instance.pullForPR = function(selectedPR) {
     if (!openPR.hasOwnProperty(selectedPR)) {
-      return 'echo pull failed -  PR not found for selection && exit 1'
+      return 'echo pull failed -  PR not found for selection && exit 1';
     }
     return instance.CLI.pullRemote(openPR[selectedPR]['head']['repo']['clone_url'], openPR[selectedPR]['head']['ref']);
   };
   instance.branchListHandler = function(stdIn, stdOut, err) {
+    if (err) {
+      return 'echo Failed to list local branches && exit 1';
+    }
     var list = stdOut.split('\n');
     for (var i in list) {
       if (!list[i] || list[i].indexOf('*') == 0) {

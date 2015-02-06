@@ -16,14 +16,14 @@ module.exports = function (grunt) {
   var CONFIG = {
     owner: 'krishnaindia',
     repo: 'maidsafe.github.io',
-    baseBranch: 'next'
+    baseBranch: 'master',
+    deployBranch: 'gh-pages'
   };
 
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
-
 
   gitHelper = new require('./grunt_helper/github').Helper();
 
@@ -282,7 +282,7 @@ module.exports = function (grunt) {
         options: {
           dir: 'dist',
           remote: 'git@github.com:' + CONFIG.owner + '/' + CONFIG.repo + '.git',
-          branch: 'next',
+          branch: CONFIG.deployBranch,
           commit: true,
           push: true
         }
@@ -395,17 +395,23 @@ module.exports = function (grunt) {
           }
           return 'echo PR not selected && exit 1';
         }
+      },
+      updateDependencies: {
+        cmd: 'npm install && bower install'
       }
     }
   });
 
-  // Define Tasks
+  /**
+   * Serve the files
+   */
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'browserSync:dist']);
     }
 
     grunt.task.run([
+      'exec:updateDependencies',
       'clean:server',
       'concurrent:server',
       'autoprefixer:dist',
@@ -414,12 +420,7 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', function () {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
-  });
-
-  // No real tests yet. Add your own.
+  // No real tests yet.
   grunt.registerTask('test', [
   //   'clean:server',
   //   'concurrent:test',
@@ -427,16 +428,17 @@ module.exports = function (grunt) {
     'jshint:all'
   ]);
 
-  grunt.registerTask('check', [
-    'clean:server',
-    'jekyll:check',
-    'jshint:all',
-    'csslint:check'
-    // 'scsslint'
-  ]);
+  //grunt.registerTask('check', [
+  //  'clean:server',
+  //  'jekyll:check', // this breaks on windows, to be supported soon
+  //  'jshint:all',
+  //  'csslint:check'
+  //  // 'scsslint'
+  //]);
 
   grunt.registerTask('build', [
     'clean',
+    'exec:updateDependencies',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'concurrent:dist',
@@ -453,20 +455,32 @@ module.exports = function (grunt) {
     'htmlmin'
     ]);
 
+  /**
+   * Builds and Deploys in the deployBranch from the configuration
+   */
   grunt.registerTask('deploy', [
-   // 'check', // this is commented because it breaks on windows, to be supported soon
+   // 'check',
     'test',
     'build',
     'buildcontrol'
     ]);
 
+  /**
+   * List the local branches for deleting
+   *
+   */
   grunt.registerTask('clean-branch', [
     'exec:gitCheckout:' + CONFIG.baseBranch,
     'exec:gitBranchList',
     'prompt:clean',
-    'exec:gitDeleteBranch'
+    'exec:gitDeleteBranch',
+    'exec:updateDependencies'
     ]);
 
+  /**
+   * Lists the open Pull Requests from the configured repository.
+   * On selection of the PR the branch is checked  out and merged with the latest master branch and serves the site.
+   */
   grunt.registerTask('pr', [
     'prompt:pr',
     'exec:echoSelection',
@@ -475,22 +489,15 @@ module.exports = function (grunt) {
     'exec:gitBranch',
     'exec:gitCheckout',
     'exec:gitPullForPR',
-    'clean:server',
-    'concurrent:server',
-    'autoprefixer:dist',
-    'browserSync:server',
-    'watch'
+    'serve'
     ]);
-  /*
-   * Checks out to latest master branch and serves files
+
+  /**
+   * Checks out to the latest master branch and serves files
    */
   grunt.registerTask('default', [
     'exec:gitCheckout:' + CONFIG.baseBranch,
     'exec:gitPull',
-    'clean:server',
-    'concurrent:server',
-    'autoprefixer:dist',
-    'browserSync:server',
-    'watch'
+    'serve'
     ]);
 };
