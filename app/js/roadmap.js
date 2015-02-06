@@ -55,10 +55,11 @@ displayPhase = function(obj, title, desc, show, hide ){
 var autoToggle = function() {
   var phaseUrl;
   phaseUrl = window.location.href.split('#');
-  if (phaseUrl && phaseUrl.length === 2) {
-    var element = $('#' + phaseUrl[1]);
-    if (element) {
-      element.click();
-    }
+  if (!phaseUrl && phaseUrl.length != 2) {
+    return;
+  }
+  var element = $('#' + phaseUrl[1]);
+  if (element) {
+    element.click();
   }
 };
