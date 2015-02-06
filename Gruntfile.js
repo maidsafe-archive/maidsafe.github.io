@@ -16,8 +16,8 @@ module.exports = function (grunt) {
   var CONFIG = {
     owner: 'krishnaindia',
     repo: 'maidsafe.github.io',
-    baseBranch: 'master',
-    deployBranch: 'gh-pages'
+    baseBranch: 'MAID-712_porting_to_jekyll',
+    deployBranch: 'next'
   };
 
   // Show elapsed time after tasks run
