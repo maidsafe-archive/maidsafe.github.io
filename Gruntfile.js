@@ -23,8 +23,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
-  grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-prompt');
+
 
   gitHelper = new require('./grunt_helper/github').Helper();
 
