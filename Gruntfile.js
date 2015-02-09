@@ -403,7 +403,8 @@ module.exports = function (grunt) {
   });
 
   /**
-   * Serve the files
+   * serve - Serve the files
+   * serve:dist - will serve the contents from the dist folder
    */
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -489,7 +490,8 @@ module.exports = function (grunt) {
     'exec:gitBranch',
     'exec:gitCheckout',
     'exec:gitPullForPR',
-    'serve'
+    'test',
+    'serve:dist'
     ]);
 
   /**
