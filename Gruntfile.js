@@ -20,6 +20,14 @@ module.exports = function (grunt) {
     deployBranch: 'next'
   };
 
+  var customMiddleware = function (req, res, next) {
+    var urlSplitted = req.url.split('/');
+    if (urlSplitted[urlSplitted.length - 1] && urlSplitted[urlSplitted.length - 1].split('.').length === 1) {
+      req.url += '.html';
+    }
+    next();
+  };
+
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
   // Load all Grunt tasks
@@ -64,13 +72,7 @@ module.exports = function (grunt) {
               '.tmp',
               '<%= yeoman.app %>'
             ],
-            middleware: function (req, res, next) {
-              var urlSplitted = req.url.split('/');
-              if (urlSplitted[urlSplitted.length - 1] && urlSplitted[urlSplitted.length - 1].split('.').length === 1) {
-                req.url += '.html';
-              }
-              next();
-            }
+            middleware: customMiddleware
           },
           watchTask: true
         }
@@ -79,13 +81,7 @@ module.exports = function (grunt) {
         options: {
           server: {
             baseDir: '<%= yeoman.dist %>',
-            middleware: function (req, res, next) {
-              var urlSplitted = req.url.split('/');
-              if (urlSplitted[urlSplitted.length - 1] && urlSplitted[urlSplitted.length - 1].split('.').length === 1) {
-                req.url += '.html';
-              }
-              next();
-            }
+            middleware: customMiddleware
           }
         }
       },
@@ -355,6 +351,40 @@ module.exports = function (grunt) {
         }
       }
     },
+    'link-checker': {
+      options: {
+        maxConcurrency: 20,
+        noFragment: true
+      },
+      dev: {
+        site: 'localhost',
+        options: {
+          initialPort: 8000,
+          callback: function(crawler) {
+            crawler.supportedMimeTypes = [
+              /^text\//i,
+              /^application\/(rss|html|xhtml)?[\+\/\-]?xml/i,
+              /^xml/i
+            ];
+          }
+        }
+      }
+    },
+    connect: {
+      serve: {
+        options: {
+          middleware: function(connect, options, middlewares) {
+            middlewares.unshift(customMiddleware);
+            return middlewares;
+          },
+          base: [
+            '.jekyll',
+            '.tmp',
+            '<%= yeoman.app %>'
+          ]
+        }
+      }
+    },
     exec: {
       gitCheckout: {
         cmd: function(branch) {
@@ -421,12 +451,16 @@ module.exports = function (grunt) {
     ]);
   });
 
-  // No real tests yet.
+  /**
+   * grunt test - to run the test suite for js linters, broken links and  w3c validators
+   */
   grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'browserSync:test'
-    'jshint:all'
+    'exec:updateDependencies',
+    'clean:server',
+    'concurrent:server',
+    'connect:serve',
+    'jshint:all',
+    'link-checker'
   ]);
 
   //grunt.registerTask('check', [

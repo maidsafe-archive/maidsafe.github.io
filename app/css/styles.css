@@ -653,15 +653,6 @@ Banner Styles
   font-family: 'OpenSansSemiBold', Arial, sans-serif;
 }
 
-.safecoin-logo {
-  background:url(../img/safecoin-banner-logo.png) no-repeat 0 0;
-  width:260px;
-  height:82px;
-  background-size:260px 82px;
-  position:relative;
-  margin:0px auto 10px auto;
-}
-
 /************************** Banner plane ***************************/
 .banner-plane {
   padding:60px 0 0 0;
@@ -702,13 +693,6 @@ Banner Styles
   height:46px;
   display:inline-block;
   margin:20px 40px 0 40px;
-}
-
-.community-safecoin {
-  background:url(../img/banner-community-safecoin.png) no-repeat 0 0;
-  width:240px;
-  height:46px;
-  display:inline-block;
 }
 
 /************************** Banner news ***************************/
@@ -880,9 +864,6 @@ Home Page Styles
   height:110px;
 }
 
-#home .shadow {
-  background:url(../img/nav_shadow-2.png) repeat-x 0 0;
-}
 #home h1 {
   text-align:center;
 }
@@ -1111,12 +1092,6 @@ video {
 Inner Page Styles
 
 *******************************************************************************/
-.shadow {
-  background:url(../img/nav_shadow-2.png) repeat-x 0 20px;
-  clear: both;
-  display: block;
-  height: 130px;
-}
 .leftnav-shell, .pressnav-shell { float:left;}
 ul.leftnav, .pressnav { padding-right:30px;}
 ul.leftnav li, .pressnav ul li { margin-bottom:15px;}
@@ -1252,7 +1227,6 @@ Developers Page Styles
 *******************************************************************************/
 
 a.get-started-button {
-  /*background:#5593D7 url(../img/hammer_icon.png) no-repeat 195px 10px;*/
   background:#5593D7;
   font-size: 22px;
   font-weight: 400;
@@ -1672,16 +1646,6 @@ h2.faq-developers, h2.faq-general, h2.faq-technical {
   font-size:18px;
   margin-top:20px;
 }
-h2.faq-developers {
-  background:url(../img/faq_developers_head.png) no-repeat 0 0;
-}
-h2.faq-general {
-  background:url(../img/faq_general_head.png) no-repeat 0 0;
-}
-h2.faq-technical {
-  background:url(../img/faq_technical_head.png) no-repeat 0 0;
-}
-
 #platform-faqs .main-content h2 {
   clear:both;
   margin:40px 0px 10px 0px;
@@ -1772,16 +1736,6 @@ a.gpl-license, a.commercial-license, a.contributor-agreement {
   font-family: 'OpenSansLight', Arial, sans-serif;
   font-size: 30px;
   font-weight: 300;
-}
-
-.online-reg-box {
-  background:url(../img/license_sign_up_icon.png) no-repeat 20px 40px;
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 10px;
-  border-style: none;
-  box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-  float:right;
-  margin-bottom:40px;
 }
 
 .license-reg {
@@ -1894,16 +1848,6 @@ Libraries Page Styles
   padding-top:10px;
 }
 
-.github {
-  background:url(../img/github-icon.png) no-repeat 15px 15px;
-  padding:15px 0 0 85px;
-}
-
-.back {
-  background:url(../img/back_arrow.png) no-repeat 15px 15px;
-  padding:15px 0 0 75px;
-}
-
 /*******************************************************************************
 
 Documents Page Styles
@@ -1965,19 +1909,6 @@ Documents Page Styles
 a.examples-tab, a.system-docs-tab, a.developer-wiki-tab, a.papers-publications-tab {
   text-decoration:none;
   text-align:center;
-}
-
-.examples-tab {
-  background:url(../img/documents_examples_icon.png) no-repeat center 40px;
-}
-.system-docs-tab {
-  background:url(../img/documents_system_docs_icon.png) no-repeat center 30px;
-}
-.developer-wiki-tab {
-  background:url(../img/documents_developer_wiki_icon.png) no-repeat center 30px;
-}
-.papers-publications-tab {
-  background:url(../img/documents_papers_publications_icon.png) no-repeat center 35px;
 }
 
 p.call-to {
@@ -2134,30 +2065,6 @@ Company Page Styles
 #team .main-content {
   padding-bottom: 20px;
 }
-
-a.twitter-button {
-  background:url(../img/twitter_icon.png) no-repeat top left!important;
-  width:28px;
-  height:23px;
-  display:inline-block;
-  text-indent:-9999px;
-  float:left;
-  margin:2px;
-}
-
-a.twitter-button:hover { background-position:bottom left;}
-
-a.wordpress-button {
-  background:url(../img/wordpress_icon.png) no-repeat top left!important;
-  width:28px;
-  height:28px;
-  display:inline-block;
-  text-indent:-9999px;
-  float:left;
-  margin:0px 10px;
-}
-
-a.wordpress-button:hover { background-position:bottom left;}
 
 .profile-row {
   display:block;
@@ -2702,255 +2609,6 @@ ul.social li a {
   padding-top:8px;
 }
 
-/*******************************************************************************
-
-SureFile Tutorial Page Styles
-
-*******************************************************************************/
-
-#surefile-tutorial h1 {
-  margin-bottom:0px;
-}
-#surefile-tutorial section {
-  margin-bottom:2em;
-  border-bottom:1px solid rgba(200,200,200,1.00);
-}
-
-#surefile-tutorial img {
-  margin-bottom:2em;
-
-}
-.note-text {
-  color:#C1272D;
-  font-style:italic;
-}
-.anchor-link {
-  float:left;
-  margin:0px;
-  padding:50px 0 0 0;
-}
-
-.sticky {
-  padding-top:52px;
-}
-
-#surefile-tutorial .leftnav-shell {
-  padding-top:36px;
-}
-
-#tutorial_image_one_a.add_store_mac {background:url(/img/surefile_tutorial_1a_mac.jpg) no-repeat 0 0; width:246px; height:263px;}
-#tutorial_image_one_a.add_store_win {background:url(/img/surefile_tutorial_1a_win.jpg) no-repeat 0 0; width:246px; height:263px;}
-
-#tutorial_image_one_b.add_store_mac {background:url(/img/surefile_tutorial_1b_mac.jpg) no-repeat 0 0; width:372px; height:495px;}
-#tutorial_image_one_b.add_store_win {background:url(/img/surefile_tutorial_1b_win.jpg) no-repeat 0 0; width:372px; height:495px;}
-
-#tutorial_image_one_c.add_store_mac {background:url(/img/surefile_tutorial_1c_mac.jpg) no-repeat 0 0; width:372px; height:495px;}
-#tutorial_image_one_c.add_store_win {background:url(/img/surefile_tutorial_1c_win.jpg) no-repeat 0 0; width:372px; height:495px;}
-
-#tutorial_image_two_a.manage_store_mac {background:url(/img/surefile_tutorial_2a_mac.jpg) no-repeat 0 0; width:232px; height:260px;}
-#tutorial_image.two_a.manage_store_win {background:url(/img/surefile_tutorial_2a_win.jpg) no-repeat 0 0; width:232px; height:260px;}
-
-#tutorial_image_two_b.manage_store_mac {background:url(/img/surefile_tutorial_2b_mac.jpg) no-repeat 0 0; width:372px; height:495px;}
-#tutorial_image_two_b.manage_store_win {background:url(/img/surefile_tutorial_2b_win.jpg) no-repeat 0 0; width:372px; height:495px;}
-
-#tutorial_image_three_a.open_store_mac {background:url(/img/surefile_tutorial_3a_mac.jpg) no-repeat 0 0; width:244px; height:261px;}
-#tutorial_image_three_a.open_store_win {background:url(/img/surefile_tutorial_3a_win.jpg) no-repeat 0 0; width:244px; height:261px;}
-
-#tutorial_image_three_b.open_store_mac {background:url(/img/surefile_tutorial_3b_mac.jpg) no-repeat 0 0; width:372px; height:495px;}
-#tutorial_image_three_b.open_store_win {background:url(/img/surefile_tutorial_3b_win.jpg) no-repeat 0 0; width:372px; height:495px;}
-
-#tutorial_image_three_c.open_store_mac {background:url(/img/surefile_tutorial_3c_mac.jpg) no-repeat 0 0; width:372px; height:495px;}
-#tutorial_image_three_c.open_store_win {background:url(/img/surefile_tutorial_3c_win.jpg) no-repeat 0 0; width:372px; height:495px;}
-
-
-#tutorial_image_one_a,
-#tutorial_image_one_b,
-#tutorial_image_one_c,
-#tutorial_image_two_a,
-#tutorial_image_two_b,
-#tutorial_image_three_a,
-#tutorial_image_three_b,
-#tutorial_image_three_c {margin-bottom:2em;}
-
-
-
-/*******************************************************************************
-
-SureFile Download Page Styles
-
-*******************************************************************************/
-
-#surefile-download h1 {
-  background:url(../img/download_surefile_small.png) no-repeat 0 0;
-  width:425px;
-  height:95px;
-  text-indent:-9999px;
-  text-align:center;
-  margin:0 auto 40px auto;
-}
-
-#surefile-download h2 {
-  color: #ED1C24;
-  font-size: 24px;
-  font-weight:normal;
-  font-family: 'OpenSansRegular',Arial,sans-serif;
-  margin-bottom:5px;
-}
-
-#surefile-download #main p {
-  margin-bottom:0px;
-  font-size: 18px;
-}
-
-p.sub-warning {
-  color: #ED1C24;
-  margin-bottom:20px!important;
-}
-p.sub-text {
-  font-size:12px!important;
-  margin-top:15px!important;
-}
-
-.download-shell {
-  text-align:center;
-  margin-top:50px;
-  margin-bottom:20px;
-}
-a.button-blue {
-  background: #5593D7;
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 5px;
-  border-style: none;
-  padding: 15px 20px 15px 20px;
-  position: relative;
-  color:#FFFFFF!important;
-  text-decoration:none;
-  display: inline-block;
-}
-a.button-blue:hover {
-  background-color:#29578A;
-}
-
-a.button-blue .button-text {
-  font-size: 36px;
-  font-weight: 400;
-  color:#FFFFFF!important;
-  cursor:pointer;
-}
-
-
-#downloadBox p {
-  margin:0 auto;
-  text-align:center;
-  font-weight:normal;
-}
-
-
-
-#surefile-download .col-l {
-  margin:0 0px 30px 0;
-  padding:20px 30px 20px 30px;
-}
-#surefile-download .col-m {
-  margin:0 0px 30px 0px;
-  padding:20px 30px 20px 30px;
-}
-#surefile-download .col-r {
-  margin:0 0 30px 0px;
-  padding:20px 30px 20px 30px;
-}
-
-#surefile-download .grid-4.l {
-  margin-left:0px;
-  margin-top:50px;
-}
-
-#surefile-download .grid-4.m {
-  margin-top:50px;
-}
-
-#surefile-download .grid-4.r {
-  margin-right:0px;
-  margin-top:50px;
-}
-
-.download-box {
-  border-color: rgba(0, 0, 0, 0);
-  border-style: none;
-  box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-  display: block;
-  padding:10px;
-  text-align:center;
-}
-
-.download-box h2 {
-  color: #5593D7!important;
-  font-size: 30px!important;
-  font-weight: 400!important;
-}
-.download-box h3 {
-  font-family: 'OpenSansLight',Arial,sans-serif;
-  color: #7F7F7F;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom:20px;
-}
-.download-box li {
-  margin-bottom:10px;
-}
-.download-box li a {
-  background-color: #5593D7;
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 5px;
-  border-style: none;
-  padding: 10px;
-  display:block;
-  color:#FFFFFF;
-}
-
-
-.download-box li a:hover {
-  background-color:#29578A;
-}
-
-.download-box li.unavailable {
-  cursor:default;
-  background-color:rgba(204,204,204,1.00);
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 5px;
-  border-style: none;
-  padding: 10px;
-  display:block;
-  color:rgba(255,255,255,1.00);
-}
-
-#surefile-download p.legal,
-#surefile-download p.tel  {
-  text-align:left;
-}
-
-
-#surefile-download p,
-#surefile-download h1,
-#surefile-download h2 {
-  text-align:center;
-}
-
-
-h2.trigger {
-  padding: 0 0 0 20px;
-  margin:0 auto 50px auto!important;
-  background: url(../img/arrow_another_download.png) no-repeat;
-  height: 18px;
-  line-height: 46px;
-  width: 180px;
-  font-size: 18px;
-  font-weight: normal;
-  line-height:16px;
-  text-align:center;
-  display:block;
-  clear:both;
-}
 h2.trigger a {
   color: #464646;
   text-decoration: none;
@@ -2964,14 +2622,6 @@ h2.trigger a:hover {
   color:#5593D7;
 }
 h2.active {background-position: left bottom; color:rgba(204,204,204,1.00);}
-
-.toggle_container {
-  margin: 0;
-  padding:0;
-  background: url(../img/shadow_download.png) repeat-x 0 0;
-  overflow: hidden;
-  clear: both;
-}
 
 .downloadShell {
   padding:0px 0px 90px 0px;
