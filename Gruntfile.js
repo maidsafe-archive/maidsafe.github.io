@@ -429,6 +429,18 @@ module.exports = function (grunt) {
       updateDependencies: {
         cmd: 'npm install && bower install'
       }
+    },
+    'html-validation': {
+      options: {
+        reportpath: 'validation/report.json',
+        path: 'validation/status.json',
+        reset: grunt.option('reset') || false,
+        stoponerror: false,
+        relaxerror: [] //ignores these errors
+      },
+      files: {
+        src: ['.jekyll/*.html']
+      }
     }
   });
 
@@ -460,7 +472,8 @@ module.exports = function (grunt) {
     'concurrent:server',
     'connect:serve',
     'jshint:all',
-    'link-checker'
+    'link-checker',
+    'html-validation'
   ]);
 
   //grunt.registerTask('check', [
