@@ -1,3 +1,5 @@
+/*globals $, document*/
+
 $(document).ready(function() {
   var toggle = function() {
     $('#big-map').fadeToggle();
