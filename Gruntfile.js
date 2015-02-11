@@ -434,7 +434,10 @@ module.exports = function (grunt) {
       options: {
         ignore: [
           'Consider using the "h1" element as a top-level heading only (all "h1" elements are treated as top-level ' +
-          'headings by many screen readers and other tools).'
+          'headings by many screen readers and other tools).',
+          'Element "dl" is missing a required child element.',
+          'Element "div" not allowed as child of element "span" in this context. ' +
+          '(Suppressing further errors from this subtree.)'
         ]
       },
       all: ['.jekyll/*.html', '!.jekyll/404.html']
