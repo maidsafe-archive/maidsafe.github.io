@@ -430,17 +430,14 @@ module.exports = function (grunt) {
         cmd: 'npm install && bower install'
       }
     },
-    'html-validation': {
+    htmllint: {
       options: {
-        reportpath: 'validation/report.json',
-        path: 'validation/status.json',
-        reset: grunt.option('reset') || false,
-        stoponerror: false,
-        relaxerror: [] //ignores these errors
+        ignore: [
+          'Consider using the "h1" element as a top-level heading only (all "h1" elements are treated as top-level ' +
+          'headings by many screen readers and other tools).'
+        ]
       },
-      files: {
-        src: ['.jekyll/*.html']
-      }
+      all: ['.jekyll/*.html', '!.jekyll/404.html']
     }
   });
 
@@ -473,7 +470,7 @@ module.exports = function (grunt) {
     'connect:serve',
     'jshint:all',
     'link-checker',
-    'html-validation'
+    'htmllint'
   ]);
 
   //grunt.registerTask('check', [
