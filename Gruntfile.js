@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     owner: 'krishnaindia',
     repo: 'maidsafe.github.io',
     baseBranch: 'MAID-712_porting_to_jekyll',
-    deployBranch: 'next'
+    deployBranch: 'master'
   };
 
   var customMiddleware = function (req, res, next) {
@@ -427,7 +427,7 @@ module.exports = function (grunt) {
         }
       },
       updateDependencies: {
-        cmd: 'npm install && bower install'
+        cmd: 'npm prune && npm install && bower install'
       }
     },
     htmllint: {
@@ -506,7 +506,6 @@ module.exports = function (grunt) {
   grunt.registerTask('deploy', [
    // 'check',
     'test',
-    'build',
     'buildcontrol'
     ]);
 
