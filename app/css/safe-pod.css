@@ -96,3 +96,12 @@
   z-index: 8040;
   background-image: url('/img/close.png');
 }
+.overlay {
+  position: fixed;
+  background: transparent;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+}
