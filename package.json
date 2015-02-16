@@ -32,7 +32,6 @@
     "sync-request": "^2.0.0",
     "grunt-link-checker": "0.0.6",
     "grunt-contrib-connect": "^0.9.0",
-    "link-checker": "0.0.2",
     "grunt-html": "git://github.com/viv-rajkumar/grunt-html"
   },
   "engines": {
