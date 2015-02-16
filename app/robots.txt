@@ -1,0 +1,4 @@
+# robots.txt for http://www.maidsafe.net/
+
+User-Agent: LinkChecker
+Allow: /

@@ -4,9 +4,6 @@ var CLI = function() {
   var parseBranchName = function(branchName) {
     return branchName.replace(/ /g, '_');
   };
-  instance.isGitRepo = function(callBack) {
-    return getCommandTemplate('git status', callBack);
-  };
   instance.clone = function(owner, repo) {
     return 'git clone https://github.com/' + owner + '/' + repo + '.git';
   };

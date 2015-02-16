@@ -1,0 +1,702 @@
+
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  /*******************************************************************************
+
+Header Styles
+
+*******************************************************************************/
+  #home header {
+    height:90px;
+    font-size: 14px;
+  }
+
+  #home .shadow {
+    background-position:0px -25px ;
+  }
+
+  header {
+    height:80px;
+    font-size: 14px;
+  }
+
+  .shadow {
+    background-size:100% 100px;
+    height:100px;
+  }
+
+  .logo {
+    width:180px;
+    height:52px;
+    background-size:180px 52px;
+    top:18px;
+  }
+
+  .menu {
+    top:56px;
+  }
+
+  .menu ul li {
+    display: inline-block;
+    margin-left:16px;
+  }
+
+
+  /************************ Banner Styles **************************/
+
+  .banner {
+    height:300px;
+  }
+  blockquote.quote {
+    font-size:18px;
+    padding: 8px;
+    margin: 5px;
+    background-size:28px 21px;
+  }
+  blockquote.quote span {
+    background-size:28px 21px;
+    padding-right: 25px;
+    padding-left:25px;
+  }
+
+  p.quoter {
+    font-size:13px;
+  }
+
+  .list-quote blockquote.quote span {
+    background-position: 456px 88px;
+  }
+
+
+  /************************** Banner news ***************************/
+  .banner-news {
+    padding:5px 0 0 0;
+  }
+  .banner-news h1 {
+    font-size:26px;
+    margin-bottom:10px;
+  }
+
+  .banner-news p {
+    font-size:20px;
+  }
+
+  .news-graphic {
+    width:202px;
+    height:86px;
+    background-size:202px 86px;
+    margin:0px auto 10px auto;
+  }
+
+  /************************** Banner community ***************************/
+  .banner-community {
+    padding:40px 0 0 0;
+  }
+  .banner-community h1 {
+    font-size:26px;
+  }
+
+  .community-development {
+    width:280px;
+    height:46px;
+    margin:30px 0 0 0;
+  }
+
+  .community-org {
+    width:225px;
+    height:46px;
+    margin:30px 40px 0 40px;
+  }
+
+  .community-safecoin {
+    width:240px;
+    height:46px;
+  }
+
+
+  /************************** Banner plane ***************************/
+  .banner-plane {
+    padding:40px 0 0 0;
+  }
+  .banner-plane h1 {
+    font-size:26px;
+    color:#5593D7;
+    margin:30px 0 0 0;
+  }
+  .plane {
+    background:url(/img/home_plane.png) no-repeat 0 0;
+    width:423px;
+    height:75px;
+    background-size:423px 75px;
+    margin:0px auto 10px auto;
+  }
+
+  /************************** Banner getcode ***************************/
+  .banner-getcode {
+    padding:65px 0 0 0;
+  }
+  .banner-getcode h1 {
+    font-size:26px;
+  }
+  .github-icon {
+    background-position: 254px 0px;
+    background-size:100px 88px;
+  }
+  .spacer {
+    display:inline-block;
+    width:100px;
+  }
+  /************************** Banner roadmap ***************************/
+  .banner-roadmap {
+    padding:10px 0 0 0;
+  }
+  .banner-roadmap h1 {
+    font-size:26px;
+    color:#5593D7;
+  }
+
+  .home-tabs p {
+    font-size:22px;
+    padding:95px 50px 15px 50px;
+    line-height:24px;
+  }
+
+  .core-dev-tab {
+    background-position: center 25px;
+    background-size:48px 48px;
+    margin:10px 0!important;
+  }
+
+  .core-dev-tab:hover {
+    background-position: center 25px;
+    background-size:48px 48px;
+  }
+
+  .app-builder-tab {
+    background-position: center 25px;
+    background-size:54px 43px;
+    margin:10px 18px!important;
+  }
+
+  .app-builder-tab:hover {
+    background-position: center 25px;
+    background-size:54px 43px;
+  }
+
+  .farmer-tab {
+    background-position: center 25px;
+    background-size:57px 42px;
+    margin:10px 0!important;
+  }
+
+  .farmer-tab:hover {
+    background-position: center 25px;
+    background-size:57px 42px;
+  }
+
+  .tell-me-more-tab p {
+    padding:20px;
+  }
+
+  .video-box {
+    height:394px;
+  }
+
+  #inline1 {
+    display:none;
+  }
+
+
+
+  #home h2 {
+    font-size:22px;
+    margin-bottom:40px;
+  }
+
+  .home-box {
+    margin-bottom:40px;
+  }
+
+  .home-box p {
+    font-size: 18px;
+  }
+
+  p.alpha-testers {
+    font-size: 28px;
+    font-family:'OpenSansBold', Arial, sans-serif;
+    margin-bottom:8px;
+    line-height:32px;
+  }
+
+  .maidsafe-platform {
+    background-size:180px 102px;
+    width:180px;
+    height:102px;
+  }
+
+  .surefile-test {
+    width:120px; height:62px;
+    background-size:120px 62px;
+  }
+
+  .github-code {
+    width:100px; height:88px;
+    background-size:100px 88px;
+  }
+
+
+
+  ul.leftnav li a { font-size:14px;}
+  ul.leftnav li ul li a { font-size:12px;}
+
+
+  .home-box p {
+    font-size: 16px;
+  }
+
+  .middle h2 {
+    margin-bottom:4%;
+  }
+
+
+  p.alpha-testers {
+    font-size: 24px;
+    margin-bottom:10px;
+  }
+
+  .article-1 {  padding-right:35px;}
+  .article-2 {  padding-left:15px;}
+
+  .notification p{
+    font-size: 16px;
+  }
+
+  /*********** Sidebar **************/
+
+  .sidebar p {
+    font-size:14px;
+  }
+
+  .sidebar .divider {
+    width:100%; /*156*/
+    height:10px;
+    background-size:100px 10px;
+  }
+
+  a.visit-blog {
+    width:102px;
+    height:58px;
+    background-size:102px 116px;
+
+  }
+
+  a.maidsafe-dev {
+    width:102px;
+    height:30px;
+    background-size:102px 60px;
+  }
+
+  a.maidsafe-org {
+    width:102px;
+    height:31px;
+    background-size:102px 62px;
+  }
+
+  a.mumble {
+    width:102px;
+    height:77px;
+    background-size:102px 154px;
+  }
+
+  /*********** Developers Page **************/
+
+  a.get-started-button {
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 8px 12px 8px 12px;
+    float:right;
+  }
+
+  a.button-blue {
+    font-size: 36px;
+    font-weight: 400;
+  }
+
+  #developers h1 {
+    margin-bottom:50px;
+  }
+
+  a.light-button, a.light-button-full {
+    font-size:16px;
+    margin:5px 6px;
+
+  }
+
+  a.light-button-full {
+    padding:20px 22px;
+  }
+
+  .diagram {
+    padding-top:90px;
+  }
+
+  .app-stack {
+    background-position: 230px 215px;
+  }
+
+  #core-developer .app-stack {
+    background-position:230px 860px;
+  }
+
+  /********* Get Involved Page ************/
+  .get-involved-tabs {
+    margin-bottom:30px;
+  }
+
+  .get-involved-tabs p {
+    font-size:22px;
+    padding:95px 20px 25px 20px;
+    line-height:26px;
+  }
+
+  .tell-me-more-tab p {
+    padding:20px;
+  }
+
+  .farmers-text img {
+    width:46px;
+    height:35px;
+    margin:65px 30px 55px 0;
+  }
+
+  .app-builders-text img {
+    width:46px;
+    height:36px;
+    margin:50px 30px 55px 0;
+  }
+
+  .core-developers-text img {
+    width:40px;
+    height:40px;
+    margin:33px 25px 40px 8px;
+  }
+
+
+  /*********** Documents Page ***************/
+
+  .doc-box-papers-publications {
+    height:727px;
+  }
+
+  /*********** Company Page ***************/
+  .main-content .col-3 {
+    width: 146px;
+  }
+
+  .main-content .left-col {
+    padding:0 20px 0 0;
+    margin:0 10px 0 0;
+  }
+
+  .main-content .right-col {
+    padding:0 0 0 20px;
+    margin:0 0 0 10px;
+  }
+  #company .main-content .col-3 h2{
+    padding-top: 4px;
+    width: 146px;
+    height: 31px;
+    background-size: 146px 31px;
+    font-size: 16px;
+  }
+
+  /*********** Team Page ***************/
+  #team .grid-9 {
+    width:540px;
+    margin:0px;
+  }
+  #team h1 {
+    font-size: 21px;
+  }
+
+  .mosaic-block {
+    height: 160px;
+    width: 160px;
+  }
+
+  .mosaic-block img {
+    height: 160px;
+    width: 160px;
+  }
+
+  .mosaic-block p {
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  .mosaic-block .details {
+    padding: 10px;
+  }
+  .team-map {
+    width: 340px;
+    height: 470px;
+    margin-left: -10px;
+  }
+  .team-icon {
+    width: 40px;
+  }
+  #boss { top: 150px; left: 198px; }
+  #david { top: 37px; left: 32px; }
+  #fraser { top: 17px; left: 128px; }
+  #qi { top: 53px; left: 204px; }
+  #prakash { top: 12px; left: 275px; }
+  #ben { top: 185px; left: 101px; }
+  #mahmoud { top: 240px; left: 34px; }
+  #ross { top: 285px; left: 113px; }
+  #viv { top: 246px; left: 200px; }
+  #pod { top: 215px; left: 285px; }
+  #niall { top: 338px; left: 175px; }
+  #peter { top: 402px; left: 102px; }
+  #lee { top: 375px; left: 262px; }
+
+  #shona { top:101px; left:112px; }
+
+  #justine { top:130px; left:12px; }
+  #linda { top:347px; left:33px; }
+
+  #nick { top:118px; left:291px; }
+  #paige { top:312px; left:294px; }
+
+  .profile-info {
+    display: block;
+    width: 160px !important;
+  }
+  .profile-info h2 {
+    margin-top: 0;
+  }
+  .profile-info p{
+    font-size: 12px;
+  }
+
+  /*********** Credits Page ***************/
+  .jetbrains{
+    width: 100px;
+    height: 30px;
+    margin-top: 25px !important;
+  }
+
+  /*********** Careers Page ***************/
+  .vacancies {
+    padding:20px;
+  }
+
+  #careers .col-l {
+    margin-right:70px;
+  }
+  .current-jobs {
+    padding:10px;
+    top:-10px;
+  }
+  .current-jobs h1 {
+    font-size:17px;
+  }
+  .current-jobs h2 {
+    font-size:12px;
+    margin:0px 0px 15px 0;
+  }
+  .current-jobs p, .current-jobs ul li {
+    font-size:11px;
+  }
+
+  .applynow {
+    background-size:41px 40px;
+    width:41px;
+    height:40px;
+    top:-14px;
+    right:-14px;
+  }
+  a.applyhere {
+    background-size:100px 88px;
+    width:86px;
+    height:24px;
+    display:block;
+    position:relative;
+    right:-54px;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:10px 6px;
+    font-size:11px;
+  }
+
+  .apply-text {
+    font-size:13px;
+    letter-spacing:-0.5px;
+  }
+  /*********** Use Cases Page Styles *************/
+  #use-cases section .grid-4 {
+    margin:0px 40px 0 0;
+  }
+
+  /*********** License Page Styles *************/
+
+  .download-license-box, .download-license-box-last {
+    background-size:40px 40px;
+    min-height:82px;
+    font-size:13px;
+  }
+  a.gpl-license, a.commercial-license, a.contributor-agreement {
+    padding:20px 10px 0px 55px;
+  }
+
+  .download-license-box {
+    margin:0px 14px 30px 0;
+  }
+  .download-license-box-last {
+    margin:0px 0px 30px 0;
+  }
+
+  /*********** Roadmap Page Styles **************/
+
+  #testnet1{top:35px;left: 15px;}
+  #testnet2{top:265px;left: 147px;}
+  #testnet3{top:35px;left: 277px;}
+  #betalaunch{top:265px;left: 407px;}
+
+  .bullet h2{
+    font-size: 14px;
+    padding: 0;
+    margin:0;
+    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .bullet{
+    height: 40px;
+    display:table;
+  }
+
+
+  .end{margin-bottom: 15px;}
+
+
+  .bullet-icon {
+    width: 42px;
+    height: 40px;
+    padding-right: 10px;
+  }
+  /*********** Features Page Styles *************/
+
+  .last-col {
+    margin-left:20px;
+  }
+
+
+  #platform-features h2 {
+    background-size:220px 49px;
+  }
+
+
+  h2.noservers-head {
+    padding:8px 0 23px 15px;
+    font-size:20px;
+  }
+
+  h2.administrators-head {
+    padding:3px 58px 18px 15px;
+    font-size:14px;
+  }
+
+  h2.datamanage-head {
+    padding:4px 60px 23px 15px;
+    font-size:14px;
+  }
+
+  h2.password-head {
+    padding:4px 62px 21px 15px;
+    font-size:14px;
+  }
+
+  h2.sharedata-head {
+    padding:4px 95px 23px 15px;
+    font-size:14px;
+  }
+
+  h2.distribute-head {
+    padding:4px 92px 21px 15px;
+    font-size:14px;
+  }
+
+
+  /******* Libraries Platform Page Styles ********/
+
+  a.moreinfo div {
+    font-size:11px;
+  }
+
+  /******* Libraries Page Styles ********/
+  .rightnav {
+    float:right;
+  }
+
+  .rightnav-box {
+    min-height:40px;
+    margin-bottom:30px;
+  }
+  .rightnav-box p {
+    font-size: 13px;
+    padding-top:5px;
+  }
+
+  .github {
+    background-position:10px 10px;
+    padding:12px 0 0 55px;
+    background-size:40px 35px;
+  }
+
+  .back {
+    background-position:5px 10px;
+    padding:12px 0 0 46px;
+    background-size:36px 41px;
+  }
+
+  /************* Contact Page Styles ***************/
+
+  #contact .col-l {
+    padding-right:10px;
+  }
+  #contact .col-m {
+    padding: 0 40px;
+    width: 220px;
+  }
+  #contact .col-r {
+    padding-left:10px;
+  }
+  /*********** Assets Page Styles *************/
+  #assets #wee-plane img{
+    margin-left: -70px;
+  }
+  #assets #safecoin-brand img {
+    margin-top: 10px;
+  }
+  #assets #advert img{
+    margin-top: 2px;
+  }
+  #assets #twitter-cover img {
+    margin: 2px 0 0 -60px;
+  }
+  #assets #meetup-cover img{
+    margin: 2px -100px;
+  }
+
+  /*********** Press Page Styles *************/
+
+  /************* Footer Styles ***************/
+  .legal {
+    width:58%;
+  }
+
+  .footer {height: 250px;}
+  .footer-logos img {
+    margin-left: 20px;
+  }
+}

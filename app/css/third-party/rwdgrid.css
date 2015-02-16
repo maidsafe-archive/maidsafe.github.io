@@ -1,0 +1,470 @@
+/*********************************************************************************************
+
+Project : rwdgrid - responsive grid system for your next project
+URI: http://rwdgrid.com/
+Version: 1.0
+Author: Vineeth G S
+Author URI: http://www.gsvineeth.com
+Github URI: https://github.com/gsvineeth/rwdgrid/
+
+**********************************************************************************************
+
+1.  CSS Reset
+2.  Grid 1200px
+3.  Grid 960px
+4.  Grid 720px
+5.  Grid lt 720px/ Mobile
+6.  Responsive Image
+
+
+**********************************************************************************************/
+
+
+
+
+/*********************************************************************************************
+
+2.  Grid 1200px
+
+*********************************************************************************************/
+
+.container-16, .container-12 {
+  margin:0 auto;
+  width: 1200px;
+}
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12, .grid-13, .grid-14, .grid-15, .grid-16 {
+  display:inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.alpha {
+  margin-left: 0;
+}
+.omega {
+  margin-right: 0;
+}
+.beta {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*
+.container-16 .grid-1 {
+	width:55px;
+}
+.container-16 .grid-2 {
+	width:130px;
+}
+.container-16 .grid-3 {
+	width:205px;
+}
+.container-16 .grid-4 {
+	width:280px;
+}
+.container-16 .grid-5 {
+	width:355px;
+}
+.container-16 .grid-6 {
+	width:430px;
+}
+.container-16 .grid-7 {
+	width:505px;
+}
+.container-16 .grid-8 {
+	width:580px;
+}
+.container-16 .grid-9 {
+	width:655px;
+}
+.container-16 .grid-10 {
+	width:730px;
+}
+.container-16 .grid-11 {
+	width:805px;
+}
+.container-16 .grid-12 {
+	width:880px;
+}
+.container-16 .grid-13 {
+	width:955px;
+}
+.container-16 .grid-14 {
+	width:1030px;
+}
+.container-16 .grid-15 {
+	width:1105px;
+}
+.container-16 .grid-16 {
+	width:1180px;
+}
+.container-12 .grid-1 {
+	width:80px;
+}
+.container-12 .grid-2 {
+	width:180px;
+}
+.container-12 .grid-3 {
+	width:280px;
+}
+.container-12 .grid-4 {
+	width:380px;
+}
+.container-12 .grid-5 {
+	width:480px;
+}
+.container-12 .grid-6 {
+	width:580px;
+}
+.container-12 .grid-7 {
+	width:680px;
+}
+.container-12 .grid-8 {
+	width:780px;
+}
+.container-12 .grid-9 {
+	width:880px;
+}
+.container-12 .grid-10 {
+	width:980px;
+}
+.container-12 .grid-11 {
+	width:1080px;
+}
+.container-12 .grid-12 {
+	width:1180px;
+}
+
+
+/*********************************************************************************************
+
+3.  Grid 960px (mediaqueries)
+
+*********************************************************************************************/
+/*
+@media only screen and (min-width: 960px) and (max-width: 1199px) {*/
+.container-16, .container-12 {
+  width: 980px;
+}
+.container-16 .grid-1 {
+  width:40px;
+}
+.container-16 .grid-2 {
+  width:100px;
+}
+.container-16 .grid-3 {
+  width:160px;
+}
+.container-16 .grid-4 {
+  width:220px;
+}
+.container-16 .grid-5 {
+  width:280px;
+}
+.container-16 .grid-6 {
+  width:340px;
+}
+.container-16 .grid-7 {
+  width:400px;
+}
+.container-16 .grid-8 {
+  width:460px;
+}
+.container-16 .grid-9 {
+  width:520px;
+}
+.container-16 .grid-10 {
+  width:580px;
+}
+.container-16 .grid-11 {
+  width:640px;
+}
+.container-16 .grid-12 {
+  width:700px;
+}
+.container-16 .grid-13 {
+  width:760px;
+}
+.container-16 .grid-14 {
+  width:820px;
+}
+.container-16 .grid-15 {
+  width:880px;
+}
+.container-16 .grid-16 {
+  width:940px;
+}
+
+.container-12 .grid-1 {
+  width:61px;
+}
+.container-12 .grid-2 {
+  width:142px;
+}
+.container-12 .grid-3 {
+  width:224px;
+}
+.container-12 .grid-4 {
+  width:306px;
+}
+.container-12 .grid-5 {
+  width:388px;
+}
+.container-12 .grid-6 {
+  width:470px;
+}
+.container-12 .grid-7 {
+  width:552px;
+}
+.container-12 .grid-8 {
+  width:634px;
+}
+.container-12 .grid-9 {
+  width:716px;
+}
+.container-12 .grid-10 {
+  width:798px;
+}
+.container-12 .grid-11 {
+  width:880px;
+}
+.container-12 .grid-12 {
+  width:960px;
+}
+/*
+}*/
+
+/*********************************************************************************************
+
+4.  Grid 720px (mediaqueries)
+
+*********************************************************************************************/
+
+@media only screen and (min-width: 720px) and (max-width: 960px) {
+  .container-16, .container-12 {
+    width: 720px;
+  }
+  .container-16 .grid-1 {
+    width:25px;
+  }
+  .container-16 .grid-2 {
+    width:70px;
+  }
+  .container-16 .grid-3 {
+    width:115px;
+  }
+  .container-16 .grid-4 {
+    width:160px;
+  }
+  .container-16 .grid-5 {
+    width:205px;
+  }
+  .container-16 .grid-6 {
+    width:250px;
+  }
+  .container-16 .grid-7 {
+    width:295px;
+  }
+  .container-16 .grid-8 {
+    width:340px;
+  }
+  .container-16 .grid-9 {
+    width:385px;
+  }
+  .container-16 .grid-10 {
+    width:430px;
+  }
+  .container-16 .grid-11 {
+    width:475px;
+  }
+  .container-16 .grid-12 {
+    width:520px;
+  }
+  .container-16 .grid-13 {
+    width:565px;
+  }
+  .container-16 .grid-14 {
+    width:610px;
+  }
+  .container-16 .grid-15 {
+    width:655px;
+  }
+  .container-16 .grid-16 {
+    width:700px;
+  }
+  .container-12 .grid-1 {
+    width:40px;
+  }
+  .container-12 .grid-2 {
+    width:100px;
+  }
+  .container-12 .grid-3 {
+    width:160px;
+  }
+  .container-12 .grid-4 {
+    width:220px;
+  }
+  .container-12 .grid-5 {
+    width:280px;
+  }
+  .container-12 .grid-6 {
+    width:340px;
+  }
+  .container-12 .grid-7 {
+    width:400px;
+  }
+  .container-12 .grid-8 {
+    width:460px;
+  }
+  .container-12 .grid-9 {
+    width:520px;
+  }
+  .container-12 .grid-10 {
+    width:580px;
+  }
+  .container-12 .grid-11 {
+    width:640px;
+  }
+  .container-12 .grid-12 {
+    width:700px;
+  }
+}
+
+/*********************************************************************************************
+
+4.  Grid 720px (mediaqueries)
+
+*********************************************************************************************/
+
+@media only screen and (min-width: 541px) and (max-width: 719px) {
+  .container-16, .container-12 {
+    width: 540px;
+  }
+  .container-12 .grid-1 {
+    width:25px;
+  }
+  .container-12 .grid-2 {
+    width:70px;
+  }
+  .container-12 .grid-3 {
+    width:115px;
+  }
+  .container-12 .grid-4 {
+    width:160px;
+  }
+  .container-12 .grid-5 {
+    width:205px;
+  }
+  .container-12 .grid-6 {
+    width:250px;
+  }
+  .container-12 .grid-7 {
+    width:295px;
+  }
+  .container-12 .grid-8 {
+    width:340px;
+  }
+  .container-12 .grid-9 {
+    width:385px;
+  }
+  .container-12 .grid-10 {
+    width:430px;
+  }
+  .container-12 .grid-11 {
+    width:475px;
+  }
+  .container-12 .grid-12 {
+    width:520px;
+  }
+
+  footer .grid-1, footer .grid-2, footer .grid-3, footer .grid-4, footer .grid-5, footer .grid-6, footer .grid-7, footer .grid-8, footer .grid-9, footer .grid-10, footer .grid-11, footer .grid-12, footer .grid-13, footer .grid-14, footer .grid-15, footer .grid-16 {
+    width:100%!important;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+/*********************************************************************************************
+
+5.  Grid lt 540px / Mobile (mediaqueries)
+
+*********************************************************************************************/
+
+@media only screen and (max-width: 540px) {
+  .container-12, .container-16 {
+    width: 90%;
+  }
+  .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12, .grid-13, .grid-14, .grid-15, .grid-16 {
+    width:100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .alpha {
+    margin-left: 0;
+  }
+  .omega {
+    margin-right: 0;
+  }
+  .beta {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container-16 .grid-1, .container-16 .grid-2, .container-16 .grid-3, .container-16 .grid-4, .container-16 .grid-5, .container-16 .grid-6, .container-16 .grid-7, .container-16 .grid-8, .container-16 .grid-9, .container-16 .grid-10, .container-16 .grid-11, .container-16 .grid-12, .container-16 .grid-13, .container-16 .grid-14, .container-16 .grid-15, .container-16 .grid-16, .container-12 .grid-1, .container-12 .grid-2, .container-12 .grid-3, .container-12 .grid-4, .container-12 .grid-5, .container-12 .grid-6, .container-12 .grid-7, .container-12 .grid-8, .container-12 .grid-9, .container-12 .grid-10, .container-12 .grid-11, .container-12 .grid-12 {
+    width:100%;
+  }
+
+
+  #developers .container-16, #developers .container-12 {
+    width: 90%;
+  }
+  #developers .container-12 .diagram .grid-1 {
+    width:25px;
+  }
+  #developers .container-12 .diagram .grid-2 {
+    width:70px;
+  }
+  #developers .container-12 .diagram .grid-3 {
+    width:115px;
+  }
+  #developers .container-12 .diagram .grid-4 {
+    width:160px;
+  }
+  #developers .container-12 .diagram .grid-5 {
+    width:205px;
+  }
+  #developers .container-12 .diagram .grid-6 {
+    width:250px;
+  }
+  #developers .container-12 .diagram .grid-7 {
+    width:295px;
+  }
+  #developers .container-12 .diagram .grid-8 {
+    width:340px;
+  }
+  #developers .container-12 .diagram .grid-9 {
+    width:385px;
+  }
+  #developers .container-12 .diagram .grid-10 {
+    width:430px;
+  }
+  #developers .container-12 .diagram .grid-11 {
+    width:475px;
+  }
+  #developers .container-12 .diagram .grid-12 {
+    width:520px;
+  }
+
+}
+
+
+/*********************************************************************************************
+
+6.  Responsive Image
+
+*********************************************************************************************/
+
+
+img.scale, img.responsive {
+  max-width: 100%;
+  height: auto;
+}

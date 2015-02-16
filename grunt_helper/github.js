@@ -11,12 +11,18 @@ exports.Helper = function(accessToken) {
   var parseOpenPRList = function(openPRList) {
     openPRList = JSON.parse(openPRList.body);
     for (var i in openPRList) {
+      if (!openPRList[i].title) {
+        continue;
+      }
       openPR[openPRList[i].title] = openPRList[i];
     }
   };
   var getOpenPRTitles = function() {
     var list = [];
     for (var key in openPR) {
+      if (!key) {
+        continue;
+      }
       list.push(key);
     }
     return list;
@@ -39,14 +45,17 @@ exports.Helper = function(accessToken) {
   };
   instance.pullForPR = function(selectedPR) {
     if (!openPR.hasOwnProperty(selectedPR)) {
-      return 'echo pull failed -  PR not found for selection && exit 1'
+      return 'echo pull failed -  PR not found for selection && exit 1';
     }
-    return instance.CLI.pullRemote(openPR[selectedPR]['head']['repo']['clone_url'], openPR[selectedPR]['head']['ref']);
+    return instance.CLI.pullRemote(openPR[selectedPR].head.repo.clone_url, openPR[selectedPR].head.ref);
   };
   instance.branchListHandler = function(stdIn, stdOut, err) {
+    if (err) {
+      return 'echo Failed to list local branches && exit 1';
+    }
     var list = stdOut.split('\n');
     for (var i in list) {
-      if (!list[i] || list[i].indexOf('*') == 0) {
+      if (!list[i] || list[i].indexOf('*') === 0) {
         continue;
       }
       branches.push(list[i].trim());

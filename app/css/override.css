@@ -1,0 +1,38 @@
+/**
+* Overriding the slider properties in the home page
+**/
+.bx-wrapper {
+  margin: 30px auto 60px !important;
+  box-shadow: none !important;
+  position: relative !important;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background-color: #dddddd !important;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background-color: #9A9A9B !important;
+}
+
+/*
+* Changed the nesting of community badges, to provide more flexibility to align
+*/
+.banner-community ul li {
+  text-align: right;
+  float: left;
+  width: 50%;
+}
+
+.banner-community ul li a.community-org {
+  text-align: right;
+  float: left;
+}
+
+@media only screen and (max-width: 540px) {
+  .banner-community ul li {
+    text-align: center;
+    width: 100%;
+  }
+  .banner-community ul li a.community-org {
+    float: none;
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <meta name="keywords" content="{{ page.keywords }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@maidsafe">
+    <meta name="twitter:domain" content="maidsafe.net">
+    <meta name="twitter:creator" content="@maidsafe">
+
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="icon" type="image/ico" href="img/favicon.ico" />
+
+    {% include app_css.html %}
+    <!-- endbuild -->
+  </head>
+  <body id="{{ page.bodyId }}">
+  {{ content }}
+  {% include googleanalytics.html %}
+  </body>
+</html>
