@@ -14,9 +14,9 @@ module.exports = function (grunt) {
   var BRANCH_KEY = 'local_branch';
 
   var CONFIG = {
-    owner: 'krishnaindia',
-    repo: 'krishnaindia.github.io',
-    baseBranch: 'MAID-712_porting_to_jekyll',
+    owner: 'maidsafe',
+    repo: 'maidsafe.github.io',
+    baseBranch: 'next',
     deployBranch: 'master'
   };
 
