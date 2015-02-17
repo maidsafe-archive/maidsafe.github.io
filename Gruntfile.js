@@ -467,7 +467,6 @@ module.exports = function (grunt) {
    * grunt test - to run the test suite for js linters, broken links and  w3c validators
    */
   grunt.registerTask('test', [
-    'exec:updateDependencies',
     'clean:server',
     'concurrent:server',
     'connect:serve',
@@ -486,7 +485,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'exec:updateDependencies',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'concurrent:dist',
@@ -537,6 +535,7 @@ module.exports = function (grunt) {
     'exec:gitBranch',
     'exec:gitCheckout',
     'exec:gitPullForPR',
+    'exec:updateDependencies',
     'test',
     'serve:dist'
     ]);
