@@ -454,7 +454,6 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'exec:updateDependencies',
       'clean:server',
       'concurrent:server',
       'autoprefixer:dist',
