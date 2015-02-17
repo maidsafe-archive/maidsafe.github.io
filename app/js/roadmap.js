@@ -8,7 +8,7 @@ var launchd='<p>See what we have planned for beta.</p>';
 var long1='.phase-group .long1 h2';
 var long2='.phase-group .long2 h2';
 var displayPhase;
-var PATH_DELEMITER = "#/";
+var PATH_DELEMITER = '#/';
 var autoToggle = function() {
   var phaseUrl;
   var element;
