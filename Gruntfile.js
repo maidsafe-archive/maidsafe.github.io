@@ -535,7 +535,6 @@ module.exports = function (grunt) {
     'exec:gitCheckout',
     'exec:gitPullForPR',
     'exec:updateDependencies',
-    'test',
     'serve:dist'
     ]);
 
