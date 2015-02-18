@@ -16,7 +16,7 @@ var autoToggle = function() {
   if (!phaseUrl && phaseUrl.length !== 2) {
     return;
   }
-  element = $(PATH_DELEMITER + phaseUrl[1]);
+  element = $('#' + phaseUrl[1]);
   if (element) {
     element.click();
   }
