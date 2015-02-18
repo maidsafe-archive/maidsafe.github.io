@@ -12,7 +12,7 @@ module.exports = function (grunt) {
   var gitHelper;
   var OPTION_ISSUE_KEY = 'pr.key';
   var BRANCH_KEY = 'local_branch';
-
+  var TEST_PORT = grunt.option('testPort') || 8000;
   var CONFIG = {
     owner: 'maidsafe',
     repo: 'maidsafe.github.io',
@@ -359,7 +359,7 @@ module.exports = function (grunt) {
       dev: {
         site: 'localhost',
         options: {
-          initialPort: 8000,
+          initialPort: TEST_PORT,
           callback: function(crawler) {
             crawler.supportedMimeTypes = [
               /^text\//i,
@@ -373,6 +373,7 @@ module.exports = function (grunt) {
     connect: {
       serve: {
         options: {
+          port: TEST_PORT,
           middleware: function(connect, options, middlewares) {
             middlewares.unshift(customMiddleware);
             return middlewares;
