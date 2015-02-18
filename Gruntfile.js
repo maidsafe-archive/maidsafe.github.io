@@ -455,7 +455,6 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'exec:updateDependencies',
       'clean:server',
       'concurrent:server',
       'autoprefixer:dist',
@@ -537,7 +536,6 @@ module.exports = function (grunt) {
     'exec:gitCheckout',
     'exec:gitPullForPR',
     'exec:updateDependencies',
-    'test',
     'serve:dist'
     ]);
 

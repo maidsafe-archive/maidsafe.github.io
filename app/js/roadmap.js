@@ -1,6 +1,6 @@
 /* jshint undef: false*/
 var maind='<p>Currently we are working through Testnet 2.</br>' +
-    'View the various stages of development in more detail... </p>';
+  'View the various stages of development in more detail... </p>';
 var test1d='<p>See what we completed in Testnet 1.</p>';
 var test2d='<p>Track the progress of Testnet 2\'s main objectives below.</p>';
 var test3d='<p>See what we have planned for Testnet 3.</p>';
@@ -8,16 +8,21 @@ var launchd='<p>See what we have planned for beta.</p>';
 var long1='.phase-group .long1 h2';
 var long2='.phase-group .long2 h2';
 var displayPhase;
+var PATH_DELEMITER = '#/';
 var autoToggle = function() {
   var phaseUrl;
-  phaseUrl = window.location.href.split('#');
+  var element;
+  phaseUrl = window.location.href.split(PATH_DELEMITER);
   if (!phaseUrl && phaseUrl.length !== 2) {
     return;
   }
-  var element = $('#' + phaseUrl[1]);
+  element = $('#' + phaseUrl[1]);
   if (element) {
     element.click();
   }
+};
+var appendUrlPath = function(pathParam) {
+  window.location.href = window.location.href.split(PATH_DELEMITER)[0] + PATH_DELEMITER + pathParam;
 };
 $(document).ready(function () {
   $('.backwards').click(function(){
@@ -62,4 +67,5 @@ displayPhase = function(obj, title, desc, show, hide ){
     'make sybil attacks inordinately difficult</h2>');
     $('#viewer').removeClass('mobile-version');
   }
+  appendUrlPath(show);
 };
