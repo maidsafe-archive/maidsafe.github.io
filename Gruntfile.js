@@ -537,10 +537,6 @@ module.exports = function (grunt) {
   grunt.registerTask('pr', [
     'prompt:pr',
     'exec:echoSelection',
-    'exec:gitCheckout:' + CONFIG.baseBranch,
-    'exec:gitPull',
-    'exec:gitBranch',
-    'exec:gitCheckout',
     'exec:gitPullForPR',
     'exec:updateDependencies',
     'serve:dist'
