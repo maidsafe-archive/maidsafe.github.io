@@ -7,8 +7,13 @@ var CLI = function() {
   instance.clone = function(owner, repo) {
     return 'git clone https://github.com/' + owner + '/' + repo + '.git';
   };
-  instance.checkout = function(branchName) {
-    return 'git checkout ' + parseBranchName(branchName);
+  instance.checkout = function(branchName, createBranch) {
+    var cmd = 'git checkout ';
+    if (createBranch) {
+      cmd += '-b '
+    }
+    cmd += parseBranchName(branchName);
+    return  cmd;
   };
   instance.branch = function(branchName) {
     return 'git branch ' + parseBranchName(branchName);
