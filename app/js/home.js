@@ -12,9 +12,9 @@ $(function() {
   });
 });
 // Custom selector and No-Double-Wrapping Prevention Test
-$('.video-container').fitVids({ customSelector: 'iframe[src^="http://socialcam.com"]'});
+$('.video-container').fitVids({ customSelector: 'iframe[src^="http://socialcam.com"]' });
 // Navbar initialization for Responsiveness
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function($) {
   $('body').addClass('js');
   var $menulink = $('.menu-link');
   var $menuTrigger = $('.has-submenu > a');

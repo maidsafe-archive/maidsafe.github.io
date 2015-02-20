@@ -442,6 +442,12 @@ module.exports = function (grunt) {
         ]
       },
       all: ['.jekyll/*.html', '!.jekyll/404.html']
+    },
+    jscs: {
+      src: 'app/js/*.js',
+      options: {
+        config: '.jscsrc'
+      }
     }
   });
 
@@ -471,6 +477,7 @@ module.exports = function (grunt) {
     'concurrent:server',
     'connect:serve',
     'jshint:all',
+    'jscs',
     'link-checker',
     'htmllint'
   ]);
