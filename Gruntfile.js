@@ -444,9 +444,9 @@ module.exports = function (grunt) {
       all: ['.jekyll/*.html', '!.jekyll/404.html']
     },
     jscs: {
-      src: "app/js/*.js",
+      src: 'app/js/*.js',
       options: {
-        config: ".jscsrc"
+        config: '.jscsrc'
       }
     }
   });
