@@ -1,20 +1,27 @@
 /* jshint undef: false*/
-$(function() {
-  $('.bxslider').bxSlider({
-    auto: true,
-    mode: 'fade',
-    autoControls: false,
-    speed: 1000,
-    pause: 8000,
-    pager: true,
-    controls: false,
-    tickerHover: true
+  switchKeyword(0);
+  //video overlay
+  $('.video-thumbnail').click(function(){
+      $('.youtube-overlay').fadeIn(200);
   });
-});
-// Custom selector and No-Double-Wrapping Prevention Test
-$('.video-container').fitVids({ customSelector: 'iframe[src^="http://socialcam.com"]' });
+  $('.youtube-overlay').click(function(){
+      $('.youtube-overlay').fadeOut(200);
+  });
+
+function switchKeyword (start){
+  if (start==4) start=0;
+  var newStart=start+1;
+  if (newStart==4) newStart=0;
+  var keywordArray=[".private",".secure",".free",".evolved"];
+  //console.log(keywordArray[start]);
+  $(keywordArray[start]).delay(500).fadeOut('slow', function(){
+      $(keywordArray[newStart]).fadeIn('slow');
+      switchKeyword(newStart);
+  });
+}
+
 // Navbar initialization for Responsiveness
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
   $('body').addClass('js');
   var $menulink = $('.menu-link');
   var $menuTrigger = $('.has-submenu > a');

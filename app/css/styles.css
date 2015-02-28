@@ -1,5 +1,4 @@
 /* CSS Document */
-/*csslint adjoining-classes: false*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -10,8 +9,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -22,7 +21,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
+article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -46,23 +45,43 @@ table {
 }
 
 .clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
 }
 .clearfix {
-  display: inline-block;
+    display: inline-block;
 }
 html[xmlns] .clearfix {
-  display: block;
+    display: block;
 }
 * html .clearfix {
-  height: 1%;
+    height: 1%;
 }
-
+.hidden{
+  display: none;
+}
+.container{
+  width: 100%;
+  padding:0;
+}
+.pull-right{
+  float:right;
+}
+.pull-left{
+  float:left;
+}
+.col-r{
+  padding-right: 0;
+  margin-right: 0;
+}
+.col-l{
+  padding-left: 0;
+  margin-left: 0;
+}
 /*********** Sticky Footer styles ****************/
 html, body {height: 100%;}
 
@@ -70,25 +89,24 @@ html, body {height: 100%;}
 
 #main {
   overflow:auto;
-  padding-bottom: 225px;
+  padding-bottom: 220px;
 }  /* must be same height as the footer */
 
 footer {
   position: relative;
-  margin-top: -225px; /* negative value of footer height */
-  height: 225px;
+  margin-top: -300px; /* negative value of footer height */
+  height: 300px;
   clear:both;
-}
+} 
 
 /*Opera Fix*/
 body:before {/* thanks to Maleika (Kohoutec)*/
-  content:"";
-  height:100%;
-  float:left;
-  width:0;
-  margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
 }
-
 /*******************************************************************************
 
 Fonts
@@ -96,135 +114,135 @@ Fonts
 *******************************************************************************/
 
 @font-face {
-  font-family: 'OpenSansLight';
-  src: url('/fonts/OpenSans-Light-webfont.eot');
-  src: url('/fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-Light-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-Light-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansLight';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansLightItalic';
-  src: url('/fonts/OpenSans-LightItalic-webfont.eot');
-  src: url('/fonts/OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-LightItalic-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-LightItalic-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansLightItalic';
+    src: url('../fonts/OpenSans-LightItalic-webfont.eot');
+    src: url('../fonts/OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-LightItalic-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-LightItalic-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansRegular';
-  src: url('/fonts/OpenSans-Regular-webfont.eot');
-  src: url('/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-Regular-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansItalic';
-  src: url('/fonts/OpenSans-Italic-webfont.eot');
-  src: url('/fonts/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-Italic-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-Italic-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-Italic-webfont.svg#OpenSansItalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansItalic';
+    src: url('../fonts/OpenSans-Italic-webfont.eot');
+    src: url('../fonts/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Italic-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Italic-webfont.svg#OpenSansItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansSemibold';
-  src: url('/fonts/OpenSans-Semibold-webfont.eot');
-  src: url('/fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-Semibold-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansSemibold';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansSemiboldItalic';
-  src: url('/fonts/OpenSans-SemiboldItalic-webfont.eot');
-  src: url('/fonts/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansSemiboldItalic';
+    src: url('../fonts/OpenSans-SemiboldItalic-webfont.eot');
+    src: url('../fonts/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansBold';
-  src: url('/fonts/OpenSans-Bold-webfont.eot');
-  src: url('/fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-Bold-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansBold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansBoldItalic';
-  src: url('/fonts/OpenSans-BoldItalic-webfont.eot');
-  src: url('/fonts/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-BoldItalic-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-BoldItalic-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansBoldItalic';
+    src: url('../fonts/OpenSans-BoldItalic-webfont.eot');
+    src: url('../fonts/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-BoldItalic-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-BoldItalic-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansExtrabold';
-  src: url('/fonts/OpenSans-ExtraBold-webfont.eot');
-  src: url('/fonts/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-ExtraBold-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-ExtraBold-webfont.svg#OpenSansExtrabold') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansExtrabold';
+    src: url('../fonts/OpenSans-ExtraBold-webfont.eot');
+    src: url('../fonts/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-ExtraBold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-ExtraBold-webfont.svg#OpenSansExtrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'OpenSansExtraboldItalic';
-  src: url('/fonts/OpenSans-ExtraBoldItalic-webfont.eot');
-  src: url('/fonts/OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
-  url('/fonts/OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'),
-  url('/fonts/OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraboldItalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'OpenSansExtraboldItalic';
+    src: url('../fonts/OpenSans-ExtraBoldItalic-webfont.eot');
+    src: url('../fonts/OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraboldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 @font-face {
-  font-family: 'Dax';
-  src: url('/fonts/dax_light.eot');
-  src: url('/fonts/dax_light.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/dax_light.woff') format('woff'),
-  url('/fonts/dax_light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+        font-family: 'Dax';
+        src: url('../fonts/dax_light.eot');
+        src: url('../fonts/dax_light.eot?#iefix') format('embedded-opentype'),
+              url('../fonts/dax_light.woff') format('woff'),
+            url('../fonts/dax_light.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
 }
-
+  
 p.style1 {font: 18px/27px 'OpenSansLight', Arial, sans-serif;}
 p.style2 {font: 18px/27px 'OpenSansLightItalic', Arial, sans-serif;}
 p.style3 {font: 18px/27px 'OpenSansRegular', Arial, sans-serif;}
@@ -235,8 +253,17 @@ p.style7 {font: 18px/27px 'OpenSansBold', Arial, sans-serif;}
 p.style8 {font: 18px/27px 'OpenSansBoldItalic', Arial, sans-serif;}
 p.style9 {font: 18px/27px 'OpenSansExtrabold', Arial, sans-serif;}
 p.style10 {font: 18px/27px 'OpenSansExtraboldItalic', Arial, sans-serif;}
-
-
+    
+h1.style1 {font: 50px/70px 'OpenSansLight', Arial, sans-serif;}
+h1.style2 {font: 50px/70px 'OpenSansLightItalic', Arial, sans-serif;}
+h1.style3 {font: 50px/70px 'OpenSansRegular', Arial, sans-serif;}
+h1.style4 {font: 50px/70px 'OpenSansItalic', Arial, sans-serif;}
+h1.style5 {font: 50px/70px 'OpenSansSemibold', Arial, sans-serif;}
+h1.style6 {font: 50px/70px 'OpenSansSemiboldItalic', Arial, sans-serif;}
+h1.style7 {font: 50px/70px 'OpenSansBold', Arial, sans-serif;}
+h1.style8 {font: 50px/70px 'OpenSansBoldItalic', Arial, sans-serif;}
+h1.style9 {font: 50px/70px 'OpenSansExtrabold', Arial, sans-serif;}
+h1.style10 {font: 50px/70px 'OpenSansExtraboldItalic', Arial, sans-serif;}
 /*******************************************************************************
 
 Default Styles
@@ -248,9 +275,10 @@ body {
   font-size: 14px;
   line-height: 1.2;
   word-wrap: break-word;
+  padding-top: 90px;
 }
 a:link
-{
+{   
   color: #5593D7;
   text-decoration: inherit;
 }
@@ -299,10 +327,10 @@ section {
 
 h1 {
   color: #5593D7;
-  font-family: 'OpenSansLight', Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 300;
-  padding:0;
+    font-family: 'OpenSansLight', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    padding:0;
   margin-bottom:30px;
 }
 
@@ -323,11 +351,11 @@ h3 {
 
 p {
   color: #464646;
-  font-family: 'OpenSansRegular', Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  padding: 0px 0 0;
+    font-family: 'OpenSansRegular', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0px 0 0;
 }
 
 blockquote {
@@ -346,7 +374,7 @@ strong { font-weight:bold; font-style:normal;}
 
 .cent {
   display: block;
-  text-align: center;
+    text-align: center;
 }
 
 .iframe {
@@ -369,31 +397,88 @@ ol li {
   margin-bottom:5px;
 }
 
+.text-right{
+  text-align: right;
+}
+.text-left{
+  text-align: left;
+}
+
+.btn{
+  font-family: 'OpenSansRegular','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 21px;
+  padding: 2px 15px;
+  transition: color .25s ease-in-out,border-color .25s ease-in-out,background-color .25s ease-in-out;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.btn.btn-download{
+  background-color: #5593D7;
+  color:#fff;
+}
+.btn.btn-download:hover{
+  background-color: transparent;
+  border-color: #131313;
+  color: #131313;
+}
+.main-download{
+  margin: 0 auto;
+  display: block;
+  width: 300px;
+}
+.main-download .btn-download{
+
+  padding: 10px 25px;
+}
+.small-download .btn-download{
+  margin: 0 auto;
+  display: inline-block;
+  width: 100%;
+}
+.main-download .btn-text, .small-download .btn-text{
+  font-family: 'OpenSansLight';
+}
+.sub-btn {
+  text-align:center !important;  
+  color:#131313;
+  font-family: 'OpenSansLight';
+}
 /*******************************************************************************
 
 Header Styles
 
 *******************************************************************************/
 header {
-  height:110px;
+  height:90px;
+  width: 100%;
   color: #5593D7;
-  font-family: 'OpenSansRegular', Arial, sans-serif;
+  font-family: 'OpenSansLight', Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
-  padding: 20px 0 0 0;
+  padding: 0;
   margin-bottom:50px;
   display:block;
+  position:fixed;
+  top:0;
+  left:0;
   background-color:rgba(255,255,255,1.00);
+  z-index: 200;
 }
 
-.logo {
-  background-color: red;
-  background:url(/img/homepage_logo.png) no-repeat 0 0;
+header .logo {
+  background:url(../img/homepage_logo.png) no-repeat 0 0;
   width:252px;
   height:73px;
   background-size:252px 73px;
   position:relative;
-  top:23px;
+  top:10px;
   display:block;
 }
 
@@ -402,696 +487,317 @@ header {
   float: right;
   text-decoration: none;
   margin-right:20px;
-
+  
 }
-.menu {
+.menu { 
   float: right;
   position:relative;
   right:0px;
-  top:76px;
+  top:40px;
 }
-.menu ul {
+.menu ul { 
   padding: 0px;
   margin: 0px;
   list-style: none;
   position: relative;
   display: inline-table;
-}
-.sub-menu, .has-submenu {
-  display:none!important;
+  height: 30px;
 }
 .menu > li > ul.sub-menu {
   display:none;
   /*
-	min-width: 10em;
-	padding: 4px 0;
-	background-color: #f4f4f4;
-	border: 1px solid #CCC;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding;
-	background-clip: padding-box;*/
+  min-width: 10em;
+  padding: 4px 0;
+  background-color: #f4f4f4;
+  border: 1px solid #CCC;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;*/
 }
 .menu ul:after {
   content: ""; clear: both; display: block;
 }
 .menu ul li {
-  padding: 0px;
+  padding:0;
   display: inline-block;
   margin-left:28px;
+  margin-top: 4px;
 }
-.menu > ul > li {
+.menu > ul > li { 
   display: inline-block;
 }
-.menu ul li a {
+.menu > ul > li.download { 
+  /*visibility: hidden;*/
+  width: 70px;
+  /*margin-left: -70px;*/
+  margin-top: 0px;
+}
+li.download .btn{
+  font-size: 18px;
+  font-family: 'OpenSansLight';
+}
+.menu ul li a { 
   display: block;
   text-decoration: none;
   color: #808080;
 }
-.menu ul li > a {
-
-  /*height:58px;
-	padding: 19px 12px;*/
+.menu .download .btn-download{
+  padding: 2px 15px;
 }
-
-ul.topnav {
-  display:none;
-}
-#timeline .topnav-shell, #press .topnav-shell, #assets .topnav-shell{
-  margin-top: -30px;
-  padding-bottom: 30px;
-  display: block;
-  float: right;
-}
-
-#timeline ul.topnav, #press ul.topnav, #assets ul.topnav {
-  display: inline-block;
-  float: right;
-}
-ul.topnav li {
-  padding: 0px;
-  display: inline-block;
-  margin-left:28px;
-}
-ul.topnav > li {
-  display: inline-block;
-}
-ul.topnav li a {
-  display: block;
-  text-decoration: none;
+.menu .download .btn-download:hover{
+  border-color: #808080;
   color: #808080;
 }
-
-/******** Top nav selected state styles ********/
-#platform-overview .menu .overview a,
-#platform-features .menu .overview a,
-#platform-faqs .menu .overview a,
-#applications .menu .overview a,
-#licensing-platform .menu .overview a,
-#testimonials .menu .overview a,
-#safecoin .menu .overview a,
-#roadmap .menu .overview a,
-#get-involved .menu .get-involved a,
-#core-developer .menu .get-involved a,
-#app-builder .menu .get-involved a,
-#farmers .menu .get-involved a,
-#platform-libraries .menu .get-involved a,
-#safe-pods .menu .get-involved a,
-#documents .menu .documents a,
-#examples .menu .documents a,
-#system-docs .menu .documents a,
-#developer-wiki .menu .documents a,
-#papers-publications .menu .documents a,
-#company .menu .company a,
-#team .menu .company a,
-  /*
-#platform-use-cases .menu .overview a,
-#licensing-platform .menu .overview a,
-#testimonials .menu .overview a,
-#core-developer .menu .core-developer a,
-#app-builder .menu .core-developer a,
-#platform-libraries .menu .core-developer a,
-#company .menu .company a,
-#farmers .menu .farmers a,
-*/
-#careers .menu .company a,
-#timeline .menu .company a,
-#credits .menu .company a,
-#assets .menu .company a,
-#stakeholders .menu .stakeholders a,
-#blog .menu .blog a,
-#contact .menu .contact a,
-#press .menu .press a,
-.article .menu .press a {
+/*.menu li.download{
+  opacity: 0;
+  -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+}
+.show .menu li.download{
+  opacity: 1;
+}*/
+/******** Menu/top menu selected state styles ********/
+#getting-started .menu .getting-started a,
+#about .menu .about a,
+#contact .contact a,
+#credits .credits a,
+#privacy .privacy a,
+#eula .eula a {
   color: #5593D7;
 }
 
-/******** Overview - Left/top nav selected state styles ********/
-#platform-overview ul.leftnav .overview a,
-#platform-features ul.leftnav .features a,
-#applications ul.leftnav .applications a,
-#licensing-platform ul.leftnav .licensing a,
-#roadmap ul.leftnav .roadmap a,
-#testimonials ul.leftnav .testimonials a,
-#safecoin ul.leftnav .safecoin a  {
-  color:#5593D7;
-}
-#roadmap ul.topnav .roadmap a{
-  color:#5593D7;
-}
-/******** Get Involved - Left nav selected state styles ********/
-#get-involved ul.leftnav .get-involved a,
-#core-developer ul.leftnav .core-developer a,
-#platform-libraries ul.leftnav .libraries a,
-#app-builder ul.leftnav .app-builder a,
-#farmers ul.leftnav .farmers a,
-#safe-pods ul.leftnav .safe-pods a {
-  color:#5593D7;
-}
-
-/******** Documents - Left nav selected state styles ********/
-#documents ul.leftnav .documents a,
-#examples ul.leftnav .examples a,
-#system-docs ul.leftnav .system-docs a,
-#developer-wiki ul.leftnav .developer-wiki a,
-#papers-publications ul.leftnav .papers-publications a {
-  color:#5593D7;
-}
-
-/******** Company - Left nav selected state styles ********/
-#company ul.leftnav .overview a,
-#team ul.leftnav .team a,
-#careers ul.leftnav .careers a,
-#credits ul.leftnav .credits a,
-#team ul.topnav .team a,
-#timeline ul.topnav .timeline a,
-#assets ul.leftnav .assets a  {
-  color:#5593D7;
-}
-/******** Press articles - Left nav selected state styles ********/
-#article-maidsafe-bitcloud .pressnav .article-maidsafe-bitcloud a,
-#article-revolutionise-internet .pressnav .article-revolutionise-internet a,
-#article-ieee .pressnav .article-ieee a,
-#article-imperica .pressnav .article-imperica a,
-#article-pocket-lint .pressnav .article-pocket-lint a,
-#article-decentralized-internet-is-here .pressnav .article-decentralized-internet-is-here a,
-#article-new-age-internet .pressnav .article-new-age-internet a,
-#article-ernest-hancock-radio-interview .pressnav .article-ernest-hancock-radio-interview a,
-#article-sovryn-tech-interview .pressnav .article-sovryn-tech-interview a,
-#article-libertarian-building-galts-gulch .pressnav .article-libertarian-building-galts-gulch a,
-#article-transformpr-yahoo .pressnav .article-transformpr-yahoo a,
-#article-coin-report .pressnav .article-coin-report a,
-#article-wall-street-journal-bitbeat .pressnav .article-wall-street-journal-bitbeat a,
-#article-forbes-beyond-bitcoin .pressnav .article-forbes-beyond-bitcoin a,
-#article-ernest-hancock-radio-interview-2 .pressnav .article-ernest-hancock-radio-interview-2 a,
-#article-ernest-hancock-launch-interview .pressnav .article-ernest-hancock-launch-interview a,
-#article-cointelegraph-interview .pressnav .article-cointelegraph-interview a,
-#article-bitcoin-magazine .pressnav .article-bitcoin-magazine a,
-#article-coindesk .pressnav .article-coindesk a,
-#article-marketwatch .pressnav .article-marketwatch a,
-#article-lets-talk-bitcoin .pressnav .article-lets-talk-bitcoin a,
-#article-coins-source .pressnav .article-coins-source a,
-#article-launch-it .pressnav .article-launch-it a,
-#article-wall-street-journal-24-04-14 .pressnav .article-wall-street-journal-24-04-14 a,
-#article-motherboard .pressnav .article-motherboard a,
-#article-ernest-hancock-safecoin-interview .pressnav .article-ernest-hancock-safecoin-interview a,
-#article-daily-dot-08-05-14 .pressnav .article-daily-dot-08-05-14 a,
-#article-upstart-14-05-14 .pressnav .article-upstart-14-05-14 a,
-#article-coindesk-23-05-14 .pressnav .article-coindesk-23-05-14 a,
-#article-gigaom .pressnav .article-gigaom a,
-#article-redecentralize-interview .pressnav .article-redecentralize-interview a,
-#article-coin-artist .pressnav .article-coin-artist a,
-#article-cryptocoins-news .pressnav .article-cryptocoins-news a,
-#article-david-lasoff .pressnav .article-david-lasoff a,
-#article-siliconangle .pressnav .article-siliconangle a,
-#article-business-insider-01-06-14 .pressnav .article-business-insider-01-06-14 a,
-#article-the-scotsman-15-06-14 .pressnav .article-the-scotsman-15-06-14 a,
-#article-bitcoin-uk-media-15-06-14 .pressnav .article-bitcoin-uk-media-15-06-14 a,
-#article-world-crypto-network-18-06-14 .pressnav .article-world-crypto-network-18-06-14 a,
-#article-coindesk-25-06-14 .pressnav .article-coindesk-25-06-14 a,
-#article-computer-america-26-06-14 .pressnav .article-computer-america-26-06-14 a,
-#article-you-me-btc-02-07-2014 .pressnav .article-you-me-btc-02-07-2014 a,
-#article-world-crypto-network-10-07-14 .pressnav .article-world-crypto-network-10-07-14 a,
-#article-coindesk-12-07-14 .pressnav .article-coindesk-12-07-14 a,
-#article-techcrunch-24-07-14 .pressnav .article-techcrunch-24-07-14 a,
-#article-keiser-report-639 .pressnav .article-keiser-report-639 a,
-#article-keiser-report-640 .pressnav .article-keiser-report-640 a  {
-  color:#5593D7!important;
-}
-
 /*******************************************************************************
 
-Banner Styles
+Side Menu
 
 *******************************************************************************/
-
-.banner {
-  background:url(../img/banner_shadow_top.png) repeat-x left top;
-  height:300px;
-  display:block;
+#side-menu {
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  margin-left: -500px;
+  margin-top: -30px;
+  z-index: 100;
+  display: none;
 }
-
-/************************** Banner safecoin ***************************/
-.banner-safecoin {
-  padding:5px 0 0 0;
+.globe {
+  position: absolute;
+  top:40px;
+  left:40px;
+  background-image: url('../img/globe.png');
+  width: 620px;
+  height: 620px;
+  background-size: 620px 620px;
 }
-.banner-safecoin h1 {
-  font-size:31px;
-  color:#231f20;
-  margin-bottom:10px;
+.menu-absolute {
+  position: absolute !important;
+  bottom: 300px !important; 
 }
-
-.banner-safecoin p {
-  color:#a0a1a3;
-  font-size:22px;
-  font-family: 'OpenSansSemiBold', Arial, sans-serif;
+.menu-item{
+  position: absolute;
+  width: 55px;
+  height: 55px;
 }
-
-/************************** Banner plane ***************************/
-.banner-plane {
-  padding:60px 0 0 0;
+.menu-item .idle {
+  background-size: 55px 55px;
+  width: inherit;
+  height: inherit;
 }
-.banner-plane h1 {
-  font-size:36px;
-  color:#5593D7;
-  margin:20px 0 0 0;
+.menu-item .active {
+  background-size: 55px 55px;
+  display: none;
+  width: inherit;
+  height: inherit;
+  margin-top:-55px;
+  transition: opacity .25s ease-in-out;
 }
-.plane {
-  background:url(../img/home_plane.png) no-repeat 0 0;
-  width:423px;
-  height:75px;
-  background-size:423px 75px;
-  position:relative;
-  margin:0px auto 10px auto;
+#menu0{
+  visibility: hidden;
 }
-
-/************************** Banner community ***************************/
-.banner-community {
-  padding:60px 0 0 0;
+#menu1{
+  top:675px;
+  left:244px;
 }
-.banner-community h1 {
-  font-size:36px;
-  color:#5593D7;
+#menu2{
+  top:642px;
+  left:154px;
 }
-.community-development {
-  background:url(../img/banner-community-development.png) no-repeat 0 0;
-  width:280px;
-  height:46px;
-  display:inline-block;
-  margin:20px 0 0 0;
+#menu3{
+  top:582px;
+  left:82px;
 }
-
-.community-org {
-  background:url(../img/banner-community-org.png) no-repeat 0 0;
-  width:225px;
-  height:46px;
-  display:inline-block;
-  margin:20px 40px 0 40px;
+#menu4{
+  top:510px;
+  left:25px;
 }
-
-/************************** Banner news ***************************/
-.banner-news {
-  padding:5px 0 0 0;
+.menu-top .idle{
+  background-image: url('../img/menu-top-idle.png');
 }
-.banner-news h1 {
-  font-size:31px;
-  color:#231f20;
-  margin-bottom:10px;
+.menu-top .active, .menu-top .idle:hover{
+  background-image: url('../img/menu-top-active.png');
 }
-
-.banner-news p {
-  color:#a0a1a3;
-  font-size:22px;
-  font-family: 'OpenSansSemiBold', Arial, sans-serif;
-  text-align: center;
-}
-
-.news-graphic {
-  background:url(../img/news_graphic.png) no-repeat 0 0;
-  width:202px;
-  height:86px;
-  background-size:202px 86px;
-  position:relative;
-  margin:0px auto 10px auto;
-}
-
-/************************** Banner getcode ***************************/
-.banner-getcode {
-  padding:70px 0 0 0;
-}
-.banner-getcode h1 {
-  font-size:31px;
-  color:#5593D7;
-  line-height: 110px;
-}
-.github-icon {
-  background:url(../img/github-octocat.png) no-repeat 362px 0px;
-  width:100%;
-  height:100%;
-  background-size:126px 110px;
-}
-
-.spacer {
-  display:inline-block;
-  width:150px;
-  height:40px;
-}
-/************************** Banner roadmap -OLD **************************
-.banner-roadmap {
-  padding:40px 0 0 0;
-}
-.banner-roadmap h1 {
-  font-size:36px;
-  color:#5593D7;
-}
-.roadmap-preview {
-  background:url(../img/roadmap.png) no-repeat 0 0;
-  width:213px;
-  height:106px;
-  display: inline-block;
-  background-size:213px 106px;
-  position:relative;
-  margin:0px auto;
-  padding: 7px 0;
-}*/
-/************************** Banner roadmap ***************************/
-.banner-roadmap {
-  padding:40px 0 0 0;
-}
-.banner-roadmap h1 {
-  font-size:36px;
-  color:#5593D7;
-  margin-top: 20px;
-}
-.roadmap-preview {
-  background:url(../img/roadmap.png) no-repeat 100% 100%;
-  width:213px;
-  height:106px;
-  margin:0px auto;
-  padding: 7px 0;
-}
-/*******************************************************************************
-
-Sidebar Styles
-
-*******************************************************************************/
-
-.sidebar { float:right; /*width:156px!important;*/}
-.sidebar img {
-  margin:10px 0;
-}
-
-a.visit-blog {
-  background:url(../img/sidebar_blog.png) no-repeat top left;
-  display:block;
-  width:156px;
-  height:88px;
-  margin:10px 0;
-}
-
-a.visit-blog:hover {
-  background-position:bottom left;
-}
-
-a.maidsafe-dev {
-  background:url(../img/sidebar_maidsafe_dev.png) no-repeat top left;
-  display:block;
-  width:156px;
-  height:46px;
-  margin:10px 0;
-
-}
-a.maidsafe-dev:hover {
-  background-position:bottom left;
-}
-
-a.maidsafe-org {
-  background:url(../img/sidebar_maidsafe_org.png) no-repeat top left;
-  display:block;
-  width:156px;
-  height:48px;
-  margin:10px 0;
-}
-a.maidsafe-org:hover {
-  background-position:bottom left;
-}
-
-a.mumble {
-  background:url(../img/sidebar_mumble.png) no-repeat top left;
-  width:156px;
-  height:118px;
-  display:block;
-  margin:10px 0;
-}
-a.mumble:hover {
-  background-position:bottom left;
-}
-
-.sidebar p {
-  font-family: 'OpenSansLight', Arial, sans-serif;
-  color:#5593D7;
-  text-align:center;
-  font-size:18px;
-  margin-bottom:0px;
-  padding:0px!important;
-}
-
-.sidebar .divider {
-  background:url(../img/sidebar_arrow_divider.png) no-repeat 0 0;
-  width:100%; /*156*/
-  height:15px;
-  margin:10px 0;
-}
-.community-text {
-  border-top:1px solid #E2E2E2;
-  padding-top:20px;
-  padding-bottom:10px;
-}
-
 /*******************************************************************************
 
 Home Page Styles
 
 *******************************************************************************/
-#home header {
-  margin-bottom:0px;
-  height:110px;
-}
 
-#home h1 {
-  text-align:center;
+#home h1, #home h2, #home h3, #home p {
+  text-align:center;  
+  color:#131313;
+  font-family: 'OpenSansLight';
 }
-
 #home h2 {
-  color:#000;
+  font-family:'OpenSansRegular', Arial, sans-serif;
+  font-size:28px;
+  margin-bottom:10px;
+}
+#home h3 {
   font-family:'OpenSansRegular', Arial, sans-serif;
   font-size:20px;
   margin-bottom:10px;
-  text-align:center;
 }
-
-.home-tabs {
-  border-top: 1px solid #E2E2E2;
-  border-bottom: 1px solid #E2E2E2;
-  clear:both;
-  margin-bottom:30px;
-}
-
-.home-tabs a {
-  display:block;
-}
-
-.home-tabs .grid-12, .home-tabs .grid-4 { margin:0;}
-
-.home-tabs p {
-  font-family: "Dax";
-  font-size:32px;
-  text-align:center;
-  padding:115px 70px 25px 70px;
-  line-height:32px;
-  color:#5D5D5D;
-  margin-bottom:0px;
-}
-
-.home-tabs p:hover {
-  color:#5593D7;
-}
-
-.core-dev-tab {
-  background: url(../img/home-tab-core-dev-icon.png) no-repeat center 35px;
-  margin:10px 0!important;
-}
-
-.core-dev-tab:hover {
-  background: url(../img/home-tab-core-dev-icon-hover.png) no-repeat center 35px;
-}
-
-.app-builder-tab {
-  background: url(../img/home-tab-app-builder-icon.png) no-repeat center 35px;
-  border-left: 1px solid #E2E2E2;
-  border-right: 1px solid #E2E2E2;
-  margin:10px 20px!important;
-}
-
-.app-builder-tab:hover {
-  background: url(../img/home-tab-app-builder-icon-hover.png) no-repeat center 35px;
-}
-
-.farmer-tab {
-  background: url(../img/home-tab-farmer-icon.png) no-repeat center 35px;
-  margin:10px 0!important;
-  width:77px;
-  height:92px;
-}
-
-
-.farmer-tab:hover {
-  background: url(../img/home-tab-farmer-icon-hover.png) no-repeat center 35px;
-}
-
-
-.tell-me-more-tab {
-  border-top: 1px solid #E2E2E2;
-  display:block;
-  clear:both;
-}
-
-.tell-me-more-tab p {
-  padding:20px;
-}
-
-
-.video-box {
-  border-color: rgba(0, 0, 0, 0);
-  border-style: none;
-  box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-  display:block;
-  margin-bottom:50px;
-  height:540px;
-  background-color:rgba(255,255,255,1.00);
-  margin-top:30px;
-}
-
-video {
-  width:100%!important;
-  outline:0px;
-  background-color:rgba(255,255,255,1.00);
-}
-
-.video-container {
-  margin:0px 0 40px 0;
-}
-
-.mobile-video {
-  margin-bottom:50px;
-}
-
-#home .para-l h2 {padding-right:20px;}
-#home .para-r h2 {padding-left:20px;}
-
-#home .para-l p {padding: 2% 20px 0;}
-#home .para-r p {padding: 2% 0 0 20px;}
-
-#home .para-l p,
-#home .para-r p {
-  color: #464646;
-  font-family: 'OpenSansRegular', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-
-}
-
-#home .para {
-  color: #464646;
-  font-family: 'OpenSansRegular', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  padding: 2% 0 0;
-}
-
-.home-box {
-  background-color: #FFFFFF;
-  border-color: rgba(0, 0, 0, 0);
-  border-style: none;
-  box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-  position: relative;
-  display:block;
-  float:left;
-  margin-bottom:60px;
-}
-
-.home-box p {
-  text-align:center;
-  font-family: 'OpenSansRegular', Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color:#5593D7;
-  margin:0px;
-}
-
-.home-box h2 {
-  text-indent:-9999px;
-  margin-bottom:20px;
-}
-
-
-/*
-.first {
-	width:430px;
-	padding:15px;
-	margin-right:5px;
-	min-height:200px;
-}
-
-.middle {
-	background-color:#E6F0FA;
-	padding:20px;
-	width:250px;
-	min-height:190px;
-	margin:0 10px;
-}
-
-.middle p {
-	color:rgba(0,0,0,1.00);
-}
-
-.last {
-	padding:20px;
-	width:420px;
-	min-height:190px;
-	margin-left:10px;
-}
-*/
-
-.article-1 { float:left; border-right:1px solid #cccccc; padding-right:45px;}
-.article-2 { float:right; padding-left:25px;}
-
-.article-1 p, .article-2 p { padding-right: 0px;}
-
-.notification{
-  background-color: #CEE3F2;
-  text-align: center;
-  height: 30px;
+#home .banner {
+  background:url(../img/home-banner-1.jpg) center top;
+  height:600px;
   width: auto;
-  margin-bottom: 20px;
-  position: relative;
+  display:block;
 }
-.notification p {
-  margin-top: 22px;
+
+#home .banner .keyword .secure,.banner .keyword .free,.banner .keyword .evolved{
+  display: none;
+}
+#home .banner .keyword{
+  width: 261px;
+  margin-left: -60px;
+  display: inline-block;
+  text-align: right;
+}
+#home .banner h1{
+  margin-top: 100px;
+}
+#home .banner h2{
+  font-size: 28px;
+  padding-bottom: 40px;
+}
+.video-thumbnail, .video-thumbnail .play{
+  background-color: transparent;
+  width: 100px;
+  height:60px;
+  background-size: 100px 60px;
+  border-radius: 4px;
+}
+.video-thumbnail {
+  display: block;
+  margin: 0 auto;
+  //background-image: url('../img/video-still.png');
+}
+.video-thumbnail .play{
+  border: 1px solid #131313;
+  background-image: url('../img/video-play.png');
+  transition: color .25s ease-in-out,border-color .25s ease-in-out,background-color .25s ease-in-out;
+
+}
+.video-thumbnail .play:hover{
+  background-color: #131313;
+}
+.youtube-overlay{
+  display: none;
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  z-index: 250;
+}
+.youtube-player{
+  position:fixed;
+  top:150px;
+  left:50%;
+  margin-left:-320px;
+  z-index: 300;
+}
+.section {
+  height: 450px;
+}
+.section h1{
+  margin-top: 50px;
+  font-size: 40px;
+}
+.section p{
+  font-size: 21px;
+  width:550px;
+  display: block;
+  margin:30px auto 0;
+}
+#section4{
+  height: 360px;
+}
+#section4 p.sub-button{
+  margin-top: 10px;
+  font-size: 14px;
+}
+.section p.learn-more{
+  margin-top: 30px;
   font-size: 18px;
-  color: #808080;
+  width: 800px;
 }
-.left-caret{
-  position: absolute;
-  display: block;
-  left: -1px;
-  background-image: url(/img/caret_left_30.png);
-  height: 30px;
-  width:15px;
+#section4 p, #section4 a{
+  margin-top: 20px;
 }
-.right-caret{
-  position: absolute;
-  display: block;
-  right: 0;
-  background-image: url(/img/caret_right_30.png);
-  height: 30px;
-  width:15px;
+
+#sub-banner-1{
+  background:url(../img/sub-banner-1.jpg) center 0;
+  background-size: 100% auto;
 }
-.notification a{font-family: 'OpenSansBold';}
+#sub-banner-2{
+  background:url(../img/sub-banner-2.jpg) center 0;
+  background-size: 100% auto;
+}
+#sub-banner-3{
+  background:url(../img/sub-banner-3.jpg) center 0;
+  background-size: 100% auto;
+}
+.sub-banner {
+  height:350px;
+  width: auto;
+  display:block;
+}
+.devices-icon{
+  width: 150px;
+  height: 94px;
+  background: url(../img/devices.png);
+  background-size: 150px 94px;
+  margin:20px auto 0;
+}
+
+#home .banner, #sub-banner-1, #sub-banner-2, #sub-banner-3 {
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+/******************** Section 1 ********************/
+
 
 /*******************************************************************************
 
 Inner Page Styles
 
 *******************************************************************************/
+.shadow { 
+  background:url.(img/nav_shadow-2.png) repeat-x 0 20px;
+  clear: both;
+    display: block;
+    height: 130px;
+}
 .leftnav-shell, .pressnav-shell { float:left;}
 ul.leftnav, .pressnav { padding-right:30px;}
 ul.leftnav li, .pressnav ul li { margin-bottom:15px;}
@@ -1113,314 +819,216 @@ ul.pressnav {margin-bottom:40px;}
 
 .main-content a {
   color: #464646;
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .main-content a:hover {
-  color: #5593D7;
+   color: #5593D7;
 }
 .main-content ul {
   margin-bottom:40px;
 }
-.main-content ul li {
-  padding-left: 10px;
-  margin-bottom:10px;
-  text-indent: -.7em;
+.main-content ul li { 
+    padding-left: 10px;
+  margin-bottom:10px; 
+    text-indent: -.7em;
   color: #464646;
-  font-family: 'OpenSansRegular', Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+    font-family: 'OpenSansRegular', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .main-content ul li:before {
-  content: "• ";
-  color: #5593D7; /* or whatever color you prefer */
+    content: "• ";
+    color: #5593D7; /* or whatever color you prefer */
 }
 
 p {
   margin-bottom:20px;
 }
 
+
 /*******************************************************************************
 
-Platform Page Styles
+About Page Styles
 
 *******************************************************************************/
-#platform-libraries .main-content h2 { margin-top:5px!important;}
 
-#platform-features h2 {
-  font-family: 'OpenSansRegular', Arial, sans-serif;
+#about #menu1 .idle{
+  background-image: url(../img/community-idle.png);
 }
-
-#platform-libraries section {
-  background:url(../img/content_divider.png) repeat-x bottom center;
-  padding-bottom:5px;
+#about #menu1 .active, #about #menu1 .idle:hover {
+  background-image: url(../img/community-active.png);
+}
+#about #menu2 .idle{
+  background-image: url(../img/company-idle.png);
+}
+#about #menu2 .active, #about #menu2 .idle:hover {
+  background-image: url(../img/company-active.png);
+}
+#about #menu3 .idle{
+  background-image: url(../img/timeline-idle.png);
+}
+#about #menu3 .active, #about #menu3 .idle:hover {
+  background-image: url(../img/timeline-active.png);
+}
+#about h1, #about h2, #about h3, #about p {
+  text-align:left;  
+  color:#131313;
+  font-family: 'OpenSansLight';
+}
+#about h1{
+  margin-top: 30px;
+  font-size: 40px;
+}
+#about h2 {
+  font-family:'OpenSansRegular', Arial, sans-serif;
+  font-size:28px;
   margin-bottom:10px;
 }
-
-#platform-libraries h2 {
-  font-family: 'OpenSansLight', Arial, sans-serif!important;
-  background-size:30px 30px;
-  line-height:30px;
-  color: #3A93D7;
-  font-size: 30px;
+#about h3 {
+  font-family:'OpenSansRegular', Arial, sans-serif;
+  font-size:20px;
+  margin-bottom:10px;
 }
-
-#platform-libraries section { float:left;}
-#platform-libraries section div { margin:0;}
-#platform-libraries section p { padding-right:60px;}
-
-/*
-.more-info { padding-top:16%;}
-*/
-
-a.moreinfo {
-  width:100%;
-  float:right;
-  margin:0 0 30px 50px;
+#about .banner {
+  background:url(../img/about-banner-1.jpg) center -200px;
+  height:600px;
+  width: auto;
+  display:block;
 }
-
-a.moreinfo:hover:after {
-  background: #4679BD;
+#about .banner h1{
+  margin: 75px 0 75px;
+  text-align: center;
 }
-
-a.moreinfo:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height:0;
-  padding-bottom: 100%;
-  background:#CBE1F4;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-
-a.moreinfo div {
-  float:left;
-  width:100%;
-  padding-top:50%;
-  line-height: 15px;
-  margin-top: -14px!important;
-  text-align:center;
-  color:#5593D7;
-}
-
-a.moreinfo div:hover {color:white;}
-
-.libraries-maidsafe { position:relative; top:50px;}
-.libraries-common { position:relative; top:6px;}
-.libraries-drive { position:relative; top:17px;}
-.libraries-reliable-udp { position:relative; top:85px;}
-.libraries-routing { position:relative; top:30px;}
-.libraries-encrypt { position:relative; top:115px;}
-.libraries-passport { position:relative; top:115px;}
-.libraries-network-file-system { position:relative; top:45px;}
-.libraries-vault { position:relative; top:115px;}
-.libraries-vault-manager { position:relative; top:60px;}
-.libraries-api { position:relative; top:120px;}
-
-
-/*******************************************************************************
-
-Developers Page Styles
-
-*******************************************************************************/
-
-a.get-started-button {
-  background:#5593D7;
-  font-size: 22px;
-  font-weight: 400;
-  color:#FFFFFF!important;
-  cursor:pointer;
-  text-decoration:none;
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 5px;
-  border-style: none;
-  padding: 10px 15px 10px 15px;
-  display: inline-block;
-  float:right;
+#about .banner .banner-menu h2{
+  font-size: 28px;
+  position: absolute;
 
 }
-a.get-started-button:hover {
-  background-color:#29578A;
+#about .team.banner{
+  background:url(../img/team-banner-1.png) center 50px;
+  height:300px;
+  width: auto;
+  display:block;
+}
+#about .banner, #about .team.banner{
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-a.button-blue {
-  font-size: 36px;
-  font-weight: 400;
-  color:#FFFFFF!important;
-  cursor:pointer;
-}
-
-#core-developer h1, #app-builder h1 {
-  margin-bottom:50px;
-}
-#core-developer h2, #app-builder h2 {
-  text-align:center;
-}
-
-a.light-button, a.light-button-full {
-  background-color:#c5d9f1;
-  font-size:18px;
-  text-align:center;
-  margin:5px 6px;
-  text-decoration:none;
-}
-
-a.light-button:hover, a.light-button-full:hover {
-  background-color:#5593D7;
-  color:#ffffff;
-}
-
-a.light-button {
-  padding:20px 0;
-}
-
-a.light-button-full {
-  padding:20px 31px;
-}
-
-a.last-button {
-  margin-bottom:40px;
-}
-
-.diagram {
-  margin-bottom:30px;
-}
-
-.app-stack {
-  background:url(../img/arrows-stack-diagram.png) no-repeat;
-  background-position:330px 200px;
-}
-
-.app-stack-spacer {
-  height:50px;
-  margin:5px 6px;
-}
-
-
-
-
-/*******************************************************************************
-
-Get Involved Page Styles
-
-*******************************************************************************/
-
-.farmers-text {
-  padding:0;
-  clear:both;
-}
-.farmers-text img {
-  display:inline-block;
-  float:left;
-  margin:35px 30px 35px 0;
-  width:48px;
-  height:37px;
-}
-
-.app-builders-text img {
-  display:inline-block;
-  float:left;
-  margin:30px 30px 55px 0;
-  width:48px;
-  height:37px;
-}
-
-.core-developers-text img {
-  display:inline-block;
-  float:left;
-  margin:10px 34px 40px 4px;
-  width:40px;
-  height:40px;
-}
-
-.app-builders-text {
-  clear:both;
-}
-
-.core-developers-text {
-  clear:both;
-}
-
-#get-involved p {
-  padding:0 40px 0 0;
-}
-
-/*******************************************************************************
-
-Core Developer Page Styles
-
-*******************************************************************************/
-
-.app-arrows {
-  background:url(../img/arrows-stack-diagram.png) no-repeat;
-  width:227px;
-  height:167px;
-  margin:0 auto;
-  position:relative;
-  left:70px;
-}
-
-.diagram {
-  position:relative;
-  top:-50px;
-}
-
-
-
-/*******************************************************************************
-
-Farmers Page Styles
-
-*******************************************************************************/
-
-.por-diagram {
+#about .banner .banner-menu{
   margin: 0 auto;
-  display:block;
-  float:right;
+  position: relative;
+  background: url(../img/about-banner-menu.png);
+  background-size: 265px 240px;
+  width: 265px;
+  height: 240px;
 }
+#about .banner-menu > div{
+  position: absolute;
+}
+#about .banner-menu div.active, #about .banner-menu div.idle{
+  position: absolute;
+  display: block;
+  background-size: 120px 120px;
+  width: 120px;
+  height: 120px;
+  transition: opacity .25s ease-in-out;
+}
+
+#about #banner-menu-1{
+  top:0;
+  left: 74px;
+}
+#about #banner-menu-1 .idle{
+  background: url(../img/community-idle.png);
+}
+#about #banner-menu-1 .active{
+  opacity: 0;
+  background: url(../img/community-active.png);
+}
+#about #banner-menu-1 .active:hover{
+  opacity: 1;
+}
+#about #banner-menu-1 h2{
+  left:-15px;
+  top:-35px;
+}
+
+#about #banner-menu-2{
+  top:125px;
+  left: 0px;
+}
+#about #banner-menu-2 .idle{
+  background: url(../img/company-idle.png);
+}
+#about #banner-menu-2 .active{
+  opacity: 0;
+  background: url(../img/company-active.png);
+}
+#about #banner-menu-2 .active:hover{
+  opacity: 1;
+}
+#about #banner-menu-2 h2{
+  left:0px;
+  top:115px;
+}
+
+#about #banner-menu-3{
+  top:125px;
+  left: 150px;
+}
+#about #banner-menu-3 .idle{
+  background: url(../img/timeline-idle.png);
+}
+#about #banner-menu-3 .active{
+  opacity: 0;
+  background: url(../img/timeline-active.png);
+}
+#about #banner-menu-3 .active:hover{
+  opacity: 1;
+}
+#about #banner-menu-3 h2{
+  left:5px;
+  top:115px;
+}
+
 
 /*******************************************************************************
 
-Safecoin Page Styles
+Community Section Styles
 
 *******************************************************************************/
-
-h1.safecoin-head {
-  background:url(../img/safecoin_head.png) 0 0 no-repeat;
-  display:block;
-  text-indent:-9999px;
+.maidsafeorg-logo{
+  background: url(../img/maidsafeorg.png);
+  background-size: 170px 170px;
+  width: 170px;
+  height:170px;
+  margin: 15px auto;
 }
-#safecoin h2 { text-align:center;}
-
-table {
-  max-width: 100%;
-  background-color: transparent;
-  border-collapse: collapse;
-  border-spacing: 0;
+.maidsafedev-logo{
+  background: url(../img/maidsafedev.png);
+  background-size: 170px 170px;
+  width: 170px;
+  height:170px;
+  margin: 15px auto;
 }
-
-.table {
-  width: 100%;
-  margin-bottom: 40px;
+.meetup-logo{
+  background: url(../img/meetup-logo.png);
+  background-size: 170px 130px;
+  width: 170px;
+  height:130px;
+  margin: 30px auto;
 }
-
-.table th,
-.table td {
-  padding: 8px;
-  line-height: 20px;
-  text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
+#community .btn-download{
+  margin:70px auto 10px;
 }
-
-.table th {
-  font-weight: bold;
+#community .sub-btn{
+  margin-bottom: 60px;
 }
-
-.table thead th {
-  vertical-align: bottom;
+#community div.grid-3{
+  height:325px;
 }
 
 /*******************************************************************************
@@ -1430,7 +1038,7 @@ Roadmap Page Styles
 *******************************************************************************/
 
 div.roadmap {
-  background-image: url("/img/roadmap/roadmap.png");
+  background-image: url("../img/roadmap/roadmap.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 540px;
@@ -1458,8 +1066,8 @@ div.roadmap {
 
 .roadmap-stage:hover {
   color: #808080;
-  cursor: pointer;
-  cursor: hand;
+  cursor: pointer; 
+  cursor: hand; 
 }
 
 #testnet1{top:35px;left: 15px;}
@@ -1498,8 +1106,8 @@ div.roadmap {
 .backwards {color:#5593D7;}
 .backwards:hover {
   color: #808080;
-  cursor: pointer;
-  cursor: hand;
+  cursor: pointer; 
+  cursor: hand; 
 }
 .backwards img{
   float:left;
@@ -1509,552 +1117,25 @@ div.roadmap {
   color: inherit;
 }
 
-div.start.active .bullet-icon{ background-image: url("/img/roadmap/start_active.png");}
-div.start.idle .bullet-icon{ background-image: url("/img/roadmap/start_idle.png");}
-div.complete .bullet-icon{ background-image: url("/img/roadmap/complete.png");}
-div.progress .bullet-icon{ background-image: url("/img/roadmap/progress.png");}
-div.end.active .bullet-icon{ background-image: url("/img/roadmap/end_active.png");}
-div.end.idle .bullet-icon{ background-image: url("/img/roadmap/end_idle.png");}
+div.start.active .bullet-icon{ background-image: url("../img/roadmap/start_active.png");}
+div.start.idle .bullet-icon{ background-image: url("../img/roadmap/start_idle.png");}
+div.complete .bullet-icon{ background-image: url("../img/roadmap/complete.png");}
+div.progress .bullet-icon{ background-image: url("../img/roadmap/progress.png");}
+div.end.active .bullet-icon{ background-image: url("../img/roadmap/end_active.png");}
+div.end.idle .bullet-icon{ background-image: url("../img/roadmap/end_idle.png");}
 
 #tech-roadmap p{padding:60px 0 0 0;}
 
-/*******************************************************************************
-
-Features Page Styles
-
-*******************************************************************************/
-
-#platform-features .main-content .grid-4 {
-  margin-left:0px;
-}
-
-#platform-features .main-content ul li {
-  text-indent:0px;
-  padding-left:0px;
-}
-
-#platform-features .main-content ul li:before {
-  content:"";
-}
-
-#platform-features .heavy {
-  font-family:'OpenSansBold', Arial, sans-serif;
-}
-
-.last-col {
-  margin-left:50px!important;
-}
-
-h2.noservers-head {
-  background:url(../img/features_noservers_header.png) no-repeat 0 0;
-  padding:10px 0 23px 15px;
-  font-size:22px;
-  color:#fff;
-  text-transform:uppercase;
-}
-
-h2.administrators-head {
-  background:url(../img/features_administrators_header.png) no-repeat 0 0;
-  padding:8px 80px 13px 15px;
-  font-size:16px;
-  color:#fff;
-  text-transform:uppercase;
-}
-
-h2.datamanage-head {
-  background:url(../img/features_datamanage_header.png) no-repeat 0 0;
-  padding:4px 60px 23px 15px;
-  font-size:16px;
-  color:#fff;
-  text-transform:uppercase;
-}
-
-h2.password-head {
-  background:url(../img/features_password_header.png) no-repeat 0 0;
-  padding:6px 62px 21px 15px;
-  font-size:16px;
-  color:#fff;
-  text-transform:uppercase;
-}
-
-h2.sharedata-head {
-  background:url(../img/features_sharedata_header.png) no-repeat 0 0;
-  padding:5px 170px 23px 15px;
-  font-size:16px;
-  color:#fff;
-  text-transform:uppercase;
-}
-
-h2.distribute-head {
-  background:url(../img/features_distribute_header.png) no-repeat 0 0;
-  padding:7px 92px 19px 15px;
-  font-size:16px;
-  color:#fff;
-  text-transform:uppercase;
-}
 
 
 /*******************************************************************************
 
-Libraries Page Styles
+Team Page Styles
 
 *******************************************************************************/
-
-#platform-libraries section {
-  background:url(../img/content_divider.png) repeat-x bottom center;
-  padding-bottom:5px;
-  margin-bottom:25px;
+#company {
 }
-
-/*******************************************************************************
-
-Use Cases Page Styles
-
-*******************************************************************************/
-#use-cases section .grid-4 {
-  margin:0px 50px 0 0;
-}
-#use-cases h2 {
-  color: #5593D7;
-  font-family: 'OpenSansLight', Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 300;
-}
-
-#use-cases h3 {
-  margin-bottom:5px;
-}
-
-#use-cases section {
-  background:url(../img/content_divider.png) repeat-x bottom center;
-  padding-bottom:5px;
-  margin-bottom:25px;
-}
-
-/*******************************************************************************
-
-FAQs Page Styles
-
-*******************************************************************************/
-h2.faq-developers, h2.faq-general, h2.faq-technical {
-  height:40px;
-  padding:12px 0 0 70px;
-  width:100%;
-  font-family: 'OpenSansLight', Arial, sans-serif;
-  color: #5593D7;
-  text-transform:uppercase;
-  font-size:18px;
-  margin-top:20px;
-}
-#platform-faqs .main-content h2 {
-  clear:both;
-  margin:40px 0px 10px 0px;
-  float:left;
-}
-
-#platform-faqs .main-content ul li { margin-bottom:0px;}
-
-h3.question {
-  margin:10px 0 5px 0;
-  font-size:16px;
-  clear:both;
-  float:left;
-  font-family: 'OpenSansRegular', Arial, sans-serif;
-}
-h3.question a {
-  text-decoration: none;
-  display: block;
-}
-
-.toggle_answer {
-  margin: 10px 0 20px 0px;
-  padding: 0;
-  border-bottom: 1px solid #d6d6d6;
-  overflow: hidden;
-  width: 710px;
-  clear: both;
-}
-
-.toggle_answer p {
-  padding:10px 0 20px 0;
-  margin:0px;
-}
-
-#platform-faqs .main-content ul li {
-  padding-left: 0px;
-  text-indent: 0em;
-}
-
-#platform-faqs .main-content ul li:before {
-  content: normal;
-}
-
-.search-box {
-  margin:0px;
-}
-
-.search {
-  font-size: 14px;
-  padding: 4px 10px;
-  width:90%;
-}
-
-/*******************************************************************************
-
-Licensing Page Styles
-
-*******************************************************************************/
-#licensing .main-content {
-  margin-bottom:20px;
-}
-.download-license-box, .download-license-box-last {
-  background:url(../img/txt_icon.png) no-repeat 6px 20px;
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 10px;
-  border-style: none;
-  box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-  padding-bottom: 23px;
-  min-height:100px;
-  font-size:16px;
-}
-
-.download-license-box {
-  margin:0px 14px 40px 0;
-}
-.download-license-box-last {
-  margin:0px 0px 40px 0;
-}
-
-a.gpl-license, a.commercial-license, a.contributor-agreement {
-  padding:20px 10px 0px 90px;
-  display:block;
-  text-decoration:none;
-}
-
-#licensing h2 {
-  color: #5593D7;
-  font-family: 'OpenSansLight', Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 300;
-}
-
-.license-reg {
-  padding:20px 20px 0px 150px;
-}
-
-/*******************************************************************************
-
-Testimonials Page Styles
-
-*******************************************************************************/
-blockquote.quote {
-  font-family: 'OpenSansLight', Arial, sans-serif;
-  font-weight: 300;
-  line-height: 1.4;
-  font-size:17px;
-  padding: 8px;
-  margin: 0px;
-  background-image: url(../img/open_quote.png);
-  background-repeat: no-repeat;
-  background-size:34px 26px;
-}
-blockquote.quote span {
-  display: block;
-  background-image: url(../img/close_quote.png);
-  background-repeat: no-repeat;
-  background-size:34px 26px;
-  padding-right: 50px;
-  padding-left:45px;
-}
-
-.quote-box p {
-  font-family: 'OpenSansLight', Arial, sans-serif;
-  line-height: 1.4;
-  padding-top: 0;
-  margin-bottom:0px;
-}
-
-p.quoter {
-  font-size:13px;
-  color:rgba(161,161,161,1.00);
-  text-align:right;
-}
-
-li.list-quote:before {
-  content: ""!important;
-  padding:0px!important;
-}
-
-li.list-quote {
-  text-indent:0em!important;
-  margin-bottom:60px!important;
-
-}
-.list-quote blockquote.quote {
-  background-position: 0px 5px;
-}
-.list-quote blockquote.quote span {
-  background-position: 650px 40px;
-}
-.list-quote p.quoter {
-  padding:0 60px;
-}
-
-/*******************************************************************************
-
-SAFE Pods Page Styles
-
-*******************************************************************************/
-
-#safe-pods .main-content p {
-  padding-right:50px;
-}
-
-/*******************************************************************************
-
-Libraries Page Styles
-
-*******************************************************************************/
-#libraries h1 {
-  margin-bottom:5px;
-}
-#libraries h2 {
-  margin-bottom:40px;
-}
-#libraries .main-content {
-  float:left;
-}
-#libraries .main-content ul {
-  margin-bottom:30px;
-}
-
-.rightnav {
-  float:right;
-}
-
-.rightnav-box {
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 10px;
-  border-style: none;
-  box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-  padding-bottom: 13px;
-  position: relative;
-  min-height:60px;
-  margin-bottom:30px;
-}
-.rightnav-box p {
-  color: #5593D7;
-  font-size: 16px;
-  padding-top:10px;
-}
-
-/*******************************************************************************
-
-Documents Page Styles
-
-*******************************************************************************/
-
-.doc-box-examples,
-.doc-box-system-docs,
-.doc-box-dev-wiki,
-.doc-box-papers-publications {
-  padding:20px 0px 0px 0px;
-  background-color:#eef4fa;
-  margin-bottom:20px;
-}
-
-.doc-box-papers-publications {
-  float:right;
-  background:#eef4fa url(../img/page_top_right.png) no-repeat top right;
-  height:623px;
-}
-
-.doc-box-examples h2,
-.doc-box-system-docs h2,
-.doc-box-dev-wiki h2,
-.doc-box-papers-publications h2 {
-  margin-top:0px;
-  padding:0 15px;
-}
-
-.doc-box-examples p,
-.doc-box-system-docs p,
-.doc-box-dev-wiki p,
-.doc-box-papers-publications p {
-  padding:0 15px;
-}
-
-.doc-box-examples a,
-.doc-box-system-docs a,
-.doc-box-dev-wiki a,
-.doc-box-papers-publications a {
-  text-decoration:none;
-}
-
-.doc-box-examples ul,
-.doc-box-system-docs ul,
-.doc-box-dev-wiki ul,
-.doc-box-papers-publications ul {padding:0 15px;}
-
-.examples-tab, .system-docs-tab, .developer-wiki-tab, .papers-publications-tab {
-  height:140px;
-  margin-top:30px;
-}
-.examples-tab h2, .system-docs-tab h2, .developer-wiki-tab h2, .papers-publications-tab h2 {
-  font-family: 'OpenSansLight', Arial, sans-serif;
-  margin:0px;
-  color: #5593D7;
-  font-size:14px;
-}
-a.examples-tab, a.system-docs-tab, a.developer-wiki-tab, a.papers-publications-tab {
-  text-decoration:none;
-  text-align:center;
-}
-
-p.call-to {
-  background:#C9E0F2;
-  padding:10px 0px;
-  margin-bottom:0px;
-  text-transform:uppercase;
-
-}
-
-p.call-to a {
-  margin-left:20px;
-  text-decoration:none;
-  color:rgba(85,147,215,1);
-  padding:0 30px;
-  background:url(../img/arrow_link_bg.png) no-repeat top left;
-  height:22px;
-  display:block;
-  line-height:23px;
-}
-
-p.call-to a:hover {
-  color:#000;
-  background-position:bottom left;
-}
-
-
-/*******************************************************************************
-
-Papers and Publication Page Styles
-
-*******************************************************************************/
-
-ul.pdf-group li { list-style:none;}
-
-ul.pdf-group li:before {
-  content:"";
-  background:url(../img/pdf_icon.png) no-repeat 0 0;
-  display:inline-block;
-  width:20px;
-  height:21px;
-  margin-right:10px;
-  position:relative;
-  top:4px;
-}
-
-ul.pdf-group li  a { }
-
-
-/*******************************************************************************
-
-Company Page Styles
-
-*******************************************************************************/
-
-.team-row {
-  clear:both;
-
-}
-
-#company .team-row  h2 {
-  margin-bottom:3px;
-}
-#company .team-row  h3 {
-  margin-bottom:20px;
-}
-
-#company .grid-4 {
-  /*margin:0px;*/
-}
-
-#company .col-l {
-  margin:0 0px 30px 0;
-  padding:0 30px 0 0;
-}
-#company .left-col h2{
-  background-image: url('/img/company-pink.png');
-}
-#company .col-m {
-  margin:0 0px 30px 0px;
-  padding:0 10px 0 10px;
-}
-#company .middle-col h2{
-  background-image: url('/img/company-orange.png');
-}
-#company .col-r {
-  margin:0 0 30px 0px;
-  padding:0 0 0 30px;
-}
-#company .right-col h2{
-  background-image: url('/img/company-teal.png');
-}
-#company .main-content .col-3 h2{
-  color:#fff;
-  text-align: center;
-  padding-top: 7px;
-  background-repeat: no-repeat;
-  width: 205px;
-  height: 44px;
-  background-size: 205px 44px;
-  font-family: 'OpenSansRegular';
-}
-#company .plane-banner{
-  width: 300px;
-  height: auto;
-  float: right;
-}
-.main-content .col-3 {
-  width:205px;
-  /*padding:0px 0px;*/
-}
-
-.main-content .left-col {
-  padding:0 30px 0 0;
-  margin:0 10px 0 0;
-}
-
-.main-content .right-col {
-  padding:0 0 0 30px;
-  margin:0 0 0 10px;
-}
-
-
-#company .grid-4.l {
-  margin-left:0px;
-}
-
-#company .grid-4.r {
-  margin-right:0px;
-}
-
-.team-pic {
-  width:224px;
-  height:224px;
-  background-size:224px 224px;
-}
-
-/*
-#team .grid-9 {
-	width:732px;
-	margin:0px;
-}
-
-*/
-
-#team  h3 {
+#company  h3 {
   font-family: 'OpenSansRegular', Arial, sans-serif;
   text-align:center;
   color:rgba(150,150,150,1.00);
@@ -2062,22 +1143,51 @@ Company Page Styles
   margin-bottom:30px;
 }
 
-#team .main-content {
+#company .wrapper {
   padding-bottom: 20px;
+  //float: right;
 }
+#company .main-content {
+  float:right;
+}
+
+a.twitter-button {
+  background:url.(img/twitter_icon.png) no-repeat top left!important;
+  width:28px;
+  height:23px;
+  display:inline-block;
+  text-indent:-9999px;
+  float:left;
+  margin:2px;
+}
+
+a.twitter-button:hover { background-position:bottom left;}
+
+a.wordpress-button {
+  background:url.(img/wordpress_icon.png) no-repeat top left!important;
+  width:28px;
+  height:28px;
+  display:inline-block;
+  text-indent:-9999px;
+  float:left;
+  margin:0px 10px;
+}
+
+a.wordpress-button:hover { background-position:bottom left;}
 
 .profile-row {
   display:block;
   float:left;
 }
-
+  
 .team-map {
-  background-image: url('/img/team/team_map.png');
+  background-image: url('../img/team/team_map.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 460px;
   height: 600px;
   position: relative;
+  float:right;
 }
 .team-icon {
   background-repeat: no-repeat;
@@ -2088,16 +1198,16 @@ Company Page Styles
   height: 56px;
 }
 
-.cog-icon:hover, .cog-icon.icon-active {background-image: url('/img/team/team_cog_dk.png') !important;}
-.cog-icon {background-image: url('/img/team/team_cog_lt.png');}
-.dev-icon:hover, .dev-icon.icon-active {background-image: url('/img/team/team_dev_dk.png') !important;}
-.dev-icon {background-image: url('/img/team/team_dev_lt.png');}
-.strat-icon:hover, .strat-icon.icon-active {background-image: url('/img/team/team_strat_dk.png') !important;}
-.strat-icon {background-image: url('/img/team/team_strat_lt.png');}
-.design-icon:hover, .design-icon.icon-active {background-image: url('/img/team/team_design_dk.png') !important;}
-.design-icon {background-image: url('/img/team/team_design_lt.png');}
-.admin-icon:hover, .admin-icon.icon-active {background-image: url('/img/team/team_admin_dk.png') !important;}
-.admin-icon {background-image: url('/img/team/team_admin_lt.png');}
+.cog-icon:hover, .cog-icon.icon-active {background-image: url('../img/team/team_cog_dk.png') !important;}
+.cog-icon {background-image: url('../img/team/team_cog_lt.png');}
+.dev-icon:hover, .dev-icon.icon-active {background-image: url('../img/team/team_dev_dk.png') !important;}
+.dev-icon {background-image: url('../img/team/team_dev_lt.png');}
+.strat-icon:hover, .strat-icon.icon-active {background-image: url('../img/team/team_strat_dk.png') !important;}
+.strat-icon {background-image: url('../img/team/team_strat_lt.png');}
+.design-icon:hover, .design-icon.icon-active {background-image: url('../img/team/team_design_dk.png') !important;}
+.design-icon {background-image: url('../img/team/team_design_lt.png');}
+.admin-icon:hover, .admin-icon.icon-active {background-image: url('../img/team/team_admin_dk.png') !important;}
+.admin-icon {background-image: url('../img/team/team_admin_lt.png');}
 
 #boss { top: 200px; left: 268px; }
 #david { top: 47px; left: 42px; }
@@ -2122,8 +1232,9 @@ Company Page Styles
 #paige { top:421px; left:397px; }
 
 .profile-info {
-  width: 216px !important;
+  width: 206px !important;
   padding: 0 !important;
+  float:right;
 }
 .profile-mobile{display: none;}
 
@@ -2135,7 +1246,7 @@ Credits Page Styles
 
 
 #credits section{
-  background:url(../img/content_divider.png) repeat-x bottom center;
+  background:url.(img/content_divider.png) repeat-x bottom center;
   padding-bottom:5px;
   margin-bottom:20px;
   height:100px;
@@ -2158,133 +1269,212 @@ Credits Page Styles
   margin:0 auto;
 }
 
-.advanced-installer{
-  background-image: url("/img/credits/advanced-installer-logo.jpg");
+.advanced-installer{ 
+  background-image: url("../img/credits/advanced-installer-logo.jpg");
   width: 90px;
   height: 90px;
 }
-.atlassian-jira{
-  background-image: url("/img/credits/atlassian-jira-logo.jpg");
+.atlassian-jira{ 
+  background-image: url("../img/credits/atlassian-jira-logo.jpg");
   width: 90px;
   height: 90px;
 }
 .github-credit{
-  background-image: url("../img/github-octocat.png");
+  background-image: url(."img/github-octocat.png");
   width: 90px;
   height: 90px;
 }
 .jetbrains{
-  background-image: url("/img/credits/jetbrains-logo.png");
+  background-image: url("../img/credits/jetbrains-logo.png");
   width: 120px;
   height: 40px;
   margin-top: 25px !important;
 }
-.xamarin{
-  background-image: url("/img/credits/xamarin-logo.png");
+.xamarin{ 
+  background-image: url("../img/credits/xamarin-logo.png");
   width: 90px;
   height: 90px;
 }
-.sauce-labs{
-  background-image: url("/img/credits/sauce-labs-logo.jpg");
+.sauce-labs{ 
+  background-image: url("../img/credits/sauce-labs-logo.jpg");
   width: 82px;
   height: 90px;
 }
+
 /*******************************************************************************
 
-Careers Page Styles
+Timeline Page Styles
 
 *******************************************************************************/
-#careers p {
-  margin-bottom:10px;
+#timeline .wrapper{
+  float:right;
 }
-
-.vacancies {
-  background-color: #FFFFFF;
-  border-color: rgba(0, 0, 0, 0);
+#timeline .top{
+  font-size: 18px;
+  display: inline-block;
+  position: relative;
+  margin: 0 0 10px 238px;
+  padding: 5px;
+  border: 2px solid #5593D7;
+  color: #5593D7;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
   border-radius: 10px;
-  border-style: none;
-  box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.5);
-  padding:20px;
-  position:relative;
+}
+#timeline .top:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 108px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #5593D7 transparent;
+  display: block;
+  width: 0;
+}
+#timeline .top:after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 110px;
+  border-width: 8px 8px 0;
+  border-style: solid;
+  border-color: #fff transparent;
+  display: block;
+  width: 0;
+}
+#timeline .dot {
+  background-image: url('../img/dot-gray.png');
+  width: 14px;
+  height: 14px;
+  background-size: 14px 14px;
+  margin-left: 49%;
+  margin-bottom: 5px;
+}
+#timeline .dot.blue {
+  background-image: url('../img/dot-blue.png');
+}
+#timeline .dot.orange {
+  background-image: url('../img/dot-orange.png');
+}
+#timeline .dot.pink {
+  background-image: url('../img/dot-pink.png');
+}
+#timeline .dot.violet {
+  background-image: url('../img/dot-violet.png');
+}
+#timeline .dot.teal {
+  background-image: url('../img/dot-teal.png');
+}
+#timeline .dot.purple {
+  background-image: url('../img/dot-purple.png');
 }
 
-#careers .col-l {
-  float:left;
-  margin-right:90px;
+#timeline .bubble{
+  position: relative;
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  margin-top: 3px;
+}
+#timeline .bubble.left:after{
+  content: "";
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+  top: 0px;
+  right: -15px;
+  bottom: auto;
+  left: auto;
+  border-width: 0px 0px 15px 15px;
+}
+#timeline .bubble.right:after{
+  content: "";
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  left: -15px;
+  border-width: 0px 15px 15px 0;
+}
+#timeline .bubble.left{
+  text-align: right;
+  float: right;
+  margin-right: 54%;
+}
+#timeline .bubble.right{
+  text-align: left;
+  float: left;
+  margin-left: 54%
+}
+#timeline .bubble.blue {
+  background-color: #5593D7;
+}
+#timeline .bubble.blue:after{
+  border-color: transparent #5593D7;
+}
+#timeline .bubble.orange {
+  background-color: #F08720;
+}
+#timeline .bubble.orange:after{
+  border-color: transparent #F08720;
+}
+#timeline .bubble.pink {
+  background-color: #B9365B;
+}
+#timeline .bubble.pink:after{
+  border-color: transparent #B9365B;
+}
+#timeline .bubble.violet {
+  background-color: #76549D;
+}
+#timeline .bubble.violet:after{
+  border-color: transparent #76549D;
+}
+#timeline .bubble.teal {
+  background-color: #4AB6A1;
+}
+#timeline .bubble.teal:after{
+  border-color: transparent #4AB6A1;
+}
+#timeline .bubble.purple {
+  background-color: #3E4092;
+}
+#timeline .bubble.purple:after{
+  border-color: transparent #3E4092;
+}
+#timeline .bubble.up3{
+  margin-top:-3px;
+}
+#timeline .bubble.up6{
+  margin-top:-6px;
+}
+#timeline .bubble.up18{
+  margin-top:-18px;
+}
+#timeline .bubble.up22{
+  margin-top:-22px;
 }
 
-#careers .col-r {
-  float:right;
+#timeline .year{
+  background-color: #5593D7;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  width: 50px;
+  text-align: center;
+    -webkit-border-radius: 15px; 
+    -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 4px;
+  margin: 0px auto;
 }
-
-.current-jobs {
-  padding:15px;
-  background-color:#89b2df;
-  position:relative;
-  top:-10px;
-}
-.current-jobs h1 {
-  color:#fff;
-  font-size:22px;
-}
-.current-jobs h2 {
-  color:#fff;
-  font-size:14px;
-  font-family: 'OpenSansBold', Arial, sans-serif;
-  margin:0px 0px 20px 0;
-  padding:0px;
-  clear:both;
-}
-.current-jobs p, .current-jobs ul li {
-  color:#fff;
-  font-size:12px;
-  text-indent:0em;
-  padding-left:0px;
-}
-
-.current-jobs p { }
-
-.current-jobs ul li:before {
-//content:"";
-}
-.current-jobs ul{
-  margin-bottom: 10px;
-}
-
-/*
-.main-content .grid-3 { width:100%; float:left; clear:both;}
-*/
-.applynow {
-  background:url(../img/applynow.png) no-repeat 0 0;
-  width:67px;
-  height:66px;
-  float:right;
-  position:relative;
-  top:-20px;
-  right:-20px;
-}
-a.applyhere {
-  background:url(../img/applyhere_btn.png) no-repeat top left;
-  width:121px;
-  height:37px;
-  display:block;
-  float:;
-  position:relative;
-  right:-64px;
-  text-transform:uppercase;
-  text-decoration:none;
-  padding:15px;
-}
-
-a.applyhere:hover {
-  background-position:bottom left;
-}
-
-.apply-text {
-  font-size:18px;
-  letter-spacing:-0.5px;
-}
-
 /*******************************************************************************
 
 Assets Page Styles
@@ -2311,12 +1501,12 @@ Assets Page Styles
   margin-bottom: 15px;
 }
 
-#assets #wee-plane p,
-#assets #twitter-cover p,
-#assets #meetup-cover p,
+#assets #wee-plane p, 
+#assets #twitter-cover p, 
+#assets #meetup-cover p, 
 #assets #advert p,
 #assets #david-nick p,
-#assets #team-photo p {
+#assets #company-photo p {
   margin-bottom: 5px;
 }
 
@@ -2382,7 +1572,7 @@ Assets Page Styles
 #david-nick .thumbnail p{
   font-size: 15px;
 }
-#team-photo img{
+#company-photo img{
   width: 100%;
   height: auto;
 }
@@ -2430,18 +1620,18 @@ a h3 { color:inherit;}
 
 #press .main-content h2 { margin-top:0px;}
 
-#press .main-content ul li {
-  padding-left: 0px;
-  margin-bottom:0px;
-  text-indent: 0em;
+#press .main-content ul li { 
+    padding-left: 0px;
+  margin-bottom:0px; 
+    text-indent: 0em;
   color: #464646;
-  font-family: 'OpenSansRegular', Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+    font-family: 'OpenSansRegular', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 #press .main-content ul li:before {
-  content: "";
+    content: "";
 }
 
 h2.top-stories-head {
@@ -2451,9 +1641,9 @@ h2.top-stories-head {
   color:rgba(85,147,215,1);
   display:block;
   float:right;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  -moz-border-radius: 5px 5px 0px 0px;
-  border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px; 
+    -moz-border-radius: 5px 5px 0px 0px;
+   border-radius: 5px 5px 0px 0px; 
 }
 
 #press h2.top-stories-head {
@@ -2493,7 +1683,7 @@ ul.top-stories .press-article {
 
 
 .pressnav li h3 {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 
@@ -2561,8 +1751,8 @@ Contact Page Styles
   padding-right:70px;
 }
 #contact .col-m {
-  padding: 0 80px;
-  width: 260px;
+    padding: 0 80px;
+    width: 260px;
 }
 #contact .col-r {
   padding-left:20px;
@@ -2597,101 +1787,17 @@ ul.social li a {
   margin-bottom:20px!important;
 }
 .twitter-icon {
-  background:url(../img/icon_twitter.png) no-repeat 0 0;
+  background:url.(img/icon_twitter.png) no-repeat 0 0;
   padding-top:5px;
 }
 .contact-icon {
-  background:url(../img/icon_contact.png) no-repeat 0 0;
+  background:url.(img/icon_contact.png) no-repeat 0 0;
   padding-top:2px;
 }
 .mumble-icon {
-  background:url(../img/icon_mumble.png) no-repeat 0 0;
+  background:url.(img/icon_mumble.png) no-repeat 0 0;
   padding-top:8px;
 }
-
-h2.trigger a {
-  color: #464646;
-  text-decoration: none;
-  display: block;
-  font-size:18px;
-  text-align:center;
-  margin: 0 auto;
-  display:block;
-}
-h2.trigger a:hover {
-  color:#5593D7;
-}
-h2.active {background-position: left bottom; color:rgba(204,204,204,1.00);}
-
-.downloadShell {
-  padding:0px 0px 90px 0px;
-  margin: 40px auto 10px;
-  text-align:center;
-}
-
-#downloadBox {
-  margin:0 auto;
-  text-align:center;
-  font-weight:normal;
-  font-size:24px;
-}
-#downloadBox img {
-  float:left;
-}
-#downloadBox .button-grey {
-  position:relative; top:20px;
-}
-.downloadText {
-  font-size:18px;
-  color:#5593D7;
-  clear:both;
-}
-#downloadInfo {
-  font-size:18px;
-}
-
-#downloadOS  {
-  text-align:center;
-  color:#5593D7;
-}
-
-#downloadArchitecture {
-  color:#5593D7;
-}
-
-.hidden {
-  display:none;
-}
-
-
-.surefile_download_link_mac:not(.surefile_download_link_soon) .downloadSoon,
-.surefile_download_link_win:not(.surefile_download_link_soon) .downloadSoon,
-.surefile_download_link_linux:not(.surefile_download_link_soon) .downloadSoon {
-  display:none;
-}
-
-.surefile_download_link_mac.surefile_download_link_soon .downloadText,
-.surefile_download_link_win.surefile_download_link_soon .downloadText,
-.surefile_download_link_linux.surefile_download_link_soon .downloadText,
-.surefile_download_link_mac.surefile_download_link_soon .downloadOS,
-.surefile_download_link_win.surefile_download_link_soon .downloadOS,
-.surefile_download_link_linux.surefile_download_link_soon .downloadOS,
-.surefile_download_link_mac.surefile_download_link_soon .downloadArchitecture,
-.surefile_download_link_win.surefile_download_link_soon .downloadArchitecture,
-.surefile_download_link_linux.surefile_download_link_soon .downloadArchitecture {
-  display:none;
-}
-
-/*
-.surefile_download_link_soon a.button-grey,
-.surefile_download_link_soon a.button-grey:hover,
-.surefile_download_link_soon a.button-grey:active {
-	border:none;
-	background:none;
-	cursor:default;
-	color:rgb(84, 146, 214);
-}
-*/
 
 
 /*******************************************************************************
@@ -2701,12 +1807,24 @@ Footer Styles
 *******************************************************************************/
 
 footer {
-  background-color:#808080;
+  background-color:#5593D7;
   clear:both;
-  padding:30px 0;
+  padding:10px 0 30px 0;
   color: #FFFFFF;
+  height: 180px;
+  margin-top: -220px;
+  font-size: 16px;
+  font-family: 'OpenSansLight';
 }
-
+footer .footer-links li{
+  padding-bottom: 10px;
+}
+footer .footer-links.social li{
+  padding-bottom: 4px;
+}
+footer .footer-links{
+  padding-top: 20px;
+}
 footer .container-12 {
   clear:both;
 }
@@ -2717,66 +1835,36 @@ footer p {
 }
 
 footer a:link {
-  color: #CCCCCC;
+  color: #ffffff;
   text-decoration: inherit;
   padding:4px 0;
   display:inline-block;
 }
 
 footer a:visited {
-  color: #CCCCCC;
+  color: #ffffff;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #FFFFFF;
+  color: #131313;
   text-decoration: inherit;
 }
 
 footer a:active {
-  color: #CCCCCC;
+  color: #131313;
   text-decoration: inherit;
 }
 
 footer img { display:inline-block!important;}
 
-ul.social-links {
-  float:right;
-}
 
-ul.social-links li {
-  display:inline;
-  text-align:center;
-  margin:5px;
-}
-
-ul.social-links li a {
-  display:inline-block!important;
-  margin:0px;
-  padding:0px;
-}
-
-.facebook-icon {
-  top:3px;
-  position:relative;
-}
 .google-icon {
   top:2px;
   position:relative;
 }
-
-.legal {
-  font-size: 12px;
-  font-weight: 400;
-  padding-top:20px;
-  width:60%;
-  float:left;
-  line-height: 20px;
-}
-
-.legal a {
-  display:inline-block!important;
-  padding: 10px 0px 10px 20px!important;
+.twitter-follow-button{
+  margin-top: 10px;
 }
 
 .footer-logos {
@@ -2788,34 +1876,3072 @@ ul.social-links li a {
 }
 
 .logo-footer {
-  float:right;
+  float:left;
 }
 
 .idl-badge {
   float:right;
   margin-top:12px;
 }
+.cc-by{
+  margin-top: -11px;
+  padding:0;
+  text-align: center;
+}
+.cc-by p{
+  display: inline-block;
+}
+/*footer .cc-by img{
+  padding-top:10px;
+}*/
 
 
-/*********************************************************************************************
+/********************************************************************************************* 
 
-2.  960px
+2.  960px 
 
-*********************************************************************************************/
+*********************************************************************************************/  
 
-
-
-/*********************************************************************************************
-
-3.  720px
-
-*********************************************************************************************/
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
 
 
-/*********************************************************************************************
+}
+  
 
-4.  lt 720px
+/********************************************************************************************* 
 
-*********************************************************************************************/
+3.  720px 
+
+*********************************************************************************************/ 
+
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+/*******************************************************************************
+
+Header Styles
+
+*******************************************************************************/
+#home header {
+  height:90px;
+  font-size: 14px;
+}
+
+#home .shadow {
+    background-position:0px -25px ;
+}
+
+header {
+  height:80px;
+  font-size: 14px;
+}
+
+.shadow {
+  background-size:100% 100px;
+  height:100px;
+}
+
+.logo {
+  width:180px;
+  height:52px;
+  background-size:180px 52px;
+  top:18px;
+}
+
+.menu {
+  top:56px;
+}
+
+.menu ul li {
+  display: inline-block;
+  margin-left:16px;
+}
 
 
+/************************ Banner Styles **************************/
+
+.banner {
+  height:300px;
+}
+blockquote.quote {
+  font-size:18px;
+  padding: 8px;
+  margin: 5px;
+  background-size:28px 21px;
+}
+blockquote.quote span {
+  background-size:28px 21px;
+  padding-right: 25px;
+  padding-left:25px;
+}
+
+p.quoter {
+  font-size:13px;
+}
+
+.list-quote blockquote.quote span {
+    background-position: 456px 88px;
+}
+
+
+/************************** Banner news ***************************/
+.banner-news {
+  padding:5px 0 0 0;
+}
+.banner-news h1 {
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+.banner-news p {
+  font-size:20px;
+}
+
+.news-graphic {
+  width:202px;
+  height:86px;
+  background-size:202px 86px;
+  margin:0px auto 10px auto;
+}
+
+/************************** Banner community ***************************/
+.banner-community {
+  padding:40px 0 0 0;
+}
+.banner-community h1 {
+  font-size:26px;
+}
+
+.community-development {
+  width:280px;
+  height:46px;
+  margin:30px 0 0 0;
+}
+
+.community-org {
+  width:225px;
+  height:46px;
+  margin:30px 40px 0 40px;
+}
+
+.community-safecoin {
+  width:240px;
+  height:46px;
+}
+
+
+/************************** Banner plane ***************************/
+.banner-plane {
+  padding:40px 0 0 0;
+}
+.banner-plane h1 {
+  font-size:26px;
+  color:#5593D7;
+  margin:30px 0 0 0;
+}
+.plane {
+  background:url.(img/home_plane.png) no-repeat 0 0;
+  width:423px;
+  height:75px;
+  background-size:423px 75px;
+  margin:0px auto 10px auto;
+}
+
+/************************** Banner getcode ***************************/
+.banner-getcode {
+  padding:65px 0 0 0;
+}
+.banner-getcode h1 {
+  font-size:26px;
+}
+.github-icon {
+  background-position: 254px 0px;
+  background-size:100px 88px;
+}
+.spacer {
+  display:inline-block;
+  width:100px;
+}
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
+  padding:10px 0 0 0;
+}
+.banner-roadmap h1 {
+  font-size:26px;
+  color:#5593D7;
+}
+
+.home-tabs p {
+  font-size:22px;
+  padding:95px 50px 15px 50px;
+  line-height:24px;
+}
+
+.core-dev-tab {
+  background-position: center 25px;
+  background-size:48px 48px;
+  margin:10px 0!important;
+}
+
+.core-dev-tab:hover {
+  background-position: center 25px;
+  background-size:48px 48px;
+}
+
+.app-builder-tab {
+  background-position: center 25px;
+  background-size:54px 43px;
+  margin:10px 18px!important;
+}
+
+.app-builder-tab:hover {
+  background-position: center 25px;
+  background-size:54px 43px;
+}
+
+.farmer-tab {
+  background-position: center 25px;
+  background-size:57px 42px;
+  margin:10px 0!important;  
+}
+
+.farmer-tab:hover {
+  background-position: center 25px;
+  background-size:57px 42px;
+}
+
+.tell-me-more-tab p {
+  padding:20px;
+}
+
+.video-box {
+  height:394px;
+}
+
+#inline1 {
+  display:none;
+}
+
+
+
+#home h2 {
+  font-size:22px;
+  margin-bottom:40px;
+}
+
+.home-box {
+  margin-bottom:40px;
+}
+
+.home-box p {
+  font-size: 18px;
+}
+
+p.alpha-testers {
+  font-size: 28px;
+  font-family:'OpenSansBold', Arial, sans-serif;
+  margin-bottom:8px;
+  line-height:32px;
+}
+
+.maidsafe-platform {
+  background-size:180px 102px;
+  width:180px;
+  height:102px;
+}
+
+.surefile-test {
+  width:120px; height:62px;
+  background-size:120px 62px;
+}
+
+.github-code {
+  width:100px; height:88px;
+  background-size:100px 88px;
+}
+
+
+
+ul.leftnav li a { font-size:14px;}
+ul.leftnav li ul li a { font-size:12px;}
+
+
+.home-box p {
+  font-size: 16px;
+}
+
+.middle h2 {
+  margin-bottom:4%;
+}
+
+
+p.alpha-testers {
+  font-size: 24px;
+  margin-bottom:10px;
+}
+
+.article-1 {  padding-right:35px;}
+.article-2 {  padding-left:15px;}
+
+.notification p{
+  font-size: 16px;
+}
+
+/*********** Sidebar **************/
+
+.sidebar p {
+  font-size:14px;
+}
+
+.sidebar .divider {
+  width:100%; /*156*/
+  height:10px;
+  background-size:100px 10px;
+}
+
+a.visit-blog {
+  width:102px;
+  height:58px;
+  background-size:102px 116px;
+
+}
+
+a.maidsafe-dev {
+  width:102px;
+  height:30px;
+  background-size:102px 60px;
+}
+
+a.maidsafe-org {
+  width:102px;
+  height:31px;
+  background-size:102px 62px;
+}
+
+a.mumble {
+  width:102px;
+  height:77px;
+  background-size:102px 154px; 
+}
+
+/*********** Developers Page **************/
+
+a.get-started-button {
+  font-size: 18px;
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 8px 12px 8px 12px;
+  float:right;
+}
+
+a.button-blue {
+  font-size: 36px;
+    font-weight: 400;
+}
+
+#developers h1 {
+  margin-bottom:50px;
+}
+
+a.light-button, a.light-button-full {
+  font-size:16px;
+  margin:5px 6px;
+
+}
+
+a.light-button-full {
+  padding:20px 22px;
+}
+
+.diagram {
+  padding-top:90px;
+}
+
+.app-stack {
+  background-position: 230px 215px;
+}
+
+#core-developer .app-stack {
+  background-position:230px 860px;
+}
+
+/********* Get Involved Page ************/
+.get-involved-tabs {
+  margin-bottom:30px;
+}
+
+.get-involved-tabs p {
+  font-size:22px;
+  padding:95px 20px 25px 20px;
+  line-height:26px;
+}
+
+.tell-me-more-tab p {
+  padding:20px;
+}
+
+.farmers-text img {
+  width:46px;
+  height:35px;
+  margin:65px 30px 55px 0;
+}
+
+.app-builders-text img {
+  width:46px;
+  height:36px;
+  margin:50px 30px 55px 0;
+}
+
+.core-developers-text img {
+  width:40px;
+  height:40px;
+  margin:33px 25px 40px 8px;
+}
+
+
+/*********** Documents Page ***************/
+
+.doc-box-papers-publications {
+  height:727px;
+}
+
+/*********** Company Page ***************/
+.main-content .col-3 {
+  width: 146px;
+}
+
+.main-content .left-col {
+  padding:0 20px 0 0;
+  margin:0 10px 0 0;
+}
+
+.main-content .right-col {
+  padding:0 0 0 20px;
+  margin:0 0 0 10px;
+}
+#company .main-content .col-3 h2{
+  padding-top: 4px;
+  width: 146px;
+  height: 31px;
+  background-size: 146px 31px;
+  font-size: 16px;
+}
+
+/*********** Team Page ***************/
+#company .grid-9 {
+  width:540px;
+  margin:0px;
+}
+#company h1 {
+  font-size: 21px;
+}
+
+.mosaic-block {
+    height: 160px;
+    width: 160px;
+}
+
+.mosaic-block img {
+  height: 160px;
+    width: 160px;
+}
+
+.mosaic-block p {
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.mosaic-block .details {
+    padding: 10px;
+}
+.team-map {
+  width: 340px;
+  height: 470px;
+  margin-left: -10px;
+}
+.team-icon {
+  width: 40px;
+}
+#boss { top: 150px; left: 198px; }
+#david { top: 37px; left: 32px; }
+#fraser { top: 17px; left: 128px; }
+#qi { top: 53px; left: 204px; }
+#prakash { top: 12px; left: 275px; }
+#ben { top: 185px; left: 101px; }
+#mahmoud { top: 240px; left: 34px; }
+#ross { top: 285px; left: 113px; }
+#viv { top: 246px; left: 200px; }
+#pod { top: 215px; left: 285px; }
+#niall { top: 338px; left: 175px; }
+#peter { top: 402px; left: 102px; }
+#lee { top: 375px; left: 262px; }
+
+#shona { top:101px; left:112px; }
+
+#justine { top:130px; left:12px; }
+#linda { top:347px; left:33px; }
+
+#nick { top:118px; left:291px; }
+#paige { top:312px; left:294px; }
+
+.profile-info {
+  display: block;
+  width: 160px !important;
+}
+.profile-info h2 {
+  margin-top: 0;
+}
+.profile-info p{
+  font-size: 12px;
+}
+
+/*********** Credits Page ***************/
+.jetbrains{
+  width: 100px;
+  height: 30px;
+  margin-top: 25px !important;
+}
+
+/*********** Careers Page ***************/
+.vacancies {
+  padding:20px;
+}
+
+#careers .col-l {
+  margin-right:70px;
+}
+.current-jobs {
+  padding:10px;
+  top:-10px;
+}
+.current-jobs h1 {
+  font-size:17px;
+}
+.current-jobs h2 {
+  font-size:12px;
+  margin:0px 0px 15px 0;
+}
+.current-jobs p, .current-jobs ul li {
+  font-size:11px;
+}
+
+.applynow {
+  background-size:41px 40px;
+  width:41px;
+  height:40px;
+  top:-14px;
+  right:-14px;
+}
+a.applyhere {
+  background-size:100px 88px;
+  width:86px;
+  height:24px;
+  display:block;
+  float:;
+  position:relative;
+  right:-54px;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:10px 6px;
+  font-size:11px;
+}
+
+.apply-text {
+  font-size:13px;
+  letter-spacing:-0.5px;
+}
+/*********** Use Cases Page Styles *************/
+#use-cases section .grid-4 {
+  margin:0px 40px 0 0;
+}
+
+/*********** License Page Styles *************/
+
+.download-license-box, .download-license-box-last {
+  background-size:40px 40px;
+  min-height:82px;
+  font-size:13px;
+}
+a.gpl-license, a.commercial-license, a.contributor-agreement {
+  padding:20px 10px 0px 55px;
+}
+
+.download-license-box {
+  margin:0px 14px 30px 0;
+}
+.download-license-box-last {
+  margin:0px 0px 30px 0;
+}
+
+/*********** Roadmap Page Styles **************/
+
+#testnet1{top:35px;left: 15px;}
+#testnet2{top:265px;left: 147px;}
+#testnet3{top:35px;left: 277px;}
+#betalaunch{top:265px;left: 407px;}
+
+.bullet h2{
+  font-size: 14px;
+  padding: 0;
+  margin:0;
+  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
+}
+.bullet{
+  height: 40px;
+  display:table;
+}
+
+
+.end{margin-bottom: 15px;}
+
+
+.bullet-icon {
+  width: 42px;
+  height: 40px;
+  padding-right: 10px;
+}
+/*********** Features Page Styles *************/
+
+.last-col {
+  margin-left:20px;
+}
+
+
+#platform-features h2 {
+  background-size:220px 49px;
+}
+
+
+h2.noservers-head {
+  padding:8px 0 23px 15px;
+  font-size:20px;
+}
+
+h2.administrators-head {
+  padding:3px 58px 18px 15px;
+  font-size:14px;
+}
+
+h2.datamanage-head {
+  padding:4px 60px 23px 15px;
+  font-size:14px;
+}
+
+h2.password-head {
+  padding:4px 62px 21px 15px;
+  font-size:14px;
+}
+
+h2.sharedata-head {
+  padding:4px 95px 23px 15px;
+  font-size:14px;
+}
+
+h2.distribute-head {
+  padding:4px 92px 21px 15px;
+  font-size:14px;
+}
+
+
+/******* Libraries Platform Page Styles ********/
+
+a.moreinfo div {
+    font-size:11px;
+}
+
+/******* Libraries Page Styles ********/
+.rightnav {
+  float:right;
+}
+
+.rightnav-box { 
+  min-height:40px;
+  margin-bottom:30px;
+}
+.rightnav-box p {
+  font-size: 13px;
+  padding-top:5px;
+}
+
+.github {
+  background-position:10px 10px;
+  padding:12px 0 0 55px;
+  background-size:40px 35px;
+}
+
+.back {
+  background-position:5px 10px;
+  padding:12px 0 0 46px;
+  background-size:36px 41px;
+}
+
+/************* Contact Page Styles ***************/
+
+#contact .col-l {
+  padding-right:10px;
+}
+#contact .col-m {
+    padding: 0 40px;
+    width: 220px;
+}
+#contact .col-r {
+  padding-left:10px;
+}
+/************** Timeline Page Styles *************/
+#timeline .top{
+  margin-left: 142px;
+}
+
+#timeline .bubble{
+  position: relative;
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  margin-top: 3px;
+}
+#timeline .bubble.left:after{
+  content: "";
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+  top: 0px;
+  right: -15px;
+  bottom: auto;
+  left: auto;
+  border-width: 0px 0px 15px 15px;
+}
+#timeline .bubble.right:after{
+  content: "";
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  left: -15px;
+  border-width: 0px 15px 15px 0;
+}
+#timeline .bubble.left{
+  text-align: right;
+  float: right;
+  margin-right: 55%;
+}
+#timeline .bubble.right{
+  text-align: left;
+  float: left;
+  margin-left: 56%
+}
+#timeline .bubble.up3b{
+  margin-top:-3px;
+}
+#timeline .bubble.up32b{
+  margin-top:-32px;
+}
+#timeline .bubble.up36b{
+  margin-top:-36px;
+}
+#timeline .bubble.up52b{
+  margin-top:-52px;
+}
+#timeline .bubble.up18b{
+  margin-top:-18px;
+}
+#timeline .bubble.up22b{
+  margin-top:-22px;
+}
+
+/*********** Assets Page Styles *************/
+#assets #wee-plane img{
+  margin-left: -70px;
+}
+#assets #safecoin-brand img {
+  margin-top: 10px;
+}
+#assets #advert img{
+  margin-top: 2px;
+}
+#assets #twitter-cover img {
+  margin: 2px 0 0 -60px;
+}
+#assets #meetup-cover img{
+  margin: 2px -100px;
+}
+
+/*********** Press Page Styles *************/
+
+/************* Footer Styles ***************/
+.legal {
+  width:58%;
+}
+
+.footer {height: 250px;}
+.footer-logos img {
+    margin-left: 20px;
+}
+}
+ 
+ 
+/********************************************************************************************* 
+
+4.  lt 720px 
+
+*********************************************************************************************/ 
+
+@media only screen and (min-width: 541px) and (max-width: 719px) {
+h2 {
+  font-size:14px;
+}
+
+h3 {
+    font-size: 12px;
+}
+p {
+  font-size:12px;
+}
+#home header {
+  height:90px;
+  font-size: 14px;
+}
+
+#home .shadow {
+    background-position:0px -25px ;
+}
+header {
+  height:80px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.shadow {
+  background-size:100% 100px;
+  height:100px;
+}
+
+.logo {
+  width:180px;
+  height:52px;
+  background-size:180px 52px;
+  top:18px;
+}
+
+.menu {
+  top:56px;
+}
+
+.menu ul li {
+  display: inline-block;
+  margin-left:5px;
+}
+
+.menu ul li a {
+  font-size:12px;
+}
+
+.main-content ul li { font-size:12px;}
+
+/************************ Banner Styles **************************/
+
+.banner {
+  height:250px;
+}
+blockquote.quote {
+  font-size:16px;
+  padding: 8px;
+  margin: 0px 5px;
+  background-size:18px 14px;
+}
+blockquote.quote span {
+  background-size:18px 14px;
+  padding-right: 25px;
+  padding-left:25px;
+}
+
+p.quoter {
+  font-size:11px;
+}
+
+.list-quote blockquote.quote span {
+    background-position: 325px 97px;
+}
+
+/************************** Banner news ***************************/
+.banner-news {
+  padding:5px 0 0 0;
+}
+.banner-news h1 {
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.banner-news p {
+  font-size:14px;
+}
+
+.news-graphic {
+  width:160px;
+  height:68px;
+  background-size:160px 68px;
+  margin:0px auto 10px auto;
+}
+
+/************************** Banner community ***************************/
+.banner-community {
+  padding:35px 0 0 0;
+}
+.banner-community h1 {
+  font-size:20px;
+}
+
+.community-development {
+  width:219px;
+  height:36px;
+  background-size:219px 36px;
+}
+
+.community-org {
+  width:176px;
+  height:36px;
+  background-size:176px 36px;
+  margin:0px 40px;
+}
+
+.community-safecoin {
+  width:188px;
+  height:36px;
+  background-size:188px 36px;
+}
+
+/************************** Banner plane ***************************/
+.banner-plane {
+  padding:25px 0 0 0;
+}
+.banner-plane h1 {
+  font-size:20px;
+  color:#5593D7;
+  margin:30px 0 0 0;
+}
+.plane {
+  background:url.(img/home_plane.png) no-repeat 0 0;
+  width:323px;
+  height:58px;
+  background-size:323px 58px;
+  margin:0px auto 10px auto;
+}
+
+/************************** Banner getcode ***************************/
+.banner-getcode {
+  padding:40px 0 0 0;
+}
+.banner-getcode h1 {
+  font-size:20px;
+}
+.github-icon {
+  background-position: 180px 15px;
+  background-size:80px 70px;
+}
+.spacer {
+  display:inline-block;
+  width:90px;
+}
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
+  padding:0px 0 0 0;
+}
+.banner-roadmap h1 {
+  font-size:20px;
+}
+
+.home-tabs p {
+  font-size:18px;
+  padding:95px 40px 15px 40px;
+  line-height:24px;
+}
+
+.core-dev-tab {
+  background-position: center 25px;
+  background-size:48px 48px;
+  margin:10px 0!important;
+}
+
+.core-dev-tab:hover {
+  background-position: center 25px;
+  background-size:48px 48px;
+}
+
+.app-builder-tab {
+  background-position: center 25px;
+  background-size:54px 43px;
+  margin:10px 18px!important;
+}
+
+.app-builder-tab:hover {
+  background-position: center 25px;
+  background-size:54px 43px;
+}
+
+.farmer-tab {
+  background-position: center 25px;
+  background-size:57px 42px;
+  margin:10px 0!important;  
+}
+
+.farmer-tab:hover {
+  background-position: center 25px;
+  background-size:57px 42px;
+}
+
+.tell-me-more-tab p {
+  padding:20px;
+}
+
+
+
+.video-box {
+  height:293px;
+}
+
+video {
+  height:294px;
+}
+
+#inline1 {
+  display:none;
+}
+
+.home-box {
+  margin-bottom:30px;
+}
+
+#home h2 {
+  font-size:18px;
+  margin-bottom:30px;
+}
+.home-box p {
+  font-size: 12px;
+}
+
+.middle h2 {
+  margin-bottom:10px;
+}
+
+.maidsafe-platform {
+  background-size:140px 80px;
+  width:140px;
+  height:80px;
+}
+
+.surefile-test {
+  width:110px;
+  height:57px;
+  background-size:110px 57px;
+}
+
+.github-code {
+  width:80px;
+  height:70px;
+  background-size:80px 70px;
+  margin:0 auto;
+}
+
+p.alpha-testers {
+  font-size: 16px;
+  line-height:22px;
+  margin-bottom:10px;
+}
+
+#company .leftnav-shell, #roadmap .leftnav-shell{
+  display:none;
+}
+
+#company .topnav-shell, #roadmap .topnav-shell{
+  //margin: 0 auto;
+  padding-bottom: 30px;
+  display: block;
+  float: right;
+}
+#timeline .topnav-shell{
+  margin-top: 0
+}
+
+ul.topnav {
+  display: inline-block;
+  float: right;
+}
+ul.topnav li {
+  padding: 0px;
+  display: inline-block;
+  margin-left:28px;
+}
+ul.topnav > li { 
+  display: inline-block;
+  padding-top: 10px;
+}
+ul.topnav li a { 
+  display: block;
+  text-decoration: none;
+  color: #808080;
+}
+
+/********* Overview - Left nav selected state styles ********/
+/*#platform-overview ul.topnav .overview a,*/
+/*#platform-features ul.topnav .features a,*/
+/*#platform-faqs ul.topnav .faqs a,*/
+/*#applications ul.topnav .applications a,*/
+/*#licensing-platform ul.topnav .licensing a,*/
+/*#testimonials ul.topnav .testimonials a,*/
+/*#safecoin ul.topnav .safecoin a  {*/
+  /*color:#5593D7;*/
+/*}*/
+/******** Get Involved - Left nav selected state styles ********/
+/*#get-involved ul.topnav .get-involved a,*/
+/*#core-developer ul.topnav .core-developer a,*/
+/*#platform-libraries ul.topnav .libraries a,*/
+/*#app-builder ul.topnav .app-builder a,*/
+/*#farmers ul.topnav .farmers a,*/
+/*#safe-pods ul.topnav .safe-pods a {*/
+  /*color:#5593D7;*/
+/*}*/
+
+/******** Documents - Left nav selected state styles ********/
+/*#documents ul.topnav .documents a,*/
+/*#examples ul.topnav .examples a,*/
+/*#system-docs ul.topnav .system-docs a,*/
+/*#developer-wiki ul.topnav .developer-wiki a,*/
+/*#papers-publications ul.topnav .papers-publications a {*/
+  /*color:#5593D7;*/
+/*}*/
+
+/******** Company - Left nav selected state styles ********/
+/*#company ul.topnav .overview a,*/
+/*#company ul.topnav .team a,*/
+/*#careers ul.topnav .careers a {*/
+  /*color:#5593D7;*/
+/*}*/
+
+/*ul.leftnav li a {
+  font-size:14px;
+}
+
+ul.leftnav li ul li a {
+  font-size:12px;
+}*/
+
+.article-1 {
+  padding-right:21px;
+}
+.article-2 {
+  padding-left:15px;
+}
+
+
+.main-content {
+  padding-bottom:20px;
+}
+
+.notification{
+  height: 50px;
+}
+.notification p{
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 14px;
+}
+.left-caret{
+  position: absolute;
+  display: block;
+  left: -1px;
+  background-image: url(../img/caret_left_50.png);
+  height: 50px;
+  width:25px;
+}
+.right-caret{
+  position: absolute;
+  display: block;
+  right: 0;
+  background-image: url(../img/caret_right_50.png);
+  height: 50px;
+  width:25px;
+}
+
+/*********** Sidebar **************/
+
+.sidebar img {margin:5px 0;}
+.sidebar p {
+  font-size:12px;
+}
+
+.sidebar .divider {
+  width:100%; /*156*/
+  height:7px;
+  background-size:70px 7px;
+  margin:5px 0;
+}
+.community-text {
+  padding-top:15px;
+  padding-bottom:5px;
+}
+a.visit-blog {
+  width:70px;
+  height:39px;
+  background-size:70px 78px;
+
+}
+
+a.maidsafe-dev {
+  width:70px;
+  height:21px;
+  background-size:70px 42px;
+}
+
+a.maidsafe-org {
+  width:70px;
+  height:22px;
+  background-size:70px 44px;
+}
+
+a.mumble {
+  width:70px;
+  height:53px;
+  background-size:70px 106px; 
+}
+
+
+/*********** Developers Page **************/
+
+a.get-started-button {
+  font-size: 14px;
+    font-weight: 300;
+    border-radius: 3px;
+    padding: 6px 10px 6px 10px;
+  float:right;
+}
+
+#developers h1 {
+  margin-bottom:50px;
+}
+
+a.light-button, a.light-button-full {
+  font-size:14px;
+  margin:5px 6px;
+
+}
+
+a.light-button-full {
+  padding:20px 15px;
+}
+
+.diagram {
+  padding-top:70px;
+}
+
+.app-stack {
+  background-position: 170px 205px;
+  background-size:180px 132px;
+}
+
+#core-developer .app-stack {
+  background-position:170px 910px;
+  background-size:180px 132px;
+}
+
+/********* Get Involved Page ************/
+.get-involved-tabs {
+  margin-bottom:30px;
+}
+
+.get-involved-tabs p {
+  font-size:18px;
+  padding:95px 10px 25px 10px;
+  line-height:22px;
+}
+
+.tell-me-more-tab p {
+  padding:20px;
+}
+
+.farmers-text img {
+  width:46px;
+  height:35px;
+  margin:75px 30px 75px 0;
+}
+
+.app-builders-text img {
+  width:46px;
+  height:36px;
+  margin:60px 30px 55px 0;
+}
+
+.core-developers-text img {
+  width:40px;
+  height:40px;
+  margin:40px 30px 75px 0;
+}
+
+/********* Documents Page ************/
+
+.doc-box-papers-publications {
+    height: 701px;
+}
+
+.doc-box-examples a,
+.doc-box-system-docs a,
+.doc-box-dev-wiki a,
+.doc-box-papers-publications a {
+  font-size:12px;
+}
+
+.doc-box-papers-publications li a { 
+  font-size:11px;
+  margin:0px;
+  text-indent:0px;
+} 
+
+ul.pdf-group li:before {
+  background-size:12px 15px;
+    height: 20px;
+    margin-right: 2px;
+    top: 8px;
+    width: 15px;
+}
+
+#documents .main-content ul li {
+  padding-left:0px;
+  text-indent:0px;
+}
+
+/*********** Company Page ***************/
+.main-content .col-3 {
+  width: 100%;
+}
+
+.main-content .left-col {
+  padding:0 10px 0 0;
+  margin:0 10px 0 0;
+}
+
+.main-content .right-col {
+  padding:0 0 0 10px;
+  margin:0 0 0 10px;
+}
+
+#company .main-content .col-3 h2{
+  padding-top: 5px;
+  width: 200px;
+  height: 35px;
+  background-size: 200px 35px;
+  font-size: 16px;
+  margin: 20px auto 20px;
+}
+#company .plane-banner{
+  width: 225px;
+}
+
+/*********** Team Page ***************/
+
+#company h1 {font-size: 21px;}
+
+#company h3 { font-size:12px;}
+
+#company .main-content {
+  float: left;
+  width: 100%;
+}
+
+.mosaic-block {
+    height: 160px;
+    width: 160px;
+}
+
+.mosaic-block img {
+  height: 160px;
+    width: 160px;
+}
+
+.mosaic-block p {
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.mosaic-block .details {
+    padding: 10px;
+}
+
+.team-map {
+  width: 340px;
+  height: 470px;
+  margin-left: -10px;
+}
+.team-icon {
+  width: 40px;
+}
+#boss { top: 150px; left: 198px; }
+#david { top: 37px; left: 32px; }
+#fraser { top: 17px; left: 128px; }
+#qi { top: 53px; left: 204px; }
+#prakash { top: 12px; left: 275px; }
+#ben { top: 185px; left: 101px; }
+#mahmoud { top: 240px; left: 34px; }
+#ross { top: 285px; left: 113px; }
+#viv { top: 246px; left: 200px; }
+#pod { top: 215px; left: 285px; }
+#niall { top: 353px; left: 175px; }
+#peter { top: 402px; left: 102px; }
+#lee { top: 375px; left: 262px; }
+
+#shona { top:101px; left:112px; }
+
+#justine { top:130px; left:12px; }
+#linda { top:347px; left:33px; }
+
+#nick { top:118px; left:291px; }
+#paige { top:312px; left:294px; }
+
+.profile-info{
+  width: 175px !important;
+  float: right;
+}
+/*********** Credits Page ***************/
+.credit-logo div{
+  width: 70px;
+  height: 70px;
+}
+.jetbrains{
+  width: 70px;
+  height: 22px;
+  margin-top: 25px !important;
+}
+/*********** Careers Page ***************/
+.vacancies {
+  padding:15px;
+}
+
+#careers .col-l {
+  margin-right:55px;
+}
+
+.current-jobs {
+  padding:7px;
+  top:-10px;
+}
+.current-jobs h1 {
+  font-size:17px;
+}
+.current-jobs h2 {
+  font-size:12px;
+  margin:0px 0px 15px 0;
+}
+.current-jobs p, .current-jobs ul li {
+  font-size:11px;
+}
+
+.applynow {
+  background-size:41px 40px;
+  width:41px;
+  height:40px;
+  top:-11px;
+  right:-11px;
+}
+a.applyhere {
+  background-size:100px 88px;
+  width:86px;
+  height:24px;
+  right:-12px;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:10px 6px;
+  font-size:11px;
+}
+
+.apply-text {
+  font-size:13px;
+  letter-spacing:-0.5px;
+}
+
+/*********** Use Cases Page Styles *************/
+section .grid-4 {
+  width:100%!important;
+}
+
+/*********** License Page Styles *************/
+#licensing .main-content {
+    margin-bottom:0px;
+}
+
+#licensing .main-content .grid-3 {
+  width:100%!important;
+}
+
+.download-license-box, .download-license-box-last {
+  background-size:40px 40px;
+  background-position:center 10px;
+  text-align:center;
+  min-height:82px;
+  font-size:12px;
+}
+
+a.gpl-license, a.commercial-license, a.contributor-agreement {
+  padding:60px 10px 0px 10px;
+}
+
+.download-license-box, .download-license-box-last {
+  margin-bottom:30px;
+}
+#licensing h2 {
+    font-size: 24px;
+}
+
+.online-reg-box {
+  background-size:55px 61px;
+  background-position:20px 20px;
+  margin-bottom:40px;
+}
+
+.license-reg {
+  padding:20px 20px 0px 110px;
+}
+
+
+section .grid-4 {
+  width:100%!important;
+}
+
+/*********** Roadmap Page Styles **************/
+
+#roadmap #viewer {width:98%;}
+
+div.roadmap{
+  width:540px;
+}
+
+#roadmap p{font-size: 14px;}
+/*
+.roadmap-stage {
+  width:90px;
+  height:90px;
+}
+
+.roadmap-stage h2{
+  font-size: 18px;
+}*/
+
+.roadmap-stage p{
+  margin-top: 0px;
+}
+
+
+#testnet1{top:35px;left: 15px;}
+#testnet2{top:265px;left: 147px;}
+#testnet3{top:35px;left: 277px;}
+#betalaunch{top:265px;left: 407px;}
+
+.bullet{height:40px;}
+.bullet-icon {
+  width: 42px;
+  height: 40px;
+  padding-right: 10px;
+}
+
+/*********** Features Page Styles *************/
+
+.last-col {
+  margin-left:20px!important;
+}
+
+#platform-features h2 {
+  background-size:160px 39px;
+}
+
+h2.noservers-head {
+  padding:10px 0 11px 10px;
+  font-size:14px; 
+}
+
+h2.administrators-head {
+  padding:4px 11px 8px 10px;
+  font-size:11px;
+}
+
+h2.datamanage-head {
+  padding:2px 60px 0 10px;
+  font-size:11px;
+}
+
+h2.password-head {
+  padding:2px 62px 0px 10px;
+  font-size:11px;
+}
+
+h2.sharedata-head {
+  padding:3px 95px 0px 10px;
+  font-size:11px;
+}
+
+h2.distribute-head {
+  padding:3px 50px 14px 10px;
+  font-size:11px;
+}
+
+/******* Libraries Platform Page Styles ********/
+
+#platform-libraries .grid-1 { width:40px;}
+
+a.moreinfo {
+    width:100%;
+  float:right;
+  margin:0 0 30px 50px;
+}
+
+a.moreinfo:after {
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    background: #4679BD;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+a.moreinfo div {
+    float:left;
+    width:100%;
+    padding-top:50%;
+    line-height: 15px;
+    margin-top: -14px!important;
+    text-align:center;
+    color:white;
+  font-size:12px;
+}
+
+
+/******* Libraries Page Styles ********/
+.rightnav {
+  float:right;
+}
+
+.rightnav-box { 
+  min-height:40px;
+  margin-bottom:30px;
+}
+.rightnav-box p {
+  font-size: 12px;
+  padding-top:0px;
+}
+
+.github {
+  background-position:5px 8px;
+  padding:5px 0 0 45px;
+  background-size:30px 26px;
+}
+
+.back {
+  background-position:5px 8px;
+  padding:5px 0 0 36px;
+  background-size:26px 30px;
+}
+
+
+/*********** Company Page Styles *************/
+
+#company .main-content {
+    margin-bottom: 0px;
+}
+
+#company .team-row  h2 {
+  margin-bottom:3px;
+}
+#company .team-row  h3 {
+  margin-bottom:10px;
+}
+
+#company .col-l {
+  margin:0 20px 20px 0;
+}
+#company .col-m {
+  margin:0 10px 20px 10px;
+}
+#company .col-r {
+  margin:0 0 20px 20px;
+}
+/************* Contact Page Styles ***************/
+
+#contact .col-l {
+  padding-right:10px;
+}
+#contact .col-m {
+    padding: 0 20px;
+    width: 180px;
+}
+#contact .col-r {
+  padding-left:10px;
+}
+/************** Timeline Page Styles *************/
+#timeline .top{
+  margin-left: 75px;
+}
+#timeline .bubble.left{
+  text-align: right;
+  float: right;
+  margin-right: 56%;
+}
+#timeline .bubble.right{
+  text-align: left;
+  float: left;
+  margin-left: 58%
+}
+#timeline .bubble.up3c{
+  margin-top:-3px;
+}
+#timeline .bubble.up6c{
+  margin-top:-6px;
+}
+#timeline .bubble.up14c{
+  margin-top:-14px;
+}
+#timeline .bubble.up22c{
+  margin-top:-22px;
+}
+#timeline .bubble.up32c{
+  margin-top:-32px;
+}
+#timeline .bubble.up40c {
+  margin-top:-40px;
+}
+#timeline .bubble.up52c {
+  margin-top:-52px;
+}
+#timeline .bubble.up66c {
+  margin-top:-66px;
+}
+#timeline .bubble.up84c {
+  margin-top:-84px;
+}
+
+#timeline .year{
+  background-color: #5593D7;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  width: 50px;
+  text-align: center;
+    -webkit-border-radius: 15px; 
+    -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 4px;
+  margin: 0px auto;
+}
+/*********** Assets Page Styles *************/
+#assets .asset{
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: -10px;
+}
+#assets .thumbnail {
+  width: inherit;
+}
+#assets #maidsafe-brand img{
+  margin-top: -20px;
+}
+#assets #wee-plane img{
+  height:120px;
+  width: auto;
+  margin-left: 0px;
+}
+#assets .wee-plane-sm{
+  display: block;
+}
+#assets .wee-plane-md{
+  display: none;
+}
+#assets #safecoin-brand img {
+  margin-top: 0px;
+}
+#assets .tshirt-design-sm{
+  display: block;
+  border-top: 2px solid #7F7F7F;
+}
+#assets .tshirt-design-md{
+  display: none;
+}
+#assets #twitter-cover img{
+  height:80px;
+  width: auto;
+  margin: 0;
+}
+#assets .twitter-cover-sm{
+  display: block;
+}
+#assets .twitter-cover-md{
+  display: none;
+}
+#assets #advert img{
+  margin: 2px 0 0 0;
+  width: 100%;
+  height: auto;
+}
+#assets #meetup-cover img{
+  margin: 2px -30px;
+}
+#assets #david-nick img{
+  margin: 20px auto 0;
+  width: auto;
+  height: 100%;
+  display: block;
+}
+#assets #company-photo img{
+  margin: 20px auto 0;
+  width: auto;
+  height: 100%;
+  display: block;
+}
+/*********** Footer Styles *************/
+
+
+footer {  text-align:center;}
+
+footer .container-12 {
+}
+
+.footer-links { display:none;}
+
+
+footer img { display:inline-block!important;}
+
+footer ul {
+  margin-bottom:30px;
+}
+
+ul.social-links {
+  float:none;
+  margin:0;
+}
+
+ul.social-links li {
+  display:inline;
+  
+  margin:5px;
+}
+
+ul.social-links li a {
+  display:inline-block!important;
+  margin:0px;
+  padding:0px;
+}
+.legal {
+  padding-top:0px;
+  width:100%;
+}
+
+.legal a {
+  font-size:12px!important;
+  background:none!important;
+  padding: 10px 0px 10px 20px!important; 
+}
+
+.footer-logos {
+  padding-top:38px;
+  float:none;
+}
+
+.footer-logos a {
+  display:inline-block!important;
+  background:none!important;
+}
+
+.footer-logos img {
+  margin-left:20px; 
+}
+
+.logo-footer {
+  float:none;
+  position:relative;
+  left:31px
+}
+
+.idl-badge {
+  float:none;
+  position: relative;
+    right: 113px;
+    top: 100px;
+}
+}
+/********************************************************************************************* 
+
+4.  lt 540px 
+
+*********************************************************************************************/ 
+
+@media only screen and (max-width: 540px) {
+  
+
+#home h1, #home h2, #home h3 { text-align:center;}
+
+h1, h2, h3 { text-align:left;}
+
+header {
+  height:80px;
+  margin-bottom:0px;
+  padding:0px;
+}
+
+#home header {
+  height:82px;
+}
+
+#home .shadow {
+    background-position:0px -25px ;
+}
+
+.shadow {
+    background-position: 0 -28px;
+    height: 90px;
+}
+
+.logo {
+  width:152px;
+  height:44px;
+  background-size:152px 44px;
+  position:relative;
+  top:23px;
+  left:30px;
+  display:block;
+}
+
+.fw {
+  width:100%!important;
+}
+
+a.menu-link {
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  width: 35px;
+  height: 23px;
+  float: right;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image: url.(img/nav_icon_retina.png);
+   -webkit-background-size: 35px 23px;
+    -moz-background-size: 35px 23px;
+    -o-background-size: 35px 23px;
+    background-size: 35px 23px;
+}
+.menu {
+  clear: both;
+  min-width: inherit;
+  float: none;
+  top:8px;
+}
+.menu, .menu > ul ul {
+  overflow: hidden;
+  max-height: 0;
+  background-color: #f4f4f4;
+}
+.sub-menu, .has-submenu {
+  display:block!important;
+}
+.single-link {
+  display:none!important;
+}
+.menu > li > ul.sub-menu {
+  padding: 0px;
+  border: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+.menu.active, .menu > ul ul.active {
+  max-height: 155em;
+}
+.menu ul {
+  display: inline;
+}
+.menu ul li {
+  display: block;
+  margin-left: 0px;
+}
+
+.menu > ul {
+  border-top: 1px solid #808080;
+}
+.menu li, .menu > ul > li {
+  display: block;
+}
+.menu li a {
+  display: block;
+  padding: 0.8em;
+  border-bottom: 1px solid #fff;
+  position: relative;
+}
+
+.menu li.has-submenu > a:after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 0.8em 1em;
+}
+.menu li.has-submenu > a.active:after {
+  content: '\25B2';
+}
+
+.menu ul ul > li a {
+  background-color: #e4e4e4;
+  padding: 14px 18px 14px 30px;
+}
+.menu ul ul, .menu ul ul ul {
+  display: inherit;
+  position: relative;
+  left: auto; top:auto;
+  box-shadow: none; 
+  border:none;
+}
+
+/*********** Sidebar **************/
+
+.sidebar img {margin:5px auto; text-align:center; display:block;}
+
+.sidebar .divider {
+  width:100%; /*156*/
+  margin:10px auto;
+  background-position:center;
+}
+.community-text {
+  padding-top:15px;
+  padding-bottom:5px;
+}
+
+a.visit-blog {
+  margin:10px auto;
+
+}
+
+a.maidsafe-dev {
+  margin:10px auto;
+}
+
+a.maidsafe-org {
+  margin:10px auto;
+}
+
+a.mumble {
+  margin:10px auto;
+}
+
+/************************ Banner Styles **************************/
+
+.banner {
+  height:250px;
+}
+blockquote.quote {
+  font-size:14px;
+  padding: 8px;
+  margin: 5px;
+  background-size:18px 14px;
+}
+blockquote.quote span {
+  background-size:18px 14px;
+  padding-right: 10px;
+  padding-left:10px;
+}
+
+p.quoter {
+  font-size:10px!important;
+  line-height:14px!important;
+}
+
+.list-quote blockquote.quote span {
+    background-position: 100% 92%;
+}
+
+
+
+/************************** Banner news ***************************/
+.banner-news {
+  padding:5px 0 0 0;
+}
+.banner-news h1 {
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.banner-news p {
+  font-size:11px!important;
+}
+
+.news-graphic {
+  width:160px;
+  height:68px;
+  background-size:160px 68px;
+  margin:0px auto 10px auto;
+}
+
+/************************** Banner community ***************************/
+.banner-community {
+  padding:25px 0 0 0;
+}
+.banner-community h1 {
+  font-size:16px;
+  margin:20px 0 0 0;
+}
+
+.community-development {
+  width:219px;
+  height:36px;
+  background-size:219px 36px;
+}
+
+.community-org {
+  width:176px;
+  height:36px;
+  background-size:176px 36px;
+  margin:0px 40px;
+}
+
+.community-safecoin {
+  width:188px;
+  height:36px;
+  background-size:188px 36px;
+}
+
+/************************** Banner plane ***************************/
+.banner-plane {
+  padding:40px 0 0 0;
+}
+.banner-plane h1 {
+  font-size:16px;
+  color:#5593D7;
+}
+.plane {
+  background:url.(img/home_plane.png) no-repeat 0 0;
+  width:280px;
+  height:50px;
+  background-size:280px 50px;
+  margin:0px auto 10px auto;
+}
+
+/************************** Banner getcode ***************************/
+.banner-getcode {
+  padding:0;
+}
+.banner-getcode h1 {
+  font-size:18px;
+  height: 140px;
+}
+.github-icon {
+  background-position: center 85px;
+  background-size:60px 53px;
+}
+.spacer {
+  display: none;
+  width:60px;
+}
+/************************** Banner roadmap ***************************/
+.banner-roadmap {
+  padding:35px 0 0 0;
+}
+.banner-roadmap h1 {
+  font-size:16px;
+  color:#5593D7;
+  padding-top:10px;
+}
+.roadmap-preview {
+  width:106px;
+  height:53px;
+  background-size:106px 53px;
+}
+
+.main-content {
+  margin-top:30px;
+}
+
+.home-tabs p {
+  font-size:18px;
+  padding:95px 40px 15px 40px;
+  line-height:24px;
+}
+
+.core-dev-tab {
+  background-position: center 25px;
+  margin:10px 0!important;
+}
+
+.core-dev-tab:hover {
+  background-position: center 25px;
+}
+
+.app-builder-tab {
+  background-position: center 25px;
+  margin:10px 0px!important;
+  border:none;
+}
+
+.app-builder-tab:hover {
+  background-position: center 25px;
+}
+
+.farmer-tab {
+  background-position: center 25px;
+  margin:10px 0!important;  
+}
+
+.farmer-tab:hover {
+  background-position: center 25px;
+}
+
+.tell-me-more-tab p {
+  padding:20px;
+}
+
+.video-box {
+  /*max-height:162px;*/
+  height:auto;  
+}
+
+#inline1 {
+  display:none;
+}
+
+.home-box {
+    margin-bottom: 8%;
+
+}
+.home-box h2 {
+    margin-bottom: 10px;
+}
+
+#home p {
+  font-size:16px;
+    line-height:20px;
+}
+/*
+.first {
+  width:92%;
+  padding:4%;
+  margin-left:0px;
+  min-height:140px;
+}
+
+.middle {
+  padding:5%;
+  width:90%;
+  margin-left:0px;
+  min-height:134px;
+  
+}
+
+
+.last {
+  padding:5%;
+  width:90%;
+  min-height:134px;
+  margin-left:0px;
+}
+*/
+
+.maidsafe-platform {
+  width:150px;
+  height:85px;
+  background-size:150px 85px;
+}
+
+.surefile-test {
+  width:120px;
+  height:62px;
+  background-size:120px 62px;
+}
+
+p.alpha-testers {
+  font-size: 30px;
+  margin-bottom:5px;
+  line-height:36px;
+}
+
+.github-code {
+  width:100px;
+  height:88px;
+  background-size:100px 88px;
+}
+
+#home h2 {
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+#home .para-l h2,
+#home .para-r h2 {
+  font-size:18px;
+  margin-bottom:20px;
+  padding:0px;
+}
+
+#home .para-l p,
+#home .para-r p {
+  padding:0px;
+}
+
+.quote-box {
+  margin:4% 0;
+  padding:2% 3% 2% 3%;
+}
+
+.article-1 {
+  border-right:none;
+  padding:0px;
+}
+.article-2 {
+  padding:0px;
+}
+
+.main-content {
+  padding-bottom:20px;
+}
+
+ul.leftnav {
+  display:none;
+}
+
+#timeline .topnav-shell{display: none;}
+
+#surefile-tutorial ul.leftnav {
+  display:block;
+}
+
+#home p {
+  text-align:center;
+}
+
+p {
+  text-align:left;
+}
+
+.notification{
+  height: 50px;
+}
+.notification p{
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 12px !important;
+}
+.left-caret{
+  position: absolute;
+  display: block;
+  left: -1px;
+  background-image: url(../img/caret_left_50.png);
+  height: 50px;
+  width:25px;
+}
+.right-caret{
+  position: absolute;
+  display: block;
+  right: 0;
+  background-image: url(../img/caret_right_50.png);
+  height: 50px;
+  width:25px;
+}
+
+/*********** Developers Page **************/
+
+a.get-started-button {
+  font-size: 14px;
+    font-weight: 300;
+    border-radius: 3px;
+    padding: 6px 10px 6px 10px;
+  float:right;
+}
+
+#developers h1 {
+  margin-bottom:50px;
+}
+
+a.light-button, a.light-button-full {
+  font-size:14px;
+  margin:5px 6px;
+
+}
+
+a.light-button-full {
+  padding:20px 15px;
+}
+
+.diagram {
+  padding-top:70px;
+  width:500px;
+  margin: 0 auto;
+}
+
+.app-stack {
+  background-position: 170px 240px;
+  background-size:180px 132px;
+}
+
+#core-developer .app-stack {
+  background-position:170px 1110px;
+  background-size:180px 132px;
+}
+
+/********* Get Involved Page ************/
+
+.get-involved-tabs p {
+  border-bottom:1px solid #E2E2E2;
+}
+
+
+.farmer-tab {
+    height: auto;
+}
+
+.tell-me-more-tab {
+  border-top:0;
+}
+
+/*********** Company Page ***************/
+.main-content .col-3 {
+  width: 90%;
+}
+
+.main-content .left-col {
+  padding:0;
+  margin:0;
+}
+
+.main-content .right-col {
+  padding:0;
+  margin:0;
+}
+#company .main-content .col-3 h2{
+  padding-top: 5px;
+  width: 200px;
+  height: 35px;
+  background-size: 200px 35px;
+  font-size: 16px;
+  margin: 20px auto 20px;
+}
+
+/*********** Team Page ***************/
+#company .grid-9 {
+  width:auto;
+  margin:0px;
+}
+
+.container-12 .grid-3 {
+    width: 100%;
+}
+
+#company h3 { font-size:18px;}
+
+.mosaic-block {
+    min-height: 280px;
+    width: 100%;
+}
+
+.mosaic-block img {
+  height: auto;
+    width: 100%;
+  display:block;
+}
+
+.mosaic-block p {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.mosaic-block .details {
+    padding: 16px;
+}
+
+.team-map {
+  display:none;
+  /*width: 340px;
+  height: 392px;
+  margin: 0 auto;*/
+}
+.team-icon {
+  position: relative;
+  float: left;
+}
+/*#boss { top: 150px; left: 198px; }
+#david { top: 37px; left: 32px; }
+#fraser { top: 17px; left: 128px; }
+#qi { top: 53px; left: 204px; }
+#prakash { top: 12px; left: 275px; }
+#ben { top: 185px; left: 101px; }
+#mahmoud { top: 240px; left: 34px; }
+#ross { top: 285px; left: 113px; }
+#viv { top: 246px; left: 200px; }
+#brian { top: 215px; left: 285px; }
+#niall { top: 353px; left: 175px; }
+
+#shona { top:101px; left:112px; }
+
+#justine { top:130px; left:12px; }
+#linda { top:347px; left:33px; }
+
+#nick { top:118px; left:291px; }
+#paige { top:312px; left:294px; }*/
+
+.profile-info {
+  display: none;
+}
+.profile-mobile {display: block;}
+.profile-mobile h2 {
+  margin: 20px 0 5px 60px;
+}
+.profile-mobile p {
+  font-size: 12px;
+  margin-left: 60px;
+  margin-bottom: 10px;
+}
+.profile-mobile iframe{
+  margin-left: 60px;
+}
+/*********** Credits Page ***************/
+#credits section{
+  height: 140px;
+}
+.credit-logo{
+  width: 30% !important;
+}
+.credit-text{
+  width: 70% !important;
+  float: right;
+}
+.credit-logo{
+  padding-top: 10px;
+}
+.jetbrains{
+  padding-top: 40px;
+  width:90px;
+  height: 30px;
+}
+/******************* Careers Page *********************/
+.vacancies {
+  padding:2%;
+  position:relative;
+  top:20px;
+
+}
+
+#careers .col-l {
+  float:left;
+  margin-right:0px;
+}
+
+#careers .col-r {
+  float:right;
+}
+
+.current-jobs {
+  padding-bottom: 60px;
+}
+
+a.applyhere {
+  position:absolute;
+  bottom:6px;
+  right:-6px;
+  margin:20px 0 0 20px;
+
+}
+
+/******************* Documents Page **********************/
+
+.doc-box-papers-publications {
+    height:auto;
+}
+
+/******************* Libraries Page **********************/
+#libraries .main-content {
+  margin-bottom:0px;
+}
+
+/******* Libraries Platform Page Styles ********/
+
+#platform-libraries .grid-1 { }
+
+a.moreinfo {
+    width:20%;
+  float:right;
+  padding-right: 40%;
+}
+
+a.moreinfo div {
+  font-size:14px;
+}
+
+.libraries-maidsafe {top:0px;}
+.libraries-common {  top:0px;}
+.libraries-drive { top:0px;}
+.libraries-reliable-udp { top:0px;}
+.libraries-routing { top:0px;}
+.libraries-encrypt { top:0px;}
+.libraries-passport { top:0px;}
+.libraries-network-file-system {top:0px;}
+.libraries-vault {top:0px;}
+.libraries-vault-manager {top:0px;}
+.libraries-api { top:0px;}
+
+/*********** Roadmap Page Styles **************/
+
+#roadmap #viewer {width:96%;}
+
+div.roadmap{
+  width:321px;
+  background: url("../img/roadmap/roadmap-mobile.png") no-repeat;
+  margin:0 auto;
+}
+
+.roadmap-stage {
+  width:auto;
+  height:auto;
+  //position: relative;
+  //color:#808080;
+  //margin: 0 0 20px 0;
+}
+//.roadmap-stage:hover{color: #5593D7;}
+
+.roadmap-stage h2{
+  font-size: 24px;
+}
+
+.roadmap-stage p{
+  margin: 0px;
+}
+
+#testnet1{top:10px;left:50px;}
+#testnet2{top:90px;left:50px;}
+#testnet3{top:170px;left:50px;}
+#betalaunch{top:250px;left:60px;}
+
+.bullet{max-height: 50px;}
+
+.bullet-icon {
+  width: 52px;
+  height: 50px;
+  padding-right: 5px;
+}
+/*********** Features Page Styles *************/
+
+.last-col {
+  margin-left:0px!important;
+}
+
+
+
+h2.noservers-head {
+  
+}
+
+h2.administrators-head {
+  padding-right:50%;
+  display:block;
+}
+
+h2.datamanage-head {
+  padding-right:46%;
+  display:block;
+
+}
+
+h2.password-head {
+  padding-right:46%;
+  display:block;
+  
+}
+
+h2.sharedata-head {
+  padding-right:46%;
+  display:block;
+}
+
+h2.distribute-head {
+  padding-right:46%;
+  display:block;
+}
+
+
+/*********** License Page Styles *************/
+#licensing .main-content {
+    margin-bottom:0px;
+}
+
+#licensing h2 {
+    font-size: 24px;
+}
+
+.online-reg-box {
+  background-size:55px 61px;
+  background-position:20px 20px;
+  margin-bottom:40px;
+}
+
+.license-reg {
+  padding:20px 20px 0px 110px;
+}
+
+/*********** Company Page Styles *************/
+
+#company .main-content {
+    margin-bottom: 0px;
+}
+
+
+#company .col-l {
+  margin:0 0px 20px 0;
+}
+#company .col-m {
+  margin:0 0px 20px 0px;
+}
+#company .col-r {
+  margin:0 0 20px 0px;
+}
+/*********** Timeline Page Styles *************/
+#timeline .dot {
+  margin-left: 49%;
+}
+#timeline .top{
+  margin-left:10%;
+}
+#timeline .bubble{
+  font-size: 13px;
+  margin-top: 3px !important;
+}
+#timeline .bubble.right{
+  margin-left: 59%;
+}
+#timeline .bubble.left{
+  margin-right: 57%;
+}
+/*#timeline .bubble.up3d{
+  margin-top:-3px;
+}
+#timeline .bubble.up16d{
+  margin-top:-16px;
+}
+#timeline .bubble.up20d{
+  margin-top:-20px;
+}
+#timeline .bubble.up23d{
+  margin-top:-23px;
+}
+#timeline .bubble.up38d{
+  margin-top:-38px;
+}
+#timeline .bubble.up54d {
+  margin-top:-54px;
+}
+#timeline .bubble.up64d {
+  margin-top:-64px;
+}
+#timeline .bubble.up32d{
+  margin-top:-32px;
+}
+#timeline .bubble.up36d{
+  margin-top:-36px;
+}
+#timeline .bubble.up40d {
+  margin-top:-40px;
+}
+#timeline .bubble.up52d {
+  margin-top:-52px;
+}*/
+/*********** Assets Page Styles *************/
+#assets ul.topnav{
+  display: none;
+}
+/*********** Press Page Styles *************/
+#press ul.topnav{
+  display: none;
+}
+ul.top-stories .press-article {
+  margin: 0 auto;
+  text-align:center;
+  padding:0 5%;
+  width:90%;
+}
+
+.press-article { margin-bottom:30px;}
+
+/*
+ul.grid {
+  width:90%;
+  padding:0 5%;
+}
+*/
+
+
+
+
+/************* Contact Page Styles ***************/
+
+#contact .col-l {
+  padding-right:0px;
+}
+#contact .col-m {
+    padding: 0 0px;
+    width: 100%;
+}
+#contact .col-r {
+  padding-left:0px;
+}
+#contact form {
+  margin-bottom:50px;
+}
+
+
+/************* Surefile Tutorial Page Styles ***************/
+.sticky {
+  display:none;
+}
+
+/************* SureFile Download Page Styles ****************/
+
+#surefile-download h1 {
+  width:200px;
+  height:45px;
+  background-size:200px 45px;
+  margin:0 auto 30px auto;
+}
+
+#surefile-download h2 {
+    font-size: 20px;
+}
+
+.download-box h3 {
+  text-align:center;
+}
+
+#surefile-download .main-content {
+  margin-bottom:20px;
+}
+
+#surefile-download #main p {
+  font-size: 16px;
+}
+
+p.sub-text {
+  font-size:12px!important;
+}
+
+a.button-blue {
+    padding: 10px 15px 10px 15px;
+}
+
+a.button-blue .button-text {
+  font-size: 22px;
+}
+
+#surefile-download p.legal,
+#surefile-download p.tel  {
+  text-align:center;
+}
+/*********** Assets Page Styles *************/
+#assets #maidsafe-brand img{
+  height:100px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+#assets #wee-plane img{
+  height:130px;
+  width: auto;
+  margin: 0 auto;
+}
+#assets .wee-plane-sm{
+  display: block;
+}
+#assets .wee-plane-md{
+  display: none;
+}
+#assets #safecoin-brand img {
+  margin-top: 20px;
+  height:100px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+#assets .tshirt-design-sm{
+  display: block;
+  border-top: 2px solid #7F7F7F;
+}
+#assets .tshirt-design-md{
+  display: none;
+}
+#assets #twitter-cover img{
+  height:80px;
+  width: auto;
+  margin: 2px 0 0 0px;
+}
+#assets .twitter-cover-sm{
+  display: block;
+}
+#assets .twitter-cover-md{
+  display: none;
+}
+#assets #advert img{
+  margin-top:2px;
+}
+#assets #meetup-cover img{
+  margin: 2px 0 0 0;
+  width: auto;
+  height: 80px;
+}
+#assets #advert img{
+  margin: 2px 0 0 0;
+  width: 100%;
+  height: auto;
+}
+#assets #david-nick img{
+  margin: 20px auto 0;
+  width: auto;
+  height: 100%;
+  display: block;
+}
+#assets #company-photo img{
+  margin: 20px auto 0;
+  width: auto;
+  height: 100%;
+  display: block;
+}
+/********************* Footer **************************/
+
+footer {
+    clear: both;
+    height: 260px;
+    margin-top: -220px;
+    position: relative;
+  text-align:center;
+}
+
+footer p {
+  text-align:center;
+}
+
+.footer-links { display:none;}
+
+footer img { display:inline-block!important;}
+
+footer ul {
+  margin-bottom:30px;
+}
+
+ul.social-links {
+  float:none;
+  margin:0;
+}
+ul.social-links li {
+  display:inline;
+}
+ul.social-links li a {
+  display:inline-block!important;
+  margin:0px;
+  padding:0px;
+}
+.legal {
+  padding-top:0px;
+  width:100%;
+}
+
+p.legal {
+  font-size:12px!important;
+}
+
+.legal a {
+  
+  background:none!important;
+  padding: 10px 0px 10px 20px!important; 
+}
+
+.footer-logos {
+  padding-top:38px;
+  float:none;
+}
+
+.footer-logos a {display:inline-block!important; background:none!important; }
+
+.footer-logos img {
+  margin-left:20px; 
+}
+
+.logo-footer {
+  float:none;
+  position:relative;
+  left:31px
+}
+
+.idl-badge {
+  float:none;
+  position: relative;
+    right: 113px;
+    top: 150px;
+}
+}
+
+/********************************************************************************************* 
+
+4.  lt 480px 
+
+*********************************************************************************************/ 
+
+@media only screen and (max-width: 480px) {
+.video-box {
+  height:162px;
+}
+
+
+#home h2 {
+  font-size:10px;
+  margin-bottom:20px;
+}
+
+#home .para-l h2,
+#home .para-r h2 {
+  font-size:20px;
+  margin-bottom:20px;
+  padding:0px;
+}
+
+#home .para-l p,
+#home .para-r p {
+  padding:0px;
+}
+
+#company .plane-banner{
+  width: 225px;
+}
+
+}
+
+@media only screen and (max-width: 410px) {
+#assets #meetup-cover img{
+  margin: 2px 0 0 -80px;
+  width: auto;
+  height: 80px;
+}
+#assets #twitter-cover img{
+  height:80px;
+  width: auto;
+  margin: 2px 0 0 -50px;
+}
+#assets #wee-plane img{
+  height:130px;
+  width: auto;
+  margin-left:-70px;
+}
+
+#company .plane-banner{
+  display:none;
+}
+}
