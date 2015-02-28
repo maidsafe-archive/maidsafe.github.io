@@ -1,0 +1,11 @@
+.idea/
+/node_modules
+
+/bower_components
+/.idea
+/.tmp
+
+/.jekyll
+/app/_bower_components
+/dist
+/.editorconfig

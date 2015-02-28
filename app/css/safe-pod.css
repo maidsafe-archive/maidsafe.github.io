@@ -1,0 +1,107 @@
+#pod-map {
+  display:block;
+  width:991px;
+  height:631px;
+  background:url(/img/map.png);
+  position:relative;
+  z-index: 0;
+}
+#pod-map #troon{
+  background:url(/img/pod_icon_maidsafe.png) no-repeat 0 0;
+  width: 50px;
+  height: 60px;
+  display: block;
+  text-decoration: none;
+  z-index: 20;
+}
+#pod-map dd {position:absolute; padding:0; margin:0;}
+#pod-map #pod-0 {left:438px; top:142px; z-index:20;}
+#pod-map #pod-1 {left:141px; top:238px; z-index:20;}
+#pod-map #pod-2 {left:858px; top:438px; z-index:20;}
+#pod-map #pod-3 {left:280px; top:199px; z-index:20;}
+#pod-map a#sanfrancisco, #pod-map a#sydney, #pod-map a#montreal {
+  display:block;
+  width:31px;
+  height:37px;
+  text-decoration:none;
+  z-index:20;
+}
+#pod-map a div, #pod-map a:visited div {
+  display:none;
+  color:#585858;
+}
+#pod-map a#sanfrancisco, #pod-map a#sydney, #pod-map a#montreal {background:url(/img/pod_icon.png) no-repeat 0 0;}
+#pod-map a#sanfrancisco:hover, #pod-map a#sydney:hover, #pod-map a#montreal:hover {background:url(/img/pod_icon_hover.png) no-repeat 0 0;}
+#pod-map a:hover div {
+  position:absolute;
+  bottom: 300px;
+  left:20px;
+  height: 20px;
+  width:98px; display: block;
+  font-family:arial;
+  font-size:14px;
+  padding:5px 0px;
+  z-index: 500;
+  background:#fff;
+  padding-left:8px;
+}
+#pod-map a#troon:hover div {
+  left:50px;
+  top:10px;
+}
+#pod-map a#sanfrancisco:hover div {
+  left:30px;
+  top:2px;
+}
+#pod-map a#sydney:hover div {
+  left:30px;
+  top:2px;
+}
+#pod-map a#montreal:hover div {
+  left:30px;
+  top:2px;
+}
+#legend {
+  position: absolute;
+  font-family: arial;
+  top:550px;
+  left: 425px;
+}
+#legend img {
+  float: left;
+  padding-right:10px;
+  margin-top: 7px;
+}
+#legend p {
+  float: right;
+}
+#legend #hq, #legend #pods {
+  width: auto;
+  display: inline-block;
+  padding-right: 20px;
+}
+#big-map {
+  background: #f9f9f9;
+  position: relative;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.55);
+  display: none;
+}
+.close_btn {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  z-index: 8040;
+  background-image: url('/img/close.png');
+}
+.overlay {
+  position: fixed;
+  background: transparent;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+}

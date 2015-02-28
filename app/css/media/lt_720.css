@@ -1,0 +1,1025 @@
+
+@media only screen and (min-width: 541px) and (max-width: 719px) {
+  h2 {
+    font-size:14px;
+  }
+
+  h3 {
+    font-size: 12px;
+  }
+  p {
+    font-size:12px;
+  }
+  #home header {
+    height:90px;
+    font-size: 14px;
+  }
+
+  #home .shadow {
+    background-position:0px -25px ;
+  }
+  header {
+    height:80px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .shadow {
+    background-size:100% 100px;
+    height:100px;
+  }
+
+  .logo {
+    width:180px;
+    height:52px;
+    background-size:180px 52px;
+    top:18px;
+  }
+
+  .menu {
+    top:56px;
+  }
+
+  .menu ul li {
+    display: inline-block;
+    margin-left:5px;
+  }
+
+  .menu ul li a {
+    font-size:12px;
+  }
+
+  .main-content ul li { font-size:12px;}
+
+  /************************ Banner Styles **************************/
+
+  .banner {
+    height:250px;
+  }
+  blockquote.quote {
+    font-size:16px;
+    padding: 8px;
+    margin: 0px 5px;
+    background-size:18px 14px;
+  }
+  blockquote.quote span {
+    background-size:18px 14px;
+    padding-right: 25px;
+    padding-left:25px;
+  }
+
+  p.quoter {
+    font-size:11px;
+  }
+
+  .list-quote blockquote.quote span {
+    background-position: 325px 97px;
+  }
+
+  /************************** Banner news ***************************/
+  .banner-news {
+    padding:5px 0 0 0;
+  }
+  .banner-news h1 {
+    font-size:20px;
+    margin-bottom:10px;
+  }
+
+  .banner-news p {
+    font-size:14px;
+  }
+
+  .news-graphic {
+    width:160px;
+    height:68px;
+    background-size:160px 68px;
+    margin:0px auto 10px auto;
+  }
+
+  /************************** Banner community ***************************/
+  .banner-community {
+    padding:35px 0 0 0;
+  }
+  .banner-community h1 {
+    font-size:20px;
+  }
+
+  .community-development {
+    width:219px;
+    height:36px;
+    background-size:219px 36px;
+  }
+
+  .community-org {
+    width:176px;
+    height:36px;
+    background-size:176px 36px;
+    margin:0px 40px;
+  }
+
+  .community-safecoin {
+    width:188px;
+    height:36px;
+    background-size:188px 36px;
+  }
+
+  /************************** Banner plane ***************************/
+  .banner-plane {
+    padding:25px 0 0 0;
+  }
+  .banner-plane h1 {
+    font-size:20px;
+    color:#5593D7;
+    margin:30px 0 0 0;
+  }
+  .plane {
+    background:url(/img/home_plane.png) no-repeat 0 0;
+    width:323px;
+    height:58px;
+    background-size:323px 58px;
+    margin:0px auto 10px auto;
+  }
+
+  /************************** Banner getcode ***************************/
+  .banner-getcode {
+    padding:40px 0 0 0;
+  }
+  .banner-getcode h1 {
+    font-size:20px;
+  }
+  .github-icon {
+    background-position: 180px 15px;
+    background-size:80px 70px;
+  }
+  .spacer {
+    display:inline-block;
+    width:90px;
+  }
+  /************************** Banner roadmap ***************************/
+  .banner-roadmap {
+    padding:0px 0 0 0;
+  }
+  .banner-roadmap h1 {
+    font-size:20px;
+  }
+
+  .home-tabs p {
+    font-size:18px;
+    padding:95px 40px 15px 40px;
+    line-height:24px;
+  }
+
+  .core-dev-tab {
+    background-position: center 25px;
+    background-size:48px 48px;
+    margin:10px 0!important;
+  }
+
+  .core-dev-tab:hover {
+    background-position: center 25px;
+    background-size:48px 48px;
+  }
+
+  .app-builder-tab {
+    background-position: center 25px;
+    background-size:54px 43px;
+    margin:10px 18px!important;
+  }
+
+  .app-builder-tab:hover {
+    background-position: center 25px;
+    background-size:54px 43px;
+  }
+
+  .farmer-tab {
+    background-position: center 25px;
+    background-size:57px 42px;
+    margin:10px 0!important;
+  }
+
+  .farmer-tab:hover {
+    background-position: center 25px;
+    background-size:57px 42px;
+  }
+
+  .tell-me-more-tab p {
+    padding:20px;
+  }
+
+
+
+  .video-box {
+    height:293px;
+  }
+
+  video {
+    height:294px;
+  }
+
+  #inline1 {
+    display:none;
+  }
+
+  .home-box {
+    margin-bottom:30px;
+  }
+
+  #home h2 {
+    font-size:18px;
+    margin-bottom:30px;
+  }
+  .home-box p {
+    font-size: 12px;
+  }
+
+  .middle h2 {
+    margin-bottom:10px;
+  }
+
+  .maidsafe-platform {
+    background-size:140px 80px;
+    width:140px;
+    height:80px;
+  }
+
+  .surefile-test {
+    width:110px;
+    height:57px;
+    background-size:110px 57px;
+  }
+
+  .github-code {
+    width:80px;
+    height:70px;
+    background-size:80px 70px;
+    margin:0 auto;
+  }
+
+  p.alpha-testers {
+    font-size: 16px;
+    line-height:22px;
+    margin-bottom:10px;
+  }
+
+  #team .leftnav-shell, #roadmap .leftnav-shell{
+    display:none;
+  }
+
+  #team .topnav-shell, #roadmap .topnav-shell{
+  //margin: 0 auto;
+    padding-bottom: 30px;
+    display: block;
+    float: right;
+  }
+  #timeline .topnav-shell{
+    margin-top: 0
+  }
+
+  ul.topnav {
+    display: inline-block;
+    float: right;
+  }
+  ul.topnav li {
+    padding: 0px;
+    display: inline-block;
+    margin-left:28px;
+  }
+  ul.topnav > li {
+    display: inline-block;
+    padding-top: 10px;
+  }
+  ul.topnav li a {
+    display: block;
+    text-decoration: none;
+    color: #808080;
+  }
+
+  /********* Overview - Left nav selected state styles ********/
+  /*#platform-overview ul.topnav .overview a,*/
+  /*#platform-features ul.topnav .features a,*/
+  /*#platform-faqs ul.topnav .faqs a,*/
+  /*#applications ul.topnav .applications a,*/
+  /*#licensing-platform ul.topnav .licensing a,*/
+  /*#testimonials ul.topnav .testimonials a,*/
+  /*#safecoin ul.topnav .safecoin a  {*/
+  /*color:#5593D7;*/
+  /*}*/
+  /******** Get Involved - Left nav selected state styles ********/
+  /*#get-involved ul.topnav .get-involved a,*/
+  /*#core-developer ul.topnav .core-developer a,*/
+  /*#platform-libraries ul.topnav .libraries a,*/
+  /*#app-builder ul.topnav .app-builder a,*/
+  /*#farmers ul.topnav .farmers a,*/
+  /*#safe-pods ul.topnav .safe-pods a {*/
+  /*color:#5593D7;*/
+  /*}*/
+
+  /******** Documents - Left nav selected state styles ********/
+  /*#documents ul.topnav .documents a,*/
+  /*#examples ul.topnav .examples a,*/
+  /*#system-docs ul.topnav .system-docs a,*/
+  /*#developer-wiki ul.topnav .developer-wiki a,*/
+  /*#papers-publications ul.topnav .papers-publications a {*/
+  /*color:#5593D7;*/
+  /*}*/
+
+  /******** Company - Left nav selected state styles ********/
+  /*#company ul.topnav .overview a,*/
+  /*#team ul.topnav .team a,*/
+  /*#careers ul.topnav .careers a {*/
+  /*color:#5593D7;*/
+  /*}*/
+
+  /*ul.leftnav li a {
+	font-size:14px;
+}
+
+ul.leftnav li ul li a {
+	font-size:12px;
+}*/
+
+  .article-1 {
+    padding-right:21px;
+  }
+  .article-2 {
+    padding-left:15px;
+  }
+
+
+  .main-content {
+    padding-bottom:20px;
+  }
+
+  .notification{
+    height: 50px;
+  }
+  .notification p{
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 14px;
+  }
+  .left-caret{
+    position: absolute;
+    display: block;
+    left: -1px;
+    background-image: url(/img/caret_left_50.png);
+    height: 50px;
+    width:25px;
+  }
+  .right-caret{
+    position: absolute;
+    display: block;
+    right: 0;
+    background-image: url(/img/caret_right_50.png);
+    height: 50px;
+    width:25px;
+  }
+
+  /*********** Sidebar **************/
+
+  .sidebar img {margin:5px 0;}
+  .sidebar p {
+    font-size:12px;
+  }
+
+  .sidebar .divider {
+    width:100%; /*156*/
+    height:7px;
+    background-size:70px 7px;
+    margin:5px 0;
+  }
+  .community-text {
+    padding-top:15px;
+    padding-bottom:5px;
+  }
+  a.visit-blog {
+    width:70px;
+    height:39px;
+    background-size:70px 78px;
+
+  }
+
+  a.maidsafe-dev {
+    width:70px;
+    height:21px;
+    background-size:70px 42px;
+  }
+
+  a.maidsafe-org {
+    width:70px;
+    height:22px;
+    background-size:70px 44px;
+  }
+
+  a.mumble {
+    width:70px;
+    height:53px;
+    background-size:70px 106px;
+  }
+
+
+  /*********** Developers Page **************/
+
+  a.get-started-button {
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 3px;
+    padding: 6px 10px 6px 10px;
+    float:right;
+  }
+
+  #developers h1 {
+    margin-bottom:50px;
+  }
+
+  a.light-button, a.light-button-full {
+    font-size:14px;
+    margin:5px 6px;
+
+  }
+
+  a.light-button-full {
+    padding:20px 15px;
+  }
+
+  .diagram {
+    padding-top:70px;
+  }
+
+  .app-stack {
+    background-position: 170px 205px;
+    background-size:180px 132px;
+  }
+
+  #core-developer .app-stack {
+    background-position:170px 910px;
+    background-size:180px 132px;
+  }
+
+  /********* Get Involved Page ************/
+  .get-involved-tabs {
+    margin-bottom:30px;
+  }
+
+  .get-involved-tabs p {
+    font-size:18px;
+    padding:95px 10px 25px 10px;
+    line-height:22px;
+  }
+
+  .tell-me-more-tab p {
+    padding:20px;
+  }
+
+  .farmers-text img {
+    width:46px;
+    height:35px;
+    margin:75px 30px 75px 0;
+  }
+
+  .app-builders-text img {
+    width:46px;
+    height:36px;
+    margin:60px 30px 55px 0;
+  }
+
+  .core-developers-text img {
+    width:40px;
+    height:40px;
+    margin:40px 30px 75px 0;
+  }
+
+  /********* Documents Page ************/
+
+  .doc-box-papers-publications {
+    height: 701px;
+  }
+
+  .doc-box-examples a,
+  .doc-box-system-docs a,
+  .doc-box-dev-wiki a,
+  .doc-box-papers-publications a {
+    font-size:12px;
+  }
+
+  .doc-box-papers-publications li a {
+    font-size:11px;
+    margin:0px;
+    text-indent:0px;
+  }
+
+  ul.pdf-group li:before {
+    background-size:12px 15px;
+    height: 20px;
+    margin-right: 2px;
+    top: 8px;
+    width: 15px;
+  }
+
+  #documents .main-content ul li {
+    padding-left:0px;
+    text-indent:0px;
+  }
+
+  /*********** Company Page ***************/
+  .main-content .col-3 {
+    width: 100%;
+  }
+
+  .main-content .left-col {
+    padding:0 10px 0 0;
+    margin:0 10px 0 0;
+  }
+
+  .main-content .right-col {
+    padding:0 0 0 10px;
+    margin:0 0 0 10px;
+  }
+
+  #company .main-content .col-3 h2{
+    padding-top: 5px;
+    width: 200px;
+    height: 35px;
+    background-size: 200px 35px;
+    font-size: 16px;
+    margin: 20px auto 20px;
+  }
+  #company .plane-banner{
+    width: 225px;
+  }
+
+  /*********** Team Page ***************/
+
+  #team h1 {font-size: 21px;}
+
+  #team h3 { font-size:12px;}
+
+  #team .main-content {
+    float: left;
+    width: 100%;
+  }
+
+  .mosaic-block {
+    height: 160px;
+    width: 160px;
+  }
+
+  .mosaic-block img {
+    height: 160px;
+    width: 160px;
+  }
+
+  .mosaic-block p {
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  .mosaic-block .details {
+    padding: 10px;
+  }
+
+  .team-map {
+    width: 340px;
+    height: 470px;
+    margin-left: -10px;
+  }
+  .team-icon {
+    width: 40px;
+  }
+  #boss { top: 150px; left: 198px; }
+  #david { top: 37px; left: 32px; }
+  #fraser { top: 17px; left: 128px; }
+  #qi { top: 53px; left: 204px; }
+  #prakash { top: 12px; left: 275px; }
+  #ben { top: 185px; left: 101px; }
+  #mahmoud { top: 240px; left: 34px; }
+  #ross { top: 285px; left: 113px; }
+  #viv { top: 246px; left: 200px; }
+  #pod { top: 215px; left: 285px; }
+  #niall { top: 353px; left: 175px; }
+  #peter { top: 402px; left: 102px; }
+  #lee { top: 375px; left: 262px; }
+
+  #shona { top:101px; left:112px; }
+
+  #justine { top:130px; left:12px; }
+  #linda { top:347px; left:33px; }
+
+  #nick { top:118px; left:291px; }
+  #paige { top:312px; left:294px; }
+
+  .profile-info{
+    width: 175px !important;
+    float: right;
+  }
+  /*********** Credits Page ***************/
+  .credit-logo div{
+    width: 70px;
+    height: 70px;
+  }
+  .jetbrains{
+    width: 70px;
+    height: 22px;
+    margin-top: 25px !important;
+  }
+  /*********** Careers Page ***************/
+  .vacancies {
+    padding:15px;
+  }
+
+  #careers .col-l {
+    margin-right:55px;
+  }
+
+  .current-jobs {
+    padding:7px;
+    top:-10px;
+  }
+  .current-jobs h1 {
+    font-size:17px;
+  }
+  .current-jobs h2 {
+    font-size:12px;
+    margin:0px 0px 15px 0;
+  }
+  .current-jobs p, .current-jobs ul li {
+    font-size:11px;
+  }
+
+  .applynow {
+    background-size:41px 40px;
+    width:41px;
+    height:40px;
+    top:-11px;
+    right:-11px;
+  }
+  a.applyhere {
+    background-size:100px 88px;
+    width:86px;
+    height:24px;
+    right:-12px;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:10px 6px;
+    font-size:11px;
+  }
+
+  .apply-text {
+    font-size:13px;
+    letter-spacing:-0.5px;
+  }
+
+  /*********** Use Cases Page Styles *************/
+  section .grid-4 {
+    width:100%!important;
+  }
+
+  /*********** License Page Styles *************/
+  #licensing .main-content {
+    margin-bottom:0px;
+  }
+
+  #licensing .main-content .grid-3 {
+    width:100%!important;
+  }
+
+  .download-license-box, .download-license-box-last {
+    background-size:40px 40px;
+    background-position:center 10px;
+    text-align:center;
+    min-height:82px;
+    font-size:12px;
+  }
+
+  a.gpl-license, a.commercial-license, a.contributor-agreement {
+    padding:60px 10px 0px 10px;
+  }
+
+  .download-license-box, .download-license-box-last {
+    margin-bottom:30px;
+  }
+  #licensing h2 {
+    font-size: 24px;
+  }
+
+  .online-reg-box {
+    background-size:55px 61px;
+    background-position:20px 20px;
+    margin-bottom:40px;
+  }
+
+  .license-reg {
+    padding:20px 20px 0px 110px;
+  }
+
+
+  section .grid-4 {
+    width:100%!important;
+  }
+
+  /*********** Roadmap Page Styles **************/
+
+  #roadmap #viewer {width:98%;}
+
+  div.roadmap{
+    width:540px;
+  }
+
+  #roadmap p{font-size: 14px;}
+  /*
+.roadmap-stage {
+	width:90px;
+	height:90px;
+}
+
+.roadmap-stage h2{
+	font-size: 18px;
+}*/
+
+  .roadmap-stage p{
+    margin-top: 0px;
+  }
+
+
+  #testnet1{top:35px;left: 15px;}
+  #testnet2{top:265px;left: 147px;}
+  #testnet3{top:35px;left: 277px;}
+  #betalaunch{top:265px;left: 407px;}
+
+  .bullet{height:40px;}
+  .bullet-icon {
+    width: 42px;
+    height: 40px;
+    padding-right: 10px;
+  }
+
+  /*********** Features Page Styles *************/
+
+  .last-col {
+    margin-left:20px!important;
+  }
+
+  #platform-features h2 {
+    background-size:160px 39px;
+  }
+
+  h2.noservers-head {
+    padding:10px 0 11px 10px;
+    font-size:14px;
+  }
+
+  h2.administrators-head {
+    padding:4px 11px 8px 10px;
+    font-size:11px;
+  }
+
+  h2.datamanage-head {
+    padding:2px 60px 0 10px;
+    font-size:11px;
+  }
+
+  h2.password-head {
+    padding:2px 62px 0px 10px;
+    font-size:11px;
+  }
+
+  h2.sharedata-head {
+    padding:3px 95px 0px 10px;
+    font-size:11px;
+  }
+
+  h2.distribute-head {
+    padding:3px 50px 14px 10px;
+    font-size:11px;
+  }
+
+  /******* Libraries Platform Page Styles ********/
+
+  #platform-libraries .grid-1 { width:40px;}
+
+  a.moreinfo {
+    width:100%;
+    float:right;
+    margin:0 0 30px 50px;
+  }
+
+  a.moreinfo:after {
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    background: #4679BD;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  a.moreinfo div {
+    float:left;
+    width:100%;
+    padding-top:50%;
+    line-height: 15px;
+    margin-top: -14px!important;
+    text-align:center;
+    color:white;
+    font-size:12px;
+  }
+
+
+  /******* Libraries Page Styles ********/
+  .rightnav {
+    float:right;
+  }
+
+  .rightnav-box {
+    min-height:40px;
+    margin-bottom:30px;
+  }
+  .rightnav-box p {
+    font-size: 12px;
+    padding-top:0px;
+  }
+
+  .github {
+    background-position:5px 8px;
+    padding:5px 0 0 45px;
+    background-size:30px 26px;
+  }
+
+  .back {
+    background-position:5px 8px;
+    padding:5px 0 0 36px;
+    background-size:26px 30px;
+  }
+
+
+  /*********** Company Page Styles *************/
+
+  #company .main-content {
+    margin-bottom: 0px;
+  }
+
+  #company .team-row  h2 {
+    margin-bottom:3px;
+  }
+  #company .team-row  h3 {
+    margin-bottom:10px;
+  }
+
+  #company .col-l {
+    margin:0 20px 20px 0;
+  }
+  #company .col-m {
+    margin:0 10px 20px 10px;
+  }
+  #company .col-r {
+    margin:0 0 20px 20px;
+  }
+  /************* Contact Page Styles ***************/
+
+  #contact .col-l {
+    padding-right:10px;
+  }
+  #contact .col-m {
+    padding: 0 20px;
+    width: 180px;
+  }
+  #contact .col-r {
+    padding-left:10px;
+  }
+  /*********** Assets Page Styles *************/
+  #assets .asset{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: -10px;
+  }
+  #assets .thumbnail {
+    width: inherit;
+  }
+  #assets #maidsafe-brand img{
+    margin-top: -20px;
+  }
+  #assets #wee-plane img{
+    height:120px;
+    width: auto;
+    margin-left: 0px;
+  }
+  #assets .wee-plane-sm{
+    display: block;
+  }
+  #assets .wee-plane-md{
+    display: none;
+  }
+  #assets #safecoin-brand img {
+    margin-top: 0px;
+  }
+  #assets .tshirt-design-sm{
+    display: block;
+    border-top: 2px solid #7F7F7F;
+  }
+  #assets .tshirt-design-md{
+    display: none;
+  }
+  #assets #twitter-cover img{
+    height:80px;
+    width: auto;
+    margin: 0;
+  }
+  #assets .twitter-cover-sm{
+    display: block;
+  }
+  #assets .twitter-cover-md{
+    display: none;
+  }
+  #assets #advert img{
+    margin: 2px 0 0 0;
+    width: 100%;
+    height: auto;
+  }
+  #assets #meetup-cover img{
+    margin: 2px -30px;
+  }
+  #assets #david-nick img{
+    margin: 20px auto 0;
+    width: auto;
+    height: 100%;
+    display: block;
+  }
+  #assets #team-photo img{
+    margin: 20px auto 0;
+    width: auto;
+    height: 100%;
+    display: block;
+  }
+  /*********** Footer Styles *************/
+
+
+  footer {	text-align:center;}
+
+  footer .container-12 {
+  }
+
+  footer .footer-links { display:none;}
+
+
+  footer img { display:inline-block!important;}
+
+  footer ul {
+    margin-bottom:30px;
+  }
+
+  ul.social-links {
+    float:none;
+    margin:0;
+  }
+
+  ul.social-links li {
+    display:inline;
+
+    margin:5px;
+  }
+
+  ul.social-links li a {
+    display:inline-block!important;
+    margin:0px;
+    padding:0px;
+  }
+  .legal {
+    padding-top:0px;
+    width:100%;
+  }
+
+  .legal a {
+    font-size:12px!important;
+    background:none!important;
+    padding: 10px 0px 10px 20px!important;
+  }
+
+  .footer-logos {
+    padding-top:38px;
+    float:none;
+  }
+
+  .footer-logos a {
+    display:inline-block!important;
+    background:none!important;
+  }
+
+  .footer-logos img {
+    margin-left:20px;
+  }
+
+  .logo-footer {
+    float:none;
+    position:relative;
+    left:31px
+  }
+
+  .idl-badge {
+    float:none;
+    position: relative;
+    right: 113px;
+    top: 100px;
+  }
+}
