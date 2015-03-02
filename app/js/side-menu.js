@@ -2,6 +2,7 @@
 var degreeRotate = 0;
 var menuRotate = 0;
 var clicking=false;
+var topClicking=false;
 $(document).ready(function() {
     var scroll1 = $(".section1 .main-content").offset().top-400;
     var scroll2 = $(".section2 .main-content").offset().top-400;
@@ -32,7 +33,9 @@ $(document).ready(function() {
         //fade in side-menu
         if (newScroll<scroll1){
             // if (globeIn==false){
+            if (!topClicking){
                 $("#side-menu").fadeOut('slow');
+            }
             // }
             globeIn=true;
         } else if (newScroll>=scroll1){
@@ -66,7 +69,7 @@ $(document).ready(function() {
             var menuBottom=menuTop+$('#side-menu').height();
             // console.log('menuTop: '+menuTop+'menuBottom: '+menuBottom+' footerTop: '+footerTop);
             if (menuBottom>=footerTop){
-                $("#side-menu").css({"position": "absolute", "top": footerTop-$('#side-menu').height()});
+                $("#side-menu").css({"position": "absolute", "top": footerTop-$('#side-menu').height()+130});
             } else if (menuBottom<footerTop) {
                 $("#side-menu").css({"position": "fixed", "top": "70px"});
             }
@@ -80,7 +83,7 @@ $(document).ready(function() {
         }
         // if in a new section, update the active icon
         if (lastSectionCount!=sectionCount){
-            // if (lastSectionCount!=0){
+            if (topClicking==false){
                 $("#menu"+lastSectionCount+" .active").fadeOut('slow', function(){
                 if (clicking==false){
                     if (sectionCount!=4){
@@ -88,21 +91,18 @@ $(document).ready(function() {
                     }
                 }
                 });
-                console.log("last section: "+lastSectionCount+" section: "+sectionCount+" clicking: "+clicking);
-            // } else {
-            //     if (clicking==false){
-            //         if (sectionCount!=4){
-            //             $("#menu"+sectionCount+" .active").fadeIn('slow');
-            //         }
-            //     }
-            // }
-         
+            }
+                // console.log("last section: "+lastSectionCount+" section: "+sectionCount+" clicking: "+clicking+" topClicking: "+topClicking);
         lastSectionCount=sectionCount;
+         
         }
     });
 });
 
-function clickChange(clickRotate, scrollTo, menuShow){
+function clickChange(clickRotate, scrollTo, menuShow, topMenu){
+    if (topMenu){
+        topClicking=true;
+    }
     clicking=true;
     degreeRotate=clickRotate;
     console.log(clickRotate+" "+scrollTo+" "+menuShow);
@@ -111,6 +111,7 @@ function clickChange(clickRotate, scrollTo, menuShow){
         scrollTop: $(scrollTo).offset().top-80
     }, 1000, function(){
         clicking=false;
+        topClicking=false;
     });
     menuRotate = degreeRotate;
     if (clickRotate!=0){

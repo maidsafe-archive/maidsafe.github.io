@@ -616,7 +616,7 @@ Side Menu
   width: inherit;
   height: inherit;
   margin-top:-55px;
-  transition: opacity .25s ease-in-out;
+  /*transition: opacity .25s ease-in-out;*/
 }
 #menu0{
   visibility: hidden;
