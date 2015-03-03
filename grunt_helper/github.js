@@ -44,11 +44,12 @@ exports.Helper = function(accessToken) {
   };
   instance.pullForPR = function(selectedPR) {
     var command;
-    var actualLocalBranchName;
     if (!openPR.hasOwnProperty(selectedPR)) {
       return 'echo pull failed -  PR not found for selection && exit 1';
     }
-    actualLocalBranchName = instance.CLI.parseBranchName(selectedPR);
+
+    var actualLocalBranchName;
+    actualLocalBranchName = selectedPR.replace(/ /g, '_');
     command = (branches.indexOf(actualLocalBranchName) > -1) ? 'git branch -D ' + actualLocalBranchName + ' && ': '';
     command += instance.CLI.checkout(openPR[selectedPR].base.ref) + '&&' + instance.CLI.pull() + '&&' +
     instance.CLI.checkout(selectedPR, true) + '&&' +
