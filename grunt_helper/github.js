@@ -47,7 +47,7 @@ exports.Helper = function(accessToken) {
       return 'echo pull failed -  PR not found for selection && exit 1';
     }
     return instance.CLI.checkout(openPR[selectedPR].base.ref) + '&&' + instance.CLI.pull() + '&&' +
-      instance.CLI.checkout(openPR[selectedPR].head.ref, true) + '&&' +
+      instance.CLI.checkout(selectedPR, true) + '&&' +
       instance.CLI.pullRemote(openPR[selectedPR].head.repo.clone_url, openPR[selectedPR].head.ref);
   };
   instance.branchListHandler = function(stdIn, stdOut, err) {
