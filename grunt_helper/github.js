@@ -43,19 +43,12 @@ exports.Helper = function(accessToken) {
     return list;
   };
   instance.pullForPR = function(selectedPR) {
-    var command;
     if (!openPR.hasOwnProperty(selectedPR)) {
       return 'echo pull failed -  PR not found for selection && exit 1';
     }
-
-    var actualLocalBranchName;
-    actualLocalBranchName = selectedPR.replace(/ /g, '_');
-    command = (branches.indexOf(actualLocalBranchName) > -1) ? 'git branch -D ' + actualLocalBranchName + ' && ': '';
-    command += instance.CLI.checkout(openPR[selectedPR].base.ref) + '&&' + instance.CLI.pull() + '&&' +
-    instance.CLI.checkout(selectedPR, true) + '&&' +
-    instance.CLI.pullRemote(openPR[selectedPR].head.repo.clone_url, openPR[selectedPR].head.ref);
-    return command;
-
+    return instance.CLI.checkout(openPR[selectedPR].base.ref) + '&&' + instance.CLI.pull() + '&&' +
+      instance.CLI.checkout(selectedPR, true) + '&&' +
+      instance.CLI.pullRemote(openPR[selectedPR].head.repo.clone_url, openPR[selectedPR].head.ref);
   };
   instance.branchListHandler = function(stdIn, stdOut, err) {
     if (err) {
