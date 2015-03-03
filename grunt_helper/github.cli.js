@@ -1,7 +1,7 @@
 var CLI = function() {
   var instance = this;
 
-  var parseBranchName = function(branchName) {
+  instance.parseBranchName = function(branchName) {
     return branchName.replace(/ /g, '_');
   };
   instance.clone = function(owner, repo) {

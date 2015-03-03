@@ -44,14 +44,17 @@ exports.Helper = function(accessToken) {
   };
   instance.pullForPR = function(selectedPR) {
     var command;
+    var actualLocalBranchName;
     if (!openPR.hasOwnProperty(selectedPR)) {
       return 'echo pull failed -  PR not found for selection && exit 1';
     }
-    command = (branches.indexOf(selectedPR) > -1) ? 'git branch -D ' + selectedPR : '';
+    actualLocalBranchName = instance.CLI.parseBranchName(selectedPR);
+    command = (branches.indexOf(actualLocalBranchName) > -1) ? 'git branch -D ' + actualLocalBranchName + ' && ': '';
     command += instance.CLI.checkout(openPR[selectedPR].base.ref) + '&&' + instance.CLI.pull() + '&&' +
     instance.CLI.checkout(selectedPR, true) + '&&' +
     instance.CLI.pullRemote(openPR[selectedPR].head.repo.clone_url, openPR[selectedPR].head.ref);
     return command;
+
   };
   instance.branchListHandler = function(stdIn, stdOut, err) {
     if (err) {
