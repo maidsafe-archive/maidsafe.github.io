@@ -1,7 +1,7 @@
 var CLI = function() {
   var instance = this;
 
-  var parseBranchName = function(branchName) {
+  instance.parseBranchName = function(branchName) {
     return branchName.replace(/ /g, '_');
   };
   instance.clone = function(owner, repo) {
@@ -12,11 +12,11 @@ var CLI = function() {
     if (createBranch) {
       cmd += '-b '
     }
-    cmd += parseBranchName(branchName);
+    cmd += instance.parseBranchName(branchName);
     return  cmd;
   };
   instance.branch = function(branchName) {
-    return 'git branch ' + parseBranchName(branchName);
+    return 'git branch ' + instance.parseBranchName(branchName);
   };
   instance.pull = function(branch) {
     var cmd = 'git pull ';
