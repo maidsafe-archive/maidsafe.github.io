@@ -12,11 +12,11 @@ var CLI = function() {
     if (createBranch) {
       cmd += '-b '
     }
-    cmd += parseBranchName(branchName);
+    cmd += instance.parseBranchName(branchName);
     return  cmd;
   };
   instance.branch = function(branchName) {
-    return 'git branch ' + parseBranchName(branchName);
+    return 'git branch ' + instance.parseBranchName(branchName);
   };
   instance.pull = function(branch) {
     var cmd = 'git pull ';
