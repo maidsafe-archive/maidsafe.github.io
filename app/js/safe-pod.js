@@ -1,4 +1,5 @@
 /*globals $, document*/
+
 $(document).ready(function() {
   var map = $('#big-map');
   var overlay = $('div.overlay');

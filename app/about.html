@@ -1,0 +1,43 @@
+---
+layout: base
+bodyId: about
+title: MaidSafe - The New Decentralized Internet
+description: MaidSafe's distributed platform enables the creation of fast and secure applications that help ensure digital privacy, security and freedom for all.
+keywords: Distributed Platform, MaidSafe
+includes: ['about.html','side-menu.html']
+---
+{% include html/side-menu.html %}
+<div class="banner">
+  <div class="container-12">
+    <div class="grid-12">
+      <!-- <img src="./img/home-banner-1.jpg" class="banner-image"/> -->
+      <h1 class="style5">About</h1>
+      <div class="banner-menu">
+        <div id="banner-menu-1">
+          <h2>Community</h2>
+          <div class="idle"></div>
+          <a href="#community" onClick="clickChange(-105, '.section1 .main-content', '#menu1', true)">
+            <div class="active"></div>
+          </a>
+        </div>
+        <div id="banner-menu-2">
+          <h2>Company</h2>
+          <div class="idle"></div>
+          <a href="#company" onClick="clickChange(-120, '.section2 .main-content', '#menu2', true)">
+            <div class="active"></div>
+          </a>
+        </div>
+        <div id="banner-menu-3">
+          <h2>Timeline</h2>
+          <div class="idle"></div>
+          <a href="#timeline" onClick="clickChange(-135, '.section3 .main-content', '#menu3', true)">
+            <div class="active"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include html/community.html %}
+{% include html/team.html %}
+{% include html/timeline.html %}
