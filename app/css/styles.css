@@ -856,22 +856,22 @@ About Page Styles
 *******************************************************************************/
 
 #about #menu1 .idle{
-  background-image: url(../img/community-idle.png);
+  background-image: url(../img/menu-community-idle.png);
 }
 #about #menu1 .active, #about #menu1 .idle:hover {
-  background-image: url(../img/community-active.png);
+  background-image: url(../img/menu-community-active.png);
 }
 #about #menu2 .idle{
-  background-image: url(../img/company-idle.png);
+  background-image: url(../img/menu-company-idle.png);
 }
 #about #menu2 .active, #about #menu2 .idle:hover {
-  background-image: url(../img/company-active.png);
+  background-image: url(../img/menu-company-active.png);
 }
 #about #menu3 .idle{
-  background-image: url(../img/timeline-idle.png);
+  background-image: url(../img/menu-timeline-idle.png);
 }
 #about #menu3 .active, #about #menu3 .idle:hover {
-  background-image: url(../img/timeline-active.png);
+  background-image: url(../img/menu-timeline-active.png);
 }
 #about h1, #about h2, #about h3, #about p {
   text-align:left;  
@@ -944,11 +944,11 @@ About Page Styles
   left: 74px;
 }
 #about #banner-menu-1 .idle{
-  background: url(../img/community-idle.png);
+  background: url(../img/banner-community-idle.png);
 }
 #about #banner-menu-1 .active{
   opacity: 0;
-  background: url(../img/community-active.png);
+  background: url(../img/banner-community-active.png);
 }
 #about #banner-menu-1 .active:hover{
   opacity: 1;
@@ -963,11 +963,11 @@ About Page Styles
   left: 0px;
 }
 #about #banner-menu-2 .idle{
-  background: url(../img/company-idle.png);
+  background: url(../img/banner-company-idle.png);
 }
 #about #banner-menu-2 .active{
   opacity: 0;
-  background: url(../img/company-active.png);
+  background: url(../img/banner-company-active.png);
 }
 #about #banner-menu-2 .active:hover{
   opacity: 1;
@@ -982,11 +982,11 @@ About Page Styles
   left: 150px;
 }
 #about #banner-menu-3 .idle{
-  background: url(../img/timeline-idle.png);
+  background: url(../img/banner-timeline-idle.png);
 }
 #about #banner-menu-3 .active{
   opacity: 0;
-  background: url(../img/timeline-active.png);
+  background: url(../img/banner-timeline-active.png);
 }
 #about #banner-menu-3 .active:hover{
   opacity: 1;
