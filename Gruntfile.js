@@ -1,5 +1,10 @@
 // Generated on 2015-02-03 using generator-jekyllrb 1.4.1
+/* global escape */
+
 'use strict';
+
+// Load util
+var util = require('util');
 
 // Directory reference:
 //   css: css
@@ -422,13 +427,16 @@ module.exports = function (grunt) {
         cmd: function() {
           selectedPR = grunt.config(OPTION_ISSUE_KEY);
           if (selectedPR && selectedPR !== 'undefined') {
-            return 'echo PR Selected - ' + selectedPR;
+            return 'echo PR Selected - ' + escape(selectedPR).replace(/%20/g, ' ');
           }
           return 'echo PR not selected && exit 1';
         }
       },
       updateDependencies: {
-        cmd: 'npm prune && npm install && bower install'
+        cmd: function() {
+          var sudoPrefix = process.platform !== 'win32' ? 'sudo' : '';
+          return util.format('%s npm prune && %s npm install && bower install', sudoPrefix, sudoPrefix);
+        }
       }
     },
     htmllint: {
