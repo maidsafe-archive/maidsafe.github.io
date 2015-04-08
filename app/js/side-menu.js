@@ -1,4 +1,6 @@
-/*global $:false, jQuery:true */
+/*global $:false */
+var window = {};
+var document = {};
 
 var degreeRotate = 0;
 var menuRotate = 0;
@@ -32,6 +34,17 @@ function checkPosition(scrollp, stopped){
     }
 }
 
+//rotate the menu and menu-items in opposite directions
+function menuTransform(oTransValue, nTransValue)
+{
+    $('#side-menu').animateRotate(oTransValue, nTransValue, 1000, 'linear', function(){
+       return;
+    });
+    $('.menu-item').animateRotate(-(oTransValue), -(nTransValue), 1000, 'linear', function(){
+        return;   // console.log(this); 
+    });
+}
+
 //to be called by top or side menus (scrolling nav)
 function clickChange(clickRotate, scrollTo, menuShow, topMenu){
     if (topMenu){
@@ -51,17 +64,6 @@ function clickChange(clickRotate, scrollTo, menuShow, topMenu){
     if (clickRotate!==0){
         $(menuShow+' .active').css('display', 'block');
     }
-}
-
-//rotate the menu and menu-items in opposite directions
-function menuTransform(oTransValue, nTransValue)
-{
-    $('#side-menu').animateRotate(oTransValue, nTransValue, 1000, 'linear', function(){
-       return;
-    });
-    $('.menu-item').animateRotate(-(oTransValue), -(nTransValue), 1000, 'linear', function(){
-        return;   // console.log(this); 
-    });
 }
 
 //rotates any object
