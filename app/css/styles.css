@@ -582,7 +582,7 @@ Side Menu
   width: 700px;
   height: 700px;
   margin-left: -500px;
-  margin-top: -30px;
+  margin-top: -60px;
   z-index: 100;
   display: none;
 }
@@ -590,7 +590,7 @@ Side Menu
   position: absolute;
   top:40px;
   left:40px;
-  background-image: url('../img/globe.png');
+  background-image: url('../img/globe2.png');
   width: 620px;
   height: 620px;
   background-size: 620px 620px;
@@ -668,6 +668,15 @@ Home Page Styles
   height:600px;
   width: auto;
   display:block;
+}
+.globe2{
+  background-image: url(../img/globe2.png);
+  width: 325px;
+  height: 716px;
+  background-size: 650px auto;
+  position: absolute;
+  top:0;
+  right:0;
 }
 
 #home .banner .keyword .secure,.banner .keyword .free,.banner .keyword .evolved{
@@ -792,7 +801,7 @@ Inner Page Styles
 
 *******************************************************************************/
 .shadow { 
-  background:url.(img/nav_shadow-2.png) repeat-x 0 20px;
+  background:url(../img/nav_shadow-2.png) repeat-x 0 20px;
   clear: both;
     display: block;
     height: 130px;
@@ -810,8 +819,10 @@ ul.leftnav li ul li a, .pressnav li ul li a { font-size:14px;}
 ul.pressnav {margin-bottom:40px;}
 
 .main-content {
-  float:right;
-  margin-bottom:50px;
+  float:none;
+  display: block;
+  margin:0 auto;
+  padding-bottom: 50px;
 }
 .main-content h1{
   margin-top: 50px;
@@ -848,6 +859,15 @@ p {
   margin-bottom:20px;
 }
 
+.section1::after,.section2::after,.section3::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.section2, .section4 {
+  background-color: #F9F9F9;
+  }
+
 
 /*******************************************************************************
 
@@ -879,7 +899,8 @@ About Page Styles
   font-family: 'OpenSansLight';
 }
 #about h1{
-  margin-top: 30px;
+  margin-top: 0px;
+  padding-top: 30px;
   font-size: 40px;
 }
 #about h2 {
@@ -1023,6 +1044,7 @@ Community Section Styles
   height:130px;
   margin: 30px auto;
 }
+#community{}
 #community .btn-download{
   margin:70px auto 10px;
 }
@@ -1135,8 +1157,6 @@ div.end.idle .bullet-icon{ background-image: url("../img/roadmap/end_idle.png");
 Team Page Styles
 
 *******************************************************************************/
-#company {
-}
 #company  h3 {
   font-family: 'OpenSansRegular', Arial, sans-serif;
   text-align:center;
@@ -1154,7 +1174,7 @@ Team Page Styles
 }
 
 a.twitter-button {
-  background:url.(img/twitter_icon.png) no-repeat top left!important;
+  background:url(../img/twitter_icon.png) no-repeat top left!important;
   width:28px;
   height:23px;
   display:inline-block;
@@ -1166,7 +1186,7 @@ a.twitter-button {
 a.twitter-button:hover { background-position:bottom left;}
 
 a.wordpress-button {
-  background:url.(img/wordpress_icon.png) no-repeat top left!important;
+  background:url(../img/wordpress_icon.png) no-repeat top left!important;
   width:28px;
   height:28px;
   display:inline-block;
@@ -1248,7 +1268,7 @@ Credits Page Styles
 
 
 #credits section{
-  background:url.(img/content_divider.png) repeat-x bottom center;
+  background:url(../img/content_divider.png) repeat-x bottom center;
   padding-bottom:5px;
   margin-bottom:20px;
   height:100px;
@@ -1749,23 +1769,18 @@ ul.top-stories .press-article {
 Contact Page Styles
 
 *******************************************************************************/
-#contact .col-l {
-  padding-right:70px;
+#contact{
+  text-align: center;
 }
-#contact .col-m {
-    padding: 0 80px;
-    width: 260px;
+#contact h2{
+  margin-top: 0;
+  padding-top: 50px;
 }
-#contact .col-r {
-  padding-left:20px;
-}
-
 #contact .main-content p {
   margin-bottom:10px;
 }
-#contact .main-content a {
-  margin-bottom:40px;
-  display:block;
+#contact .main-content {
+  padding-bottom:40px;
 }
 #contact a.pod-url{
   margin-bottom: 15px;
@@ -1789,15 +1804,15 @@ ul.social li a {
   margin-bottom:20px!important;
 }
 .twitter-icon {
-  background:url.(img/icon_twitter.png) no-repeat 0 0;
+  background:url(../img/icon_twitter.png) no-repeat 0 0;
   padding-top:5px;
 }
 .contact-icon {
-  background:url.(img/icon_contact.png) no-repeat 0 0;
+  background:url(../img/icon_contact.png) no-repeat 0 0;
   padding-top:2px;
 }
 .mumble-icon {
-  background:url.(img/icon_mumble.png) no-repeat 0 0;
+  background:url(../img/icon_mumble.png) no-repeat 0 0;
   padding-top:8px;
 }
 
@@ -1814,7 +1829,7 @@ footer {
   padding:10px 0 30px 0;
   color: #FFFFFF;
   height: 180px;
-  margin-top: -220px;
+  margin-top: -200px;
   font-size: 16px;
   font-family: 'OpenSansLight';
 }
@@ -2040,7 +2055,7 @@ p.quoter {
   margin:30px 0 0 0;
 }
 .plane {
-  background:url.(img/home_plane.png) no-repeat 0 0;
+  background:url(../img/home_plane.png) no-repeat 0 0;
   width:423px;
   height:75px;
   background-size:423px 75px;
@@ -2826,7 +2841,7 @@ p.quoter {
   margin:30px 0 0 0;
 }
 .plane {
-  background:url.(img/home_plane.png) no-repeat 0 0;
+  background:url(../img/home_plane.png) no-repeat 0 0;
   width:323px;
   height:58px;
   background-size:323px 58px;
@@ -3828,7 +3843,7 @@ a.menu-link {
   float: right;
   text-indent: -9999px;
   overflow: hidden;
-  background-image: url.(img/nav_icon_retina.png);
+  background-image: url(../img/nav_icon_retina.png);
    -webkit-background-size: 35px 23px;
     -moz-background-size: 35px 23px;
     -o-background-size: 35px 23px;
@@ -4028,7 +4043,7 @@ p.quoter {
   color:#5593D7;
 }
 .plane {
-  background:url.(img/home_plane.png) no-repeat 0 0;
+  background:url(../img/home_plane.png) no-repeat 0 0;
   width:280px;
   height:50px;
   background-size:280px 50px;
