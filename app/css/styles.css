@@ -689,7 +689,7 @@ Banner Styles
 
 .community-org {
   background:url(../img/banner-community-org.png) no-repeat 0 0;
-  width:225px;
+  width:300px;
   height:46px;
   display:inline-block;
   margin:20px 40px 0 40px;
@@ -812,14 +812,14 @@ a.maidsafe-dev:hover {
 }
 
 a.maidsafe-org {
-  background:url(../img/sidebar_maidsafe_org.png) no-repeat top left;
+  background:url(../img/sidebar_maidsafe_org.png) no-repeat top center;
   display:block;
   width:156px;
   height:48px;
   margin:10px 0;
 }
 a.maidsafe-org:hover {
-  background-position:bottom left;
+  background-position:bottom center;
 }
 
 a.mumble {
