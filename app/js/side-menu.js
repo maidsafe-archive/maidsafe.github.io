@@ -46,6 +46,7 @@ function menuTransform(oTransValue, nTransValue)
 }
 
 //to be called by top or side menus (scrolling nav)
+/*jshint unused:false */
 function clickChange(clickRotate, scrollTo, menuShow, topMenu){
     if (topMenu){
         topClicking=true;
