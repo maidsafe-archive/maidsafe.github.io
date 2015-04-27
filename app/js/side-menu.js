@@ -46,26 +46,28 @@ function menuTransform(oTransValue, nTransValue)
 }
 
 //to be called by top or side menus (scrolling nav)
-/*jshint unused:false */
-function clickChange(clickRotate, scrollTo, menuShow, topMenu){
-    if (topMenu){
-        topClicking=true;
+(function(){
+    /*jshint unused:false */
+    function clickChange(clickRotate, scrollTo, menuShow, topMenu){
+        if (topMenu){
+            topClicking=true;
+        }
+        clicking=true;
+        degreeRotate=clickRotate;
+        console.log(clickRotate+' '+scrollTo+' '+menuShow);
+        menuTransform(menuRotate, degreeRotate);
+        $('html, body').animate({
+            scrollTop: $(scrollTo).offset().top-80
+        }, 1000, function(){
+            clicking=false;
+            topClicking=false;
+        });
+        menuRotate = degreeRotate;
+        if (clickRotate!==0){
+            $(menuShow+' .active').css('display', 'block');
+        }
     }
-    clicking=true;
-    degreeRotate=clickRotate;
-    console.log(clickRotate+' '+scrollTo+' '+menuShow);
-    menuTransform(menuRotate, degreeRotate);
-    $('html, body').animate({
-        scrollTop: $(scrollTo).offset().top-80
-    }, 1000, function(){
-        clicking=false;
-        topClicking=false;
-    });
-    menuRotate = degreeRotate;
-    if (clickRotate!==0){
-        $(menuShow+' .active').css('display', 'block');
-    }
-}
+})();
 
 //rotates any object
 $.fn.animateRotate = function(oAngle, nAngle, duration, easing, complete) {
