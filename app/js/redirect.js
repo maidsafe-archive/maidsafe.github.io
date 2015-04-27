@@ -1,2 +1,2 @@
 /* jshint undef: false*/
-window.location = "/network-platform-licensing";
+window.location = '/network-platform-licensing';
