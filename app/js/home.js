@@ -7,7 +7,7 @@ $('.youtube-overlay').click(function() {
   $('.youtube-overlay').fadeOut(200);
 });
 
-function switchKeyword(start) {
+var switchKeyword = function(start) {
   if (start === 4) {
     start = 0;
   }
@@ -21,7 +21,7 @@ function switchKeyword(start) {
     $(keywordArray[newStart]).fadeIn('slow');
     switchKeyword(newStart);
   });
-}
+};
 
 // Navbar initialization for Responsiveness
 jQuery(document).ready(function($) {
