@@ -1,5 +1,5 @@
 /* jshint undef: false*/
-$('.video-container').fitVids({ customSelector: 'iframe[src^="http://socialcam.com"]'});
+$('.video-container').fitVids({ customSelector: 'iframe[src^="http://socialcam.com"]' });
 
 $(document).ready(function($) {
   $('#tabs').tabulous({

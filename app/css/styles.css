@@ -410,7 +410,7 @@ ol li {
   padding: 2px 15px;
   transition: color .25s ease-in-out,border-color .25s ease-in-out,background-color .25s ease-in-out;
   display: inline-block;
-  margin-bottom: 0;
+  margin:0 auto 0;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -418,6 +418,7 @@ ol li {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  text-decoration: none !important;
 }
 .btn.btn-download{
   background-color: #5593D7;
@@ -433,14 +434,13 @@ ol li {
   display: block;
   width: 300px;
 }
-.main-download .btn-download{
-
+.main-download.btn-download{
   padding: 10px 25px;
 }
-.small-download .btn-download{
-  margin: 0 auto;
+.small-download.btn-download{
+  margin:70px 0 10px 10%;
   display: inline-block;
-  width: 100%;
+  width: 60%;
 }
 .main-download .btn-text, .small-download .btn-text{
   font-family: 'OpenSansLight';
@@ -549,6 +549,7 @@ li.download .btn{
 }
 .menu .download .btn-download{
   padding: 2px 15px;
+  width: 120%;
 }
 .menu .download .btn-download:hover{
   border-color: #808080;
@@ -1302,7 +1303,7 @@ Credits Page Styles
   height: 90px;
 }
 .github-credit{
-  background-image: url(."img/github-octocat.png");
+  background-image: url("../img/github-octocat.png");
   width: 90px;
   height: 90px;
 }
