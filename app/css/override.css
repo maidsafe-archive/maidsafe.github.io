@@ -9,7 +9,7 @@
 .bx-wrapper .bx-pager.bx-default-pager a {
   background-color: #dddddd !important;
 }
-.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
   background-color: #9A9A9B !important;
 }
 
