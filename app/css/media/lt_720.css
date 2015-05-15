@@ -985,41 +985,42 @@ ul.leftnav li ul li a {
     margin:0px;
     padding:0px;
   }
-  .legal {
-    padding-top:0px;
+  footer .legal {
+    padding-top:6px;
     width:100%;
   }
 
-  .legal a {
-    font-size:12px!important;
-    background:none!important;
-    padding: 10px 0px 10px 20px!important;
+  footer .legal a {
+    font-size:12px;
+    background:none;
+    padding: 10px 0px 10px 20px;
+  }
+  footer .legal a.creative-commons {
+    margin-left: 23%;
   }
 
-  .footer-logos {
+  footer .footer-logos {
     padding-top:38px;
     float:none;
   }
 
-  .footer-logos a {
-    display:inline-block!important;
-    background:none!important;
+  footer .footer-logos a {
+    display:inline-block;
+    background:none;
   }
 
-  .footer-logos img {
-    margin-left:20px;
+  footer .footer-logos img {
+    margin-left: 0px;
   }
 
   .logo-footer {
     float:none;
     position:relative;
-    left:31px
   }
 
   .idl-badge {
     float:none;
     position: relative;
-    right: 113px;
-    top: 100px;
+    margin-left: -20px;
   }
 }

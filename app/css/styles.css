@@ -2774,9 +2774,16 @@ ul.social-links li a {
   line-height: 20px;
 }
 
-.legal a {
-  display:inline-block!important;
-  padding: 10px 0px 10px 20px!important;
+footer .legal a {
+  display:inline-block;
+  padding: 10px 0px 10px 20px;
+  float: left;
+}
+footer .legal a.legal-links{
+  margin-top: -3px;
+}
+footer .legal a.creative-commons {
+  display: block !important;
 }
 
 .footer-logos {
