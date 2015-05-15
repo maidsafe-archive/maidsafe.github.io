@@ -14,7 +14,7 @@ var scroll2 = $('.section2 .main-content').offset().top - 400;
 var scroll3 = $('.section3 .main-content').offset().top - 400;
 
 // detect side-menu rotation and section count
-function checkPosition(scrollp, stopped) {
+var checkPosition = function(scrollp, stopped) {
   if (scrollp < scroll1) {
     degreeRotate = 0;
     sectionCount = 0;
@@ -31,22 +31,22 @@ function checkPosition(scrollp, stopped) {
     degreeRotate = -150;
     sectionCount = 4;
   }
-}
+};
 
 // rotate the menu and menu-items in opposite directions
-function menuTransform(oTransValue, nTransValue) {
+var menuTransform = function(oTransValue, nTransValue) {
   $('#side-menu').animateRotate(oTransValue, nTransValue, 1000, 'linear', function() {
     return;
   });
   $('.menu-item').animateRotate(-(oTransValue), -(nTransValue), 1000, 'linear', function() {
     return;
   });
-}
+};
 
 // to be called by top or side menus (scrolling nav)
 (function() {
   /* jshint unused:false */
-  function clickChange(clickRotate, scrollTo, menuShow, topMenu) {
+  var clickChange = function(clickRotate, scrollTo, menuShow, topMenu) {
     var scrollTarget = $(scrollTo).offset().top - 80;
     if (topMenu) {
       topClicking = true;
@@ -65,7 +65,7 @@ function menuTransform(oTransValue, nTransValue) {
     if (clickRotate !== 0) {
       $(menuShow + ' .active').css('display', 'block');
     }
-  }
+  };
 })();
 
 // rotates any object
