@@ -1347,6 +1347,17 @@ Get Involved Page Styles
   padding:0 40px 0 0;
 }
 
+.tech-stack{
+  margin:0 auto;
+  display: block;
+}
+.dev-notice{
+  font-family: 'OpenSansItalic';
+  background-color: #ff9783;
+  padding:5px 10px;
+  border-radius: 3px;
+}
+
 /*******************************************************************************
 
 Core Developer Page Styles
