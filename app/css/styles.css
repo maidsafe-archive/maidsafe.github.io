@@ -1351,6 +1351,13 @@ Get Involved Page Styles
   margin:0 auto;
   display: block;
 }
+.tech-stack-text{
+  font-family: 'OpenSansSemibold';
+}
+.tech-stack-subtext{
+  font-family: 'OpenSansItalic';
+  text-align: center;
+}
 .dev-notice{
   font-family: 'OpenSansItalic';
   background-color: #ff9783;
