@@ -87,62 +87,86 @@ var paigeBio = 'While working towards a BFA in Interrelated Media from Massachus
   'within technology. She currently co-organizes the largest bitcoin meetup in the US in San Francisco' +
   ' and fills various roles at MaidSafe with a focus on community, communication and web development.  ';
 var displayBio;
+
 $(document).ready(function() {
   $('#boss').click(function() {
-    displayBio(this, 'The Boss', bossBio, null, null);
-  });
+        displayBio(this, 'The Boss', bossBio, null, null);
+      }
+    );
+
   $('#david').click(function() {
-    displayBio(this, 'David Irvine', davidBio, 'metaquestions', 1);
-  });
+        displayBio(this, 'David Irvine', davidBio, 'metaquestions', 1);
+      }
+    );
   $('#fraser').click(function() {
-    displayBio(this, 'Fraser Hutchison', fraserBio, null, null);
-  });
+        displayBio(this, 'Fraser Hutchison', fraserBio, null, null);
+      }
+    );
   $('#qi').click(function() {
-    displayBio(this, 'Qi Ma', qiBio, null, null);
-  });
+        displayBio(this, 'Qi Ma', qiBio, null, null);
+      }
+    );
   $('#prakash').click(function() {
-    displayBio(this, 'Chandra Prakash', prakashBio, null, null);
-  });
+        displayBio(this, 'Chandra Prakash', prakashBio, null, null);
+      }
+    );
   $('#ben').click(function() {
-    displayBio(this, 'Benjamin Bollen', benBio, null, null);
-  });
+        displayBio(this, 'Benjamin Bollen', benBio, null, null);
+      }
+    );
   $('#mahmoud').click(function() {
-    displayBio(this, 'Mahmoud Moadeli', mahmoudBio, null, null);
-  });
+        displayBio(this, 'Mahmoud Moadeli', mahmoudBio, null, null);
+      }
+    );
   $('#ross').click(function() {
-    displayBio(this, 'Ross Muir', rossBio, 'RosscoMuir', null);
-  });
+        displayBio(this, 'Ross Muir', rossBio, 'RosscoMuir', null);
+      }
+    );
   $('#viv').click(function() {
-    displayBio(this, 'Viv Rajkumar', vivBio, null, null);
-  });
+        displayBio(this, 'Viv Rajkumar', vivBio, null, null);
+      }
+    );
   $('#pod').click(function() {
-    displayBio(this, 'Safe Pod', podBio, null, null);
-  });
+        displayBio(this, 'Safe Pod', podBio, null, null);
+      }
+    );
   $('#niall').click(function() {
-    displayBio(this, 'Niall Douglas', niallBio, null, null);
-  });
+        displayBio(this, 'Niall Douglas', niallBio, null, null);
+      }
+    );
   $('#peter').click(function() {
-    displayBio(this, 'Peter Jankuliak', peterBio, null, null);
-  });
+        displayBio(this, 'Peter Jankuliak', peterBio, null, null);
+      }
+    );
   $('#lee').click(function() {
-    displayBio(this, 'Lee Clagett', leeBio, null, null);
-  });
+        displayBio(this, 'Lee Clagett', leeBio, null, null);
+      }
+    );
+
   $('#shona').click(function() {
-    displayBio(this, 'Shona Oldham', shonaBio, 'shonalot', null);
-  });
+        displayBio(this, 'Shona Oldham', shonaBio, 'shonalot', null);
+      }
+    );
+
   $('#justine').click(function() {
-    displayBio(this, 'Justine McLevy', justineBio, 'JustineMcLevy', null);
-  });
+        displayBio(this, 'Justine McLevy', justineBio, 'JustineMcLevy', null);
+      }
+    );
   $('#linda').click(function() {
-    displayBio(this, 'Linda Rose', lindaBio, null, null);
-  });
+        displayBio(this, 'Linda Rose', lindaBio, null, null);
+      }
+    );
+
   $('#nick').click(function() {
-    displayBio(this, 'Nick Lambert', nickBio, 'N1ckLambert', null);
-  });
+        displayBio(this, 'Nick Lambert', nickBio, 'N1ckLambert', null);
+      }
+    );
   $('#paige').click(function() {
-    displayBio(this, 'Paige Peterson', paigeBio, 'ioptio', null);
-  });
+        displayBio(this, 'Paige Peterson', paigeBio, 'ioptio', null);
+      }
+    );
 });
+
 displayBio = function(obj, name, bio, twitter, wp) {
   if (!$(obj).hasClass('icon-active')) {
     $('div.team-map').children('.icon-active').removeClass('icon-active');
@@ -151,10 +175,10 @@ displayBio = function(obj, name, bio, twitter, wp) {
   $('.profile-info h2').replaceWith('<h2>' + name + '</h2>');
   $('.profile-info p').replaceWith('<p>' + bio + '</p>');
   $('.profile-twitter').addClass('hidden');
-  if (twitter != null) {
+  if (twitter !== null) {
     $('.twitter-' + twitter).removeClass('hidden');
   }
-  if (wp == null) {
+  if (wp === null) {
     if (!$('.profile-wp').hasClass('hidden')) {
       $('.profile-wp').addClass('hidden');
     }
