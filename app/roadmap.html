@@ -7,92 +7,97 @@ keywords: Project SAFE Roadmap
 includes: ['roadmap.html']
 ---
 <div class="container-12" >
-  {% include html/overview_side_panel.html %}
+  {% include html/overview_side_panel.html %}  
   <div class="grid-9 main-content" id="viewer">
-    <div class="backwards hidden" id="top-back"><img src="/img/roadmap/back.png" Alt="back" /><p>Back to Project SAFE Roadmap</p></div>
-    <h1>Project SAFE Road Map</h1>
-    <p>Currently we are working through Testnet 2.<br>
-      View the various stages of development in more detail... </p>
-    <div class="roadmap container">
-      <div id="testnet1" class="roadmap-stage">
-        <h2>Test Network 1</h2>
+      <h1>Roadmap</h1>
+      <div class="box_holder">
+          <div class="box box_one">
+              <h2>Dev Bundle 1 - What's Included?</h2>
+              <ul>
+                  <li>
+                      Cross Platform (Windows, OSX, Linux) desktop Installers
+                  </li>
+                  <li>
+                      Network (Crust, Routing and Vaults), running on external nodes
+                  </li>
+                  <li>
+                      Remote client access and account creation
+                  </li>
+                  <li>
+                      Simple vaults - LAN only
+                  </li>
+                  <li>
+                      Initial Farming Rate data storage mechanism
+                  </li>
+                  <li>
+                      Communication through TCP
+                  </li>
+                  <li>
+                      NFS REST API exposing persistent remote storage
+                  </li>
+              </ul>
+          </div>
+          <div class="box box_two">
+              <h2 >Dev Bundle 2 - What's Included?</h2>
+              <ul >
+                  <li >
+                      Testing safecoin: Farming rate completion enabling measurement of algorithms
+                  </li>
+                  <li >
+                      Farming attempt (farm safecoins for GET requests)
+                  </li>
+                  <li >
+                      POSIX API
+                  </li>
+                  <li >
+                      MPID (Public open drive and messaging)
+                  </li>
+                  <li >
+                      UTP Communication - enabling addition of community run vaults to the network
+                  </li>
+                  <li >
+                      App Launcher
+                  </li>
+                  <li >
+                      Sample UI based Apps commence
+                  </li>
+              </ul>
+          </div>
       </div>
-      <div id="testnet2" class="roadmap-stage">
-        <h2>Test Network 2</h2>
+      <div class="roadmap_holder">
+          <img id="normal" alt="roadmap" src="img/roadmap/roadmap_thumbnail.png" style="width:100%"/>
+          <img id="hover" alt="roadmap" src="img/roadmap/thumbnail_hover.png" style="width:100%;display:none"/>
       </div>
-      <div id="testnet3" class="roadmap-stage">
-        <h2>Test Network 3</h2>
-      </div>
-      <div id="betalaunch" class="roadmap-stage">
-        <h2>BETA Launch</h2>
-      </div>
-    </div>
-    <div class="testnet0 phase-group hidden container">
-      <div class="backwards"><img src="/img/roadmap/back.png" Alt="back" /><p>Back to Project SAFE Roadmap</p></div>
-    </div>
-    <div class="testnet1 phase-group hidden container">
-      <div class="bullet start active"><div class="bullet-icon"></div><h2>Test Network 1</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Initial test of networking at scale across continents and various latencies</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Test data deduplication</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Refactor/Improvement of self encryption library</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Proved autonomous account creation and data storage</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Begin RUDP v2 design to increase network efficiency and enable standardisation with aim of inclusion into Boost (C++ library)</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Drive version 2 to allow significant improvements in drive capability to progress NFS API</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Create network visualiser to allow public to see network in real time</h2></div>
-      <div class="bullet end active"><div class="bullet-icon"></div><h2>Test Network 2</h2></div>
-      <div class="backwards"><img src="/img/roadmap/back.png" Alt="back" /><p>Back to Project SAFE Roadmap</p></div>
-    </div>
-    <div class="testnet2 phase-group hidden container">
-      <div class="bullet start active"><div class="bullet-icon"></div><h2>Test Network 2</h2></div>
-      <div class="bullet complete long1"><div class="bullet-icon"></div><h2>Reworking of all vault accounts to reduce account transfer, memory requirements and ability to handle much higher churn levels</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Commencement of JSON friendly Network File System interface</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Drive version 2.0 completion</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>RUDP version 1 bug fixes and improvements</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Account transfer simplification to handle higher churn levels</h2></div>
-      <div class="bullet complete long2"><div class="bullet-icon"></div><h2>Advances in routing group and quorum for security levels well beyond network size and make sybil attacks inordinately difficult</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Refactor code for quid pro quo working making way for safecoin</h2></div>
-      <div class="bullet complete"><div class="bullet-icon"></div><h2>Enhance Network Visualiser to enable real time debugging and tracking of test messages</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Provision of cross platform Virtual File System and improved user API</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Introduction of public name registration</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Implement messenger / mail system</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Provision of continuous delivery of installers</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Refactor of routing to include secure data dispersal algorithms</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Routing to handle data synchronisation for vault and user level messages</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Initial apps - Desktop Drive, Messaging</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>User introduction to development process (Jira/testnets/presentations/video conferences)</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Docker container formalisation in QA stream</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Establish Safe App Launcher</h2></div>
-      <div class="bullet end idle"><div class="bullet-icon"></div><h2>Test Network 3</h2></div>
-      <div class="backwards"><img src="/img/roadmap/back.png" Alt="back" /><p>Back to Project SAFE Roadmap</p></div>
-    </div>
-    <div class="testnet3 phase-group hidden container">
-      <div class="bullet start idle"><div class="bullet-icon"></div><h2>Test Network 3</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Implement test safecoin</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Investigate and implement pluggable applications</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>User testing of installers </h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Implement device discovery to allow headless farmer units</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Continued release of example applications</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Completion of JSON friendly Network File System interface</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Progress mesh networking stack inclusion</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>RUDP version 2 completion</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Service based approach to networking components (allows selection of various communication protocols (TCP/UDP etc.))</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Start farming test safecoin</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>End of free test space - data dropped (test safecoin required for access)</h2></div>
-      <div class="bullet end idle"><div class="bullet-icon"></div><h2>Beta Launch</h2></div>
-      <div class="backwards"><img src="/img/roadmap/back.png" Alt="back" /><p>Back to Project SAFE Roadmap</p></div>
-    </div>
-    <div class="betalaunch phase-group hidden container">
-      <div class="bullet start idle"><div class="bullet-icon"></div><h2>Beta Launch</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Test msafe and safecoin conversions</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Smart contracts API</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Digitally signed document management</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Account transfer extended to handle much higher churn levels</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Increase penalties for nodes not following rules (active banning and relocation)</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Search engine platform capabilities (not the engine itself, only the ability to easily create one or integrate with existing indexes)</h2></div>
-      <div class="bullet progress"><div class="bullet-icon"></div><h2>Safecoin</h2></div>
-      <div class="bullet end idle"><div class="bullet-icon"></div><h2>Sleep</h2></div>
-      <div class="backwards"><img src="/img/roadmap/back.png" Alt="back" /><p>Back to Project SAFE Roadmap</p></div>
-    </div>
-    <div id="tech-roadmap"><p>See our <a href='https://maidsafe.atlassian.net/secure/Dashboard.jspa?selectPageId=10800' target='_blank'>Jira activity stream</a> for live task updates.</p></div>
   </div>
+</div>
+<div id="overlay" style="position: fixed;display:none;background:rgba(0,0,0, .6);top:0px;left:0px;right:0px;bottom:0px;z-index:900"></div>
+<div id="wrapper" style="position: fixed; top:6%; left:3%; right: 3%; bottom:10%; display:none; box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.55);z-index: 999;background-color: #f9f9f9">
+    <div id="large" style="position:relative;background-image:url('img/roadmap/full_roadmap.png'); background-repeat: no-repeat;background-size: 100% 100%;height:100%;">
+    </div>
+    <a title="Close" id="close_btn" href="javascript:;" style="position: absolute;
+          top: 11px;
+          right: 15px;
+          width: 29px;
+          height: 29px;
+          cursor: pointer;
+          z-index: 8040;
+          background-image: url('/img/roadmap/close.png');"></a>
+
+        <a title="Zoom-In" id="zoom-in" href="javascript:;" style="position: absolute;
+              bottom: 20px;
+              right: 90px;
+              width: 50px;
+              height: 50px;
+              cursor: pointer;
+              z-index: 8040;
+              background-image: url('/img/roadmap/zoom_in.png');"></a>
+      <a title="Zoom-Out" id="zoom-out" href="javascript:;" style="position: absolute;
+            bottom: 20px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 8040;
+            background-image: url('/img/roadmap/zoom_out.png');"></a>
+
 </div>
