@@ -8,63 +8,103 @@ includes: ['roadmap.html']
 ---
 <div class="container-12" >
   {% include html/overview_side_panel.html %}
+  <style type="text/css">
+    .box_holder { width: 100%; margin: 30px 0px}
+    .box {
+        padding: 2%;
+        width: 43.35%;
+        border: 2px solid;
+        height: 300px;
+        float: left;
+    }
+    .box_one {
+        background-color: #e6f4fc;
+        color:#99ADC4;
+    }
+    .box_one h2 {
+        margin-top: 0px;
+        color:#2D4C79;
+    }
+    .box_one ul li {
+        color:#4E6A90 !important;
+    }
+    .box_two {
+        background-color: #dce1f9;
+        color:#99ADC4;
+        border-color: #575780;
+        margin-left: 30px;
+    }
+    .box_two h2 {
+        margin-top: 0px;
+        color:#49638D;
+    }
+    .box_two ul li {
+        color:#62789F !important;
+    }
+    .roadmap_holder {
+        width: 100%;
+    }
+    .roadmap_holder img {
+        margin-top: 30px
+    }
+  </style>
   <div class="grid-9 main-content" id="viewer">
       <h1>Roadmap</h1>
-      <div class="grid-12" style="padding:2%">
-          <div class="grid-5" style="padding:2%;border:2px solid #375580;height: 285px; background-color: #e6f4fc;color:#99ADC4">
-              <h2 style="margin-top:0px;color:#2D4C79">Dev Bundle 1 - What's Included?</h2>
-              <ul style="color:#4E6A90">
-                  <li style="color:#4E6A90">
+      <div class="box_holder">
+          <div class="box box_one">
+              <h2>Dev Bundle 1 - What's Included?</h2>
+              <ul>
+                  <li>
                       Cross Platform (Windows, OSX, Linux) desktop Installers
                   </li>
-                  <li style="color:#4E6A90">
+                  <li>
                       Network (Crust, Routing and Vaults), running on external nodes
                   </li>
-                  <li style="color:#4E6A90">
+                  <li>
                       Remote client access and account creation
                   </li>
-                  <li style="color:#4E6A90">
+                  <li>
                       Simple vaults - LAN only
                   </li>
-                  <li style="color:#4E6A90">
+                  <li>
                       Initial Farming Rate data storage mechanism
                   </li>
-                  <li style="color:#4E6A90">
+                  <li>
                       Communication through TCP
                   </li>
-                  <li style="color:#4E6A90">
+                  <li>
                       NFS REST API exposing persistent remote storage
                   </li>
               </ul>
           </div>
-          <div class="grid-5" style="padding:2%;border:2px solid #575780;height: 285px; background-color: #dce1f9">
-              <h2 style="margin-top:0px; color:#49638D">Dev Bundle 2 - What's Included?</h2>
-              <ul style="color:#62789F">
-                  <li style="color:#62789F">
+          <div class="box box_two">
+              <h2 >Dev Bundle 2 - What's Included?</h2>
+              <ul >
+                  <li >
                       Testing safecoin: Farming rate completion enabling measurement of algorithms
                   </li>
-                  <li style="color:#62789F">
-                      Farmming attempt (farm safecoins for GET requests)
+                  <li >
+                      Farming attempt (farm safecoins for GET requests)
                   </li>
-                  <li style="color:#62789F">
+                  <li >
                       POSIX API
                   </li>
-                  <li style="color:#62789F">
+                  <li >
                       MPID (Public open drive and messaging)
                   </li>
-                  <li style="color:#62789F">
+                  <li >
                       UTP Communication - enabling addition of community run vaults to the network
                   </li>
-                  <li style="color:#62789F">
+                  <li >
                       App Launcher
                   </li>
-                  <li style="color:#62789F">
+                  <li >
                       Sample UI based Apps commence
                   </li>
               </ul>
           </div>
       </div>
-      <div class="grid-12">
+      <div class="roadmap_holder">
           <img id="normal" src="img\roadmap\roadmap_thumbnail.png" style="width:100%"/>
           <img id="hover" src="img\roadmap\thumbnail_hover.png" style="width:100%;display:none"/>
       </div>
