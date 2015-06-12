@@ -20,12 +20,9 @@ $(document).ready(function() {
         thumbnail.hide();
         hover.show();
     });
-    thumbnail.mouseleave(function() {
+    hover.mouseleave(function() {
         thumbnail.show();
         hover.hide();
-    });
-    thumbnail.click(function() {
-        // show large
     });
 
     // overlay
@@ -37,6 +34,7 @@ $(document).ready(function() {
       overlay.fadeToggle();
       zoom_region.panzoom("resetZoom");
     };
+    hover.click(toggle);
     $('#normal').click(toggle);
     $('#close_btn').click(toggle);
     overlay.click(toggle);
