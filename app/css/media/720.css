@@ -627,10 +627,11 @@ Header Styles
   }
 
 
-  /******* Libraries Platform Page Styles ********/
+  /******* Roadmap ********/
 
-  a.moreinfo div {
-    font-size:11px;
+  
+  #roadmap .bundle-boxes > div,#roadmap .bundle-boxes{
+    min-height: 508px;
   }
 
   /******* Libraries Page Styles ********/

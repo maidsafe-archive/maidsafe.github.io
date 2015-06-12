@@ -8,34 +8,59 @@ includes: ['roadmap.html']
 ---
 <div class="container-12" >
   {% include html/overview_side_panel.html %}
-  <div class="grid-9 main-content" id="viewer">
+  <div class="grid-9 main-content">
     <h1>Roadmap</h1>
-    <div id="roadmap-highlights">
-     <!--  <div class="bundle1-box">
-        <ul>Dev Bundle 1 - What's included?
-          <li>Cross platform (Windows, OSX, Linux) desktop installers</li>
-          <li>Network (Crust, routing and vaults) running on external nodes</li>
-          <li>Remote client access and account creation</li>
-          <li>Simple vaults - LAN only</li>
-          <li>Initial Farming Rate data storage mechanism</li>
-          <li>Communication through TCP</li>
-          <li>NFS REST API exposing persistent remote storage</li>
-        </ul>
-      </div>
-      <div class="bundle2-box">
-        <ul>Dev Bundle 2 - What's included?
-          <li>Testing safecoin: Farming rate completion enabling measurement of algorithms</li>
-          <li>Test safecoin distribution with farming</li>
-          <li>POSIX API</li>
-          <li>MPID (public open drive and messaging)</li>
-          <li>UTP communication - enabling addition of community run vaults to the network</li>
-          <li>App launcher</li>
-          <li>Sample UI based apps commence</li>
-        </ul>
+    <div id="highlights">
+      <!-- <div class="bundle-tabs">
+        <div class="tab-wrapper">
+          <div class="bundle1-tab">
+            <div class="bundle1-dot"></div>
+            <p>Dev Bundle 1</p>
+            <div class="bundle1-caret"></div>
+          </div>
+          <div class="bundle2-tab">
+            <div class="bundle2-dot"></div>
+            <p>Dev Bundle 2</p>
+            <div class="bundle2-caret"></div>
+          </div>
+        </div>
       </div> -->
+      <div class="bundle-boxes">
+        <div class="bundle1-box">
+          <p>Dev Bundle 1 - What's included?</p>
+          <ul>
+            <li>Cross platform (Windows, OSX, Linux) desktop installers</li>
+            <li>Network (Crust, routing and vaults) running on external nodes</li>
+            <li>Remote client access and account creation</li>
+            <li>Simple vaults - LAN only</li>
+            <li>Initial Farming Rate data storage mechanism</li>
+            <li>Communication through TCP</li>
+            <li>NFS REST API exposing persistent remote storage</li>
+          </ul>
+        </div>
+        <div class="bundle2-box">
+          <p>Dev Bundle 2 - What's included?</p>
+          <ul>
+            <li>Testing safecoin: Farming rate completion enabling measurement of algorithms</li>
+            <li>Test safecoin distribution with farming</li>
+            <li>POSIX API</li>
+            <li>MPID (public open drive and messaging)</li>
+            <li>UTP communication - enabling addition of community run vaults to the network</li>
+            <li>App launcher</li>
+            <li>Sample UI based apps commence</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div id="makeMeScrollable">
-      <img src="/img/roadmap.png" alt="Demo image" id="field" class='roadmap-flat'/>
+    <div class="thumbnail">
+      <a id="roadmap-popup" href="#"><img src="/img/roadmap/roadmap-flat.png" alt="" class="responsive" /></a>
+      <div class="thumbnail-overlay"></div>
+    </div>
+    <div class="overlay"></div>
+    <div id="big-roadmap">
+      <a title="ZoomIn" class="zoom-in" href="javascript:;"></a>
+      <a title="ZoomOut" class="zoom-out" href="javascript:;"></a>
+      <a title="Close" class="close_btn" href="javascript:;"></a>
     </div>
   </div>
 </div>
