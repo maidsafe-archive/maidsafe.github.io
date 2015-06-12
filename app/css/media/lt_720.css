@@ -261,7 +261,7 @@
     margin-bottom:10px;
   }
 
-  #team .leftnav-shell, #roadmap .leftnav-shell{
+  #team .leftnav-shell{
     display:none;
   }
 
@@ -719,38 +719,10 @@ ul.leftnav li ul li a {
 
   /*********** Roadmap Page Styles **************/
 
-  #roadmap #viewer {width:98%;}
-
-  div.roadmap{
-    width:540px;
-  }
-
-  #roadmap p{font-size: 14px;}
-  /*
-.roadmap-stage {
-	width:90px;
-	height:90px;
-}
-
-.roadmap-stage h2{
-	font-size: 18px;
-}*/
-
-  .roadmap-stage p{
-    margin-top: 0px;
-  }
-
-
-  #testnet1{top:35px;left: 15px;}
-  #testnet2{top:265px;left: 147px;}
-  #testnet3{top:35px;left: 277px;}
-  #betalaunch{top:265px;left: 407px;}
-
-  .bullet{height:40px;}
-  .bullet-icon {
-    width: 42px;
-    height: 40px;
-    padding-right: 10px;
+  #roadmap .bundle-boxes > div,#roadmap .bundle-boxes{
+    width: 100%;
+    min-height: auto;
+    margin: 0;
   }
 
   /*********** Features Page Styles *************/

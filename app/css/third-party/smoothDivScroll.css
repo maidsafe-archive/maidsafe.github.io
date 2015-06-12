@@ -3,6 +3,9 @@
 	height: 580px;
 	position: relative;
 }
+#roadmap #makeMeScrollable{
+	height: 1150px;
+}
 
 #makeMeScrollable div.scrollableArea img {
 	position: relative;

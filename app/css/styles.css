@@ -1447,94 +1447,163 @@ Roadmap Page Styles
 
 *******************************************************************************/
 
-div.roadmap {
-  background-image: url("/img/roadmap/roadmap.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 540px;
-  height: 380px;
+
+#roadmap h1{margin:0 0 10px 0;}
+#roadmap .bundle1-dot{
+  display:inline-block;
+  background: url(../img/roadmap/bundle1-dot.png);
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+}
+#roadmap .bundle2-dot{
+  display: inline-block;
+  background: url(../img/roadmap/bundle2-dot.png);
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+}
+
+#roadmap #highlights {
+  width: 100%;
+}
+#roadmap .bundle-tabs {
+  width: 100%;
+  float: none;
+  display: inline-block;
+}
+#roadmap .tab-wrapper{
+  float: right;
+}
+#roadmap .tab-wrapper > div{
+  display: inline-block;
+  width: 150px;
+}
+#roadmap .tab-wrapper p{
+  display: inline-block;
+}
+#roadmap .bundle1-caret{
+  display:inline-block;
+  background: url(../img/roadmap/bundle1-caret.png);
+  background-size: 19px 11px;
+  width: 19px;
+  height: 11px;
+}
+#roadmap .bundle2-caret{
+  display: inline-block;
+  background: url(../img/roadmap/bundle2-caret.png);
+  background-size: 19px 11px;
+  width: 19px;
+  height: 11px;
+}
+#roadmap .bundle1-tab p, #roadmap .bundle1-box p, #roadmap .bundle1-box li{
+  color:#255682;
+  font-family: 'OpenSansSemibold';
+}
+#roadmap .bundle2-tab p, #roadmap .bundle2-box p, #roadmap .bundle2-box li{
+  color:#3e4670;
+  font-family: 'OpenSansSemibold';
+}
+#roadmap .bundle-boxes p{
+  font-size: 16px;
+  padding: 20px 0 0 20px;
+}
+#roadmap .bundle-boxes ul{
+  padding:10px 20px 20px 20px;
+  margin-bottom: 0;
+}
+#roadmap .bundle-boxes > div,#roadmap .bundle-boxes{
+  display: inline-block;
+  min-height: 400px;
+}
+#roadmap .bundle-boxes > div{
+  width: 48%;
+}
+#roadmap .bundle1-box{
+  background-color: #e6f4fc;
+  border:solid 2px #255682;
+  margin-right: 1%;
+  float: left;
+}
+#roadmap .bundle2-box{
+  background-color: #aab4f7;
+  border:solid 2px #3e4670;
+  margin-left: 1%;
+}
+.thumbnail{
+  margin-top: 20px;
   position: relative;
 }
-.roadmap-stage {
+.thumbnail-overlay{
+  height: 100%;
+  width: 100%;
+  background: url(../img/roadmap/roadmap-overlay.png);
+  background-size: 100% auto;
   position: absolute;
-  display: block;
-  width:120px;
-  height:120px;
-  color:#fff;
+  top:0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
-
-.roadmap-stage h2{
-  margin:0;
-  text-align: center;
-  font-size: 24px;
-  font-family: 'OpenSansLight';
-  color: inherit;
+.thumbnail-overlay:hover {
+  opacity: 1;
 }
-
-//#roadmap #viewer > p{font-size: 1px;}
-#roadmap #viewer > h1{margin:0 0 10px 0;}
-
-.roadmap-stage:hover {
-  color: #808080;
+#roadmap #big-roadmap {
+  background: #f9f9f9;
+  position: fixed;
+  top:5%;
+  left:10%;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.55);
+  display: none;
+  width:80%;
+  height:90%;
+  background:#fff url(../img/roadmap/roadmap-flat.png) no-repeat center center;
+  background-size: 100%;
+  z-index: 8000;
+  cursor: move;
+}
+#roadmap .close_btn {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  cursor: hand;
+  z-index: 8040;
+  background-image: url(../img/roadmap/close.png);
 }
-
-#testnet1{top:35px;left: 15px;}
-#testnet2{top:265px;left: 147px;}
-#testnet3{top:35px;left: 277px;}
-#betalaunch{top:265px;left: 407px;}
-
-.bullet{
-  height:50px;
-  display: table;
-}
-
-.bullet h2{
-  margin:0;
-  display: inline-block;
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 14px;
-}
-.complete h2, .progress h2{
-  font-family: 'OpenSansRegular';
-}
-
-.end{margin-bottom: 15px;}
-
-
-.bullet-icon {
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 52px;
-  height: 50px;
-  display: block;
-  float: left;
-  padding-right: 10px;
-}
-.backwards {color:#5593D7;}
-.backwards:hover {
-  color: #808080;
+#roadmap .zoom-in{
+  position: absolute;
+  bottom: 20px;
+  right: 160px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
-  cursor: hand;
+  z-index: 8040;
+  background: url(../img/roadmap/zoom-in.png);
 }
-.backwards img{
-  float:left;
-  padding-right: 10px;
+#roadmap .zoom-out{
+  position: absolute;
+  bottom: 20px;
+  right: 60px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 8040;
+  background: url(../img/roadmap/zoom-out.png);
+  opacity: .5;
 }
-.backwards p{
-  color: inherit;
+#roadmap .overlay {
+  position: fixed;
+  background: rgba(0,0,0,.3);
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: none;
 }
-
-div.start.active .bullet-icon{ background-image: url("/img/roadmap/start_active.png");}
-div.start.idle .bullet-icon{ background-image: url("/img/roadmap/start_idle.png");}
-div.complete .bullet-icon{ background-image: url("/img/roadmap/complete.png");}
-div.progress .bullet-icon{ background-image: url("/img/roadmap/progress.png");}
-div.end.active .bullet-icon{ background-image: url("/img/roadmap/end_active.png");}
-div.end.idle .bullet-icon{ background-image: url("/img/roadmap/end_idle.png");}
-
-#tech-roadmap p{padding:60px 0 0 0;}
 
 /*******************************************************************************
 
