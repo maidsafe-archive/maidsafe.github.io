@@ -1,5 +1,22 @@
 /* jshint undef: false*/
 
+// resize large map height
+var resizeHeightCheck = function() {
+  var map = $('#wrapper');
+  var mapWidth = map.css('width');
+  var stMapWidth = mapWidth.split('px');
+  var mapHeight = stMapWidth[0] * 0.505;
+  map.css('height', mapHeight);
+};
+// update matrix edge on roadmap
+var mapMatrixFix = function(isResizing) {
+  var map = $('#large');
+  map.panzoom('resetDimensions');
+  if (isResizing) {
+    map.panzoom('resetPan');
+  }
+};
+
 $(document).ready(function() {
   var thumbnail = $('#normal');
   var hover = $('#hover');
@@ -20,6 +37,7 @@ $(document).ready(function() {
     map.fadeToggle();
     overlay.fadeToggle();
     zoomableRegion.panzoom('resetZoom');
+    resizeHeightCheck();
   };
   hover.click(toggle);
   thumbnail.click(toggle);
@@ -29,7 +47,8 @@ $(document).ready(function() {
   // panzoom
   $('#large').panzoom({
     contain: 'invert',
-    minScale: 1,
+    minScale: 0,
+    rangeStep: 0.01,
     $zoomIn: $('#zoom-in').on('click', function(e) {
       e.preventDefault(); zoomableRegion.panzoom('zoom');
     }),
@@ -37,4 +56,11 @@ $(document).ready(function() {
       e.preventDefault(); zoomableRegion.panzoom('zoom', true);
     })
   });
+  $('#large').on('panzoomzoom', mapMatrixFix(false));
+});
+
+// for the window resize
+$(window).resize(function() {
+  resizeHeightCheck();
+  mapMatrixFix(true);
 });

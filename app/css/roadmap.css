@@ -24,7 +24,7 @@ ul {
     background-color: #dce1f9;
     color:#99ADC4;
     border-color: #575780;
-    margin-left: 30px;
+    margin-left: 29px;
 }
 .box_two h2 {
     margin-top: 0px;
@@ -47,4 +47,8 @@ ul li:before {
 #large {
     cursor: -webkit-grab !important;
     cursor: -moz-grab !important;
+}
+
+footer {
+padding-bottom: 50px;
 }
