@@ -688,8 +688,15 @@ Header Styles
     margin: 2px -100px;
   }
 
-  /*********** Press Page Styles *************/
-
+  /*********** Roadmap Page Styles *************/
+  #roadmap .box{
+    width:auto;
+    float: none;
+  }
+  #roadmap .box_two{
+    margin-left: 0;
+    margin-top: 10px;
+  }
   /************* Footer Styles ***************/
   .legal {
     width:58%;
