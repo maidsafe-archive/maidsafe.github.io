@@ -56,7 +56,7 @@ $(document).ready(function() {
       e.preventDefault(); zoomableRegion.panzoom('zoom', true);
     })
   });
-  $panzoom.on('panzoomzoom', function(e, panzoom, scale, opts){
+  $panzoom.on('panzoomzoom', function(){
     mapMatrixFix(false);
   });
 });
