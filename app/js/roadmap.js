@@ -10,8 +10,8 @@ var resizeHeightCheck = function() {
 };
 // update matrix edge on roadmap
 var mapMatrixFix = function(isResizing) {
-  var map = $('#large');
-  map.panzoom('resetDimensions');
+  var $map = $('#large');
+  $map.panzoom('resetDimensions');
   if (isResizing) {
     map.panzoom('resetPan');
   }
@@ -45,7 +45,7 @@ $(document).ready(function() {
   overlay.click(toggle);
 
   // panzoom
-  $('#large').panzoom({
+  var $panzoom = $('#large').panzoom({
     contain: 'invert',
     minScale: 0,
     rangeStep: 0.01,
@@ -56,7 +56,9 @@ $(document).ready(function() {
       e.preventDefault(); zoomableRegion.panzoom('zoom', true);
     })
   });
-  $('#large').on('panzoomzoom', mapMatrixFix(false));
+  $panzoom.on('panzoomzoom', function(e, panzoom, scale, opts){
+    mapMatrixFix(false);
+  });
 });
 
 // for the window resize
