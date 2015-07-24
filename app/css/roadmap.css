@@ -16,7 +16,7 @@
 }
 .box_one h2 {
     margin-top: 0px;
-    color:#2D4C79;
+    color:#49638D;
 }
 ul {
     margin-bottom: 15px !important;
@@ -32,9 +32,22 @@ ul {
 }
 .box_two h2 {
     margin-top: 0px;
-    color:#49638D;
+    color:#2D4C79;
 }
 .box_two ul li {
+    color:#255682 !important;
+}
+.box_three {
+    background-color: #d7f4de;
+    color:#99ADC4;
+    border-color: #587f58;
+    margin: 29px 0 0 29px;
+}
+.box_three h2 {
+    margin-top: 0px;
+    color:#49638D;
+}
+.box_three ul li {
     color:#255682 !important;
 }
 .roadmap_holder {
