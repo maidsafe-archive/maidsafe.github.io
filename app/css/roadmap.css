@@ -5,14 +5,18 @@
 }
 .box {
     padding: 2%;
-    width: 43.35%;
     border: 2px solid;
     height: auto;
+}
+.boxes_left{
     float: left;
+    width: 49%;
 }
 .box_one {
     background-color: #e6f4fc;
     color:#99ADC4;
+    float: left;
+    margin-top: 4%;
 }
 .box_one h2 {
     margin-top: 0px;
@@ -24,11 +28,14 @@ ul {
 .box_one ul li {
     color:#255682 !important;
 }
+.boxes_right {
+    float: right;
+    width: 49%;
+}
 .box_two {
     background-color: #dce1f9;
     color:#99ADC4;
     border-color: #575780;
-    margin-left: 29px;
 }
 .box_two h2 {
     margin-top: 0px;
@@ -41,7 +48,7 @@ ul {
     background-color: #d7f4de;
     color:#99ADC4;
     border-color: #587f58;
-    margin: 29px 0 0 29px;
+    margin-top: 4%;
 }
 .box_three h2 {
     margin-top: 0px;
@@ -66,7 +73,10 @@ ul li:before {
     cursor: -webkit-grab !important;
     cursor: -moz-grab !important;
 }
-
+p {
+    padding: 5px;
+    margin: 0;
+}
 footer {
 padding-bottom: 50px;
 }
