@@ -21,11 +21,11 @@ $(document).ready(function() {
   var thumbnail = $('#normal');
   var hover = $('#hover');
   thumbnail.mouseenter(function() {
-    thumbnail.hide();
+    // thumbnail.hide();
     hover.show();
   });
   hover.mouseleave(function() {
-    thumbnail.show();
+    // thumbnail.show();
     hover.hide();
   });
 
@@ -47,7 +47,7 @@ $(document).ready(function() {
   // panzoom
   var $panzoom = $('#large').panzoom({
     contain: 'invert',
-    minScale: 0,
+    minScale: 1,
     rangeStep: 0.01,
     $zoomIn: $('#zoom-in').on('click', function(e) {
       e.preventDefault(); zoomableRegion.panzoom('zoom');
