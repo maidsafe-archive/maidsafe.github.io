@@ -689,13 +689,12 @@ Header Styles
   }
 
   /*********** Roadmap Page Styles *************/
-  #roadmap .box{
+/*  #roadmap .box{
     width:auto;
     float: none;
-  }
-  #roadmap .box_two{
-    margin-left: 0;
-    margin-top: 10px;
+  }*/
+  #roadmap .box_one{
+    padding-bottom: 80px;
   }
   /************* Footer Styles ***************/
   .legal {
