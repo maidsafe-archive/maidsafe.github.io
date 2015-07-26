@@ -7,16 +7,12 @@
     padding: 2%;
     border: 2px solid;
     height: auto;
-}
-.boxes_left{
-    float: left;
-    width: 49%;
+    width: 45%;
 }
 .box_one {
     background-color: #e6f4fc;
     color:#99ADC4;
     float: left;
-    margin-top: 4%;
 }
 .box_one h2 {
     margin-top: 0px;
@@ -28,14 +24,11 @@ ul {
 .box_one ul li {
     color:#255682 !important;
 }
-.boxes_right {
-    float: right;
-    width: 49%;
-}
 .box_two {
     background-color: #dce1f9;
     color:#99ADC4;
     border-color: #575780;
+    float: right;
 }
 .box_two h2 {
     margin-top: 0px;
@@ -48,7 +41,8 @@ ul {
     background-color: #d7f4de;
     color:#99ADC4;
     border-color: #587f58;
-    margin-top: 4%;
+    margin-top: 1%;
+    float: right;
 }
 .box_three h2 {
     margin-top: 0px;
