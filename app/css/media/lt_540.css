@@ -1068,7 +1068,12 @@ ul.grid {
       width: 100%;
       margin: 30px 0px !important;      
   }*/
-  #roadmap .box_one{
-    padding-bottom: 55px;
+  #roadmap .boxes {
+    width:100%;
+    float:none;
+  }
+  #roadmap .box {
+    padding-bottom: 2%;
+    margin-bottom: 1%;
   }
 }
