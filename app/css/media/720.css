@@ -693,8 +693,8 @@ Header Styles
     width:auto;
     float: none;
   }*/
-  #roadmap .box_one{
-    padding-bottom: 80px;
+  #roadmap .box{
+    height: 530px;
   }
   /************* Footer Styles ***************/
   .legal {

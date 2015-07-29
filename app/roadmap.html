@@ -10,65 +10,61 @@ includes: ['roadmap.html']
   {% include html/overview_side_panel.html %}  
   <div class="grid-9 main-content" id="viewer">
       <h1>Roadmap</h1>
-      <p>**The network is under active development and the order and content of up and coming dev bundles is subject to change</p>
+      <p class="box box_disclaimer">**The network is under active development and the order and content of up and coming dev bundles is subject to change</p>
       <div class="box_holder">
-          <div class="boxes left">
-              <div class="box box_one">
-                  <h2>Dev Bundle 1 - What's Included?</h2>
-                  <ul>
-                      <li>
-                          Cross Platform (Windows, OSX, Linux) desktop Installers
-                      </li>
-                      <li>
-                          Network (Crust, Routing and Vaults), running on external nodes
-                      </li>
-                      <li>
-                          Remote client access and account creation
-                      </li>
-                      <li>
-                          Simple vaults - LAN only
-                      </li>
-                      <li>
-                          Initial Farming Rate data storage mechanism
-                      </li>
-                      <li>
-                          Communication through TCP
-                      </li>
-                      <li>
-                          NFS REST API exposing persistent remote storage
-                      </li>
-                  </ul>
-              </div>
+          <div class="box box_one">
+              <h2>Dev Bundle 1 - What's Included?</h2>
+              <ul>
+                  <li>
+                      Cross Platform (Windows, OSX, Linux) desktop Installers
+                  </li>
+                  <li>
+                      Network (Crust, Routing and Vaults), running on external nodes
+                  </li>
+                  <li>
+                      Remote client access and account creation
+                  </li>
+                  <li>
+                      Simple vaults - LAN only
+                  </li>
+                  <li>
+                      Initial Farming Rate data storage mechanism
+                  </li>
+                  <li>
+                      Communication through TCP
+                  </li>
+                  <li>
+                      NFS REST API exposing persistent remote storage
+                  </li>
+              </ul>
           </div>
-          <div class="boxes right">
-              <div class="box box_two">
-                  <h2 >Dev Bundle 2 - What's Included?</h2>
-                  <ul >
-                      <li >
-                          Testing safecoin: Farming rate completion enabling measurement of algorithms
-                      </li>
-                      <li >
-                          Farming attempt (farm safecoins for GET requests)
-                      </li>
-                      <li >
-                          UTP Communication - enabling addition of community run vaults to the network
-                      </li>
-                      <li >
-                          App Launcher
-                      </li>
-                  </ul>
-              </div>
-              <div class="box box_three">
-                  <h2 >Dev Bundle 3 - What's Included?</h2>
-                  <ul >
-                      <li >
-                          POSIX API
-                      </li>
-                      <li >
-                          MPID (Public open drive and messaging)
-                      </li>
-                  </ul>
-              </div>
+          <div class="box box_two">
+              <h2 >Dev Bundle 2 - What's Included?</h2>
+              <ul >
+                  <li >
+                      Testing safecoin: Farming rate completion enabling measurement of algorithms
+                  </li>
+                  <li >
+                      Farming attempt (farm safecoins for GET requests)
+                  </li>
+                  <li >
+                      UTP Communication - enabling addition of community run vaults to the network
+                  </li>
+                  <li >
+                      App Launcher
+                  </li>
+              </ul>
+          </div>
+          <div class="box box_three">
+              <h2 >Dev Bundle 3 - What's Included?</h2>
+              <ul >
+                  <li >
+                      POSIX API
+                  </li>
+                  <li >
+                      MPID (Public open drive and messaging)
+                  </li>
+              </ul>
           </div>
       </div>
       <div class="roadmap_holder">
@@ -78,7 +74,7 @@ includes: ['roadmap.html']
   </div>
 </div>
 <div id="overlay" style="position: fixed;display:none;background:rgba(0,0,0, .6);top:0px;left:0px;right:0px;bottom:0px;z-index:900"></div>
-<div id="wrapper" style="position: fixed; top:2%; left:15%; right:15%; height:100%; width:auto; display:none; box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.55);z-index: 999;background-color: #f9f9f9">
+<div id="wrapper" style="position: fixed; top:2%; left:5%; right:5%; height:100%; width:auto; display:none; box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.55);z-index: 999;background-color: #f9f9f9">
     <div id="large" style="position:relative;background-image:url('img/roadmap/full_roadmap.png'); background-repeat: no-repeat;background-size: auto 100%;height:100%;width:100%;">
     </div>
     <a title="Close" id="close_btn" href="javascript:;" style="position: absolute;

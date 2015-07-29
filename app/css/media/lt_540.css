@@ -1068,11 +1068,9 @@ ul.grid {
       width: 100%;
       margin: 30px 0px !important;      
   }*/
-  #roadmap .boxes {
-    width:100%;
-    float:none;
-  }
   #roadmap .box {
+    width: 100%;
+    height: auto;
     padding-bottom: 2%;
     margin-bottom: 1%;
   }

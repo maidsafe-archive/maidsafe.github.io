@@ -1,23 +1,24 @@
 .box_holder { 
-    overflow: auto;
     width: 100%; 
     margin: 30px 0px
 }
-.boxes {
-    height: 100%;
+.box {
+    padding: 1%;
+    border: 2px solid;
+    height: 410px;
+    width: 30%;
     display: inline-block;
-    width: 49%;
     vertical-align: top;
 }
-.box {
-    padding: 2%;
-    border: 2px solid;
-    height: auto;
+.box_disclaimer {
+    background-color: #F7DCDC;
+    border-color: #F4A6A6;
+    width: auto !important;
+    height: auto !important;
 }
 .box_one {
     background-color: #e6f4fc;
     color:#99ADC4;
-    padding-bottom: 19%;
 }
 .box_one h2 {
     margin-top: 0px;
@@ -45,7 +46,6 @@ ul {
     background-color: #d7f4de;
     color:#99ADC4;
     border-color: #587f58;
-    margin-top: 1%;
 }
 .box_three h2 {
     margin-top: 0px;

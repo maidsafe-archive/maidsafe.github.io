@@ -999,7 +999,8 @@ ul.leftnav li ul li a {
       margin: 30px 0px !important;      
   }
 */  
-#roadmap .box_one{
-    padding-bottom: 65px;
+#roadmap .box{
+    width: 29.5%;
+    height: 535px;
   }
 }
