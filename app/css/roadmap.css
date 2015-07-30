@@ -1,14 +1,20 @@
 .box_holder { 
-    overflow: auto;
     width: 100%; 
     margin: 30px 0px
 }
 .box {
-    padding: 2%;
-    width: 43.35%;
+    padding: 1%;
     border: 2px solid;
-    height: auto;
-    float: left;
+    height: 410px;
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+.box_disclaimer {
+    background-color: #F7DCDC;
+    border-color: #F4A6A6;
+    width: auto !important;
+    height: auto !important;
 }
 .box_one {
     background-color: #e6f4fc;
@@ -16,7 +22,7 @@
 }
 .box_one h2 {
     margin-top: 0px;
-    color:#2D4C79;
+    color:#49638D;
 }
 ul {
     margin-bottom: 15px !important;
@@ -28,13 +34,25 @@ ul {
     background-color: #dce1f9;
     color:#99ADC4;
     border-color: #575780;
-    margin-left: 29px;
+    margin: 0 4px;
 }
 .box_two h2 {
     margin-top: 0px;
-    color:#49638D;
+    color:#2D4C79;
 }
 .box_two ul li {
+    color:#255682 !important;
+}
+.box_three {
+    background-color: #d7f4de;
+    color:#99ADC4;
+    border-color: #587f58;
+}
+.box_three h2 {
+    margin-top: 0px;
+    color:#49638D;
+}
+.box_three ul li {
     color:#255682 !important;
 }
 .roadmap_holder {
@@ -53,7 +71,10 @@ ul li:before {
     cursor: -webkit-grab !important;
     cursor: -moz-grab !important;
 }
-
+p {
+    padding: 5px;
+    margin: 0;
+}
 footer {
 padding-bottom: 50px;
 }

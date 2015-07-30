@@ -5,7 +5,7 @@ var resizeHeightCheck = function() {
   var map = $('#wrapper');
   var mapWidth = map.css('width');
   var stMapWidth = mapWidth.split('px');
-  var mapHeight = stMapWidth[0] * 0.505;
+  var mapHeight = stMapWidth[0] * 0.552;
   map.css('height', mapHeight);
 };
 // update matrix edge on roadmap
@@ -13,7 +13,7 @@ var mapMatrixFix = function(isResizing) {
   var $map = $('#large');
   $map.panzoom('resetDimensions');
   if (isResizing) {
-    map.panzoom('resetPan');
+    $map.panzoom('resetPan');
   }
 };
 

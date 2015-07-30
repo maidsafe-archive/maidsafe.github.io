@@ -1064,9 +1064,17 @@ ul.grid {
   }
 
   /* For roadmap */
-  .box_holder .box {
+  /*.box_holder .box {
       width: 100%;
       margin: 30px 0px !important;      
+  }*/
+  #roadmap .box {
+    width: 97%;
+    height: auto;
+    padding-bottom: 2%;
+    margin-bottom: 1%;
   }
-
+  #roadmap .box_two{
+    margin: 0;
+  }
 }
