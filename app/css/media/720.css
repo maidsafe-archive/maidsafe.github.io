@@ -696,6 +696,9 @@ Header Styles
   #roadmap .box{
     height: 530px;
   }
+  #roadmap .box_two{
+    margin: 0;
+  }
   /************* Footer Styles ***************/
   .legal {
     width:58%;

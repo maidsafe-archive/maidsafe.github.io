@@ -999,8 +999,11 @@ ul.leftnav li ul li a {
       margin: 30px 0px !important;      
   }
 */  
-#roadmap .box{
+  #roadmap .box{
     width: 29.5%;
     height: 535px;
+  }
+  #roadmap .box_two{
+    margin: 0;
   }
 }
