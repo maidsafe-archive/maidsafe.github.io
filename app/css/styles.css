@@ -2215,6 +2215,12 @@ Careers Page Styles
 #careers p {
   margin-bottom:10px;
 }
+#careers h2{
+  margin-top: 20px;
+}
+#careers h2:first-child{
+  margin-top: 50px;
+}
 
 .vacancies {
   background-color: #FFFFFF;
