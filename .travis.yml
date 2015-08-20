@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+  - "0.12"
+
+branches:
+  except:
+    - master
+
+before_install: 
+  - npm install -g grunt-cli
+  - npm install -g bower
+  - rvm install 2.0.0
+  - gem install jekyll
+
+install:
+  - npm install
+  - bower install
+
+before_script: grunt build:dist
+
+script: grunt test
