@@ -1004,6 +1004,6 @@ ul.leftnav li ul li a {
     height: 535px;
   }
   #roadmap .box_two{
-    margin: 0;
+    margin: 0 4px;
   }
 }
