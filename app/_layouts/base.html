@@ -5,16 +5,12 @@ layout: default
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div id="container">
-  <div id="main">
-    {% include html/header.html %}
+{% include html/header.html %}
+<div class="root">
     {{ content }}
-  </div>
 </div>
 {% include html/footer.html %}
-{% include vendor.html %}
 {% include scripts.html %}
-
 {% for resource in page.includes %}
-  {% include {{resource}} %}
+{% include {{resource}} %}
 {% endfor %}

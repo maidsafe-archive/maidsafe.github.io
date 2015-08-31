@@ -1,69 +1,61 @@
+<!-- Site Header -->
 <header>
-  <div class="container-12 fw">
-    <div class="grid-4">
-      <a class="logo" href="/" title="Home"></a>
+  <div class="container header-base">
+    <!-- Site Logo -->
+    <div class="sec-1 col-xs-9 col-sm-5 col-md-3">
+      <div class="site-logo">
+        <a href="/"><img src="./img/homepage_logo.png" alt="MaidSafe Logo" /></a>
+      </div>
     </div>
-    <div class="grid-8">
-      <a class="menu-link" href="#menu">Menu</a>
-      <nav id="menu" class="menu">
-        <ul>
-          <li class="overview single-link"><a href="overview">overview</a>
-          <li class="has-submenu"><a href="#">overview</a>
-            <ul class="sub-menu">
-              <li><a href="overview">overview</a>
-              </li>
-              <li><a href="distributed-network-features">features</a>
-              </li>
-              <li><a href="applications">applications</a>
-              </li>
-              <li><a href="network-platform-licensing">licensing</a>
-              </li>
-              <li class="roadmap"><a href="roadmap">roadmap</a>
-              </li>
-              <li class="testimonials"><a href="testimonials">testimonials</a>
-              </li>
-              <li><a href="safecoin">safecoin</a>
-              </li>
-            </ul>
-          </li>
-          <li class="get-involved single-link"><a href="get-involved">get involved</a>
-          <li class="has-submenu"><a href="#">get involved</a>
-            <ul class="sub-menu">
-              <li><a href="get-involved">overview</a>
-              </li>
-              <li><a href="core-developers">core developers</a>
-              </li>
-              <li><a href="app-builders">app-builders</a>
-              </li>
-              <li><a href="farmers">farmers</a>
-              </li>
-              <li><a href="safe-pods">SAFE pods</a>
-              </li>
-            </ul>
-          </li>
-          <li class="documents"><a href="documents">documents</a></li>
-          <li class="company single-link"><a href="company-privacy-security-freedom">company</a>
-          <li class="has-submenu"><a href="#">company</a>
-            <ul class="sub-menu">
-              <li><a href="company-privacy-security-freedom">overview</a>
-              </li>
-              <li><a href="team">team</a>
-              </li>
-              <li><a href="careers">careers</a>
-              </li>
-              <li><a href="timeline">timeline</a>
-              </li>
-              <li><a href="assets">assets</a>
-              </li>
-              <li><a href="credits">credits</a>
-              </li>
-            </ul>
-          </li>
-          <li class="press single-link"><a href="press">press</a>
-          <li class="blog"><a href="http://blog.maidsafe.net/" target="_blank">blog</a>
-          </li>
-        </ul>
-      </nav>
+    <!-- #Site Logo -->
+    <!-- Navigation -->
+    <div class="sec-2 col-xs-3 col-sm-4 pull-right col-md-9">
+      <!-- Primary Navigation -->
+      <ul class="primary-nav hidden-xs hidden-sm">
+        {% for nav in page.primaryNav %}
+        {% if nav.link == 'default' %}
+        <li class="{{nav.select}}"><a href="#">{{nav.target}}</a></li>
+        {% else %}
+        <li class="{{nav.select}}"><a href="{{nav.link}}">{{nav.target}}</a></li>
+        {% endif %}
+        {% endfor %}
+        <li class="link-button"><a href="#">Download</a></li>
+      </ul>
+      <!-- #Primary Navigation -->
     </div>
+    <!-- #Navigation -->
+    <div id="secNavButton" class="secNavButton hidden-md hidden-lg"><a href="#">Menu</a></div>
   </div>
+
+  <!-- Secondary Navigation -->
+  <div id="secNav" class="secondary-nav hidden-md hidden-lg">
+    <ul class="nav-list">
+      {% for secondaryNav in page.secondaryNav %}
+      <li class="lg-txt">
+        {% if secondaryNav.href == 'default' %}
+        <a href="#">{{secondaryNav.target}}</a>
+        {% else %}
+        <a href="{{secondaryNav.href}}">{{secondaryNav.target}}</a>
+        {% endif %}
+
+        {% if secondaryNav.innerNav %}
+        <ul class="secondary-nav-sub">
+          {% for innerNav in secondaryNav.innerNav %}
+          <li>
+            {% if innerNav.link == 'default' %}
+            <a href="#">{{innerNav.name}}</a>
+            {% else %}
+            <a href="{{innerNav.link}}">{{innerNav.name}}</a>
+            {% endif %}
+
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <!-- #Secondary Navigation -->
 </header>
+<!-- #Site Header -->
