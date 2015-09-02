@@ -1,6 +1,4 @@
 /* jshint undef: false, unused: false */
-
-
 /**
  * Accordian
  */
@@ -15,9 +13,9 @@ var accordian = function() {
  * Typing effecting in banner
  */
 var typingEffect = function() {
-  var typeString = ['a secure', 'a free'];
+  var typeString = [ 'a secure', 'a free' ];
   var  i = 0;
-  var count = 0
+  var count = 0;
   var selectedText = '';
   var text = '';
   var timeout;
@@ -27,11 +25,11 @@ var typingEffect = function() {
     }
 
     if (i === 0) {
-      document.getElementById('typing').innerHTML = "";
+      document.getElementById('typing').innerHTML = '';
       clearTimeout(timeout);
       timeout = setTimeout(type, 1000);
       i++;
-      return
+      return;
     }
     selectedText = typeString[count];
     text = selectedText.slice(0, ++i);
@@ -44,7 +42,7 @@ var typingEffect = function() {
       return;
     }
     timeout = setTimeout(type, 200);
-  }
+  };
   type();
 };
 
