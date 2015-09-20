@@ -46,7 +46,32 @@ var typingEffect = function() {
   type();
 };
 
+
+// Header Change on Window Scroll
+var HeaderChangeOnScroll = function() {
+  $(window).on('scroll', function() {
+    if ($(this).scrollTop() > 10) {
+      $('header').addClass('invert');
+      return;
+    }
+    $('header').removeClass('invert');
+  });
+};
+
+var showMobPrimaryNav = function() {
+  $('#secNavButton').on('click', function() {
+    var target = $('#secNav');
+    if (target.hasClass('show')) {
+      target.removeClass('show');
+      return;
+    }
+    target.addClass('show');
+  });
+}
+
 $(function() {
   typingEffect();
   accordian();
+  HeaderChangeOnScroll();
+  showMobPrimaryNav();
 });

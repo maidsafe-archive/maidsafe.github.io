@@ -12,14 +12,11 @@
     <div class="sec-2 col-xs-3 col-sm-4 pull-right col-md-9">
       <!-- Primary Navigation -->
       <ul class="primary-nav hidden-xs hidden-sm">
-        {% for nav in page.primaryNav %}
-        {% if nav.link == 'default' %}
-        <li class="{{nav.select}}"><a href="#">{{nav.target}}</a></li>
-        {% else %}
-        <li class="{{nav.select}}"><a href="{{nav.link}}">{{nav.target}}</a></li>
-        {% endif %}
-        {% endfor %}
-        <li class="link-button"><a href="#">Download</a></li>
+        <li class=""><a href="#">Company</a></li>
+        <li class=""><a href="#">Safecoin</a></li>
+        <li class=""><a href="#">Support</a></li>
+        <li class=""><a href="#">Blog</a></li>
+        <li class="link-button"><a href="#">Download Client</a></li>
       </ul>
       <!-- #Primary Navigation -->
     </div>
@@ -30,30 +27,10 @@
   <!-- Secondary Navigation -->
   <div id="secNav" class="secondary-nav hidden-md hidden-lg">
     <ul class="nav-list">
-      {% for secondaryNav in page.secondaryNav %}
-      <li class="lg-txt">
-        {% if secondaryNav.href == 'default' %}
-        <a href="#">{{secondaryNav.target}}</a>
-        {% else %}
-        <a href="{{secondaryNav.href}}">{{secondaryNav.target}}</a>
-        {% endif %}
-
-        {% if secondaryNav.innerNav %}
-        <ul class="secondary-nav-sub">
-          {% for innerNav in secondaryNav.innerNav %}
-          <li>
-            {% if innerNav.link == 'default' %}
-            <a href="#">{{innerNav.name}}</a>
-            {% else %}
-            <a href="{{innerNav.link}}">{{innerNav.name}}</a>
-            {% endif %}
-
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </li>
-      {% endfor %}
+      <li class=""><a href="#">Company</a></li>
+      <li class=""><a href="#">Safecoin</a></li>
+      <li class=""><a href="#">Support</a></li>
+      <li class=""><a href="#">Blog</a></li>
     </ul>
   </div>
   <!-- #Secondary Navigation -->

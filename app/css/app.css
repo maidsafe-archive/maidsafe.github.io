@@ -2,7 +2,9 @@
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
+    background-color: #5593d7;
 }
+
 .wrapper {
   padding-left: 0;
   padding-right: 0;
@@ -11,6 +13,28 @@ body {
 .inner-wrapper {
   position: relative;
   margin: 0;
+}
+
+.transparent-strip-blue:before {
+  content: "";
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(85,147,215, 0.5);
+  z-index: 99;
+}
+
+.transparent-strip-black:before {
+  content: "";
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background-color: rgba(0,0,0, 0.5);
+  z-index: 99;
 }
 
 /* Banner Gradient */
@@ -43,8 +67,11 @@ body {
 /* Header */
 header {
   width: 100%;
-  background-color: #FFF;
-  position: relative;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 header .header-base {
@@ -89,7 +116,7 @@ header .sec-2 .primary-nav li {
 }
 
 header .sec-2 .primary-nav > li.selected a {
-  color: rgb(85, 147, 215);
+  /*color: rgb(85, 147, 215);*/
 }
 
 header .sec-2 .primary-nav > li:hover a {
@@ -98,15 +125,18 @@ header .sec-2 .primary-nav > li:hover a {
 
 header .sec-2 .primary-nav > li a {
   display: inline-block;
-  color: gray;
   text-decoration: none;
   font-size: 16px;
+  font-weight: 600;
   line-height: 24px;
   padding: 0 17px;
+  color: #FFF;
 }
 header .sec-2 .primary-nav > li.link-button {
-  background: rgb(85, 147, 215);
+  background-color: transparent;
+  border: 2px solid #FFF;
   border-radius: 5px;
+  line-height: 32px;
 }
 header .sec-2 .primary-nav > li.link-button a {
   color: white;
@@ -204,6 +234,30 @@ header .secondary-nav .nav-list > li .secondary-nav-sub {
 header .secondary-nav .nav-list > li .secondary-nav-sub.show {
   display: block;
 }
+
+header.invert {
+  background-color: #FFF;
+}
+
+header.invert .sec-2 .primary-nav > li a {
+  color: gray;
+}
+
+header.invert .sec-2 .primary-nav > li:hover a {
+  color: rgb(85, 147, 215);
+}
+
+header.invert .sec-2 .primary-nav > li.link-button {
+  background-color: rgb(85, 147, 215);
+}
+
+header.invert .sec-2 .primary-nav > li.link-button a {
+  color: #FFF;
+  border: 0;
+}
+header.invert .secNavButton a {
+  color: gray;
+}
 /* #Secondary Navigation */
 
 /* Secondary Navigation Button  */
@@ -257,7 +311,7 @@ footer {
 
 footer .brand-list {
   text-align: center;
-  background-color: rgb(85, 129, 178);
+  background-color: #5593d7;
 }
 
 footer .brand-list .brand-list-base {
@@ -375,11 +429,13 @@ footer .layer-3 ul li a{
 /* Home Banner */
 .home-banner {
   width: 100%;
-  height: 550px;
+  height: 520px;
   background-image: url(../img/home_page_banner.jpg);
   background-size: cover;
   color: white;
   background-position: center;
+  display: table;
+  position: relative;
 }
 
 .home-banner.two {
@@ -392,24 +448,25 @@ footer .layer-3 ul li a{
 
 .home-banner .home-banner-container {
   padding: 0 0 0 24px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .home-banner .label-1 {
-  margin-top: 118px;
-  font-size: 49px;
+  width: 100%;
+  text-align: center;
+  font-size: 59px;
   line-height: 59px;
+  font-weight: 600;
 }
 .home-banner .label-2 {
-  margin: 45px 0;
-  font-size: 24px;
-  line-height: 27px;
+  margin-top: 40px;
+  font-size: 29px;
+  font-weight: normal;
+  text-align: center;
 }
 
-.home-banner .label-3 {
-  font-size: 22px;
-  font-weight: bold;
-}
-.home-banner .label-3 a{
+.home-banner .label-2 a{
   color: #FFF;
   text-decoration: none;
 }
@@ -763,7 +820,7 @@ footer .layer-3 ul li a{
   height: 60px;
 }
 .typing.lg:after {
-  height: 50px;
+  height: 59px;
   top: 10px;
 }
 .typing:after {
@@ -791,3 +848,58 @@ footer .layer-3 ul li a{
   }
 }
 /* #Typing */
+
+/* Post 1 */
+.post-1 {
+  background-color: transparent;
+  width: 960px;
+  margin: 0 auto;
+  display: table;
+  color: white;
+  position: relative;
+}
+.post-1 .media {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+  text-align: center;
+}
+.post-1 .media img {
+  width: 80%;
+}
+.post-1 .content {
+  display: table-cell;
+  vertical-align: middle;
+  width: 480px;
+}
+.post-1 .content .title {
+  margin-top: 80px;
+  font-size: 38px;
+  line-height: 49px;
+  font-weight: normal;
+}
+
+.post-1 .content .p {
+  margin: 40px 0 0 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 27px;
+}
+.post-1 .foot {
+  margin: 40px 0 80px;
+}
+.post-1 .gost-button {
+  text-align: center;
+}
+.post-1 .gost-button a {
+  text-decoration: none;
+  color: #FFF;
+  border: 1px solid #FFF;
+  font-size: 18px;
+  line-height: 38px;
+  display: inline-block;
+  padding: 0 16px;
+  border-radius: 5px;
+}
+/* #Post 1 */
