@@ -46,9 +46,8 @@ var typingEffect = function() {
   type();
 };
 
-
 // Header Change on Window Scroll
-var HeaderChangeOnScroll = function() {
+var headerChangeOnScroll = function() {
   $(window).on('scroll', function() {
     if ($(this).scrollTop() > 10) {
       $('header').addClass('invert');
@@ -67,11 +66,11 @@ var showMobPrimaryNav = function() {
     }
     target.addClass('show');
   });
-}
+};
 
 $(function() {
   typingEffect();
   accordian();
-  HeaderChangeOnScroll();
+  headerChangeOnScroll();
   showMobPrimaryNav();
 });
