@@ -126,19 +126,6 @@
   }
   /* #Page Type 1 */
 
-  /* Banner Gradient */
-  .banner-gradian:after {
-    background: rgba(0,0,0,0.8);
-    background: -moz-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.5)), color-stop(100%, rgba(0,0,0,0)));
-    background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
-    background: -o-linear-gradient(bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
-    background: -ms-linear-gradient(bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
-    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#fefefe', GradientType=1 );
-  }
-  /* #Banner Gradient */
-
   /* POST 1 */
   .post-1 {
     width: 100%;
