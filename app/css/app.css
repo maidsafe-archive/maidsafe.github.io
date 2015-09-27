@@ -88,6 +88,17 @@ header .sec-1 .site-logo {
   position: relative;
 }
 
+header .sec-1 .site-logo .color-logo {
+  display: none;
+}
+
+header .sec-1 .site-logo.invert .gray-logo {
+  display: none;
+}
+header .sec-1 .site-logo.invert .color-logo {
+  display: block;
+}
+
 header .sec-1 .site-logo img {
   width: 150px;
   display: block;

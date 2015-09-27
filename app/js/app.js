@@ -51,6 +51,7 @@ var headerChangeOnScroll = function() {
   $(window).on('scroll', function() {
     if ($(this).scrollTop() > 10) {
       $('header').addClass('invert');
+      $('#site-logo').addClass('invert');
       $('#secNav').addClass('invert');
       if ($('#secNavButton').hasClass('selected')) {
         $('#secNavButton').addClass('invert');
@@ -58,6 +59,7 @@ var headerChangeOnScroll = function() {
       return;
     }
     $('header').removeClass('invert');
+    $('#site-logo').removeClass('invert');
     $('#secNav').removeClass('invert');
     $('#secNavButton').removeClass('invert');
   });
