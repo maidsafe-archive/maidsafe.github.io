@@ -26,14 +26,14 @@ body {
   z-index: 99;
 }
 
-.transparent-strip-black:before {
+.transparent-strip-top:before {
   content: "";
   width: 100%;
   height: 20px;
   position: absolute;
   top: -20px;
   left: 0;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0,0,0,0.3);
   z-index: 99;
 }
 
@@ -213,6 +213,10 @@ header .secondary-nav .nav-list > li {
 
 header .secondary-nav.invert .nav-list > li {
   background-color: #5593d7 !important;
+}
+
+header .secondary-nav .nav-list li:hover  {
+  background-color: rgb(224, 224, 224) !important;
 }
 
 header .secondary-nav.invert .nav-list > li a {
@@ -464,7 +468,7 @@ footer .layer-3 ul li a{
 }
 
 .home-banner.two {
-  background-image: url(../img/home_page_banner_2.jpg);
+  background-image: url(../img/Dollarphotoclub_85609842.jpg);
 }
 
 .home-banner.three {
