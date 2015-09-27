@@ -53,9 +53,7 @@ var headerChangeOnScroll = function() {
       $('header').addClass('invert');
       $('#site-logo').addClass('invert');
       $('#secNav').addClass('invert');
-      if ($('#secNavButton').hasClass('selected')) {
-        $('#secNavButton').addClass('invert');
-      }
+      $('#secNavButton').addClass('invert');
       return;
     }
     $('header').removeClass('invert');
