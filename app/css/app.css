@@ -520,6 +520,12 @@ footer .layer-3 ul li a{
   color: #FFF;
   text-decoration: none;
 }
+
+.home-banner .label-2 .icon {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
 /* #Home Banner */
 
 
