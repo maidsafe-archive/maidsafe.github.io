@@ -51,14 +51,25 @@ var headerChangeOnScroll = function() {
   $(window).on('scroll', function() {
     if ($(this).scrollTop() > 10) {
       $('header').addClass('invert');
+      $('#secNav').addClass('invert');
+      if ($('#secNavButton').hasClass('selected')) {
+        $('#secNavButton').addClass('invert');
+      }
       return;
     }
     $('header').removeClass('invert');
+    $('#secNav').removeClass('invert');
+    $('#secNavButton').removeClass('invert');
   });
 };
 
 var showMobPrimaryNav = function() {
   $('#secNavButton').on('click', function() {
+    if ($(this).hasClass('selected')) {
+      $(this).removeClass('selected');
+    } else {
+      $(this).addClass('selected');
+    }
     var target = $('#secNav');
     if (target.hasClass('show')) {
       target.removeClass('show');
