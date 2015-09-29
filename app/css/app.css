@@ -210,10 +210,12 @@ header .secondary-nav {
   font-size: 14px;
   position: absolute;
   width: 100%;
+  max-width: 240px;
   top: 100%;
-  left: 0;
+  right: 0;
   display: none;
   z-index: 99;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
 }
 
 header .secondary-nav.show {
@@ -228,6 +230,7 @@ header .secondary-nav .nav-list {
 
 header .secondary-nav .nav-list > li {
   background-color: #FFF;
+  list-style: none;
 }
 
 header .secondary-nav.invert .nav-list > li {
