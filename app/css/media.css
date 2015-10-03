@@ -356,17 +356,6 @@
   .secNavButton  {
     display: none;
   }
-  /* Inner Primary Navigation */
-  /*header .primary-nav-sub {
-    display: none;
-  }*/
-  /* #Inner Primary Navigation */
-
-  /* Secondary Navigation */
-  /*header .secondary-nav.show {
-    display: block !important;
-  }*/
-  /* Secondary Navigation */
 
   /* #Header */
   /* Left Side Menu */
@@ -375,12 +364,6 @@
     width: 100%;
   }
   /* #Left Side Menu */
-
-  /* Secondary Navigation Button  */
-  /*.secNavButton {
-    display: block !important;
-  }*/
-  /* #Secondary Navigation Button  */
 
   /* Safe Client*/
   .safe-client .title {
