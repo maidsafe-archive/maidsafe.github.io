@@ -344,20 +344,28 @@
   }
 
   /* Header */
+  header .sec-1 {
+    width: 25%;
+  }
+  header .sec-2 {
+    width: 75%;
+  }
   header .sec-2 .primary-nav {
+    display: block !important;
+  }
+  .secNavButton  {
     display: none;
   }
-
   /* Inner Primary Navigation */
-  header .primary-nav-sub {
+  /*header .primary-nav-sub {
     display: none;
-  }
+  }*/
   /* #Inner Primary Navigation */
 
   /* Secondary Navigation */
-  header .secondary-nav.show {
+  /*header .secondary-nav.show {
     display: block !important;
-  }
+  }*/
   /* Secondary Navigation */
 
   /* #Header */
@@ -369,9 +377,9 @@
   /* #Left Side Menu */
 
   /* Secondary Navigation Button  */
-  .secNavButton {
+  /*.secNavButton {
     display: block !important;
-  }
+  }*/
   /* #Secondary Navigation Button  */
 
   /* Safe Client*/
