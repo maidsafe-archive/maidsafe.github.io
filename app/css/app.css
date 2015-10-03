@@ -359,7 +359,7 @@ header.invert .secNavButton:after {
 /* Footer */
 footer {
   width: 100%;
-  background-color: rgb(41, 87, 137);
+  background-color: #1c6fad;
 }
 
 footer .brand-list {
@@ -434,6 +434,14 @@ footer .layer-2 .key-map .title{
   font-weight: bold;
 }
 
+footer .layer-2 .key-map.small {
+  width: 50% !important;
+}
+
+footer .layer-2 .key-map.large {
+  width: 100% !important;
+}
+
 footer .layer-2 .key-map .content .key-list {
   display: block;
   margin: 0;
@@ -454,14 +462,15 @@ footer .layer-2 .key-map .content .key-list li a {
   color: white;
   font-size: 14px;
   font-weight: 300;
+  text-decoration: none;
 }
 
 footer .layer-3 {
   margin-top: 63px;
 }
 footer .layer-3 ul {
-  margin: 0 0 24px;
-  padding: 0;
+  margin: 0;
+  padding: 0 16px 16px 0;
   display: block;
   width: 100%;
   text-align: right;
