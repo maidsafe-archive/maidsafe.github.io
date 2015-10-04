@@ -250,7 +250,19 @@ module.exports = function (grunt) {
             //'apple-touch*.png'
           ],
           dest: '<%= yeoman.dist %>'
-        }]
+        },
+        {
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/_bower_components/open-sans-fontface',
+          src: [
+            // Copy css imports from _bower_components.
+            // 'Open Sans fonts to dist/css folder'
+            'fonts/**/*'
+          ],
+          dest: '<%= yeoman.dist %>/css'
+        }
+      ]
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
       stageCss: {
