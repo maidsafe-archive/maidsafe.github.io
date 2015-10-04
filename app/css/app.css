@@ -915,6 +915,15 @@ footer .layer-3 ul li a{
   text-align: left;
 }
 
+.post-1 .content a {
+  color: white;
+  text-decoration: underline;
+}
+
+.post-1 .content a:hover {
+  color: white;
+}
+
 .post-1 .content .p {
   margin: 40px 0 0 0;
   padding: 0;
