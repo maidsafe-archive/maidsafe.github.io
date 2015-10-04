@@ -57,12 +57,25 @@ var typingEffect = function() {
 
 // Header Change on Window Scroll
 var headerChangeOnScroll = function() {
+  var exclude = ['company.html'];
+  var excludeFlag = false;
+  var currentPage = window.location.href.split('/').pop();
+  for (var i = 0; i < exclude.length; i++) {
+    if (exclude[i] == currentPage) {
+      excludeFlag = true;
+      break;
+    }
+  }
   $(window).on('scroll', function() {
     if ($(this).scrollTop() > 10) {
-      $('header').addClass('invert');
+      $('header').addClass('invert onScroll');
       $('#site-logo').addClass('invert');
       $('#secNav').addClass('invert');
       $('#secNavButton').addClass('invert');
+      return;
+    }
+    $('header').removeClass('onScroll');
+    if (excludeFlag) {
       return;
     }
     $('header').removeClass('invert');

@@ -2,7 +2,11 @@
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
-    background-color: #5593d7;
+    background-color: white;
+}
+
+.home-page {
+  background-color: #5593d7;
 }
 
 .wrapper {
@@ -281,6 +285,9 @@ header .secondary-nav .nav-list > li .secondary-nav-sub.show {
 
 header.invert {
   background-color: #FFF;
+}
+
+header.onScroll {
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
