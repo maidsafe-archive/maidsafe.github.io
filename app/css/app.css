@@ -468,6 +468,7 @@ footer .layer-2 .key-map .content .key-list li a {
 footer .layer-3 {
   margin-top: 63px;
 }
+
 footer .layer-3 ul {
   margin: 0;
   padding: 0 16px 16px 0;
@@ -475,11 +476,13 @@ footer .layer-3 ul {
   width: 100%;
   text-align: right;
 }
+
 footer .layer-3 ul li {
   display: inline-block;
   list-style: none;
-  padding: 0 8px;
+  padding-left: 16px;
 }
+
 footer .layer-3 ul li a{
   color: white;
   font-size: 14px;
@@ -539,52 +542,6 @@ footer .layer-3 ul li a{
   display: inline-block;
 }
 /* #Home Banner */
-
-
-/* Safe Client */
-.safe-client {
-  background-color: white;
-  text-align: center;
-}
-
-.safe-client .title {
-  margin-top: 106px;
-  font-weight: 300;
-  line-height: 62px;
-  font-size: 49px;
-  color: #5b94d9;
-}
-
-.safe-client .desc {
-  line-height: 36px;
-  color: #5e5e5e;
-  font-weight: 300;
-  margin-top: 34px;
-}
-
-.safe-client .media {
-  margin: 88px 0;
-}
-
-.safe-client .media img {
-  height: 200px;
-}
-
-.safe-client .foot {
-  font-weight: normal;
-  margin-bottom: 106px;
-}
-
-.safe-client .foot a {
-  background-color: #5692d8;
-  padding: 8px 16px;
-  line-height: 24px;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-}
-/* #Safe Client */
 
 /* Inner Page Banner */
 .page-banner {
