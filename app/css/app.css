@@ -896,10 +896,10 @@ footer .layer-3 ul li a{
   display: table-cell;
   vertical-align: middle;
   width: 50%;
-  text-align: center;
+  text-align: left;
 }
 .post-1 .media img {
-  width: 80%;
+  height: 410px;
 }
 .post-1 .content {
   display: table-cell;
@@ -908,9 +908,11 @@ footer .layer-3 ul li a{
 }
 .post-1 .content .title {
   margin-top: 80px;
+  margin-bottom: 0;
   font-size: 38px;
   line-height: 49px;
   font-weight: normal;
+  text-align: left;
 }
 
 .post-1 .content .p {
@@ -923,17 +925,20 @@ footer .layer-3 ul li a{
 .post-1 .foot {
   margin: 40px 0 80px;
 }
-.post-1 .gost-button {
+.post-1 .ghost-button {
   text-align: center;
 }
-.post-1 .gost-button a {
+.post-1 .ghost-button a {
   text-decoration: none;
   color: #FFF;
-  border: 1px solid #FFF;
+  border: 2px solid #FFF;
   font-size: 18px;
   line-height: 38px;
   display: inline-block;
   padding: 0 16px;
   border-radius: 5px;
+}
+.post-1.flip .media {
+  text-align: right;
 }
 /* #Post 1 */

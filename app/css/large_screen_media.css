@@ -4,8 +4,6 @@
   .post-1 {
     width: 1170px;
   }
-  .post-1 .media {
-  }
   .post-1 .media img  {
     width: 80%;
     margin: 0 auto;
@@ -16,7 +14,12 @@
   }
   .post-1 .content .title {
     margin-top: 80px;
-    text-align: center;
+    font-size: 44px;
+    line-height: 59px;
+  }
+  .post-1 .content .p {
+    font-size: 20px;
+    line-height: 27px;
   }
   /* #POST 1 */
   footer .brand-list .brand-list-base .sec-center {
