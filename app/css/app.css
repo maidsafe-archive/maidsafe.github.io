@@ -958,3 +958,10 @@ footer .layer-3 ul li a{
   text-align: right;
 }
 /* #Post 1 */
+
+/* Parallax Effect */
+.parallax-effect {
+  background-attachment: fixed;
+  background-position: 50% 0 !important;
+}
+/* #Parallax Effect */
