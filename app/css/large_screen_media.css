@@ -19,6 +19,9 @@
     text-align: center;
   }
   /* #POST 1 */
+
+  /* Footer */
+  /* Structure changes to single row */
   footer .brand-list .brand-list-base .sec-center {
     width: 274px;
     margin: 0 auto;
@@ -48,4 +51,5 @@
   footer .brand-list .brand-list-base .sec-right .brand-list-items {
     width: 224px;
   }
+  /* #Footer */
 }

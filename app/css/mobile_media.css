@@ -36,11 +36,6 @@
   /* Footer */
   /* Footer Branding structure changes */
   footer .brand-list .brand-list-items {
-    min-width: inherit !important;
-    width: 100%;
-  }
-
-  footer .brand-list .brand-list-base .brand-list-items.lg {
     width: 100%;
   }
 
@@ -49,6 +44,7 @@
     padding-right: 0;
     box-shadow: 0 2px 0 #1c6fad;
   }
+
   footer .brand-list .brand-list-base .sec-left {
     width: 100% !important;
     position: static;
@@ -56,10 +52,6 @@
     padding-right: 0;
   }
 
-  footer .brand-list .brand-list-base .sec-left .brand-list-items,
-  footer .brand-list .brand-list-base .sec-right .brand-list-items {
-    box-shadow: 0 2px 0 #1c6fad;
-  }
   footer .brand-list .brand-list-base .sec-right {
     width: 100% !important;
     position: static;
@@ -67,10 +59,20 @@
     padding-right: 0;
   }
 
+  footer .brand-list .brand-list-base .brand-list-items.lg {
+    width: 100%;
+  }
+
+  footer .brand-list .brand-list-base .sec-left .brand-list-items,
+  footer .brand-list .brand-list-base .sec-right .brand-list-items {
+    box-shadow: 0 2px 0 #1c6fad;
+  }
+
   /* Footer Keymap margin varies */
   footer .layer-2 {
     margin-top: 28px;
   }
+  
   /* #Footer */
 
   /* Page Banner */
