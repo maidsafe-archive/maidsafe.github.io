@@ -184,12 +184,32 @@
   .page-2 {
     width: 585px;
   }
+  .page-2 .page-2-media {
+    display: block;
+  }
+  .page-2 .page-2-media .media-src {
+    width: 480px;
+    margin: 0 auto;
+    display: block;
+  }
+  .page-2 .page-2-media .media-content {
+    width: 100%;
+    display: block;
+    padding-top: 40px;
+    padding-left: 24px;
+  }
   /* MaidSafe Team Banner height changes */
   .page-banner.maidsafe-team {
     height: 300px;
   }
   /* #MaidSafe Team Banner height changes */
   /* #Page 2 */
+
+  /* Page Banner */
+  .page-banner {
+    height: 300px;
+  }
+  /* #Page Banner */
 }
 
 
