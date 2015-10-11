@@ -78,10 +78,18 @@
   }
   /* #Safe Client*/
 
+  /* Page 1 */
+  .page-1 {
+    width: 585px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .page-1-base {
     width: 100%;
     margin: 0;
   }
+  /* #Page 1 */
 
   /* POST 1 */
   .post-1 {
@@ -209,7 +217,42 @@
   .page-banner {
     height: 300px;
   }
+  .page-banner.home-like {
+    height: 370px;
+  }
   /* #Page Banner */
+
+  /* Box 1 */
+  .box-1 .item:first-child {
+    width: 100%;
+    padding: 0;
+  }
+
+  .box-1 .item:nth-child(2),.box-1 .item:last-child  {
+    width: 50%;
+    padding: 30px 0 0 0;
+  }
+  .box-1 .item:nth-child(2) {
+    padding-right: 15px;
+  }
+  .box-1 .item:last-child {
+    padding-left: 15px;
+  }
+  /* #Box 1 */
+
+  /* Box 2 */
+  .box-2 .item {
+    float: left;
+  }
+  .box-2 .item:first-child {
+    padding-right: 16px;
+  }
+  .box-2 .item:last-child {
+    padding-left: 16px;
+  }
+  /* #Box 2 */
+
+
 }
 
 
