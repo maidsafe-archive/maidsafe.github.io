@@ -30,6 +30,14 @@
     z-index: 1;
   }
 
+  footer .brand-list .brand-list-base .brand-list-items.lg {
+    width: 274px;
+  }
+
+  footer .brand-list .brand-list-base .brand-list-items.lg .brand-logo {
+    max-width: 274px;
+  }
+
   footer .brand-list .brand-list-base .sec-left {
     width: 50%;
     position: absolute;
