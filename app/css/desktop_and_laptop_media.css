@@ -16,6 +16,8 @@
     float: right;
   }
 
+  /* Footer */
+  /* Structure changes to single row */
   footer .brand-list .brand-list-base .sec-center {
     width: 272px;
     margin: 0 auto;
@@ -26,7 +28,6 @@
 
   footer .brand-list .brand-list-base .sec-left {
     width: 50%;
-    position: absolute;
     left: 0;
     padding: 0;
     text-align: right;
@@ -35,10 +36,10 @@
 
   footer .brand-list .brand-list-base .sec-right {
     width: 50%;
-    position: absolute;
     right: 0;
     padding: 0;
     text-align: left;
     padding-left: 136px;
   }
+  /* #Footer */
 }
