@@ -22,12 +22,23 @@
     line-height: 27px;
   }
   /* #POST 1 */
+
+  /* Footer */
+  /* Structure changes to single row */
   footer .brand-list .brand-list-base .sec-center {
     width: 274px;
     margin: 0 auto;
     padding: 0;
     float: none;
     z-index: 1;
+  }
+
+  footer .brand-list .brand-list-base .brand-list-items.lg {
+    width: 274px;
+  }
+
+  footer .brand-list .brand-list-base .brand-list-items.lg .brand-logo {
+    max-width: 274px;
   }
 
   footer .brand-list .brand-list-base .sec-left {
@@ -51,4 +62,5 @@
   footer .brand-list .brand-list-base .sec-right .brand-list-items {
     width: 224px;
   }
+  /* #Footer */
 }
