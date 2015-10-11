@@ -301,7 +301,7 @@ header.invert .sec-2 .primary-nav > li.link-button a {
   color: #FFF;
 }
 header.invert .secNavButton {
-  color: gray;
+  color: #4C4C4C;
 }
 header.invert .secNavButton:after {
   background-image: url(../img/drop_arrow_high.svg);
@@ -321,6 +321,7 @@ header.invert .secNavButton:after {
   text-transform: lowercase;
   padding: 15px 16px 15px 0;
   text-align: center;
+  cursor: pointer;
 }
 
 .secNavButton.selected {
