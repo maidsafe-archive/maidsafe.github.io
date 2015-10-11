@@ -258,7 +258,7 @@ header .secondary-nav.invert .nav-list > li a {
 header .secondary-nav .nav-list > li a {
   width: 100%;
   height: 100%;
-  color: gray;
+  color: #4C4C4C;
   text-decoration: none;
   line-height: 48px;
   text-align: left;
@@ -326,7 +326,7 @@ header.invert .secNavButton:after {
 
 .secNavButton.selected {
   background-color: white;
-  color: gray;
+  color: #4C4C4C;
 }
 
 .secNavButton.selected:after {
