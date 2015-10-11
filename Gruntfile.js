@@ -261,8 +261,7 @@ module.exports = function (grunt) {
             'fonts/**/*'
           ],
           dest: '<%= yeoman.dist %>/css'
-        }
-      ]
+        }]
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
       stageCss: {
