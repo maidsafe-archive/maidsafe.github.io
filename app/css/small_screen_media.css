@@ -178,6 +178,18 @@
     width: 25%;
   }
   /* #Footer */
+
+  /* Page 2 */
+  /* content size changes */
+  .page-2 {
+    width: 585px;
+  }
+  /* MaidSafe Team Banner height changes */
+  .page-banner.maidsafe-team {
+    height: 300px;
+  }
+  /* #MaidSafe Team Banner height changes */
+  /* #Page 2 */
 }
 
 

@@ -150,4 +150,19 @@
     text-align: center;
   }
   /* #POST 1 */
+
+  /* Page 2 */
+  .page-2 {
+    width: 480px;
+  }
+  .page-2 .title {
+    font-size: 38px;
+    line-height: 49px;
+  }
+  /* #Page 2 */
+  /* MaidSafe Team Banner height changes */
+  .page-banner.maidsafe-team {
+    height: 300px;
+  }
+  /* #MaidSafe Team Banner height changes */
 }

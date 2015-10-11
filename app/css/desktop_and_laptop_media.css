@@ -42,4 +42,10 @@
     padding-left: 136px;
   }
   /* #Footer */
+
+  /* MaidSafe Team Banner height changes */
+  .page-banner.maidsafe-team {
+    height: 550px;
+  }
+  /* #MaidSafe Team Banner height changes */
 }
