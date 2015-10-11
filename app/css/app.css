@@ -301,7 +301,7 @@ header.invert .sec-2 .primary-nav > li.link-button a {
   color: #FFF;
 }
 header.invert .secNavButton {
-  color: gray;
+  color: #4C4C4C;
 }
 header.invert .secNavButton:after {
   background-image: url(../img/drop_arrow_high.svg);
@@ -321,6 +321,7 @@ header.invert .secNavButton:after {
   text-transform: lowercase;
   padding: 15px 16px 15px 0;
   text-align: center;
+  cursor: pointer;
 }
 
 .secNavButton.selected {
@@ -398,11 +399,10 @@ footer .brand-list .brand-list-base .sec-right {
 footer .brand-list .brand-list-base .brand-list-items {
   display: inline-block;
   text-align: center;
-  min-width: 167px;
 }
 
 footer .brand-list .brand-list-items:hover {
-    background-color: rgb(41, 87, 137);
+    background-color: #1c6fad;
 }
 
 footer .brand-list .brand-list-base .brand-list-items.lg {
@@ -444,11 +444,11 @@ footer .layer-2 .key-map .title{
 }
 
 footer .layer-2 .key-map.small {
-  width: 50% !important;
+  width: 50%;
 }
 
 footer .layer-2 .key-map.large {
-  width: 100% !important;
+  width: 100%;
 }
 
 footer .layer-2 .key-map .content .key-list {
@@ -460,11 +460,6 @@ footer .layer-2 .key-map .content .key-list {
 footer .layer-2 .key-map .content .key-list li {
   line-height: 24px;
   list-style: none;
-}
-
-footer .layer-2 .key-map .content .key-list li.blank {
-  width: 100%;
-  height: 24px;
 }
 
 footer .layer-2 .key-map .content .key-list li a {
