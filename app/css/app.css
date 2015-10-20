@@ -599,24 +599,27 @@ footer .layer-3 ul li a{
 
 /* Page 1 Layout */
 .page-1 {
-  margin-top: 90px;
-  margin-bottom: 150px;
+  margin-top: 80px;
+  margin-bottom: 80px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: white;
+  width: 960px;
 }
 .page-1 .title{
   color: #5b94d9;
   font-size: 49px;
-  line-height: 25px;
+  line-height: 59px;
   font-weight: 300;
-  margin-bottom: 36px;
+  margin: 0 0 40px 0;
 }
+
 .page-1 .p {
   width: 100%;
   display: block;
   font-size: 16px;
-  font-weight: 300;
+  line-height: 27px;
+  font-weight: normal;
   margin: 24px 0;
   text-align: justify;
   color: #808080;
@@ -629,7 +632,7 @@ footer .layer-3 ul li a{
   margin-bottom: 24px;
 }
 .page-1 .sub-title {
-  margin-top: 118px;
+  margin: 0;
   font-size: 24px;
   color: #808080;
 }
@@ -752,6 +755,7 @@ footer .layer-3 ul li a{
 /* Accordian */
 .accordian {
   width: 100%;
+  padding-bottom: 80px;
 }
 
 .accordian ul {
@@ -761,18 +765,40 @@ footer .layer-3 ul li a{
 
 .accordian ul li {
   list-style: none;
+  cursor: pointer;
 }
+
 .accordian ul li h3 {
   margin: 0;
   font-size: 24px;
+  line-height: 29px;
   font-weight: normal;
   color: #808080;
-  padding: 25px 20px 5px 8px;
+  padding: 18px 20px 5px 8px;
   background-color: #FFF;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 2px solid #CCC;
+  position: relative;
 }
+
+.accordian ul li h3:after {
+  content: "";
+  display: none;
+  width: 24px;
+  height: 18px;
+  background-image: url(../img/drop_arrow_high.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
 .accordian ul li:hover h3 {
   background-color: #EFEFEF;
+}
+
+.accordian ul li:hover h3::after {
+  display: block;
 }
 
 .accordian ul li p {
@@ -790,6 +816,12 @@ footer .layer-3 ul li a{
   color: #5b94d9;
   background-color: #EFEFEF;
 }
+
+.accordian ul li.active h3:after {
+  display: block;
+  transform: rotate(180deg);
+}
+
 .accordian ul li.active p {
   display: block;
 }
@@ -797,16 +829,26 @@ footer .layer-3 ul li a{
 
 /* box 1 */
 .box-1 {
-  margin: 48px 0;
-}
-.box-1 .item {
-  width: 280px;
-  display: inline-block;
+  margin: 80px 0;
 }
 
-.box-1 .item:nth-child(even) {
-  margin: 0 50px;
+.box-1 .item {
+  width: 33.33%;
+  display: inline-block;
+  float: left;
+  padding: 0 16px;
 }
+
+.box-1 .item:first-child {
+  padding-left: 0;
+  padding-right: 32px;
+}
+
+.box-1 .item:last-child {
+  padding-right: 0;
+  padding-left: 32px;
+}
+
 .box-1 .item .content {
   height: 140px;
   border-top-left-radius: 5px;
@@ -829,7 +871,8 @@ footer .layer-3 ul li a{
   margin: 0;
   font-size: 18px;
   line-height: 60px;
-  text-align: center;
+  padding: 0 16px;
+  text-align: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -846,10 +889,10 @@ footer .layer-3 ul li a{
   display: inline-block;
   padding: 0;
 }
-.box-2 .item:nth-child(odd) {
+.box-2 .item:first-child {
   padding-right: 25px;
 }
-.box-2 .item:nth-child(even) {
+.box-2 .item:last-child {
   padding-left: 25px;
 }
 .box-2 .item .content {
@@ -873,7 +916,9 @@ footer .layer-3 ul li a{
   margin: 0;
   font-size: 18px;
   line-height: 60px;
-  text-align: center;
+  padding: 0 16px;
+  font-weight: normal;
+  text-align: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
