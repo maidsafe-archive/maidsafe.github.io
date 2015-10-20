@@ -19,6 +19,10 @@ var typingEffect = function() {
   var selectedText = '';
   var text = '';
   var timeout;
+  var target = document.getElementById('typing');
+  if (!target) {
+    return;
+  }
   var type = function() {
     if (count === typeString.length) {
       count = 0;
@@ -33,7 +37,7 @@ var typingEffect = function() {
     }
     selectedText = typeString[count];
     text = selectedText.slice(0, ++i);
-    document.getElementById('typing').innerHTML = text;
+    target.innerHTML = text;
     if (text.length === selectedText.length) {
       count++;
       i = 0;

@@ -83,16 +83,14 @@ header {
 }
 
 header .header-base {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0 16px;
   position: relative;
 }
 header .sec-1 {
   padding: 0;
 }
 header .sec-1 .site-logo {
-  height: 80px;
-  padding-left: 24px;
+  height: 70px;
   position: relative;
 }
 
@@ -111,19 +109,24 @@ header .sec-1 .site-logo img {
   width: 150px;
   display: block;
   position: absolute;
-  bottom: 17px;
+  bottom: 18px;
 }
 
 header .sec-2 {
   text-align: left;
   padding: 0;
+  position: relative;
+  height: 70px;
 }
 
 /* Primary Navigation */
 header .sec-2 .primary-nav {
   display: block;
-  margin: 38px 0 0 0;
-  padding: 0 0 17px 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 16px;
+  right: 0;
   float: right;
 }
 
@@ -132,6 +135,8 @@ header .sec-2 .primary-nav li {
   display: inline-block;
   text-align: center;
   position: relative;
+  float: left;
+  margin-left: 40px;
 }
 
 header .sec-2 .primary-nav > li.selected a {
@@ -143,22 +148,23 @@ header .sec-2 .primary-nav > li:hover a {
 }
 
 header .sec-2 .primary-nav > li a {
-  display: inline-block;
+  display: block;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  line-height: 24px;
-  padding: 0 17px;
+  line-height: 32px;
+  padding: 0;
   color: #FFF;
 }
 header .sec-2 .primary-nav > li.link-button {
   background-color: transparent;
-  border: 2px solid #FFF;
   border-radius: 5px;
-  line-height: 32px;
+  border: 2px solid #FFF;
 }
 header .sec-2 .primary-nav > li.link-button a {
   color: white;
+  padding: 0 16px;
+  line-height: 30px;
 }
 /* #Primary Navigation */
 
@@ -215,7 +221,7 @@ header .secondary-nav {
   right: 0;
   display: none;
   z-index: 99;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 header .secondary-nav.show {
@@ -234,11 +240,15 @@ header .secondary-nav .nav-list > li {
 }
 
 header .secondary-nav.invert .nav-list > li {
-  background-color: #5593d7 !important;
+  background-color: #387fc7 !important;
 }
 
 header .secondary-nav .nav-list li:hover  {
-  background-color: rgb(224, 224, 224) !important;
+  background-color: #E0E0E0 !important;
+}
+
+header .secondary-nav.invert .nav-list li:hover  {
+  background-color: #5593d7 !important;
 }
 
 header .secondary-nav.invert .nav-list > li a {
@@ -248,7 +258,7 @@ header .secondary-nav.invert .nav-list > li a {
 header .secondary-nav .nav-list > li a {
   width: 100%;
   height: 100%;
-  color: gray;
+  color: #4C4C4C;
   text-decoration: none;
   line-height: 48px;
   text-align: left;
@@ -271,10 +281,11 @@ header .secondary-nav .nav-list > li .secondary-nav-sub.show {
 
 header.invert {
   background-color: #FFF;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 header.invert .sec-2 .primary-nav > li a {
-  color: gray;
+  color: #5593d7;
 }
 
 header.invert .sec-2 .primary-nav > li:hover a {
@@ -283,14 +294,14 @@ header.invert .sec-2 .primary-nav > li:hover a {
 
 header.invert .sec-2 .primary-nav > li.link-button {
   background-color: rgb(85, 147, 215);
+  border-color: rgb(85, 147, 215);
 }
 
 header.invert .sec-2 .primary-nav > li.link-button a {
   color: #FFF;
-  border: 0;
 }
 header.invert .secNavButton {
-  color: gray;
+  color: #4C4C4C;
 }
 header.invert .secNavButton:after {
   background-image: url(../img/drop_arrow_high.svg);
@@ -307,15 +318,15 @@ header.invert .secNavButton:after {
   color: white;
   font-size: 18px;
   font-weight: 600;
-  text-align: right;
   text-transform: lowercase;
-  padding: 15px 15px 15px 0;
+  padding: 15px 16px 15px 0;
   text-align: center;
+  cursor: pointer;
 }
 
 .secNavButton.selected {
   background-color: white;
-  color: gray;
+  color: #4C4C4C;
 }
 
 .secNavButton.selected:after {
@@ -330,7 +341,7 @@ header.invert .secNavButton:after {
 
 .secNavButton.selected.invert {
   color: white !important;
-  background-color: #5593d7 !important;
+  background-color: #387fc7 !important;
 }
 
 .secNavButton.selected.invert:after {
@@ -341,14 +352,13 @@ header.invert .secNavButton:after {
   content: "";
   position: absolute;
   top: 0;
-  right: 10px;
-  width: 20px;
+  right: 16px;
+  width: 12px;
   height: 100%;
   background-image: url(../img/menu_arrow_down.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 16px;
-  transition: transform 0.5s ease-out;
 }
 
 .secNavButton.active:after {
