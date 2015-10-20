@@ -10,7 +10,7 @@ var accordian = function() {
 };
 
 /**
- * Typing effecting in banner
+ * Typing effecting
  */
 var typingEffect = function() {
   var typeString = [ 'a secure', 'a free' ];
@@ -28,23 +28,28 @@ var typingEffect = function() {
       count = 0;
     }
 
+    // Initiation
     if (i === 0) {
       document.getElementById('typing').innerHTML = '';
       clearTimeout(timeout);
-      timeout = setTimeout(type, 1000);
+      timeout = setTimeout(type, 1500);
       i++;
       return;
     }
     selectedText = typeString[count];
     text = selectedText.slice(0, ++i);
     target.innerHTML = text;
+
+    // change Next word
     if (text.length === selectedText.length) {
       count++;
       i = 0;
       clearTimeout(timeout);
-      timeout = setTimeout(type, 1000);
+      timeout = setTimeout(type, 4000);
       return;
     }
+
+    // timing to type each word
     timeout = setTimeout(type, 200);
   };
   type();
@@ -52,12 +57,25 @@ var typingEffect = function() {
 
 // Header Change on Window Scroll
 var headerChangeOnScroll = function() {
+  var exclude = [ 'company.html' ];
+  var excludeFlag = false;
+  var currentPage = window.location.href.split('/').pop();
+  for (var i = 0; i < exclude.length; i++) {
+    if (exclude[i] === currentPage) {
+      excludeFlag = true;
+      break;
+    }
+  }
   $(window).on('scroll', function() {
     if ($(this).scrollTop() > 10) {
-      $('header').addClass('invert');
+      $('header').addClass('invert onScroll');
       $('#site-logo').addClass('invert');
       $('#secNav').addClass('invert');
       $('#secNavButton').addClass('invert');
+      return;
+    }
+    $('header').removeClass('onScroll');
+    if (excludeFlag) {
       return;
     }
     $('header').removeClass('invert');

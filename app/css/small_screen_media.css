@@ -89,34 +89,26 @@
     display: block;
   }
   .post-1 .media {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     width: 100%;
-    height: 340px;
     padding-top: 40px;
   }
   .post-1 .media img  {
-    width: 60%;
+    height: 360px;
     display: block;
     margin: 0 auto;
   }
   .post-1 .content {
     width: 100%;
     text-align: left;
+    padding-top: 340px;
   }
   .post-1 .content .title {
-    margin-top: 0;
+    margin: 0;
     text-align: center;
-  }
-  .post-1.flip {
-    position: relative;
-  }
-  .post-1.flip .media {
-    position: absolute;
-    top: -340px;
-  }
-  .post-1.flip .content {
-    margin-top: 340px;
-    display: block;
   }
   /* #POST 1 */
 
@@ -187,6 +179,18 @@
     width: 25%;
   }
   /* #Footer */
+
+  /* Page 2 */
+  /* content size changes */
+  .page-2 {
+    width: 585px;
+  }
+  /* MaidSafe Team Banner height changes */
+  .page-banner.maidsafe-team {
+    height: 300px;
+  }
+  /* #MaidSafe Team Banner height changes */
+  /* #Page 2 */
 }
 
 

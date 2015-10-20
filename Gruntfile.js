@@ -21,7 +21,7 @@ module.exports = function (grunt) {
   var CONFIG = {
     owner: 'maidsafe',
     repo: 'maidsafe.github.io',
-    baseBranch: 'next',
+    baseBranch: 'new_site',
     deployBranch: 'master'
   };
 
