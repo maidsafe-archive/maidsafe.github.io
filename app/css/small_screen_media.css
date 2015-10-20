@@ -27,8 +27,14 @@
   }
 
   /* Header */
+  header .sec-1 {
+    width: 25%;
+  }
+  header .sec-2 {
+    width: 75%;
+  }
   header .sec-2 .primary-nav {
-    display: none;
+    display: block !important;
   }
 
   /* Inner Primary Navigation */
@@ -39,7 +45,7 @@
 
   /* Secondary Navigation */
   header .secondary-nav.show {
-    display: block !important;
+    display: none !important;
   }
   /* Secondary Navigation */
 
@@ -53,7 +59,7 @@
 
   /* Secondary Navigation Button  */
   .secNavButton {
-    display: block !important;
+    display: none !important;
   }
   /* #Secondary Navigation Button  */
 
