@@ -1,31 +1,5 @@
 /* Less Than 1135px */
 @media screen and (min-width: 830px) and (max-width: 1134px){
-  /* Home Banner */
-  .home-banner {
-    height: 520px;
-  }
-
-  .home-banner .label-1 {
-    font-size: 49px;
-    font-weight: 600;
-  }
-
-  .home-banner .label-2 {
-    font-size: 29px;
-  }
-
-  /* #Home Banner */
-  .typing.lg {
-    line-height: 50px;
-  }
-  .typing.lg:after {
-    height: 49px;
-  }
-
-  .sub-page-title-opt {
-    display: block !important;
-  }
-
   /* Header */
   header .sec-1 {
     width: 25%;
@@ -37,95 +11,11 @@
     display: block !important;
   }
 
-  /* Inner Primary Navigation */
-  header .primary-nav-sub {
-    display: none;
-  }
-  /* #Inner Primary Navigation */
-
   /* Secondary Navigation */
   header .secondary-nav.show {
     display: none !important;
   }
-  /* Secondary Navigation */
-
   /* #Header */
-  /* Left Side Menu */
-  .left-side-menu-base {
-    display: none;
-    width: 100%;
-  }
-  /* #Left Side Menu */
-
-  /* Secondary Navigation Button  */
-  .secNavButton {
-    display: none !important;
-  }
-  /* #Secondary Navigation Button  */
-
-  /* Safe Client*/
-  .safe-client .title {
-    margin-top: 96px;
-  }
-
-  .safe-client .desc {
-    margin-top: 34px;
-  }
-
-  .safe-client .media {
-    margin: 70px 0;
-  }
-
-  .safe-client .foot {
-    margin-bottom: 80px;
-  }
-  .safe-client .foot span {
-    display: inline-block !important;
-  }
-  /* #Safe Client*/
-
-  /* Page 1 */
-  .page-1 {
-    width: 585px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .page-1-base {
-    width: 100%;
-    margin: 0;
-  }
-  /* #Page 1 */
-
-  /* POST 1 */
-  .post-1 {
-    width: 585px;
-    display: block;
-  }
-  .post-1 .media {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    padding-top: 40px;
-  }
-  .post-1 .media img  {
-    height: 360px;
-    display: block;
-    margin: 0 auto;
-  }
-  .post-1 .content {
-    width: 100%;
-    text-align: left;
-    padding-top: 340px;
-  }
-  .post-1 .content .title {
-    margin: 0;
-    text-align: center;
-  }
-  /* #POST 1 */
-
 
   /* Footer */
   /* Footer Branding structure changes */
@@ -186,48 +76,137 @@
     width: 25%;
     padding: 0;
   }
+
   footer .layer-2 .key-map.small {
     width: 25%;
   }
+
   footer .layer-2 .key-map.large {
     width: 25%;
   }
   /* #Footer */
+
+  /* Home Banner */
+  .home-banner {
+    height: 520px;
+  }
+
+  .home-banner .label-1 {
+    font-size: 49px;
+    font-weight: 600;
+  }
+
+  .home-banner .label-2 {
+    font-size: 29px;
+  }
+
+  /* #Home Banner */
+
+  /* Typing Effect */
+  .typing.lg {
+    line-height: 50px;
+  }
+
+  .typing.lg:after {
+    height: 49px;
+  }
+  /* #Typing Effect */
+
+  .sub-page-title-opt {
+    display: block !important;
+  }
+
+  /* Secondary Navigation Button  */
+  .secNavButton {
+    display: block !important;
+  }
+  /* #Secondary Navigation Button  */
+
+  /* Page 1 */
+  .page-1 {
+    width: 585px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .page-1-base {
+    width: 100%;
+    margin: 0;
+  }
+  /* #Page 1 */
 
   /* Page 2 */
   /* content size changes */
   .page-2 {
     width: 585px;
   }
+
   .page-2 .page-2-media {
     display: block;
   }
+
   .page-2 .page-2-media .media-src {
     width: 480px;
     margin: 0 auto;
     display: block;
   }
+
   .page-2 .page-2-media .media-content {
     width: 100%;
     display: block;
     padding-top: 40px;
     padding-left: 24px;
   }
+  /* #Page 2 */
+
   /* MaidSafe Team Banner height changes */
   .page-banner.maidsafe-team {
     height: 300px;
   }
   /* #MaidSafe Team Banner height changes */
-  /* #Page 2 */
 
   /* Page Banner */
   .page-banner {
     height: 300px;
   }
+
   .page-banner.home-like {
     height: 370px;
   }
   /* #Page Banner */
+
+  /* POST 1 */
+  .post-1 {
+    width: 585px;
+    display: block;
+  }
+
+  .post-1 .media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding-top: 40px;
+  }
+
+  .post-1 .media img  {
+    height: 360px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .post-1 .content {
+    width: 100%;
+    text-align: left;
+    padding-top: 340px;
+  }
+
+  .post-1 .content .title {
+    margin: 0;
+    text-align: center;
+  }
+  /* #POST 1 */
 
   /* Box 1 */
   .box-1 .item:first-child {
@@ -239,9 +218,11 @@
     width: 50%;
     padding: 30px 0 0 0;
   }
+
   .box-1 .item:nth-child(2) {
     padding-right: 15px;
   }
+
   .box-1 .item:last-child {
     padding-left: 15px;
   }
@@ -251,15 +232,15 @@
   .box-2 .item {
     float: left;
   }
+
   .box-2 .item:first-child {
     padding-right: 16px;
   }
+
   .box-2 .item:last-child {
     padding-left: 16px;
   }
   /* #Box 2 */
-
-
 }
 
 

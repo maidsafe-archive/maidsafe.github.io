@@ -1,4 +1,4 @@
-/* jshint undef: false, unused: false */
+/* global $: false, document: false, window: false */
 /**
  * Accordian
  */

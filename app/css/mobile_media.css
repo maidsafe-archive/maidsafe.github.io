@@ -1,37 +1,10 @@
 /* Media Less than 480px */
 @media only screen and (min-width : 320px) and (max-width : 511px) {
+  /* Common */
   .wrapper {
     padding: 0;
   }
-
-  /* Home Banner */
-  /* Banner height and label size varies */
-  .home-banner {
-    height: 400px;
-  }
-
-  .home-banner .label-1 {
-    font-size: 32px;
-    font-weight: 600;
-  }
-
-  .home-banner .label-2 {
-    font-size: 23px;
-    margin-top: 30px;
-    line-height: 36px;
-  }
-  /* #Home Banner */
-
-  /* Typing */
-  /* Typing curser size varies */
-  .typing.lg {
-    line-height: 36px;
-  }
-
-  .typing.lg:after {
-    height: 32px;
-  }
-  /* #Typing */
+  /* #Common */
 
   /* Footer */
   /* Footer Branding structure changes */
@@ -72,25 +45,47 @@
   footer .layer-2 {
     margin-top: 28px;
   }
-
   /* #Footer */
+
+  /* Home Banner */
+  /* Banner height and label size varies */
+  .home-banner {
+    height: 400px;
+  }
+
+  .home-banner .label-1 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .home-banner .label-2 {
+    font-size: 23px;
+    margin-top: 30px;
+    line-height: 36px;
+  }
+  /* #Home Banner */
 
   /* Page Banner */
   /* Page banner height and label font varies */
   .page-banner {
     height: 200px;
   }
+
   .page-banner.home-like {
     height: 270px;
   }
   /* #Page Banner */
 
-  /* Left Side Bar */
-  /* Left sidebar goes to top */
-  .left-side-menu:after {
-    display: none;
+  /* Typing */
+  /* Typing curser size varies */
+  .typing.lg {
+    line-height: 36px;
   }
-  /* #Left Side Bar */
+
+  .typing.lg:after {
+    height: 32px;
+  }
+  /* #Typing */
 
   /* Page Type 1 */
   /* Page-1 title and margin varies */
@@ -108,6 +103,36 @@
     margin: 0;
   }
   /* #Page Type 1 */
+
+  /* Page 2 */
+  .page-2 {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .page-2 .title {
+    font-size: 38px;
+    line-height: 49px;
+  }
+
+  .page-2 .page-2-media {
+    display: block;
+  }
+
+  .page-2 .page-2-media .media-src {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .page-2 .page-2-media .media-content {
+    width: 100%;
+    display: block;
+    padding-top: 40px;
+    padding-left: 24px;
+  }
+  /* #Page 2 */
 
   /* POST 1 */
   /* Post-1 structure changes */
@@ -141,36 +166,6 @@
     text-align: center;
   }
   /* #POST 1 */
-
-  /* Page 2 */
-  .page-2 {
-    width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .page-2 .title {
-    font-size: 38px;
-    line-height: 49px;
-  }
-
-  .page-2 .page-2-media {
-    display: block;
-  }
-
-  .page-2 .page-2-media .media-src {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .page-2 .page-2-media .media-content {
-    width: 100%;
-    display: block;
-    padding-top: 40px;
-    padding-left: 24px;
-  }
-  /* #Page 2 */
 
   /* MaidSafe Team Banner height changes */
   .page-banner.maidsafe-team {

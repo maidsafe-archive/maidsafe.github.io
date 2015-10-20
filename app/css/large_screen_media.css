@@ -1,28 +1,5 @@
 /* Large Screens */
 @media only screen and (min-width: 1560px) {
-  /* POST 1 */
-  .post-1 {
-    width: 1170px;
-  }
-  .post-1 .media img  {
-    width: 80%;
-    margin: 0 auto;
-  }
-  .post-1 .content {
-    width: 585px;
-    text-align: left;
-  }
-  .post-1 .content .title {
-    margin-top: 80px;
-    font-size: 44px;
-    line-height: 59px;
-  }
-  .post-1 .content .p {
-    font-size: 20px;
-    line-height: 27px;
-  }
-  /* #POST 1 */
-
   /* Footer */
   footer .layer-2 {
     width: 1170px;
@@ -62,11 +39,35 @@
     text-align: left;
     padding-left: 137px;
   }
+
   footer .brand-list .brand-list-base .sec-left .brand-list-items,
   footer .brand-list .brand-list-base .sec-right .brand-list-items {
     width: 224px;
   }
   /* #Footer */
+
+  /* POST 1 */
+  .post-1 {
+    width: 1170px;
+  }
+  .post-1 .media img  {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .post-1 .content {
+    width: 585px;
+    text-align: left;
+  }
+  .post-1 .content .title {
+    margin-top: 80px;
+    font-size: 44px;
+    line-height: 59px;
+  }
+  .post-1 .content .p {
+    font-size: 20px;
+    line-height: 27px;
+  }
+  /* #POST 1 */
 
   /* MaidSafe Team Banner height changes */
   .page-banner.maidsafe-team {
