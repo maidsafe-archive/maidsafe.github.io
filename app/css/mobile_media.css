@@ -78,18 +78,7 @@
   /* Page Banner */
   /* Page banner height and label font varies */
   .page-banner {
-    height: 300px;
-  }
-  .page-banner .label-1 {
-    margin-top: 80px;
-    font-size: 30px;
-    line-height: 36px;
-  }
-
-  .page-banner .label-2 {
-    margin: 24px 0;
-    font-size: 14px;
-    line-height: 17px;
+    height: 200px;
   }
   /* #Page Banner */
 
@@ -151,9 +140,27 @@
     padding-left: 16px;
     padding-right: 16px;
   }
+
   .page-2 .title {
     font-size: 38px;
     line-height: 49px;
+  }
+
+  .page-2 .page-2-media {
+    display: block;
+  }
+
+  .page-2 .page-2-media .media-src {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .page-2 .page-2-media .media-content {
+    width: 100%;
+    display: block;
+    padding-top: 40px;
+    padding-left: 24px;
   }
   /* #Page 2 */
 

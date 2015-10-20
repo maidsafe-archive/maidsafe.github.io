@@ -678,6 +678,9 @@ footer .layer-3 ul li a{
   background-color: white;
   text-align: center;
 }
+.page-2:last-child {
+  padding-bottom: 120px;
+}
 .page-2 .title{
   color: #5b94d9;
   font-size: 49px;
@@ -703,12 +706,45 @@ footer .layer-3 ul li a{
   line-height: 29px;
   font-style: italic;
   margin-top: 80px;
-  margin-bottom: 40px;
   color: #808080;
 }
 .page-2 .sub-title {
   margin-top: 118px;
   font-size: 24px;
+  color: #808080;
+}
+
+.page-2 .page-2-media {
+  padding: 80px 0;
+  display: table;
+  text-align: left;
+}
+
+.page-2 .page-2-media .media-src {
+  width: 50%;
+  display: table-cell;
+}
+
+.page-2 .page-2-media .media-src img {
+  width: 100%;
+}
+
+.page-2 .page-2-media .media-content {
+  width: 50%;
+  padding-left: 36px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.page-2 .list {
+  margin: 0;
+  padding: 0;
+}
+.page-2 .list li {
+  font-size: 16px;
+  line-height: 27px;
+  padding-top: 16px;
+  font-weight: normal;
   color: #808080;
 }
 /* #Page 2 Layout */

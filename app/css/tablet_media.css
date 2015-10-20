@@ -109,18 +109,8 @@
 
   /* Page Banner */
   .page-banner {
-    height: 350px;
+    height: 300px;
   }
-  .page-banner .label-1 {
-    margin-top: 118px;
-    font: normal normal normal 30px/36px 'Open Sans';
-  }
-
-  .page-banner .label-2 {
-    margin: 24px 0;
-    font: normal normal normal 14px/17px 'Open Sans';
-  }
-
   /* #Page Banner */
 
   /* POST 1 */
@@ -159,6 +149,20 @@
   .page-2 .title {
     font-size: 38px;
     line-height: 49px;
+  }
+  .page-2 .page-2-media {
+    display: block;
+  }
+  .page-2 .page-2-media .media-src {
+    width: 480px;
+    margin: 0 auto;
+    display: block;
+  }
+  .page-2 .page-2-media .media-content {
+    width: 100%;
+    display: block;
+    padding-top: 40px;
+    padding-left: 24px;
   }
   /* #Page 2 */
   /* MaidSafe Team Banner height changes */
