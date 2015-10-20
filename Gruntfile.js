@@ -433,9 +433,7 @@ module.exports = function (grunt) {
         }
       },
       updateDependencies: {
-        cmd: function() {
-          return 'npm prune && npm install && bower install';
-        }
+        cmd: 'npm prune && npm install && bower install'
       }
     },
     htmllint: {
