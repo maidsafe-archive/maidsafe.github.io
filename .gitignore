@@ -9,3 +9,4 @@
 /app/_bower_components
 /dist
 /.editorconfig
+/Gemfile.lock

@@ -1,0 +1,152 @@
+/* Media Less than 480px */
+@media only screen and (min-width : 320px) and (max-width : 511px) {
+  .wrapper {
+    padding: 0;
+  }
+
+  /* Home Banner */
+  /* Banner height and label size varies */
+  .home-banner {
+    height: 400px;
+  }
+
+  .home-banner .label-1 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .home-banner .label-2 {
+    font-size: 23px;
+    margin-top: 30px;
+    line-height: 36px;
+  }
+  /* #Home Banner */
+
+  /* Typing */
+  /* Typing curser size varies */
+  .typing.lg {
+    line-height: 36px;
+  }
+
+  .typing.lg:after {
+    height: 32px;
+  }
+  /* #Typing */
+
+  /* Footer */
+  /* Footer Branding structure changes */
+  footer .brand-list .brand-list-items {
+    width: 100%;
+  }
+
+  footer .brand-list .brand-list-base .sec-center {
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0 2px 0 #1c6fad;
+  }
+
+  footer .brand-list .brand-list-base .sec-left {
+    width: 100% !important;
+    position: static;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  footer .brand-list .brand-list-base .sec-right {
+    width: 100% !important;
+    position: static;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  footer .brand-list .brand-list-base .brand-list-items.lg {
+    width: 100%;
+  }
+
+  footer .brand-list .brand-list-base .sec-left .brand-list-items,
+  footer .brand-list .brand-list-base .sec-right .brand-list-items {
+    box-shadow: 0 2px 0 #1c6fad;
+  }
+
+  /* Footer Keymap margin varies */
+  footer .layer-2 {
+    margin-top: 28px;
+  }
+  
+  /* #Footer */
+
+  /* Page Banner */
+  /* Page banner height and label font varies */
+  .page-banner {
+    height: 300px;
+  }
+  .page-banner .label-1 {
+    margin-top: 80px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .page-banner .label-2 {
+    margin: 24px 0;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  /* #Page Banner */
+
+  /* Left Side Bar */
+  /* Left sidebar goes to top */
+  .left-side-menu:after {
+    display: none;
+  }
+  /* #Left Side Bar */
+
+  /* Page Type 1 */
+  /* Page-1 title and margin varies */
+  .page-1 {
+    margin-top: 25px;
+  }
+  .page-1 .title {
+    font-size: 30px;
+    margin-bottom: 25px;
+    font-weight: normal;
+  }
+  /* #Page Type 1 */
+
+  /* POST 1 */
+  /* Post-1 structure changes */
+  .post-1 {
+    width: 100%;
+    display: block;
+  }
+  .post-1 .media {
+    display: block;
+    width: 100%;
+    height: 340px;
+    padding-top: 40px;
+  }
+  .post-1 .media img  {
+    display: block;
+    margin: 0 auto;
+  }
+  .post-1 .content {
+    width: 100%;
+    text-align: left;
+    padding: 0 16px;
+  }
+  .post-1 .content .title {
+    margin-top: 0;
+    text-align: center;
+  }
+  .post-1.flip {
+    position: relative;
+  }
+  .post-1.flip .media {
+    position: absolute;
+    top: -340px;
+  }
+  .post-1.flip .content {
+    margin-top: 340px;
+    display: block;
+  }
+  /* #POST 1 */
+}
