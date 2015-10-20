@@ -118,7 +118,7 @@
 
   /* Secondary Navigation Button  */
   .secNavButton {
-    display: block !important;
+    display: none !important;
   }
   /* #Secondary Navigation Button  */
 
