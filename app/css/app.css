@@ -774,7 +774,7 @@ footer .layer-3 ul li a{
   line-height: 29px;
   font-weight: normal;
   color: #808080;
-  padding: 18px 20px 5px 8px;
+  padding: 18px 40px 5px 8px;
   background-color: #FFF;
   border-bottom: 2px solid #CCC;
   position: relative;
@@ -785,7 +785,7 @@ footer .layer-3 ul li a{
   display: none;
   width: 24px;
   height: 18px;
-  background-image: url(../img/drop_arrow_high.svg);
+  background-image: url(../img/faq_down.svg);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -818,8 +818,8 @@ footer .layer-3 ul li a{
 }
 
 .accordian ul li.active h3:after {
+  background-image: url(../img/faq_up.svg);
   display: block;
-  transform: rotate(180deg);
 }
 
 .accordian ul li.active p {

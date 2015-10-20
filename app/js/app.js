@@ -2,12 +2,17 @@
 /**
  * Accordian
  */
-var accordian = function() {
-  $('#accordian ul li').on('click', function() {
-    $('#accordian ul li').removeClass('active');
-    $(this).addClass('active');
-  });
-};
+ var accordian = function() {
+   $('#accordian ul li').on('click', function() {
+     var self = $(this);
+     if (self.hasClass('active')) {
+       self.removeClass('active');
+       return;
+     }
+     $('#accordian ul li').removeClass('active');
+     self.addClass('active');
+   });
+ };
 
 /**
  * Typing effecting
