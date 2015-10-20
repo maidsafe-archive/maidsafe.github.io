@@ -1,21 +1,5 @@
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1135px) and (max-width: 1559px) {
-  .layout-1 {
-    width: 100%;
-  }
-
-  .layout-1 .left-sec {
-    width: 22% !important;
-    margin: 0;
-    float: left;
-  }
-
-  .layout-1 .right-sec {
-    width: 78% !important;
-    margin: 0;
-    float: right;
-  }
-
   /* Footer */
   /* Structure changes to single row */
   footer .brand-list .brand-list-base .sec-center {
@@ -42,6 +26,24 @@
     padding-left: 136px;
   }
   /* #Footer */
+
+  /* Layout Type 1 */
+  .layout-1 {
+    width: 100%;
+  }
+
+  .layout-1 .left-sec {
+    width: 22% !important;
+    margin: 0;
+    float: left;
+  }
+
+  .layout-1 .right-sec {
+    width: 78% !important;
+    margin: 0;
+    float: right;
+  }
+  /* #Layout Type 1 */
 
   /* MaidSafe Team Banner height changes */
   .page-banner.maidsafe-team {
