@@ -1,13 +1,19 @@
 /* Less Than 1135px */
 @media screen and (min-width: 830px) and (max-width: 1134px){
   /* Header */
+  header .sec-1 {
+    width: 25%;
+  }
+  header .sec-2 {
+    width: 75%;
+  }
   header .sec-2 .primary-nav {
-    display: none;
+    display: block !important;
   }
 
   /* Secondary Navigation */
   header .secondary-nav.show {
-    display: block !important;
+    display: none !important;
   }
   /* #Header */
 
@@ -112,7 +118,7 @@
 
   /* Secondary Navigation Button  */
   .secNavButton {
-    display: block !important;
+    display: none !important;
   }
   /* #Secondary Navigation Button  */
 

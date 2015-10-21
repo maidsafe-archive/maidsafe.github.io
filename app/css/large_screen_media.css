@@ -1,6 +1,10 @@
 /* Large Screens */
 @media only screen and (min-width: 1560px) {
   /* Footer */
+  footer .layer-2 {
+    width: 1170px;
+  }
+  
   /* Structure changes to single row */
   footer .brand-list .brand-list-base .sec-center {
     width: 274px;
