@@ -3,6 +3,9 @@
 
 'use strict';
 
+// Load util
+var util = require('util');
+
 // Directory reference:
 //   css: css
 //   javascript: js
@@ -441,7 +444,10 @@ module.exports = function (grunt) {
         }
       },
       updateDependencies: {
-        cmd: 'npm prune && npm install && bower install'
+        cmd: function() {
+          var sudoPrefix = process.platform !== 'win32' ? 'sudo' : '';
+          return util.format('%s npm prune && %s npm install && bower install', sudoPrefix, sudoPrefix);
+        }
       }
     },
     htmllint: {
