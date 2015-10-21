@@ -3,9 +3,6 @@
 
 'use strict';
 
-// Load util
-var util = require('util');
-
 // Directory reference:
 //   css: css
 //   javascript: js
