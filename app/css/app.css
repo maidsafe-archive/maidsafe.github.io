@@ -469,6 +469,10 @@ footer .layer-3 ul li a{
   position: relative;
 }
 
+.home-banner:after {
+  content: "";
+}
+
 .home-banner.two {
   background-image: url(../img/second_banner.jpg);
 }
