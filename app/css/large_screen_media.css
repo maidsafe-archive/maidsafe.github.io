@@ -4,7 +4,7 @@
   footer .layer-2 {
     width: 1170px;
   }
-  
+
   /* Structure changes to single row */
   footer .brand-list .brand-list-base .sec-center {
     width: 274px;
@@ -67,6 +67,24 @@
     font-size: 20px;
     line-height: 27px;
   }
+
+  .post-1 .foot {
+    margin-bottom: 40px;
+  }
+
+  .post-1.spacing-top {
+    padding-top: 40px;
+  }
+
+  .post-1.spacing-bottom {
+    padding-bottom: 40px;
+  }
+
+  .post-1.spacing-top-bottom {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   /* #POST 1 */
 
   /* MaidSafe Team Banner height changes */

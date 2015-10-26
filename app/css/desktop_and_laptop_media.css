@@ -50,4 +50,23 @@
     height: 550px;
   }
   /* #MaidSafe Team Banner height changes */
+
+  /* Post 1 */
+  .post-1 .foot {
+    margin-bottom: 40px;
+  }
+
+  .post-1.spacing-top {
+    padding-top: 40px;
+  }
+
+  .post-1.spacing-bottom {
+    padding-bottom: 40px;
+  }
+
+  .post-1.spacing-top-bottom {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  /* #Post 1 */
 }
