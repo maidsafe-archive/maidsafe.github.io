@@ -1,0 +1,356 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.2
+4 verbose readDependencies loading dependencies from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\package.json
+5 verbose readDependencies npm-shrinkwrap.json is overriding dependencies
+6 info shrinkwrap file "F:\\Shankar\\work\\MaidSafe\\git\\maidsafe.github.io\\npm-shrinkwrap.json"
+7 verbose readDependencies returned deps { bower: '1.3.12',
+7 verbose readDependencies returned deps   grunt: '0.4.5',
+7 verbose readDependencies returned deps   'grunt-autoprefixer': '1.0.1',
+7 verbose readDependencies returned deps   'grunt-browser-sync': '1.3.7',
+7 verbose readDependencies returned deps   'grunt-build-control': '0.1.8',
+7 verbose readDependencies returned deps   'grunt-concurrent': '0.5.0',
+7 verbose readDependencies returned deps   'grunt-contrib-clean': '0.6.0',
+7 verbose readDependencies returned deps   'grunt-contrib-concat': '0.5.0',
+7 verbose readDependencies returned deps   'grunt-contrib-connect': '0.9.0',
+7 verbose readDependencies returned deps   'grunt-contrib-copy': '0.5.0',
+7 verbose readDependencies returned deps   'grunt-contrib-csslint': '0.4.0',
+7 verbose readDependencies returned deps   'grunt-contrib-cssmin': '0.10.0',
+7 verbose readDependencies returned deps   'grunt-contrib-htmlmin': '0.3.0',
+7 verbose readDependencies returned deps   'grunt-contrib-imagemin': 'https://registry.npmjs.org/grunt-contrib-imagemin/-/grunt-contrib-imagemin-0.8.1.tgz',
+7 verbose readDependencies returned deps   'grunt-contrib-jshint': '0.10.0',
+7 verbose readDependencies returned deps   'grunt-contrib-uglify': '0.5.1',
+7 verbose readDependencies returned deps   'grunt-contrib-watch': 'https://registry.npmjs.org/grunt-contrib-watch/-/grunt-contrib-watch-0.6.1.tgz',
+7 verbose readDependencies returned deps   'grunt-exec': '0.4.6',
+7 verbose readDependencies returned deps   'grunt-filerev': '0.2.1',
+7 verbose readDependencies returned deps   'grunt-html': 'git://github.com/viv-rajkumar/grunt-html',
+7 verbose readDependencies returned deps   'grunt-jekyll': '0.4.2',
+7 verbose readDependencies returned deps   'grunt-jscs': 'https://registry.npmjs.org/grunt-jscs/-/grunt-jscs-1.5.0.tgz',
+7 verbose readDependencies returned deps   'grunt-link-checker': 'https://registry.npmjs.org/grunt-link-checker/-/grunt-link-checker-0.0.6.tgz',
+7 verbose readDependencies returned deps   'grunt-prompt': '1.3.0',
+7 verbose readDependencies returned deps   'grunt-svgmin': '0.4.0',
+7 verbose readDependencies returned deps   'grunt-usemin': '2.4.0',
+7 verbose readDependencies returned deps   'jshint-stylish': '0.4.0',
+7 verbose readDependencies returned deps   'load-grunt-tasks': '0.6.0',
+7 verbose readDependencies returned deps   'sync-request': 'https://registry.npmjs.org/sync-request/-/sync-request-2.0.1.tgz',
+7 verbose readDependencies returned deps   'time-grunt': '0.4.0',
+7 verbose readDependencies returned deps   urijs: '~1.10.2' }
+8 verbose install where, deps [ 'F:\\Shankar\\work\\MaidSafe\\git\\maidsafe.github.io',
+8 verbose install   [ 'bower',
+8 verbose install     'grunt',
+8 verbose install     'grunt-autoprefixer',
+8 verbose install     'grunt-browser-sync',
+8 verbose install     'grunt-build-control',
+8 verbose install     'grunt-concurrent',
+8 verbose install     'grunt-contrib-clean',
+8 verbose install     'grunt-contrib-concat',
+8 verbose install     'grunt-contrib-connect',
+8 verbose install     'grunt-contrib-copy',
+8 verbose install     'grunt-contrib-csslint',
+8 verbose install     'grunt-contrib-cssmin',
+8 verbose install     'grunt-contrib-htmlmin',
+8 verbose install     'grunt-contrib-imagemin',
+8 verbose install     'grunt-contrib-jshint',
+8 verbose install     'grunt-contrib-uglify',
+8 verbose install     'grunt-contrib-watch',
+8 verbose install     'grunt-exec',
+8 verbose install     'grunt-filerev',
+8 verbose install     'grunt-html',
+8 verbose install     'grunt-jekyll',
+8 verbose install     'grunt-jscs',
+8 verbose install     'grunt-link-checker',
+8 verbose install     'grunt-prompt',
+8 verbose install     'grunt-svgmin',
+8 verbose install     'grunt-usemin',
+8 verbose install     'jshint-stylish',
+8 verbose install     'load-grunt-tasks',
+8 verbose install     'sync-request',
+8 verbose install     'time-grunt',
+8 verbose install     'urijs' ] ]
+9 verbose install where, peers [ 'F:\\Shankar\\work\\MaidSafe\\git\\maidsafe.github.io', [] ]
+10 verbose installManyTop reading for lifecycle F:\Shankar\work\MaidSafe\git\maidsafe.github.io\package.json
+11 info preinstall maidsafegithubio@0.0.0
+12 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\URIjs\package.json
+13 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\bower\package.json
+14 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt\package.json
+15 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-autoprefixer\package.json
+16 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-browser-sync\package.json
+17 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-build-control\package.json
+18 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-concurrent\package.json
+19 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-clean\package.json
+20 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-concat\package.json
+21 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-connect\package.json
+22 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-copy\package.json
+23 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-csslint\package.json
+24 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-cssmin\package.json
+25 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-htmlmin\package.json
+26 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-imagemin\package.json
+27 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-jshint\package.json
+28 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-uglify\package.json
+29 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-watch\package.json
+30 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-exec\package.json
+31 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-filerev\package.json
+32 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-html\package.json
+33 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-jekyll\package.json
+34 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-jscs\package.json
+35 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-link-checker\package.json
+36 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-prompt\package.json
+37 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-svgmin\package.json
+38 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-usemin\package.json
+39 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\jshint-stylish\package.json
+40 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\load-grunt-tasks\package.json
+41 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\sync-request\package.json
+42 verbose installManyTop reading scoped package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\time-grunt\package.json
+43 info package.json URIjs@1.10.2 No repository field.
+44 info package.json URIjs@1.10.2 No license field.
+45 info package.json bower@1.3.12 No license field.
+46 info package.json grunt@0.4.5 No license field.
+47 info package.json grunt-browser-sync@1.3.7 No license field.
+48 info package.json grunt-build-control@0.1.8 No license field.
+49 info package.json grunt-concurrent@0.5.0 No license field.
+50 info package.json grunt-contrib-clean@0.6.0 No license field.
+51 info package.json grunt-contrib-concat@0.5.0 No license field.
+52 info package.json grunt-contrib-connect@0.9.0 No license field.
+53 info package.json grunt-contrib-copy@0.5.0 No license field.
+54 info package.json grunt-contrib-csslint@0.4.0 No license field.
+55 info package.json grunt-contrib-cssmin@0.10.0 No license field.
+56 info package.json grunt-contrib-htmlmin@0.3.0 No license field.
+57 info package.json grunt-contrib-imagemin@0.8.1 No license field.
+58 info package.json grunt-contrib-jshint@0.10.0 No license field.
+59 info package.json grunt-contrib-uglify@0.5.1 No license field.
+60 info package.json grunt-contrib-watch@0.6.1 No license field.
+61 info package.json grunt-exec@0.4.6 No license field.
+62 info package.json grunt-filerev@0.2.1 No license field.
+63 info package.json grunt-html@2.0.0 No license field.
+64 info package.json grunt-prompt@1.3.0 No license field.
+65 info package.json grunt-svgmin@0.4.0 No license field.
+66 verbose readDependencies loading dependencies from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\package.json
+67 verbose readDependencies npm-shrinkwrap.json is overriding dependencies
+68 info shrinkwrap file "F:\\Shankar\\work\\MaidSafe\\git\\maidsafe.github.io\\npm-shrinkwrap.json"
+69 verbose readDependencies returned deps { bower: '1.3.12',
+69 verbose readDependencies returned deps   grunt: '0.4.5',
+69 verbose readDependencies returned deps   'grunt-autoprefixer': '1.0.1',
+69 verbose readDependencies returned deps   'grunt-browser-sync': '1.3.7',
+69 verbose readDependencies returned deps   'grunt-build-control': '0.1.8',
+69 verbose readDependencies returned deps   'grunt-concurrent': '0.5.0',
+69 verbose readDependencies returned deps   'grunt-contrib-clean': '0.6.0',
+69 verbose readDependencies returned deps   'grunt-contrib-concat': '0.5.0',
+69 verbose readDependencies returned deps   'grunt-contrib-connect': '0.9.0',
+69 verbose readDependencies returned deps   'grunt-contrib-copy': '0.5.0',
+69 verbose readDependencies returned deps   'grunt-contrib-csslint': '0.4.0',
+69 verbose readDependencies returned deps   'grunt-contrib-cssmin': '0.10.0',
+69 verbose readDependencies returned deps   'grunt-contrib-htmlmin': '0.3.0',
+69 verbose readDependencies returned deps   'grunt-contrib-imagemin': 'https://registry.npmjs.org/grunt-contrib-imagemin/-/grunt-contrib-imagemin-0.8.1.tgz',
+69 verbose readDependencies returned deps   'grunt-contrib-jshint': '0.10.0',
+69 verbose readDependencies returned deps   'grunt-contrib-uglify': '0.5.1',
+69 verbose readDependencies returned deps   'grunt-contrib-watch': 'https://registry.npmjs.org/grunt-contrib-watch/-/grunt-contrib-watch-0.6.1.tgz',
+69 verbose readDependencies returned deps   'grunt-exec': '0.4.6',
+69 verbose readDependencies returned deps   'grunt-filerev': '0.2.1',
+69 verbose readDependencies returned deps   'grunt-html': 'git://github.com/viv-rajkumar/grunt-html',
+69 verbose readDependencies returned deps   'grunt-jekyll': '0.4.2',
+69 verbose readDependencies returned deps   'grunt-jscs': 'https://registry.npmjs.org/grunt-jscs/-/grunt-jscs-1.5.0.tgz',
+69 verbose readDependencies returned deps   'grunt-link-checker': 'https://registry.npmjs.org/grunt-link-checker/-/grunt-link-checker-0.0.6.tgz',
+69 verbose readDependencies returned deps   'grunt-prompt': '1.3.0',
+69 verbose readDependencies returned deps   'grunt-svgmin': '0.4.0',
+69 verbose readDependencies returned deps   'grunt-usemin': '2.4.0',
+69 verbose readDependencies returned deps   'jshint-stylish': '0.4.0',
+69 verbose readDependencies returned deps   'load-grunt-tasks': '0.6.0',
+69 verbose readDependencies returned deps   'sync-request': 'https://registry.npmjs.org/sync-request/-/sync-request-2.0.1.tgz',
+69 verbose readDependencies returned deps   'time-grunt': '0.4.0' }
+70 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\URIjs\package.json
+71 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\bower\package.json
+72 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt\package.json
+73 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-autoprefixer\package.json
+74 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-browser-sync\package.json
+75 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-build-control\package.json
+76 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-concurrent\package.json
+77 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-clean\package.json
+78 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-concat\package.json
+79 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-connect\package.json
+80 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-copy\package.json
+81 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-csslint\package.json
+82 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-cssmin\package.json
+83 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-htmlmin\package.json
+84 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-imagemin\package.json
+85 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-jshint\package.json
+86 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-uglify\package.json
+87 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-contrib-watch\package.json
+88 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-exec\package.json
+89 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-filerev\package.json
+90 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-html\package.json
+91 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-jekyll\package.json
+92 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-jscs\package.json
+93 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-link-checker\package.json
+94 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-prompt\package.json
+95 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-svgmin\package.json
+96 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\grunt-usemin\package.json
+97 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\jshint-stylish\package.json
+98 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\load-grunt-tasks\package.json
+99 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\sync-request\package.json
+100 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\time-grunt\package.json
+101 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\.bin\bower\package.json
+102 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\.bin\bower.cmd\package.json
+103 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\.bin\grunt-jekyll\package.json
+104 verbose targetResolver reading package data from F:\Shankar\work\MaidSafe\git\maidsafe.github.io\node_modules\.bin\grunt-jekyll.cmd\package.json
+105 verbose already installed skipping grunt-jscs@https://registry.npmjs.org/grunt-jscs/-/grunt-jscs-1.5.0.tgz F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+106 verbose already installed skipping grunt-link-checker@https://registry.npmjs.org/grunt-link-checker/-/grunt-link-checker-0.0.6.tgz F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+107 verbose already installed skipping grunt-prompt@1.3.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+108 verbose already installed skipping grunt-svgmin@0.4.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+109 verbose already installed skipping grunt-usemin@2.4.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+110 verbose already installed skipping jshint-stylish@0.4.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+111 verbose already installed skipping load-grunt-tasks@0.6.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+112 verbose already installed skipping sync-request@https://registry.npmjs.org/sync-request/-/sync-request-2.0.1.tgz F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+113 verbose already installed skipping time-grunt@0.4.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+114 silly cache add args [ 'urijs@~1.10.2', null ]
+115 verbose cache add spec urijs@~1.10.2
+116 silly cache add parsed spec Result {
+116 silly cache add   raw: 'urijs@~1.10.2',
+116 silly cache add   scope: null,
+116 silly cache add   name: 'urijs',
+116 silly cache add   rawSpec: '~1.10.2',
+116 silly cache add   spec: '>=1.10.2 <1.11.0',
+116 silly cache add   type: 'range' }
+117 silly addNamed urijs@>=1.10.2 <1.11.0
+118 verbose addNamed ">=1.10.2 <1.11.0" is a valid semver range for urijs
+119 silly addNameRange { name: 'urijs', range: '>=1.10.2 <1.11.0', hasData: false }
+120 silly mapToRegistry name urijs
+121 silly mapToRegistry using default registry
+122 silly mapToRegistry registry https://registry.npmjs.org/
+123 silly mapToRegistry uri https://registry.npmjs.org/urijs
+124 verbose addNameRange registry:https://registry.npmjs.org/urijs not in flight; fetching
+125 verbose already installed skipping bower@1.3.12 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+126 verbose already installed skipping grunt@0.4.5 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+127 verbose already installed skipping grunt-autoprefixer@1.0.1 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+128 verbose already installed skipping grunt-browser-sync@1.3.7 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+129 verbose already installed skipping grunt-build-control@0.1.8 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+130 verbose already installed skipping grunt-concurrent@0.5.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+131 verbose already installed skipping grunt-contrib-clean@0.6.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+132 verbose already installed skipping grunt-contrib-concat@0.5.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+133 verbose already installed skipping grunt-contrib-connect@0.9.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+134 verbose request uri https://registry.npmjs.org/urijs
+135 verbose request no auth needed
+136 info attempt registry request try #1 at 11:40:17 AM
+137 verbose request id c8d0cc0edddbc391
+138 verbose etag "C537RC9DLG40D68CKX4NTWV0C"
+139 http request GET https://registry.npmjs.org/urijs
+140 verbose already installed skipping grunt-contrib-copy@0.5.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+141 verbose already installed skipping grunt-contrib-csslint@0.4.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+142 verbose already installed skipping grunt-contrib-cssmin@0.10.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+143 verbose already installed skipping grunt-contrib-htmlmin@0.3.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+144 verbose already installed skipping grunt-contrib-imagemin@https://registry.npmjs.org/grunt-contrib-imagemin/-/grunt-contrib-imagemin-0.8.1.tgz F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+145 verbose already installed skipping grunt-contrib-jshint@0.10.0 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+146 verbose already installed skipping grunt-contrib-uglify@0.5.1 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+147 verbose already installed skipping grunt-contrib-watch@https://registry.npmjs.org/grunt-contrib-watch/-/grunt-contrib-watch-0.6.1.tgz F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+148 verbose already installed skipping grunt-exec@0.4.6 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+149 verbose already installed skipping grunt-filerev@0.2.1 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+150 silly cache add args [ 'grunt-html@git://github.com/viv-rajkumar/grunt-html', null ]
+151 verbose cache add spec grunt-html@git://github.com/viv-rajkumar/grunt-html
+152 verbose already installed skipping grunt-jekyll@0.4.2 F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+153 silly cache add parsed spec Result {
+153 silly cache add   raw: 'grunt-html@git://github.com/viv-rajkumar/grunt-html',
+153 silly cache add   scope: null,
+153 silly cache add   name: 'grunt-html',
+153 silly cache add   rawSpec: 'git://github.com/viv-rajkumar/grunt-html',
+153 silly cache add   spec: 'git://github.com/viv-rajkumar/grunt-html.git',
+153 silly cache add   type: 'hosted',
+153 silly cache add   hosted:
+153 silly cache add    { type: 'github',
+153 silly cache add      ssh: 'git@github.com:viv-rajkumar/grunt-html.git',
+153 silly cache add      sshUrl: 'git+ssh://git@github.com/viv-rajkumar/grunt-html.git',
+153 silly cache add      httpsUrl: 'git+https://github.com/viv-rajkumar/grunt-html.git',
+153 silly cache add      gitUrl: 'git://github.com/viv-rajkumar/grunt-html.git',
+153 silly cache add      shortcut: 'github:viv-rajkumar/grunt-html',
+153 silly cache add      directUrl: 'https://raw.githubusercontent.com/viv-rajkumar/grunt-html/master/package.json' } }
+154 verbose addRemoteGit caching git://github.com/viv-rajkumar/grunt-html
+155 verbose addRemoteGit git://github.com/viv-rajkumar/grunt-html.git is a repository hosted by github
+156 silly tryClone cloning git://github.com/viv-rajkumar/grunt-html.git via git://github.com/viv-rajkumar/grunt-html.git
+157 verbose tryClone git-github-com-viv-rajkumar-grunt-html-git-cc6778b2 not in flight; caching
+158 info git [ 'config', '--get', 'remote.origin.url' ]
+159 silly validateExistingRemote git://github.com/viv-rajkumar/grunt-html.git remote.origin.url: git://github.com/viv-rajkumar/grunt-html.git
+160 verbose validateExistingRemote git://github.com/viv-rajkumar/grunt-html.git is updating existing cached remote C:\Users\Shankar-PC\AppData\Roaming\npm-cache\_git-remotes\git-github-com-viv-rajkumar-grunt-html-git-cc6778b2
+161 info git [ 'fetch', '-a', 'origin' ]
+162 verbose updateRemote git fetch -a origin (git://github.com/viv-rajkumar/grunt-html.git)
+163 verbose setPermissions git://github.com/viv-rajkumar/grunt-html.git skipping chownr on Windows
+164 verbose resolveHead git://github.com/viv-rajkumar/grunt-html.git original treeish: master
+165 info git [ 'rev-list', '-n1', 'master' ]
+166 silly resolveHead git://github.com/viv-rajkumar/grunt-html.git resolved treeish: 635331e586e63f364001bcc674d4b0cc3a65af0b
+167 verbose resolveHead git://github.com/viv-rajkumar/grunt-html.git resolved Git URL: git://github.com/viv-rajkumar/grunt-html.git#635331e586e63f364001bcc674d4b0cc3a65af0b
+168 silly resolveHead Git working directory: C:\Users\SHANKA~1\AppData\Local\Temp\npm-5636-9efcf342\git-cache-6f7a52f590e8\635331e586e63f364001bcc674d4b0cc3a65af0b
+169 info git [ 'clone',
+169 info git   'C:\\Users\\Shankar-PC\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-github-com-viv-rajkumar-grunt-html-git-cc6778b2',
+169 info git   'C:\\Users\\SHANKA~1\\AppData\\Local\\Temp\\npm-5636-9efcf342\\git-cache-6f7a52f590e8\\635331e586e63f364001bcc674d4b0cc3a65af0b' ]
+170 http 304 https://registry.npmjs.org/urijs
+171 silly get cb [ 304,
+171 silly get   { date: 'Sun, 15 Nov 2015 06:10:26 GMT',
+171 silly get     via: '1.1 varnish',
+171 silly get     'cache-control': 'max-age=60',
+171 silly get     etag: '"C537RC9DLG40D68CKX4NTWV0C"',
+171 silly get     age: '0',
+171 silly get     connection: 'keep-alive',
+171 silly get     'x-served-by': 'cache-sin6920-SIN',
+171 silly get     'x-cache': 'HIT',
+171 silly get     'x-cache-hits': '1',
+171 silly get     'x-timer': 'S1447567826.222483,VS0,VE251',
+171 silly get     vary: 'Accept' } ]
+172 verbose etag https://registry.npmjs.org/urijs from cache
+173 verbose get saving urijs to C:\Users\Shankar-PC\AppData\Roaming\npm-cache\registry.npmjs.org\urijs\.cache.json
+174 silly addNameRange number 2 { name: 'urijs', range: '>=1.10.2 <1.11.0', hasData: true }
+175 silly addNameRange versions [ 'urijs', [ '1.16.1', '1.17.0' ] ]
+176 verbose cloneResolved git://github.com/viv-rajkumar/grunt-html.git clone Cloning into 'C:\Users\SHANKA~1\AppData\Local\Temp\npm-5636-9efcf342\git-cache-6f7a52f590e8\635331e586e63f364001bcc674d4b0cc3a65af0b'...
+176 verbose cloneResolved done.
+177 info git [ 'checkout', '635331e586e63f364001bcc674d4b0cc3a65af0b' ]
+178 verbose checkoutTreeish git://github.com/viv-rajkumar/grunt-html.git checkout Note: checking out '635331e586e63f364001bcc674d4b0cc3a65af0b'.
+178 verbose checkoutTreeish
+178 verbose checkoutTreeish You are in 'detached HEAD' state. You can look around, make experimental
+178 verbose checkoutTreeish changes and commit them, and you can discard any commits you make in this
+178 verbose checkoutTreeish state without impacting any branches by performing another checkout.
+178 verbose checkoutTreeish
+178 verbose checkoutTreeish If you want to create a new branch to retain commits you create, you may
+178 verbose checkoutTreeish do so (now or later) by using -b with the checkout command again. Example:
+178 verbose checkoutTreeish
+178 verbose checkoutTreeish   git checkout -b new_branch_name
+178 verbose checkoutTreeish
+178 verbose checkoutTreeish HEAD is now at 635331e... Updated vnu.jar
+179 verbose addLocalDirectory C:\Users\Shankar-PC\AppData\Roaming\npm-cache\grunt-html\2.0.0\package.tgz not in flight; packing
+180 verbose tar pack [ 'C:\\Users\\Shankar-PC\\AppData\\Roaming\\npm-cache\\grunt-html\\2.0.0\\package.tgz',
+180 verbose tar pack   'C:\\Users\\SHANKA~1\\AppData\\Local\\Temp\\npm-5636-9efcf342\\git-cache-6f7a52f590e8\\635331e586e63f364001bcc674d4b0cc3a65af0b' ]
+181 verbose tarball C:\Users\Shankar-PC\AppData\Roaming\npm-cache\grunt-html\2.0.0\package.tgz
+182 verbose folder C:\Users\SHANKA~1\AppData\Local\Temp\npm-5636-9efcf342\git-cache-6f7a52f590e8\635331e586e63f364001bcc674d4b0cc3a65af0b
+183 verbose addLocalTarball adding from inside cache C:\Users\Shankar-PC\AppData\Roaming\npm-cache\grunt-html\2.0.0\package.tgz
+184 verbose addRemoteGit data._from: git://github.com/viv-rajkumar/grunt-html.git
+185 verbose addRemoteGit data._resolved: git://github.com/viv-rajkumar/grunt-html.git#635331e586e63f364001bcc674d4b0cc3a65af0b
+186 silly cache afterAdd grunt-html@2.0.0
+187 verbose afterAdd C:\Users\Shankar-PC\AppData\Roaming\npm-cache\grunt-html\2.0.0\package\package.json not in flight; writing
+188 verbose afterAdd C:\Users\Shankar-PC\AppData\Roaming\npm-cache\grunt-html\2.0.0\package\package.json written
+189 verbose stack Error: No compatible version found: urijs@'>=1.10.2 <1.11.0'
+189 verbose stack Valid install targets:
+189 verbose stack ["1.16.1","1.17.0"]
+189 verbose stack
+189 verbose stack     at installTargetsError (C:\Program Files\nodejs\node_modules\npm\lib\cache\add-named.js:278:12)
+189 verbose stack     at next (C:\Program Files\nodejs\node_modules\npm\lib\cache\add-named.js:256:19)
+189 verbose stack     at setData (C:\Program Files\nodejs\node_modules\npm\lib\cache\add-named.js:230:5)
+189 verbose stack     at RES (C:\Program Files\nodejs\node_modules\npm\node_modules\inflight\inflight.js:23:14)
+189 verbose stack     at f (C:\Program Files\nodejs\node_modules\npm\node_modules\once\once.js:17:25)
+189 verbose stack     at fixName (C:\Program Files\nodejs\node_modules\npm\lib\cache\add-named.js:29:5)
+189 verbose stack     at saved (C:\Program Files\nodejs\node_modules\npm\lib\cache\caching-client.js:173:7)
+189 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\polyfills.js:210:7
+189 verbose stack     at FSReqWrap.oncomplete (fs.js:82:15)
+190 verbose cwd F:\Shankar\work\MaidSafe\git\maidsafe.github.io
+191 error Windows_NT 6.3.9600
+192 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+193 error node v4.1.2
+194 error npm  v2.14.4
+195 error code ETARGET
+196 error notarget No compatible version found: urijs@'>=1.10.2 <1.11.0'
+196 error notarget Valid install targets:
+196 error notarget ["1.16.1","1.17.0"]
+196 error notarget
+196 error notarget This is most likely not a problem with npm itself.
+196 error notarget In most cases you or one of your dependencies are requesting
+196 error notarget a package version that doesn't exist.
+196 error notarget
+196 error notarget It was specified as a dependency of 'maidsafegithubio'
+197 verbose exit [ 1, true ]
