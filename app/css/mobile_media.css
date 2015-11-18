@@ -187,4 +187,45 @@
     padding-top: 16px;
   }
   /* #Footer */
+  /* Content 1 */
+  .content-1 {
+    width: 100%;
+    padding: 80px 16px;
+  }
+  .content-1 h3 {
+    font-size: 39px;
+    line-height: 49px;
+  }
+  .content-1 p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  /* #Content 1 */
+  /* Post 2 */
+  .post-2 {
+    width: 100%;
+    padding: 0 16px 80px;
+    display: block;
+  }
+  .post-2 .post-2-content {
+    display: block;
+    width: 100%;
+  }
+  .post-2 .post-2-media {
+    display: block;
+    width: 100%;
+    padding: 0 0 50px;
+  }
+  .post-2 .post-2-media img {
+    margin: 0;
+    width: auto;
+  }
+  .post-2.flip{
+    transform: rotateZ(0deg);
+    padding: 0 16px 80px;
+  }
+  .post-2.flip .post-2-content, .post-2.flip .post-2-media {
+    transform: rotateZ(0deg);
+  }
+  /* #Post 2 */
 }

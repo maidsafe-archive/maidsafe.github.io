@@ -1018,3 +1018,80 @@ header.invert .secNavButton:after {
   text-decoration: none;
 }
 /*#Footer*/
+
+/* Content 1 */
+.content-1 {
+  width: 960px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 80px 0 120px;
+}
+.content-1 h3 {
+  font-size: 49px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #5593d7;
+}
+
+.content-1 p {
+  text-align: left;
+  font-size: 22px;
+  line-height: 29px;
+  font-weight: normal;
+  margin: 60px 0 0;
+  color: #808080;
+}
+/* #Content 1 */
+
+/* Post 2 */
+.post-2 {
+  width: 960px;
+  margin: 0 auto;
+  display: table;
+  padding-bottom: 120px;
+}
+.post-2:after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+.post-2 .post-2-media {
+  width: 480px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.post-2 .post-2-media img {
+  width: 380px;
+  margin: 0 50px;
+  display: block;
+}
+.post-2 .post-2-content {
+  width: 480px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.post-2 .post-2-content h3 {
+  font-size: 38px;
+  line-height: 49px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  color: #808080;
+}
+.post-2 .post-2-content p {
+  font-size: 22px;
+  line-height: 29px;
+  font-weight: normal;
+  color: #808080;
+  margin: 25px 0 0;
+}
+.post-2.flip {
+  transform: rotateZ(180deg);
+  padding: 120px 0 0;
+}
+.post-2.flip .post-2-content, .post-2.flip .post-2-media {
+  transform: rotateZ(180deg);
+}
+/* #Post 2 */
