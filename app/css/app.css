@@ -1037,7 +1037,7 @@ header.invert .secNavButton:after {
 }
 .content-1 h3 {
   font-size: 49px;
-  font-weight: normal;
+  font-weight: 300;
   margin: 0;
   padding: 0;
   color: #5593d7;
@@ -1045,8 +1045,8 @@ header.invert .secNavButton:after {
 
 .content-1 p {
   text-align: left;
-  font-size: 22px;
-  line-height: 29px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: normal;
   margin: 60px 0 0;
   color: #808080;
@@ -1104,16 +1104,16 @@ header.invert .secNavButton:after {
   vertical-align: middle;
 }
 .post-2 .post-2-content h3 {
-  font-size: 38px;
-  line-height: 49px;
+  font-size: 32px;
+  line-height: 42px;
   font-weight: 600;
   margin: 0;
   padding: 0;
   color: #808080;
 }
 .post-2 .post-2-content p {
-  font-size: 22px;
-  line-height: 29px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: normal;
   color: #808080;
   margin: 25px 0 0;
