@@ -922,28 +922,39 @@ header.invert .secNavButton:after {
   background-color: #5593d7;
 }
 .footer-wig-a {
-  width: 320px;
+  width: 33.33%;
   text-align: center;
   color: #FFF;
   padding: 50px 16px 47px;
   display: inline-block;
+  float: left;
 }
 .footer-wig-a-cont {
-  width: 100%;
+  width: 348px;
   display: inline-block;
+}
+.footer-wig-a-cont a {
+  display: block;
 }
 .footer-wig-a .footer-wig-a-img {
   display: inline-block;
+  float: left;
 }
 .footer-wig-a .footer-wig-a-img img {
   height: 80px;
 }
+.footer-wig-a .footer-wig-a-desc {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+  float: left;
+}
 .footer-wig-a h3 {
-  font-size: 24px;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 28px;
   font-weight: normal;
   margin: 0;
-  padding: 18px 0 15px;
+  padding: 0;
 }
 
 .footer-wig-a p {
@@ -990,7 +1001,7 @@ header.invert .secNavButton:after {
   list-style: none;
   line-height: 26px;
 }
-.footer-wig-b ul li a {
+.footer-wig-b l li a {
   color: white;
   text-decoration: none;
 }
