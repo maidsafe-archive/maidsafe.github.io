@@ -420,10 +420,9 @@ header.invert .secNavButton:after {
 
 /* Page 1 Layout */
 .page-1 {
-  margin-top: 80px;
   margin-bottom: 80px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 0;
+  padding-right: 0;
   background-color: white;
   width: 960px;
 }
@@ -1053,6 +1052,28 @@ header.invert .secNavButton:after {
   color: #808080;
 }
 /* #Content 1 */
+/* Content 2 */
+.content-2 {
+  padding: 80px 0;
+}
+.content-2 h3 {
+  color: #5b94d9;
+  font-size: 49px;
+  line-height: 59px;
+  font-weight: 300;
+  margin: 0 0 40px 0;
+}
+.content-2 p {
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: normal;
+  margin: 24px 0;
+  text-align: justify;
+  color: #808080;
+}
+/* #Content 2 */
 
 /* Post 2 */
 .post-2 {
