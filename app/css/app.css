@@ -964,7 +964,7 @@ header.invert .secNavButton:after {
   color: white;
   display: inline-block;
   float: left;
-  padding-top: 32px;
+  padding-top: 36px;
 }
 
 .footer-wig-b-cont {
@@ -975,7 +975,7 @@ header.invert .secNavButton:after {
 .footer-wig-b h3 {
   font-size: 18px;
   font-weight: bold;
-  padding: 0 0 22px;
+  padding: 0 0 16px;
   margin: 0;
 }
 .footer-wig-b ul {
@@ -988,6 +988,7 @@ header.invert .secNavButton:after {
   margin: 0;
   padding: 0;
   list-style: none;
+  line-height: 26px;
 }
 .footer-wig-b ul li a {
   color: white;
