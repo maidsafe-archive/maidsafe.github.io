@@ -639,8 +639,8 @@ header.invert .secNavButton:after {
 }
 
 .accordian ul li p {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   color:  #808080;
   font-size: 18px;
   padding: 0 16px;
