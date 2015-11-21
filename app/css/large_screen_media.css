@@ -46,10 +46,15 @@
     height: 550px;
   }
   /* #MaidSafe Team Banner height changes */
-
   /* Footer */
-  .footer-wig-a {
-    width: 390px;
+  .footer-wig-a:first-child {
+    text-align: left;
+  }
+  .footer-wig-a:nth-child(2) {
+    text-align: center;
+  }
+  .footer-wig-a:last-child {
+    text-align: right;
   }
   /* #Footer */
 }
