@@ -905,9 +905,9 @@ header.invert .secNavButton:after {
   visibility: hidden;
   clear: both;
 }
-
 .app-footer .app-footer-r.top {
   text-align: center;
+  padding: 0 32px;
 }
 .app-footer .app-footer-r.middle {
   text-align: left;
@@ -918,53 +918,62 @@ header.invert .secNavButton:after {
 }
 .app-footer .spliter {
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: #5593d7;
+  float: left;
 }
 .footer-wig-a {
-  width: 320px;
+  width: 33.33%;
   text-align: center;
   color: #FFF;
-  padding: 50px 16px 47px;
+  padding: 27px 0;
   display: inline-block;
+  float: left;
 }
 .footer-wig-a-cont {
-  width: 100%;
+  width: 348px;
   display: inline-block;
+}
+.footer-wig-a-cont a {
+  display: block;
+  text-decoration: none;
+  color: #FFF;
 }
 .footer-wig-a .footer-wig-a-img {
   display: inline-block;
+  float: left;
 }
 .footer-wig-a .footer-wig-a-img img {
   height: 80px;
 }
+.footer-wig-a .footer-wig-a-desc {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+  float: right;
+}
 .footer-wig-a h3 {
-  font-size: 24px;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 28px;
   font-weight: normal;
   margin: 0;
-  padding: 18px 0 15px;
+  padding: 0;
 }
 
 .footer-wig-a p {
   font-size: 15px;
   line-height: 22px;
-  padding: 0 0 25px;
+  font-weight: normal;
+  padding: 0;
   margin: 0;
 }
-.footer-wig-a a {
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 22px;
-  color: white;
-  text-decoration: none;
-}
+
 .footer-wig-b {
   width: 220px;
   color: white;
   display: inline-block;
   float: left;
-  padding-top: 32px;
+  padding-top: 36px;
 }
 
 .footer-wig-b-cont {
@@ -975,7 +984,7 @@ header.invert .secNavButton:after {
 .footer-wig-b h3 {
   font-size: 18px;
   font-weight: bold;
-  padding: 0 0 22px;
+  padding: 0 0 16px;
   margin: 0;
 }
 .footer-wig-b ul {
@@ -988,6 +997,7 @@ header.invert .secNavButton:after {
   margin: 0;
   padding: 0;
   list-style: none;
+  line-height: 26px;
 }
 .footer-wig-b ul li a {
   color: white;

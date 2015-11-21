@@ -159,12 +159,38 @@
   }
   /* #Accordian */
   /* Footer */
+  .app-footer .app-footer-r.top {
+    padding: 25px 0 0;
+  }
+  .app-footer .spliter {
+    margin: 25px 0 0;
+  }
   .footer-wig-a {
     width: 100%;
+    padding: 0;
+    margin: 0 0 25px;
+  }
+  .footer-wig-a:nth-last-child(2) {
+    margin: 0;
   }
   .footer-wig-a-cont {
-    width: 320px;
+    width: 276px;
   }
+  .footer-wig-a .footer-wig-a-img {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .footer-wig-a p {
+    padding: 7px 0 0;
+  }
+  .footer-wig-a .footer-wig-a-desc {
+    width: 100%;
+    text-align: center;
+    float: none;
+    padding: 8px 0;
+  }
+
+
   .footer-wig-b {
     width: 100%;
   }
