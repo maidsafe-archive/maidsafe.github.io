@@ -327,136 +327,6 @@ header.invert .secNavButton:after {
 }
 /* #Secondary Navigation Button  */
 
-/* Footer */
-footer {
-  width: 100%;
-  background-color: #1c6fad;
-}
-
-footer .brand-list {
-  text-align: center;
-  background-color: #5593d7;
-}
-
-footer .brand-list .brand-list-base {
-  position: relative;
-  margin: 0;
-}
-
-footer .brand-list .brand-list-base .sec-left {
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-footer .brand-list .brand-list-base .sec-right {
-  text-align: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-footer .brand-list .brand-list-base .brand-list-items {
-  display: inline-block;
-  text-align: center;
-}
-
-footer .brand-list .brand-list-items:hover {
-  background-color: #1c6fad;
-}
-
-footer .brand-list .brand-list-base .brand-list-items.lg {
-  width: 272px;
-}
-
-footer .brand-list .brand-list-base .brand-list-items .brand-logo {
-  width: 100%;
-  height: 100px;
-  margin-top: 14px;
-}
-
-footer .brand-list .brand-list-base .brand-list-items.lg .brand-logo {
-  max-width: 272px;
-  margin: 14px auto 0;
-}
-
-footer .brand-list .brand-list-base .brand-list-items.lg img {
-  width: 80%;
-  padding-top: 20px;
-}
-
-footer .brand-list .brand-list-base .brand-list-items > .title {
-  font-size: 16px;
-  font-weight: 300;
-  color: white;
-  margin: 0;
-  line-height: 22px;
-  margin-bottom: 14px;
-}
-
-footer .layer-2 {
-  margin-top: 43px;
-}
-
-footer .layer-2 .key-map .title{
-  font-size: 15px;
-  color: white;
-  font-weight: bold;
-}
-
-footer .layer-2 .key-map.small {
-  width: 50%;
-}
-
-footer .layer-2 .key-map.large {
-  width: 100%;
-}
-
-footer .layer-2 .key-map .content .key-list {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-footer .layer-2 .key-map .content .key-list li {
-  line-height: 24px;
-  list-style: none;
-}
-
-footer .layer-2 .key-map .content .key-list li a {
-  color: white;
-  font-size: 14px;
-  font-weight: 300;
-  text-decoration: none;
-}
-
-footer .layer-3 {
-  margin-top: 63px;
-}
-
-footer .layer-3 ul {
-  margin: 0;
-  padding: 0 16px 16px 0;
-  display: block;
-  width: 100%;
-  text-align: right;
-}
-
-footer .layer-3 ul li {
-  display: inline-block;
-  list-style: none;
-  padding-left: 16px;
-}
-
-footer .layer-3 ul li a{
-  color: white;
-  font-size: 14px;
-  font-weight: 300;
-  text-decoration: none;
-}
-/* #Footer */
-
 /* Home Banner */
 .home-banner {
   width: 100%;
@@ -1024,3 +894,128 @@ footer .layer-3 ul li a{
   background-position: center 0% !important;
 }
 /* #Parallax Effect */
+
+/*Footer*/
+.app-footer {
+  background-color: #1C6FAD;
+}
+.app-footer .app-footer-r:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.app-footer .app-footer-r.top {
+  text-align: center;
+}
+.app-footer .app-footer-r.middle {
+  text-align: left;
+  padding-left: 32px;
+}
+.app-footer .app-footer-r.bottom {
+  text-align: right;
+}
+.app-footer .spliter {
+  width: 100%;
+  height: 1px;
+  background-color: #5593d7;
+}
+.footer-wig-a {
+  width: 320px;
+  text-align: center;
+  color: #FFF;
+  padding: 50px 16px 47px;
+  display: inline-block;
+}
+.footer-wig-a-cont {
+  width: 100%;
+  display: inline-block;
+}
+.footer-wig-a .footer-wig-a-img {
+  display: inline-block;
+}
+.footer-wig-a .footer-wig-a-img img {
+  height: 80px;
+}
+.footer-wig-a h3 {
+  font-size: 24px;
+  line-height: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 18px 0 15px;
+}
+
+.footer-wig-a p {
+  font-size: 15px;
+  line-height: 22px;
+  padding: 0 0 25px;
+  margin: 0;
+}
+.footer-wig-a a {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+  color: white;
+  text-decoration: none;
+}
+.footer-wig-b {
+  width: 220px;
+  color: white;
+  display: inline-block;
+  float: left;
+  padding-top: 36px;
+}
+
+.footer-wig-b-cont {
+  width: 220px;
+  display: inline-block;
+}
+
+.footer-wig-b h3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 0 16px;
+  margin: 0;
+}
+.footer-wig-b ul {
+  margin: 0;
+  padding: 0;
+}
+.footer-wig-b ul li {
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 26px;
+}
+.footer-wig-b ul li a {
+  color: white;
+  text-decoration: none;
+}
+.footer-hz-li {
+  padding: 22px 16px 16px;
+}
+.footer-hz-li ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+.footer-hz-li ul li {
+  display: inline-block;
+  list-style: none;
+  line-height: 24px;
+  padding-left: 16px;
+}
+
+.footer-hz-li ul li a{
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+}
+/*#Footer*/

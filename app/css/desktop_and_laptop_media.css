@@ -1,32 +1,5 @@
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1135px) and (max-width: 1559px) {
-  /* Footer */
-  /* Structure changes to single row */
-  footer .brand-list .brand-list-base .sec-center {
-    width: 272px;
-    margin: 0 auto;
-    padding: 0;
-    float: none;
-    z-index: 1;
-  }
-
-  footer .brand-list .brand-list-base .sec-left {
-    width: 50%;
-    left: 0;
-    padding: 0;
-    text-align: right;
-    padding-right: 136px;
-  }
-
-  footer .brand-list .brand-list-base .sec-right {
-    width: 50%;
-    right: 0;
-    padding: 0;
-    text-align: left;
-    padding-left: 136px;
-  }
-  /* #Footer */
-
   /* Layout Type 1 */
   .layout-1 {
     width: 100%;

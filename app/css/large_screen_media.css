@@ -1,51 +1,5 @@
 /* Large Screens */
 @media only screen and (min-width: 1560px) {
-  /* Footer */
-  footer .layer-2 {
-    width: 1170px;
-  }
-
-  /* Structure changes to single row */
-  footer .brand-list .brand-list-base .sec-center {
-    width: 274px;
-    margin: 0 auto;
-    padding: 0;
-    float: none;
-    z-index: 1;
-  }
-
-  footer .brand-list .brand-list-base .brand-list-items.lg {
-    width: 274px;
-  }
-
-  footer .brand-list .brand-list-base .brand-list-items.lg .brand-logo {
-    max-width: 274px;
-  }
-
-  footer .brand-list .brand-list-base .sec-left {
-    width: 50%;
-    position: absolute;
-    left: 0;
-    padding: 0;
-    text-align: right;
-    padding-right: 137px;
-  }
-
-  footer .brand-list .brand-list-base .sec-right {
-    width: 50%;
-    position: absolute;
-    right: 0;
-    padding: 0;
-    text-align: left;
-    padding-left: 137px;
-  }
-
-  footer .brand-list .brand-list-base .sec-left .brand-list-items,
-  footer .brand-list .brand-list-base .sec-right .brand-list-items {
-    width: 224px;
-  }
-  /* #Footer */
-
   /* POST 1 */
   .post-1 {
     width: 1170px;
@@ -92,4 +46,10 @@
     height: 550px;
   }
   /* #MaidSafe Team Banner height changes */
+
+  /* Footer */
+  .footer-wig-a {
+    width: 390px;
+  }
+  /* #Footer */
 }

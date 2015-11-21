@@ -6,47 +6,6 @@
   }
   /* #Common */
 
-  /* Footer */
-  /* Footer Branding structure changes */
-  footer .brand-list .brand-list-items {
-    width: 100%;
-  }
-
-  footer .brand-list .brand-list-base .sec-center {
-    padding-left: 0;
-    padding-right: 0;
-    box-shadow: 0 2px 0 #1c6fad;
-  }
-
-  footer .brand-list .brand-list-base .sec-left {
-    width: 100% !important;
-    position: static;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  footer .brand-list .brand-list-base .sec-right {
-    width: 100% !important;
-    position: static;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  footer .brand-list .brand-list-base .brand-list-items.lg {
-    width: 100%;
-  }
-
-  footer .brand-list .brand-list-base .sec-left .brand-list-items,
-  footer .brand-list .brand-list-base .sec-right .brand-list-items {
-    box-shadow: 0 2px 0 #1c6fad;
-  }
-
-  /* Footer Keymap margin varies */
-  footer .layer-2 {
-    margin-top: 28px;
-  }
-  /* #Footer */
-
   /* Home Banner */
   /* Banner height and label size varies */
   .home-banner {
@@ -199,4 +158,33 @@
     line-height: 22px;
   }
   /* #Accordian */
+  /* Footer */
+  .footer-wig-a {
+    width: 100%;
+  }
+  .footer-wig-a-cont {
+    width: 320px;
+  }
+  .footer-wig-b {
+    width: 100%;
+  }
+  .footer-hz-li ul {
+    text-align: center;
+  }
+  .footer-hz-li ul:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+  }
+  .footer-hz-li ul li {
+    width: 33.33%;
+    padding: 0;
+    float: left;
+  }
+  .footer-hz-li ul li:last-child {
+    width: 100%;
+    padding-top: 16px;
+  }
+  /* #Footer */
 }
