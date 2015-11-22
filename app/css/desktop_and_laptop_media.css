@@ -49,7 +49,7 @@
   .footer-wig-a:nth-child(2) {
     text-align: center;
   }
-  .footer-wig-a:last-child {
+  .footer-wig-a:nth-child(3) {
     text-align: right;
   }
   /* #Footer */
