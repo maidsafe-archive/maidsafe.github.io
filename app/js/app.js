@@ -1,4 +1,7 @@
 /* global $: false, document: false, window: false */
+
+var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
+
 /**
  * Accordian
  */
@@ -106,9 +109,34 @@ var showMobPrimaryNav = function() {
   });
 };
 
+// Modal events
+var Modal = {
+  target: $('#Modal'),
+  open: function() {
+    this.target.show();
+  },
+  close: function() {
+    this.target.hide();
+  }
+};
+
 $(function() {
   typingEffect();
   accordian();
   headerChangeOnScroll();
   showMobPrimaryNav();
+
+  // Intro video
+  $('#IntroVideoTrigger').on('click', function(e) {
+    e.preventDefault();
+    Modal.open();
+    $('#IntroVideo').attr("src", IntroVideoSrc);
+  });
+
+  // Close Modal
+  $('#Modal').on('click', function(e) {
+    e.stopPropagation();
+    Modal.close();
+    $('#IntroVideo').attr("src","");
+  });
 });
