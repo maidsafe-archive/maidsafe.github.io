@@ -247,4 +247,12 @@
     margin-top: 30px;
   }
   /* #Post 3 */
+  /* Overlay */
+  .overlay .overlay-cont {
+    width: 480px;
+  }
+  .overlay .overlay-cont .overlay-cont-i iframe {
+    height: 315px;
+  }
+  /* #Overlay */
 }
