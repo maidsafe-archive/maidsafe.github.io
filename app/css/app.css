@@ -1203,3 +1203,44 @@ header.invert .secNavButton:after {
   width: 100%;
 }
 /* #Team images */
+/* Box 3 */
+.box-3 {
+  width: 100%;
+  margin-top: 80px;
+  text-align: left;
+}
+.box-3:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.box-3 .box-3-i {
+  width: 100%;
+  display: inline-block;
+  float: left;
+  color: #FFF;
+}
+.box-3 .box-3-i:not(:first-child){
+  margin-top: 50px;
+}
+.box-3 .box-3-i .box-3-cont {
+  background-color: #5593d7;
+  padding: 40px 16px;
+}
+.box-3 .box-3-i .box-3-cont .ttl {
+  font-size: 39px;
+  line-height: 47px;
+}
+.box-3 .box-3-i .box-3-cont .desc {
+  font-size: 20px;
+  line-height: 27px;
+  margin-top: 40px;
+}
+.box-3 .box-3-i .box-3-cont .lnk {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  display: inline-block;
+}
+/* #Box 3 */
