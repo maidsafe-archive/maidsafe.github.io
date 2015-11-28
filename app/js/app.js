@@ -5,17 +5,17 @@ var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
 /**
  * Accordian
  */
- var accordian = function() {
-   $('#accordian ul li').on('click', function() {
-     var self = $(this);
-     if (self.hasClass('active')) {
-       self.removeClass('active');
-       return;
-     }
-     $('#accordian ul li').removeClass('active');
-     self.addClass('active');
-   });
- };
+var accordian = function() {
+  $('#accordian ul li').on('click', function() {
+    var self = $(this);
+    if (self.hasClass('active')) {
+      self.removeClass('active');
+      return;
+    }
+    $('#accordian ul li').removeClass('active');
+    self.addClass('active');
+  });
+};
 
 /**
  * Typing effecting
@@ -130,13 +130,13 @@ $(function() {
   $('#IntroVideoTrigger').on('click', function(e) {
     e.preventDefault();
     Modal.open();
-    $('#IntroVideo').attr("src", IntroVideoSrc);
+    $('#IntroVideo').attr('src', IntroVideoSrc);
   });
 
   // Close Modal
   $('#Modal').on('click', function(e) {
     e.stopPropagation();
     Modal.close();
-    $('#IntroVideo').attr("src","");
+    $('#IntroVideo').attr('src', 'about:blank');
   });
 });
