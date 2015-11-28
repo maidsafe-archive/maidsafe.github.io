@@ -254,4 +254,30 @@
     transform: rotateZ(0deg);
   }
   /* #Post 2 */
+  /* Team Img*/
+  .team-img {
+    min-height: 190px;
+    height: auto;
+  }
+  .team-img .team-img-i {
+    width: 20%;
+    height: auto;
+  }
+  /* #Team Img*/
+  /* Post 3 */
+  .post-3 {
+    width: 100%;
+  }
+  .post-3 .post-3-cont {
+    padding: 60px 0 120px;
+    margin-top: 0;
+  }
+  .post-3 .post-3-cont .post-3-cont-i {
+    width: 100%;
+    padding: 0 16px;
+  }
+  .post-3 .post-3-cont p {
+    margin-top: 30px;
+  }
+  /* #Post 3 */
 }

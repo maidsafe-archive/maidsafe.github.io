@@ -244,4 +244,13 @@
     transform: rotateZ(0deg);
   }
   /* #Post 2 */
+  /* Team Img*/
+  .team-img {
+    min-height: 390px;
+  }
+  .team-img .team-img-i {
+    width: 16.667%;
+    height: auto;
+  }
+  /* #Team Img*/
 }

@@ -77,4 +77,12 @@
   }
 
   /* #Post 2 */
+  /* Post 3 */
+  .post-3 {
+    width: 1085px;
+  }
+  .post-3 .post-3-cont .post-3-cont-i {
+    width: 960px;
+  }
+  /* #Post 3 */
 }
