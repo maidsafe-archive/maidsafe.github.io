@@ -1,18 +1,21 @@
 /* global $: false, document: false, window: false */
+
+var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
+
 /**
  * Accordian
  */
- var accordian = function() {
-   $('#accordian ul li').on('click', function() {
-     var self = $(this);
-     if (self.hasClass('active')) {
-       self.removeClass('active');
-       return;
-     }
-     $('#accordian ul li').removeClass('active');
-     self.addClass('active');
-   });
- };
+var accordian = function() {
+  $('#accordian ul li').on('click', function() {
+    var self = $(this);
+    if (self.hasClass('active')) {
+      self.removeClass('active');
+      return;
+    }
+    $('#accordian ul li').removeClass('active');
+    self.addClass('active');
+  });
+};
 
 /**
  * Typing effecting
@@ -62,7 +65,7 @@ var typingEffect = function() {
 
 // Header Change on Window Scroll
 var headerChangeOnScroll = function() {
-  var exclude = [ 'company.html', 'safecoin.html' ];
+  var exclude = [ 'safecoin.html', 'features.html' ];
   var excludeFlag = false;
   var currentPage = window.location.href.split('/').pop();
   for (var i = 0; i < exclude.length; i++) {
@@ -106,9 +109,34 @@ var showMobPrimaryNav = function() {
   });
 };
 
+// Modal events
+var Modal = {
+  target: $('#Modal'),
+  open: function() {
+    this.target.show();
+  },
+  close: function() {
+    this.target.hide();
+  }
+};
+
 $(function() {
   typingEffect();
   accordian();
   headerChangeOnScroll();
   showMobPrimaryNav();
+
+  // Intro video
+  $('#IntroVideoTrigger').on('click', function(e) {
+    e.preventDefault();
+    Modal.open();
+    $('#IntroVideo').attr('src', IntroVideoSrc);
+  });
+
+  // Close Modal
+  $('#Modal').on('click', function(e) {
+    e.stopPropagation();
+    Modal.close();
+    $('#IntroVideo').attr('src', 'about:blank');
+  });
 });
