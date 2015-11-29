@@ -22,6 +22,40 @@ body {
   padding-bottom: 120px;
 }
 
+/* apply button */
+.apply-but {
+  padding-top: 80px;
+  display: block;
+  text-align: center;
+}
+.apply-but a {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 36px;
+  padding: 0 16px;
+  color: #FFF;
+  background-color: #1C6FAD;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* split layout */
+.layout-1 {
+  width: 960px;
+}
+.layout-1 .lsec {
+  width: 720px;
+  display: inline-block;
+  float: left;
+  padding-right: 32px;
+}
+.layout-1 .rsec {
+  width: 240px;
+  padding-left: 22px;
+  display: inline-block;
+  float: right;
+}
+
 
 /* Home page transparent strip with banner */
 .transparent-strip-bottom:before {
@@ -460,8 +494,7 @@ header.invert .secNavButton:after {
 }
 
 .page-1 .sec{
-  margin-top: 48px;
-  margin-bottom: 24px;
+  margin-top: 40px;
 }
 
 .page-1 .sub-title {
@@ -503,12 +536,25 @@ header.invert .secNavButton:after {
 
 .page-1 .list {
   font-size: 16px;
+  padding: 0 0 0 18px;
+  margin: 25px 0 0;
 }
 
 .page-1 .list li {
   padding: 8px 0;
   color: #808080;
   font-weight: 300;
+}
+.page-1 .lnk {
+  margin-top: 25px;
+}
+.page-1 .lnk a {
+  padding: 8px 0;
+  line-height: 24px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #5b94d9;
+  display: block;
 }
 /* #Page 1 Layout */
 
@@ -1065,12 +1111,19 @@ header.invert .secNavButton:after {
 .content-2 {
   padding: 80px 0;
 }
+.content-2.siblng {
+  padding: 80px 0 0;
+}
+
 .content-2 h3 {
   color: #5b94d9;
   font-size: 49px;
   line-height: 59px;
   font-weight: 300;
   margin: 0 0 40px 0;
+}
+.content-2.siblng h3 {
+  margin: 0;
 }
 .content-2 p {
   width: 100%;

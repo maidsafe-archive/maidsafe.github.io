@@ -117,4 +117,16 @@
     width: 1170px;
   }
   /* #Content 3 */
+  .page-1 {
+    width: 1170px;
+  }
+  .layout-1 {
+    width: 1170px;
+  }
+  .layout-1 .lsec {
+    width: 930px;
+  }
+  .layout-1 .rsec {
+    width: 240px;
+  }
 }

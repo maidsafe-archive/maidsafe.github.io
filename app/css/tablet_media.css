@@ -45,6 +45,17 @@
     line-height: 49px;
   }
   /* #Page 1 */
+  .layout-1 {
+    width: 100%;
+  }
+  .layout-1 .lsec {
+    width: 100%;
+    padding: 0;
+  }
+  .layout-1 .rsec {
+    width: 100%;
+    padding: 0;
+  }
 
   /* Page 2 */
   .page-2 {
