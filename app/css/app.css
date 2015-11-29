@@ -1143,6 +1143,9 @@ header.invert .secNavButton:after {
   background-color: #FFF;
   position: relative;
  }
+.post-3:last-child .post-3-cont {
+  padding-bottom: 180px;
+}
 .post-3 .post-3-cont:after {
   content: '';
   width: 100.3%;
@@ -1237,11 +1240,16 @@ header.invert .secNavButton:after {
   margin-top: 40px;
 }
 .box-3 .box-3-i .box-3-cont .lnk {
+  width: 100%;
   font-size: 22px;
   font-weight: bold;
   text-align: center;
   margin-top: 50px;
   display: inline-block;
+}
+.box-3 .box-3-i .box-3-cont .lnk a {
+  text-decoration: none;
+  color: #FFF;
 }
 /* #Box 3 */
 

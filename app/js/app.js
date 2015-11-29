@@ -94,13 +94,21 @@ var headerChangeOnScroll = function() {
 };
 
 var showMobPrimaryNav = function() {
+  var subPage = [ 'safecoin.html', 'features.html' ];
+
   $('#secNavButton').on('click', function() {
+    var currentPage = window.location.href.split('/').pop();
+    var target = $('#secNav');
+    if ($.inArray(currentPage, subPage) !== -1) {
+      $(this).addClass('invert');
+      target.addClass('invert');
+    }
     if ($(this).hasClass('selected')) {
       $(this).removeClass('selected');
     } else {
       $(this).addClass('selected');
     }
-    var target = $('#secNav');
+
     if (target.hasClass('show')) {
       target.removeClass('show');
       return;
