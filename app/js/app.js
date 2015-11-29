@@ -1,6 +1,7 @@
 /* global $: false, document: false, window: false */
 
 var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
+var subPage = [ 'safecoin.html', 'features.html', 'contact.html' ];
 
 /**
  * Accordian
@@ -65,11 +66,10 @@ var typingEffect = function() {
 
 // Header Change on Window Scroll
 var headerChangeOnScroll = function() {
-  var exclude = [ 'safecoin.html', 'features.html' ];
   var excludeFlag = false;
   var currentPage = window.location.href.split('/').pop();
-  for (var i = 0; i < exclude.length; i++) {
-    if (exclude[i] === currentPage) {
+  for (var i = 0; i < subPage.length; i++) {
+    if (subPage[i] === currentPage) {
       excludeFlag = true;
       break;
     }
@@ -94,8 +94,6 @@ var headerChangeOnScroll = function() {
 };
 
 var showMobPrimaryNav = function() {
-  var subPage = [ 'safecoin.html', 'features.html' ];
-
   $('#secNavButton').on('click', function() {
     var currentPage = window.location.href.split('/').pop();
     var target = $('#secNav');

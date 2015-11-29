@@ -289,4 +289,11 @@
     height: 235px;
   }
   /* #Overlay */
+
+  /* Content 3 */
+  .content-3 {
+    width: 100%;
+    padding: 16px;
+  }
+  /* #Content 3 */
 }

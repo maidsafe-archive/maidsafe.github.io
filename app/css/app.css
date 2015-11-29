@@ -1084,6 +1084,35 @@ header.invert .secNavButton:after {
 }
 /* #Content 2 */
 
+/* Content 3 */
+.content-3 {
+  width: 960px;
+  text-align: left;
+  margin: 0 auto 80px;
+}
+.content-3 h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  line-height: 42px;
+  color: #808080;
+}
+.content-3 p {
+  margin: 25px 0 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: normal;
+  color: #808080;
+}
+.content-3 a {
+  display: block;
+  text-decoration: none;
+  color: #5b94d9;
+  font-weight: normal;
+}
+/* #Content 3 */
+
 /* Post 2 */
 .post-2 {
   width: 960px;
