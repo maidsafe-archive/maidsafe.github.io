@@ -1,5 +1,8 @@
 /* Large Screens */
 @media only screen and (min-width: 1560px) {
+  .root.sub-page {
+    padding-bottom: 120px;
+  }
   /* POST 1 */
   .post-1 {
     width: 1170px;

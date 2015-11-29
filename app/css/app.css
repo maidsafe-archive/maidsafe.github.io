@@ -1152,9 +1152,6 @@ header.invert .secNavButton:after {
   background-color: #FFF;
   position: relative;
  }
-.post-3:last-child .post-3-cont {
-  padding-bottom: 180px;
-}
 .post-3 .post-3-cont:after {
   content: '';
   width: 100.3%;
