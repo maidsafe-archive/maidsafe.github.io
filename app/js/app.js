@@ -62,7 +62,7 @@ var typingEffect = function() {
 
 // Header Change on Window Scroll
 var headerChangeOnScroll = function() {
-  var exclude = [ 'company.html', 'safecoin.html', 'features.html' ];
+  var exclude = [ 'safecoin.html', 'features.html' ];
   var excludeFlag = false;
   var currentPage = window.location.href.split('/').pop();
   for (var i = 0; i < exclude.length; i++) {

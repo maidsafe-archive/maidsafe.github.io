@@ -1126,3 +1126,129 @@ header.invert .secNavButton:after {
   transform: rotateZ(180deg);
 }
 /* #Post 2 */
+
+/* Post 3 */
+.post-3 {
+  width: 710px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 99;
+}
+.post-3 .post-3-cont {
+  width: 100%;
+  display: inline-block;
+  margin-top: -80px;
+  padding: 80px 0 120px;
+  background-color: #FFF;
+  position: relative;
+ }
+.post-3:last-child .post-3-cont {
+  padding-bottom: 180px;
+}
+.post-3 .post-3-cont:after {
+  content: '';
+  width: 100.3%;
+  height: 100%;
+  position: absolute;
+  top: -0.1%;
+  left: -0.1%;
+  background-image: url("../img/post-bg-grandient.PNG");
+  background-size: contain;
+  z-index: -1;
+}
+.post-3 .post-3-cont .post-3-cont-i {
+  width: 585px;
+  display: inline-block;
+}
+.post-3 .post-3-cont h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 49px;
+  line-height: 59px;
+  font-weight: 300;
+  color: #5593d7;
+}
+.post-3 .post-3-cont p {
+  margin-top: 40px;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: normal;
+  color: #808080;
+}
+.post-3 .post-3-cont .qt {
+  display: inline-block;
+  text-align: center;
+  font-size: 22px;
+  line-height: 29px;
+  color: #808080;
+  margin-top: 80px;
+}
+/* #Post 3 */
+
+/* Team images */
+.team-img {
+  width: 100%;
+  min-height: 250px;
+}
+.team-img:after {
+  z-index: 99;
+}
+.team-img .team-img-i {
+  width: 12.5%;
+  height: auto;
+  overflow: hidden;
+  float: left;
+  display: inline-block;
+}
+.team-img .team-img-i img {
+  width: 100%;
+}
+/* #Team images */
+/* Box 3 */
+.box-3 {
+  width: 100%;
+  margin-top: 80px;
+  text-align: left;
+}
+.box-3:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.box-3 .box-3-i {
+  width: 100%;
+  display: inline-block;
+  float: left;
+  color: #FFF;
+}
+.box-3 .box-3-i:not(:first-child){
+  margin-top: 50px;
+}
+.box-3 .box-3-i .box-3-cont {
+  background-color: #5593d7;
+  padding: 40px 16px;
+}
+.box-3 .box-3-i .box-3-cont .ttl {
+  font-size: 39px;
+  line-height: 47px;
+}
+.box-3 .box-3-i .box-3-cont .desc {
+  font-size: 20px;
+  line-height: 27px;
+  margin-top: 40px;
+}
+.box-3 .box-3-i .box-3-cont .lnk {
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  display: inline-block;
+}
+.box-3 .box-3-i .box-3-cont .lnk a {
+  text-decoration: none;
+  color: #FFF;
+}
+/* #Box 3 */

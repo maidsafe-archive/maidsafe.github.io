@@ -77,4 +77,27 @@
   }
 
   /* #Post 2 */
+  /* Post 3 */
+  .post-3 {
+    width: 1085px;
+  }
+  .post-3 .post-3-cont .post-3-cont-i {
+    width: 960px;
+  }
+  /* #Post 3 */
+  /* Box 3 */
+  .box-3 .box-3-i {
+    width: 50%;
+    float: left;
+  }
+  .box-3 .box-3-i:not(:first-child){
+    margin-top: 0;
+  }
+  .box-3 .box-3-i:nth-child(odd) {
+    padding-right: 8px;
+  }
+  .box-3 .box-3-i:nth-child(even) {
+    padding-left: 8px;
+  }
+  /* #Box 3 */
 }
