@@ -253,4 +253,12 @@
     height: auto;
   }
   /* #Team Img*/
+  /* Overlay */
+  .overlay .overlay-cont {
+    width: 585px;
+  }
+  .overlay .overlay-cont .overlay-cont-i iframe {
+    height: 360px;
+  }
+  /* #Overlay */
 }

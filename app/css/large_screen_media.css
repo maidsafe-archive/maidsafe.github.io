@@ -100,4 +100,12 @@
     padding-left: 8px;
   }
   /* #Box 3 */
+  /* Overlay */
+  .overlay .overlay-cont {
+    width: 1170px;
+  }
+  .overlay .overlay-cont .overlay-cont-i iframe {
+    height: 720px;
+  }
+  /* #Overlay */
 }
