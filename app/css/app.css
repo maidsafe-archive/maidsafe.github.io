@@ -1252,3 +1252,33 @@ header.invert .secNavButton:after {
   color: #FFF;
 }
 /* #Box 3 */
+
+/* Qverlay */
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.overlay .overlay-cont {
+  width: 960px;
+  height: 100%;
+  display: table;
+  margin: 0 auto;
+}
+.overlay .overlay-cont .overlay-cont-i {
+  display: table-cell;
+  vertical-align: middle;
+}
+.overlay .overlay-cont .overlay-cont-i iframe {
+  width: 100%;
+  height: 480px;
+  border: 0;
+  background-color: #000;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.35);
+}
+/* #overlay */

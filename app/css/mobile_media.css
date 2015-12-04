@@ -280,4 +280,13 @@
     margin-top: 30px;
   }
   /* #Post 3 */
+  /* Overlay */
+  .overlay .overlay-cont {
+    width: 100%;
+    padding: 0 32px;
+  }
+  .overlay .overlay-cont .overlay-cont-i iframe {
+    height: 235px;
+  }
+  /* #Overlay */
 }
