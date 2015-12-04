@@ -1,5 +1,10 @@
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1135px) and (max-width: 1559px) {
+
+  .root.sub-page {
+    padding-bottom: 120px;
+  }
+
   /* Layout Type 1 */
   .layout-1 {
     width: 100%;
