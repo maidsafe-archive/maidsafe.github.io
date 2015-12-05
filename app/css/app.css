@@ -435,6 +435,10 @@ header.invert .secNavButton:after {
   padding: 0 0 0 24px;
 }
 
+.page-banner.company-page {
+  height: 570px;
+}
+
 .page-banner.safecoin {
   background-image: url(../img/safecoin_banner.svg);
 }
@@ -1240,16 +1244,44 @@ header.invert .secNavButton:after {
   background-color: #FFF;
   position: relative;
  }
-.post-3 .post-3-cont:after {
-  content: '';
-  width: 100.3%;
-  height: 100%;
+.post-3 .post-3-cont .post-3-top-shdw {
+  width: 100%;
+  height: 80%;
+  display: inline-block;
+  background-image: url("../img/post_gradient_top.png");
+  background-repeat: no-repeat;
+  background-size: 100% 32px;
+  background-position: 0 0;
   position: absolute;
-  top: -0.1%;
-  left: -0.1%;
-  background-image: url("../img/post-bg-grandient.PNG");
-  background-size: contain;
+  top: -32px;
+  left: 0;
   z-index: -1;
+}
+
+.post-3 .post-3-cont .post-3-top-shdw:before {
+  content: '';
+  width: 32px;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  left: -32px;
+  background-image: url("../img/post_gradient_side.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -1;
+}
+.post-3 .post-3-cont .post-3-top-shdw:after {
+  content: '';
+  width: 32px;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  right: -32px;
+  background-image: url("../img/post_gradient_side.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -1;
+  transform: scaleX(-1);
 }
 .post-3 .post-3-cont .post-3-cont-i {
   width: 585px;
@@ -1284,7 +1316,7 @@ header.invert .secNavButton:after {
 /* Team images */
 .team-img {
   width: 100%;
-  min-height: 250px;
+  min-height: 150px;
 }
 .team-img:after {
   z-index: 99;
@@ -1336,9 +1368,10 @@ header.invert .secNavButton:after {
 .box-3 .box-3-i .box-3-cont .lnk {
   width: 100%;
   font-size: 22px;
-  font-weight: bold;
-  text-align: center;
+  font-weight: 600;
   margin-top: 50px;
+  padding: 32px;
+  text-align: center;
   display: inline-block;
 }
 .box-3 .box-3-i .box-3-cont .lnk a {

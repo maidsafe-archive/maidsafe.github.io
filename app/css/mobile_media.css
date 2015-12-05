@@ -33,6 +33,7 @@
   .page-banner.home-like {
     height: 270px;
   }
+
   /* #Page Banner */
 
   /* Typing */
@@ -266,10 +267,6 @@
   }
   /* #Post 2 */
   /* Team Img*/
-  .team-img {
-    min-height: 190px;
-    height: auto;
-  }
   .team-img .team-img-i {
     width: 20%;
     height: auto;

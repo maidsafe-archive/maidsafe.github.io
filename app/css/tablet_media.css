@@ -235,9 +235,6 @@
   }
   /* #Post 2 */
   /* Team Img*/
-  .team-img {
-    min-height: 300px;
-  }
   .team-img .team-img-i {
     width: 20%;
     height: auto;
