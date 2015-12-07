@@ -158,14 +158,18 @@ var loadTeamBanner = function() {
     'Spandan': 'img/team/spandan.jpg',
     'Scott': 'img/team/scott.jpg',
     'Qi': 'img/team/qi.jpg',
-    'Peter': 'img/team/peter.jpg',
+    'Peter': 'img/team/peter.jpg'
   };
+  
   var teamImgItemHg = parseFloat(teamImgWidth / itemCount);
-  for(key in teamArr) {
-    teamImgItem = '<div class="team-img-i"><img height="' + teamImgItemHg + '" src="' + teamArr[key] + '" alt="' + key + '" title="' + key + '"></div>';
-    teamImg.append(teamImgItem);
+  for (var key in teamArr) {
+    if (teamArr[key]) {
+      teamImgItem = '<div class="team-img-i"><img height="' + teamImgItemHg + '" src="' +
+          teamArr[key] + '" alt="' + key + '" title="' + key + '"></div>';
+      teamImg.append(teamImgItem);
+    }
   }
-  teamImg.addClass('banner-gradian')
+  teamImg.addClass('banner-gradian');
 };
 
 $(function() {
@@ -188,9 +192,9 @@ $(function() {
     Modal.close();
     $('#IntroVideo').attr('src', 'about:blank');
   });
+});
 
-  //  Window resize event
-  $(window).resize(function() {
-    loadTeamBanner();
-  });
+//  Window resize event
+$(window).resize(function() {
+  loadTeamBanner();
 });

@@ -275,6 +275,7 @@
   /* Post 3 */
   .post-3 {
     width: 100%;
+    overflow: hidden;
   }
   .post-3 .post-3-cont {
     padding: 60px 0 120px;
