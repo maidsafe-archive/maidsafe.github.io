@@ -377,6 +377,7 @@ header.invert .secNavButton:after {
   background-image: url(../img/banner_new.jpg);
   background-size: cover;
   color: white;
+  background-color: #4c66a3;
   background-position: center;
   display: table;
   position: relative;
@@ -387,6 +388,7 @@ header.invert .secNavButton:after {
 }
 
 .home-banner.two {
+  background-color: #7d829c;
   background-image: url(../img/second_banner.jpg);
 }
 
@@ -445,6 +447,7 @@ header.invert .secNavButton:after {
 }
 
 .page-banner.support {
+  background-color: #3e2661;
   background-image: url(../img/support_page_banner.jpg);
 }
 
@@ -1331,6 +1334,51 @@ header.invert .secNavButton:after {
 }
 .team-img .team-img-i img {
   width: 100%;
+}
+.team-img .team-img-i img[title='Andrew'] {
+  background-color: #92725e;
+}
+.team-img .team-img-i img[title='David'] {
+  background-color: #518ac5;
+}
+.team-img .team-img-i img[title='Viv'] {
+  background-color: #444444;
+}
+.team-img .team-img-i img[title='Krishna'] {
+  background-color: #ab9643;
+}
+.team-img .team-img-i img[title='Justine'] {
+  background-color: #795055;
+}
+.team-img .team-img-i img[title='Ross'] {
+  background-color: #dbf280;
+}
+.team-img .team-img-i img[title='Fraser'] {
+  background-color: #c09da4;
+}
+.team-img .team-img-i img[title='Nick'] {
+  background-color: #939393;
+}
+.team-img .team-img-i img[title='Paige'] {
+  background-color: #dbad7c;
+}
+.team-img .team-img-i img[title='Shona'] {
+  background-color: #e66d76;
+}
+.team-img .team-img-i img[title='Vinicius'] {
+  background-color: #48bd8d;
+}
+.team-img .team-img-i img[title='Spandan'] {
+  background-color: #7b8a8f;
+}
+.team-img .team-img-i img[title='Scott'] {
+  background-color: #983c37;
+}
+.team-img .team-img-i img[title='Qi'] {
+  background-color: #f76051;
+}
+.team-img .team-img-i img[title='Peter'] {
+  background-color: #729ec2;
 }
 /* #Team images */
 /* Box 3 */
