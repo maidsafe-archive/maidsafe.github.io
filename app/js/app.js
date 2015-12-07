@@ -160,7 +160,6 @@ var loadTeamBanner = function() {
     'Qi': 'img/team/qi.jpg',
     'Peter': 'img/team/peter.jpg'
   };
-  
   var teamImgItemHg = parseFloat(teamImgWidth / itemCount);
   for (var key in teamArr) {
     if (teamArr[key]) {
