@@ -274,4 +274,12 @@
     width: 585px;
   }
   /* #Content 3 */
+  /* Post 3 */
+  .post-3 {
+    width: 710px;
+  }
+  .post-3 .post-3-cont .post-3-cont-i {
+    width: 585px;
+  }
+  /* #Post 3 */
 }

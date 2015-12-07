@@ -1231,7 +1231,7 @@ header.invert .secNavButton:after {
 
 /* Post 3 */
 .post-3 {
-  width: 710px;
+  width: 1085px;
   margin: 0 auto;
   text-align: center;
   position: relative;
@@ -1285,7 +1285,7 @@ header.invert .secNavButton:after {
   transform: scaleX(-1);
 }
 .post-3 .post-3-cont .post-3-cont-i {
-  width: 585px;
+  width: 960px;
   display: inline-block;
 }
 .post-3 .post-3-cont h3 {
