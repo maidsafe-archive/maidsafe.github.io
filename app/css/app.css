@@ -420,6 +420,7 @@ header.invert .secNavButton:after {
   width: 40px;
   height: 40px;
   display: inline-block;
+  margin-left: 8px;
 }
 /* #Home Banner */
 
@@ -903,11 +904,12 @@ header.invert .secNavButton:after {
 
 .post-1 .content a {
   color: white;
-  text-decoration: underline;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .post-1 .content a:hover {
-  color: white;
+  color: #215A96;
 }
 
 .post-1 .content .p {
@@ -928,13 +930,18 @@ header.invert .secNavButton:after {
 
 .post-1 .ghost-button a {
   text-decoration: none;
-  color: #FFF;
+  color: #FFF !important;
   border: 2px solid #FFF;
   font-size: 18px;
   line-height: 38px;
   display: inline-block;
   padding: 0 16px;
   border-radius: 5px;
+}
+
+.post-1 .ghost-button:hover a {
+  color: #5593d7 !important;
+  background-color: white;
 }
 
 .post-1.flip .media {
