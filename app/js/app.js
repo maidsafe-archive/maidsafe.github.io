@@ -1,7 +1,7 @@
 /* global $: false, document: false, window: false */
 
 var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
-var subPage = [ 'safecoin.html', 'features.html', 'contact.html' ];
+var subPage = [ '/safecoin.html', '/features.html', '/contact.html' ];
 
 /**
  * Accordian
@@ -66,14 +66,6 @@ var typingEffect = function() {
 
 // Header Change on Window Scroll
 var headerChangeOnScroll = function() {
-  var excludeFlag = false;
-  var currentPage = window.location.href.split('/').pop();
-  for (var i = 0; i < subPage.length; i++) {
-    if (subPage[i] === currentPage) {
-      excludeFlag = true;
-      break;
-    }
-  }
   $(window).on('scroll', function() {
     if ($(this).scrollTop() > 10) {
       $('header').addClass('invert onScroll');
@@ -83,7 +75,7 @@ var headerChangeOnScroll = function() {
       return;
     }
     $('header').removeClass('onScroll');
-    if (excludeFlag) {
+    if (subPage.indexOf(window.location.pathname) > -1) {
       return;
     }
     $('header').removeClass('invert');
@@ -95,9 +87,8 @@ var headerChangeOnScroll = function() {
 
 var showMobPrimaryNav = function() {
   $('#secNavButton').on('click', function() {
-    var currentPage = window.location.href.split('/').pop();
     var target = $('#secNav');
-    if ($.inArray(currentPage, subPage) !== -1) {
+    if ($.inArray(window.location.pathname, subPage) !== -1) {
       $(this).addClass('invert');
       target.addClass('invert');
     }
