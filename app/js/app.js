@@ -137,3 +137,22 @@ $(function() {
     $('#IntroVideo').attr('src', 'about:blank');
   });
 });
+
+var DISPLACEMENT_OFFSET = 150;
+var ANIMATION_DURATION = 500;
+var DELAY = 100;
+var displaceOnHashChange = function() {
+  $('body').stop().animate({
+    scrollTop: window.scrollY - DISPLACEMENT_OFFSET
+  }, ANIMATION_DURATION);
+};
+
+window.addEventListener('hashchange', function() {
+  setTimeout(displaceOnHashChange, DELAY);
+}, false);
+
+$(document).ready(function() {
+  if (window.location.hash) {
+    setTimeout(displaceOnHashChange, DELAY);
+  }
+});
