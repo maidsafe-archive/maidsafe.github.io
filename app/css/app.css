@@ -1403,7 +1403,7 @@ header.invert .secNavButton:after {
 }
 .box-3 .box-3-i .box-3-cont {
   background-color: #5593d7;
-  padding: 40px 16px;
+  padding: 32px;
 }
 .box-3 .box-3-i .box-3-cont .ttl {
   font-size: 39px;
@@ -1412,14 +1412,13 @@ header.invert .secNavButton:after {
 .box-3 .box-3-i .box-3-cont .desc {
   font-size: 20px;
   line-height: 27px;
-  margin-top: 40px;
+  margin-top: 32px;
 }
 .box-3 .box-3-i .box-3-cont .lnk {
   width: 100%;
   font-size: 22px;
   font-weight: 600;
-  margin-top: 50px;
-  padding: 32px;
+  padding: 32px 0 0;
   text-align: center;
   display: inline-block;
 }
