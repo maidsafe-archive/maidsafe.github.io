@@ -1250,7 +1250,7 @@ header.invert .secNavButton:after {
  }
 .post-3 .post-3-cont .post-3-top-shdw {
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: inline-block;
   background-image: url("../img/post_gradient_top.png");
   background-repeat: no-repeat;
@@ -1265,7 +1265,7 @@ header.invert .secNavButton:after {
 .post-3 .post-3-cont .post-3-top-shdw:before {
   content: '';
   width: 32px;
-  height: 70%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: -32px;
@@ -1277,7 +1277,7 @@ header.invert .secNavButton:after {
 .post-3 .post-3-cont .post-3-top-shdw:after {
   content: '';
   width: 32px;
-  height: 70%;
+  height: 100%;
   position: absolute;
   top: 0;
   right: -32px;
