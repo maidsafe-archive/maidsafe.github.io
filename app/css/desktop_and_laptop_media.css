@@ -1,4 +1,14 @@
 /* Desktops and laptops ----------- */
+/*
+ * The team images have a scaling issue in this media range
+ * Thus had to fix a value that would scale in this specific media range
+*/
+@media only screen and (min-width: 1135px) and (max-width: 1155px) {
+  .team-img .team-img-i {
+    width: 16.66%;
+  }
+}
+
 @media only screen and (min-width: 1135px) and (max-width: 1559px) {
 
   .root.sub-page {
@@ -58,4 +68,19 @@
     text-align: right;
   }
   /* #Footer */
+  /* Box 3 */
+  .box-3 .box-3-i {
+    width: 50%;
+    float: left;
+  }
+  .box-3 .box-3-i:not(:first-child){
+    margin-top: 0;
+  }
+  .box-3 .box-3-i:nth-child(odd) {
+    padding-right: 8px;
+  }
+  .box-3 .box-3-i:nth-child(even) {
+    padding-left: 8px;
+  }
+  /* #Box 3 */
 }
