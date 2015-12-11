@@ -456,6 +456,11 @@ header.invert .secNavButton:after {
   background-image: url(../img/support_page_banner.jpg);
 }
 
+.page-banner.what-drives-us {
+  background-color: #3e2661;
+  background-image: url(../img/what_drives_us.jpg);
+}
+
 .page-banner.maidsafe-team {
   background-image: url(../img/MaidSafe-Team-6th-Nov.jpg);
   background-position: center -50px;
