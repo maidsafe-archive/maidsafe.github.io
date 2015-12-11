@@ -5,6 +5,11 @@ body {
   background-color: white;
 }
 
+a, a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
 .home-page {
   background-color: #5593d7;
 }
@@ -1055,6 +1060,11 @@ header.invert .secNavButton:after {
   padding: 0 0 16px;
   margin: 0;
 }
+
+.footer-wig-b-cont > h3 > a {
+  color: #FFFFFF;
+}
+
 .footer-wig-b ul {
   margin: 0;
   padding: 0;
