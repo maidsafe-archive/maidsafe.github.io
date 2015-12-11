@@ -377,6 +377,7 @@ header.invert .secNavButton:after {
   background-image: url(../img/banner_new.jpg);
   background-size: cover;
   color: white;
+  background-color: #4c66a3;
   background-position: center;
   display: table;
   position: relative;
@@ -387,6 +388,7 @@ header.invert .secNavButton:after {
 }
 
 .home-banner.two {
+  background-color: #7d829c;
   background-image: url(../img/second_banner.jpg);
 }
 
@@ -436,11 +438,16 @@ header.invert .secNavButton:after {
   padding: 0 0 0 24px;
 }
 
+.page-banner.company-page {
+  height: 570px;
+}
+
 .page-banner.safecoin {
   background-image: url(../img/safecoin_banner.svg);
 }
 
 .page-banner.support {
+  background-color: #3e2661;
   background-image: url(../img/support_page_banner.jpg);
 }
 
@@ -1227,7 +1234,7 @@ header.invert .secNavButton:after {
 
 /* Post 3 */
 .post-3 {
-  width: 710px;
+  width: 1085px;
   margin: 0 auto;
   text-align: center;
   position: relative;
@@ -1241,19 +1248,47 @@ header.invert .secNavButton:after {
   background-color: #FFF;
   position: relative;
  }
-.post-3 .post-3-cont:after {
-  content: '';
-  width: 100.3%;
+.post-3 .post-3-cont .post-3-top-shdw {
+  width: 100%;
   height: 100%;
+  display: inline-block;
+  background-image: url("../img/post_gradient_top.png");
+  background-repeat: no-repeat;
+  background-size: 100% 32px;
+  background-position: 0 0;
   position: absolute;
-  top: -0.1%;
-  left: -0.1%;
-  background-image: url("../img/post-bg-grandient.PNG");
-  background-size: contain;
+  top: -32px;
+  left: 0;
   z-index: -1;
 }
+
+.post-3 .post-3-cont .post-3-top-shdw:before {
+  content: '';
+  width: 32px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -32px;
+  background-image: url("../img/post_gradient_side.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -1;
+}
+.post-3 .post-3-cont .post-3-top-shdw:after {
+  content: '';
+  width: 32px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -32px;
+  background-image: url("../img/post_gradient_side.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -1;
+  transform: scaleX(-1);
+}
 .post-3 .post-3-cont .post-3-cont-i {
-  width: 585px;
+  width: 960px;
   display: inline-block;
 }
 .post-3 .post-3-cont h3 {
@@ -1285,7 +1320,7 @@ header.invert .secNavButton:after {
 /* Team images */
 .team-img {
   width: 100%;
-  min-height: 250px;
+  min-height: 150px;
 }
 .team-img:after {
   z-index: 99;
@@ -1299,6 +1334,51 @@ header.invert .secNavButton:after {
 }
 .team-img .team-img-i img {
   width: 100%;
+}
+.team-img .team-img-i img[title='Andrew'] {
+  background-color: #92725e;
+}
+.team-img .team-img-i img[title='David'] {
+  background-color: #518ac5;
+}
+.team-img .team-img-i img[title='Viv'] {
+  background-color: #444444;
+}
+.team-img .team-img-i img[title='Krishna'] {
+  background-color: #ab9643;
+}
+.team-img .team-img-i img[title='Justine'] {
+  background-color: #795055;
+}
+.team-img .team-img-i img[title='Ross'] {
+  background-color: #dbf280;
+}
+.team-img .team-img-i img[title='Fraser'] {
+  background-color: #c09da4;
+}
+.team-img .team-img-i img[title='Nick'] {
+  background-color: #939393;
+}
+.team-img .team-img-i img[title='Paige'] {
+  background-color: #dbad7c;
+}
+.team-img .team-img-i img[title='Shona'] {
+  background-color: #e66d76;
+}
+.team-img .team-img-i img[title='Vinicius'] {
+  background-color: #48bd8d;
+}
+.team-img .team-img-i img[title='Spandan'] {
+  background-color: #7b8a8f;
+}
+.team-img .team-img-i img[title='Scott'] {
+  background-color: #983c37;
+}
+.team-img .team-img-i img[title='Qi'] {
+  background-color: #f76051;
+}
+.team-img .team-img-i img[title='Peter'] {
+  background-color: #729ec2;
 }
 /* #Team images */
 /* Box 3 */
@@ -1323,7 +1403,7 @@ header.invert .secNavButton:after {
 }
 .box-3 .box-3-i .box-3-cont {
   background-color: #5593d7;
-  padding: 40px 16px;
+  padding: 32px;
 }
 .box-3 .box-3-i .box-3-cont .ttl {
   font-size: 39px;
@@ -1332,14 +1412,14 @@ header.invert .secNavButton:after {
 .box-3 .box-3-i .box-3-cont .desc {
   font-size: 20px;
   line-height: 27px;
-  margin-top: 40px;
+  margin-top: 32px;
 }
 .box-3 .box-3-i .box-3-cont .lnk {
   width: 100%;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
+  padding: 32px 0 0;
   text-align: center;
-  margin-top: 50px;
   display: inline-block;
 }
 .box-3 .box-3-i .box-3-cont .lnk a {

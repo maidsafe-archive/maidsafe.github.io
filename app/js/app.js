@@ -126,11 +126,57 @@ var Modal = {
   }
 };
 
+// Load Team Banner
+var loadTeamBanner = function() {
+  var teamImg = $('.team-img');
+  var teamImgWidth = teamImg.width();
+  var teamImgItem = null;
+  var itemCount = 8;
+  teamImg.empty();
+
+  // Small screen
+  if (teamImgWidth <= 1134 && teamImgWidth >= 830) {
+    itemCount = 6;
+  }
+
+  // Tablet screen
+  if (teamImgWidth <= 829) {
+    itemCount = 5;
+  }
+  var teamArr = {
+    'Andrew': 'img/team/andrew.jpg',
+    'David': 'img/team/david.jpg',
+    'Viv': 'img/team/viv.jpg',
+    'Krishna': 'img/team/krishna.jpg',
+    'Justine': 'img/team/justine.jpg',
+    'Ross': 'img/team/ross.jpg',
+    'Fraser': 'img/team/fraser.jpg',
+    'Nick': 'img/team/nick.jpg',
+    'Paige': 'img/team/paige.jpg',
+    'Shona': 'img/team/shona.jpg',
+    'Vinicius': 'img/team/vinicius.jpg',
+    'Spandan': 'img/team/spandan.jpg',
+    'Scott': 'img/team/scott.jpg',
+    'Qi': 'img/team/qi.jpg',
+    'Peter': 'img/team/peter.jpg'
+  };
+  var teamImgItemHg = parseFloat(teamImgWidth / itemCount);
+  for (var key in teamArr) {
+    if (teamArr[key]) {
+      teamImgItem = '<div class="team-img-i"><img height="' + teamImgItemHg + '" src="' +
+          teamArr[key] + '" alt="' + key + '" title="' + key + '"></div>';
+      teamImg.append(teamImgItem);
+    }
+  }
+  teamImg.addClass('banner-gradian');
+};
+
 $(function() {
   typingEffect();
   accordian();
   headerChangeOnScroll();
   showMobPrimaryNav();
+  loadTeamBanner();
 
   // Intro video
   $('#IntroVideoTrigger').on('click', function(e) {
@@ -145,4 +191,9 @@ $(function() {
     Modal.close();
     $('#IntroVideo').attr('src', 'about:blank');
   });
+});
+
+//  Window resize event
+$(window).resize(function() {
+  loadTeamBanner();
 });
