@@ -799,6 +799,16 @@ header.invert .secNavButton:after {
   display: inline-block;
   padding: 0;
 }
+.box-2 .item a {
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  border-radius: 5px;
+  outline: 0;
+}
+.box-2 .item a:hover {
+  box-shadow: 0 2px 7px rgba(0,0,0,0.4);
+}
 .box-2 .item:first-child {
   padding-right: 25px;
 }
@@ -809,29 +819,23 @@ header.invert .secNavButton:after {
   height: 140px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  background-color: #1C6FAD;
+  text-align: center;
 }
 
-.box-2 .item .content.bg-green {
-  background-color: rgb(102, 141, 94);
+.box-2 .item .content img {
+  height: 100%;
+  padding: 5% 0;
 }
 
-.box-2 .item .content.bg-blue {
-  background-color: rgb(102, 141, 170);
-}
-
-.box-2 .item .content.bg-red {
-  background-color: rgb(170, 107, 102);
-}
 .box-2 .item .foot {
   margin: 0;
   font-size: 18px;
   line-height: 60px;
   padding: 0 16px;
   font-weight: normal;
-  text-align: left;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  text-align: center;
+  color: #808080;
 }
 /* #box 2 */
 
