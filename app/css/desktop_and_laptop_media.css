@@ -57,17 +57,6 @@
     padding-bottom: 40px;
   }
   /* #Post 1 */
-  /* Footer */
-  .footer-wig-a:first-child {
-    text-align: left;
-  }
-  .footer-wig-a:nth-child(2) {
-    text-align: center;
-  }
-  .footer-wig-a:nth-child(3) {
-    text-align: right;
-  }
-  /* #Footer */
   /* Box 3 */
   .box-3 .box-3-i {
     width: 50%;

@@ -171,38 +171,26 @@
   }
   /* #Accordian */
   /* Footer */
-  .app-footer .app-footer-r.top {
-    padding: 25px 0 0;
-  }
-  .app-footer .spliter {
-    margin: 25px 0 0;
-  }
-  .footer-wig-a {
+  .app-footer .app-footer-b {
     width: 100%;
-    padding: 0;
-    margin: 0 0 25px;
+    padding: 0 16px;
   }
-  .footer-wig-a:nth-last-child(2) {
-    margin: 0;
+  .app-footer .app-footer-r.top {
+    width: 100%;
+  }
+  .footer-wig-a:first-child {
+    width: 100%;
+  }
+  .footer-wig-a:nth-child(2) {
+    padding-right: 8px;
+  }
+  .footer-wig-a:last-child {
+    float: none;
+    padding-left: 8px;
   }
   .footer-wig-a-cont {
-    width: 276px;
+    padding: 0;
   }
-  .footer-wig-a .footer-wig-a-img {
-    width: 100%;
-    padding: 20px 0;
-  }
-  .footer-wig-a p {
-    padding: 7px 0 0;
-  }
-  .footer-wig-a .footer-wig-a-desc {
-    width: 100%;
-    text-align: center;
-    float: none;
-    padding: 8px 0;
-  }
-
-
   .footer-wig-b {
     width: 100%;
   }

@@ -50,14 +50,8 @@
   }
   /* #MaidSafe Team Banner height changes */
   /* Footer */
-  .footer-wig-a:first-child {
-    text-align: left;
-  }
-  .footer-wig-a:nth-child(2) {
-    text-align: center;
-  }
-  .footer-wig-a:nth-child(3) {
-    text-align: right;
+  .app-footer .app-footer-b {
+    width: 1170px;
   }
   /* #Footer */
   /* Content 1 */
