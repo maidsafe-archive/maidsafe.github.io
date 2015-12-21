@@ -1033,6 +1033,7 @@ header.invert .secNavButton:after {
 }
 .footer-wig-a-cont a img {
   width: 32px;
+  margin: 0 5px 0 0;
 }
 
 .footer-wig-a-cont a h3 {
