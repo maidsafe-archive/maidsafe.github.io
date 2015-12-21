@@ -10,6 +10,10 @@ a, a:hover {
   color: #333;
 }
 
+.inline {
+  display: inline !important;
+}
+
 .home-page {
   background-color: #5593d7;
 }
@@ -999,7 +1003,7 @@ header.invert .secNavButton:after {
 }
 .app-footer .app-footer-r.middle {
   text-align: left;
-  padding-left: 32px;
+  /*padding-left: 32px;*/
 }
 .app-footer .app-footer-r.bottom {
   text-align: right;
@@ -1084,9 +1088,6 @@ header.invert .secNavButton:after {
 .footer-wig-b ul li a {
   color: white;
   text-decoration: none;
-}
-.footer-hz-li {
-  padding: 22px 16px 16px;
 }
 .footer-hz-li ul {
   margin: 0;
