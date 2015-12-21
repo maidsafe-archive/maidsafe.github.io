@@ -1089,6 +1089,11 @@ header.invert .secNavButton:after {
   color: white;
   text-decoration: none;
 }
+
+.footer-hz-li {
+  padding: 22px 0px 16px;
+}
+
 .footer-hz-li ul {
   margin: 0;
   padding: 0;
