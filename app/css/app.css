@@ -10,6 +10,10 @@ a, a:hover {
   color: #333;
 }
 
+.inline {
+  display: inline !important;
+}
+
 .home-page {
   background-color: #5593d7;
 }
