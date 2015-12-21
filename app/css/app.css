@@ -811,7 +811,7 @@ header.invert .secNavButton:after {
   outline: 0;
 }
 .box-2 .item a:hover {
-  box-shadow: 0 2px 7px rgba(0,0,0,0.4);
+  box-shadow:  0 3px 18px rgba(0,0,0,.3);
 }
 .box-2 .item:first-child {
   padding-right: 25px;
