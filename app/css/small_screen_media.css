@@ -185,25 +185,17 @@
   /* #Box 2 */
 
   /* Footer */
+  .app-footer .app-footer-b {
+    width: 585px;
+  }
   .app-footer .app-footer-r.top {
-    padding: 25px 32px 0;
-  }
-  .app-footer .spliter {
-    margin: 25px 0 0;
-  }
-  .footer-wig-a {
     width: 100%;
-    text-align: center;
-    padding: 17px 0;
   }
   .footer-wig-a-cont {
-    width: 470px;
+    padding: 2.5px 0;
   }
-  .footer-wig-a .footer-wig-a-desc {
-    width: 340px;
-  }
-  .footer-wig-b:last-child {
-    width: 100%;
+  .footer-wig-b:nth-child(even) {
+    width: 50%;
   }
   /* #Footer */
   /* Content 1 */

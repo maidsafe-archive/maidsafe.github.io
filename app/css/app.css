@@ -803,6 +803,16 @@ header.invert .secNavButton:after {
   display: inline-block;
   padding: 0;
 }
+.box-2 .item a {
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  border-radius: 5px;
+  outline: 0;
+}
+.box-2 .item a:hover {
+  box-shadow:  0 3px 18px rgba(0,0,0,.3);
+}
 .box-2 .item:first-child {
   padding-right: 25px;
 }
@@ -813,29 +823,22 @@ header.invert .secNavButton:after {
   height: 140px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  background-color: #1C6FAD;
+  text-align: center;
 }
 
-.box-2 .item .content.bg-green {
-  background-color: rgb(102, 141, 94);
+.box-2 .item .content img {
+  height: 100%;
+  padding: 5% 0;
 }
 
-.box-2 .item .content.bg-blue {
-  background-color: rgb(102, 141, 170);
-}
-
-.box-2 .item .content.bg-red {
-  background-color: rgb(170, 107, 102);
-}
 .box-2 .item .foot {
   margin: 0;
   font-size: 18px;
-  line-height: 60px;
-  padding: 0 16px;
+  padding: 10px 16px;
   font-weight: normal;
-  text-align: left;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  text-align: center;
+  color: #808080;
 }
 /* #box 2 */
 
@@ -981,6 +984,11 @@ header.invert .secNavButton:after {
 .app-footer {
   background-color: #1C6FAD;
 }
+
+.app-footer .app-footer-b {
+  width: 960px;
+  margin: 0 auto;
+}
 .app-footer .app-footer-r:after {
   content: "";
   display: block;
@@ -988,12 +996,13 @@ header.invert .secNavButton:after {
   clear: both;
 }
 .app-footer .app-footer-r.top {
+  width: 585px;
   text-align: center;
-  padding: 0 32px;
+  margin: 0 auto;
 }
 .app-footer .app-footer-r.middle {
   text-align: left;
-  padding-left: 32px;
+  /*padding-left: 32px;*/
 }
 .app-footer .app-footer-r.bottom {
   text-align: right;
@@ -1005,15 +1014,19 @@ header.invert .secNavButton:after {
   float: left;
 }
 .footer-wig-a {
-  width: 33.33%;
   text-align: center;
   color: #FFF;
-  padding: 27px 0;
   display: inline-block;
+}
+.footer-wig-a:first-child {
   float: left;
 }
+.footer-wig-a:last-child {
+  float: right;
+}
 .footer-wig-a-cont {
-  width: 348px;
+  padding: 7.5px 0;
+  line-height: 55px;
   display: inline-block;
 }
 .footer-wig-a-cont a {
@@ -1021,34 +1034,19 @@ header.invert .secNavButton:after {
   text-decoration: none;
   color: #FFF;
 }
-.footer-wig-a .footer-wig-a-img {
-  display: inline-block;
-  float: left;
-}
-.footer-wig-a .footer-wig-a-img img {
-  height: 80px;
-}
-.footer-wig-a .footer-wig-a-desc {
-  width: 200px;
-  display: inline-block;
-  text-align: left;
-  float: right;
-}
-.footer-wig-a h3 {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
+.footer-wig-a-cont a img {
+  width: 32px;
+  margin: 0 5px 0 0;
 }
 
-.footer-wig-a p {
-  font-size: 15px;
-  line-height: 22px;
-  font-weight: normal;
-  padding: 0;
+.footer-wig-a-cont a h3 {
   margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
 }
+
 
 .footer-wig-b {
   width: 220px;
@@ -1090,9 +1088,11 @@ header.invert .secNavButton:after {
   color: white;
   text-decoration: none;
 }
+
 .footer-hz-li {
-  padding: 22px 16px 16px;
+  padding: 22px 0px 16px;
 }
+
 .footer-hz-li ul {
   margin: 0;
   padding: 0;
