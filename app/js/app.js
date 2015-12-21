@@ -1,7 +1,7 @@
 /* global $: false, document: false, window: false */
 
 var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
-var subPage = [ '/safecoin.html', '/features.html', '/contact.html', '/privacy.html', '/disclaimer.html' ];
+var subPage = [ '/safecoin.html', '/features.html', '/contact.html', '/privacy.html', '/disclaimer.html', '/credits.html' ];
 
 /**
  * Accordian
