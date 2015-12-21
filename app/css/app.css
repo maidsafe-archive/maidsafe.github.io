@@ -831,8 +831,7 @@ header.invert .secNavButton:after {
 .box-2 .item .foot {
   margin: 0;
   font-size: 18px;
-  line-height: 60px;
-  padding: 0 16px;
+  padding: 10px 16px;
   font-weight: normal;
   text-align: center;
   color: #808080;
