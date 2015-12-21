@@ -305,4 +305,7 @@
     padding: 16px;
   }
   /* #Content 3 */
+  .credits-logo {
+    margin: 50px 0 0 0;
+  }
 }

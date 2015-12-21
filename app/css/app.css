@@ -1478,10 +1478,12 @@ header.invert .secNavButton:after {
 /* #overlay */
 
 /* Credits */
+.credits-page .content-1 {
+  padding-bottom: 60px;
+}
 .credits-logo {
   width: 80px;
-  height: 80px;
-  padding: 20px 0 0 0;
+  margin: 20px 0 0 0;
 }
 .advanced-installer {
   content: url("../img/advanced-installer-logo.jpg");
