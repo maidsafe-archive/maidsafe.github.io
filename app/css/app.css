@@ -1482,8 +1482,13 @@ header.invert .secNavButton:after {
   padding-bottom: 60px;
 }
 .credits-logo {
-  width: 80px;
-  margin: 20px 0 0 0;
+  width: 90px;
+  float: left;
+  margin: 25px 25px 0 0;
+}
+.credits-page .card {
+  float: left;
+  width: calc(100% - 115px);
 }
 .advanced-installer {
   content: url("../img/advanced-installer-logo.jpg");
