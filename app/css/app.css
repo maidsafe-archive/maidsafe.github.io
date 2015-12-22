@@ -1490,25 +1490,4 @@ header.invert .secNavButton:after {
   float: left;
   width: calc(100% - 115px);
 }
-.advanced-installer {
-  content: url("../img/advanced-installer-logo.jpg");
-}
-.jira {
-  content: url("../img/atlassian-jira-logo.jpg");
-}
-.github {
-  content: url("../img/github-octocat.png");
-}
-.jetbrains {
-  content: url("../img/jetbrains-logo.png");
-}
-.xamarin {
-  content: url("../img/xamarin-logo.png");
-}
-.sauce-labs {
-  content: url("../img/sauce-labs-logo.jpg");
-}
-.readme-io {
-  content: url("../img/readme.png");
-}
 /* #Credits */
