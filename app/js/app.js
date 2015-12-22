@@ -81,8 +81,7 @@ var headerChangeOnScroll = function() {
       return;
     }
     $('header').removeClass('onScroll');
-    var temp;
-    temp = window.location.pathname.split('/');
+    var temp = window.location.pathname.split('/');
     temp = temp[temp.length - 1];
     if (window.location.pathname && subPage.indexOf(temp.split('.')[0]) > -1) {
       return;
