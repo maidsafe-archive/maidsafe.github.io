@@ -131,6 +131,7 @@
     width: 100%;
     text-align: left;
     padding: 340px 16px 0;
+    position: relative;
   }
   .post-1 .content .title {
     margin-top: 0;
