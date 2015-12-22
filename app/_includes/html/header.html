@@ -1,69 +1,40 @@
-<header>
-  <div class="container-12 fw">
-    <div class="grid-4">
-      <a class="logo" href="/" title="Home"></a>
+<!-- Site Header -->
+<header class="{{page.headerClass}}">
+  <div class="header-base clearfix">
+    <!-- Site Logo -->
+    <div class="sec-1 col-xs-9 col-sm-5 col-md-3">
+      <div id="site-logo" class="site-logo {{page.headerClass}}">
+      <a class="gray-logo" href="./"><img src="./img/logo_white.svg" alt="MaidSafe Logo" /></a>
+        <a class="color-logo" href="./"><img src="./img/logo_colour.svg" alt="MaidSafe Logo" /></a>
+      </div>
     </div>
-    <div class="grid-8">
-      <a class="menu-link" href="#menu">Menu</a>
-      <nav id="menu" class="menu">
-        <ul>
-          <li class="overview single-link"><a href="overview">overview</a>
-          <li class="has-submenu"><a href="#">overview</a>
-            <ul class="sub-menu">
-              <li><a href="overview">overview</a>
-              </li>
-              <li><a href="distributed-network-features">features</a>
-              </li>
-              <li><a href="applications">applications</a>
-              </li>
-              <li><a href="network-platform-licensing">licensing</a>
-              </li>
-              <li class="roadmap"><a href="roadmap">roadmap</a>
-              </li>
-              <li class="testimonials"><a href="testimonials">testimonials</a>
-              </li>
-              <li><a href="safecoin">safecoin</a>
-              </li>
-            </ul>
-          </li>
-          <li class="get-involved single-link"><a href="get-involved">get involved</a>
-          <li class="has-submenu"><a href="#">get involved</a>
-            <ul class="sub-menu">
-              <li><a href="get-involved">overview</a>
-              </li>
-              <li><a href="core-developers">core developers</a>
-              </li>
-              <li><a href="app-builders">app-builders</a>
-              </li>
-              <li><a href="farmers">farmers</a>
-              </li>
-              <li><a href="safe-pods">SAFE pods</a>
-              </li>
-            </ul>
-          </li>
-          <li class="documents"><a href="documents">documents</a></li>
-          <li class="company single-link"><a href="company-privacy-security-freedom">company</a>
-          <li class="has-submenu"><a href="#">company</a>
-            <ul class="sub-menu">
-              <li><a href="company-privacy-security-freedom">overview</a>
-              </li>
-              <li><a href="team">team</a>
-              </li>
-              <li><a href="careers">careers</a>
-              </li>
-              <li><a href="timeline">timeline</a>
-              </li>
-              <li><a href="assets">assets</a>
-              </li>
-              <li><a href="credits">credits</a>
-              </li>
-            </ul>
-          </li>
-          <li class="press single-link"><a href="press">press</a>
-          <li class="blog"><a href="http://blog.maidsafe.net/" target="_blank">blog</a>
-          </li>
-        </ul>
-      </nav>
+    <!-- #Site Logo -->
+    <!-- Navigation -->
+    <div class="sec-2 col-xs-3 col-sm-4 pull-right col-md-9">
+      <!-- Primary Navigation -->
+      <ul class="primary-nav hidden-xs hidden-sm">
+        <li class=""><a href="./features.html">Features</a></li>
+        <li class=""><a href="./safecoin.html">Safecoin</a></li>
+        <li class=""><a href="./company.html">Company</a></li>
+        <li class=""><a href="./faq.html">FAQ</a></li>
+        <li class=""><a href="http://blog.maidsafe.net/" target="_blank">Blog</a></li>
+      </ul>
+      <!-- #Primary Navigation -->
     </div>
+    <!-- #Navigation -->
+    <div id="secNavButton" class="secNavButton hidden-md hidden-lg">Menu</div>
   </div>
+
+  <!-- Secondary Navigation -->
+  <div id="secNav" class="secondary-nav hidden-md hidden-lg">
+    <ul class="nav-list">
+      <li class=""><a href="./features.html">Features</a></li>
+      <li class=""><a href="./safecoin.html">Safecoin</a></li>
+      <li class=""><a href="./company.html">Company</a></li>
+      <li class=""><a href="./faq.html">FAQ</a></li>
+      <li class=""><a href="http://blog.maidsafe.net/" target="_blank">Blog</a></li>
+    </ul>
+  </div>
+  <!-- #Secondary Navigation -->
 </header>
+<!-- #Site Header -->

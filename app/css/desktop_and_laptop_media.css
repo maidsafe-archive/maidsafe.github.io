@@ -1,0 +1,75 @@
+/* Desktops and laptops ----------- */
+/*
+ * The team images have a scaling issue in this media range
+ * Thus had to fix a value that would scale in this specific media range
+*/
+@media only screen and (min-width: 1135px) and (max-width: 1155px) {
+  .team-img .team-img-i {
+    width: 16.66%;
+  }
+}
+
+@media only screen and (min-width: 1135px) and (max-width: 1559px) {
+
+  .root.sub-page {
+    padding-bottom: 120px;
+  }
+
+  /* Layout Type 1 */
+  .layout-1 {
+    width: 100%;
+  }
+
+  .layout-1 .left-sec {
+    width: 22% !important;
+    margin: 0;
+    float: left;
+  }
+
+  .layout-1 .right-sec {
+    width: 78% !important;
+    margin: 0;
+    float: right;
+  }
+  /* #Layout Type 1 */
+
+  /* MaidSafe Team Banner height changes */
+  .page-banner.maidsafe-team {
+    height: 550px;
+  }
+  /* #MaidSafe Team Banner height changes */
+
+  /* Post 1 */
+  .post-1 .foot {
+    margin-bottom: 40px;
+  }
+
+  .post-1.spacing-top {
+    padding-top: 40px;
+  }
+
+  .post-1.spacing-bottom {
+    padding-bottom: 40px;
+  }
+
+  .post-1.spacing-top-bottom {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  /* #Post 1 */
+  /* Box 3 */
+  .box-3 .box-3-i {
+    width: 50%;
+    float: left;
+  }
+  .box-3 .box-3-i:not(:first-child){
+    margin-top: 0;
+  }
+  .box-3 .box-3-i:nth-child(odd) {
+    padding-right: 8px;
+  }
+  .box-3 .box-3-i:nth-child(even) {
+    padding-left: 8px;
+  }
+  /* #Box 3 */
+}

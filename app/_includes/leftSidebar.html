@@ -1,0 +1,26 @@
+<div id="sidemenu" class="left-side-menu-base  hidden-xs hidden-sm col-xs-12 col-md-3 {{ page.sidebarClass }}">  
+  <ul class="left-side-menu">
+    {% for leftSidebar in page.leftSidebar %}
+      <li>
+        {% if leftSidebar.href == 'default' %}
+          <a href="#">{{leftSidebar.target}}</a>
+        {% else %}
+          <a href="{{leftSidebar.href}}">{{leftSidebar.target}}</a>
+        {% endif %}
+        {% if leftSidebar.innerNav %}
+          <ul class="left-side-menu-inner">
+            {% for key in leftSidebar.innerNav %}
+              <li>
+                {% if key.link == 'default' %}
+                  <a href="#">{{key.name}}</a>
+                {% else %}
+                  <a href="{{key.link}}">{{key.name}}</a>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

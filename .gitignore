@@ -11,3 +11,4 @@
 /.editorconfig
 
 npm-debug.log
+/Gemfile.lock

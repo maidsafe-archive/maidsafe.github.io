@@ -2,14 +2,14 @@ language: node_js
 
 node_js:
   - "0.12"
-  
+
 sudo: false
 
 branches:
   except:
     - master
 
-before_install: 
+before_install:
   - npm install -g grunt-cli
   - npm install -g bower
   - rvm install 2.0.0

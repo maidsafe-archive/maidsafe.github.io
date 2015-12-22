@@ -18,7 +18,7 @@ module.exports = function (grunt) {
   var CONFIG = {
     owner: 'maidsafe',
     repo: 'maidsafe.github.io',
-    baseBranch: 'next',
+    baseBranch: 'new_site',
     deployBranch: 'master'
   };
 
@@ -247,6 +247,17 @@ module.exports = function (grunt) {
             //'apple-touch*.png'
           ],
           dest: '<%= yeoman.dist %>'
+        },
+        {
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/_bower_components/open-sans-fontface',
+          src: [
+            // Copy css imports from _bower_components.
+            // 'Open Sans fonts to dist/css folder'
+            'fonts/**/*'
+          ],
+          dest: '<%= yeoman.dist %>/css'
         }]
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
@@ -269,7 +280,7 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
-            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            '<%= yeoman.dist %>/img/*.{gif,jpg,jpeg,png,svg,webp}',
             '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
@@ -436,11 +447,12 @@ module.exports = function (grunt) {
     htmllint: {
       options: {
         ignore: [
-          'Consider using the "h1" element as a top-level heading only (all "h1" elements are treated as top-level ' +
-          'headings by many screen readers and other tools).',
-          'Element "dl" is missing a required child element.',
-          'Element "div" not allowed as child of element "span" in this context. ' +
-          '(Suppressing further errors from this subtree.)'
+          //'Consider using the "h1" element as a top-level heading only (all "h1" elements are treated as top-level ' +
+          //'headings by many screen readers and other tools).',
+          //'Element "dl" is missing a required child element.',
+          //'Element "div" not allowed as child of element "span" in this context. ' +
+          //'(Suppressing further errors from this subtree.)',
+          '"&" did not start a character reference. ("&" probably should have been escaped as "&amp;".)'
         ]
       },
       all: ['.jekyll/*.html', '!.jekyll/404.html']
