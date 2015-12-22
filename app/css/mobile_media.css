@@ -293,7 +293,9 @@
     padding: 16px;
   }
   /* #Content 3 */
-
+  .credits-logo {
+    margin: 50px 25px 0 0;
+  }
   .footer-hz-li {
     padding: 22px 16px 16px;
   }

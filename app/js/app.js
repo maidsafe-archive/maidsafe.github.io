@@ -1,7 +1,13 @@
 /* global $: false, document: false, window: false */
 
 var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
-var subPage = [ '/safecoin.html', '/features.html', '/contact.html', '/privacy.html', '/disclaimer.html' ];
+var subPage = [
+  '/safecoin',
+  '/features',
+  '/contact',
+  '/privacy',
+  '/disclaimer',
+  '/credits' ];
 
 /**
  * Accordian
@@ -75,7 +81,7 @@ var headerChangeOnScroll = function() {
       return;
     }
     $('header').removeClass('onScroll');
-    if (subPage.indexOf(window.location.pathname) > -1) {
+    if (window.location.pathname && subPage.indexOf(window.location.pathname.split('.')[0]) > -1) {
       return;
     }
     $('header').removeClass('invert');
@@ -88,7 +94,7 @@ var headerChangeOnScroll = function() {
 var showMobPrimaryNav = function() {
   $('#secNavButton').on('click', function() {
     var target = $('#secNav');
-    if ($.inArray(window.location.pathname, subPage) !== -1) {
+    if (window.location.pathname && $.inArray(window.location.pathname.split('.')[0], subPage) !== -1) {
       $(this).addClass('invert');
       target.addClass('invert');
     }

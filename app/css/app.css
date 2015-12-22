@@ -1476,3 +1476,18 @@ header.invert .secNavButton:after {
   box-shadow: 0 1px 10px rgba(0,0,0,0.35);
 }
 /* #overlay */
+
+/* Credits */
+.credits-page .content-1 {
+  padding-bottom: 60px;
+}
+.credits-logo {
+  width: 90px;
+  float: left;
+  margin: 25px 25px 0 0;
+}
+.credits-page .card {
+  float: left;
+  width: calc(100% - 115px);
+}
+/* #Credits */
