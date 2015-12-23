@@ -149,7 +149,7 @@ var loadTeamBanner = function() {
     'Andrew': 'img/team/andrew.jpg',
     'David': 'img/team/david.jpg',
     'Viv': 'img/team/viv.jpg',
-    'Krishna': 'img/team/krishna.jpg',
+    'Krishna': 'img/team/krishna.png',
     'Justine': 'img/team/justine.jpg',
     'Ross': 'img/team/ross.jpg',
     'Fraser': 'img/team/fraser.jpg',
