@@ -9,4 +9,6 @@
 /app/_bower_components
 /dist
 /.editorconfig
+
+npm-debug.log
 /Gemfile.lock
