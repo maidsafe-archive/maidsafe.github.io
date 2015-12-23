@@ -88,6 +88,7 @@ var headerChangeOnScroll = function() {
     }
     $('header').removeClass('invert');
     $('#site-logo').removeClass('invert');
+
     $('#secNav').removeClass('invert');
     $('#secNavButton').removeClass('invert');
   });
@@ -145,21 +146,22 @@ var loadTeamBanner = function() {
     itemCount = 5;
   }
   var teamArr = {
-    'Andrew': 'img/team/andrew.jpg',
-    'David': 'img/team/david.jpg',
-    'Viv': 'img/team/viv.jpg',
-    'Krishna': 'img/team/krishna.jpg',
-    'Justine': 'img/team/justine.jpg',
-    'Ross': 'img/team/ross.jpg',
-    'Fraser': 'img/team/fraser.jpg',
-    'Nick': 'img/team/nick.jpg',
-    'Paige': 'img/team/paige.jpg',
-    'Shona': 'img/team/shona.jpg',
-    'Vinicius': 'img/team/vinicius.jpg',
-    'Spandan': 'img/team/spandan.jpg',
-    'Scott': 'img/team/scott.jpg',
-    'Qi': 'img/team/qi.jpg',
-    'Peter': 'img/team/peter.jpg'
+    'Adam': './img/team/adam.JPG',
+    'Andrew': './img/team/andrew.jpg',
+    'David': './img/team/david.jpg',
+    'Viv': './img/team/viv.jpg',
+    'Krishna': './img/team/krishna.png',
+    'Justine': './img/team/justine.jpg',
+    'Ross': './img/team/ross.jpg',
+    'Fraser': './img/team/fraser.jpg',
+    'Nick': './img/team/nick.jpg',
+    'Paige': './img/team/paige.jpg',
+    'Shona': './img/team/shona.jpg',
+    'Vinicius': './img/team/vinicius.jpg',
+    'Spandan': './img/team/spandan.jpg',
+    'Scott': './img/team/scott.jpg',
+    'Qi': './img/team/qi.jpg',
+    'Peter': './img/team/peter.jpg'
   };
   var teamImgItemHg = parseFloat(teamImgWidth / itemCount);
   for (var key in teamArr) {
