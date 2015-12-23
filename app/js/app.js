@@ -88,6 +88,7 @@ var headerChangeOnScroll = function() {
     }
     $('header').removeClass('invert');
     $('#site-logo').removeClass('invert');
+
     $('#secNav').removeClass('invert');
     $('#secNavButton').removeClass('invert');
   });
