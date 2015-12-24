@@ -195,20 +195,6 @@ $(function() {
   });
 });
 
-// Hyperlink displacement path
-// TODO Shankar - Alter html position to avoid this
-var DISPLACEMENT_OFFSET = 150;
-var DELAY = 500;
-var customScroller;
-
-var displaceOnHashChange = function() {
-  customScroller.scrollBy(0, DISPLACEMENT_OFFSET);
-};
-
-window.addEventListener('hashchange', function() {
-  setTimeout(displaceOnHashChange, DELAY);
-}, false);
-
 $(document).ready(function() {
   customScroller = new IScroll('#wrapper', {
     mouseWheel: true,
