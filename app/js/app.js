@@ -71,9 +71,9 @@ var typingEffect = function() {
 };
 
 // Header Change on Window Scroll
-var headerChangeOnScroll = function() {
-  $(window).on('scroll', function() {
-    if ($(this).scrollTop() > 10) {
+var headerChangeOnScroll = function(customScroller) {
+  customScroller.on('scroll', function() {
+    if (customScroller.y < -10) {
       $('header').addClass('invert onScroll');
       $('#site-logo').addClass('invert');
       $('#secNav').addClass('invert');
@@ -177,7 +177,6 @@ var loadTeamBanner = function() {
 $(function() {
   typingEffect();
   accordian();
-  headerChangeOnScroll();
   showMobPrimaryNav();
   loadTeamBanner();
 
@@ -199,12 +198,11 @@ $(function() {
 // Hyperlink displacement path
 // TODO Shankar - Alter html position to avoid this
 var DISPLACEMENT_OFFSET = 150;
-var ANIMATION_DURATION = 500;
-var DELAY = 100;
+var DELAY = 500;
+var customScroller;
+
 var displaceOnHashChange = function() {
-  $('body').stop().animate({
-    scrollTop: window.scrollY - DISPLACEMENT_OFFSET
-  }, ANIMATION_DURATION);
+  customScroller.scrollBy(0, DISPLACEMENT_OFFSET);
 };
 
 window.addEventListener('hashchange', function() {
@@ -212,9 +210,16 @@ window.addEventListener('hashchange', function() {
 }, false);
 
 $(document).ready(function() {
+  customScroller = new IScroll('#wrapper', {
+    mouseWheel: true,
+    scrollbars: true,
+    click: true,
+    probeType: 3
+  });
   if (window.location.hash) {
     setTimeout(displaceOnHashChange, DELAY);
   }
+  headerChangeOnScroll(customScroller);
 });
 
 //  Window resize event
