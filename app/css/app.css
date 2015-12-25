@@ -13,7 +13,6 @@ a, a:hover {
 .inline {
   display: inline !important;
 }
-
 .home-page {
   background-color: #5593d7;
 }
@@ -1123,6 +1122,9 @@ header.invert .secNavButton:after {
   margin: 0 auto;
   padding: 80px 0 120px;
 }
+.content-1.diff {
+  padding-bottom: 0;
+}
 .content-1 h3 {
   font-size: 49px;
   font-weight: 300;
@@ -1204,7 +1206,7 @@ header.invert .secNavButton:after {
   width: 960px;
   margin: 0 auto;
   display: table;
-  padding-bottom: 120px;
+  padding-top: 120px;
 }
 .post-2:after {
   content: "";
@@ -1242,12 +1244,11 @@ header.invert .secNavButton:after {
   color: #808080;
   margin: 25px 0 0;
 }
-.post-2.flip {
-  transform: rotateZ(180deg);
-  padding: 120px 0 0;
+.post-2.flip .post-2-content {
+  transform: translateX(-100%);
 }
-.post-2.flip .post-2-content, .post-2.flip .post-2-media {
-  transform: rotateZ(180deg);
+.post-2.flip .post-2-media {
+  transform: translateX(100%);
 }
 /* #Post 2 */
 
@@ -1499,3 +1500,10 @@ header, #site-logo {
   transition: all 0.5s ease;
 }
 /* #header transition */
+#main-wrapper {
+  position: absolute;
+  width: 100%;
+  top:0;
+  bottom:0;
+  overflow: hidden;
+}

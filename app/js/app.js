@@ -1,105 +1,85 @@
 /* global $: false, document: false, window: false */
 
 var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
-var subPage = [
-  'safecoin',
-  'features',
-  'contact',
-  'privacy',
-  'disclaimer',
-  'credits' ];
-
-/**
- * Accordian
- */
-var accordian = function() {
-  $('#accordian ul li').on('click', function() {
-    var self = $(this);
-    if (self.hasClass('active')) {
-      self.removeClass('active');
-      return;
-    }
-    $('#accordian ul li').removeClass('active');
-    self.addClass('active');
-  });
-};
-
-/**
- * Typing effecting
- */
-var typingEffect = function() {
-  var typeString = [ 'a secure', 'a free' ];
-  var  i = 0;
-  var count = 0;
-  var selectedText = '';
-  var text = '';
-  var timeout;
-  var target = document.getElementById('typing');
-  if (!target) {
+var customScroller;
+var updateHeader = function() {
+  if ((customScroller ? (-1 * customScroller.y) : window.scrollY) > 10) {
+    $('header').addClass('invert onScroll');
+    $('#site-logo').addClass('invert');
+    $('#secNav').addClass('invert');
+    $('#secNavButton').addClass('invert');
     return;
   }
-  var type = function() {
-    if (count === typeString.length) {
-      count = 0;
-    }
+  $('header').removeClass('onScroll');
+  if (window.invertedHeader) {
+    return;
+  }
+  $('header').removeClass('invert');
+  $('#site-logo').removeClass('invert');
 
-    // Initiation
-    if (i === 0) {
-      document.getElementById('typing').innerHTML = '';
-      clearTimeout(timeout);
-      timeout = setTimeout(type, 1500);
-      i++;
-      return;
-    }
-    selectedText = typeString[count];
-    text = selectedText.slice(0, ++i);
-    target.innerHTML = text;
+  $('#secNav').removeClass('invert');
+  $('#secNavButton').removeClass('invert');
+};
 
-    // change Next word
-    if (text.length === selectedText.length) {
-      count++;
-      i = 0;
-      clearTimeout(timeout);
-      timeout = setTimeout(type, 4000);
-      return;
-    }
+$(window).scroll(updateHeader);
 
-    // timing to type each word
-    timeout = setTimeout(type, 200);
+/**
+ * Custom Scroller using IScroll5 is created for mobile & tablet layouts
+ */
+var initCustomScroller = function() {
+  var wrapper = $('#main-wrapper');
+  // position would be static for large screens
+  if (wrapper.css('position') === 'static') {
+    return;
+  }
+  wrapper.wrapInner('<div id="scroller"></div>');
+
+  var loadIScroll = function() {
+    customScroller = new window.IScroll('#main-wrapper', {
+      mouseWheel: true,
+      keyBindings: true,
+      scrollbars: true,
+      freeScroll: true,
+      click: true,
+      useTransition: false,
+      probeType: 3
+    });
+    if (window.location.hash) {
+      setTimeout(function() {
+        customScroller.scrollToElement(window.location.hash, 0);
+        updateHeader();
+      }, 50);
+    }
+    customScroller.on('scroll', updateHeader);
   };
-  type();
+
+  if (window.location.hash) {
+    // Scroll to top of page before initialising iScroll, otherwise it cuts off everything above the hashed anchor
+    wrapper.scrollTop(0);
+    setTimeout(function() {
+      wrapper.scrollTop(0);
+      loadIScroll();
+    }, 1);
+  } else {
+    loadIScroll();
+  }
+
+  window.document.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+  }, false);
+
+  window.addEventListener('hashchange', function() {
+    customScroller.scrollToElement(window.location.hash);
+    updateHeader();
+  }, false);
 };
-
-// Header Change on Window Scroll
-var headerChangeOnScroll = function() {
-  $(window).on('scroll', function() {
-    if ($(this).scrollTop() > 10) {
-      $('header').addClass('invert onScroll');
-      $('#site-logo').addClass('invert');
-      $('#secNav').addClass('invert');
-      $('#secNavButton').addClass('invert');
-      return;
-    }
-    $('header').removeClass('onScroll');
-    var temp = window.location.pathname.split('/');
-    temp = temp[temp.length - 1];
-    if (window.location.pathname && subPage.indexOf(temp.split('.')[0]) > -1) {
-      return;
-    }
-    $('header').removeClass('invert');
-    $('#site-logo').removeClass('invert');
-
-    $('#secNav').removeClass('invert');
-    $('#secNavButton').removeClass('invert');
-  });
-};
-
+$(window).load(initCustomScroller);
 var showMobPrimaryNav = function() {
   $('#secNavButton').on('click', function() {
     var target = $('#secNav');
     var temp = window.location.pathname.split('/');
     temp = temp[temp.length - 1];
-    if (window.location.pathname && $.inArray(temp.split('.')[0], subPage) !== -1) {
+    if (window.invertedHeader) {
       $(this).addClass('invert');
       target.addClass('invert');
     }
@@ -174,10 +154,70 @@ var loadTeamBanner = function() {
   teamImg.addClass('banner-gradian');
 };
 
+/**
+ * Accordian
+ */
+var accordian = function() {
+  $('#accordian ul li').on('click', function() {
+    var self = $(this);
+    if (self.hasClass('active')) {
+      self.removeClass('active');
+      return;
+    }
+    $('#accordian ul li').removeClass('active');
+    self.addClass('active');
+  });
+};
+
+/**
+ * Typing effecting
+ */
+var typingEffect = function() {
+  var typeString = [ 'a secure', 'a free' ];
+  var  i = 0;
+  var count = 0;
+  var selectedText = '';
+  var text = '';
+  var timeout;
+  var target = document.getElementById('typing');
+  if (!target) {
+    return;
+  }
+  var type = function() {
+    if (count === typeString.length) {
+      count = 0;
+    }
+
+    // Initiation
+    if (i === 0) {
+      document.getElementById('typing').innerHTML = '';
+      clearTimeout(timeout);
+      timeout = setTimeout(type, 1500);
+      i++;
+      return;
+    }
+    selectedText = typeString[count];
+    text = selectedText.slice(0, ++i);
+    target.innerHTML = text;
+
+    // change Next word
+    if (text.length === selectedText.length) {
+      count++;
+      i = 0;
+      clearTimeout(timeout);
+      timeout = setTimeout(type, 4000);
+      return;
+    }
+
+    // timing to type each word
+    timeout = setTimeout(type, 200);
+  };
+  type();
+};
+
 $(function() {
   typingEffect();
   accordian();
-  headerChangeOnScroll();
   showMobPrimaryNav();
   loadTeamBanner();
 
@@ -196,28 +236,12 @@ $(function() {
   });
 });
 
-// Hyperlink displacement path
-// TODO Shankar - Alter html position to avoid this
-var DISPLACEMENT_OFFSET = 150;
-var ANIMATION_DURATION = 500;
-var DELAY = 100;
-var displaceOnHashChange = function() {
-  $('body').stop().animate({
-    scrollTop: window.scrollY - DISPLACEMENT_OFFSET
-  }, ANIMATION_DURATION);
-};
-
-window.addEventListener('hashchange', function() {
-  setTimeout(displaceOnHashChange, DELAY);
-}, false);
-
-$(document).ready(function() {
-  if (window.location.hash) {
-    setTimeout(displaceOnHashChange, DELAY);
-  }
-});
-
 //  Window resize event
 $(window).resize(function() {
   loadTeamBanner();
+  var wrapper = $('#main-wrapper');
+  if ((wrapper.css('position') === 'static' && customScroller) ||
+      (wrapper.css('position') === 'absolute' && !customScroller)) {
+    window.location.reload();
+  }
 });
