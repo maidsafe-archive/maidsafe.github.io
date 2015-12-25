@@ -115,4 +115,8 @@
   .layout-1 .rsec {
     width: 240px;
   }
+
+  #main-wrapper {
+    position: static;
+  }
 }

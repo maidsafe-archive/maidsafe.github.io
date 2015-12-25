@@ -3,7 +3,7 @@
 var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
 var customScroller;
 var updateHeader = function() {
-  if (customScroller.y < -10) {
+  if ((customScroller ? (-1 * customScroller.y) : window.scrollY) > 10) {
     $('header').addClass('invert onScroll');
     $('#site-logo').addClass('invert');
     $('#secNav').addClass('invert');
@@ -20,12 +20,18 @@ var updateHeader = function() {
   $('#secNav').removeClass('invert');
   $('#secNavButton').removeClass('invert');
 };
-// Header Change on Window Scroll
-var setOnScrollListener = function(customScroller) {
-  customScroller.on('scroll', updateHeader);
-};
-$(window).load(function() {
+
+$(window).scroll(updateHeader);
+
+/**
+ * Custom Scroller using IScroll5 is created for mobile & tablet layouts
+ */
+var initCustomScroller = function() {
   var wrapper = $('#main-wrapper');
+  // position would be static for large screens
+  if (wrapper.css('position') === 'static') {
+    return;
+  }
   wrapper.wrapInner('<div id="scroller"></div>');
 
   var loadIScroll = function() {
@@ -33,6 +39,7 @@ $(window).load(function() {
       mouseWheel: true,
       keyBindings: true,
       scrollbars: true,
+      freeScroll: true,
       click: true,
       useTransition: false,
       probeType: 3
@@ -43,7 +50,7 @@ $(window).load(function() {
         updateHeader();
       }, 50);
     }
-    setOnScrollListener(customScroller);
+    customScroller.on('scroll', updateHeader);
   };
 
   if (window.location.hash) {
@@ -65,7 +72,8 @@ $(window).load(function() {
     customScroller.scrollToElement(window.location.hash);
     updateHeader();
   }, false);
-});
+};
+$(window).load(initCustomScroller);
 var showMobPrimaryNav = function() {
   $('#secNavButton').on('click', function() {
     var target = $('#secNav');
@@ -231,4 +239,9 @@ $(function() {
 //  Window resize event
 $(window).resize(function() {
   loadTeamBanner();
+  var wrapper = $('#main-wrapper');
+  if ((wrapper.css('position') === 'static' && customScroller) ||
+      (wrapper.css('position') === 'absolute' && !customScroller)) {
+    window.location.reload();
+  }
 });

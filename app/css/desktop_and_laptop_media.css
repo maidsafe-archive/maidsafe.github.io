@@ -78,4 +78,7 @@
     padding-bottom: 120px;
   }
   /* /Post 2 */
+  #main-wrapper {
+    position: static;
+  }
 }
