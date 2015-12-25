@@ -5,7 +5,7 @@ layout: default
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 {% include html/header.html %}
-<div id="wrapper" style="position: absolute;width: 100%;top:0;bottom:0;overflow: hidden">
+<div id="main-wrapper">
     <div>
         <div class="root {{page.rootClass}}">
             {{ content }}
@@ -13,6 +13,11 @@ layout: default
         {% include html/footer.html %}
     </div>
 </div>
+{% if page.headerClass == "invert" %}
+<script>
+    window.invertedHeader = true;
+</script>
+{% endif %}
 {% include scripts.html %}
 {% for resource in page.includes %}
 {% include {{resource}} %}

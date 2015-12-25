@@ -1,13 +1,6 @@
 /* global $: false, document: false, window: false */
 
 var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
-var subPage = [
-  'safecoin',
-  'features',
-  'contact',
-  'privacy',
-  'disclaimer',
-  'credits' ];
 
 /**
  * Accordian
@@ -81,9 +74,7 @@ var headerChangeOnScroll = function(customScroller) {
       return;
     }
     $('header').removeClass('onScroll');
-    var temp = window.location.pathname.split('/');
-    temp = temp[temp.length - 1];
-    if (window.location.pathname && subPage.indexOf(temp.split('.')[0]) > -1) {
+    if (window.invertedHeader) {
       return;
     }
     $('header').removeClass('invert');
@@ -99,7 +90,7 @@ var showMobPrimaryNav = function() {
     var target = $('#secNav');
     var temp = window.location.pathname.split('/');
     temp = temp[temp.length - 1];
-    if (window.location.pathname && $.inArray(temp.split('.')[0], subPage) !== -1) {
+    if (window.invertedHeader) {
       $(this).addClass('invert');
       target.addClass('invert');
     }
@@ -197,29 +188,40 @@ $(function() {
 
 // Hyperlink displacement path
 // TODO Shankar - Alter html position to avoid this
-var DISPLACEMENT_OFFSET = 150;
-var DELAY = 500;
+var DISPLACEMENT_OFFSET = 200;
+var DELAY = 1200;
 var customScroller;
 
 var displaceOnHashChange = function() {
-  customScroller.scrollBy(0, DISPLACEMENT_OFFSET);
+  //customScroller.scrollBy(0, DISPLACEMENT_OFFSET, 1000);
 };
 
 window.addEventListener('hashchange', function() {
+  customScroller.scrollToElement(window.location.hash);
   setTimeout(displaceOnHashChange, DELAY);
 }, false);
 
 $(document).ready(function() {
-  customScroller = new IScroll('#wrapper', {
-    mouseWheel: true,
-    scrollbars: true,
-    click: true,
-    probeType: 3
-  });
+  var initScroller = function() {
+    customScroller = new window.IScroll('#main-wrapper', {
+      mouseWheel: true,
+      keyBindings: true,
+      scrollbars: true,
+      click: true,
+      useTransition: false,
+      probeType: 3
+    });
+    headerChangeOnScroll(customScroller);
+  };
+  initScroller();
   if (window.location.hash) {
-    setTimeout(displaceOnHashChange, DELAY);
+    setTimeout(function() {
+      displaceOnHashChange()
+    }, DELAY);
+  } else {
+    initScroller();
   }
-  headerChangeOnScroll(customScroller);
+
 });
 
 //  Window resize event
