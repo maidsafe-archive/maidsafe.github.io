@@ -1500,7 +1500,8 @@ IScroll.prototype = {
 		}
 
 		this.scrollTo(newX, newY, 0);
-
+		// Added by krishna for handling on scroll for KeyBindings
+		this._execEvent('scroll');
 		this.keyTime = now;
 	},
 

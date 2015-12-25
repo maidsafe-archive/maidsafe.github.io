@@ -1,90 +1,71 @@
 /* global $: false, document: false, window: false */
 
 var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
-
-/**
- * Accordian
- */
-var accordian = function() {
-  $('#accordian ul li').on('click', function() {
-    var self = $(this);
-    if (self.hasClass('active')) {
-      self.removeClass('active');
-      return;
-    }
-    $('#accordian ul li').removeClass('active');
-    self.addClass('active');
-  });
-};
-
-/**
- * Typing effecting
- */
-var typingEffect = function() {
-  var typeString = [ 'a secure', 'a free' ];
-  var  i = 0;
-  var count = 0;
-  var selectedText = '';
-  var text = '';
-  var timeout;
-  var target = document.getElementById('typing');
-  if (!target) {
+var customScroller;
+var updateHeader = function() {
+  if (customScroller.y < -10) {
+    $('header').addClass('invert onScroll');
+    $('#site-logo').addClass('invert');
+    $('#secNav').addClass('invert');
+    $('#secNavButton').addClass('invert');
     return;
   }
-  var type = function() {
-    if (count === typeString.length) {
-      count = 0;
-    }
+  $('header').removeClass('onScroll');
+  if (window.invertedHeader) {
+    return;
+  }
+  $('header').removeClass('invert');
+  $('#site-logo').removeClass('invert');
 
-    // Initiation
-    if (i === 0) {
-      document.getElementById('typing').innerHTML = '';
-      clearTimeout(timeout);
-      timeout = setTimeout(type, 1500);
-      i++;
-      return;
-    }
-    selectedText = typeString[count];
-    text = selectedText.slice(0, ++i);
-    target.innerHTML = text;
-
-    // change Next word
-    if (text.length === selectedText.length) {
-      count++;
-      i = 0;
-      clearTimeout(timeout);
-      timeout = setTimeout(type, 4000);
-      return;
-    }
-
-    // timing to type each word
-    timeout = setTimeout(type, 200);
-  };
-  type();
+  $('#secNav').removeClass('invert');
+  $('#secNavButton').removeClass('invert');
 };
-
 // Header Change on Window Scroll
-var headerChangeOnScroll = function(customScroller) {
-  customScroller.on('scroll', function() {
-    if (customScroller.y < -10) {
-      $('header').addClass('invert onScroll');
-      $('#site-logo').addClass('invert');
-      $('#secNav').addClass('invert');
-      $('#secNavButton').addClass('invert');
-      return;
-    }
-    $('header').removeClass('onScroll');
-    if (window.invertedHeader) {
-      return;
-    }
-    $('header').removeClass('invert');
-    $('#site-logo').removeClass('invert');
-
-    $('#secNav').removeClass('invert');
-    $('#secNavButton').removeClass('invert');
-  });
+var setOnScrollListener = function(customScroller) {
+  customScroller.on('scroll', updateHeader);
 };
+$(window).load(function() {
+  var wrapper = $('#main-wrapper');
+  wrapper.wrapInner('<div id="scroller"></div>');
 
+  var loadIScroll = function() {
+    customScroller = new window.IScroll('#main-wrapper', {
+      mouseWheel: true,
+      keyBindings: true,
+      scrollbars: true,
+      click: true,
+      useTransition: false,
+      probeType: 3
+    });
+    if (window.location.hash) {
+      setTimeout(function() {
+        customScroller.scrollToElement(window.location.hash, 0);
+        updateHeader();
+      }, 50);
+    }
+    setOnScrollListener(customScroller);
+  };
+
+  if (window.location.hash) {
+    // Scroll to top of page before initialising iScroll, otherwise it cuts off everything above the hashed anchor
+    wrapper.scrollTop(0);
+    setTimeout(function() {
+      wrapper.scrollTop(0);
+      loadIScroll();
+    }, 1);
+  } else {
+    loadIScroll();
+  }
+
+  window.document.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+  }, false);
+
+  window.addEventListener('hashchange', function() {
+    customScroller.scrollToElement(window.location.hash);
+    updateHeader();
+  }, false);
+});
 var showMobPrimaryNav = function() {
   $('#secNavButton').on('click', function() {
     var target = $('#secNav');
@@ -165,6 +146,67 @@ var loadTeamBanner = function() {
   teamImg.addClass('banner-gradian');
 };
 
+/**
+ * Accordian
+ */
+var accordian = function() {
+  $('#accordian ul li').on('click', function() {
+    var self = $(this);
+    if (self.hasClass('active')) {
+      self.removeClass('active');
+      return;
+    }
+    $('#accordian ul li').removeClass('active');
+    self.addClass('active');
+  });
+};
+
+/**
+ * Typing effecting
+ */
+var typingEffect = function() {
+  var typeString = [ 'a secure', 'a free' ];
+  var  i = 0;
+  var count = 0;
+  var selectedText = '';
+  var text = '';
+  var timeout;
+  var target = document.getElementById('typing');
+  if (!target) {
+    return;
+  }
+  var type = function() {
+    if (count === typeString.length) {
+      count = 0;
+    }
+
+    // Initiation
+    if (i === 0) {
+      document.getElementById('typing').innerHTML = '';
+      clearTimeout(timeout);
+      timeout = setTimeout(type, 1500);
+      i++;
+      return;
+    }
+    selectedText = typeString[count];
+    text = selectedText.slice(0, ++i);
+    target.innerHTML = text;
+
+    // change Next word
+    if (text.length === selectedText.length) {
+      count++;
+      i = 0;
+      clearTimeout(timeout);
+      timeout = setTimeout(type, 4000);
+      return;
+    }
+
+    // timing to type each word
+    timeout = setTimeout(type, 200);
+  };
+  type();
+};
+
 $(function() {
   typingEffect();
   accordian();
@@ -184,44 +226,6 @@ $(function() {
     Modal.close();
     $('#IntroVideo').attr('src', 'about:blank');
   });
-});
-
-// Hyperlink displacement path
-// TODO Shankar - Alter html position to avoid this
-var DISPLACEMENT_OFFSET = 200;
-var DELAY = 1200;
-var customScroller;
-
-var displaceOnHashChange = function() {
-  //customScroller.scrollBy(0, DISPLACEMENT_OFFSET, 1000);
-};
-
-window.addEventListener('hashchange', function() {
-  customScroller.scrollToElement(window.location.hash);
-  setTimeout(displaceOnHashChange, DELAY);
-}, false);
-
-$(document).ready(function() {
-  var initScroller = function() {
-    customScroller = new window.IScroll('#main-wrapper', {
-      mouseWheel: true,
-      keyBindings: true,
-      scrollbars: true,
-      click: true,
-      useTransition: false,
-      probeType: 3
-    });
-    headerChangeOnScroll(customScroller);
-  };
-  initScroller();
-  if (window.location.hash) {
-    setTimeout(function() {
-      displaceOnHashChange()
-    }, DELAY);
-  } else {
-    initScroller();
-  }
-
 });
 
 //  Window resize event

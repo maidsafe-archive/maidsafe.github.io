@@ -215,8 +215,11 @@
   /* Post 2 */
   .post-2 {
     width: 585px;
-    padding: 0 16px 80px;
+    padding: 80px 16px 0;
     display: block;
+  }
+  .post-2:last-child {
+    padding-bottom: 80px;
   }
   .post-2 .post-2-content {
     display: block;
@@ -239,12 +242,8 @@
     margin: 0;
     width: auto;
   }
-  .post-2.flip{
-    transform: rotateZ(0deg);
-    padding: 0 16px 80px;
-  }
   .post-2.flip .post-2-content, .post-2.flip .post-2-media {
-    transform: rotateZ(0deg);
+    transform: translateX(0);
   }
   /* #Post 2 */
   /* Team Img*/
