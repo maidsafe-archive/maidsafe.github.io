@@ -43,7 +43,8 @@
   }
 
   .typing.lg:after {
-    height: 32px;
+    height: 22px;
+    top: 0px;
   }
   /* #Typing */
 
