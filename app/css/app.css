@@ -415,6 +415,10 @@ header.invert .secNavButton:after {
   font-weight: 600;
 }
 
+.home-banner .forTouch {
+  display: none;
+}
+
 .home-banner .label-2 {
   margin-top: 40px;
   font-size: 29px;

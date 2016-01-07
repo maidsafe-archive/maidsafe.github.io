@@ -4,9 +4,6 @@
   .wrapper {
     padding: 0;
   }
-  .hide-mob {
-    display: none;
-  }
   /* #Common */
 
   /* Home Banner */
@@ -18,6 +15,13 @@
   .home-banner .label-1 {
     font-size: 32px;
     font-weight: 600;
+  }
+
+  .home-banner .forNonTouch {
+    display: none;
+  }
+  .home-banner .forTouch {
+    display: block;
   }
 
   .home-banner .label-2 {

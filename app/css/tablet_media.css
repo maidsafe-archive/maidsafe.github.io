@@ -1,15 +1,17 @@
 /* Media Less than 830px  */
 @media screen and (min-width: 512px) and (max-width: 829px) {
   /* Common */
-  .hide-tab {
-    display: none;
-  }
   /* #Common */
   /* Home Banner */
   .home-banner {
     height: 400px;
   }
-
+  .home-banner .forNonTouch {
+    display: none;
+  }
+  .home-banner .forTouch {
+    display: block;
+  }
   .home-banner .label-1 {
     font-size: 32px;
     font-weight: 600;

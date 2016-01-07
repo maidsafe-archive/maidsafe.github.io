@@ -1,7 +1,6 @@
 /* global $: false, document: false, window: false */
 
-var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
-var customScroller;
+var INTRO_VIDEO_SRC = 'https://www.youtube.com/embed/bXOaxjvefGc';
 var updateHeader = function() {
   if (window.scrollY > 0) {
     $('header').addClass('invert onScroll');
@@ -172,7 +171,7 @@ $(function() {
   $('#IntroVideoTrigger').on('click', function(e) {
     e.preventDefault();
     Modal.open();
-    $('#IntroVideo').attr('src', IntroVideoSrc);
+    $('#IntroVideo').attr('src', INTRO_VIDEO_SRC);
   });
 
   // Close Modal
@@ -187,13 +186,3 @@ $(function() {
  * Change header on scroll
  */
 $(window).scroll(updateHeader);
-
-//  Window resize event
-$(window).resize(function() {
-  loadTeamBanner();
-  var wrapper = $('#main-wrapper');
-  if ((wrapper.css('position') === 'static' && customScroller) ||
-      (wrapper.css('position') === 'absolute' && !customScroller)) {
-    window.location.reload();
-  }
-});
