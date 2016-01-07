@@ -66,10 +66,10 @@
   .post-2 .post-2-media, .post-2 .post-2-content {
     width: 535px;
   }
-  .post-2 .post-2-media {
+  .post-2 .post-2-media img {
     padding: 0 100px 0 50px;
   }
-  .post-2.flip .post-2-media {
+  .post-2.flip .post-2-media img {
     padding: 0 50px 0 100px;
   }
   /* #Post 2 */
@@ -115,6 +115,12 @@
   .layout-1 .rsec {
     width: 240px;
   }
+
+  /* Post 2 */
+  .post-2:last-child {
+    padding-bottom: 120px;
+  }
+  /* /Post 2 */
 
   #main-wrapper {
     position: static;

@@ -411,7 +411,8 @@ header.invert .secNavButton:after {
   width: 100%;
   text-align: center;
   font-size: 59px;
-  line-height: 59px;
+  line-height: 40px;
+  padding: 0 25px;
   font-weight: 600;
 }
 
@@ -1227,6 +1228,7 @@ header.invert .secNavButton:after {
 .post-2 .post-2-media img {
   width: 100%;
   margin: 0;
+  padding: 0 50px;
   display: block;
 }
 .post-2 .post-2-content {
