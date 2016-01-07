@@ -1,5 +1,10 @@
 /* Media Less than 830px  */
 @media screen and (min-width: 512px) and (max-width: 829px) {
+  /* Common */
+  .hide-tab {
+    display: none;
+  }
+  /* #Common */
   /* Home Banner */
   .home-banner {
     height: 400px;
@@ -116,6 +121,9 @@
     margin-top: 0;
     text-align: center;
   }
+  .post-1 .content .p {
+    text-align: justify;
+  }
   /* #POST 1 */
 
   /* MaidSafe Team Banner height changes */
@@ -207,10 +215,12 @@
   .post-2 .post-2-content h3 {
     font-size: 29px;
     line-height: 39px;
+    text-align: center;
   }
   .post-2 .post-2-content p {
     font-size: 18px;
     line-height: 22px;
+    text-align: justify;
   }
   .post-2 .post-2-media {
     display: block;

@@ -4,6 +4,9 @@
   .wrapper {
     padding: 0;
   }
+  .hide-mob {
+    display: none;
+  }
   /* #Common */
 
   /* Home Banner */
@@ -137,6 +140,9 @@
     margin-top: 0;
     text-align: center;
   }
+  .post-1 .content .p {
+    text-align: justify;
+  }
   /* #POST 1 */
 
   /* MaidSafe Team Banner height changes */
@@ -240,6 +246,12 @@
   .post-2 .post-2-content {
     display: block;
     width: 100%;
+  }
+  .post-2 .post-2-content h3 {
+    text-align: center;
+  }
+  .post-2 .post-2-content p {
+    text-align: justify;
   }
   .post-2 .post-2-media {
     display: block;
