@@ -240,6 +240,7 @@
   }
   .post-2 .post-2-media img {
     margin: 0;
+    padding: 0;
     width: auto;
   }
   .post-2.flip .post-2-content, .post-2.flip .post-2-media {
