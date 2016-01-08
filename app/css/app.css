@@ -1144,7 +1144,7 @@ header.invert .secNavButton:after {
   font-size: 18px;
   line-height: 26px;
   font-weight: normal;
-  margin: 60px 0 0;
+  margin: 40px 0 0;
   color: #808080;
 }
 /* #Content 1 */
@@ -1212,7 +1212,7 @@ header.invert .secNavButton:after {
   width: 960px;
   margin: 0 auto;
   display: table;
-  padding-top: 120px;
+  padding-top: 80px;
 }
 .post-2:after {
   content: "";
