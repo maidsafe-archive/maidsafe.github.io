@@ -1,9 +1,8 @@
 /* global $: false, document: false, window: false */
 
-var IntroVideoSrc = 'https://www.youtube.com/embed/bXOaxjvefGc';
-var customScroller;
+var INTRO_VIDEO_SRC = 'https://www.youtube.com/embed/bXOaxjvefGc';
 var updateHeader = function() {
-  if ((customScroller ? (-1 * customScroller.y) : window.scrollY) > 10) {
+  if (window.scrollY > 0) {
     $('header').addClass('invert onScroll');
     $('#site-logo').addClass('invert');
     $('#secNav').addClass('invert');
@@ -21,59 +20,6 @@ var updateHeader = function() {
   $('#secNavButton').removeClass('invert');
 };
 
-$(window).scroll(updateHeader);
-
-/**
- * Custom Scroller using IScroll5 is created for mobile & tablet layouts
- */
-var initCustomScroller = function() {
-  var wrapper = $('#main-wrapper');
-  // position would be static for large screens
-  if (wrapper.css('position') === 'static') {
-    return;
-  }
-  wrapper.wrapInner('<div id="scroller"></div>');
-
-  var loadIScroll = function() {
-    customScroller = new window.IScroll('#main-wrapper', {
-      mouseWheel: true,
-      keyBindings: true,
-      scrollbars: true,
-      freeScroll: true,
-      click: true,
-      useTransition: false,
-      probeType: 3
-    });
-    if (window.location.hash) {
-      setTimeout(function() {
-        customScroller.scrollToElement(window.location.hash, 0);
-        updateHeader();
-      }, 50);
-    }
-    customScroller.on('scroll', updateHeader);
-  };
-
-  if (window.location.hash) {
-    // Scroll to top of page before initialising iScroll, otherwise it cuts off everything above the hashed anchor
-    wrapper.scrollTop(0);
-    setTimeout(function() {
-      wrapper.scrollTop(0);
-      loadIScroll();
-    }, 1);
-  } else {
-    loadIScroll();
-  }
-
-  window.document.addEventListener('touchmove', function(e) {
-    e.preventDefault();
-  }, false);
-
-  window.addEventListener('hashchange', function() {
-    customScroller.scrollToElement(window.location.hash);
-    updateHeader();
-  }, false);
-};
-$(window).load(initCustomScroller);
 var showMobPrimaryNav = function() {
   $('#secNavButton').on('click', function() {
     var target = $('#secNav');
@@ -225,7 +171,7 @@ $(function() {
   $('#IntroVideoTrigger').on('click', function(e) {
     e.preventDefault();
     Modal.open();
-    $('#IntroVideo').attr('src', IntroVideoSrc);
+    $('#IntroVideo').attr('src', INTRO_VIDEO_SRC);
   });
 
   // Close Modal
@@ -236,12 +182,7 @@ $(function() {
   });
 });
 
-//  Window resize event
-$(window).resize(function() {
-  loadTeamBanner();
-  var wrapper = $('#main-wrapper');
-  if ((wrapper.css('position') === 'static' && customScroller) ||
-      (wrapper.css('position') === 'absolute' && !customScroller)) {
-    window.location.reload();
-  }
-});
+/**
+ * Change header on scroll
+ */
+$(window).scroll(updateHeader);
