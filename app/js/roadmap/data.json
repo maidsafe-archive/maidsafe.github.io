@@ -1,0 +1,174 @@
+{
+    "name": "NETWORK",
+    "header": 20,
+    "children": [
+        {
+            "name": "VAULT",
+            "color": "blue-1",
+            "target": [
+                "CLIENT"
+            ],
+            "header": 50,
+            "section": 1,
+            "order": 1,
+            "offsetX": 0,
+            "offsetY": 0,
+            "children": [
+                {
+                    "name": "EXTERNAL",
+                    "target": [
+                        "VAULT_IN_MOBILE"
+                    ]
+                },
+                {
+                    "name": "EXTERNAL",
+                    "target": [
+                        "VAULT_IN_MOBILE"
+                    ]
+                },
+                {
+                    "name": "VAULT_CONFIG",
+                    "target": [
+                        "VAULT_IN_MOBILE"
+                    ],
+                    "section": 1,
+                    "order": 1,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "color": "orange-1"
+                },
+                {
+                    "name": "VAULT_IN_MOBILE",
+                    "target": [
+                        "PUBLIC_IDENTITY"
+                    ],
+                    "section": 1,
+                    "order": 2,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "color": "purple-1"
+                },
+                {
+                    "name": "PUBLIC_IDENTITY",
+                    "target": [
+                        "VAULT_SAMPLE",
+                        "PAY_THE_PRODUCER"
+                    ],
+                    "section": 1,
+                    "order": 3,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "color": "blue-2"
+                },
+                {
+                    "name": "VAULT_SAMPLE",
+                    "target": [
+                        "SAFE_COIN"
+                    ],
+                    "section": 1,
+                    "order": 4,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "color": "green-1"
+                },
+                {
+                    "name": "SAFE_COIN",
+                    "target": [
+                        "END"
+                    ],
+                    "section": 1,
+                    "order": 5,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "color": "red-1"
+                },
+                {
+                    "name": "EXTERNAL1",
+                    "target": [
+                        "MESSAGING"
+                    ],
+                    "section": 2,
+                    "order": 2,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "color": "green-2"
+                },
+                {
+                    "name": "MESSAGING",
+                    "target": [
+                        "PAY_THE_PRODUCER"
+                    ],
+                    "section": 2,
+                    "order": 3,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "color": "red-1"
+                },
+                {
+                    "name": "PAY_THE_PRODUCER",
+                    "target": [
+                        "SAFE_COIN"
+                    ],
+                    "section": 2,
+                    "order": 4,
+                    "offsetX": 1.75,
+                    "offsetY": 0,
+                    "color": "cyan-1"
+                },
+                {
+                    "name": "DOWN_STREAM",
+                    "source": [
+                        "VAULT_SAMPLE"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "CLIENT",
+            "target": [
+                "END"
+            ],
+            "header": 30,
+            "section": 1,
+            "order": 2,
+            "offsetX": 0,
+            "offsetY": 0,
+            "color": "green-2",
+            "children" : [
+              {
+                  "name": "CLIENT_1",
+                  "target": [
+                      "CLIENT_2"
+                  ],
+                  "section": 1,
+                  "order": 1,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "color": "red-1"
+              },
+              {
+                  "name": "CLIENT_2",
+                  "target": [
+                      "CLIENT_3"
+                  ],
+                  "section": 1,
+                  "order": 2,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "color": "orange-1"
+              },
+              {
+                  "name": "CLIENT_3",
+                  "target": [
+                      "END"
+                  ],
+                  "section": 1,
+                  "order": 3,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "color": "green-1"
+              }
+            ]
+        }
+    ]
+}

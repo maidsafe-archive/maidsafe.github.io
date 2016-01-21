@@ -1,5 +1,5 @@
-.box_holder { 
-    width: 100%; 
+/*.box_holder {
+    width: 100%;
     margin: 30px 0px
 }
 .box {
@@ -77,4 +77,177 @@ p {
 }
 footer {
 padding-bottom: 50px;
+}*/
+
+.roadmap {
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+}
+.roadmap-b {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.roadmap .roadmapNav {
+  font-family: 'Open sans';
+  font-size: 14px;
+  width: 20%;
+  height: 100%;
+  padding: 8px;
+  border-right: 1px solid #DDD;
+  position: relative;
+  min-height: 1px;
+  float: left;
+  box-sizing: border-box;
+}
+.roadmap .roadmapChart {
+  width: 80%;
+  padding: 0 0 0 16px;
+  float: left;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.listBase {
+  line-height: 36px;
+  padding-left: 8px;
+  cursor: pointer;
+  position: relative;
+}
+.listBase.listClose {
+  height: 36px;
+  overflow: hidden;
+}
+.listBase.highlight:before {
+  width: 100%;
+}
+.listBase:before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 36px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* box */
+.box {
+  fill: #99D1FF;
+  cursor: pointer;
+}
+
+/* lines */
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1px;
+}
+
+/* markers */
+.lineMarker {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2.5px;
+}
+
+/* blue 1 */
+.list-blue-1:before {
+  background-color: #1565C0;
+}
+.svg-blue-1 {
+  fill: #1565C0;
+}
+.svg-blue-1-line, .lineMarker-blue-1 {
+  stroke:#1565C0;
+}
+/* blue 2 */
+.list-blue-2:before {
+  background-color: #5C6BC0;
+}
+.svg-blue-2 {
+  fill: #5C6BC0;
+}
+.svg-blue-2-line, .lineMarker-blue-2 {
+  stroke:#5C6BC0;
+}
+
+/* orange 1 */
+.list-orange-1:before {
+  background-color: #FF9800;
+}
+.svg-orange-1 {
+  fill: #FF9800;
+}
+.svg-orange-1-line, .lineMarker-orange-1 {
+  stroke:#FF9800;
+}
+
+/* purple 1 */
+.list-purple-1:before {
+  background-color: #B388FF;
+}
+.svg-purple-1 {
+  fill: #B388FF;
+}
+.svg-purple-1-line, .lineMarker-purple-1 {
+  stroke:#B388FF;
+}
+/* green 1 */
+.list-green-1 {
+  position: relative;
+}
+.list-green-1:before {
+  background-color: #66BB6A;
+}
+.svg-green-1 {
+  fill: #66BB6A;
+}
+.svg-green-1-line, .lineMarker-green-1 {
+  stroke:#66BB6A;
+}
+/* green 2 */
+.list-green-2:before {
+  background-color: #CDDC39;
+}
+.svg-green-2 {
+  fill: #CDDC39;
+}
+.svg-green-2-line, .lineMarker-green-2 {
+  stroke:#CDDC39;
+}
+/* red 1 */
+.list-red-1 {
+  position: relative;
+}
+.list-red-1:before {
+  background-color: #FF5252;
+}
+.svg-red-1 {
+  fill: #FF5252;
+}
+.svg-red-1-line, .lineMarker-red-1 {
+  stroke:#FF5252;
+}
+/* cyan 1 */
+.list-cyan-1:before {
+  background-color: #00B8D4;
+}
+.svg-cyan-1 {
+  fill: #00B8D4;
+}
+.svg-cyan-1-line, .lineMarker-cyan-1 {
+  stroke:#00B8D4;
+}
+
+/* chart header */
+.chart-header-b {
+  fill: #EEE;
+}
+
+.chart-header-progress {
+  fill: #48A8D2;
 }
