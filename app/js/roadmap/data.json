@@ -86,7 +86,7 @@
                     "offsetX": 0,
                     "offsetY": 0,
                     "status": 0,
-                    "color": "red-1"
+                    "color": "indigo-1"
                 },
                 {
                     "name": "EXTERNAL1",
@@ -110,7 +110,7 @@
                     "offsetX": 0,
                     "offsetY": 0,
                     "status": 1,
-                    "color": "red-1"
+                    "color": "cyan-1"
                 },
                 {
                     "name": "PAY_THE_PRODUCER",
@@ -122,7 +122,7 @@
                     "offsetX": 1.75,
                     "offsetY": 0,
                     "status": 0,
-                    "color": "cyan-1"
+                    "color": "cyan-2"
                 },
                 {
                     "name": "DOWN_STREAM",

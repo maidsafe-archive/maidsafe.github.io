@@ -57,7 +57,8 @@
 }
 
 #boxBase text {
-  font-size  : 14px;
+  font-size: 14px;
+  text-transform: capitalize;
 }
 
 /* box */

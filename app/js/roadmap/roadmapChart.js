@@ -12,7 +12,11 @@ var RoadmapChart = {
     target: null
   },
   lineMarkers: {
-    colors: [ 'blue-1', 'blue-2', 'orange-1', 'purple-1', 'green-1', 'green-2', 'red-1', 'default' ],
+    colors: [ 'blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
+      'coral-1', 'coral-2', 'coral-3', 'pink-1', 'pink-2', 'pink-3',
+      'green-1', 'green-2', 'green-3', 'indigo-1', 'indigo-2', 'indigo-3',
+      'cyan-1', 'cyan-2', 'cyan-3', 'turquoise-1', 'turquoise-2', 'turquoise-3',
+      'grey-1', 'grey-2', 'grey-3', 'purple-1', 'purple-2', 'purple-3', 'default' ],
     nodes: {}
   },
   box: {
@@ -246,13 +250,16 @@ var RoadmapChart = {
       return box.status ? "url(#STATUS_COMPLETE)" : "url(#STATUS_OPEN)";
     });
 
+    var boxName = box.name.toLowerCase();
+    boxName = boxName.replace(new RegExp('_', 'g'), " ");
+
     // text
     var text = self.boxesContainer.target
     .append('text')
     .attr('x', self.xScale(xPos) + (self.svg.perUnit / 2))
     .attr('y', self.yScale(yPos) + (self.svg.perUnit / 1.3))
     .attr('fill', '#FFFFFF')
-    .text(box.name.toLowerCase())
+    .text(boxName)
     .on('mouseover', function() {
       self.highlightNav(box.name, true);
     })

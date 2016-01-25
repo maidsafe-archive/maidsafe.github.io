@@ -10,9 +10,11 @@ var RoadmapNav = {
   },
   createEle: function(node, parent) {
     var self = this;
+    var nodeName = node.name;
+    nodeName = nodeName.replace(new RegExp('_', 'g'), " ");
     var child = document.createElement('div');
     var childId = self.idPrefix + node.name;
-    child.innerHTML = self.capitalize(node.name);
+    child.innerHTML = self.capitalize(nodeName);
     child.setAttribute('id', childId);
     child.classList.add('listBase');
     child.onclick = function(e) { e.stopPropagation(); self.showChart(childId)};
