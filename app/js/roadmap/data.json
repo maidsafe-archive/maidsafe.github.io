@@ -13,6 +13,7 @@
             "order": 1,
             "offsetX": 0,
             "offsetY": 0,
+            "status": 1,
             "children": [
                 {
                     "name": "EXTERNAL",
@@ -35,6 +36,7 @@
                     "order": 1,
                     "offsetX": 0,
                     "offsetY": 0,
+                    "status": 1,
                     "color": "orange-1"
                 },
                 {
@@ -46,6 +48,7 @@
                     "order": 2,
                     "offsetX": 0,
                     "offsetY": 0,
+                    "status": 1,
                     "color": "purple-1"
                 },
                 {
@@ -58,6 +61,7 @@
                     "order": 3,
                     "offsetX": 0,
                     "offsetY": 0,
+                    "status": 0,
                     "color": "blue-2"
                 },
                 {
@@ -69,6 +73,7 @@
                     "order": 4,
                     "offsetX": 0,
                     "offsetY": 0,
+                    "status": 0,
                     "color": "green-1"
                 },
                 {
@@ -80,6 +85,7 @@
                     "order": 5,
                     "offsetX": 0,
                     "offsetY": 0,
+                    "status": 0,
                     "color": "red-1"
                 },
                 {
@@ -91,6 +97,7 @@
                     "order": 2,
                     "offsetX": 0,
                     "offsetY": 0,
+                    "status": 1,
                     "color": "green-2"
                 },
                 {
@@ -102,6 +109,7 @@
                     "order": 3,
                     "offsetX": 0,
                     "offsetY": 0,
+                    "status": 1,
                     "color": "red-1"
                 },
                 {
@@ -113,6 +121,7 @@
                     "order": 4,
                     "offsetX": 1.75,
                     "offsetY": 0,
+                    "status": 0,
                     "color": "cyan-1"
                 },
                 {
@@ -133,7 +142,9 @@
             "order": 2,
             "offsetX": 0,
             "offsetY": 0,
-            "color": "green-2",
+            "status": 0,
+            "color": "coral-1",
+            "status": 1,
             "children" : [
               {
                   "name": "CLIENT_1",
@@ -144,7 +155,8 @@
                   "order": 1,
                   "offsetX": 0,
                   "offsetY": 0,
-                  "color": "red-1"
+                  "status": 1,
+                  "color": "coral-2"
               },
               {
                   "name": "CLIENT_2",
@@ -155,6 +167,7 @@
                   "order": 2,
                   "offsetX": 0,
                   "offsetY": 0,
+                  "status": 0,
                   "color": "orange-1"
               },
               {
@@ -166,6 +179,7 @@
                   "order": 3,
                   "offsetX": 0,
                   "offsetY": 0,
+                  "status": 0,
                   "color": "green-1"
               }
             ]

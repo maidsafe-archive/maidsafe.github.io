@@ -30,6 +30,16 @@ var RoadmapChart = {
   nodeChildren: [],
   boxes: [],
   maxRowIndex: 0,
+  status: [
+    {
+      src: 'img/roadmap_wip.svg',
+      id: 'STATUS_OPEN'
+    },
+    {
+      src: 'img/roadmap_complete.svg',
+      id: 'STATUS_COMPLETE'
+    }
+  ],
   xScale: function(val) {
     var self = this;
     var x = d3.scale.linear()
@@ -66,6 +76,28 @@ var RoadmapChart = {
                     .attr('orient', 'auto')
                     .append('svg:path')
                     .attr('d', 'M 0 20L 10 10 L 0 0');
+  },
+  prepareStatusElements: function() {
+    var self = this;
+    var statusEle = self.svg.target.append('svg:defs')
+    .selectAll("pattern")
+    .data(self.status)
+    .enter()
+    .append('svg:pattern')
+    .attr('id', function(d) {
+      return d.id;
+    })
+    .attr('patternUnits', 'objectBoundingBox')
+    .attr('width', self.box.height)
+    .attr('height', self.box.height)
+    .append('image')
+    .attr('xlink:href', function(d) {
+      return d.src;
+    })
+    .attr('x', 0)
+    .attr('y', 0)
+    .attr('width', self.box.height)
+    .attr('height', self.box.height)
   },
   appendSvg: function() {
     var self = this;
@@ -202,6 +234,18 @@ var RoadmapChart = {
       self.toggleNavList(box.name);
     });
 
+    var statusBox = self.boxesContainer.target
+    .append('rect')
+    .attr('x', self.xScale(xPos + self.box.width - self.box.height))
+    .attr('y', self.yScale(yPos))
+    .attr('width', self.box.height)
+    .attr('height', self.box.height)
+    .style("fill", function(d) {
+      if (!box.hasOwnProperty('status')) return 'url(#STATUS_OPEN)';
+      //
+      return box.status ? "url(#STATUS_COMPLETE)" : "url(#STATUS_OPEN)";
+    });
+
     // text
     var text = self.boxesContainer.target
     .append('text')
@@ -330,6 +374,7 @@ var RoadmapChart = {
 
     self.appendSvg(); // append svg element to target element
     self.prepareMarkers();
+    self.prepareStatusElements();
     self.appendBoxesContainer(); // append box base to svg
   },
   reset: function() {
