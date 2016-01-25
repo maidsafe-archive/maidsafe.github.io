@@ -1,5 +1,6 @@
 var RoadmapNav = {
   data: null,
+  rootNode: null,
   parentId: 'RoadmapNav',
   idPrefix: "_LIST_",
   nodes: {},
@@ -17,7 +18,7 @@ var RoadmapNav = {
     child.innerHTML = self.capitalize(nodeName);
     child.setAttribute('id', childId);
     child.classList.add('listBase');
-    child.onclick = function(e) { e.stopPropagation(); self.showChart(childId)};
+    child.onclick = function(e) { e.stopPropagation(); self.showChart(childId); };
     self.nodes[childId] = node;
     if (node.hasOwnProperty('color')) {
       child.classList.add('list-' + node.color);
@@ -29,6 +30,7 @@ var RoadmapNav = {
     }
     parent.appendChild(child);
     parent.classList.add('listClose');
+    self.rootNode = child;
   },
   parseObject: function(node, parent) {
     var self = this;
@@ -55,16 +57,23 @@ var RoadmapNav = {
     RoadmapChart.reset();
     if(!ele.hasClass('listClose')) {
       ele.addClass('listClose');
-      RoadmapChart.reset();
       var parentId = ele.parent().attr('id');
       if (self.nodes.hasOwnProperty(parentId)) {
+        self.setHeader(self.capitalize(self.nodes[parentId].name), self.nodes[parentId].desc);
         RoadmapChart.draw(self.nodes[parentId]);
-      }
+        return;
+      }      
+      self.rootNode.click();
     } else {
+      self.setHeader(self.capitalize(data.name), data.desc);
       ele.removeClass('listClose');
       reset();
       RoadmapChart.draw(data);
     }
+  },
+  setHeader: function(title, desc) {
+    $('#RoadmapTitle').text(title);
+    $('#RoadmapDesc').text(desc);
   },
   highlightList: function(id, status) {
     var ele = $('#_LIST_'+id);
@@ -80,13 +89,27 @@ var RoadmapNav = {
     self.data = data;
     var parentEle = document.getElementById(self.parentId);
     self.parseObject(self.data, parentEle);
+    parentEle.classList.remove('listClose');
+    self.rootNode.click();
   }
 };
+
+// toggle roadmap header
+var toggleRoadmapHeader = function() {
+  $('#RoadmapTitle').on('click', function(e) {
+    var target = $('#RoadmapHeader');
+    if (target.hasClass('active')) {
+      target.removeClass('active');
+      return;
+    }
+    target.addClass('active');
+  });
+};
+
 $(function() {
+  toggleRoadmapHeader();
   $.get('js/roadmap/data.json', function(data) {
-    // var chartData = JSON.parse(data);
     RoadmapNav.init(data);
-    // console.log(RoadmapNav);
-    RoadmapChart.draw(data);
+    // RoadmapChart.draw(data);
   });
 });

@@ -37,11 +37,13 @@ var RoadmapChart = {
   status: [
     {
       src: 'img/roadmap_wip.svg',
-      id: 'STATUS_OPEN'
+      id: 'STATUS_OPEN',
+      type: 'icon'
     },
     {
       src: 'img/roadmap_complete.svg',
-      id: 'STATUS_COMPLETE'
+      id: 'STATUS_COMPLETE',
+      type: 'icon'
     }
   ],
   xScale: function(val) {
@@ -382,6 +384,7 @@ var RoadmapChart = {
     self.appendSvg(); // append svg element to target element
     self.prepareMarkers();
     self.prepareStatusElements();
+    // self.prepareBoxPattern();
     self.appendBoxesContainer(); // append box base to svg
   },
   reset: function() {

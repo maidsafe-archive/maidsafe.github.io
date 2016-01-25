@@ -10,7 +10,22 @@ rootClass: sub-page
   <div class="roadmap-b">
       <div id="RoadmapNav" class="roadmapNav">
       </div>
-      <div id="RoadmapChart" class="roadmapChart"></div>
+      <div class="roadmapChart">
+        <!-- breadcrumb -->
+        <div class="roadmapChart-breadcrumb">
+          <span class="breadcrumb-i">SAFE Network</span>
+          <span class="breadcrumb-i">Network</span>
+        </div><!-- /breadcrumb -->
+        <!-- roadmap header -->
+        <div id="RoadmapHeader" class="roadmapChart-h">
+          <h3 id="RoadmapTitle" class="roadmapChart-h-t"></h3>
+          <div id="RoadmapDesc" class="roadmapChart-h-desc">
+          </div>
+        </div><!-- /roadmap header -->
+        <div id="RoadmapChart">
+
+        </div>
+      </div>
     </div>
 </div>
 {% include roadmapScripts.html %}
