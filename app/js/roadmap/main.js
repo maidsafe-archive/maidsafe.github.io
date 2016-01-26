@@ -4,6 +4,9 @@ var RoadmapNav = {
   parentId: 'RoadmapNav',
   idPrefix: "_LIST_",
   nodes: {},
+  breadcrumb: [
+    'SAFE Network'
+  ],
   capitalize: function(text) {
     text = text.toLowerCase();
     text = text[0].toUpperCase() + text.slice(1);
@@ -45,27 +48,33 @@ var RoadmapNav = {
     var self = this;
     var ele = $('#' + id);
     var data = self.nodes[id];
+    var nodeName = self.capitalize(data.name);
+    self.updateBreadcrumb(id);
     var reset = function() {
       var siblings = ele.siblings();
       for(var i=0; i<siblings.length; i++) {
         $(siblings[i]).addClass('listClose');
       }
     };
+
     if(!data.hasOwnProperty('children')) {
       return;
     }
+
     RoadmapChart.reset();
     if(!ele.hasClass('listClose')) {
       ele.addClass('listClose');
       var parentId = ele.parent().attr('id');
       if (self.nodes.hasOwnProperty(parentId)) {
-        self.setHeader(self.capitalize(self.nodes[parentId].name), self.nodes[parentId].desc);
+        var parentName = self.capitalize(self.nodes[parentId].name);
+        self.setHeader(parentName, self.nodes[parentId].desc);
         RoadmapChart.draw(self.nodes[parentId]);
         return;
-      }      
+      }
       self.rootNode.click();
+      return;
     } else {
-      self.setHeader(self.capitalize(data.name), data.desc);
+      self.setHeader(nodeName, data.desc);
       ele.removeClass('listClose');
       reset();
       RoadmapChart.draw(data);
@@ -84,9 +93,47 @@ var RoadmapNav = {
     self.highlightList(id, false)
     self.showChart('_LIST_'+id);
   },
+  updateBreadcrumb: function(id) {
+    var self = this;
+    var targetEle = $('#RoadmapBreadcrumb');
+    var tempBread = [];
+    var updateParent = function(childId) {
+      var childName = self.nodes[childId].name;
+      tempBread.push(self.capitalize(childName));
+      var parentEle = self.getParentEle(childName);
+      if (!parentEle) {
+        return;
+      }
+        updateParent('_LIST_'+parentEle.name);
+    }
+    self.breadcrumb.splice(1)
+    if (id) {
+      updateParent(id);
+    }
+    self.breadcrumb = self.breadcrumb.concat(tempBread.reverse());
+    targetEle.html('');
+    self.breadcrumb.forEach(function(val) {
+      targetEle.append('<span class="breadcrumb-i">'+val+'</span>')
+    })
+  },
+  getParentEle: function(clientId) {
+    var self = this;
+    var parentNode = null;
+    for(var key in self.nodes) {
+      if (self.nodes[key].hasOwnProperty('children')) {
+        self.nodes[key].children.forEach(function(node) {
+          if (node.name === clientId) {
+            parentNode = self.nodes[key];
+          }
+        })
+      }
+    }
+    return parentNode;
+  },
   init: function(data) {
     var self = this;
     self.data = data;
+    self.updateBreadcrumb(null);
     var parentEle = document.getElementById(self.parentId);
     self.parseObject(self.data, parentEle);
     parentEle.classList.remove('listClose');
