@@ -49,7 +49,7 @@ var RoadmapNav = {
     var ele = $('#' + id);
     var data = self.nodes[id];
     var nodeName = self.capitalize(data.name);
-    self.updateBreadcrumb(id);
+
     var reset = function() {
       var siblings = ele.siblings();
       for(var i=0; i<siblings.length; i++) {
@@ -68,6 +68,7 @@ var RoadmapNav = {
       if (self.nodes.hasOwnProperty(parentId)) {
         var parentName = self.capitalize(self.nodes[parentId].name);
         self.setHeader(parentName, self.nodes[parentId].desc);
+        self.updateBreadcrumb(parentId);
         RoadmapChart.draw(self.nodes[parentId]);
         return;
       }
@@ -77,6 +78,7 @@ var RoadmapNav = {
       self.setHeader(nodeName, data.desc);
       ele.removeClass('listClose');
       reset();
+      self.updateBreadcrumb(id);
       RoadmapChart.draw(data);
     }
   },
