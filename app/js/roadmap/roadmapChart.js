@@ -221,9 +221,40 @@ var RoadmapChart = {
     var yPos = y + (parseFloat(box.offsetY) * self.svg.perUnit);
     var classname = 'box ';
     classname += box.hasOwnProperty('color') ? 'svg-' + box.color : '';
+    if (!box.status) {
+        var pattern = self.svg.target
+        .append('defs')
+        .append('pattern')
+        .attr('id', '_PATTERN_'+box.name)
+        .attr('x', self.xScale(xPos))
+        .attr('y', self.yScale(yPos))
+        .attr('width', 80)
+        .attr('height', 20)
+        .attr('patternUnits', 'userSpaceOnUse')
+        .append('g')
+        .attr('opacity', 0.8);
+
+        pattern.append('rect')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('class', classname)
+        .attr('width', self.box.width)
+        .attr('height', self.box.height)
+        .attr('opacity', 0.8);
+
+        pattern.append('polygon')
+        .attr('class', classname)
+        .attr('points', '80,0 61,20 80,20');
+
+        pattern.append('polygon')
+        .attr('class', classname)
+        .attr('points', '0,0 0,20 21,20 40,0');
+    }
+
+    // box
     var boxBase = self.boxesContainer.target
     .append('rect')
-    .attr('class', classname)
+    .attr('data-arrow', classname)
     .attr('x', self.xScale(xPos))
     .attr('y', self.yScale(yPos))
     .attr('width', self.box.width)
@@ -240,6 +271,13 @@ var RoadmapChart = {
       self.toggleNavList(box.name);
     });
 
+    if (box.status) {
+      boxBase.attr('class', classname)
+    } else {
+      boxBase.attr('style', 'fill: url(#'+"_PATTERN_"+box.name+')')
+    }
+
+    // status
     var statusBox = self.boxesContainer.target
     .append('rect')
     .attr('x', self.xScale(xPos + self.box.width - self.box.height))
@@ -360,7 +398,7 @@ var RoadmapChart = {
           targetEle = document.getElementById(targetId);
           trgPos.x = parseFloat(targetEle.getAttribute('x')) + self.box.width;
           trgPos.y = parseFloat(targetEle.getAttribute('y')) + (self.svg.perUnit / 2);
-          color = targetEle.getAttribute('class').split(" ")[1];
+          color = targetEle.getAttribute('data-arrow').split(" ")[1];
         }
         interBot = {
           x: parseFloat(srcPos.x) - (self.svg.perUnit / 2),
