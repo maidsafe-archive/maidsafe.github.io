@@ -162,7 +162,7 @@ var toggleRoadmapHeader = function() {
 
 $(function() {
   toggleRoadmapHeader();
-  $.get('js/roadmap/data.json', function(data) {
+  $.get('data/roadmapData.json', function(data) {
     RoadmapNav.init(data);
     // RoadmapChart.draw(data);
   });

@@ -34,18 +34,6 @@ var RoadmapChart = {
   nodeChildren: [],
   boxes: [],
   maxRowIndex: 0,
-  status: [
-    {
-      src: 'img/roadmap_wip.svg',
-      id: 'STATUS_OPEN',
-      type: 'icon'
-    },
-    {
-      src: 'img/roadmap_complete.svg',
-      id: 'STATUS_COMPLETE',
-      type: 'icon'
-    }
-  ],
   xScale: function(val) {
     var self = this;
     var x = d3.scale.linear()
@@ -85,25 +73,25 @@ var RoadmapChart = {
   },
   prepareStatusElements: function() {
     var self = this;
-    var statusEle = self.svg.target.append('svg:defs')
-    .selectAll("pattern")
-    .data(self.status)
-    .enter()
-    .append('svg:pattern')
-    .attr('id', function(d) {
-      return d.id;
-    })
+    var statusEle = self.svg.target.append('svg:defs');
+
+    var complete = statusEle.append('svg:pattern')
+    .attr('id', 'STATUS_COMPLETE')
     .attr('patternUnits', 'objectBoundingBox')
     .attr('width', self.box.height)
     .attr('height', self.box.height)
-    .append('image')
-    .attr('xlink:href', function(d) {
-      return d.src;
-    })
-    .attr('x', 0)
-    .attr('y', 0)
+    .append('polygon')
+    .attr('fill', '#FFFFFF')
+    .attr('points', '14.9,4.9 7.7,12.1 4.9,9.2 3.5,10.6 7.7,14.9 16.3,6.3');
+
+    var status_open = statusEle.append('svg:pattern')
+    .attr('id', 'STATUS_OPEN')
+    .attr('patternUnits', 'objectBoundingBox')
     .attr('width', self.box.height)
     .attr('height', self.box.height)
+    .append('path')
+    .attr('fill', '#FFFFFF')
+    .attr('d', 'M15.2,13.3l-4.5-4.5c0.4-1.1,0.2-2.5-0.7-3.4c-1-1-2.5-1.2-3.6-0.6l2.1,2.1L7,8.4L4.8,6.3C4.2,7.4,4.5,8.9,5.5,9.9c0.9,0.9,2.3,1.2,3.4,0.7l4.5,4.5c0.2,0.2,0.5,0.2,0.7,0l1.1-1.1C15.4,13.8,15.4,13.4,15.2,13.3z')
   },
   appendSvg: function() {
     var self = this;
