@@ -22,6 +22,8 @@ var RoadmapNav = {
     child.setAttribute('id', childId);
     child.classList.add('listBase');
     child.onclick = function(e) { e.stopPropagation(); self.showChart(childId); };
+    child.onmouseover = function(e) { e.stopPropagation(); self.highlightNode(childId, true); };
+    child.onmouseout = function(e) { e.stopPropagation(); self.highlightNode(childId, false); };
     self.nodes[childId] = node;
     if (node.hasOwnProperty('color')) {
       child.classList.add('list-' + node.color);
@@ -89,6 +91,9 @@ var RoadmapNav = {
   highlightList: function(id, status) {
     var ele = $('#_LIST_'+id);
     status ? ele.addClass('highlight') : ele.removeClass('highlight');
+  },
+  highlightNode: function(id, status) {
+    RoadmapChart.highlightNode(id, status);
   },
   toggleNavList: function(id) {
     var self = this;

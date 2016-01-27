@@ -272,9 +272,9 @@ var RoadmapChart = {
     });
 
     if (box.status) {
-      boxBase.attr('class', classname)
+      boxBase.attr('class', classname);
     } else {
-      boxBase.attr('style', 'fill: url(#'+"_PATTERN_"+box.name+')')
+      boxBase.attr('style', 'fill: url(#'+"_PATTERN_"+box.name+')').attr('class', 'box');
     }
 
     // status
@@ -414,6 +414,7 @@ var RoadmapChart = {
   },
   init: function() {
     var self = this;
+    self.svg.width = document.getElementById(self.svg.parentId.slice(1)).offsetWidth;
     self.computeBoxes(); // compute given object to array of boxes
     self.computeTargetNodes(); // compute target nodes
     self.countTargetNodes(); // count targets nodes
@@ -422,7 +423,6 @@ var RoadmapChart = {
     self.appendSvg(); // append svg element to target element
     self.prepareMarkers();
     self.prepareStatusElements();
-    // self.prepareBoxPattern();
     self.appendBoxesContainer(); // append box base to svg
   },
   reset: function() {
@@ -458,6 +458,17 @@ var RoadmapChart = {
   },
   highlightNav: function(id, status) {
     RoadmapNav.highlightList(id, status);
+  },
+  highlightNode: function(id, status) {
+    var nodeId = id.replace('_LIST_', '');
+    var node = document.getElementById(nodeId);
+    if (node) {
+      if (status) {
+        node.classList.add('highlight');
+      } else {
+        node.classList.remove('highlight');
+      }
+    }
   },
   toggleNavList: function(id) {
     RoadmapNav.toggleNavList(id);
