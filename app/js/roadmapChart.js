@@ -1,5 +1,8 @@
+/*global d3:false, window:false, document:false, RoadmapNav:false */
+/*jshint unused:false, multistr: true*/
+
 var RoadmapChart = {
-  svg:{
+  svg: {
     width: 1000,
     height: 1000,
     padding: 20,
@@ -37,45 +40,45 @@ var RoadmapChart = {
   xScale: function(val) {
     var self = this;
     var x = d3.scale.linear()
-    .domain([self.svg.padding, self.svg.width])
-    .range([0, self.svg.width - self.svg.padding]);
+    .domain([ self.svg.padding, self.svg.width ])
+    .range([ 0, self.svg.width - self.svg.padding ]);
     return x(val);
   },
   yScale: function(val) {
     var self = this;
     var y = d3.scale.linear()
-    .domain([0, self.svg.height])
-    .range([0, self.svg.height - self.svg.padding]);
+    .domain([ 0, self.svg.height ])
+    .range([ 0, self.svg.height - self.svg.padding ]);
     return y(val);
   },
   prepareMarkers: function() {
     var self = this;
-    var lineMarker = self.svg.target.append('svg:defs')
-                    .selectAll("marker")
-                    .data(self.lineMarkers.colors)
-                    .enter()
-                    .append("svg:marker")
-                    .attr('id', function(d) {
-                      return 'svg-' + d;
-                    })
-                    .attr('class', function(d) {
-                      return 'lineMarker lineMarker-' + d;
-                    })
-                    .attr('viewBox', '0 0 20 20')
-                    .attr('refX', '10')
-                    .attr('refY', '10')
-                    .attr('markerUnits', 'strokeWidth')
-                    .attr('markerWidth', '10')
-                    .attr('markerHeight', '10')
-                    .attr('orient', 'auto')
-                    .append('svg:path')
-                    .attr('d', 'M 0 20L 10 10 L 0 0');
+    self.svg.target.append('svg:defs')
+    .selectAll('marker')
+    .data(self.lineMarkers.colors)
+    .enter()
+    .append('svg:marker')
+    .attr('id', function(d) {
+      return 'svg-' + d;
+    })
+    .attr('class', function(d) {
+      return 'lineMarker lineMarker-' + d;
+    })
+    .attr('viewBox', '0 0 20 20')
+    .attr('refX', '10')
+    .attr('refY', '10')
+    .attr('markerUnits', 'strokeWidth')
+    .attr('markerWidth', '10')
+    .attr('markerHeight', '10')
+    .attr('orient', 'auto')
+    .append('svg:path')
+    .attr('d', 'M 0 20L 10 10 L 0 0');
   },
   prepareStatusElements: function() {
     var self = this;
     var statusEle = self.svg.target.append('svg:defs');
-
-    var complete = statusEle.append('svg:pattern')
+    // complete
+    statusEle.append('svg:pattern')
     .attr('id', 'STATUS_COMPLETE')
     .attr('patternUnits', 'objectBoundingBox')
     .attr('width', self.box.height)
@@ -84,14 +87,19 @@ var RoadmapChart = {
     .attr('fill', '#FFFFFF')
     .attr('points', '14.9,4.9 7.7,12.1 4.9,9.2 3.5,10.6 7.7,14.9 16.3,6.3');
 
-    var status_open = statusEle.append('svg:pattern')
+    // status open
+    statusEle.append('svg:pattern')
     .attr('id', 'STATUS_OPEN')
     .attr('patternUnits', 'objectBoundingBox')
     .attr('width', self.box.height)
     .attr('height', self.box.height)
     .append('path')
     .attr('fill', '#FFFFFF')
-    .attr('d', 'M15.2,13.3l-4.5-4.5c0.4-1.1,0.2-2.5-0.7-3.4c-1-1-2.5-1.2-3.6-0.6l2.1,2.1L7,8.4L4.8,6.3C4.2,7.4,4.5,8.9,5.5,9.9c0.9,0.9,2.3,1.2,3.4,0.7l4.5,4.5c0.2,0.2,0.5,0.2,0.7,0l1.1-1.1C15.4,13.8,15.4,13.4,15.2,13.3z')
+    // jscs:disable disallowMultipleLineStrings
+    .attr('d', 'M15.2,13.3l-4.5-4.5c0.4-1.1,0.2-2.5-0.7-3.4c-1-1-2.5-1.2-3.6-0.\
+    6l2.1,2.1L7,8.4L4.8,6.3C4.2,7.4,4.5,8.9,5.5,9.9c0.9,0.9,2.3,1.2,3.4,\
+    0.7l4.5,4.5c0.2,0.2,0.5,0.2,0.7,0l1.1-1.1C15.4,13.8,15.4,13.4,15.2,13.3z');
+    // jscs:enable disallowMultipleLineStrings
   },
   appendSvg: function() {
     var self = this;
@@ -106,15 +114,15 @@ var RoadmapChart = {
     self.boxesContainer.target = self.svg.target
     .append('g')
     .attr('id', 'boxBase')
-    .attr("transform", "translate(" + self.svg.padding + "," + self.svg.padding + ")");
+    .attr('transform', 'translate(' + self.svg.padding + ',' + self.svg.padding + ')');
   },
   computeBoxes: function() {
     var self = this;
     var nodes = self.nodeChildren;
     var boxes = [];
-    d3.map(nodes, function(node, index) {
-      if (!boxes[ node.section -1 ]) {
-        boxes[node.section - 1] = [0];
+    d3.map(nodes, function(node) {
+      if (!boxes[ node.section - 1 ]) {
+        boxes[node.section - 1] = [ 0 ];
       }
       boxes[ node.section - 1 ][ node.order - 1 ] = node;
     });
@@ -124,21 +132,21 @@ var RoadmapChart = {
     var self = this;
     var targetNodes = {};
     var nodes = self.nodeChildren;
-    d3.map(nodes, function(node, index) {
+    d3.map(nodes, function(node) {
       // source nodes
       if (node.hasOwnProperty('source')) {
         if (!targetNodes.hasOwnProperty('sourceOutcomes')) {
-          targetNodes['sourceOutcomes'] = [];
+          targetNodes.sourceOutcomes = [];
         }
         var obj = {};
         obj[node.name] = node.source;
-        targetNodes['sourceOutcomes'].push(obj);
+        targetNodes.sourceOutcomes.push(obj);
         return;
       }
 
       // target nodes
       if (node.hasOwnProperty('target')) {
-        d3.map(node.target, function(id, index) {
+        d3.map(node.target, function(id) {
           if (id === 'END') {
             return;
           }
@@ -155,11 +163,13 @@ var RoadmapChart = {
     var self = this;
     var count = 0;
     var targetNodes = self.targets.nodes;
-    for(var key in targetNodes) {
-      if (key === 'sourceOutcomes') {
-        continue;
+    for (var key in targetNodes) {
+      if (targetNodes[key]) {
+        if (key === 'sourceOutcomes') {
+          continue;
+        }
+        count += targetNodes[key].length;
       }
-      count += targetNodes[key].length
     }
     self.targets.count = count;
   },
@@ -187,7 +197,8 @@ var RoadmapChart = {
     var self = this;
     var headerContainer = self.svg.target.append('g').attr('id', 'Header');
 
-    var headerBase = headerContainer
+    // header base
+    headerContainer
     .append('rect')
     .attr('class', 'chart-header-b')
     .attr('x', 0)
@@ -195,7 +206,8 @@ var RoadmapChart = {
     .attr('width', self.svg.width)
     .attr('height', self.svg.padding / 2);
 
-    var progress = headerContainer
+    // progress
+    headerContainer
     .append('rect')
     .attr('class', 'chart-header-progress')
     .attr('x', 0)
@@ -210,33 +222,33 @@ var RoadmapChart = {
     var classname = 'box ';
     classname += box.hasOwnProperty('color') ? 'svg-' + box.color : '';
     if (!box.status) {
-        var pattern = self.svg.target
-        .append('defs')
-        .append('pattern')
-        .attr('id', '_PATTERN_'+box.name)
-        .attr('x', self.xScale(xPos))
-        .attr('y', self.yScale(yPos))
-        .attr('width', 80)
-        .attr('height', 20)
-        .attr('patternUnits', 'userSpaceOnUse')
-        .append('g')
-        .attr('opacity', 0.8);
+      var pattern = self.svg.target
+      .append('defs')
+      .append('pattern')
+      .attr('id', '_PATTERN_' + box.name)
+      .attr('x', self.xScale(xPos))
+      .attr('y', self.yScale(yPos))
+      .attr('width', 80)
+      .attr('height', 20)
+      .attr('patternUnits', 'userSpaceOnUse')
+      .append('g')
+      .attr('opacity', 0.8);
 
-        pattern.append('rect')
-        .attr('x', 0)
-        .attr('y', 0)
-        .attr('class', classname)
-        .attr('width', self.box.width)
-        .attr('height', self.box.height)
-        .attr('opacity', 0.8);
+      pattern.append('rect')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('class', classname)
+      .attr('width', self.box.width)
+      .attr('height', self.box.height)
+      .attr('opacity', 0.8);
 
-        pattern.append('polygon')
-        .attr('class', classname)
-        .attr('points', '80,0 61,20 80,20');
+      pattern.append('polygon')
+      .attr('class', classname)
+      .attr('points', '80,0 61,20 80,20');
 
-        pattern.append('polygon')
-        .attr('class', classname)
-        .attr('points', '0,0 0,20 21,20 40,0');
+      pattern.append('polygon')
+      .attr('class', classname)
+      .attr('points', '0,0 0,20 21,20 40,0');
     }
 
     // box
@@ -262,27 +274,28 @@ var RoadmapChart = {
     if (box.status) {
       boxBase.attr('class', classname);
     } else {
-      boxBase.attr('style', 'fill: url(#'+"_PATTERN_"+box.name+')').attr('class', 'box');
+      boxBase.attr('style', 'fill: url(#_PATTERN_' + box.name + ')').attr('class', 'box');
     }
 
-    // status
-    var statusBox = self.boxesContainer.target
+    // status box
+    self.boxesContainer.target
     .append('rect')
     .attr('x', self.xScale(xPos + self.box.width - self.box.height))
     .attr('y', self.yScale(yPos))
     .attr('width', self.box.height)
     .attr('height', self.box.height)
-    .style("fill", function(d) {
-      if (!box.hasOwnProperty('status')) return 'url(#STATUS_OPEN)';
-      //
-      return box.status ? "url(#STATUS_COMPLETE)" : "url(#STATUS_OPEN)";
+    .style('fill', function() {
+      if (!box.hasOwnProperty('status')) {
+        return 'url(#STATUS_OPEN)';
+      }
+      return box.status ? 'url(#STATUS_COMPLETE)' : 'url(#STATUS_OPEN)';
     });
 
     var boxName = box.name.toLowerCase();
-    boxName = boxName.replace(new RegExp('_', 'g'), " ");
+    boxName = boxName.replace(new RegExp('_', 'g'), ' ');
 
     // text
-    var text = self.boxesContainer.target
+    self.boxesContainer.target
     .append('text')
     .attr('x', self.xScale(xPos) + (self.svg.perUnit / 2))
     .attr('y', self.yScale(yPos) + (self.svg.perUnit / 1.3))
@@ -303,10 +316,10 @@ var RoadmapChart = {
     var self = this;
     var boxes = self.boxes;
     d3.map(boxes, function(row, rowIndex) {
-      var lastNodePos = {x: 0, y: 0};
+      var lastNodePos = { x: 0, y: 0 };
       var nodePos = lastNodePos;
       d3.map(row, function(col, colIndex) {
-        if (typeof col !== 'object' ) {
+        if (typeof col !== 'object') {
           return;
         }
         if (col.name === 'EXTERNAL' || col.name === 'DOWN_STREAM') {
@@ -330,74 +343,85 @@ var RoadmapChart = {
   drawLine: function(path, color) {
     var self = this;
     var line = d3.svg.line()
-    .x(function(d) { return d.x })
-    .y(function(d) { return d.y })
+    .x(function(d) {
+      return d.x;
+    })
+    .y(function(d) {
+      return d.y;
+    })
     .interpolate('linear');
     var classname = 'line ';
-    classname += color ? color+'-line' : '';
+    classname += color ? color + '-line' : '';
     self.svg.target.select('#boxBase')
     .datum(path)
     .append('path')
     .attr('class', classname)
     .attr('d', line)
-    .attr('marker-end', function(d) {
-      return color ? "url(#"+color+")" : "url(#svg-default)";
+    .attr('marker-end', function() {
+      return color ? 'url(#' + color + ')' : 'url(#svg-default)';
     });
   },
   drawLines: function() {
     var self = this;
     var targetNodes = self.targets.nodes;
-
-    for (var target in targetNodes) {
-      var sourceId = target;
-      var targetIds = targetNodes[target];
-      var srcPos = {x: 0, y:0};
-      var trgPos = {x: 0, y:0};
-      var interBot, interTop = {x: 0, y:0};
-      var sourceEle = null;
-      var targetEle = null;
-      if (target === 'sourceOutcomes') {
-        d3.map(targetIds, function(target) {
-          for (var key in target) {
-            sourceEle = document.getElementById(target[key]);
-            srcPos.x = parseFloat(sourceEle.getAttribute('x')) + (self.box.width + (self.svg.perUnit / 4));
-            srcPos.y = parseFloat(sourceEle.getAttribute('y')) + (self.svg.perUnit / 2);
-            trgPos.x = srcPos.x;
-            trgPos.y = self.svg.height;
-            self.drawLine([srcPos, trgPos]);
-          }
-        })
-        return;
-      }
-      sourceEle = document.getElementById(sourceId);
-      d3.map(targetIds, function(targetId, index) {
-        var color = '';
-        srcPos.x = parseFloat(sourceEle.getAttribute('x')) - (index * (self.svg.perUnit / 2));
-        srcPos.y = parseFloat(sourceEle.getAttribute('y')) + (self.svg.perUnit / 2) - (index * (self.svg.perUnit / 2));
-        if (targetId === 'DOWN_STREAM') {
-          console.log(srcPos.x);
-          srcPos.y -= (targetIds.length * (self.svg.perUnit / 2));
-          trgPos.x = 0;
+    var getTargets = function(target) {
+      for (var key in target) {
+        if (target[key]) {
+          sourceEle = document.getElementById(target[key]);
+          srcPos.x = parseFloat(sourceEle.getAttribute('x')) + (self.box.width + (self.svg.perUnit / 4));
+          srcPos.y = parseFloat(sourceEle.getAttribute('y')) + (self.svg.perUnit / 2);
+          trgPos.x = srcPos.x;
           trgPos.y = self.svg.height;
-        } else if (targetId === 'EXTERNAL') {
-          trgPos.x = srcPos.x - (self.svg.perUnit / 2);
-          trgPos.y = -(self.svg.perUnit / 2);
-        } else {
-          targetEle = document.getElementById(targetId);
-          trgPos.x = parseFloat(targetEle.getAttribute('x')) + self.box.width;
-          trgPos.y = parseFloat(targetEle.getAttribute('y')) + (self.svg.perUnit / 2);
-          color = targetEle.getAttribute('data-arrow').split(" ")[1];
+          self.drawLine([ srcPos, trgPos ]);
         }
-        interBot = {
-          x: parseFloat(srcPos.x) - (self.svg.perUnit / 2),
-          y: srcPos.y
-        };
-        interTop = {
-          x: parseFloat(interBot.x),
-          y: parseFloat(trgPos.y)
-        };
-        self.drawLine([trgPos, interTop, interBot, srcPos], color);
-      });
+      }
+    };
+    var getBoxs = function(targetId, index) {
+      var color = '';
+      srcPos.x = parseFloat(sourceEle.getAttribute('x')) - (index * (self.svg.perUnit / 2));
+      srcPos.y = parseFloat(sourceEle.getAttribute('y')) +
+        (self.svg.perUnit / 2) - (index * (self.svg.perUnit / 2));
+      if (targetId === 'DOWN_STREAM') {
+        console.log(srcPos.x);
+        srcPos.y -= (targetIds.length * (self.svg.perUnit / 2));
+        trgPos.x = 0;
+        trgPos.y = self.svg.height;
+      } else if (targetId === 'EXTERNAL') {
+        trgPos.x = srcPos.x - (self.svg.perUnit / 2);
+        trgPos.y = -(self.svg.perUnit / 2);
+      } else {
+        targetEle = document.getElementById(targetId);
+        trgPos.x = parseFloat(targetEle.getAttribute('x')) + self.box.width;
+        trgPos.y = parseFloat(targetEle.getAttribute('y')) + (self.svg.perUnit / 2);
+        color = targetEle.getAttribute('data-arrow').split(' ')[1];
+      }
+      interBot = {
+        x: parseFloat(srcPos.x) - (self.svg.perUnit / 2),
+        y: srcPos.y
+      };
+      interTop = {
+        x: parseFloat(interBot.x),
+        y: parseFloat(trgPos.y)
+      };
+      self.drawLine([ trgPos, interTop, interBot, srcPos ], color);
+    };
+    for (var target in targetNodes) {
+      if (targetNodes[target]) {
+        var sourceId = target;
+        var targetIds = targetNodes[target];
+        var srcPos = { x: 0, y: 0 };
+        var trgPos = { x: 0, y: 0 };
+        var interBot = { x: 0, y: 0 };
+        var interTop = { x: 0, y: 0 };
+        var sourceEle = null;
+        var targetEle = null;
+        if (target === 'sourceOutcomes') {
+          d3.map(targetIds, getTargets);
+          return;
+        }
+        sourceEle = document.getElementById(sourceId);
+        d3.map(targetIds, getBoxs);
+      }
     }
   },
   init: function() {
