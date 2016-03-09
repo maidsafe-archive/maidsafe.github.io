@@ -5,7 +5,7 @@ var d3 = window.d3;
 // roadmap chart
 var Roadmap = function(payload) {
   this.payload = payload;
-  this.excludeNodes = ['EXTERNAL', 'DOWN_STREAM'];
+  this.excludeNodes = [ 'EXTERNAL', 'DOWN_STREAM' ];
   this.excludeTarget = 'END';
   this.IDs = {
     'NAV': 'RoadmapNav',
@@ -94,7 +94,7 @@ Roadmap.prototype.prepareData = function() {
     if (node.name === self.excludeNodes[0]) {
       nodeInfo.id = node.id;
     }
-    if(node.name === self.excludeNodes[1]) {
+    if (node.name === self.excludeNodes[1]) {
       nodeInfo.source = node.source;
     }
     return nodeInfo;
@@ -757,7 +757,7 @@ Roadmap.prototype.drawLines = function() {
       .attr('id', function() {
         var id = self.taskPrefix.PATH + node.name;
         if (isDownStream) {
-          id += '_DOWNSTREAM'
+          id += '_DOWNSTREAM';
         }
         return id;
       })
@@ -794,8 +794,8 @@ Roadmap.prototype.drawLines = function() {
 
 Roadmap.prototype.drawLabels = function(parentName) {
   var self = this;
-  var labelWidth = 100;
-  var labelheight = 15;
+  var labelWidth = 80;
+  var labelheight = 12;
   var getNodesToAddLabel = function(parentName) {
     var resultArr = [];
     self.nodes.forEach(function(node) {
@@ -834,13 +834,11 @@ Roadmap.prototype.drawLabels = function(parentName) {
       .attr('class', function() {
         var color = node.color;
         if (node.name === self.excludeNodes[1]) {
-
           self.nodes.forEach(function(item) {
             if (item.name === node.source) {
               color = item.color;
             }
           });
-
         }
         return self.taskPrefix.CLASS + color;
       });
@@ -860,7 +858,7 @@ Roadmap.prototype.drawLabels = function(parentName) {
         }
         return node.path.interBot.y + (labelheight / 1.3);
       })
-      .attr('style', 'font-size: 11px')
+      .attr('style', 'font-size: 10px')
       .attr('class', 'taskText');
   };
   d3.map(nodesToAddLabel, function(node) {
@@ -883,7 +881,7 @@ Roadmap.prototype.updateBreadcum = function(parentName) {
         getBreadcumList(node.parent);
       }
     });
-    list.push(nodeName);
+    list.push(parseNodeName(nodeName));
   };
   getBreadcumList(parentName);
   init();
