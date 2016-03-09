@@ -9,20 +9,31 @@ var Roadmap = function(payload) {
     'CHART_BASE': 'RoadmapChartBase',
     'CHART_SVG': 'RoadmapChartSvg',
     'CHART_SVG_GRP': 'RoadmapChartSvgGroup',
-    'LABEL_GRP': 'LabelGroup'
+    'LABEL_GRP': 'LabelGroup',
+    'BREADCUM': 'RoadmapBreadcum',
+    'PROGRESS': 'RoadmapProgress',
+    'TITLE': 'RoadmapTitle',
+    'DESC': 'RoadmapDesc'
   };
   this.nodes = [];
+  this.breadcumList = [];
   this.perUnit = 20;
+  this.progress = {
+    height: 10
+  }
   this.taskPrefix = {
     'ID': '_TASK_',
     'CLASS': 'svg-',
     'LINE': 'line-',
-    'ARROW': 'ARROW_'
+    'ARROW': 'ARROW_',
+    'PATH': 'PATH_',
+    'STATUS_BOX': 'STATUS_',
+    'BOX_TEXT': 'BOX_TEXT_'
   };
   this.svg = {
     width: 0,
     height: 600,
-    padding: 20
+    padding: 15
   };
   this.box = {
     width: 10,
@@ -32,11 +43,15 @@ var Roadmap = function(payload) {
   this.dateFormat = null;
 };
 
-var createDivElement = function(id, classes) {
+var createDivElement = function(id, classes, text) {
   id = id || '';
   classes = typeof classes === 'object' && classes.length > 0 ? classes.join(' ') : '';
   var ele = '<div id="::ID::" class="::CLASS::"></div>'.replace('::ID::', id).replace('::CLASS::', classes);
-  return $(ele);
+  ele = $(ele);
+  if (text) {
+    ele.html(text);
+  }
+  return ele;
 };
 
 var parseNodeName = function(name) {
@@ -76,6 +91,7 @@ Roadmap.prototype.prepareData = function() {
       color: node.color || '',
       parent: parent || '',
       target: node.target || '',
+      daysCompleted: node.daysCompleted || 0,
       startDate: node.startDate,
       endDate: node.endDate,
       section: node.section,
@@ -101,22 +117,34 @@ Roadmap.prototype.prepareData = function() {
 };
 
 Roadmap.prototype.init = function() {
-  this.targetEle.append(createDivElement(null, ['roadmap-b']));
+  // this.targetEle.append(createDivElement(null, ['roadmap-b']));
   this.prepareData();
 };
 
-Roadmap.prototype.handleListEvent = function() {
+Roadmap.prototype.resetOnListTitleClick = function(self) {
+  $(self).children().addClass('listClose');
+};
+
+Roadmap.prototype.resetOnListBaseClick = function(self, needHighlight) {
+  var removeClasses = [ 'listClose' ];
+  if (needHighlight) {
+    removeClasses.push('highlight');
+  }
+  $(self).siblings().addClass('listClose');
+  $(self).removeClass(removeClasses.join(' '));
+};
+
+Roadmap.prototype.handleListEvents = function() {
   var self = this;
   $('.listTitle').on('click', function(e) {
     e.stopPropagation();
-    $(this).children().addClass('listClose');
+    self.resetOnListTitleClick(this);
     self.drawChart($(this).attr('id'));
   });
-  
+
   $('.listBase').on('click', function(e) {
     e.stopPropagation();
-    $(this).siblings().addClass('listClose');
-    $(this).removeClass('listClose');
+    self.resetOnListBaseClick(this);
     self.drawChart($(this).attr('id'));
   });
 
@@ -128,6 +156,196 @@ Roadmap.prototype.handleListEvent = function() {
   $('.listBase').mouseout(function(e) {
     e.stopPropagation();
     $(this).removeClass('highlight');
+  });
+};
+
+Roadmap.prototype.handleBoxEvents = function () {
+  var self = this;
+  var TARGET_TYPE = {
+    'BOX': 'box',
+    'STATUS_BOX': 'status_box',
+    'TASK_TEXT': 'task_text'
+  };
+  var addClass = function(self, newClass) {
+    if(!self || !newClass) { return; }
+    var classNames = self.attr('class');
+    if (!classNames) { return; }
+    classNames = classNames.split(' ');
+    if (classNames.indexOf(newClass) === -1) {
+      classNames.push(newClass);
+    }
+    classNames = classNames.join(' ');
+    self.attr('class', classNames);
+  };
+
+  var removeClass = function(self, classToRemove) {
+    if(!self || !classToRemove) { return; }
+    var classNames = self.attr('class');
+    if (!classNames) { return; }
+    classNames = classNames.split(' ');
+    var index = classNames.indexOf(classToRemove);
+    if (index !== -1) {
+      classNames.splice(index, 1);
+    }
+    classNames = classNames.join(' ');
+    self.attr('class', classNames);
+  };
+
+  var highlightPath = function(pathId) {
+    if(!pathId) {
+      return;
+    }
+    var targetEle = $('#' + pathId);
+    addClass(targetEle, 'highlight');
+  };
+
+  var removePathHighlight = function(pathId) {
+    if(!pathId) {
+      return;
+    }
+    var targetEle = $('#' + pathId);
+    removeClass(targetEle, 'highlight');
+  };
+
+  var highlightList = function(listId) {
+    if (!listId) { return; }
+    $('#' + listId).addClass('highlight');
+  };
+
+  var removeListHighlight = function(listId) {
+    if (!listId) { return; }
+    $('#' + listId).removeClass('highlight');
+  };
+
+  var getTaskId = function(target, targetType) {
+    var targetId = $(target).attr('id');
+    if (!targetId) {
+      return;
+    }
+    var taskSliceIndex = null;
+    if (targetType === TARGET_TYPE.BOX) {
+      taskSliceIndex = self.taskPrefix.ID.length;
+    }
+    if (targetType === TARGET_TYPE.TASK_TEXT) {
+      taskSliceIndex = self.taskPrefix.BOX_TEXT.length;
+    }
+    var taskId = targetId.slice(taskSliceIndex);
+    if (!taskId) {
+      return false;
+    }
+    return taskId;
+  };
+
+  $('.box').mouseover(function(e) {
+    e.stopPropagation();
+    addClass($(this), 'highlight');
+    var taskId = getTaskId(this, TARGET_TYPE.BOX);
+    var pathId = self.taskPrefix.PATH + taskId;
+    highlightPath(pathId);
+    highlightList(taskId);
+  });
+
+  $('.box').mouseout(function(e) {
+    e.stopPropagation();
+    removeClass($(this), 'highlight');
+    var taskId = getTaskId(this, TARGET_TYPE.BOX);
+    var pathId = self.taskPrefix.PATH + taskId;
+    removePathHighlight(pathId);
+    removeListHighlight(taskId);
+  });
+
+  $('.box').click(function(e) {
+    e.stopPropagation();
+    var taskId = getTaskId(this, TARGET_TYPE.BOX);
+    if (!taskId) {
+      return;
+    }
+    self.resetOnListBaseClick($('#' + taskId), true);
+    self.drawChart(taskId);
+  });
+
+  $('.taskText').mouseover(function(e) {
+    e.stopPropagation();
+    var taskId = getTaskId(this, TARGET_TYPE.TASK_TEXT);
+    if (!taskId) {
+      return;
+    }
+    var targetId = self.taskPrefix.ID + taskId;
+    var targetEle = $('#' + targetId);
+    addClass(targetEle, 'highlight');
+    var pathId = self.taskPrefix.PATH + taskId;
+    highlightPath(pathId);
+    highlightList(taskId);
+  });
+
+  $('.taskText').mouseout(function(e) {
+    e.stopPropagation();
+    var taskId = getTaskId(this, TARGET_TYPE.TASK_TEXT);
+    if (!taskId) {
+      return;
+    }
+    var targetId = self.taskPrefix.ID + taskId;
+    var targetEle = $('#' + targetId);
+    removeClass(targetEle, 'highlight');
+    var pathId = self.taskPrefix.PATH + taskId;
+    removePathHighlight(pathId);
+    removeListHighlight(taskId);
+  });
+
+  $('.taskText').click(function(e) {
+    e.stopPropagation();
+    var taskId = getTaskId(this, TARGET_TYPE.TASK_TEXT);
+    if (!taskId) {
+      return;
+    }
+    self.resetOnListBaseClick($('#' + taskId), true);
+    self.drawChart(taskId);
+  });
+
+  $('.statusBox').mouseover(function(e) {
+    e.stopPropagation();
+    var statusId = $(this).attr('id');
+    if (!statusId) { return; }
+    var taskId = statusId.slice(self.taskPrefix.STATUS_BOX.length);
+    var targetId = self.taskPrefix.ID + taskId;
+    var targetEle = $('#' + targetId);
+    addClass(targetEle, 'highlight');
+    var pathId = self.taskPrefix.PATH + taskId;
+    highlightPath(pathId);
+    highlightList(taskId);
+  });
+
+  $('.statusBox').mouseout(function(e) {
+    e.stopPropagation();
+    var statusId = $(this).attr('id');
+    if (!statusId) { return; }
+    var taskId = statusId.slice(self.taskPrefix.STATUS_BOX.length);
+    var targetId = self.taskPrefix.ID + taskId;
+    var targetEle = $('#' + targetId);
+    removeClass(targetEle, 'highlight');
+    var pathId = self.taskPrefix.PATH + taskId;
+    removePathHighlight(pathId);
+    removeListHighlight(taskId);
+  });
+
+  $('.statusBox').click(function(e) {
+    e.stopPropagation();
+    var statusId = $(this).attr('id');
+    if (!statusId) { return; }
+    var taskId = statusId.slice(self.taskPrefix.STATUS_BOX.length);
+    if (!taskId) {
+      return;
+    }
+    self.resetOnListBaseClick($('#' + taskId), true);
+    self.drawChart(taskId);
+  });
+};
+
+Roadmap.prototype.handleHeaderEvents = function() {
+  var self = this;
+  $('#' + self.IDs.TITLE).on('click', function(e) {
+    e.stopPropagation();
+    $(this).toggleClass('active');
   });
 };
 
@@ -149,9 +367,11 @@ Roadmap.prototype.drawNav = function() {
       classes.push('listBase');
     }
     var child = createDivElement(node.name, classes);
-    parentEle.append(child.html(parseNodeName(node.name)));
+    var nodeName = parseNodeName(node.name);
+    child = child.append('<span class="listPadding">' + nodeName + '</span>')
+    parentEle.append(child);
   });
-  this.handleListEvent();
+  this.handleListEvents();
 };
 
 Roadmap.prototype.setTaskList = function(parentName) {
@@ -175,15 +395,28 @@ Roadmap.prototype.prepareChart = function() {
   self.targetEle.append(roadmapChart.append(roadmapChartBase));
   self.svg.width = roadmapChartBase.width();
   self.dateFormat = d3.time.format("%Y-%m-%d");
+  var chartBaseId = '#' + self.IDs.CHART_BASE;
 
-  d3.select('#' + self.IDs.CHART_BASE)
+  // breadcum element
+  var breadcumEle = createDivElement(self.IDs.BREADCUM, [ 'roadmapBreadcrumb' ]);
+  $(chartBaseId).append(breadcumEle);
+
+  // header element
+  var header = createDivElement(null, [ 'roadmapChart-h' ]);
+  var headerTitle = createDivElement(self.IDs.TITLE, [ 'roadmapChart-h-t' ]);
+  var headerDesc = createDivElement(self.IDs.DESC, [ 'roadmapChart-h-desc' ]);
+  header.append(headerTitle);
+  header.append(headerDesc);
+  $(chartBaseId).append(header);
+
+  d3.selectAll(chartBaseId)
     .append('svg')
     .attr('id', self.IDs.CHART_SVG)
     .attr('width', self.svg.width)
     .attr('height', self.svg.height)
     .append('g')
     .attr('id', self.IDs.CHART_SVG_GRP)
-    .attr('transform', 'translate(' + self.svg.padding + ',' + self.svg.padding + ')');
+    .attr('transform', 'translate(' + self.svg.padding + ',' + (self.svg.padding + self.progress.height) + ')');
 };
 
 Roadmap.prototype.prepareTaskStatus = function() {
@@ -299,7 +532,7 @@ Roadmap.prototype.drawBoxes = function() {
       return self.timeScale(self.dateFormat.parse(d.startDate));
     })
     .attr("y", function(d, i) {
-      return d.section * self.perUnit * 2;
+      return (d.section - 1) * self.perUnit * 2;
     })
     .attr("width", function(d, i) {
       return (self.timeScale(self.dateFormat.parse(d.endDate)) - self.timeScale(self.dateFormat.parse(d.startDate)));
@@ -309,8 +542,7 @@ Roadmap.prototype.drawBoxes = function() {
       return self.taskPrefix.ID + d.name;
     })
     .attr('class', function(d) {
-      var classes = 'box ';
-      return d.status ? classes + self.taskPrefix.CLASS + d.color : classes;
+      return 'box ' + (self.taskPrefix.CLASS + d.color);
     })
     .attr('style', function(d) {
       if (!d.status) {
@@ -327,10 +559,14 @@ Roadmap.prototype.drawBoxes = function() {
         self.box.height;
     })
     .attr("y", function(d, i) {
-      return d.section * self.perUnit * 2;
+      return (d.section - 1) * self.perUnit * 2;
     })
     .attr('width', self.box.height)
     .attr('height', self.box.height)
+    .attr('class', 'statusBox')
+    .attr('id', function(d) {
+      return self.taskPrefix.STATUS_BOX + d.name;
+    })
     .style('fill', function(d) {
       if (!d.hasOwnProperty('status')) {
         return 'url(#STATUS_OPEN)';
@@ -347,7 +583,10 @@ Roadmap.prototype.drawBoxes = function() {
       return ((self.perUnit / 2) + self.timeScale(self.dateFormat.parse(d.startDate)));
     })
     .attr("y", function(d, i) {
-      return ((d.section * self.perUnit) * 2) + (self.perUnit / 1.3);
+      return (((d.section - 1) * self.perUnit) * 2) + (self.perUnit / 1.3);
+    })
+    .attr('id', function(d) {
+      return self.taskPrefix.BOX_TEXT + d.name;
     })
     .attr("class", "taskText");
 };
@@ -423,7 +662,7 @@ Roadmap.prototype.drawLines = function() {
     };
 
     path.start.x = self.timeScale(self.dateFormat.parse(target.startDate)) - (order * bottomDist);
-    path.start.y = ((target.section * self.perUnit) * 2) + (self.perUnit / 2);
+    path.start.y = (((target.section - 1) * self.perUnit) * 2) + (self.perUnit / 2);
     var nodeCount = getNodeCountDetails(target);
     path.start.y = isDown(target, node) ? (path.start.y - (order * self.perUnit) + ((order - nodeCount.rest) * self.perUnit * 2)) : (path.start.y - (order * self.perUnit));
     path.interBot.x = path.start.x - bottomDist;
@@ -436,7 +675,7 @@ Roadmap.prototype.drawLines = function() {
     } else {
       var nodeEle = $('#' + self.taskPrefix.ID + node.name);
       path.end.x = self.timeScale(self.dateFormat.parse(node.endDate));
-      path.end.y = ((node.section * self.perUnit) * 2) + (self.perUnit / 2);
+      path.end.y = (((node.section - 1) * self.perUnit) * 2) + (self.perUnit / 2);
       path.interTop.x = path.interBot.x;
       path.interTop.y = path.end.y;
     }
@@ -453,12 +692,14 @@ Roadmap.prototype.drawLines = function() {
         return d.y;
       })
       .interpolate('linear');
+
     d3.select('#' + self.IDs.CHART_SVG)
       .select('g')
       .datum(pathArr)
       .append('path')
       .attr('class', self.taskPrefix.LINE + node.color)
       .attr('d', line)
+      .attr('id', self.taskPrefix.PATH + node.name)
       .attr('fill', 'none')
       .attr('stroke-width', 2)
       .attr('marker-start', function() {
@@ -515,33 +756,160 @@ Roadmap.prototype.drawLabels = function(parentName) {
   });
 };
 
+Roadmap.prototype.updateBreadcum = function(parentName) {
+  var self = this;
+  var list = [];
+  self.breadcumList = [];
+  var init = function() {
+    $('#' + self.IDs.BREADCUM).html('');
+    self.breadcumList.push('SAFE Network');
+  };
+
+  var getBreadcumList = function(nodeName) {
+    self.nodes.forEach(function(node) {
+      if(node.name === nodeName && node.parent) {
+        getBreadcumList(node.parent);
+      }
+    });
+    list.push(nodeName);
+  };
+  getBreadcumList(parentName);
+  init();
+  self.breadcumList = self.breadcumList.concat(list);
+  var target = $('#' + self.IDs.BREADCUM);
+  self.breadcumList.forEach(function(item) {
+    var breadcumItem = createDivElement(null, [ 'breadcrumb-i' ], item);
+    target.append(breadcumItem);
+  });
+};
+
+Roadmap.prototype.updateHeader = function(parentName) {
+  if(!parentName) { return; }
+  var self = this;
+  var target = null;
+  self.nodes.forEach(function(node) {
+    if (node.name === parentName) {
+      target = node;
+    }
+  });
+  var titleEle = $('#' + self.IDs.TITLE);
+  var descEle = $('#' + self.IDs.DESC);
+  titleEle.text(target.name).removeClass('active');
+  descEle.text(target.desc);
+};
+
+Roadmap.prototype.prepareProgressPattern = function(node) {
+  var self = this;
+  var box = box = d3.select('#' + self.IDs.CHART_SVG);
+
+  var pattern = box.append('pattern')
+    .attr('id', '_PATTERN_' + node.name)
+    .attr("x", node.x)
+    .attr("y", node.y)
+    .attr("width", 80)
+    .attr("height", node.height)
+    .attr('patternUnits', 'userSpaceOnUse')
+    .append('g');
+
+  pattern.append('rect')
+    .attr('x', 0)
+    .attr('y', 0)
+    .attr('class', self.taskPrefix.CLASS + 'blue-3')
+    .attr("width", node.width)
+    .attr('height', node.height)
+    .attr('opacity', 0.8);
+
+  pattern.append('polygon')
+    .attr('class', self.taskPrefix.CLASS + 'blue-2')
+    .attr('points', '80,0 61,20 80,20');
+
+  pattern.append('polygon')
+    .attr('class', self.taskPrefix.CLASS + 'blue-2')
+    .attr('points', '0,0 0,20 21,20 40,0');
+};
+
+Roadmap.prototype.drawProgress = function(parentName) {
+  var self = this;
+  var target = null;
+  self.nodes.forEach(function(node) {
+    if (node.name === parentName) {
+      target = node;
+    }
+  });
+
+  var minDate = d3.min(self.taskList, function(d) {
+      return self.dateFormat.parse(d.startDate);
+    });
+  var completedDate = minDate.getFullYear() + '-' + (minDate.getMonth() + 1) + '-' + (minDate.getDate() + target.daysCompleted);
+
+  self.prepareProgressPattern({
+    name: self.IDs.PROGRESS,
+    x: self.svg.padding,
+    y: 0,
+    width: self.svg.width - (self.svg.padding * 2),
+    height: self.progress.height
+  });
+
+  var progressContainer = d3.select('#' + self.IDs.CHART_SVG)
+  .append('g')
+  .attr('id', self.IDs.PROGRESS);
+
+  // header base
+  progressContainer
+  .append('rect')
+  .attr('class', 'chart-progress-b')
+  .attr('x', self.svg.padding)
+  .attr('y', 0)
+  .attr('width', self.svg.width - (self.svg.padding * 2))
+  .attr('height', self.progress.height)
+  .attr('style', 'fill: url(#_PATTERN_' + self.IDs.PROGRESS + ')');
+
+  // progress
+  progressContainer
+  .append('rect')
+  .attr('class', self.taskPrefix.CLASS + 'blue-2')
+  .attr('x', self.svg.padding)
+  .attr('y', 0)
+  .attr('width', self.timeScale(self.dateFormat.parse(completedDate)))
+  .attr('height', self.progress.height);
+};
+
 Roadmap.prototype.drawChart = function(parentName) {
-  this.resetChart();
   this.setTaskList(parentName);
+  if (this.taskList.length === 0) {
+    return;
+  }
+  this.resetChart();
+  this.updateBreadcum(parentName);
+  this.updateHeader(parentName);
+  this.drawProgress(parentName);
   this.drawBoxes();
   this.drawLines();
   this.drawLabels(parentName);
+  this.handleBoxEvents();
 };
 
 Roadmap.prototype.resetChart = function() {
   var labels = $('#' + this.IDs.LABEL_GRP).remove();
   var svg = $('#' + this.IDs.CHART_SVG_GRP).html('');
-  this.taskList = [];
 };
 
 Roadmap.prototype.draw = function() {
   this.targetEle = $(this.payload.target);
   this.init();
   this.drawNav();
-  this.prepareChart();
+  this.prepareChart();4
+  this.handleHeaderEvents();
   this.prepareTaskStatus();
   this.prepareArrows();
   this.drawChart(this.nodes[0].name);
 };
 
 $(function() {
-  new Roadmap({
-    data: window.roadmapData,
-    target: '#Roadmap'
-  }).draw();
+  $.get('data/roadmapData.json', function(data) {
+    new Roadmap({
+      data: data,
+      target: '#Roadmap'
+    }).draw();
+  });
 });

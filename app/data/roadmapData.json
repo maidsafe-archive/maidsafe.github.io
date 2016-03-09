@@ -1,32 +1,47 @@
 {
     "name": "NETWORK",
     "header": 20,
+    "daysCompleted": 10,
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
     "children": [
         {
             "name": "VAULT",
-            "color": "blue-1",
+            "color": "blue-2",
             "desc": "Vault node",
+            "daysCompleted": 10,
             "target": [
                 "CLIENT"
             ],
-            "header": 50,
             "section": 1,
-            "order": 1,
-            "offsetX": 0,
-            "offsetY": 0,
             "status": 1,
+            "startDate": "2016-1-1",
+            "endDate": "2016-1-11",
             "children": [
                 {
                     "name": "EXTERNAL",
+                    "id": "VAULT_CONFIG_1" ,
+                    "color": "indigo-1",
+                    "desc": "Vault Config 1",
                     "target": [
                         "VAULT_IN_MOBILE"
                     ]
                 },
                 {
                     "name": "EXTERNAL",
+                    "id": "VAULT_CONFIG_2" ,
+                    "color": "turquoise-1",
+                    "desc": "Vault Config 2",
                     "target": [
                         "VAULT_IN_MOBILE"
+                    ]
+                },
+                {
+                    "name": "EXTERNAL",
+                    "id": "VAULT_CONFIG_3",
+                    "color": "pink-3",
+                    "desc": "Vault Config 3",
+                    "target": [
+                        "PUBLIC_IDENTITY"
                     ]
                 },
                 {
@@ -35,171 +50,104 @@
                         "VAULT_IN_MOBILE"
                     ],
                     "section": 1,
-                    "order": 1,
-                    "offsetX": 0,
-                    "offsetY": 0,
                     "status": 1,
-                    "color": "blue-2",
-                    "startTime": "2016-1-1",
-                    "endTime": "2013-2-1"
+                    "color": "blue-3",
+                    "startDate": "2016-1-1",
+                    "endDate": "2016-1-11"
                 },
                 {
                     "name": "VAULT_IN_MOBILE",
                     "target": [
                         "PUBLIC_IDENTITY"
                     ],
-                    "section": 1,
-                    "order": 2,
-                    "offsetX": 0,
-                    "offsetY": 0, 
+                    "section": 2,
                     "status": 1,
-                    "color": "blue-2",
-                    "startTime": "2013-2-3",
-                    "endTime": "2013-2-23"
+                    "color": "blue-3",
+                    "startDate": "2016-1-13",
+                    "endDate": "2016-1-23"
                 },
                 {
                     "name": "PUBLIC_IDENTITY",
                     "target": [
-                        "VAULT_SAMPLE",
                         "PAY_THE_PRODUCER"
                     ],
-                    "section": 1,
-                    "order": 3,
-                    "offsetX": 0,
-                    "offsetY": 0,
+                    "section": 4,
                     "status": 0,
-                    "color": "blue-2",
-                    "startTime": "2013-2-28",
-                    "endTime": "2013-3-1"
+                    "color": "blue-3",
+                    "startDate": "2016-1-26",
+                    "endDate": "2016-2-5"
                 },
                 {
                     "name": "VAULT_SAMPLE",
                     "target": [
-                        "SAFE_COIN"
+                        "PUBLIC_IDENTITY"
                     ],
-                    "section": 1,
-                    "order": 4,
-                    "offsetX": 0,
-                    "offsetY": 0,
+                    "section": 5,
                     "status": 0,
-                    "color": "blue-2",
-                    "startTime": "2013-3-3",
-                    "endTime": "2013-3-23"
+                    "color": "blue-3",
+                    "startDate": "2016-1-12",
+                    "endDate": "2016-1-22"
                 },
                 {
-                    "name": "SAFE_COIN",
+                    "name": "VAULT_NEXT",
                     "target": [
-                        "END"
+                        "PUBLIC_IDENTITY"
                     ],
-                    "section": 1,
-                    "order": 5,
-                    "offsetX": 0,
-                    "offsetY": 0,
+                    "section": 6,
                     "status": 0,
-                    "color": "blue-2",
-                    "startTime": "2013-3-30",
-                    "endTime": "2013-4-3"
-                },
-                {
-                    "name": "EXTERNAL1",
-                    "target": [
-                        "MESSAGING"
-                    ],
-                    "section": 2,
-                    "order": 2,
-                    "offsetX": 0,
-                    "offsetY": 0,
-                    "status": 1,
-                    "color": "blue-2",
-                    "startTime": "2013-2-3",
-                    "endTime": "2013-2-23"
-                },
-                {
-                    "name": "MESSAGING",
-                    "target": [
-                        "PAY_THE_PRODUCER"
-                    ],
-                    "section": 2,
-                    "order": 3,
-                    "offsetX": 0,
-                    "offsetY": 0,
-                    "status": 1,
-                    "color": "blue-2",
-                    "startTime": "2013-1-3",
-                    "endTime": "2013-1-23"
-                },
-                {
-                    "name": "PAY_THE_PRODUCER",
-                    "target": [
-                        "SAFE_COIN"
-                    ],
-                    "section": 2,
-                    "order": 4,
-                    "offsetX": 1.75,
-                    "offsetY": 0,
-                    "status": 0,
-                    "color": "blue-2",
-                    "startTime": "2013-10-3",
-                    "endTime": "2013-10-23"
-                },
-                {
-                    "name": "DOWN_STREAM",
-                    "source": [
-                        "VAULT_SAMPLE"
-                    ]
+                    "color": "blue-3",
+                    "startDate": "2016-1-13",
+                    "endDate": "2016-1-23"
                 }
             ]
         },
         {
             "name": "CLIENT",
             "desc": "Client node",
+            "daysCompleted": 0,
             "target": [
                 "END"
             ],
             "header": 30,
-            "section": 1,
-            "order": 2,
-            "offsetX": 0,
-            "offsetY": 0,
+            "section": 2,
             "status": 0,
-            "color": "coral-1",
+            "color": "coral-2",
             "status": 0,
+            "startDate": "2016-1-13",
+            "endDate": "2016-1-23",
             "children" : [
               {
-                  "name": "CLIENT_1",
-                  "target": [
-                      "CLIENT_2"
-                  ],
-                  "section": 1,
-                  "order": 1,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "status": 0,
-                  "color": "coral-2"
+                "name": "CLIENT_1",
+                "target": [
+                    "CLIENT_2"
+                ],
+                "section": 1,
+                "status": 0,
+                "color": "coral-3",
+                "startDate": "2016-1-1",
+                "endDate": "2016-1-11"
               },
               {
                   "name": "CLIENT_2",
                   "target": [
                       "CLIENT_3"
                   ],
-                  "section": 1,
-                  "order": 2,
-                  "offsetX": 0,
-                  "offsetY": 0,
+                  "section": 2,
                   "status": 0,
-                  "color": "coral-2"
+                  "color": "coral-3",
+                  "startDate": "2016-1-14",
+                  "endDate": "2016-1-24"
               },
               {
                   "name": "CLIENT_3",
                   "target": [
                       "END"
                   ],
-                  "section": 1,
-                  "order": 3,
-                  "offsetX": 0,
-                  "offsetY": 0,
+                  "section": 3,
                   "status": 0,
-                  "color": "coral-2"
+                  "color": "coral-3",
+                  "startDate": "2016-1-27",
+                  "endDate": "2016-2-6"
               }
             ]
         }

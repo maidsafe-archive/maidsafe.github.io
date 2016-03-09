@@ -2,20 +2,25 @@
   position: relative;
   height: 620px;
   overflow: hidden;
+  display: flex;
+}
+
+.listPadding {
+  padding-left: 18px;
 }
 
 .roadmapChart-h {
-  padding-bottom: 16px;
+  padding: 8px 0 8px 20px;
 }
 
 .roadmapChart-h-t {
   margin: 0;
   padding: 0;
   padding-right: 40px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 36px;
   font-weight: 600;
-  color: #008cff;
+  color: #2a98ea;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -41,21 +46,26 @@
   font-weight: normal;
 }
 
-.roadmapChart-h.active .roadmapChart-h-desc {
+.roadmapChart-h-t.active ~ .roadmapChart-h-desc {
   display: block;
 }
 
-.roadmapChart-h.active .roadmapChart-h-t:after {
+.roadmapChart-h-t.active:after {
   background-image: url(../img/roadmap_close_info.svg);
 }
 
-.roadmapChart-breadcrumb > .breadcrumb-i {
+.roadmapBreadcrumb {
+  padding: 16px 0 0 20px;
+}
+.roadmapBreadcrumb > .breadcrumb-i {
+  display: inline-block;
   font-size: 12px;
   font-weight: normal;
   line-height: 16px;
+  padding-right: 8px;
 }
 
-.roadmapChart-breadcrumb > .breadcrumb-i:after {
+.roadmapBreadcrumb > .breadcrumb-i:not(:last-child):after {
   content: " >";
 }
 
@@ -68,11 +78,11 @@
 }
 
 .roadmap .roadmapNav {
+  width: 280px;
+  height: 100%;
+  padding: 0;
   font-family: 'Open sans';
   font-size: 14px;
-  width: 20%;
-  height: 100%;
-  padding: 8px;
   border-right: 1px solid #DDD;
   position: relative;
   min-height: 1px;
@@ -81,7 +91,7 @@
 }
 
 .roadmap .roadmapChart {
-  width: 80%;
+  flex: 1;
   padding: 0;
   float: left;
   height: 100%;
@@ -92,6 +102,7 @@
 .roadmap .roadmapChart .roadmapChart-b {
   width: 100%;
 }
+
 .listTitle {
   font-size: 24px;
   line-height: 36px;
@@ -113,11 +124,11 @@
 .box {
   fill: #008cff;
   cursor: pointer;
+  stroke-width: 3px;
 }
 
 .box.highlight {
   stroke: rgba(0,0,0,0.5);
-  stroke-width: 1px;
 }
 
 /* lines */
@@ -133,9 +144,11 @@
 }
 
 .listBase {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 36px;
-  padding-left: 8px;
+  margin-left: 18px;
+  padding-left: 3px;
   cursor: pointer;
   position: relative;
   color: #888888;
@@ -157,7 +170,7 @@
 .listBase:before {
   content: '';
   position: absolute;
-  width: 6px;
+  width: 12px;
   height: 36px;
   top: 0;
   left: 0;
@@ -175,6 +188,10 @@
   stroke:#008cff;
 }
 
+.statusBox {
+  cursor: pointer;
+}
+
 /* blue 2 */
 .highlight.blue-2:hover:before {
   border: 2px solid #008cff;
@@ -188,8 +205,17 @@
 .svg-blue-2 {
   fill: #4dacff;
 }
+
 .line-blue-2 {
   stroke:#4dacff;
+}
+
+.svg-blue-2:active {
+  fill: #008cff !important;
+}
+
+.highlight.line-blue-2, .highlight.svg-blue-2 {
+  stroke:#008cff;
 }
 
 /* blue 3 */
@@ -207,6 +233,12 @@
 }
 .line-blue-3 {
   stroke:#99d1ff;
+}
+.svg-blue-3:active {
+  fill: #4dacff !important;
+}
+.highlight.line-blue-3, .highlight.svg-blue-3 {
+  stroke:#4dacff;
 }
 
 /* orange 1 */
@@ -236,13 +268,19 @@
 .line-orange-2 {
   stroke:#fca071;
 }
+.svg-orange-2:active {
+  fill: #f9874e !important;
+}
+.highlight.line-orange-2, .highlight.svg-orange-2 {
+  stroke:#f9874e;
+}
 
 /* orange 3 */
 .highlight.orange-3:hover:before {
   border: 2px solid #fca071;
 }
 .orange-3:active:before {
-  background-color: #fca071;
+  background-color: #fca071 !important;
 }
 .orange-3:before {
   background-color: #fcb590;
@@ -252,6 +290,12 @@
 }
 .line-orange-3 {
   stroke:#fcb590;
+}
+.svg-orange-3:active {
+  fill: #fca071 !important;
+}
+.highlight.line-orange-3, .highlight.svg-orange-3 {
+  stroke:#fca071;
 }
 
 /* coral 1 */
@@ -281,6 +325,12 @@
 .line-coral-2 {
   stroke:#f79797;
 }
+.svg-coral-2:active {
+  fill: #f27e7e !important;
+}
+.highlight.line-coral-2, .highlight.svg-coral-2 {
+  stroke:#f27e7e;
+}
 
 /* coral 3 */
 .highlight.coral-3:hover:before {
@@ -297,6 +347,12 @@
 }
 .line-coral-3 {
   stroke:#fab2b2;
+}
+.svg-coral-3:active {
+  fill: #f79797 !important;
+}
+.highlight.line-coral-3, .highlight.svg-coral-3 {
+  stroke:#f79797;
 }
 
 /* pink 1 */
@@ -326,6 +382,12 @@
 .line-pink-2 {
   stroke:#e88be8;
 }
+.svg-pink-2:active {
+  fill: #e56ee5 !important;
+}
+.highlight.line-pink-2, .highlight.svg-pink-2 {
+  stroke:#e56ee5;
+}
 
 /* pink 3 */
 .highlight.pink-3:hover:before {
@@ -342,6 +404,12 @@
 }
 .line-pink-3 {
   stroke:#f2a5f2;
+}
+.svg-pink-3:active {
+  fill: #e88be8 !important;
+}
+.highlight.line-pink-3, .highlight.svg-pink-3 {
+  stroke:#e88be8;
 }
 
 /* green 1 */
@@ -371,6 +439,12 @@
 .line-green-2 {
   stroke:#8fc956;
 }
+.svg-green-2:active {
+  fill: #6fbc24 !important;
+}
+.highlight.line-green-2, .highlight.svg-green-2 {
+  stroke:#6fbc24;
+}
 
 /* green 3 */
 .highlight.green-3:hover:before {
@@ -387,6 +461,12 @@
 }
 .line-green-3 {
   stroke:#a7d97c;
+}
+.svg-green-3:active {
+  fill: #8fc956 !important;
+}
+.highlight.line-green-3, .highlight.svg-green-3 {
+  stroke:#8fc956;
 }
 
 /* indigo 1 */
@@ -416,6 +496,12 @@
 .line-indigo-2 {
   stroke:#a39df5;
 }
+.svg-indigo-2:active {
+  fill: #8d85f9 !important;
+}
+.highlight.line-indigo-2, .highlight.svg-indigo-2 {
+  stroke:#8d85f9;
+}
 
 /* indigo 3 */
 .highlight.indigo-3:hover:before {
@@ -432,6 +518,12 @@
 }
 .line-indigo-3 {
   stroke:#b9b6fc;
+}
+.svg-indigo-3:active {
+  fill: #a39df5 !important;
+}
+.highlight.line-indigo-3, .highlight.svg-indigo-3 {
+  stroke:#a39df5;
 }
 
 /* cyan 1 */
@@ -461,6 +553,13 @@
 .line-cyan-2 {
   stroke:#6ae6cf;
 }
+.svg-cyan-2:active {
+  fill: #42e2c7 !important;
+}
+.highlight.line-cyan-2, .highlight.svg-cyan-2 {
+  stroke:#42e2c7;
+}
+
 
 /* cyan 3 */
 .highlight.cyan-3:hover:before {
@@ -477,6 +576,12 @@
 }
 .line-cyan-3 {
   stroke:#84f0da;
+}
+.svg-cyan-3:active {
+  fill: #6ae6cf !important;
+}
+.highlight.line-cyan-3, .highlight.svg-cyan-3 {
+  stroke:#6ae6cf;
 }
 
 /* turquoise 1 */
@@ -506,6 +611,12 @@
 .line-turquoise-2 {
   stroke:#5cd196;
 }
+.svg-turquoise-2:active {
+  fill: #3cc681 !important;
+}
+.highlight.line-turquoise-2, .highlight.svg-turquoise-2 {
+  stroke:#3cc681;
+}
 
 /* turquoise 3 */
 .highlight.turquoise-3:hover:before {
@@ -523,6 +634,13 @@
 .line-turquoise-3 {
   stroke:#81deaf;
 }
+.svg-turquoise-3:active {
+  fill: #5cd196 !important;
+}
+.highlight.line-turquoise-3, .highlight.svg-turquoise-3 {
+  stroke:#5cd196;
+}
+
 
 /* grey 1 */
 .grey-1:before {
@@ -551,6 +669,12 @@
 .line-grey-2 {
   stroke:#a8a8a8;
 }
+.svg-grey-2:active {
+  fill: #939393 !important;
+}
+.highlight.line-grey-2, .highlight.svg-grey-2 {
+  stroke:#939393;
+}
 
 /* grey 3 */
 .highlight.grey-3:hover:before {
@@ -567,6 +691,12 @@
 }
 .line-grey-3 {
   stroke:#bfbfbf;
+}
+.svg-grey-3:active {
+  fill: #a8a8a8 !important;
+}
+.highlight.line-grey-3, .highlight.svg-grey-3 {
+  stroke:#a8a8a8;
 }
 
 /* purple 1 */
@@ -594,16 +724,22 @@
 .svg-purple-2 {
   fill: #b966e8;
 }
-.line-purple-2 {
-  stroke:#b966e8;
+.line-purple-2:active {
+  stroke:#a342e2 !important;
+}
+.svg-purple-2 {
+  fill: #b966e8;
+}
+.highlight.line-purple-2, .highlight.svg-purple-2 {
+  stroke:#a342e2;
 }
 
 
 /* chart header */
-.chart-header-b {
+.chart-progress-b {
   fill: #EEE;
 }
 
-.chart-header-progress {
+.chart-progress {
   fill: #99d1ff;
 }
