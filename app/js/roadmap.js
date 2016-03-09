@@ -5,7 +5,7 @@ var d3 = window.d3;
 // roadmap chart
 var Roadmap = function(payload) {
   this.payload = payload;
-  this.excludeNodes = [ 'EXTERNAL', 'DOWN_STREAM' ];
+  this.excludeNodes = ['EXTERNAL', 'DOWN_STREAM'];
   this.excludeTarget = 'END';
   this.IDs = {
     'NAV': 'RoadmapNav',
@@ -86,13 +86,16 @@ Roadmap.prototype.prepareData = function() {
       parent: parent || '',
       target: node.target || '',
       daysCompleted: node.daysCompleted || 0,
-      startDate: node.startDate,
-      endDate: node.endDate,
-      section: node.section,
-      status: node.status
+      startDate: node.startDate || null,
+      endDate: node.endDate || null,
+      section: node.section || null,
+      status: node.status || null
     };
     if (node.name === self.excludeNodes[0]) {
       nodeInfo.id = node.id;
+    }
+    if(node.name === self.excludeNodes[1]) {
+      nodeInfo.source = node.source;
     }
     return nodeInfo;
   };
@@ -199,6 +202,8 @@ Roadmap.prototype.handleBoxEvents = function() {
     }
     var targetEle = $('#' + pathId);
     addClass(targetEle, 'highlight');
+    var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
+    addClass(targetEleDownStream, 'highlight');
   };
 
   var removePathHighlight = function(pathId) {
@@ -207,6 +212,8 @@ Roadmap.prototype.handleBoxEvents = function() {
     }
     var targetEle = $('#' + pathId);
     removeClass(targetEle, 'highlight');
+    var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
+    removeClass(targetEleDownStream, 'highlight');
   };
 
   var highlightList = function(listId) {
@@ -617,6 +624,22 @@ Roadmap.prototype.getIncomings = function(nodeName) {
   return incomings;
 };
 
+Roadmap.prototype.getDownStreamsNodeForTasks = function() {
+  var self = this;
+  var downStreamNodes = [];
+  self.nodes.forEach(function(node) {
+    if (node.name !== self.excludeNodes[1]) {
+      return;
+    }
+    self.taskList.forEach(function(task) {
+      if (task.name === node.source) {
+        downStreamNodes.push(node);
+      }
+    });
+  });
+  return downStreamNodes;
+};
+
 Roadmap.prototype.drawLines = function() {
   var self = this;
   var incomings = null;
@@ -629,7 +652,7 @@ Roadmap.prototype.drawLines = function() {
     });
   };
 
-  var isDown = function(target, node) {
+  var isBoxDown = function(target, node) {
     node.startDate = node.startDate || new Date(1 - 1 - 1947);
     return ((new Date(target.startDate)).getTime() > (new Date(node.startDate)).getTime()) &&
       (target.section < node.section);
@@ -676,13 +699,13 @@ Roadmap.prototype.drawLines = function() {
     path.start.x = self.timeScale(self.dateFormat.parse(target.startDate)) - (order * bottomDist);
     path.start.y = (((target.section - 1) * self.perUnit) * 2) + (self.perUnit / 2);
     var nodeCount = getNodeCountDetails(target);
-    path.start.y = isDown(target, node) ? (path.start.y - (order * self.perUnit) +
+    path.start.y = isBoxDown(target, node) ? (path.start.y - (order * self.perUnit) +
       ((order - nodeCount.rest) * self.perUnit * 2)) : (path.start.y - (order * self.perUnit));
     path.interBot.x = path.start.x - bottomDist;
     path.interBot.y = path.start.y;
     if (node.name === self.excludeNodes[0]) {
       path.interTop.x = path.interBot.x;
-      path.interTop.y = path.end.y;
+      path.interTop.y = -path.end.y - self.svg.padding;
       path.end = path.interTop;
       addPathInfo(node.id, path);
     } else {
@@ -691,11 +714,31 @@ Roadmap.prototype.drawLines = function() {
       path.interTop.x = path.interBot.x;
       path.interTop.y = path.end.y;
     }
-    return path;
+    return [ path.start, path.interBot, path.interTop, path.end ];
   };
 
-  var drawLine = function(node, path) {
-    var pathArr = [ path.start, path.interBot, path.interTop, path.end ];
+  var computeDownStreamPath = function(target, id) {
+    var padding = 16;
+    var path = {
+      start: {
+        x: 0,
+        y: 0
+      },
+      end: {
+        x: 0,
+        y: 0
+      }
+    };
+
+    path.start.x = self.timeScale(self.dateFormat.parse(target.endDate)) + padding;
+    path.start.y = (((target.section - 1) * self.perUnit) * 2) + (self.perUnit / 2);
+    path.end.x = path.start.x;
+    path.end.y = self.svg.height;
+    addPathInfo(id, path);
+    return [ path.start, path.end ];
+  };
+
+  var drawLine = function(node, path, isDownStream) {
     var line = d3.svg.line()
       .x(function(d) {
         return d.x;
@@ -707,14 +750,23 @@ Roadmap.prototype.drawLines = function() {
 
     d3.select('#' + self.IDs.CHART_SVG)
       .select('g')
-      .datum(pathArr)
+      .datum(path)
       .append('path')
       .attr('class', self.taskPrefix.LINE + node.color)
       .attr('d', line)
-      .attr('id', self.taskPrefix.PATH + node.name)
+      .attr('id', function() {
+        var id = self.taskPrefix.PATH + node.name;
+        if (isDownStream) {
+          id += '_DOWNSTREAM'
+        }
+        return id;
+      })
       .attr('fill', 'none')
       .attr('stroke-width', 2)
       .attr('marker-start', function() {
+        if (isDownStream) {
+          return '';
+        }
         return node.color ? 'url(#' + self.taskPrefix.ARROW + node.color + ')' : 'url(#' + self.taskPrefix.ARROW + ')';
       });
   };
@@ -725,6 +777,18 @@ Roadmap.prototype.drawLines = function() {
       var path = computePath(task, node, i);
       drawLine(node, path);
     });
+  });
+
+  var downStreamNodes = self.getDownStreamsNodeForTasks();
+  downStreamNodes.forEach(function(task) {
+    var target = null;
+    self.nodes.forEach(function(node) {
+      if (node.name === task.source) {
+        target = node;
+      }
+    });
+    var path = computeDownStreamPath(target, task.id);
+    drawLine(target, path, true);
   });
 };
 
@@ -744,22 +808,58 @@ Roadmap.prototype.drawLabels = function(parentName) {
   var nodesToAddLabel = getNodesToAddLabel(parentName);
   var labelNode = d3.select('#' + self.IDs.CHART_SVG)
     .select('g').append('g').attr('id', self.IDs.LABEL_GRP);
+
   var drawLabel = function(node) {
+    var downStreamTextPad = 8;
+    var downStreamLableBottom = 300;
+
     labelNode.append('rect')
       .attr('rx', 5)
       .attr('ry', 5)
-      .attr('x', node.path.interBot.x - (labelWidth + 2))
-      .attr('y', node.path.interBot.y)
+      .attr('x', function() {
+        if (node.name === self.excludeNodes[1]) {
+          return node.path.start.x + downStreamTextPad;
+        }
+        return node.path.interBot.x - (labelWidth + 2);
+      })
+      .attr('y', function() {
+        if (node.name === self.excludeNodes[1]) {
+          return node.path.end.y - downStreamLableBottom;
+        }
+        return node.path.interBot.y;
+      })
       .attr('width', labelWidth)
       .attr('height', labelheight)
       .attr('style', 'font-size: 12px; transform: translateZ(20px)')
-      .attr('class', self.taskPrefix.CLASS + node.color);
+      .attr('class', function() {
+        var color = node.color;
+        if (node.name === self.excludeNodes[1]) {
+
+          self.nodes.forEach(function(item) {
+            if (item.name === node.source) {
+              color = item.color;
+            }
+          });
+
+        }
+        return self.taskPrefix.CLASS + color;
+      });
 
     // text
     labelNode.append('text')
       .text(node.desc)
-      .attr('x', node.path.interBot.x - labelWidth)
-      .attr('y', node.path.interBot.y + (labelheight / 1.3))
+      .attr('x', function() {
+        if (node.name === self.excludeNodes[1]) {
+          return node.path.start.x + downStreamTextPad + 8;
+        }
+        return node.path.interBot.x - labelWidth;
+      })
+      .attr('y', function() {
+        if (node.name === self.excludeNodes[1]) {
+          return node.path.end.y - (downStreamLableBottom - (labelheight / 1.3));
+        }
+        return node.path.interBot.y + (labelheight / 1.3);
+      })
       .attr('style', 'font-size: 11px')
       .attr('class', 'taskText');
   };
