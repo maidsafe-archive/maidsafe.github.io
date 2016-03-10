@@ -41,7 +41,7 @@ var Roadmap = function(payload) {
   };
   this.box = {
     width: 10,
-    height: 20
+    height: 18
   };
   this.taskList = [];
   this.dateFormat = null;
@@ -50,8 +50,7 @@ var Roadmap = function(payload) {
 var createDivElement = function(id, classes, text) {
   id = id || '';
   classes = typeof classes === 'object' && classes.length > 0 ? classes.join(' ') : '';
-  var ele = '<div id="::ID::" class="::CLASS::"></div>'.replace('::ID::', id).replace('::CLASS::', classes);
-  ele = $(ele);
+  var ele = $('<div id="::ID::" class="::CLASS::"></div>'.replace('::ID::', id).replace('::CLASS::', classes));
   if (text) {
     ele.html(text);
   }
@@ -76,7 +75,7 @@ Roadmap.prototype.timeScale = function(val) {
     .range([ 0, self.svg.width - 150 ]))(val);
 };
 
-Roadmap.prototype.prepareData = function() {
+Roadmap.prototype.init = function() { // prepare data
   var self = this;
   var prepareNode = function(node, parent) {
     var nodeInfo = {
@@ -99,6 +98,7 @@ Roadmap.prototype.prepareData = function() {
     }
     return nodeInfo;
   };
+
   var addChild = function(parent) {
     if (parent.hasOwnProperty('children')) {
       parent.children.forEach(function(child) {
@@ -111,11 +111,6 @@ Roadmap.prototype.prepareData = function() {
   };
   this.nodes.push(prepareNode(this.payload.data, null));
   addChild(this.payload.data);
-};
-
-Roadmap.prototype.init = function() {
-  // this.targetEle.append(createDivElement(null, ['roadmap-b']));
-  this.prepareData();
 };
 
 Roadmap.prototype.resetOnListTitleClick = function(self) {
@@ -158,11 +153,6 @@ Roadmap.prototype.handleListEvents = function() {
 
 Roadmap.prototype.handleBoxEvents = function() {
   var self = this;
-  var TARGET_TYPE = {
-    'BOX': 'box',
-    'STATUS_BOX': 'status_box',
-    'TASK_TEXT': 'task_text'
-  };
   var addClass = function(self, newClass) {
     if (!self || !newClass) {
       return;
@@ -230,133 +220,35 @@ Roadmap.prototype.handleBoxEvents = function() {
     $('#' + listId).removeClass('highlight');
   };
 
-  var getTaskId = function(target, targetType) {
-    var targetId = $(target).attr('id');
-    if (!targetId) {
-      return;
-    }
-    var taskSliceIndex = null;
-    if (targetType === TARGET_TYPE.BOX) {
-      taskSliceIndex = self.taskPrefix.ID.length;
-    }
-    if (targetType === TARGET_TYPE.TASK_TEXT) {
-      taskSliceIndex = self.taskPrefix.BOX_TEXT.length;
-    }
-    var taskId = targetId.slice(taskSliceIndex);
-    if (!taskId) {
-      return false;
-    }
-    return taskId;
+  var getTaskId = function(boxBase) {
+    return $(boxBase).children('.box').attr('id').slice(self.taskPrefix.ID.length);
   };
 
-  $('.box').mouseover(function(e) {
+  $('.boxBase').on('click', function(e) {
     e.stopPropagation();
-    addClass($(this), 'highlight');
-    var taskId = getTaskId(this, TARGET_TYPE.BOX);
+    var taskId = getTaskId(this);
+    self.resetOnListBaseClick($('#' + taskId), true);
+    self.drawChart(taskId);
+  });
+
+  $('.boxBase').mouseover(function(e) {
+    e.stopPropagation();
+    var box = $(this).children('.box');
+    addClass(box, 'highlight');
+    var taskId = getTaskId(this);
     var pathId = self.taskPrefix.PATH + taskId;
     highlightPath(pathId);
     highlightList(taskId);
   });
 
-  $('.box').mouseout(function(e) {
+  $('.boxBase').mouseout(function(e) {
     e.stopPropagation();
-    removeClass($(this), 'highlight');
-    var taskId = getTaskId(this, TARGET_TYPE.BOX);
+    var box = $(this).children('.box');
+    removeClass(box, 'highlight');
+    var taskId = getTaskId(this);
     var pathId = self.taskPrefix.PATH + taskId;
     removePathHighlight(pathId);
     removeListHighlight(taskId);
-  });
-
-  $('.box').click(function(e) {
-    e.stopPropagation();
-    var taskId = getTaskId(this, TARGET_TYPE.BOX);
-    if (!taskId) {
-      return;
-    }
-    self.resetOnListBaseClick($('#' + taskId), true);
-    self.drawChart(taskId);
-  });
-
-  $('.taskText').mouseover(function(e) {
-    e.stopPropagation();
-    var taskId = getTaskId(this, TARGET_TYPE.TASK_TEXT);
-    if (!taskId) {
-      return;
-    }
-    var targetId = self.taskPrefix.ID + taskId;
-    var targetEle = $('#' + targetId);
-    addClass(targetEle, 'highlight');
-    var pathId = self.taskPrefix.PATH + taskId;
-    highlightPath(pathId);
-    highlightList(taskId);
-  });
-
-  $('.taskText').mouseout(function(e) {
-    e.stopPropagation();
-    var taskId = getTaskId(this, TARGET_TYPE.TASK_TEXT);
-    if (!taskId) {
-      return;
-    }
-    var targetId = self.taskPrefix.ID + taskId;
-    var targetEle = $('#' + targetId);
-    removeClass(targetEle, 'highlight');
-    var pathId = self.taskPrefix.PATH + taskId;
-    removePathHighlight(pathId);
-    removeListHighlight(taskId);
-  });
-
-  $('.taskText').click(function(e) {
-    e.stopPropagation();
-    var taskId = getTaskId(this, TARGET_TYPE.TASK_TEXT);
-    if (!taskId) {
-      return;
-    }
-    self.resetOnListBaseClick($('#' + taskId), true);
-    self.drawChart(taskId);
-  });
-
-  $('.statusBox').mouseover(function(e) {
-    e.stopPropagation();
-    var statusId = $(this).attr('id');
-    if (!statusId) {
-      return;
-    }
-    var taskId = statusId.slice(self.taskPrefix.STATUS_BOX.length);
-    var targetId = self.taskPrefix.ID + taskId;
-    var targetEle = $('#' + targetId);
-    addClass(targetEle, 'highlight');
-    var pathId = self.taskPrefix.PATH + taskId;
-    highlightPath(pathId);
-    highlightList(taskId);
-  });
-
-  $('.statusBox').mouseout(function(e) {
-    e.stopPropagation();
-    var statusId = $(this).attr('id');
-    if (!statusId) {
-      return;
-    }
-    var taskId = statusId.slice(self.taskPrefix.STATUS_BOX.length);
-    var targetId = self.taskPrefix.ID + taskId;
-    var targetEle = $('#' + targetId);
-    removeClass(targetEle, 'highlight');
-    var pathId = self.taskPrefix.PATH + taskId;
-    removePathHighlight(pathId);
-    removeListHighlight(taskId);
-  });
-
-  $('.statusBox').click(function(e) {
-    e.stopPropagation();
-    var statusId = $(this).attr('id');
-    if (!statusId) {
-      return;
-    }
-    var taskId = statusId.slice(self.taskPrefix.STATUS_BOX.length);
-    if (!taskId) {
-      return;
-    }
-    self.resetOnListBaseClick($('#' + taskId), true);
-    self.drawChart(taskId);
   });
 };
 
@@ -505,7 +397,7 @@ Roadmap.prototype.preparePattern = function(node) {
   var pattern = box.append('pattern')
     .attr('id', '_PATTERN_' + node.name)
     .attr('x', self.timeScale(self.dateFormat.parse(node.startDate)))
-    .attr('y', node.section * self.perUnit * 2)
+    .attr('y', node.section * self.perUnit)
     .attr('width', 80)
     .attr('height', self.box.height)
     .attr('patternUnits', 'userSpaceOnUse')
@@ -523,11 +415,11 @@ Roadmap.prototype.preparePattern = function(node) {
 
   pattern.append('polygon')
     .attr('class', self.taskPrefix.CLASS + node.color)
-    .attr('points', '80,0 61,20 80,20');
+    .attr('points', '0,0 0,18 21,18 40,0');
 
   pattern.append('polygon')
     .attr('class', self.taskPrefix.CLASS + node.color)
-    .attr('points', '0,0 0,20 21,20 40,0');
+    .attr('points', '80,0 59,18 80,18');
 };
 
 Roadmap.prototype.drawBoxes = function() {
@@ -546,7 +438,9 @@ Roadmap.prototype.drawBoxes = function() {
     this.remove();
   });
 
-  box.append('rect')
+  var boxBase = box.append('g').attr('class', 'boxBase');
+
+  boxBase.append('rect')
     .attr('x', function(d) {
       return self.timeScale(self.dateFormat.parse(d.startDate));
     })
@@ -571,7 +465,7 @@ Roadmap.prototype.drawBoxes = function() {
     .attr('stroke', 'none');
 
   // status box
-  box.append('rect')
+  boxBase.append('rect')
     .attr('x', function(d) {
       return self.timeScale(self.dateFormat.parse(d.startDate)) +
         (self.timeScale(self.dateFormat.parse(d.endDate)) - self.timeScale(self.dateFormat.parse(d.startDate))) -
@@ -594,7 +488,7 @@ Roadmap.prototype.drawBoxes = function() {
     });
 
   // text
-  box.append('text')
+  boxBase.append('text')
     .text(function(d) {
       return parseNodeName(d.name);
     })

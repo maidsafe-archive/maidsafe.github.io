@@ -124,7 +124,7 @@
 .box {
   fill: #008cff;
   cursor: pointer;
-  stroke-width: 3px;
+  stroke-width: 2px;
 }
 
 .box.highlight {
@@ -206,7 +206,7 @@
   fill: #4dacff;
 }
 
-.line-blue-2 {
+.svg-blue-2, .line-blue-2 {
   stroke:#4dacff;
 }
 
@@ -231,7 +231,7 @@
 .svg-blue-3 {
   fill: #99d1ff;
 }
-.line-blue-3 {
+.svg-blue-3, .line-blue-3 {
   stroke:#99d1ff;
 }
 .svg-blue-3:active {
@@ -265,7 +265,7 @@
 .svg-orange-2 {
   fill: #fca071;
 }
-.line-orange-2 {
+.svg-orange-2, .line-orange-2 {
   stroke:#fca071;
 }
 .svg-orange-2:active {
@@ -288,7 +288,7 @@
 .svg-orange-3 {
   fill: #fcb590;
 }
-.line-orange-3 {
+.svg-orange-3, .line-orange-3 {
   stroke:#fcb590;
 }
 .svg-orange-3:active {
@@ -322,7 +322,7 @@
 .svg-coral-2 {
   fill: #f79797;
 }
-.line-coral-2 {
+.svg-coral-2, .line-coral-2 {
   stroke:#f79797;
 }
 .svg-coral-2:active {
@@ -345,7 +345,7 @@
 .svg-coral-3 {
   fill: #fab2b2;
 }
-.line-coral-3 {
+.svg-coral-3, .line-coral-3 {
   stroke:#fab2b2;
 }
 .svg-coral-3:active {
