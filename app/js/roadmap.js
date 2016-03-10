@@ -41,7 +41,17 @@ var Roadmap = function(payload) {
   };
   this.box = {
     width: 10,
-    height: 18
+    height: 18,
+    strokeWidth: 2
+  };
+  this.label = {
+    width: 65,
+    height: 12,
+    padding: 8,
+    borderRadius: 3
+  };
+  this.boxPattern = {
+    path: '19,0 0,18 41,18 60,0'
   };
   this.taskList = [];
   this.dateFormat = null;
@@ -60,6 +70,11 @@ var createDivElement = function(id, classes, text) {
 var parseNodeName = function(name) {
   name = name.replace(/_/g, ' ').toLowerCase();
   return name[0].toUpperCase() + name.slice(1);
+};
+
+var textEllipsis = function(str, length) {
+  length = length || 0;
+  return length < str.length ? (str.slice(0, length) + '...') : str;
 };
 
 Roadmap.prototype.timeScale = function(val) {
@@ -206,10 +221,10 @@ Roadmap.prototype.handleBoxEvents = function() {
   };
 
   var removePathHighlight = function(pathId) {
-    if (!pathId) {
+    var targetEle = $('#' + pathId);
+    if(!targetEle.is('path')) {
       return;
     }
-    var targetEle = $('#' + pathId);
     removeClass(targetEle, 'highlight');
     var pathClass = getPathClass(targetEle, false)
     targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
@@ -408,7 +423,7 @@ Roadmap.prototype.preparePattern = function(node) {
     .attr('x', self.timeScale(self.dateFormat.parse(node.startDate)))
     .attr('y', node.section * self.perUnit)
     .attr('width', 80)
-    .attr('height', self.box.height)
+    .attr('height', self.box.height + self.box.strokeWidth)
     .attr('patternUnits', 'userSpaceOnUse')
     .append('g')
     .attr('opacity', 0.8);
@@ -424,11 +439,7 @@ Roadmap.prototype.preparePattern = function(node) {
 
   pattern.append('polygon')
     .attr('class', self.taskPrefix.CLASS + node.color)
-    .attr('points', '0,0 0,18 21,18 40,0');
-
-  pattern.append('polygon')
-    .attr('class', self.taskPrefix.CLASS + node.color)
-    .attr('points', '80,0 59,18 80,18');
+    .attr('points', self.boxPattern.path);
 };
 
 Roadmap.prototype.drawBoxes = function() {
@@ -698,8 +709,6 @@ Roadmap.prototype.drawLines = function() {
 
 Roadmap.prototype.drawLabels = function(parentName) {
   var self = this;
-  var labelWidth = 80;
-  var labelheight = 12;
   var getNodesToAddLabel = function(parentName) {
     var resultArr = [];
     self.nodes.forEach(function(node) {
@@ -714,26 +723,25 @@ Roadmap.prototype.drawLabels = function(parentName) {
     .select('g').append('g').attr('id', self.IDs.LABEL_GRP);
 
   var drawLabel = function(node) {
-    var downStreamTextPad = 8;
     var downStreamLableBottom = 300;
 
     labelNode.append('rect')
-      .attr('rx', 5)
-      .attr('ry', 5)
+      .attr('rx', self.label.borderRadius)
+      .attr('ry', self.label.borderRadius)
       .attr('x', function() {
         if (node.name === self.excludeNodes[1]) {
-          return node.path.start.x + downStreamTextPad;
+          return node.path.start.x + self.label.padding;
         }
-        return node.path.interBot.x - (labelWidth + 2);
+        return node.path.interBot.x - (self.label.width + self.label.padding);
       })
       .attr('y', function() {
         if (node.name === self.excludeNodes[1]) {
           return node.path.end.y - downStreamLableBottom;
         }
-        return node.path.interBot.y;
+        return node.path.interBot.y - (self.label.height / 2);
       })
-      .attr('width', labelWidth)
-      .attr('height', labelheight)
+      .attr('width', self.label.width)
+      .attr('height', self.label.height)
       .attr('style', 'font-size: 12px; transform: translateZ(20px)')
       .attr('class', function() {
         var color = node.color;
@@ -749,18 +757,18 @@ Roadmap.prototype.drawLabels = function(parentName) {
 
     // text
     labelNode.append('text')
-      .text(node.desc)
+      .text(textEllipsis(node.desc, 10))
       .attr('x', function() {
         if (node.name === self.excludeNodes[1]) {
-          return node.path.start.x + downStreamTextPad + 8;
+          return node.path.start.x + (self.label.padding * 1.3) ;
         }
-        return node.path.interBot.x - labelWidth;
+        return node.path.interBot.x - (self.label.width + (self.label.padding / 1.3));
       })
       .attr('y', function() {
         if (node.name === self.excludeNodes[1]) {
-          return node.path.end.y - (downStreamLableBottom - (labelheight / 1.3));
+          return node.path.end.y - (downStreamLableBottom - (self.label.height / 1.3));
         }
-        return node.path.interBot.y + (labelheight / 1.3);
+        return node.path.interBot.y + (self.label.height / 3);
       })
       .attr('style', 'font-size: 10px')
       .attr('class', 'taskText');
