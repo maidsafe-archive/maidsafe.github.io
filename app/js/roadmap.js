@@ -186,12 +186,21 @@ Roadmap.prototype.handleBoxEvents = function() {
     self.attr('class', classNames);
   };
 
+  var getPathClass = function(targetEle, isLevelUp) {
+    var pathClass = targetEle.attr('class').split(' ')[0].slice(self.taskPrefix.LINE.length);
+    var level = parseInt(pathClass.substr(pathClass.length - 1));
+    pathClass = pathClass.substr(0, pathClass.length - 1) + (isLevelUp ? (level - 1) : level);
+    return pathClass
+  };
+
   var highlightPath = function(pathId) {
-    if (!pathId) {
+    var targetEle = $('#' + pathId);
+    if(!targetEle.is('path')) {
       return;
     }
-    var targetEle = $('#' + pathId);
     addClass(targetEle, 'highlight');
+    var pathClass = getPathClass(targetEle, true)
+    targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
     var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
     addClass(targetEleDownStream, 'highlight');
   };
@@ -202,6 +211,8 @@ Roadmap.prototype.handleBoxEvents = function() {
     }
     var targetEle = $('#' + pathId);
     removeClass(targetEle, 'highlight');
+    var pathClass = getPathClass(targetEle, false)
+    targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
     var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
     removeClass(targetEleDownStream, 'highlight');
   };
@@ -233,8 +244,7 @@ Roadmap.prototype.handleBoxEvents = function() {
 
   $('.boxBase').mouseover(function(e) {
     e.stopPropagation();
-    var box = $(this).children('.box');
-    addClass(box, 'highlight');
+    addClass($(this), 'highlight');
     var taskId = getTaskId(this);
     var pathId = self.taskPrefix.PATH + taskId;
     highlightPath(pathId);
@@ -243,8 +253,7 @@ Roadmap.prototype.handleBoxEvents = function() {
 
   $('.boxBase').mouseout(function(e) {
     e.stopPropagation();
-    var box = $(this).children('.box');
-    removeClass(box, 'highlight');
+    removeClass($(this), 'highlight');
     var taskId = getTaskId(this);
     var pathId = self.taskPrefix.PATH + taskId;
     removePathHighlight(pathId);
@@ -438,7 +447,10 @@ Roadmap.prototype.drawBoxes = function() {
     this.remove();
   });
 
-  var boxBase = box.append('g').attr('class', 'boxBase');
+  var boxBase = box.append('g')
+    .attr('class', function(d) {
+      return 'boxBase ' + (self.taskPrefix.CLASS + d.color);
+    });
 
   boxBase.append('rect')
     .attr('x', function(d) {
@@ -454,9 +466,7 @@ Roadmap.prototype.drawBoxes = function() {
     .attr('id', function(d) {
       return self.taskPrefix.ID + d.name;
     })
-    .attr('class', function(d) {
-      return 'box ' + (self.taskPrefix.CLASS + d.color);
-    })
+    .attr('class', 'box')
     .attr('style', function(d) {
       if (!d.status) {
         return 'fill: url(#_PATTERN_' + d.name + ')';

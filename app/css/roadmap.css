@@ -5,10 +5,6 @@
   display: flex;
 }
 
-.listPadding {
-  padding-left: 18px;
-}
-
 .roadmapChart-h {
   padding: 8px 0 8px 20px;
 }
@@ -54,9 +50,21 @@
   background-image: url(../img/roadmap_close_info.svg);
 }
 
+
+/* chart header */
+.chart-progress-b {
+  fill: #EEE;
+}
+
+.chart-progress {
+  fill: #99d1ff;
+}
+
+/* Breadcum */
 .roadmapBreadcrumb {
   padding: 16px 0 0 20px;
 }
+
 .roadmapBreadcrumb > .breadcrumb-i {
   display: inline-block;
   font-size: 12px;
@@ -69,12 +77,8 @@
   content: " >";
 }
 
-.roadmap-b {
-  width: 100%;
-  height: 100%;
-  padding: 16px;
-  position: absolute;
-  box-sizing: border-box;
+.listPadding {
+  padding-left: 18px;
 }
 
 .roadmap .roadmapNav {
@@ -90,19 +94,6 @@
   box-sizing: border-box;
 }
 
-.roadmap .roadmapChart {
-  flex: 1;
-  padding: 0;
-  float: left;
-  height: 100%;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.roadmap .roadmapChart .roadmapChart-b {
-  width: 100%;
-}
-
 .listTitle {
   font-size: 24px;
   line-height: 36px;
@@ -110,37 +101,6 @@
   cursor: pointer;
   position: relative;
   color: #888888;
-}
-
-.taskText {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: capitalize;
-  cursor: pointer;
-  fill: #FFF;
-}
-
-/* box */
-.box {
-  fill: #008cff;
-  cursor: pointer;
-  stroke-width: 2px;
-}
-
-.box.highlight {
-  stroke: rgba(0,0,0,0.5);
-}
-
-/* lines */
-.line- {
-  stroke: steelblue;
-}
-
-/* markers */
-.lineMarker {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 2.5px;
 }
 
 .listBase {
@@ -177,6 +137,53 @@
   z-index: -1;
 }
 
+.roadmap .roadmapChart {
+  flex: 1;
+  padding: 0;
+  float: left;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.roadmap .roadmapChart .roadmapChart-b {
+  width: 100%;
+}
+
+.taskText {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  fill: #FFF;
+}
+
+.box {
+  fill: #008cff;
+  cursor: pointer;
+  stroke-width: 2px;
+}
+
+.box.highlight {
+  stroke: rgba(0,0,0,0.5);
+}
+
+/* lines */
+.line- {
+  stroke: steelblue;
+}
+
+/* markers */
+.lineMarker {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2.5px;
+}
+
+.statusBox {
+  cursor: pointer;
+}
+
 /* blue 1 */
 .blue-1:before {
   background-color: #008cff;
@@ -188,57 +195,50 @@
   stroke:#008cff;
 }
 
-.statusBox {
-  cursor: pointer;
+/* blue-2 */
+.blue-2:before {
+  background-color: #4dacff;
 }
-
-/* blue 2 */
-.highlight.blue-2:hover:before {
+.svg-blue-2, .svg-blue-2 .box {
+  fill: #4dacff;
+}
+.line-blue-2, .svg-blue-2 .box {
+  stroke:#4dacff;
+}
+.blue-2.highlight:hover:before {
   border: 2px solid #008cff;
+}
+.svg-blue-2.highlight .box, .line-blue-2.highlight {
+  stroke:#008cff;
 }
 .blue-2:active:before {
   background-color: #008cff;
 }
-.blue-2:before {
-  background-color: #4dacff;
-}
-.svg-blue-2 {
-  fill: #4dacff;
-}
-
-.svg-blue-2, .line-blue-2 {
-  stroke:#4dacff;
-}
-
-.svg-blue-2:active {
+.svg-blue-2:active .box {
   fill: #008cff !important;
 }
 
-.highlight.line-blue-2, .highlight.svg-blue-2 {
-  stroke:#008cff;
+/* blue-3 */
+.blue-3:before {
+  background-color: #99d1ff;
 }
-
-/* blue 3 */
-.highlight.highlight.blue-3:hover:before {
+.svg-blue-3, .svg-blue-3 .box {
+  fill: #99d1ff;
+}
+.line-blue-3, .svg-blue-3 .box {
+  stroke: #99d1ff;
+}
+.blue-3.highlight:hover:before {
   border: 2px solid #4dacff;
+}
+.svg-blue-3.highlight .box, .line-blue-3.highlight {
+  stroke:#4dacff;
 }
 .blue-3:active:before {
   background-color: #4dacff;
 }
-.blue-3:before {
-  background-color: #99d1ff;
-}
-.svg-blue-3 {
-  fill: #99d1ff;
-}
-.svg-blue-3, .line-blue-3 {
-  stroke:#99d1ff;
-}
-.svg-blue-3:active {
+.svg-blue-3:active .box {
   fill: #4dacff !important;
-}
-.highlight.line-blue-3, .highlight.svg-blue-3 {
-  stroke:#4dacff;
 }
 
 /* orange 1 */
@@ -253,49 +253,49 @@
 }
 
 /* orange 2 */
-.highlight.orange-2:hover:before {
+.orange-2:before {
+  background-color: #fca071;
+}
+.svg-orange-2, .svg-orange-2 .box {
+  fill: #fca071;
+}
+.line-orange-2, .svg-orange-2 .box {
+  stroke:#fca071;
+}
+.orange-2.highlight:hover:before {
   border: 2px solid #f9874e;
+}
+.svg-orange-2.highlight .box, .line-orange-2.highlight {
+  stroke:#f9874e;
 }
 .orange-2:active:before {
   background-color: #f9874e;
 }
-.orange-2:before {
-  background-color: #fca071;
-}
-.svg-orange-2 {
-  fill: #fca071;
-}
-.svg-orange-2, .line-orange-2 {
-  stroke:#fca071;
-}
-.svg-orange-2:active {
+.svg-orange-2:active .box {
   fill: #f9874e !important;
-}
-.highlight.line-orange-2, .highlight.svg-orange-2 {
-  stroke:#f9874e;
 }
 
 /* orange 3 */
-.highlight.orange-3:hover:before {
-  border: 2px solid #fca071;
-}
-.orange-3:active:before {
-  background-color: #fca071 !important;
-}
 .orange-3:before {
   background-color: #fcb590;
 }
-.svg-orange-3 {
+.svg-orange-3, .svg-orange-3 .box {
   fill: #fcb590;
 }
-.svg-orange-3, .line-orange-3 {
+.line-orange-3, .svg-orange-3 .box {
   stroke:#fcb590;
 }
-.svg-orange-3:active {
-  fill: #fca071 !important;
+.orange-3.highlight:hover:before {
+  border: 2px solid #fca071;
 }
-.highlight.line-orange-3, .highlight.svg-orange-3 {
+.svg-orange-3.highlight .box, .line-orange-3.highlight {
   stroke:#fca071;
+}
+.orange-3:active:before {
+  background-color: #fca071;
+}
+.svg-orange-3:active .box {
+  fill: #fca071 !important;
 }
 
 /* coral 1 */
@@ -310,49 +310,49 @@
 }
 
 /* coral 2 */
-.highlight.coral-2:hover:before {
+.coral-2:before {
+  background-color: #f79797;
+}
+.svg-coral-2, .svg-coral-2 .box {
+  fill: #f79797;
+}
+.line-coral-2, .svg-coral-2 .box {
+  stroke:#f79797;
+}
+.coral-2.highlight:hover:before {
   border: 2px solid #f27e7e;
+}
+.svg-coral-2.highlight .box, .line-coral-2.highlight {
+  stroke:#f27e7e;
 }
 .coral-2:active:before {
   background-color: #f27e7e;
 }
-.coral-2:before {
-  background-color: #f79797;
-}
-.svg-coral-2 {
-  fill: #f79797;
-}
-.svg-coral-2, .line-coral-2 {
-  stroke:#f79797;
-}
-.svg-coral-2:active {
+.svg-coral-2:active .box {
   fill: #f27e7e !important;
-}
-.highlight.line-coral-2, .highlight.svg-coral-2 {
-  stroke:#f27e7e;
 }
 
 /* coral 3 */
-.highlight.coral-3:hover:before {
+.coral-3:before {
+  background-color: #fab2b2;
+}
+.svg-coral-3, .svg-coral-3 .box {
+  fill: #fab2b2;
+}
+.line-coral-3, .svg-coral-3 .box {
+  stroke:#fab2b2;
+}
+.coral-3.highlight:hover:before {
   border: 2px solid #f79797;
+}
+.svg-coral-3.highlight .box, .line-coral-3.highlight {
+  stroke:#f79797;
 }
 .coral-3:active:before {
   background-color: #f79797;
 }
-.coral-3:before {
-  background-color: #fab2b2;
-}
-.svg-coral-3 {
-  fill: #fab2b2;
-}
-.svg-coral-3, .line-coral-3 {
-  stroke:#fab2b2;
-}
-.svg-coral-3:active {
+.svg-coral-3:active .box {
   fill: #f79797 !important;
-}
-.highlight.line-coral-3, .highlight.svg-coral-3 {
-  stroke:#f79797;
 }
 
 /* pink 1 */
@@ -367,49 +367,49 @@
 }
 
 /* pink 2 */
-.highlight.pink-2:hover:before {
+.pink-2:before {
+  background-color: #e88be8;
+}
+.svg-pink-2, .svg-pink-2 .box {
+  fill: #e88be8;
+}
+.line-pink-2, .svg-pink-2 .box {
+  stroke:#e88be8;
+}
+.pink-2.highlight:hover:before {
   border: 2px solid #e56ee5;
+}
+.svg-pink-2.highlight .box, .line-pink-2.highlight {
+  stroke:#e56ee5;
 }
 .pink-2:active:before {
   background-color: #e56ee5;
 }
-.pink-2:before {
-  background-color: #e88be8;
-}
-.svg-pink-2 {
-  fill: #e88be8;
-}
-.line-pink-2 {
-  stroke:#e88be8;
-}
-.svg-pink-2:active {
+.svg-pink-2:active .box {
   fill: #e56ee5 !important;
-}
-.highlight.line-pink-2, .highlight.svg-pink-2 {
-  stroke:#e56ee5;
 }
 
 /* pink 3 */
-.highlight.pink-3:hover:before {
+.pink-3:before {
+  background-color: #f2a5f2;
+}
+.svg-pink-3, .svg-pink-3 .box {
+  fill: #f2a5f2;
+}
+.line-pink-3, .svg-pink-3 .box {
+  stroke:#f2a5f2;
+}
+.pink-3.highlight:hover:before {
   border: 2px solid #e88be8;
+}
+.svg-pink-3.highlight .box, .line-pink-3.highlight {
+  stroke:#e88be8;
 }
 .pink-3:active:before {
   background-color: #e88be8;
 }
-.pink-3:before {
-  background-color: #f2a5f2;
-}
-.svg-pink-3 {
-  fill: #f2a5f2;
-}
-.line-pink-3 {
-  stroke:#f2a5f2;
-}
-.svg-pink-3:active {
+.svg-pink-3:active .box {
   fill: #e88be8 !important;
-}
-.highlight.line-pink-3, .highlight.svg-pink-3 {
-  stroke:#e88be8;
 }
 
 /* green 1 */
@@ -424,49 +424,49 @@
 }
 
 /* green 2 */
-.highlight.green-2:hover:before {
+.green-2:before {
+  background-color: #8fc956;
+}
+.svg-green-2, .svg-green-2 .box {
+  fill: #8fc956;
+}
+.line-green-2, .svg-green-2 .box {
+  stroke:#8fc956;
+}
+.green-2.highlight:hover:before {
   border: 2px solid #6fbc24;
+}
+.svg-green-2.highlight .box, .line-green-2.highlight {
+  stroke:#6fbc24;
 }
 .green-2:active:before {
   background-color: #6fbc24;
 }
-.green-2:before {
-  background-color: #8fc956;
-}
-.svg-green-2 {
-  fill: #8fc956;
-}
-.line-green-2 {
-  stroke:#8fc956;
-}
-.svg-green-2:active {
+.svg-green-2:active .box {
   fill: #6fbc24 !important;
-}
-.highlight.line-green-2, .highlight.svg-green-2 {
-  stroke:#6fbc24;
 }
 
 /* green 3 */
-.highlight.green-3:hover:before {
+.green-3:before {
+  background-color: #a7d97c;
+}
+.svg-green-3, .svg-green-3 .box {
+  fill: #a7d97c;
+}
+.line-green-3, .svg-green-3 .box {
+  stroke:#a7d97c;
+}
+.green-3.highlight:hover:before {
   border: 2px solid #8fc956;
+}
+.svg-green-3.highlight .box, .line-green-3.highlight {
+  stroke:#8fc956;
 }
 .green-3:active:before {
   background-color: #8fc956;
 }
-.green-3:before {
-  background-color: #a7d97c;
-}
-.svg-green-3 {
-  fill: #a7d97c;
-}
-.line-green-3 {
-  stroke:#a7d97c;
-}
-.svg-green-3:active {
+.svg-green-3:active .box {
   fill: #8fc956 !important;
-}
-.highlight.line-green-3, .highlight.svg-green-3 {
-  stroke:#8fc956;
 }
 
 /* indigo 1 */
@@ -481,49 +481,49 @@
 }
 
 /* indigo 2 */
-.highlight.indigo-2:hover:before {
+.indigo-2:before {
+  background-color: #a39df5;
+}
+.svg-indigo-2, .svg-indigo-2 .box {
+  fill: #a39df5;
+}
+.line-indigo-2, .svg-indigo-2 .box {
+  stroke:#a39df5;
+}
+.indigo-2.highlight:hover:before {
   border: 2px solid #8d85f9;
+}
+.svg-indigo-2.highlight .box, .line-indigo-2.highlight {
+  stroke:#8d85f9;
 }
 .indigo-2:active:before {
   background-color: #8d85f9;
 }
-.indigo-2:before {
-  background-color: #a39df5;
-}
-.svg-indigo-2 {
-  fill: #a39df5;
-}
-.line-indigo-2 {
-  stroke:#a39df5;
-}
-.svg-indigo-2:active {
+.svg-indigo-2:active .box {
   fill: #8d85f9 !important;
-}
-.highlight.line-indigo-2, .highlight.svg-indigo-2 {
-  stroke:#8d85f9;
 }
 
 /* indigo 3 */
-.highlight.indigo-3:hover:before {
+.indigo-3:before {
+  background-color: #b9b6fc;
+}
+.svg-indigo-3, .svg-indigo-3 .box {
+  fill: #b9b6fc;
+}
+.line-indigo-3, .svg-indigo-3 .box {
+  stroke:#b9b6fc;
+}
+.indigo-3.highlight:hover:before {
   border: 2px solid #a39df5;
+}
+.svg-indigo-3.highlight .box, .line-indigo-3.highlight {
+  stroke:#a39df5;
 }
 .indigo-3:active:before {
   background-color: #a39df5;
 }
-.indigo-3:before {
-  background-color: #b9b6fc;
-}
-.svg-indigo-3 {
-  fill: #b9b6fc;
-}
-.line-indigo-3 {
-  stroke:#b9b6fc;
-}
-.svg-indigo-3:active {
+.svg-indigo-3:active .box {
   fill: #a39df5 !important;
-}
-.highlight.line-indigo-3, .highlight.svg-indigo-3 {
-  stroke:#a39df5;
 }
 
 /* cyan 1 */
@@ -538,50 +538,49 @@
 }
 
 /* cyan 2 */
-.highlight.cyan-2:hover:before {
+.cyan-2:before {
+  background-color: #6ae6cf;
+}
+.svg-cyan-2, .svg-cyan-2 .box {
+  fill: #6ae6cf;
+}
+.line-cyan-2, .svg-cyan-2 .box {
+  stroke:#6ae6cf;
+}
+.cyan-2.highlight:hover:before {
   border: 2px solid #42e2c7;
+}
+.svg-cyan-2.highlight .box, .line-cyan-2.highlight {
+  stroke:#42e2c7;
 }
 .cyan-2:active:before {
   background-color: #42e2c7;
 }
-.cyan-2:before {
-  background-color: #6ae6cf;
-}
-.svg-cyan-2 {
-  fill: #6ae6cf;
-}
-.line-cyan-2 {
-  stroke:#6ae6cf;
-}
-.svg-cyan-2:active {
+.svg-cyan-2:active .box {
   fill: #42e2c7 !important;
 }
-.highlight.line-cyan-2, .highlight.svg-cyan-2 {
-  stroke:#42e2c7;
-}
-
 
 /* cyan 3 */
-.highlight.cyan-3:hover:before {
+.cyan-3:before {
+  background-color: #84f0da;
+}
+.svg-cyan-3, .svg-cyan-3 .box {
+  fill: #84f0da;
+}
+.line-cyan-3, .svg-cyan-3 .box {
+  stroke:#84f0da;
+}
+.cyan-3.highlight:hover:before {
   border: 2px solid #6ae6cf;
+}
+.svg-cyan-3.highlight .box, .line-cyan-3.highlight {
+  stroke:#6ae6cf;
 }
 .cyan-3:active:before {
   background-color: #6ae6cf;
 }
-.cyan-3:before {
-  background-color: #84f0da;
-}
-.svg-cyan-3 {
-  fill: #84f0da;
-}
-.line-cyan-3 {
-  stroke:#84f0da;
-}
-.svg-cyan-3:active {
+.svg-cyan-3:active .box {
   fill: #6ae6cf !important;
-}
-.highlight.line-cyan-3, .highlight.svg-cyan-3 {
-  stroke:#6ae6cf;
 }
 
 /* turquoise 1 */
@@ -596,51 +595,50 @@
 }
 
 /* turquoise 2 */
-.highlight.turquoise-2:hover:before {
+.turquoise-2:before {
+  background-color: #5cd196;
+}
+.svg-turquoise-2, .svg-turquoise-2 .box {
+  fill: #5cd196;
+}
+.line-turquoise-2, .svg-turquoise-2 .box {
+  stroke:#5cd196;
+}
+.turquoise-2.highlight:hover:before {
   border: 2px solid #3cc681;
+}
+.svg-turquoise-2.highlight .box, .line-turquoise-2.highlight {
+  stroke:#3cc681;
 }
 .turquoise-2:active:before {
   background-color: #3cc681;
 }
-.turquoise-2:before {
-  background-color: #5cd196;
-}
-.svg-turquoise-2 {
-  fill: #5cd196;
-}
-.line-turquoise-2 {
-  stroke:#5cd196;
-}
-.svg-turquoise-2:active {
+.svg-turquoise-2:active .box {
   fill: #3cc681 !important;
-}
-.highlight.line-turquoise-2, .highlight.svg-turquoise-2 {
-  stroke:#3cc681;
 }
 
 /* turquoise 3 */
-.highlight.turquoise-3:hover:before {
+.turquoise-3:before {
+  background-color: #81deaf;
+}
+.svg-turquoise-3, .svg-turquoise-3 .box {
+  fill: #81deaf;
+}
+.line-turquoise-3, .svg-turquoise-3 .box {
+  stroke:#81deaf;
+}
+.turquoise-3.highlight:hover:before {
   border: 2px solid #5cd196;
+}
+.svg-turquoise-3.highlight .box, .line-turquoise-3.highlight {
+  stroke:#5cd196;
 }
 .turquoise-3:active:before {
   background-color: #5cd196;
 }
-.turquoise-3:before {
-  background-color: #81deaf;
-}
-.svg-turquoise-3 {
-  fill: #81deaf;
-}
-.line-turquoise-3 {
-  stroke:#81deaf;
-}
-.svg-turquoise-3:active {
+.svg-turquoise-3:active .box {
   fill: #5cd196 !important;
 }
-.highlight.line-turquoise-3, .highlight.svg-turquoise-3 {
-  stroke:#5cd196;
-}
-
 
 /* grey 1 */
 .grey-1:before {
@@ -654,56 +652,55 @@
 }
 
 /* grey 2 */
-.highlight.grey-2:hover:before {
+.grey-2:before {
+  background-color: #a8a8a8;
+}
+.svg-grey-2, .svg-grey-2 .box {
+  fill: #a8a8a8;
+}
+.line-grey-2, .svg-grey-2 .box {
+  stroke:#a8a8a8;
+}
+.grey-2.highlight:hover:before {
   border: 2px solid #939393;
+}
+.svg-grey-2.highlight .box, .line-grey-2.highlight {
+  stroke:#939393;
 }
 .grey-2:active:before {
   background-color: #939393;
 }
-.grey-2:before {
-  background-color: #a8a8a8;
-}
-.svg-grey-2 {
-  fill: #a8a8a8;
-}
-.line-grey-2 {
-  stroke:#a8a8a8;
-}
-.svg-grey-2:active {
+.svg-grey-2:active .box {
   fill: #939393 !important;
-}
-.highlight.line-grey-2, .highlight.svg-grey-2 {
-  stroke:#939393;
 }
 
 /* grey 3 */
-.highlight.grey-3:hover:before {
+.grey-3:before {
+  background-color: #bfbfbf;
+}
+.svg-grey-3, .svg-grey-3 .box {
+  fill: #bfbfbf;
+}
+.line-grey-3, .svg-grey-3 .box {
+  stroke:#bfbfbf;
+}
+.grey-3.highlight:hover:before {
   border: 2px solid #a8a8a8;
+}
+.svg-grey-3.highlight .box, .line-grey-3.highlight {
+  stroke:#a8a8a8;
 }
 .grey-3:active:before {
   background-color: #a8a8a8;
 }
-.grey-3:before {
-  background-color: #bfbfbf;
-}
-.svg-grey-3 {
-  fill: #bfbfbf;
-}
-.line-grey-3 {
-  stroke:#bfbfbf;
-}
-.svg-grey-3:active {
+.svg-grey-3:active .box {
   fill: #a8a8a8 !important;
-}
-.highlight.line-grey-3, .highlight.svg-grey-3 {
-  stroke:#a8a8a8;
 }
 
 /* purple 1 */
 .purple-1:before {
   background-color: #a342e2;
 }
-
 .svg-purple-1 {
   fill: #a342e2;
 }
@@ -712,34 +709,24 @@
 }
 
 /* purple 2 */
-.highlight.purple-2:hover:before {
+.purple-2:before {
+  background-color: #b966e8;
+}
+.svg-purple-2, .svg-purple-2 .box {
+  fill: #b966e8;
+}
+.line-purple-2, .svg-purple-2 .box {
+  stroke:#b966e8;
+}
+.purple-2.highlight:hover:before {
   border: 2px solid #a342e2;
+}
+.svg-purple-2.highlight .box, .line-purple-2.highlight {
+  stroke:#a342e2;
 }
 .purple-2:active:before {
   background-color: #a342e2;
 }
-.purple-2:before {
-  background-color: #b966e8;
-}
-.svg-purple-2 {
-  fill: #b966e8;
-}
-.line-purple-2:active {
-  stroke:#a342e2 !important;
-}
-.svg-purple-2 {
-  fill: #b966e8;
-}
-.highlight.line-purple-2, .highlight.svg-purple-2 {
-  stroke:#a342e2;
-}
-
-
-/* chart header */
-.chart-progress-b {
-  fill: #EEE;
-}
-
-.chart-progress {
-  fill: #99d1ff;
+.svg-purple-2:active .box {
+  fill: #a342e2 !important;
 }
