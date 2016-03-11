@@ -15,7 +15,6 @@
             "section": 1,
             "status": 1,
             "startDate": "2016-1-1",
-            "endDate": "2016-1-11",
             "children": [
                 {
                     "name": "EXTERNAL",
@@ -58,8 +57,7 @@
                     "section": 1,
                     "status": 1,
                     "color": "blue-3",
-                    "startDate": "2016-1-1",
-                    "endDate": "2016-1-11"
+                    "startDate": "2016-1-1"
                 },
                 {
                     "name": "VAULT_IN_MOBILE",
@@ -69,8 +67,7 @@
                     "section": 2,
                     "status": 1,
                     "color": "blue-3",
-                    "startDate": "2016-1-13",
-                    "endDate": "2016-1-23"
+                    "startDate": "2016-1-13"
                 },
                 {
                     "name": "PUBLIC_IDENTITY",
@@ -80,30 +77,27 @@
                     "section": 4,
                     "status": 0,
                     "color": "blue-3",
-                    "startDate": "2016-1-28",
-                    "endDate": "2016-2-7"
+                    "startDate": "2016-1-28"
                 },
                 {
                     "name": "VAULT_SAMPLE",
                     "target": [
                         "PUBLIC_IDENTITY"
                     ],
-                    "section": 5,
+                    "section": 6,
                     "status": 0,
                     "color": "blue-3",
-                    "startDate": "2016-1-12",
-                    "endDate": "2016-1-22"
+                    "startDate": "2016-1-12"
                 },
                 {
                     "name": "VAULT_NEXT",
                     "target": [
                         "PUBLIC_IDENTITY"
                     ],
-                    "section": 6,
+                    "section": 5,
                     "status": 0,
                     "color": "blue-3",
-                    "startDate": "2016-1-13",
-                    "endDate": "2016-1-23"
+                    "startDate": "2016-1-12"
                 }
             ]
         },
@@ -120,7 +114,6 @@
             "color": "coral-2",
             "status": 0,
             "startDate": "2016-1-13",
-            "endDate": "2016-1-23",
             "children" : [
               {
                 "name": "CLIENT_1",
@@ -130,8 +123,7 @@
                 "section": 1,
                 "status": 0,
                 "color": "coral-3",
-                "startDate": "2016-1-1",
-                "endDate": "2016-1-11"
+                "startDate": "2016-1-1"
               },
               {
                   "name": "CLIENT_2",
@@ -141,8 +133,7 @@
                   "section": 2,
                   "status": 0,
                   "color": "coral-3",
-                  "startDate": "2016-1-14",
-                  "endDate": "2016-1-24"
+                  "startDate": "2016-1-14"
               },
               {
                   "name": "CLIENT_3",
@@ -152,8 +143,7 @@
                   "section": 3,
                   "status": 0,
                   "color": "coral-3",
-                  "startDate": "2016-1-27",
-                  "endDate": "2016-2-6"
+                  "startDate": "2016-1-27"
               }
             ]
         }

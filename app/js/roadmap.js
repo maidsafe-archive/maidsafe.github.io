@@ -67,6 +67,11 @@ var createDivElement = function(id, classes, text) {
   return ele;
 };
 
+var addDate = function(dateStr, num) {
+  var date = new Date(dateStr);
+  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + parseInt(num));
+};
+
 var parseNodeName = function(name) {
   name = name.replace(/_/g, ' ').toLowerCase();
   return name[0].toUpperCase() + name.slice(1);
@@ -110,6 +115,12 @@ var removeSvgClass = function(self, classToRemove) {
   self.attr('class', classNames);
 };
 
+var isBoxDown = function(target, node) {
+  node.startDate = node.startDate || new Date(1 - 1 - 1947);
+  return ((new Date(target.startDate)).getTime() > (new Date(node.startDate)).getTime()) &&
+    (target.section < node.section);
+};
+
 Roadmap.prototype.timeScale = function(val) {
   var self = this;
   return (d3.time.scale()
@@ -134,7 +145,7 @@ Roadmap.prototype.init = function() { // prepare data
       target: node.target || '',
       daysCompleted: node.daysCompleted || 0,
       startDate: node.startDate || null,
-      endDate: node.endDate || null,
+      endDate: addDate(node.startDate, self.payload.interval),
       section: node.section || null,
       status: node.status || null
     };
@@ -611,12 +622,6 @@ Roadmap.prototype.drawLines = function() {
     });
   };
 
-  var isBoxDown = function(target, node) {
-    node.startDate = node.startDate || new Date(1 - 1 - 1947);
-    return ((new Date(target.startDate)).getTime() > (new Date(node.startDate)).getTime()) &&
-      (target.section < node.section);
-  };
-
   var getNodeCountDetails = function(target) {
     var downCount = 0;
     var incomings = self.getIncomings(target.name);
@@ -974,7 +979,8 @@ $(function() {
   $.get('data/roadmapData.json', function(data) {
     new Roadmap({
       data: data,
-      target: '#Roadmap'
+      target: '#Roadmap',
+      interval: 10
     }).draw();
   });
 });
