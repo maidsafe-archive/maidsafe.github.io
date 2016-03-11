@@ -205,7 +205,7 @@
 .line-blue-2, .svg-blue-2 .box {
   stroke:#4dacff;
 }
-.blue-2.highlight:hover:before {
+.blue-2.highlight:before {
   border: 2px solid #008cff;
 }
 .svg-blue-2.highlight .box, .line-blue-2.highlight {
@@ -228,7 +228,7 @@
 .line-blue-3, .svg-blue-3 .box {
   stroke: #99d1ff;
 }
-.blue-3.highlight:hover:before {
+.blue-3.highlight:before {
   border: 2px solid #4dacff;
 }
 .svg-blue-3.highlight .box, .line-blue-3.highlight {
@@ -262,7 +262,7 @@
 .line-orange-2, .svg-orange-2 .box {
   stroke:#fca071;
 }
-.orange-2.highlight:hover:before {
+.orange-2.highlight:before {
   border: 2px solid #f9874e;
 }
 .svg-orange-2.highlight .box, .line-orange-2.highlight {
@@ -285,7 +285,7 @@
 .line-orange-3, .svg-orange-3 .box {
   stroke:#fcb590;
 }
-.orange-3.highlight:hover:before {
+.orange-3.highlight:before {
   border: 2px solid #fca071;
 }
 .svg-orange-3.highlight .box, .line-orange-3.highlight {
@@ -319,7 +319,7 @@
 .line-coral-2, .svg-coral-2 .box {
   stroke:#f79797;
 }
-.coral-2.highlight:hover:before {
+.coral-2.highlight:before {
   border: 2px solid #f27e7e;
 }
 .svg-coral-2.highlight .box, .line-coral-2.highlight {
@@ -342,7 +342,7 @@
 .line-coral-3, .svg-coral-3 .box {
   stroke:#fab2b2;
 }
-.coral-3.highlight:hover:before {
+.coral-3.highlight:before {
   border: 2px solid #f79797;
 }
 .svg-coral-3.highlight .box, .line-coral-3.highlight {
@@ -376,7 +376,7 @@
 .line-pink-2, .svg-pink-2 .box {
   stroke:#e88be8;
 }
-.pink-2.highlight:hover:before {
+.pink-2.highlight:before {
   border: 2px solid #e56ee5;
 }
 .svg-pink-2.highlight .box, .line-pink-2.highlight {
@@ -399,7 +399,7 @@
 .line-pink-3, .svg-pink-3 .box {
   stroke:#f2a5f2;
 }
-.pink-3.highlight:hover:before {
+.pink-3.highlight:before {
   border: 2px solid #e88be8;
 }
 .svg-pink-3.highlight .box, .line-pink-3.highlight {
@@ -433,7 +433,7 @@
 .line-green-2, .svg-green-2 .box {
   stroke:#8fc956;
 }
-.green-2.highlight:hover:before {
+.green-2.highlight:before {
   border: 2px solid #6fbc24;
 }
 .svg-green-2.highlight .box, .line-green-2.highlight {
@@ -456,7 +456,7 @@
 .line-green-3, .svg-green-3 .box {
   stroke:#a7d97c;
 }
-.green-3.highlight:hover:before {
+.green-3.highlight:before {
   border: 2px solid #8fc956;
 }
 .svg-green-3.highlight .box, .line-green-3.highlight {
@@ -490,7 +490,7 @@
 .line-indigo-2, .svg-indigo-2 .box {
   stroke:#a39df5;
 }
-.indigo-2.highlight:hover:before {
+.indigo-2.highlight:before {
   border: 2px solid #8d85f9;
 }
 .svg-indigo-2.highlight .box, .line-indigo-2.highlight {
@@ -513,7 +513,7 @@
 .line-indigo-3, .svg-indigo-3 .box {
   stroke:#b9b6fc;
 }
-.indigo-3.highlight:hover:before {
+.indigo-3.highlight:before {
   border: 2px solid #a39df5;
 }
 .svg-indigo-3.highlight .box, .line-indigo-3.highlight {
@@ -547,7 +547,7 @@
 .line-cyan-2, .svg-cyan-2 .box {
   stroke:#6ae6cf;
 }
-.cyan-2.highlight:hover:before {
+.cyan-2.highlight:before {
   border: 2px solid #42e2c7;
 }
 .svg-cyan-2.highlight .box, .line-cyan-2.highlight {
@@ -570,7 +570,7 @@
 .line-cyan-3, .svg-cyan-3 .box {
   stroke:#84f0da;
 }
-.cyan-3.highlight:hover:before {
+.cyan-3.highlight:before {
   border: 2px solid #6ae6cf;
 }
 .svg-cyan-3.highlight .box, .line-cyan-3.highlight {
@@ -604,7 +604,7 @@
 .line-turquoise-2, .svg-turquoise-2 .box {
   stroke:#5cd196;
 }
-.turquoise-2.highlight:hover:before {
+.turquoise-2.highlight:before {
   border: 2px solid #3cc681;
 }
 .svg-turquoise-2.highlight .box, .line-turquoise-2.highlight {
@@ -627,7 +627,7 @@
 .line-turquoise-3, .svg-turquoise-3 .box {
   stroke:#81deaf;
 }
-.turquoise-3.highlight:hover:before {
+.turquoise-3.highlight:before {
   border: 2px solid #5cd196;
 }
 .svg-turquoise-3.highlight .box, .line-turquoise-3.highlight {
@@ -661,7 +661,7 @@
 .line-grey-2, .svg-grey-2 .box {
   stroke:#a8a8a8;
 }
-.grey-2.highlight:hover:before {
+.grey-2.highlight:before {
   border: 2px solid #939393;
 }
 .svg-grey-2.highlight .box, .line-grey-2.highlight {
@@ -684,7 +684,7 @@
 .line-grey-3, .svg-grey-3 .box {
   stroke:#bfbfbf;
 }
-.grey-3.highlight:hover:before {
+.grey-3.highlight:before {
   border: 2px solid #a8a8a8;
 }
 .svg-grey-3.highlight .box, .line-grey-3.highlight {
@@ -718,7 +718,7 @@
 .line-purple-2, .svg-purple-2 .box {
   stroke:#b966e8;
 }
-.purple-2.highlight:hover:before {
+.purple-2.highlight:before {
   border: 2px solid #a342e2;
 }
 .svg-purple-2.highlight .box, .line-purple-2.highlight {

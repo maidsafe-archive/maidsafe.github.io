@@ -77,6 +77,39 @@ var textEllipsis = function(str, length) {
   return length < str.length ? (str.slice(0, length) + '...') : str;
 };
 
+var addSvgClass = function(self, newClass) {
+  if (!self || !newClass) {
+    return;
+  }
+  var classNames = self.attr('class');
+  if (!classNames) {
+    return;
+  }
+  classNames = classNames.split(' ');
+  if (classNames.indexOf(newClass) === -1) {
+    classNames.push(newClass);
+  }
+  classNames = classNames.join(' ');
+  self.attr('class', classNames);
+};
+
+var removeSvgClass = function(self, classToRemove) {
+  if (!self || !classToRemove) {
+    return;
+  }
+  var classNames = self.attr('class');
+  if (!classNames) {
+    return;
+  }
+  classNames = classNames.split(' ');
+  var index = classNames.indexOf(classToRemove);
+  if (index !== -1) {
+    classNames.splice(index, 1);
+  }
+  classNames = classNames.join(' ');
+  self.attr('class', classNames);
+};
+
 Roadmap.prototype.timeScale = function(val) {
   var self = this;
   return (d3.time.scale()
@@ -128,6 +161,20 @@ Roadmap.prototype.init = function() { // prepare data
   addChild(this.payload.data);
 };
 
+Roadmap.prototype.getTaskIdForBox = function(source) {
+  var self = this;
+  source = source instanceof jQuery ? source : $(source);
+  return source.children('.box').attr('id').slice(self.taskPrefix.ID.length);
+};
+
+Roadmap.prototype.getPathClass = function(targetEle, isLevelUp) {
+  var self = this;
+  var pathClass = targetEle.attr('class').split(' ')[0].slice(self.taskPrefix.LINE.length);
+  var level = parseInt(pathClass.substr(pathClass.length - 1));
+  pathClass = pathClass.substr(0, pathClass.length - 1) + (isLevelUp ? (level - 1) : level);
+  return pathClass
+};
+
 Roadmap.prototype.resetOnListTitleClick = function(self) {
   $(self).children().addClass('listClose');
 };
@@ -139,6 +186,90 @@ Roadmap.prototype.resetOnListBaseClick = function(self, needHighlight) {
   }
   $(self).siblings().addClass('listClose');
   $(self).removeClass(removeClasses.join(' '));
+};
+
+Roadmap.prototype.highlightList = function(source, fromBox) {
+  var self = this;
+  if (fromBox) {
+    var taskId = self.getTaskIdForBox(source);
+    source = '#' + taskId;
+  }
+  $(source).addClass('highlight');
+};
+
+Roadmap.prototype.removeListHighlight = function(source, fromBox) {
+  var self = this;
+  if (fromBox) {
+    var taskId = self.getTaskIdForBox(source);
+    source = '#' + taskId;
+  }
+  $(source).removeClass('highlight');
+};
+
+Roadmap.prototype.taskValid = function(taskName) {
+  var check = false;
+  this.taskList.forEach(function(task) {
+    if(task.name === taskName) {
+      return check = true;
+    }
+  });
+  return check;
+};
+
+Roadmap.prototype.highlightTask = function(source, isList) {
+  var self = this;
+  if (isList) {
+    var id = $(source).attr('id');
+    if (!self.taskValid(id)) {
+      return;
+    }
+    source = $('#' + self.taskPrefix.ID + id).parent('.boxBase');
+  }
+
+  var highlightPath = function(pathId) {
+    var targetEle = $('#' + pathId);
+    if(!targetEle.is('path')) {
+      return;
+    }
+    addSvgClass(targetEle, 'highlight');
+    var pathClass = self.getPathClass(targetEle, true)
+    targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
+    var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
+    addSvgClass(targetEleDownStream, 'highlight');
+  };
+  addSvgClass($(source), 'highlight');
+  var taskId = self.getTaskIdForBox(source);
+  var pathId = self.taskPrefix.PATH + taskId;
+  highlightPath(pathId);
+  self.highlightList(source, true);
+};
+
+Roadmap.prototype.removeTaskHighlight = function(source, isList) {
+  var self = this;
+  if (isList) {
+    var id = $(source).attr('id');
+    if (!self.taskValid(id)) {
+      return;
+    }
+    source = $('#' + self.taskPrefix.ID + id).parent('.boxBase');
+  }
+
+  var removePathHighlight = function(pathId) {
+    var targetEle = $('#' + pathId);
+    if(!targetEle.is('path')) {
+      return;
+    }
+    removeSvgClass(targetEle, 'highlight');
+    var pathClass = self.getPathClass(targetEle, false)
+    targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
+    var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
+    removeSvgClass(targetEleDownStream, 'highlight');
+  };
+  removeSvgClass($(source), 'highlight');
+  var taskId = self.getTaskIdForBox(source);
+  var pathId = self.taskPrefix.PATH + taskId;
+  removePathHighlight(pathId);
+  self.removeListHighlight(source, true);
 };
 
 Roadmap.prototype.handleListEvents = function() {
@@ -157,122 +288,35 @@ Roadmap.prototype.handleListEvents = function() {
 
   $('.listBase').mouseover(function(e) {
     e.stopPropagation();
-    $(this).addClass('highlight');
+    self.highlightList(this);
+    self.highlightTask(this, true);
   });
 
   $('.listBase').mouseout(function(e) {
     e.stopPropagation();
-    $(this).removeClass('highlight');
+    self.removeListHighlight(this);
+    self.removeTaskHighlight(this, true);
   });
 };
 
 Roadmap.prototype.handleBoxEvents = function() {
   var self = this;
-  var addClass = function(self, newClass) {
-    if (!self || !newClass) {
-      return;
-    }
-    var classNames = self.attr('class');
-    if (!classNames) {
-      return;
-    }
-    classNames = classNames.split(' ');
-    if (classNames.indexOf(newClass) === -1) {
-      classNames.push(newClass);
-    }
-    classNames = classNames.join(' ');
-    self.attr('class', classNames);
-  };
-
-  var removeClass = function(self, classToRemove) {
-    if (!self || !classToRemove) {
-      return;
-    }
-    var classNames = self.attr('class');
-    if (!classNames) {
-      return;
-    }
-    classNames = classNames.split(' ');
-    var index = classNames.indexOf(classToRemove);
-    if (index !== -1) {
-      classNames.splice(index, 1);
-    }
-    classNames = classNames.join(' ');
-    self.attr('class', classNames);
-  };
-
-  var getPathClass = function(targetEle, isLevelUp) {
-    var pathClass = targetEle.attr('class').split(' ')[0].slice(self.taskPrefix.LINE.length);
-    var level = parseInt(pathClass.substr(pathClass.length - 1));
-    pathClass = pathClass.substr(0, pathClass.length - 1) + (isLevelUp ? (level - 1) : level);
-    return pathClass
-  };
-
-  var highlightPath = function(pathId) {
-    var targetEle = $('#' + pathId);
-    if(!targetEle.is('path')) {
-      return;
-    }
-    addClass(targetEle, 'highlight');
-    var pathClass = getPathClass(targetEle, true)
-    targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
-    var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
-    addClass(targetEleDownStream, 'highlight');
-  };
-
-  var removePathHighlight = function(pathId) {
-    var targetEle = $('#' + pathId);
-    if(!targetEle.is('path')) {
-      return;
-    }
-    removeClass(targetEle, 'highlight');
-    var pathClass = getPathClass(targetEle, false)
-    targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
-    var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
-    removeClass(targetEleDownStream, 'highlight');
-  };
-
-  var highlightList = function(listId) {
-    if (!listId) {
-      return;
-    }
-    $('#' + listId).addClass('highlight');
-  };
-
-  var removeListHighlight = function(listId) {
-    if (!listId) {
-      return;
-    }
-    $('#' + listId).removeClass('highlight');
-  };
-
-  var getTaskId = function(boxBase) {
-    return $(boxBase).children('.box').attr('id').slice(self.taskPrefix.ID.length);
-  };
 
   $('.boxBase').on('click', function(e) {
     e.stopPropagation();
-    var taskId = getTaskId(this);
-    self.resetOnListBaseClick($('#' + taskId), true);
+    var taskId = self.getTaskIdForBox(this);
+    self.resetOnListBaseClick('#' + taskId, true);
     self.drawChart(taskId);
   });
 
   $('.boxBase').mouseover(function(e) {
     e.stopPropagation();
-    addClass($(this), 'highlight');
-    var taskId = getTaskId(this);
-    var pathId = self.taskPrefix.PATH + taskId;
-    highlightPath(pathId);
-    highlightList(taskId);
+    self.highlightTask(this);
   });
 
   $('.boxBase').mouseout(function(e) {
     e.stopPropagation();
-    removeClass($(this), 'highlight');
-    var taskId = getTaskId(this);
-    var pathId = self.taskPrefix.PATH + taskId;
-    removePathHighlight(pathId);
-    removeListHighlight(taskId);
+    self.removeTaskHighlight(this);
   });
 };
 
@@ -611,9 +655,9 @@ Roadmap.prototype.drawLines = function() {
       }
     };
 
+    var nodeCount = getNodeCountDetails(target);
     path.start.x = self.timeScale(self.dateFormat.parse(target.startDate)) - (order * bottomDist);
     path.start.y = (((target.section - 1) * self.perUnit) * 2) + (self.perUnit / 2);
-    var nodeCount = getNodeCountDetails(target);
     path.start.y = isBoxDown(target, node) ? (path.start.y - (order * self.perUnit) +
       ((order - nodeCount.rest) * self.perUnit * 2)) : (path.start.y - (order * self.perUnit));
     path.interBot.x = path.start.x - bottomDist;
@@ -845,11 +889,7 @@ Roadmap.prototype.prepareProgressPattern = function(node) {
 
   pattern.append('polygon')
     .attr('class', self.taskPrefix.CLASS + 'blue-2')
-    .attr('points', '80,0 61,20 80,20');
-
-  pattern.append('polygon')
-    .attr('class', self.taskPrefix.CLASS + 'blue-2')
-    .attr('points', '0,0 0,20 21,20 40,0');
+    .attr('points', self.boxPattern.path);
 };
 
 Roadmap.prototype.drawProgress = function(parentName) {
