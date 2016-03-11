@@ -228,6 +228,19 @@ Roadmap.prototype.taskValid = function(taskName) {
   return check;
 };
 
+Roadmap.prototype.isTaskClickable = function(source, isBox) {
+  var self = this;
+  var check = false;
+  var taskId = null;
+  taskId = isBox ? self.getTaskIdForBox(source) : $(source).attr('id');
+  console.log(taskId);
+  self.nodes.forEach(function(node) {
+    if (node.parent === taskId) {
+      check = true;
+    }
+  });
+  return check;
+};
 Roadmap.prototype.highlightTask = function(source, isList) {
   var self = this;
   if (isList) {
@@ -294,7 +307,11 @@ Roadmap.prototype.handleListEvents = function() {
 
   $('.listBase').on('click', function(e) {
     e.stopPropagation();
+    if (!self.isTaskClickable(this)) {
+      return;
+    }
     self.resetOnListBaseClick(this);
+    self.removeTaskHighlight(this, true);
     self.drawChart($(this).attr('id'));
   });
 
@@ -317,6 +334,10 @@ Roadmap.prototype.handleBoxEvents = function() {
   $('.boxBase').on('click', function(e) {
     e.stopPropagation();
     var taskId = self.getTaskIdForBox(this);
+    if (!self.isTaskClickable(this, true)) {
+      return;
+    }
+    // TODO clean-up
     self.resetOnListBaseClick('#' + taskId, true);
     self.drawChart(taskId);
   });
