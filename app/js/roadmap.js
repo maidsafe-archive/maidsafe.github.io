@@ -1,5 +1,6 @@
 /*global window:false */
 var $ = window.$;
+var jQuery = window.jQuery;
 var d3 = window.d3;
 
 // roadmap chart
@@ -183,7 +184,7 @@ Roadmap.prototype.getPathClass = function(targetEle, isLevelUp) {
   var pathClass = targetEle.attr('class').split(' ')[0].slice(self.taskPrefix.LINE.length);
   var level = parseInt(pathClass.substr(pathClass.length - 1));
   pathClass = pathClass.substr(0, pathClass.length - 1) + (isLevelUp ? (level - 1) : level);
-  return pathClass
+  return pathClass;
 };
 
 Roadmap.prototype.resetOnListTitleClick = function(self) {
@@ -220,8 +221,8 @@ Roadmap.prototype.removeListHighlight = function(source, fromBox) {
 Roadmap.prototype.taskValid = function(taskName) {
   var check = false;
   this.taskList.forEach(function(task) {
-    if(task.name === taskName) {
-      return check = true;
+    if (task.name === taskName) {
+      check = true;
     }
   });
   return check;
@@ -239,11 +240,11 @@ Roadmap.prototype.highlightTask = function(source, isList) {
 
   var highlightPath = function(pathId) {
     var targetEle = $('#' + pathId);
-    if(!targetEle.is('path')) {
+    if (!targetEle.is('path')) {
       return;
     }
     addSvgClass(targetEle, 'highlight');
-    var pathClass = self.getPathClass(targetEle, true)
+    var pathClass = self.getPathClass(targetEle, true);
     targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
     var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
     addSvgClass(targetEleDownStream, 'highlight');
@@ -267,11 +268,11 @@ Roadmap.prototype.removeTaskHighlight = function(source, isList) {
 
   var removePathHighlight = function(pathId) {
     var targetEle = $('#' + pathId);
-    if(!targetEle.is('path')) {
+    if (!targetEle.is('path')) {
       return;
     }
     removeSvgClass(targetEle, 'highlight');
-    var pathClass = self.getPathClass(targetEle, false)
+    var pathClass = self.getPathClass(targetEle, false);
     targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
     var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
     removeSvgClass(targetEleDownStream, 'highlight');
