@@ -22,7 +22,7 @@ var Roadmap = function(payload) {
   };
   this.nodes = [];
   this.breadcumList = [];
-  this.perUnit = 20;
+  this.perUnit = 22;
   this.progress = {
     height: 10
   };
@@ -42,7 +42,7 @@ var Roadmap = function(payload) {
   };
   this.box = {
     width: 10,
-    height: 18,
+    height: 22,
     strokeWidth: 2
   };
   this.label = {
@@ -52,7 +52,7 @@ var Roadmap = function(payload) {
     borderRadius: 3
   };
   this.boxPattern = {
-    path: '19,0 0,18 41,18 60,0'
+    path: '22,0 0,22 43,22 62,0'
   };
   this.taskList = [];
   this.dateFormat = null;
@@ -500,7 +500,7 @@ Roadmap.prototype.preparePattern = function(node) {
     .attr('x', self.timeScale(self.dateFormat.parse(node.startDate)))
     .attr('y', node.section * self.perUnit)
     .attr('width', 80)
-    .attr('height', self.box.height + self.box.strokeWidth)
+    .attr('height', self.box.height)
     .attr('patternUnits', 'userSpaceOnUse')
     .append('g')
     .attr('opacity', 0.8);
@@ -795,7 +795,6 @@ Roadmap.prototype.drawLabels = function(parentName) {
 
   var drawLabel = function(node) {
     var downStreamLableBottom = 300;
-
     labelNode.append('rect')
       .attr('rx', self.label.borderRadius)
       .attr('ry', self.label.borderRadius)
@@ -813,7 +812,7 @@ Roadmap.prototype.drawLabels = function(parentName) {
       })
       .attr('width', self.label.width)
       .attr('height', self.label.height)
-      .attr('style', 'font-size: 12px; transform: translateZ(20px)')
+      .attr('style', 'font-size: 12px;')
       .attr('class', function() {
         var color = node.color;
         if (node.name === self.excludeNodes[1]) {
@@ -828,7 +827,7 @@ Roadmap.prototype.drawLabels = function(parentName) {
 
     // text
     labelNode.append('text')
-      .text(textEllipsis(node.desc, 10))
+      .text(textEllipsis(node.desc, 7))
       .attr('x', function() {
         if (node.name === self.excludeNodes[1]) {
           return node.path.start.x + (self.label.padding * 1.3) ;
@@ -841,8 +840,7 @@ Roadmap.prototype.drawLabels = function(parentName) {
         }
         return node.path.interBot.y + (self.label.height / 3);
       })
-      .attr('style', 'font-size: 10px')
-      .attr('class', 'taskText');
+      .attr('class', 'labelText');
   };
   d3.map(nodesToAddLabel, function(node) {
     drawLabel(node);
@@ -889,7 +887,7 @@ Roadmap.prototype.updateHeader = function(parentName) {
   });
   var titleEle = $('#' + self.IDs.TITLE);
   var descEle = $('#' + self.IDs.DESC);
-  titleEle.text(target.name).removeClass('active');
+  titleEle.text(parseNodeName(target.name)).removeClass('active');
   descEle.text(target.desc);
 };
 
