@@ -6,7 +6,7 @@ var d3 = window.d3;
 // roadmap chart
 var Roadmap = function(payload) {
   this.payload = payload;
-  this.excludeNodes = ['EXTERNAL', 'DOWN_STREAM'];
+  this.excludeNodes = [ 'EXTERNAL', 'DOWN_STREAM' ];
   this.excludeTarget = 'END';
   this.IDs = {
     'NAV': 'RoadmapNav',
@@ -21,7 +21,7 @@ var Roadmap = function(payload) {
     'DESC': 'RoadmapDesc'
   };
   this.nodes = [];
-  this.nodeColors = ['blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
+  this.nodeColors = [ 'blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
     'coral-1', 'coral-2', 'coral-3', 'pink-1', 'pink-2', 'pink-3',
     'green-1', 'green-2', 'green-3', 'indigo-1', 'indigo-2', 'indigo-3',
     'cyan-1', 'cyan-2', 'cyan-3', 'turquoise-1', 'turquoise-2', 'turquoise-3',
@@ -134,14 +134,14 @@ var isBoxDown = function(target, node) {
 Roadmap.prototype.timeScale = function(val) {
   var self = this;
   return (d3.time.scale()
-    .domain([d3.min(self.taskList, function(d) {
+    .domain([ d3.min(self.taskList, function(d) {
         return self.dateFormat.parse(d.startDate);
       }),
       d3.max(self.taskList, function(d) {
         return self.dateFormat.parse(d.endDate);
       })
     ])
-    .range([0, self.svg.width - 150]))(val);
+    .range([ 0, self.svg.width - 150 ]))(val);
 };
 
 // prepare data
@@ -199,7 +199,7 @@ Roadmap.prototype.getPathClassList = function(targetEle, isLevelUp) {
 };
 
 Roadmap.prototype.openNavList = function(source, fromBox) {
-  var removeClasses = ['listClose'];
+  var removeClasses = [ 'listClose' ];
   if (fromBox) {
     source = '#' + this.getNodeName(source);
     removeClasses.push('highlight');
@@ -370,7 +370,7 @@ Roadmap.prototype.handleHeaderEvents = function() {
 
 Roadmap.prototype.drawNav = function() {
   var self = this;
-  var classes = ['roadmapNav'];
+  var classes = [ 'roadmapNav' ];
   this.targetEle.append(createDivElement(this.IDs.NAV, classes));
   var rootEle = $('#' + this.IDs.NAV);
   this.nodes.forEach(function(node, i) {
@@ -378,7 +378,7 @@ Roadmap.prototype.drawNav = function() {
       return;
     }
     var parentEle = node.parent.length > 0 ? $('#' + node.parent) : rootEle;
-    var classes = [node.color];
+    var classes = [ node.color ];
     if (i === 0) {
       classes.push('listTitle');
     } else {
@@ -409,21 +409,21 @@ Roadmap.prototype.setTaskList = function(parentName) {
 
 Roadmap.prototype.prepareChart = function() {
   var self = this;
-  var roadmapChartBase = createDivElement(self.IDs.CHART_BASE, ['roadmapChart-b']);
-  var roadmapChart = createDivElement(self.IDs.CHART, ['roadmapChart']);
+  var roadmapChartBase = createDivElement(self.IDs.CHART_BASE, [ 'roadmapChart-b' ]);
+  var roadmapChart = createDivElement(self.IDs.CHART, [ 'roadmapChart' ]);
   self.targetEle.append(roadmapChart.append(roadmapChartBase));
   self.svg.width = roadmapChartBase.width();
   self.dateFormat = d3.time.format('%Y-%m-%d');
   var chartBaseId = '#' + self.IDs.CHART_BASE;
 
   // breadcum element
-  var breadcumEle = createDivElement(self.IDs.BREADCUM, ['roadmapBreadcrumb']);
+  var breadcumEle = createDivElement(self.IDs.BREADCUM, [ 'roadmapBreadcrumb' ]);
   $(chartBaseId).append(breadcumEle);
 
   // header element
-  var header = createDivElement(null, ['roadmapChart-h']);
-  var headerTitle = createDivElement(self.IDs.TITLE, ['roadmapChart-h-t']);
-  var headerDesc = createDivElement(self.IDs.DESC, ['roadmapChart-h-desc']);
+  var header = createDivElement(null, [ 'roadmapChart-h' ]);
+  var headerTitle = createDivElement(self.IDs.TITLE, [ 'roadmapChart-h-t' ]);
+  var headerDesc = createDivElement(self.IDs.DESC, [ 'roadmapChart-h-desc' ]);
   header.append(headerTitle);
   header.append(headerDesc);
   $(chartBaseId).append(header);
@@ -701,7 +701,7 @@ Roadmap.prototype.drawLines = function() {
       path.interTop.x = path.interBot.x;
       path.interTop.y = path.end.y;
     }
-    return [path.start, path.interBot, path.interTop, path.end];
+    return [ path.start, path.interBot, path.interTop, path.end ];
   };
 
   var computeDownStreamPath = function(target, id) {
@@ -722,7 +722,7 @@ Roadmap.prototype.drawLines = function() {
     path.end.x = path.start.x;
     path.end.y = self.svg.height;
     addPathInfo(id, path);
-    return [path.start, path.end];
+    return [ path.start, path.end ];
   };
 
   var drawLine = function(node, path, isDownStream) {
@@ -870,7 +870,7 @@ Roadmap.prototype.updateBreadcum = function(parentName) {
   self.breadcumList = self.breadcumList.concat(list);
   var target = $('#' + self.IDs.BREADCUM);
   self.breadcumList.forEach(function(item) {
-    var breadcumItem = createDivElement(null, ['breadcrumb-i'], item);
+    var breadcumItem = createDivElement(null, [ 'breadcrumb-i' ], item);
     target.append(breadcumItem);
   });
 };
