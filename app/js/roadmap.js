@@ -82,6 +82,24 @@ var addDate = function(dateStr, num) {
   return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + parseInt(num));
 };
 
+var parseDate = function(dateStr) {
+  var makeDoubleDigit = function(num) {
+    if (num.length === 1) {
+      num = '0' + num;
+    }
+    return num;
+  };
+
+  if (!dateStr) {
+    var date = new Date();
+    dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  }
+  dateStr = dateStr.split('-');
+  dateStr[1] = makeDoubleDigit(dateStr[1]);
+  dateStr[2] = makeDoubleDigit(dateStr[2]);
+  return dateStr.join('-');
+};
+
 var parseNodeName = function(name) {
   name = name.replace(/_/g, ' ').toLowerCase();
   return name[0].toUpperCase() + name.slice(1);
@@ -155,11 +173,13 @@ Roadmap.prototype.init = function() {
       parent: parent || '',
       target: node.target || '',
       daysCompleted: node.daysCompleted || 0,
-      startDate: node.startDate || null,
-      endDate: addDate(node.startDate, self.payload.interval),
+      startDate: parseDate(node.startDate),
       section: node.section || null,
       status: node.status || null
     };
+
+    nodeInfo.endDate = addDate(nodeInfo.startDate, self.payload.interval)
+
     if (node.name === self.excludeNodes[0]) {
       nodeInfo.id = node.id;
     }
@@ -187,7 +207,11 @@ Roadmap.prototype.init = function() {
 Roadmap.prototype.getNodeName = function(source) {
   var self = this;
   source = source instanceof jQuery ? source : $(source);
-  return source.children('.box').attr('id').slice(self.taskPrefix.ID.length);
+  var nodeId = source.children('.box').attr('id');
+  if (!nodeId) {
+    return;
+  }
+  return nodeId.slice(self.taskPrefix.ID.length);
 };
 
 Roadmap.prototype.getPathClassList = function(targetEle, isLevelUp) {
@@ -533,7 +557,7 @@ Roadmap.prototype.drawBoxes = function() {
     if (!d.status) {
       self.preparePattern(d);
     }
-    this.remove();
+    $(this).remove();
   });
 
   var boxBase = box.append('g')
@@ -982,7 +1006,7 @@ Roadmap.prototype.drawChart = function(parentName) {
 
 Roadmap.prototype.resetChart = function() {
   $('#' + this.IDs.LABEL_GRP).remove();
-  $('#' + this.IDs.CHART_SVG_GRP).html('');
+  $('#' + this.IDs.CHART_SVG_GRP).children().remove();
 };
 
 Roadmap.prototype.draw = function() {
