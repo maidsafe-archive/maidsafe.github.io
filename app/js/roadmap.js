@@ -110,37 +110,27 @@ var textEllipsis = function(str, length) {
   return length < str.length ? (str.slice(0, length) + '...') : str;
 };
 
-var addSvgClass = function(self, newClass) {
-  if (!self || !newClass) {
+var toggleSvgClass = function(self, className, toggle) {
+  if (!self || !className) {
     return;
   }
-  var classNames = self.attr('class');
-  if (!classNames) {
+  var classList = self.attr('class');
+  if (!classList) {
     return;
   }
-  classNames = classNames.split(' ');
-  if (classNames.indexOf(newClass) === -1) {
-    classNames.push(newClass);
+  classList = classList.split(' ');
+  var index = classList.indexOf(className);
+  if (!toggle) {
+    if (index !== -1) {
+      classList.splice(index, 1);
+    }
+  } else {
+    if (index === -1) {
+      classList.push(className);
+    }
   }
-  classNames = classNames.join(' ');
-  self.attr('class', classNames);
-};
-
-var removeSvgClass = function(self, classToRemove) {
-  if (!self || !classToRemove) {
-    return;
-  }
-  var classNames = self.attr('class');
-  if (!classNames) {
-    return;
-  }
-  classNames = classNames.split(' ');
-  var index = classNames.indexOf(classToRemove);
-  if (index !== -1) {
-    classNames.splice(index, 1);
-  }
-  classNames = classNames.join(' ');
-  self.attr('class', classNames);
+  classList = classList.join(' ');
+  self.attr('class', classList);
 };
 
 var isBoxDown = function(target, node) {
@@ -163,7 +153,7 @@ Roadmap.prototype.timeScale = function(val) {
 };
 
 // prepare data
-Roadmap.prototype.init = function() {
+Roadmap.prototype.prepareNodes = function () {
   var self = this;
   var prepareNode = function(node, parent) {
     var nodeInfo = {
@@ -204,6 +194,10 @@ Roadmap.prototype.init = function() {
   addChild(this.payload.data);
 };
 
+Roadmap.prototype.init = function() {
+  this.prepareNodes();
+};
+
 Roadmap.prototype.getNodeName = function(source) {
   var self = this;
   source = source instanceof jQuery ? source : $(source);
@@ -232,22 +226,32 @@ Roadmap.prototype.openNavList = function(source, fromBox) {
   $(source).removeClass(removeClasses.join(' '));
 };
 
-Roadmap.prototype.highlightList = function(source, fromBox) {
+Roadmap.prototype.toggleListHighlight = function(source, toggle, fromBox) {
   var self = this;
   if (fromBox) {
     var taskId = self.getNodeName(source);
     source = '#' + taskId;
   }
-  $(source).addClass('highlight');
+  return toggle ? $(source).addClass('highlight') : $(source).removeClass('highlight');
 };
 
-Roadmap.prototype.removeListHighlight = function(source, fromBox) {
+Roadmap.prototype.togglePathHighlight = function(taskId, toggle) {
   var self = this;
-  if (fromBox) {
-    var taskId = self.getNodeName(source);
-    source = '#' + taskId;
+  var pathId = self.taskPrefix.PATH + taskId;
+  var targetEle = $('#' + pathId);
+  if (!targetEle.is('path')) {
+    return;
   }
-  $(source).removeClass('highlight');
+  var pathClass = self.getPathClassList(targetEle, toggle);
+  targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
+  var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
+  if (!toggle) {
+    toggleSvgClass(targetEle, 'highlight', false);
+    toggleSvgClass(targetEleDownStream, 'highlight', false);
+    return;
+  }
+  toggleSvgClass(targetEle, 'highlight', true);
+  toggleSvgClass(targetEleDownStream, 'highlight', true);
 };
 
 Roadmap.prototype.isTaskValid = function(taskName) {
@@ -272,7 +276,8 @@ Roadmap.prototype.taskHasChildren = function(source, isBox) {
   });
   return check;
 };
-Roadmap.prototype.highlightTask = function(source, isList) {
+
+Roadmap.prototype.toggleTaskHighlight = function(source, toggle, isList) {
   var self = this;
   if (isList) {
     var id = $(source).attr('id');
@@ -281,53 +286,10 @@ Roadmap.prototype.highlightTask = function(source, isList) {
     }
     source = $('#' + self.taskPrefix.ID + id).parent('.boxBase');
   }
-
-  var highlightPath = function(taskId) {
-    var pathId = self.taskPrefix.PATH + taskId;
-    var targetEle = $('#' + pathId);
-    if (!targetEle.is('path')) {
-      return;
-    }
-    addSvgClass(targetEle, 'highlight');
-    var pathClass = self.getPathClassList(targetEle, true);
-    targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
-    var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
-    addSvgClass(targetEleDownStream, 'highlight');
-  };
-  addSvgClass($(source), 'highlight');
+  toggleSvgClass($(source), 'highlight', toggle);
   var taskId = self.getNodeName(source);
-  highlightPath(taskId);
-  self.highlightList(source, true);
-};
-
-Roadmap.prototype.removeTaskHighlight = function(source, isList) {
-  var self = this;
-  if (isList) {
-    var id = $(source).attr('id');
-    if (!self.isTaskValid(id)) {
-      return;
-    }
-    source = $('#' + self.taskPrefix.ID + id).parent('.boxBase');
-  }
-
-  var removePathHighlight = function(taskId) {
-    var pathId = self.taskPrefix.PATH + taskId;
-    var targetEle = $('#' + pathId);
-    if (!targetEle.is('path')) {
-      return;
-    }
-    removeSvgClass(targetEle, 'highlight');
-    var pathClass = self.getPathClassList(targetEle, false);
-    targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
-    var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
-    if (targetEleDownStream.is('path')) {
-      removeSvgClass(targetEleDownStream, 'highlight');
-    }
-  };
-  removeSvgClass($(source), 'highlight');
-  var taskId = self.getNodeName(source);
-  removePathHighlight(taskId);
-  self.removeListHighlight(source, true);
+  self.togglePathHighlight(taskId, toggle);
+  self.toggleListHighlight(source, toggle, true);
 };
 
 Roadmap.prototype.handleListEvents = function() {
@@ -344,20 +306,20 @@ Roadmap.prototype.handleListEvents = function() {
       return;
     }
     self.openNavList(this);
-    self.removeTaskHighlight(this, true);
+    self.toggleTaskHighlight(this, false, true);
     self.drawChart($(this).attr('id'));
   });
 
   $('.listBase').mouseover(function(e) {
     e.stopPropagation();
-    self.highlightList(this);
-    self.highlightTask(this, true);
+    self.toggleListHighlight(this, true);
+    self.toggleTaskHighlight(this, true, true);
   });
 
   $('.listBase').mouseout(function(e) {
     e.stopPropagation();
-    self.removeListHighlight(this);
-    self.removeTaskHighlight(this, true);
+    self.toggleListHighlight(this, false);
+    self.toggleTaskHighlight(this, false, true);
   });
 };
 
@@ -375,12 +337,12 @@ Roadmap.prototype.handleBoxEvents = function() {
 
   $('.boxBase').mouseover(function(e) {
     e.stopPropagation();
-    self.highlightTask(this);
+    self.toggleTaskHighlight(this, true);
   });
 
   $('.boxBase').mouseout(function(e) {
     e.stopPropagation();
-    self.removeTaskHighlight(this);
+    self.toggleTaskHighlight(this, false);
   });
 };
 
