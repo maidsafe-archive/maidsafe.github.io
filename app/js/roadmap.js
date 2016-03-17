@@ -228,6 +228,11 @@ Roadmap.prototype.init = function() {
   $(window).on('hashchange', function() {
     var taskId = location.hash.slice(1).toUpperCase();
     self.drawChart(taskId);
+    if (taskId) {
+      self.openNavList($('#' + taskId));
+    } else {
+      $('#' + self.nodes[0].name).children().addClass('listClose');
+    }
   });
 };
 
