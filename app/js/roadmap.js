@@ -3,67 +3,6 @@ var $ = window.$;
 var jQuery = window.jQuery;
 var d3 = window.d3;
 
-// roadmap chart
-var Roadmap = function(payload) {
-  this.payload = payload;
-  this.excludeNodes = [ 'EXTERNAL', 'DOWN_STREAM' ];
-  this.excludeTarget = 'END';
-  this.IDs = {
-    'NAV': 'RoadmapNav',
-    'CHART': 'RoadmapChart',
-    'CHART_BASE': 'RoadmapChartBase',
-    'CHART_SVG': 'RoadmapChartSvg',
-    'CHART_SVG_GRP': 'RoadmapChartSvgGroup',
-    'LABEL_GRP': 'LabelGroup',
-    'BREADCUM': 'RoadmapBreadcum',
-    'PROGRESS': 'RoadmapProgress',
-    'TITLE': 'RoadmapTitle',
-    'DESC': 'RoadmapDesc'
-  };
-  this.nodes = [];
-  this.nodeColors = [ 'blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
-    'coral-1', 'coral-2', 'coral-3', 'pink-1', 'pink-2', 'pink-3',
-    'green-1', 'green-2', 'green-3', 'indigo-1', 'indigo-2', 'indigo-3',
-    'cyan-1', 'cyan-2', 'cyan-3', 'turquoise-1', 'turquoise-2', 'turquoise-3',
-    'grey-1', 'grey-2', 'grey-3', 'purple-1', 'purple-2', 'purple-3', ''
-  ];
-  this.breadcumList = [];
-  this.perUnit = 22;
-  this.progress = {
-    height: 10
-  };
-  this.taskPrefix = {
-    'ID': '_TASK_',
-    'CLASS': 'svg-',
-    'LINE': 'line-',
-    'ARROW': 'ARROW_',
-    'PATH': 'PATH_',
-    'STATUS_BOX': 'STATUS_',
-    'BOX_TEXT': 'BOX_TEXT_'
-  };
-  this.svg = {
-    width: 0,
-    height: 600,
-    padding: 15
-  };
-  this.box = {
-    width: 10,
-    height: 22,
-    strokeWidth: 2
-  };
-  this.label = {
-    width: 65,
-    height: 12,
-    padding: 8,
-    borderRadius: 3
-  };
-  this.boxPattern = {
-    path: '22,0 0,22 43,22 62,0'
-  };
-  this.taskList = [];
-  this.dateFormat = null;
-};
-
 var createDivElement = function(id, classes, text) {
   id = id || '';
   classes = typeof classes === 'object' && classes.length > 0 ? classes.join(' ') : '';
@@ -139,6 +78,89 @@ var isBoxDown = function(target, node) {
     (target.section < node.section);
 };
 
+var isDesktopScreen = function() {
+  return $(window).width() > 1024;
+};
+
+var changeLocation = function(taskName) {
+  location.assign('#' + taskName.toLowerCase());
+};
+
+var resetLocation = function() {
+  location.hash = '';
+};
+resetLocation();
+
+// roadmap chart
+var Roadmap = function(payload) {
+  this.payload = payload;
+  this.isChartReady = false;
+  this.isMobileChartReady = false;
+  this.excludeNodes = [ 'EXTERNAL', 'DOWN_STREAM' ];
+  this.excludeTarget = 'END';
+  this.IDs = {
+    'NAV': 'RoadmapNav',
+    'CHART': 'RoadmapChart',
+    'CHART_BASE': 'RoadmapChartBase',
+    'CHART_SVG': 'RoadmapChartSvg',
+    'CHART_SVG_GRP': 'RoadmapChartSvgGroup',
+    'LABEL_GRP': 'LabelGroup',
+    'BREADCUM': 'RoadmapBreadcum',
+    'PROGRESS': 'RoadmapProgress',
+    'TITLE': 'RoadmapTitle',
+    'DESC': 'RoadmapDesc',
+    'MOBILE_BASE': 'RoadmapChartMobileView',
+    'MOBILE_MENU': 'RoadmapChartMobileMenu',
+    'SUB_FEATURES': 'RoadmapChartSubFeatures',
+    'RELIED_ON_FEATURES': 'RoadmapChartReliedOnFeatures',
+    'RELY_THIS_FEATURES': 'RoadmapChartRelyThisFeatures'
+  };
+  this.nodes = [];
+  this.nodeColors = [ 'blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
+    'coral-1', 'coral-2', 'coral-3', 'pink-1', 'pink-2', 'pink-3',
+    'green-1', 'green-2', 'green-3', 'indigo-1', 'indigo-2', 'indigo-3',
+    'cyan-1', 'cyan-2', 'cyan-3', 'turquoise-1', 'turquoise-2', 'turquoise-3',
+    'grey-1', 'grey-2', 'grey-3', 'purple-1', 'purple-2', 'purple-3', ''
+  ];
+  this.breadcumList = [];
+  this.perUnit = 22;
+  this.progress = {
+    height: 10
+  };
+  this.taskPrefix = {
+    'ID': '_TASK_',
+    'CLASS': 'svg-',
+    'LINE': 'line-',
+    'ARROW': 'ARROW_',
+    'PATH': 'PATH_',
+    'STATUS_BOX': 'STATUS_',
+    'BOX_TEXT': 'BOX_TEXT_',
+    'FEATURE_ITEM': 'features-',
+    'FEATURE_ID': 'FEATURE_'
+  };
+  this.svg = {
+    width: 0,
+    height: 600,
+    padding: 15
+  };
+  this.box = {
+    width: 10,
+    height: 22,
+    strokeWidth: 2
+  };
+  this.label = {
+    width: 65,
+    height: 12,
+    padding: 8,
+    borderRadius: 3
+  };
+  this.boxPattern = {
+    path: '22,0 0,22 43,22 62,0'
+  };
+  this.taskList = [];
+  this.dateFormat = null;
+};
+
 Roadmap.prototype.timeScale = function(val) {
   var self = this;
   return (d3.time.scale()
@@ -195,7 +217,18 @@ Roadmap.prototype.prepareNodes = function () {
 };
 
 Roadmap.prototype.init = function() {
-  this.prepareNodes();
+  var self = this;
+  self.prepareNodes();
+  $(window).on('resize', function() {
+    resetLocation();
+    self.clearChartSection();
+    self.cleanMobileView();
+    self.drawChart();
+  });
+  $(window).on('hashchange', function() {
+    var taskId = location.hash.slice(1).toUpperCase();
+    self.drawChart(taskId);
+  });
 };
 
 Roadmap.prototype.getNodeName = function(source) {
@@ -264,11 +297,9 @@ Roadmap.prototype.isTaskValid = function(taskName) {
   return isValid;
 };
 
-Roadmap.prototype.taskHasChildren = function(source, isBox) {
+Roadmap.prototype.taskHasChildren = function(taskId) {
   var self = this;
   var check = false;
-  var taskId = null;
-  taskId = isBox ? self.getNodeName(source) : $(source).attr('id');
   self.nodes.forEach(function(node) {
     if (node.parent === taskId) {
       check = true;
@@ -294,20 +325,36 @@ Roadmap.prototype.toggleTaskHighlight = function(source, toggle, isList) {
 
 Roadmap.prototype.handleListEvents = function() {
   var self = this;
+  var hideNav = function() {
+    $('#' + self.IDs.NAV).removeClass('open');
+  };
+
   $('.listTitle').on('click', function(e) {
     e.stopPropagation();
     $(this).children().addClass('listClose');
-    self.drawChart($(this).attr('id'));
+    if (!isDesktopScreen()) {
+      hideNav();
+      var taskName = $(this).attr('id');
+      changeLocation(taskName);
+      return;
+    }
+    self.drawChart();
   });
 
   $('.listBase').on('click', function(e) {
     e.stopPropagation();
-    if (!self.taskHasChildren(this)) {
+    var taskName = $(this).attr('id');
+    if (!self.taskHasChildren(taskName)) {
       return;
     }
     self.openNavList(this);
     self.toggleTaskHighlight(this, false, true);
-    self.drawChart($(this).attr('id'));
+    if (!isDesktopScreen()) {
+      hideNav();
+      changeLocation(taskName);
+      return;
+    }
+    self.drawChart(taskName);
   });
 
   $('.listBase').mouseover(function(e) {
@@ -328,7 +375,7 @@ Roadmap.prototype.handleBoxEvents = function() {
   $('.boxBase').on('click', function(e) {
     e.stopPropagation();
     var taskId = self.getNodeName(this);
-    if (!self.taskHasChildren(this, true)) {
+    if (!self.taskHasChildren(taskId)) {
       return;
     }
     self.openNavList(this, true);
@@ -393,6 +440,32 @@ Roadmap.prototype.setTaskList = function(parentName) {
   self.taskList = tasks;
 };
 
+// add breadcum element
+Roadmap.prototype.addBreadcum = function(parentId) {
+  var self = this;
+  var breadcumEle = createDivElement(self.IDs.BREADCUM, [ 'roadmapBreadcrumb' ]);
+  $(parentId).append(breadcumEle);
+};
+
+// add header element
+Roadmap.prototype.addHeader = function(parentId) {
+  var self = this;
+  var header = createDivElement(null, [ 'roadmapChart-h' ]);
+  var headerTitle = createDivElement(self.IDs.TITLE, [ 'roadmapChart-h-t' ]);
+  var headerDesc = createDivElement(null, [ 'roadmapChart-h-desc' ]);
+  var headerDescCntx = createDivElement(self.IDs.DESC, []);
+  if (!isDesktopScreen()) {
+    var menuicon = createDivElement(self.IDs.MOBILE_MENU, [ 'roadmapChart-h-menu' ]);
+    header.append(menuicon);
+    var descTitle = createDivElement(null, [ 'roadmapChart-h-desc-title' ]);
+    descTitle.text('Description');
+    headerDesc.append(descTitle);
+  }
+  header.append(headerTitle);
+  header.append(headerDesc.append(headerDescCntx));
+  $(parentId).append(header);
+};
+
 Roadmap.prototype.prepareChart = function() {
   var self = this;
   var roadmapChartBase = createDivElement(self.IDs.CHART_BASE, [ 'roadmapChart-b' ]);
@@ -401,19 +474,8 @@ Roadmap.prototype.prepareChart = function() {
   self.svg.width = roadmapChartBase.width();
   self.dateFormat = d3.time.format('%Y-%m-%d');
   var chartBaseId = '#' + self.IDs.CHART_BASE;
-
-  // breadcum element
-  var breadcumEle = createDivElement(self.IDs.BREADCUM, [ 'roadmapBreadcrumb' ]);
-  $(chartBaseId).append(breadcumEle);
-
-  // header element
-  var header = createDivElement(null, [ 'roadmapChart-h' ]);
-  var headerTitle = createDivElement(self.IDs.TITLE, [ 'roadmapChart-h-t' ]);
-  var headerDesc = createDivElement(self.IDs.DESC, [ 'roadmapChart-h-desc' ]);
-  header.append(headerTitle);
-  header.append(headerDesc);
-  $(chartBaseId).append(header);
-
+  self.addBreadcum(chartBaseId);
+  self.addHeader(chartBaseId);
   d3.selectAll(chartBaseId)
     .append('svg')
     .attr('id', self.IDs.CHART_SVG)
@@ -422,6 +484,8 @@ Roadmap.prototype.prepareChart = function() {
     .append('g')
     .attr('id', self.IDs.CHART_SVG_GRP)
     .attr('transform', 'translate(' + self.svg.padding + ',' + (self.svg.padding + self.progress.height) + ')');
+
+  self.isChartReady = true;
 };
 
 Roadmap.prototype.prepareTaskStatus = function() {
@@ -951,7 +1015,32 @@ Roadmap.prototype.drawProgress = function(parentName) {
     .attr('height', self.progress.height);
 };
 
+Roadmap.prototype.clearChartSection = function() {
+  $('#' + this.IDs.CHART).remove();
+  this.isChartReady = false;
+};
+
+Roadmap.prototype.resetChart = function() {
+  $('#' + this.IDs.LABEL_GRP).remove();
+  $('#' + this.IDs.CHART_SVG_GRP).children().remove();
+};
+
+Roadmap.prototype.initChart = function() {
+  this.prepareChart();
+  this.handleHeaderEvents();
+  this.prepareTaskStatus();
+  this.prepareArrows();
+};
+
 Roadmap.prototype.drawChart = function(parentName) {
+  parentName = parentName || this.nodes[0].name;
+
+  if (!isDesktopScreen()) {
+    return this.drawMobileChart(parentName);
+  }
+  if (!this.isChartReady) {
+    this.initChart();
+  }
   this.setTaskList(parentName);
   if (this.taskList.length === 0) {
     return;
@@ -966,20 +1055,139 @@ Roadmap.prototype.drawChart = function(parentName) {
   this.handleBoxEvents();
 };
 
-Roadmap.prototype.resetChart = function() {
-  $('#' + this.IDs.LABEL_GRP).remove();
-  $('#' + this.IDs.CHART_SVG_GRP).children().remove();
+Roadmap.prototype.resetMobileView = function() {
+  $('.features-list').remove();
+};
+
+Roadmap.prototype.cleanMobileView = function () {
+  $('#' + this.IDs.MOBILE_BASE).remove();
+  this.isMobileChartReady = false;
+};
+
+Roadmap.prototype.addFeatures = function(parentName) {
+  var self = this;
+  var features = {
+    sub: [],
+    reliedOn: [],
+    relyThis: []
+  };
+
+  var mobileBase = $('#' + self.IDs.MOBILE_BASE);
+
+  var createBase = function(listId) {
+    if(!$('#' + listId).is('#' + listId)) {
+      mobileBase.append(createDivElement(listId, [ 'features-list' ]));
+    }
+  };
+
+  var addTitle = function(title, listId) {
+    if(!$('#' + listId).is('#' + listId)) {
+      return;
+    }
+    $('#' + listId).append('<h3 class="features-list-h">' + title + '</h3>');
+  };
+
+  var addList = function(title, list, listId) {
+    createBase(listId);
+    addTitle(title, listId);
+    var listBase = $('#' + listId);
+    list.forEach(function(item) {
+      var listEle = createDivElement(self.taskPrefix.FEATURE_ID + item.name, [ 'features-list-i', self.taskPrefix.FEATURE_ITEM + item.color ]);
+      listEle.text(parseNodeName(item.name));
+      listBase.append(listEle);
+    });
+  };
+
+  self.nodes.forEach(function(node) {
+    if (node.parent === parentName && node.name === self.excludeNodes[0]) {
+      return features.reliedOn.push(node);
+    }
+    if (node.parent === parentName && node.name === self.excludeNodes[1]) {
+      return features.relyThis.push(node);
+    }
+    if (node.parent === parentName) {
+      return features.sub.push(node);
+    }
+  });
+  if (features.sub.length > 0) {
+    addList('Sub-fetures:', features.sub, self.IDs.SUB_FEATURES);
+  }
+  if (features.reliedOn.length > 0) {
+    addList('Features relied on:', features.reliedOn, self.IDs.RELIED_ON_FEATURES);
+  }
+  if (features.relyThis.length > 0) {
+    addList('Features that rely this:', features.relyThis, self.IDs.RELY_THIS_FEATURES);
+  }
+};
+
+Roadmap.prototype.setMobileHeader = function() {
+  var self = this;
+  var targetEle = $('#' + self.IDs.MOBILE_BASE);
+  var headerBase = createDivElement('RoadmapMobileHeader', [ 'mobile-header' ] )
+};
+
+Roadmap.prototype.handleMobileEvents = function() {
+  var self = this;
+  var navEle = $('#' + self.IDs.NAV);
+
+  $('#' + self.IDs.MOBILE_MENU).on('click', function() {
+    navEle.addClass('open');
+  });
+
+  navEle.on('click', function(e) {
+    e.stopPropagation();
+    if (e.target !== this) {
+      return;
+    }
+    navEle.removeClass('open');
+  });
+
+  $(document).on('click', '.features-list-i', function(e) {
+    e.stopPropagation();
+    var taskId = $(this).attr('id').slice(self.taskPrefix.FEATURE_ID.length);
+    if (!self.taskHasChildren(taskId)) {
+      return;
+    }
+    changeLocation(taskId);
+  });
+};
+
+Roadmap.prototype.prepareMobileViewChart = function() {
+  var self = this;
+  self.clearChartSection();
+
+  //  set navigation
+  var navEle = $('#' + self.IDs.NAV);
+  var navBgClassList = [ 'roadmapNav-bg' ];
+  if (navEle.has('.' + navBgClassList[0]).length === 0) {
+    var navBg = createDivElement(null, navBgClassList);
+    navEle.append(navBg);
+  }
+
+  var mobileBase = createDivElement(self.IDs.MOBILE_BASE, [ 'roadmapChartMobile-b' ]);
+  self.targetEle.append(mobileBase);
+  self.addBreadcum('#' + self.IDs.MOBILE_BASE);
+  self.addHeader('#' + self.IDs.MOBILE_BASE);
+  self.handleMobileEvents();
+  self.isMobileChartReady = true;
+};
+
+Roadmap.prototype.drawMobileChart = function(parentName) {
+  var self = this;
+  if (!self.isMobileChartReady) {
+    self.prepareMobileViewChart();
+  }
+  self.resetMobileView();
+  self.updateBreadcum(parentName);
+  self.updateHeader(parentName);
+  self.addFeatures(parentName);
 };
 
 Roadmap.prototype.draw = function() {
   this.targetEle = $(this.payload.target);
   this.init();
   this.drawNav();
-  this.prepareChart();
-  this.handleHeaderEvents();
-  this.prepareTaskStatus();
-  this.prepareArrows();
-  this.drawChart(this.nodes[0].name);
+  this.drawChart();
 };
 
 $(function() {
