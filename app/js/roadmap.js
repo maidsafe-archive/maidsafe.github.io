@@ -2,6 +2,7 @@
 var $ = window.$;
 var jQuery = window.jQuery;
 var d3 = window.d3;
+var document = window.document;
 
 var createDivElement = function(id, classes, text) {
   id = id || '';
@@ -18,8 +19,8 @@ var addDate = function(dateStr, num) {
     throw 'num is not Numeric';
   }
   var date = new Date(dateStr);
-  dateVal = new Date(date.getTime() + parseInt(num)*24*60*60*1000);
-  return dateVal.getFullYear() + '-' + (dateVal.getMonth() + 1) + '-' + (dateVal.getDate());
+  var newDate = new Date(date.getTime() + (parseInt(num) * 24 * 60 * 60 * 1000));
+  return newDate.getFullYear() + '-' + (newDate.getMonth() + 1) + '-' + (newDate.getDate());
 };
 
 var parseDate = function(dateStr) {
@@ -84,11 +85,11 @@ var isDesktopScreen = function() {
 };
 
 var changeLocation = function(taskName) {
-  location.assign('#' + taskName.toLowerCase());
+  window.location.assign('#' + taskName.toLowerCase());
 };
 
 var resetLocation = function() {
-  location.hash = '';
+  window.location.hash = '';
 };
 
 resetLocation();
@@ -166,7 +167,7 @@ var Roadmap = function(payload) {
 Roadmap.prototype.getNode = function(nodeName) {
   var targetNode = null;
   this.nodes.forEach(function(node) {
-    if(node.name === nodeName) {
+    if (node.name === nodeName) {
       targetNode = node;
     }
   });
@@ -175,7 +176,7 @@ Roadmap.prototype.getNode = function(nodeName) {
 
 Roadmap.prototype.getStartDate = function(node) {
   var self = this;
-  var getSourceNodeStartDate = function(nodeName, nodeSection) {
+  var getSourceNodeStartDate = function(nodeName) {
     var startDate = null;
     self.nodes.forEach(function(node) {
       if ((node.target === nodeName)) {
@@ -188,21 +189,21 @@ Roadmap.prototype.getStartDate = function(node) {
   var getPreviousNode = function(targetNode) {
     var prevNode = null;
     self.nodes.forEach(function(node) {
-      if ((node.order < targetNode.order) && (node.section < targetNode.section) && (node.parent === targetNode.parent)) {
+      if ((node.order < targetNode.order) && (node.section < targetNode.section) &&
+        (node.parent === targetNode.parent)) {
         prevNode = node;
       }
     });
     return prevNode;
   };
 
-  if(node.order === 1) {
+  if (node.order === 1) {
     var parentNode = self.getNode(node.parent);
-    if(!parentNode) {
+    if (!parentNode) {
       return;
     }
     return parentNode.startDate;
   }
-  var startDate = null;
   var prevNode = getPreviousNode(node);
   var downStreamNodes = [];
   if (prevNode) {
@@ -251,7 +252,7 @@ Roadmap.prototype.timeScale = function(val) {
 };
 
 // prepare data
-Roadmap.prototype.prepareNodes = function () {
+Roadmap.prototype.prepareNodes = function() {
   var self = this;
   var prepareNode = function(node, parent) {
     var nodeInfo = {
@@ -302,7 +303,7 @@ Roadmap.prototype.init = function() {
     self.drawChart();
   });
   $(window).on('hashchange', function() {
-    var taskId = location.hash.slice(1).toUpperCase();
+    var taskId = window.location.hash.slice(1).toUpperCase();
     self.drawChart(taskId);
     if (taskId) {
       self.openNavList($('#' + taskId));
@@ -738,7 +739,7 @@ Roadmap.prototype.getIncomings = function(nodeName) {
   var self = this;
   var incomings = [];
   self.nodes.forEach(function(task) {
-    if (task.target == nodeName) {
+    if (task.target === nodeName) {
       incomings.push(task);
     }
   });
@@ -1140,7 +1141,7 @@ Roadmap.prototype.resetMobileView = function() {
   $('.features-list').remove();
 };
 
-Roadmap.prototype.cleanMobileView = function () {
+Roadmap.prototype.cleanMobileView = function() {
   $('#' + this.IDs.MOBILE_BASE).remove();
   this.isMobileChartReady = false;
 };
@@ -1156,13 +1157,13 @@ Roadmap.prototype.addFeatures = function(parentName) {
   var mobileBase = $('#' + self.IDs.MOBILE_BASE);
 
   var createBase = function(listId) {
-    if(!$('#' + listId).is('#' + listId)) {
+    if (!$('#' + listId).is('#' + listId)) {
       mobileBase.append(createDivElement(listId, [ 'features-list' ]));
     }
   };
 
   var addTitle = function(title, listId) {
-    if(!$('#' + listId).is('#' + listId)) {
+    if (!$('#' + listId).is('#' + listId)) {
       return;
     }
     $('#' + listId).append('<h3 class="features-list-h">' + title + '</h3>');
@@ -1173,7 +1174,8 @@ Roadmap.prototype.addFeatures = function(parentName) {
     addTitle(title, listId);
     var listBase = $('#' + listId);
     list.forEach(function(item) {
-      var listEle = createDivElement(self.taskPrefix.FEATURE_ID + item.name, [ 'features-list-i', self.taskPrefix.FEATURE_ITEM + item.color ]);
+      var listEle = createDivElement(self.taskPrefix.FEATURE_ID + item.name,
+        [ 'features-list-i', self.taskPrefix.FEATURE_ITEM + item.color ]);
       listEle.text(parseNodeName(item.name));
       listBase.append(listEle);
     });
@@ -1199,12 +1201,6 @@ Roadmap.prototype.addFeatures = function(parentName) {
   if (features.relyThis.length > 0) {
     addList('Features that rely this:', features.relyThis, self.IDs.RELY_THIS_FEATURES);
   }
-};
-
-Roadmap.prototype.setMobileHeader = function() {
-  var self = this;
-  var targetEle = $('#' + self.IDs.MOBILE_BASE);
-  var headerBase = createDivElement('RoadmapMobileHeader', [ 'mobile-header' ] )
 };
 
 Roadmap.prototype.handleMobileEvents = function() {
