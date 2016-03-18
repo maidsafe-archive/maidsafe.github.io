@@ -18,7 +18,8 @@ var addDate = function(dateStr, num) {
     throw 'num is not Numeric';
   }
   var date = new Date(dateStr);
-  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + parseInt(num));
+  dateVal = new Date(date.getTime() + parseInt(num)*24*60*60*1000);
+  return dateVal.getFullYear() + '-' + (dateVal.getMonth() + 1) + '-' + (dateVal.getDate());
 };
 
 var parseDate = function(dateStr) {
@@ -79,7 +80,7 @@ var isBoxDown = function(target, node) {
 };
 
 var isDesktopScreen = function() {
-  return $(window).width() > 1024;
+  return $(window).width() > 1134;
 };
 
 var changeLocation = function(taskName) {
@@ -89,6 +90,7 @@ var changeLocation = function(taskName) {
 var resetLocation = function() {
   location.hash = '';
 };
+
 resetLocation();
 
 // roadmap chart
@@ -161,6 +163,80 @@ var Roadmap = function(payload) {
   this.dateFormat = null;
 };
 
+Roadmap.prototype.getNode = function(nodeName) {
+  var targetNode = null;
+  this.nodes.forEach(function(node) {
+    if(node.name === nodeName) {
+      targetNode = node;
+    }
+  });
+  return targetNode;
+};
+
+Roadmap.prototype.getStartDate = function(node) {
+  var self = this;
+  var getSourceNodeStartDate = function(nodeName, nodeSection) {
+    var startDate = null;
+    self.nodes.forEach(function(node) {
+      if ((node.target === nodeName)) {
+        startDate = node.startDate;
+      }
+    });
+    return startDate;
+  };
+
+  var getPreviousNode = function(targetNode) {
+    var prevNode = null;
+    self.nodes.forEach(function(node) {
+      if ((node.order < targetNode.order) && (node.section < targetNode.section) && (node.parent === targetNode.parent)) {
+        prevNode = node;
+      }
+    });
+    return prevNode;
+  };
+
+  if(node.order === 1) {
+    var parentNode = self.getNode(node.parent);
+    if(!parentNode) {
+      return;
+    }
+    return parentNode.startDate;
+  }
+  var startDate = null;
+  var prevNode = getPreviousNode(node);
+  var downStreamNodes = [];
+  if (prevNode) {
+    downStreamNodes = self.getDownStreamsNodeForTask(prevNode.name);
+  }
+  var incomings = self.getIncomings(node.name);
+  var sourceStartDate = getSourceNodeStartDate(node.name, node.section);
+  var gap = self.payload.interval + incomings.length + downStreamNodes.length + 1;
+  if (!sourceStartDate) {
+    sourceStartDate = self.payload.data.startDate;
+    gap *= node.order > 1 ? (node.order - 1) : node.order;
+  }
+  console.log(node.name, addDate(sourceStartDate, gap));
+  return addDate(sourceStartDate, gap);
+};
+
+Roadmap.prototype.getDownStreamsNodeForTask = function(taskName) {
+  var self = this;
+  var downStreamNodes = [];
+  self.nodes.forEach(function(node) {
+    if ((node.name === self.excludeNodes[1]) && (node.source === taskName)) {
+      downStreamNodes.push(node);
+    }
+  });
+  return downStreamNodes;
+};
+Roadmap.prototype.prepareStartDate = function() {
+  var self = this;
+  self.nodes.forEach(function(node, i) {
+    self.nodes[i].startDate = self.getStartDate(node);
+    self.nodes[i].endDate = addDate(node.startDate, self.payload.interval);
+  });
+};
+
 Roadmap.prototype.timeScale = function(val) {
   var self = this;
   return (d3.time.scale()
@@ -186,11 +262,10 @@ Roadmap.prototype.prepareNodes = function () {
       target: node.target || '',
       daysCompleted: node.daysCompleted || 0,
       startDate: parseDate(node.startDate),
+      order: node.order || null,
       section: node.section || null,
       status: node.status || null
     };
-
-    nodeInfo.endDate = addDate(nodeInfo.startDate, self.payload.interval)
 
     if (node.name === self.excludeNodes[0]) {
       nodeInfo.id = node.id;
@@ -219,6 +294,7 @@ Roadmap.prototype.prepareNodes = function () {
 Roadmap.prototype.init = function() {
   var self = this;
   self.prepareNodes();
+  self.prepareStartDate();
   $(window).on('resize', function() {
     resetLocation();
     self.clearChartSection();
@@ -662,7 +738,7 @@ Roadmap.prototype.getIncomings = function(nodeName) {
   var self = this;
   var incomings = [];
   self.nodes.forEach(function(task) {
-    if (task.target.indexOf(nodeName) !== -1) {
+    if (task.target == nodeName) {
       incomings.push(task);
     }
   });
@@ -1203,4 +1279,9 @@ $(function() {
       interval: 10
     }).draw();
   });
+  // new Roadmap({
+  //   data: jsonData,
+  //   target: '#Roadmap',
+  //   interval: 10
+  // }).draw();
 });

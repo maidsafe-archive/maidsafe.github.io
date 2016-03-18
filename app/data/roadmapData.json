@@ -3,15 +3,15 @@
     "header": 20,
     "daysCompleted": 10,
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
+    "startDate": "2016-1-1",
     "children": [
         {
             "name": "VAULT",
             "color": "blue-2",
             "desc": "Vault node",
             "daysCompleted": 10,
-            "target": [
-                "CLIENT"
-            ],
+            "target": "CLIENT",
+            "order": 1,
             "section": 1,
             "status": 1,
             "startDate": "2016-1-1",
@@ -21,27 +21,21 @@
                     "id": "VAULT_CONFIG_1" ,
                     "color": "indigo-1",
                     "desc": "Vault Config 1",
-                    "target": [
-                        "VAULT_IN_MOBILE"
-                    ]
+                    "target": "VAULT_IN_MOBILE"
                 },
                 {
                     "name": "EXTERNAL",
                     "id": "VAULT_CONFIG_2" ,
                     "color": "turquoise-1",
                     "desc": "Vault Config 2",
-                    "target": [
-                        "VAULT_IN_MOBILE"
-                    ]
+                    "target": "VAULT_IN_MOBILE"
                 },
                 {
                     "name": "EXTERNAL",
                     "id": "VAULT_CONFIG_3",
                     "color": "pink-3",
                     "desc": "Vault Config 3",
-                    "target": [
-                        "PUBLIC_IDENTITY"
-                    ]
+                    "target": "PUBLIC_IDENTITY"
                 },
                 {
                   "name": "DOWN_STREAM",
@@ -51,9 +45,8 @@
                 },
                 {
                     "name": "VAULT_CONFIG",
-                    "target": [
-                        "VAULT_IN_MOBILE"
-                    ],
+                    "target": "VAULT_IN_MOBILE",
+                    "order": 1,
                     "section": 1,
                     "status": 1,
                     "color": "blue-3",
@@ -61,9 +54,8 @@
                 },
                 {
                     "name": "VAULT_IN_MOBILE",
-                    "target": [
-                        "PUBLIC_IDENTITY"
-                    ],
+                    "target": "PUBLIC_IDENTITY",
+                    "order": 2,
                     "section": 2,
                     "status": 1,
                     "color": "blue-3",
@@ -71,9 +63,8 @@
                 },
                 {
                     "name": "PUBLIC_IDENTITY",
-                    "target": [
-                        "PAY_THE_PRODUCER"
-                    ],
+                    "target": "PAY_THE_PRODUCER",
+                    "order": 3,
                     "section": 4,
                     "status": 0,
                     "color": "blue-3",
@@ -81,20 +72,18 @@
                 },
                 {
                     "name": "VAULT_SAMPLE",
-                    "target": [
-                        "PUBLIC_IDENTITY"
-                    ],
-                    "section": 6,
+                    "target": "PUBLIC_IDENTITY",
+                    "order": 2,
+                    "section": 7,
                     "status": 0,
                     "color": "blue-3",
                     "startDate": "2016-1-12"
                 },
                 {
                     "name": "VAULT_NEXT",
-                    "target": [
-                        "PUBLIC_IDENTITY"
-                    ],
-                    "section": 5,
+                    "target": "PUBLIC_IDENTITY",
+                    "order": 2,
+                    "section": 6,
                     "status": 0,
                     "color": "blue-3",
                     "startDate": "2016-1-12"
@@ -105,10 +94,9 @@
             "name": "CLIENT",
             "desc": "Client node",
             "daysCompleted": 0,
-            "target": [
-                "END"
-            ],
+            "target": "END",
             "header": 30,
+            "order": 2,
             "section": 2,
             "status": 0,
             "color": "coral-2",
@@ -117,9 +105,8 @@
             "children" : [
               {
                 "name": "CLIENT_1",
-                "target": [
-                    "CLIENT_2"
-                ],
+                "target": "CLIENT_2",
+                "order": 1,
                 "section": 1,
                 "status": 0,
                 "color": "coral-3",
@@ -127,9 +114,8 @@
               },
               {
                   "name": "CLIENT_2",
-                  "target": [
-                      "CLIENT_3"
-                  ],
+                  "target": "CLIENT_3",
+                  "order": 2,
                   "section": 2,
                   "status": 0,
                   "color": "coral-3",
@@ -137,9 +123,8 @@
               },
               {
                   "name": "CLIENT_3",
-                  "target": [
-                      "END"
-                  ],
+                  "target": "END",
+                  "order": 3,
                   "section": 3,
                   "status": 0,
                   "color": "coral-3",
