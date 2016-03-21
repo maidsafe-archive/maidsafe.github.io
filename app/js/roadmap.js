@@ -211,12 +211,11 @@ Roadmap.prototype.getStartDate = function(node) {
   }
   var incomings = self.getIncomings(node.name);
   var sourceStartDate = getSourceNodeStartDate(node.name, node.section);
-  var gap = self.payload.interval + incomings.length + downStreamNodes.length + 1;
+  var gap = self.payload.interval + incomings.length + downStreamNodes.length + 1 + node.offset;
   if (!sourceStartDate) {
     sourceStartDate = self.payload.data.startDate;
     gap *= node.order > 1 ? (node.order - 1) : node.order;
   }
-  console.log(node.name, addDate(sourceStartDate, gap));
   return addDate(sourceStartDate, gap);
 };
 
@@ -230,6 +229,7 @@ Roadmap.prototype.getDownStreamsNodeForTask = function(taskName) {
   });
   return downStreamNodes;
 };
+
 Roadmap.prototype.prepareStartDate = function() {
   var self = this;
   self.nodes.forEach(function(node, i) {
@@ -265,6 +265,7 @@ Roadmap.prototype.prepareNodes = function() {
       startDate: parseDate(node.startDate),
       order: node.order || null,
       section: node.section || null,
+      offset: node.offset || 0,
       status: node.status || null
     };
 
@@ -297,10 +298,11 @@ Roadmap.prototype.init = function() {
   self.prepareNodes();
   self.prepareStartDate();
   $(window).on('resize', function() {
-    resetLocation();
+    // resetLocation();
     self.clearChartSection();
     self.cleanMobileView();
-    self.drawChart();
+    var taskId = window.location.hash.slice(1).toUpperCase();
+    self.drawChart(taskId);
   });
   $(window).on('hashchange', function() {
     var taskId = window.location.hash.slice(1).toUpperCase();
@@ -414,10 +416,10 @@ Roadmap.prototype.handleListEvents = function() {
   $('.listTitle').on('click', function(e) {
     e.stopPropagation();
     $(this).children().addClass('listClose');
+    var taskName = $(this).attr('id');
+    changeLocation(taskName);
     if (!isDesktopScreen()) {
       hideNav();
-      var taskName = $(this).attr('id');
-      changeLocation(taskName);
       return;
     }
     self.drawChart();
@@ -431,9 +433,9 @@ Roadmap.prototype.handleListEvents = function() {
     }
     self.openNavList(this);
     self.toggleTaskHighlight(this, false, true);
+    changeLocation(taskName);
     if (!isDesktopScreen()) {
       hideNav();
-      changeLocation(taskName);
       return;
     }
     self.drawChart(taskName);

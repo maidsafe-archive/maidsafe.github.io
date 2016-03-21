@@ -38,6 +38,13 @@
                     "target": "PUBLIC_IDENTITY"
                 },
                 {
+                    "name": "EXTERNAL",
+                    "id": "VAULT_CONFIG_4",
+                    "color": "orange-1",
+                    "desc": "Vault Config 3",
+                    "target": "PUBLIC_IDENTITY"
+                },
+                {
                   "name": "DOWN_STREAM",
                   "id": "MPID",
                   "source": "VAULT_IN_MOBILE",
@@ -71,10 +78,61 @@
                     "startDate": "2016-1-28"
                 },
                 {
+                    "name": "VAULT_NEXT_6",
+                    "target": "PUBLIC_IDENTITY",
+                    "order": 2,
+                    "section": 12,
+                    "status": 0,
+                    "offset": 3,
+                    "color": "blue-3",
+                    "startDate": "2016-1-12"
+                },
+                {
+                    "name": "VAULT_NEXT_5",
+                    "target": "PUBLIC_IDENTITY",
+                    "order": 2,
+                    "section": 11,
+                    "offset": 3,
+                    "status": 0,
+                    "color": "blue-3",
+                    "startDate": "2016-1-12"
+                },
+                {
+                    "name": "VAULT_NEXT_4",
+                    "target": "PUBLIC_IDENTITY",
+                    "order": 2,
+                    "section": 10,
+                    "offset": 3,
+                    "status": 0,
+                    "color": "blue-3",
+                    "startDate": "2016-1-12"
+                },
+                {
+                    "name": "VAULT_NEXT_3",
+                    "target": "PUBLIC_IDENTITY",
+                    "order": 2,
+                    "section": 9,
+                    "offset": 3,
+                    "status": 0,
+                    "color": "blue-3",
+                    "startDate": "2016-1-12"
+                },
+                {
+                    "name": "VAULT_NEXT_2",
+                    "target": "PUBLIC_IDENTITY",
+                    "order": 2,
+                    "section": 8,
+                    "offset": 3,
+                    "status": 0,
+                    "color": "blue-3",
+                    "startDate": "2016-1-12"
+                },
+                {
                     "name": "VAULT_SAMPLE",
                     "target": "PUBLIC_IDENTITY",
                     "order": 2,
                     "section": 7,
+                    "offset": 3,
                     "status": 0,
                     "color": "blue-3",
                     "startDate": "2016-1-12"
@@ -84,6 +142,7 @@
                     "target": "PUBLIC_IDENTITY",
                     "order": 2,
                     "section": 6,
+                    "offset": 3,
                     "status": 0,
                     "color": "blue-3",
                     "startDate": "2016-1-12"
