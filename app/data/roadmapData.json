@@ -19,14 +19,14 @@
                 {
                     "name": "EXTERNAL",
                     "id": "VAULT_CONFIG_1" ,
-                    "color": "indigo-1",
+                    "color": "indigo-2",
                     "desc": "Vault Config 1",
                     "target": "VAULT_IN_MOBILE"
                 },
                 {
                     "name": "EXTERNAL",
                     "id": "VAULT_CONFIG_2" ,
-                    "color": "turquoise-1",
+                    "color": "turquoise-2",
                     "desc": "Vault Config 2",
                     "target": "VAULT_IN_MOBILE"
                 },
@@ -153,7 +153,7 @@
             "name": "CLIENT",
             "desc": "Client node",
             "daysCompleted": 0,
-            "target": "END",
+            "target": "MPID",
             "header": 30,
             "order": 2,
             "section": 2,
@@ -190,6 +190,46 @@
                   "startDate": "2016-1-27"
               }
             ]
+        },
+        {
+          "name": "MPID",
+          "desc": "MPID Messaging",
+          "daysCompleted": 0,
+          "target": "END",
+          "header": 30,
+          "order": 2,
+          "section": 3,
+          "status": 0,
+          "color": "grey-2",
+          "status": 0,
+          "startDate": "2016-1-13"
+
+        },
+        {
+          "name": "VAULT_CONFIG_1",
+          "desc": "VAULT CONFIG 1",
+          "daysCompleted": 0,
+          "target": "MPID",
+          "header": 30,
+          "order": 2,
+          "section": 5,
+          "status": 0,
+          "color": "indigo-2",
+          "status": 0,
+          "startDate": "2016-1-13"
+        },
+        {
+          "name": "VAULT_CONFIG_2",
+          "desc": "VAULT CONFIG 2",
+          "daysCompleted": 0,
+          "target": "MPID",
+          "header": 30,
+          "order": 2,
+          "section": 4,
+          "status": 0,
+          "color": "turquoise-2",
+          "status": 0,
+          "startDate": "2016-1-13"
         }
     ]
 }

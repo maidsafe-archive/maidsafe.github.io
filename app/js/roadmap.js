@@ -273,6 +273,7 @@ Roadmap.prototype.prepareNodes = function() {
       nodeInfo.id = node.id;
     }
     if (node.name === self.excludeNodes[1]) {
+      nodeInfo.id = node.id;
       nodeInfo.source = node.source;
     }
     return nodeInfo;
@@ -1180,7 +1181,9 @@ Roadmap.prototype.addFeatures = function(parentName) {
     addTitle(title, listId);
     var listBase = $('#' + listId);
     list.forEach(function(item) {
-      var listEle = createDivElement(self.taskPrefix.FEATURE_ID + item.name,
+      var name = self.excludeNodes.indexOf(item.name) !== -1 ? item.id : item.name;
+      console.log(name, item);
+      var listEle = createDivElement(self.taskPrefix.FEATURE_ID + name,
         [ 'features-list-i', self.taskPrefix.FEATURE_ITEM + item.color ]);
       listEle.text(parseNodeName(item.name));
       listBase.append(listEle);
@@ -1232,6 +1235,7 @@ Roadmap.prototype.handleMobileEvents = function() {
     //   return;
     // }
     changeLocation(taskId);
+    $(window).scrollTop(0);
   });
 };
 
@@ -1274,16 +1278,16 @@ Roadmap.prototype.draw = function() {
 };
 
 $(function() {
-  $.get('data/roadmapData.json', function(data) {
-    new Roadmap({
-      data: data,
-      target: '#Roadmap',
-      interval: 10
-    }).draw();
-  });
-  // new Roadmap({
-  //   data: jsonData,
-  //   target: '#Roadmap',
-  //   interval: 10
-  // }).draw();
+  // $.get('data/roadmapData.json', function(data) {
+  //   new Roadmap({
+  //     data: data,
+  //     target: '#Roadmap',
+  //     interval: 10
+  //   }).draw();
+  // });
+  new Roadmap({
+    data: jsonData,
+    target: '#Roadmap',
+    interval: 10
+  }).draw();
 });

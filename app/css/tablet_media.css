@@ -277,9 +277,12 @@
   /* Roadmap */
   .roadmap {
     height: auto;
+    min-height: 600px;
   }
   .roadmap .roadmapNav {
     width: 300px;
+    height: inherit;
+    min-height: inherit;
   }
   .roadmapBreadcrumb {
     padding: 8px 20px;
