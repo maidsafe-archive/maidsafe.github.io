@@ -302,6 +302,10 @@ Roadmap.prototype.init = function() {
     self.clearChartSection();
     self.cleanMobileView();
     var taskId = window.location.hash.slice(1).toUpperCase();
+    if (!self.taskHasChildren(taskId)) {
+      self.toggleListHighlight('#' + taskId, false);
+      taskId = self.getNode(taskId).parent;
+    }
     self.drawChart(taskId);
   });
   $(window).on('hashchange', function() {
@@ -428,7 +432,7 @@ Roadmap.prototype.handleListEvents = function() {
   $('.listBase').on('click', function(e) {
     e.stopPropagation();
     var taskName = $(this).attr('id');
-    if (!self.taskHasChildren(taskName)) {
+    if (!self.taskHasChildren(taskName) && isDesktopScreen()) {
       return;
     }
     self.openNavList(this);
@@ -1224,9 +1228,9 @@ Roadmap.prototype.handleMobileEvents = function() {
   $(document).on('click', '.features-list-i', function(e) {
     e.stopPropagation();
     var taskId = $(this).attr('id').slice(self.taskPrefix.FEATURE_ID.length);
-    if (!self.taskHasChildren(taskId)) {
-      return;
-    }
+    // if (!self.taskHasChildren(taskId)) {
+    //   return;
+    // }
     changeLocation(taskId);
   });
 };
