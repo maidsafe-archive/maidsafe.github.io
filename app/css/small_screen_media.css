@@ -275,6 +275,9 @@
   }
   /* #Post 3 */
   /* Roadmap */
+  .roadmap {
+    height: auto;
+  }
   .roadmap .roadmapNav {
     width: 300px;
   }
