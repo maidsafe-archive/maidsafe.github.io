@@ -23,7 +23,7 @@
     "grunt-contrib-watch": "0.6.1",
     "grunt-exec": "^0.4.6",
     "grunt-filerev": "~0.2.1",
-    "grunt-html": "git://github.com/viv-rajkumar/grunt-html",
+    "grunt-html": "*",
     "grunt-jekyll": "~0.4.2",
     "grunt-jscs": "^1.5.0",
     "grunt-link-checker": "0.0.6",

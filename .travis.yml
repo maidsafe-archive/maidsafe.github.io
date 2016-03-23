@@ -1,7 +1,10 @@
-language: node_js
+language: java
 
-node_js:
-  - "5.0"
+jdk:
+  - oraclejdk8
+
+env:
+  - NODE_VERSION=0.12
 
 sudo: false
 
@@ -10,6 +13,7 @@ branches:
     - master
 
 before_install:
+  - nvm install $NODE_VERSION
   - npm install -g grunt-cli
   - npm install -g bower
   - rvm install 2.0.0
@@ -20,6 +24,8 @@ install:
   - npm install
   - bower install
 
-before_script: grunt build:dist
+before_script:
+  - nvm use $NODE_VERSION
+  - grunt build:dist
 
 script: grunt test
