@@ -1278,16 +1278,11 @@ Roadmap.prototype.draw = function() {
 };
 
 $(function() {
-  // $.get('data/roadmapData.json', function(data) {
-  //   new Roadmap({
-  //     data: data,
-  //     target: '#Roadmap',
-  //     interval: 10
-  //   }).draw();
-  // });
-  new Roadmap({
-    data: jsonData,
-    target: '#Roadmap',
-    interval: 10
-  }).draw();
+  $.get('data/roadmapData.json', function(data) {
+    new Roadmap({
+      data: data,
+      target: '#Roadmap',
+      interval: 10
+    }).draw();
+  });
 });
