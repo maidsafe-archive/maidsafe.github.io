@@ -558,15 +558,18 @@ Roadmap.prototype.addBreadcum = function(parentId) {
 // add header element
 Roadmap.prototype.addHeader = function(parentId) {
   var self = this;
-  var infoIconOpen = '<svg class="info-icon opened" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 39 24" fill="#2A98EA" \
-  enable-background="new 0 0 39 24" xml:space="preserve"><path d="M11,\
-  17h2v-6h-2V17z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,\
-  20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S16.4,20,12,20z M11,9h2V7h-2V9z"/><polygon \
-  points="31.3,13.2 26.8,8.7 25.8,9.8 31.3,15.3 36.8,9.8 35.7,8.7 "/></svg>';
-  var infoIconClose = '<svg class="info-icon closed" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 39 24" enable-background="new 0 0 39 24">\
-    <polygon points="31.3,11.1 35.7,15.5 36.8,14.5 31.3,9 25.8,14.5 26.8,15.5 "/>\
-  	<path d="M12,2.3c-5.5,0-10,4.5-10,10s4.5,10,10,10s10-4.5,10-10S17.5,2.3,12,2.3z"/>\
-  	<path fill="#FFFFFF" d="M11,17.3h2v-6h-2V17.3z M11,9.3h2v-2h-2V9.3z"/></svg>'
+  var infoIconOpen = '<svg class="info-icon opened" version="1.1" id="Layer_1" x="0px" y="0px"' +
+  ' viewBox="0 0 39 24" fill="#2A98EA" enable-background="new 0 0 39 24" ><path d="M11,' +
+  '17h2v-6h-2V17z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,' +
+  '20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S16.4,20,12,20z M11,9h2V7h-2V9z"/><polygon ' +
+  'points="31.3,13.2 26.8,8.7 25.8,9.8 31.3,15.3 36.8,9.8 35.7,8.7 "/></svg>';
+
+  var infoIconClose = '<svg class="info-icon closed" version="1.1" id="Layer_1" x="0px" y="0px"' +
+  ' viewBox="0 0 39 24" enable-background="new 0 0 39 24">' +
+  '<polygon points="31.3,11.1 35.7,15.5 36.8,14.5 31.3,9 25.8,14.5 26.8,15.5 "/>' +
+  '<path d="M12,2.3c-5.5,0-10,4.5-10,10s4.5,10,10,10s10-4.5,10-10S17.5,2.3,12,2.3z"/>' +
+  '<path fill="#FFFFFF" d="M11,17.3h2v-6h-2V17.3z M11,9.3h2v-2h-2V9.3z"/></svg>';
+
   var header = createDivElement(null, [ 'roadmapChart-h' ]);
   var headerTitle = createDivElement(null, [ 'roadmapChart-h-t' ]);
   var headerTitleCntx = createDivElement(self.IDs.TITLE, []);
