@@ -88,16 +88,12 @@ var changeLocation = function(taskName) {
   window.location.assign('#' + taskName.toLowerCase());
 };
 
-var resetLocation = function() {
-  window.location.hash = '';
-};
-
 // roadmap chart
 var Roadmap = function(payload) {
   this.payload = payload;
   this.isChartReady = false;
   this.isMobileChartReady = false;
-  this.excludeNodes = ['EXTERNAL', 'DOWN_STREAM'];
+  this.excludeNodes = [ 'EXTERNAL', 'DOWN_STREAM' ];
   this.excludeTarget = 'END';
   this.IDs = {
     'NAV': 'RoadmapNav',
@@ -117,7 +113,7 @@ var Roadmap = function(payload) {
     'RELY_THIS_FEATURES': 'RoadmapChartRelyThisFeatures'
   };
   this.nodes = [];
-  this.nodeColors = ['blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
+  this.nodeColors = [ 'blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
     'coral-1', 'coral-2', 'coral-3', 'pink-1', 'pink-2', 'pink-3',
     'green-1', 'green-2', 'green-3', 'indigo-1', 'indigo-2', 'indigo-3',
     'cyan-1', 'cyan-2', 'cyan-3', 'turquoise-1', 'turquoise-2', 'turquoise-3',
@@ -240,14 +236,14 @@ Roadmap.prototype.prepareStartDate = function() {
 Roadmap.prototype.timeScale = function(val) {
   var self = this;
   return (d3.time.scale()
-    .domain([d3.min(self.taskList, function(d) {
+    .domain([ d3.min(self.taskList, function(d) {
         return self.dateFormat.parse(d.startDate);
       }),
       d3.max(self.taskList, function(d) {
         return self.dateFormat.parse(d.endDate);
       })
     ])
-    .range([0, self.svg.width - (self.svg.padding * 2)]))(val);
+    .range([ 0, self.svg.width - (self.svg.padding * 2) ]))(val);
 };
 
 // prepare data
@@ -339,7 +335,7 @@ Roadmap.prototype.getPathClassList = function(targetEle, isLevelUp) {
 };
 
 Roadmap.prototype.openNavList = function(source, fromBox) {
-  var removeClasses = ['listClose'];
+  var removeClasses = [ 'listClose' ];
   if (fromBox) {
     source = '#' + this.getNodeName(source);
     removeClasses.push('highlight');
@@ -494,9 +490,9 @@ Roadmap.prototype.handleBoxEvents = function() {
     e.stopPropagation();
     var taskName = $(this).attr('id').slice(self.taskPrefix.LABEL_ID.length);
     changeLocation(taskName);
-    self.openNavList('#'+taskName);
+    self.openNavList('#' + taskName);
     self.drawChart(taskName);
-  })
+  });
 };
 
 Roadmap.prototype.handleHeaderEvents = function() {
@@ -509,7 +505,7 @@ Roadmap.prototype.handleHeaderEvents = function() {
 
 Roadmap.prototype.drawNav = function() {
   var self = this;
-  var classes = ['roadmapNav'];
+  var classes = [ 'roadmapNav' ];
   this.targetEle.append(createDivElement(this.IDs.NAV, classes));
   var rootEle = $('#' + this.IDs.NAV);
   this.nodes.forEach(function(node, i) {
@@ -517,7 +513,7 @@ Roadmap.prototype.drawNav = function() {
       return;
     }
     var parentEle = node.parent.length > 0 ? $('#' + node.parent) : rootEle;
-    var classes = [node.color];
+    var classes = [ node.color ];
     if (i === 0) {
       classes.push('listTitle');
     } else {
@@ -549,21 +545,21 @@ Roadmap.prototype.setTaskList = function(parentName) {
 // add breadcum element
 Roadmap.prototype.addBreadcum = function(parentId) {
   var self = this;
-  var breadcumEle = createDivElement(self.IDs.BREADCUM, ['roadmapBreadcrumb']);
+  var breadcumEle = createDivElement(self.IDs.BREADCUM, [ 'roadmapBreadcrumb' ]);
   $(parentId).append(breadcumEle);
 };
 
 // add header element
 Roadmap.prototype.addHeader = function(parentId) {
   var self = this;
-  var header = createDivElement(null, ['roadmapChart-h']);
-  var headerTitle = createDivElement(self.IDs.TITLE, ['roadmapChart-h-t']);
-  var headerDesc = createDivElement(null, ['roadmapChart-h-desc']);
+  var header = createDivElement(null, [ 'roadmapChart-h' ]);
+  var headerTitle = createDivElement(self.IDs.TITLE, [ 'roadmapChart-h-t' ]);
+  var headerDesc = createDivElement(null, [ 'roadmapChart-h-desc' ]);
   var headerDescCntx = createDivElement(self.IDs.DESC, []);
   if (!isDesktopScreen()) {
-    var menuicon = createDivElement(self.IDs.MOBILE_MENU, ['roadmapChart-h-menu']);
+    var menuicon = createDivElement(self.IDs.MOBILE_MENU, [ 'roadmapChart-h-menu' ]);
     header.append(menuicon);
-    var descTitle = createDivElement(null, ['roadmapChart-h-desc-title']);
+    var descTitle = createDivElement(null, [ 'roadmapChart-h-desc-title' ]);
     descTitle.text('Description');
     headerDesc.append(descTitle);
   }
@@ -574,8 +570,8 @@ Roadmap.prototype.addHeader = function(parentId) {
 
 Roadmap.prototype.prepareChart = function() {
   var self = this;
-  var roadmapChartBase = createDivElement(self.IDs.CHART_BASE, ['roadmapChart-b']);
-  var roadmapChart = createDivElement(self.IDs.CHART, ['roadmapChart']);
+  var roadmapChartBase = createDivElement(self.IDs.CHART_BASE, [ 'roadmapChart-b' ]);
+  var roadmapChart = createDivElement(self.IDs.CHART, [ 'roadmapChart' ]);
   self.targetEle.append(roadmapChart.append(roadmapChartBase));
   self.svg.width = roadmapChartBase.width();
   var chartBaseId = '#' + self.IDs.CHART_BASE;
@@ -750,7 +746,8 @@ Roadmap.prototype.drawBoxes = function() {
       return ((self.perUnit / 2) + self.timeScale(self.dateFormat.parse(d.startDate)));
     })
     .attr('y', function(d) {
-      return (self.taskList.length !== 1) ? ((((d.section - 1) * self.perUnit) * 2) + (self.perUnit / 1.3)) : (self.perUnit / 1.3);
+      return (self.taskList.length !== 1) ? ((((d.section - 1) * self.perUnit) * 2) +
+        (self.perUnit / 1.3)) : (self.perUnit / 1.3);
     })
     .attr('id', function(d) {
       return self.taskPrefix.BOX_TEXT + d.name;
@@ -856,7 +853,7 @@ Roadmap.prototype.drawLines = function() {
       path.interTop.x = path.interBot.x;
       path.interTop.y = path.end.y;
     }
-    return [path.start, path.interBot, path.interTop, path.end];
+    return [ path.start, path.interBot, path.interTop, path.end ];
   };
 
   var computeDownStreamPath = function(target, id) {
@@ -877,7 +874,7 @@ Roadmap.prototype.drawLines = function() {
     path.end.x = path.start.x;
     path.end.y = self.svg.height;
     addPathInfo(id, path);
-    return [path.start, path.end];
+    return [ path.start, path.end ];
   };
 
   var drawLine = function(node, path, isDownStream) {
@@ -1033,9 +1030,9 @@ Roadmap.prototype.updateBreadcum = function(parentName) {
   self.breadcumList = self.breadcumList.concat(list);
   var target = $('#' + self.IDs.BREADCUM);
   self.breadcumList.forEach(function(item, i) {
-    var breadcumItem = createDivElement(null, ['breadcrumb-i'], item);
+    var breadcumItem = createDivElement(null, [ 'breadcrumb-i' ], item);
     if (i > 0) {
-      breadcumItem.on('click', function(e) {
+      breadcumItem.on('click', function() {
         $('#' + item.toUpperCase()).click();
       });
     }
@@ -1157,7 +1154,7 @@ Roadmap.prototype.initChart = function() {
 };
 
 Roadmap.prototype.drawChart = function(parentName) {
-  var locationHash = location.hash.slice(1);
+  var locationHash = window.location.hash.slice(1);
   if (!parentName && locationHash) {
     parentName = locationHash.toUpperCase();
     this.openNavList('#' + parentName);
@@ -1206,7 +1203,7 @@ Roadmap.prototype.addFeatures = function(parentName) {
 
   var createBase = function(listId) {
     if (!$('#' + listId).is('#' + listId)) {
-      mobileBase.append(createDivElement(listId, ['features-list']));
+      mobileBase.append(createDivElement(listId, [ 'features-list' ]));
     }
   };
 
@@ -1223,8 +1220,8 @@ Roadmap.prototype.addFeatures = function(parentName) {
     var listBase = $('#' + listId);
     list.forEach(function(item) {
       var name = self.excludeNodes.indexOf(item.name) !== -1 ? item.id : item.name;
-      console.log(name, item);
-      var listEle = createDivElement(self.taskPrefix.FEATURE_ID + name, ['features-list-i', self.taskPrefix.FEATURE_ITEM + item.color]);
+      var listEle = createDivElement(self.taskPrefix.FEATURE_ID + name,
+        [ 'features-list-i', self.taskPrefix.FEATURE_ITEM + item.color ]);
       listEle.text(parseNodeName(item.name));
       listBase.append(listEle);
     });
@@ -1285,13 +1282,13 @@ Roadmap.prototype.prepareMobileViewChart = function() {
 
   //  set navigation
   var navEle = $('#' + self.IDs.NAV);
-  var navBgClassList = ['roadmapNav-bg'];
+  var navBgClassList = [ 'roadmapNav-bg' ];
   if (navEle.has('.' + navBgClassList[0]).length === 0) {
     var navBg = createDivElement(null, navBgClassList);
     navEle.append(navBg);
   }
 
-  var mobileBase = createDivElement(self.IDs.MOBILE_BASE, ['roadmapChartMobile-b']);
+  var mobileBase = createDivElement(self.IDs.MOBILE_BASE, [ 'roadmapChartMobile-b' ]);
   self.targetEle.append(mobileBase);
   self.addBreadcum('#' + self.IDs.MOBILE_BASE);
   self.addHeader('#' + self.IDs.MOBILE_BASE);
