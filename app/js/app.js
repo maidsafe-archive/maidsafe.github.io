@@ -76,8 +76,7 @@ var loadTeamBanner = function() {
     'Andrew': './img/team/andrew.jpg',
     'David': './img/team/david.jpg',
     'Viv': './img/team/viv.jpg',
-    'Krishna': './img/team/krishna.png',
-    'Justine': './img/team/justine.jpg',
+    'Andreas': './img/team/Andreas.jpg',
     'Ross': './img/team/ross.jpg',
     'Fraser': './img/team/fraser.jpg',
     'Nick': './img/team/nick.jpg',
@@ -87,7 +86,8 @@ var loadTeamBanner = function() {
     'Spandan': './img/team/spandan.jpg',
     'Scott': './img/team/scott.jpg',
     'Qi': './img/team/qi.jpg',
-    'Peter': './img/team/peter.jpg'
+    'Krishna': './img/team/krishna.jpg',
+    'Shankar': './img/team/Shankar.jpg'
   };
   var teamImgItemHg = parseFloat(teamImgWidth / itemCount);
   for (var key in teamArr) {
