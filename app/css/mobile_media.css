@@ -383,6 +383,6 @@
   .listTitle {
     width: 80%;
     padding-top: 16px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.26);
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.15);
   }
 }
