@@ -4,6 +4,7 @@
     "daysCompleted": 10,
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
     "startDate": "2016-1-1",
+    "color": "rootColor-1",
     "children": [
         {
             "name": "VAULT",

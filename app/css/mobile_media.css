@@ -322,7 +322,7 @@
   .roadmapBreadcrumb {
     padding: 8px 20px;
   }
-  
+
   .roadmap {
     height: auto;
   }
@@ -331,9 +331,9 @@
     position: fixed !important;
     top: 0 !important;
     left: -100% !important;
-    padding-top: 25px !important;
+    padding-top: 70px !important;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 98;
   }
   .roadmap .roadmapNav.open {
     left: 0 !important;
@@ -363,7 +363,7 @@
     z-index: -1;
   }
   .roadmapChart-h-t {
-    color: white;
+    color: white !important;
     line-height: 50px;
   }
   .roadmapChart-h-t:after {
@@ -382,5 +382,7 @@
   }
   .listTitle {
     width: 80%;
+    padding-top: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.26);
   }
 }

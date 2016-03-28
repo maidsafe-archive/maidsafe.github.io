@@ -50,6 +50,7 @@
   position: relative;
   cursor: pointer;
   text-transform: capitalize;
+  -webkit-user-select: none;
 }
 
 .roadmapChart-h-t:after {
@@ -112,6 +113,7 @@
   line-height: 12px;
   padding-right: 8px;
   float: left;
+  cursor: pointer;
 }
 
 .roadmapBreadcrumb > .breadcrumb-i:not(:last-child):after {
@@ -227,6 +229,10 @@
   stroke: steelblue;
 }
 
+.line-label {
+  cursor: pointer;
+}
+
 /* markers */
 .lineMarker {
   fill: none;
@@ -238,7 +244,27 @@
   cursor: pointer;
 }
 
+/* Root Color 1 */
+.rootColor-1.text  {
+  color: #858585;
+}
+.rootColor-1:before {
+  background-color: #858585;
+}
+.svg-rootColor-1 {
+  fill: #858585;
+}
+.line-rootColor-1 {
+  stroke:#858585;
+}
+.features-rootColor-1:before {
+  background-color: #858585 !important;
+}
+
 /* blue 1 */
+.blue-1.text  {
+  color: #008cff;
+}
 .blue-1:before {
   background-color: #008cff;
 }
@@ -253,6 +279,9 @@
 }
 
 /* blue-2 */
+.blue-2.text  {
+  color: #4dacff;
+}
 .blue-2:before {
   background-color: #4dacff;
 }
@@ -279,6 +308,9 @@
 }
 
 /* blue-3 */
+.blue-3.text  {
+  color: #99d1ff;
+}
 .blue-3:before {
   background-color: #99d1ff;
 }
@@ -305,6 +337,9 @@
 }
 
 /* orange 1 */
+.orange-1.text  {
+  color: #f9874e;
+}
 .orange-1:before {
   background-color: #f9874e;
 }
@@ -319,6 +354,9 @@
 }
 
 /* orange 2 */
+.orange-2.text  {
+  color: #fca071;
+}
 .orange-2:before {
   background-color: #fca071;
 }
@@ -345,6 +383,9 @@
 }
 
 /* orange 3 */
+.orange-3.text  {
+  color: #fcb590;
+}
 .orange-3:before {
   background-color: #fcb590;
 }
@@ -371,6 +412,9 @@
 }
 
 /* coral 1 */
+.coral-1.text {
+  color: #f27e7e;
+}
 .coral-1:before {
   background-color: #f27e7e;
 }
@@ -385,6 +429,9 @@
 }
 
 /* coral 2 */
+.coral-2.text {
+  color: #f79797;
+}
 .coral-2:before {
   background-color: #f79797;
 }
@@ -411,6 +458,9 @@
 }
 
 /* coral 3 */
+.coral-3.text {
+  color: #fab2b2;
+}
 .coral-3:before {
   background-color: #fab2b2;
 }
@@ -437,6 +487,9 @@
 }
 
 /* pink 1 */
+.pink-1.text {
+  color: #e56ee5;
+}
 .pink-1:before {
   background-color: #e56ee5;
 }
@@ -451,6 +504,9 @@
 }
 
 /* pink 2 */
+.pink-2.text {
+  color: #e88be8;
+}
 .pink-2:before {
   background-color: #e88be8;
 }
@@ -477,6 +533,9 @@
 }
 
 /* pink 3 */
+.pink-3.text {
+  color: #f2a5f2;
+}
 .pink-3:before {
   background-color: #f2a5f2;
 }
@@ -503,6 +562,9 @@
 }
 
 /* green 1 */
+.green-1.text {
+  color: #6fbc24;
+}
 .green-1:before {
   background-color: #6fbc24;
 }
@@ -517,6 +579,9 @@
 }
 
 /* green 2 */
+.green-2.text {
+  color: #8fc956;
+}
 .green-2:before {
   background-color: #8fc956;
 }
@@ -543,6 +608,9 @@
 }
 
 /* green 3 */
+.green-3.text {
+  color: #a7d97c;
+}
 .green-3:before {
   background-color: #a7d97c;
 }
@@ -569,6 +637,9 @@
 }
 
 /* indigo 1 */
+.indigo-1.text {
+  color: #8d85f9;
+}
 .indigo-1:before {
   background-color: #8d85f9;
 }
@@ -583,6 +654,9 @@
 }
 
 /* indigo 2 */
+.indigo-2.text {
+  color: #a39df5;
+}
 .indigo-2:before {
   background-color: #a39df5;
 }
@@ -609,6 +683,9 @@
 }
 
 /* indigo 3 */
+.indigo-3.text {
+  color: #b9b6fc;
+}
 .indigo-3:before {
   background-color: #b9b6fc;
 }
@@ -635,6 +712,9 @@
 }
 
 /* cyan 1 */
+.cyan-1.text {
+  color: #42e2c7;
+}
 .cyan-1:before {
   background-color: #42e2c7;
 }
@@ -649,6 +729,9 @@
 }
 
 /* cyan 2 */
+.cyan-2.text {
+  color: #6ae6cf;
+}
 .cyan-2:before {
   background-color: #6ae6cf;
 }
@@ -675,6 +758,9 @@
 }
 
 /* cyan 3 */
+.cyan-3.text {
+  color: #84f0da;
+}
 .cyan-3:before {
   background-color: #84f0da;
 }
@@ -701,6 +787,9 @@
 }
 
 /* turquoise 1 */
+.turquoise-1.text {
+  color: #3cc681;
+}
 .turquoise-1:before {
   background-color: #3cc681;
 }
@@ -715,6 +804,9 @@
 }
 
 /* turquoise 2 */
+.turquoise-2.text {
+  color: #5cd196;
+}
 .turquoise-2:before {
   background-color: #5cd196;
 }
@@ -741,6 +833,9 @@
 }
 
 /* turquoise 3 */
+.turquoise-3.text {
+  color: #81deaf;
+}
 .turquoise-3:before {
   background-color: #81deaf;
 }
@@ -767,6 +862,9 @@
 }
 
 /* grey 1 */
+.grey-1.text {
+  color: #939393;
+}
 .grey-1:before {
   background-color: #939393;
 }
@@ -781,6 +879,9 @@
 }
 
 /* grey 2 */
+.grey-2.text {
+  color: #a8a8a8;
+}
 .grey-2:before {
   background-color: #a8a8a8;
 }
@@ -807,6 +908,9 @@
 }
 
 /* grey 3 */
+.grey-3.text {
+  color: #bfbfbf;
+}
 .grey-3:before {
   background-color: #bfbfbf;
 }
@@ -833,6 +937,9 @@
 }
 
 /* purple 1 */
+.purple-1.text {
+  color: #a342e2;
+}
 .purple-1:before {
   background-color: #a342e2;
 }
@@ -847,6 +954,9 @@
 }
 
 /* purple 2 */
+.purple-2.text {
+  color: #b966e8;
+}
 .purple-2:before {
   background-color: #b966e8;
 }
