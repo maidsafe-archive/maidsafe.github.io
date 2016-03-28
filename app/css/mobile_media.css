@@ -366,8 +366,8 @@
     color: white !important;
     line-height: 50px;
   }
-  .roadmapChart-h-t:after {
-    display: none;
+  .roadmapChart-h-t .info-icon {
+    display: none !important;
   }
   .roadmapChart-h-desc {
     display: block !important;

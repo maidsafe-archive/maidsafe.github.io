@@ -439,6 +439,7 @@ Roadmap.prototype.handleListEvents = function() {
     self.toggleTaskHighlight(this, false, true);
     if (!isDesktopScreen()) {
       hideNav();
+      changeLocation(taskName);
       self.openNavList(this);
       self.drawChart(taskName);
       return;

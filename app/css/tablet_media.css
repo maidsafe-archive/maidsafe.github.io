@@ -307,12 +307,12 @@
     z-index: -1;
   }
   .roadmapChart-h-t {
-    color: white;
+    color: white !important;
     padding-left: 20px;
     line-height: 50px;
   }
-  .roadmapChart-h-t:after {
-    display: none;
+  .roadmapChart-h-t .info-icon {
+    display: none !important;
   }
   .roadmapChart-h-desc {
     display: block !important;
