@@ -292,8 +292,8 @@ Roadmap.prototype.prepareNodes = function() {
 Roadmap.prototype.setSvgHeight = function() {
   var self = this;
   var footerHeight = $('footer').height();
-  var headerheight =  $('header').height();
-  self.svg.height = window.screen.availHeight - footerHeight - headerheight;
+  // var headerheight =  $('header').height();
+  self.svg.height = window.screen.availHeight - (footerHeight * 40 / 100);
   $(self.payload.target).height(self.svg.height);
 };
 
