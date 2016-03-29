@@ -289,7 +289,7 @@ Roadmap.prototype.prepareNodes = function() {
   addChild(this.payload.data);
 };
 
-Roadmap.prototype.setSvgHeight = function () {
+Roadmap.prototype.setSvgHeight = function() {
   var self = this;
   var footerHeight = $('footer').height();
   var headerheight =  $('header').height();
