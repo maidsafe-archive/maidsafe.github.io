@@ -289,16 +289,24 @@ Roadmap.prototype.prepareNodes = function() {
   addChild(this.payload.data);
 };
 
+Roadmap.prototype.setSvgHeight = function () {
+  var self = this;
+  var footerHeight = $('footer').height();
+  var headerheight =  $('header').height();
+  self.svg.height = window.screen.availHeight - footerHeight - headerheight;
+  $(self.payload.target).height(self.svg.height);
+};
+
 Roadmap.prototype.init = function() {
   var self = this;
   self.dateFormat = d3.time.format('%Y-%m-%d');
   self.prepareNodes();
   self.prepareStartDate();
-  self.svg.height = window.screen.availHeight;
-  $(self.payload.target).height(self.svg.height);
+  self.setSvgHeight();
   $(window).on('resize', function() {
     self.clearChartSection();
     self.cleanMobileView();
+    self.setSvgHeight();
     var taskId = window.location.hash.slice(1).toUpperCase();
     if (!self.taskHasChildren(taskId)) {
       self.toggleListHighlight('#' + taskId, false);
@@ -1045,14 +1053,14 @@ Roadmap.prototype.updateBreadcum = function(parentName) {
         getBreadcumList(node.parent);
       }
     });
-    list.push(parseNodeName(nodeName));
+    list.push(nodeName);
   };
   getBreadcumList(parentName);
   init();
   self.breadcumList = self.breadcumList.concat(list);
   var target = $('#' + self.IDs.BREADCUM);
   self.breadcumList.forEach(function(item, i) {
-    var breadcumItem = createDivElement(null, [ 'breadcrumb-i' ], item);
+    var breadcumItem = createDivElement(null, [ 'breadcrumb-i' ], parseNodeName(item));
     if (i > 0) {
       breadcumItem.on('click', function() {
         var targetId = item.toUpperCase();
