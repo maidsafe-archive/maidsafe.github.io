@@ -15,7 +15,7 @@
       {
             "name": "EXTERNAL",
             "id": "EX_VAULT_MANAGEMENT",
-            "source": "MPID_CREATE_MANAGE",
+            "source": "VAULT_IN_MOBILE",
             "color": "blue-2",
             "desc": "Vault desc",
             "order": -1,

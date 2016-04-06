@@ -241,6 +241,16 @@ Utils.isDesktopScreen = function() {
   return $(window).width() > DESKTOP_BREAKPOINT;
 };
 
+Utils.getChildrenTasks = function(taskId) {
+  var children = [];
+  roadmapTasks.forEach(function(task) {
+    if (task.parent && task.parent.id === taskId) {
+      children.unshift(task);
+    }
+  });
+  return children;
+};
+
 var Connection = function(taskId, sourceId) {
   this.sourceId = sourceId;
   this.targetId = taskId;
@@ -273,9 +283,9 @@ var TaskFeature = function(taskId, type) {
 TaskFeature.prototype.onClick = function() {
   var self = this;
   return function(e) {
-    var task = Utils.getTask(self.taskId);
-    var taskId = task.id;
+    var taskId = self.taskId;
     if (task.isExcluded()) {
+      var task = Utils.getTask(self.taskId);
       taskId = task.source;
     }
     Utils.setLocationHash(taskId);
@@ -296,7 +306,7 @@ TaskNav.prototype.onClick = function() {
   var self = this;
   return function(e) {
     e.stopPropagation();
-    self.click(this, true);
+    self.mouseClick(this, true);
   };
 };
 
@@ -336,7 +346,7 @@ TaskNav.prototype.mouseOver = function(target) {
   $(target).addClass('highlight');
 };
 
-TaskNav.prototype.click = function(target, setHash) {
+TaskNav.prototype.mouseClick = function(target, setHash) {
   var self = this;
   if (!target) {
     target = Utils.parseId(self.id);
@@ -376,6 +386,7 @@ TaskBox.prototype.onClick = function () {
   var self = this;
   return function() {
     Utils.setLocationHash(self.taskId);
+    $(window).scrollTop(0);
   };
 };
 
@@ -407,6 +418,12 @@ TaskBox.prototype.mouseOver = function() {
       }
     });
   });
+  task.connections.forEach(function(connection) {
+    var sourceTask = Utils.getTask(connection.sourceId);
+    if (sourceTask.isDownStream()) {
+      Utils.addSvgClass(Utils.parseId(connection.id), 'highlight');
+    }
+  });
 };
 
 TaskBox.prototype.mouseOut = function(target) {
@@ -422,6 +439,12 @@ TaskBox.prototype.mouseOut = function(target) {
         Utils.removeSvgClass(Utils.parseId(connection.id), 'highlight');
       }
     });
+  });
+  task.connections.forEach(function(connection) {
+    var sourceTask = Utils.getTask(connection.sourceId);
+    if (sourceTask.isDownStream()) {
+      Utils.removeSvgClass(Utils.parseId(connection.id), 'highlight');
+    }
   });
 };
 
@@ -740,9 +763,14 @@ Roadmap.prototype.updateBreadcum = function(activeTask) {
 };
 
 Roadmap.prototype.updateChartHeader = function(activeTask) {
+  var self = this;
   $(Utils.parseId(TASK_TITLE_ID)).text(activeTask.name).parent().removeClass()
     .addClass(activeTask.color + ' text roadmapChart-h-t');
   $(Utils.parseId(TASK_DESC_ID)).text(activeTask.desc);
+  var task = Utils.getTask(Utils.getLocationHash());
+  if (Utils.getChildrenTasks(task.id).length === 0) {
+    $(Utils.parseId(TASK_TITLE_ID)).parent().addClass('active');
+  }
 };
 
 Roadmap.prototype.updateSvgHeight = function() {
@@ -801,7 +829,7 @@ Roadmap.prototype.drawProgressBar = function(activeTask) {
   });
 
   var progressBar = d3.select(Utils.parseId(SVG_BOX_GRP_ID))
-    .append('g');
+    .append('g').attr('class', 'progressBar');
 
   // header base
   progressBar.append('rect')
@@ -819,6 +847,9 @@ Roadmap.prototype.drawProgressBar = function(activeTask) {
     .attr('y', -self.svg.padding)
     .attr('width', self.timeScale(self.dateFormat.parse(Utils.addDate(activeTask.startDate, activeTask.daysCompleted))))
     .attr('height', self.progressBar.height);
+
+  // move progress to top
+
 };
 
 Roadmap.prototype.drawBoxes = function () {
@@ -1012,7 +1043,9 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
 
 Roadmap.prototype.drawLabel = function(labelData) {
   var self = this;
-  var label = d3.select(Utils.parseId(SVG_BOX_GRP_ID));
+  var labelParent = d3.select(Utils.parseId(SVG_BOX_GRP_ID));
+
+  var label = labelParent.append('g').attr('class', 'connection-label');
 
   label.append('rect')
     .attr('rx', self.label.borderRadius)
@@ -1029,7 +1062,8 @@ Roadmap.prototype.drawLabel = function(labelData) {
     .attr('x', labelData.x + (self.label.padding / 1.3))
     .attr('y', labelData.y + (self.label.height / 1.3))
     .attr('class', 'labelText');
-  label.on('click', function(e) {
+
+  label.on('click', function() {
     Utils.setLocationHash(labelData.source);
   });
 };
@@ -1158,7 +1192,15 @@ Roadmap.prototype.prepareConnections = function(activeTask) {
       if (upperTask.isExternal()) {
         interEnd = interStart;
         end.x = interEnd.x;
-        end.y = -self.svg.padding;
+        end.y = -self.svg.padding + self.progressBar.height;
+        var sourceTask = Utils.getTask(upperTask.source);
+        self.drawLabel({
+          x: interStart.x - (self.label.width + 16),
+          y: interStart.y,
+          className: upperTask.color,
+          desc: upperTask.desc,
+          source: sourceTask.id
+        })
       }
       createConnection(upperTask.id, start, interStart, interEnd, end, upperTask.color);
     });
@@ -1204,14 +1246,22 @@ Roadmap.prototype.prepareConnections = function(activeTask) {
         end.y = self.svg.height - $(Utils.parseId(BREADCUM_ID)).height() - $('.' + CSS_CLASS.CHART_HEADER).height() - (self.svg.padding * 2);
         var sourceTask = Utils.getTask(lowerTask.source);
         var labelColor = sourceTask.color || lowerTask.color;
-        if (lowerTask.source) {
-        }
-        self.drawLabel({x: end.x + 16, y: end.y - self.box.height, className: labelColor, desc: lowerTask.desc, source: sourceTask.id})
+        self.drawLabel({
+          x: end.x + 16,
+          y: end.y - self.box.height,
+          className: labelColor,
+          desc: lowerTask.desc,
+          source: sourceTask.id
+        });
       }
       createConnection(lowerTask.id, start, interStart, interEnd, end, lowerTask.color);
     });
   });
   self.drawConnections();
+
+  // move labels to front
+  var labels = $('.connection-label');
+  labels.appendTo(labels.parent());
 };
 
 Roadmap.prototype.resetChart = function() {
@@ -1248,10 +1298,10 @@ Roadmap.prototype.updateNav = function(taskId) {
   var self = this;
   taskId = taskId || roadmapTasks[0].id;
   var task = Utils.getTask(taskId);
-  task.nav.click();
+  task.nav.mouseClick();
   while(task.parent && task.parent.parent) {
     task = task.parent;
-    task.nav.click();
+    task.nav.mouseClick();
   }
   $('.roadmapNav').removeClass('open');
 };
