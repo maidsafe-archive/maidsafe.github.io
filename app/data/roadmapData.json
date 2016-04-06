@@ -12,10 +12,10 @@
     "status": 0,
     "startDate": "2016-1-1",
     "children": [
-        {
+      {
             "name": "EXTERNAL",
             "id": "EX_VAULT_MANAGEMENT",
-            "source": "VAULT_MANAGEMENT",
+            "source": "MPID_CREATE_MANAGE",
             "color": "blue-2",
             "desc": "Vault desc",
             "order": -1,
@@ -25,19 +25,19 @@
             ],
             "startDate": "2016-1-1"
         },
-        {
-            "name": "DOWN_STREAM",
-            "id": "DS_SELF_AUTH",
-            "source": "SELF_AUTH",
-            "color": "cyan-2",
-            "desc": "Vault desc",
-            "order": 999,
-            "section": 1,
-            "target": [
-                "VAULT"
-            ],
-            "startDate": "2016-1-1"
-        },
+      {
+          "name": "DOWN_STREAM",
+          "id": "DW_MPID_CREATE_MANAGE",
+          "source": "MPID_CREATE_MANAGE",
+          "color": "cyan-2",
+          "desc": "MPID create manage desc",
+          "order": 999,
+          "section": 1,
+          "target": [
+              "VAULT"
+          ],
+          "startDate": "2016-1-1"
+      },
         {
             "name": "Vault",
             "id": "VAULT",
@@ -54,7 +54,53 @@
             "section": 1,
             "status": 1,
             "startDate": "2016-1-1",
-            "children": []
+            "children": [
+              {
+                "name": "Installers",
+                "id": "INSTALLERS",
+                "color": "cyan-3",
+                "desc": "Installers desc",
+                "daysCompleted": 10,
+                "target": [
+                    "TEST_MINIMUM_NETWORK_SIZE_OF"
+                ],
+                "order": 1,
+                "section": 1,
+                "status": 1,
+                "startDate": "2016-1-1",
+                "children": []
+              },
+              {
+                "name": "Network Functionallity",
+                "id": "NETWORK_FUNCTIONALLITY",
+                "color": "cyan-3",
+                "desc": "Network Functionallity desc",
+                "daysCompleted": 10,
+                "target": [
+                    "TEST_MINIMUM_NETWORK_SIZE_OF"
+                ],
+                "order": 2,
+                "section": 1,
+                "status": 1,
+                "startDate": "2016-1-1",
+                "children": []
+              },
+              {
+                "name": "Test minimum network size of",
+                "id": "TEST_MINIMUM_NETWORK_SIZE_OF",
+                "color": "cyan-3",
+                "desc": "Test minimum network size of desc",
+                "daysCompleted": 10,
+                "target": [
+                    "END"
+                ],
+                "order": 2,
+                "section": 2,
+                "status": 1,
+                "startDate": "2016-1-1",
+                "children": []
+              }
+            ]
         },
         {
             "name": "Vault Config",
@@ -85,7 +131,38 @@
             "section": 2,
             "status": 1,
             "startDate": "2016-1-1",
-            "children": []
+            "children": [
+              {
+                "name": "MPID Create/Manage",
+                "id": "MPID_CREATE_MANAGE",
+                "color": "green-3",
+                "desc": "MPID Create/Manage desc",
+                "daysCompleted": 10,
+                "target": [
+                    "MANAGE_CONTACTS"
+                ],
+                "order": 1,
+                "section": 1,
+                "status": 0,
+                "startDate": "2016-1-1",
+                "children": []
+              },
+              {
+                "name": "Manage Contacts",
+                "id": "MANAGE_CONTACTS",
+                "color": "green-3",
+                "desc": "Manage Contacts desc",
+                "daysCompleted": 10,
+                "target": [
+                    "END"
+                ],
+                "order": 2,
+                "section": 2,
+                "status": 0,
+                "startDate": "2016-1-1",
+                "children": []
+              }
+            ]
         },
         {
             "name": "Messaging",
@@ -102,7 +179,23 @@
             "section": 3,
             "status": 0,
             "startDate": "2016-1-1",
-            "children": []
+            "children": [
+              {
+                "name": "RFC",
+                "id": "RFC",
+                "color": "indigo-3",
+                "desc": "RFC desc",
+                "daysCompleted": 10,
+                "target": [
+                    "END"
+                ],
+                "order": 2,
+                "section": 2,
+                "status": 0,
+                "startDate": "2016-1-1",
+                "children": []
+              }
+            ]
         },
         {
             "name": "Safecoin",

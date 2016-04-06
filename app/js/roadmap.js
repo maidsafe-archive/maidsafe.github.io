@@ -185,6 +185,21 @@ Utils.textEllipsis = function(str, length) {
   return length < str.length ? (str.slice(0, length) + '...') : str;
 };
 
+Utils.truncateBoxText = function(box) {
+  var task = Utils.getTask(box.taskId);
+  var text = task.name;
+  var textPadding = 4;
+  var boxWidth = Math.floor($(Utils.parseId(box.id)).children('.box').attr('width'));
+  var statusBoxWidth = Math.floor($(Utils.parseId(box.id)).children('.statusBox').attr('width'));
+  var charWidth = 7;
+  var textLen = Math.floor(boxWidth / charWidth) - Math.floor(statusBoxWidth / charWidth) - textPadding;
+  var truncatedText = text.slice(0, textLen);
+  if (text.length > truncatedText.length) {
+    truncatedText += '...';
+  }
+  return truncatedText;
+};
+
 // create div element
 // return jQuery element
 Utils.createDiv = function(id, classList, text) {
@@ -259,7 +274,11 @@ TaskFeature.prototype.onClick = function() {
   var self = this;
   return function(e) {
     var task = Utils.getTask(self.taskId);
-    Utils.setLocationHash(task.id);
+    var taskId = task.id;
+    if (task.isExcluded()) {
+      taskId = task.source;
+    }
+    Utils.setLocationHash(taskId);
     $(window).scrollTop(0);
   };
 };
@@ -277,13 +296,7 @@ TaskNav.prototype.onClick = function() {
   var self = this;
   return function(e) {
     e.stopPropagation();
-    if (self.isRoot) {
-      $(this).children().addClass(CSS_CLASS.LIST_CLOSED);
-    } else {
-      $(this).siblings().addClass(CSS_CLASS.LIST_CLOSED);
-      $(this).removeClass(CSS_CLASS.LIST_CLOSED);
-    }
-    Utils.setLocationHash(self.taskId);
+    self.click(this, true);
   };
 };
 
@@ -321,6 +334,22 @@ TaskNav.prototype.mouseOver = function(target) {
     target = Utils.parseId(self.id);
   }
   $(target).addClass('highlight');
+};
+
+TaskNav.prototype.click = function(target, setHash) {
+  var self = this;
+  if (!target) {
+    target = Utils.parseId(self.id);
+  }
+  if (self.isRoot) {
+    $(target).children().addClass(CSS_CLASS.LIST_CLOSED);
+  } else {
+    $(target).siblings().addClass(CSS_CLASS.LIST_CLOSED);
+    $(target).removeClass(CSS_CLASS.LIST_CLOSED);
+  }
+  if (setHash) {
+    Utils.setLocationHash(self.taskId);
+  }
 };
 
 /**
@@ -440,7 +469,6 @@ var Roadmap = function(payload) {
   this.plainData = payload.data;
   this.targetId = payload.target;
   this.interval = payload.interval;
-  this.isChartReady = false;
   this.dateFormat = d3.time.format('%Y-%m-%d');
   this.startDates = [];
   this.sectionCurrentIncomingCounts = [];
@@ -479,6 +507,9 @@ Roadmap.prototype.init = function() {
     var hash = Utils.getLocationHash();
     self.drawChart(hash);
     self.updateNav(hash);
+  });
+  $(window).on('resize', function() {
+    location.reload();
   });
 };
 
@@ -714,6 +745,14 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
   $(Utils.parseId(TASK_DESC_ID)).text(activeTask.desc);
 };
 
+Roadmap.prototype.updateSvgHeight = function() {
+  var self = this;
+  var footerHeight = $('footer').height();
+  var headerheight =  $('header').height();
+  self.svg.height = window.screen.availHeight - headerheight - (footerHeight * 30 / 100);
+  $().height(self.svg.height);
+};
+
 Roadmap.prototype.defineBoxPattern = function(data) {
   var self = this;
   var patternId = BOX_PATTERN_PREFIX + data.name;
@@ -859,7 +898,7 @@ Roadmap.prototype.drawBoxes = function () {
     // text
     boxBase.append('text')
       .text(function(d) {
-        return d.name;
+        return Utils.truncateBoxText(d.box);
       })
       .attr('x', function(d) {
         return ((self.box.height / 2) + d.box.x);
@@ -928,7 +967,6 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
 
   var setActiveTasks = function() {
     var activeTasks = [];
-    console.log(activeTask);
     roadmapTasks.forEach(function(task) {
       if (!task.parent) {
         return;
@@ -941,6 +979,7 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
       return self.activeTasks.push(activeTask);
     }
     self.activeTasks = activeTasks;
+    print('Active tasks', activeTasks);
   };
 
   var setBoxParams = function() {
@@ -990,6 +1029,9 @@ Roadmap.prototype.drawLabel = function(labelData) {
     .attr('x', labelData.x + (self.label.padding / 1.3))
     .attr('y', labelData.y + (self.label.height / 1.3))
     .attr('class', 'labelText');
+  label.on('click', function(e) {
+    Utils.setLocationHash(labelData.source);
+  });
 };
 
 Roadmap.prototype.drawConnections = function () {
@@ -1160,7 +1202,11 @@ Roadmap.prototype.prepareConnections = function(activeTask) {
         interEnd = interStart;
         end.x = interEnd.x;
         end.y = self.svg.height - $(Utils.parseId(BREADCUM_ID)).height() - $('.' + CSS_CLASS.CHART_HEADER).height() - (self.svg.padding * 2);
-        self.drawLabel({x: end.x + 16, y: end.y - self.box.height, className: lowerTask.color, desc: lowerTask.desc})
+        var sourceTask = Utils.getTask(lowerTask.source);
+        var labelColor = sourceTask.color || lowerTask.color;
+        if (lowerTask.source) {
+        }
+        self.drawLabel({x: end.x + 16, y: end.y - self.box.height, className: labelColor, desc: lowerTask.desc, source: sourceTask.id})
       }
       createConnection(lowerTask.id, start, interStart, interEnd, end, lowerTask.color);
     });
@@ -1170,7 +1216,7 @@ Roadmap.prototype.prepareConnections = function(activeTask) {
 
 Roadmap.prototype.resetChart = function() {
   var self = this;
-  $(Utils.parseId(SVG_BOX_GRP_ID)).children().remove();
+  $('.' + CSS_CLASS.CHART).remove();
   self.startDates = [];
   self.sectionCurrentIncomingCounts = [];
   self.activeTasks = [];
@@ -1185,10 +1231,9 @@ Roadmap.prototype.drawChart = function(taskId) {
   }
   taskId = taskId || roadmapTasks[0].id;
   var task = Utils.getTask(taskId);
-  if (!self.isChartReady) {
-    self.prepareChart();
-  }
   self.resetChart();
+  self.updateSvgHeight();
+  self.prepareChart();
   self.updateBreadcum(task);
   self.updateChartHeader(task);
   if (!Utils.isDesktopScreen()) {
@@ -1203,7 +1248,11 @@ Roadmap.prototype.updateNav = function(taskId) {
   var self = this;
   taskId = taskId || roadmapTasks[0].id;
   var task = Utils.getTask(taskId);
-  $(Utils.parseId(task.nav.id)).click();
+  task.nav.click();
+  while(task.parent && task.parent.parent) {
+    task = task.parent;
+    task.nav.click();
+  }
   $('.roadmapNav').removeClass('open');
 };
 
@@ -1239,8 +1288,8 @@ Roadmap.prototype.addFeatures = function(activeTask) {
       var name = task.name;
       if (item.type !== TASK_FEATURE_TYPE.SUB_FEATURES) {
         // TODO get source task name
-        // var sourceTask = Utils.getTask(task.source);
-        name = task.source;
+        var sourceTask = Utils.getTask(task.source);
+        name = sourceTask.name || task.source;
       }
       var listEle = Utils.createDiv(item.id,
         [ 'features-list-i', CSS_CLASS.FEATURES + task.color ]);
@@ -1297,6 +1346,7 @@ Roadmap.prototype.draw = function() {
   self.prepareTasks();
   self.setNav();
   self.drawChart();
+  self.updateNav(Utils.getLocationHash());
 };
 
 $(function() {
