@@ -4,7 +4,9 @@
   overflow: hidden;
   display: flex;
 }
-
+.roadmapChart {
+  padding: 0 !important;
+}
 .roadmapChart-h {
   position: relative;
   padding: 8px 0 8px 15px;
@@ -35,6 +37,7 @@
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
+  display: none;
 }
 
 .roadmapChart-h-t {
@@ -153,6 +156,13 @@
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
+}
+.roadmap .roadmapNav .roadmapNav-b {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: white;
+  z-index: 0;
 }
 
 .listTitle {
@@ -746,7 +756,7 @@
 .cyan-1:before {
   background-color: #42e2c7;
 }
-.svg-cyan-1, .cyan-1.text .info-icon {
+.svg-cyan-1, .svg-cyan-1 .box, .cyan-1.text .info-icon {
   fill: #42e2c7;
 }
 .line-cyan-1 {

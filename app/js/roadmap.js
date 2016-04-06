@@ -4,145 +4,458 @@ var jQuery = window.jQuery;
 var d3 = window.d3;
 var document = window.document;
 
-var createDivElement = function(id, classes, text) {
-  id = id || '';
-  classes = typeof classes === 'object' && classes.length > 0 ? classes.join(' ') : '';
-  var ele = $('<div id="::ID::" class="::CLASS::"></div>'.replace('::ID::', id).replace('::CLASS::', classes));
-  if (text) {
-    ele.html(text);
-  }
-  return ele;
+var DESKTOP_BREAKPOINT = 1134;
+
+var NAV_ID = 'RoadmapNav';
+var CHART_ID = 'RoadmapChart';
+var SVG_ID = 'RoadmapSvg';
+var SVG_BOX_GRP_ID = 'RoadmapSvgBoxGrp';
+var TASK_TITLE_ID = 'TaskTitle';
+var TASK_DESC_ID = 'TaskDesc';
+var BREADCUM_ID = 'Breadcum';
+var MOBILE_MENU_ID = 'Mobile_menu';
+var MOBILE_CHART_ID = 'Mobile_chart';
+var SUB_FEATURES_ID = 'Sub_feature';
+var RELIED_ON_FEATURES_ID = 'Relied_on_features';
+var RELY_THIS_FEATURES_ID = 'Rely_this_features';
+
+var NAV_PREFIX = 'NAV_';
+var BOX_PREFIX = 'BOX_';
+var ARROW_PREFIX = 'ARROW_';
+var BOX_PATTERN_PREFIX = 'BOX_PATTERN_';
+var CONNECTION_PREFIX = 'CONNECTION_';
+var FEATURES_PREFIX = 'FEATURE_';
+
+var EXCLUDED_TASKS = ['EXTERNAL', 'DOWN_STREAM'];
+var END_TASK_TARGET = 'END';
+
+var TASK_FEATURE_TYPE = {
+  SUB_FEATURES: 'sub_features',
+  RELIED_ON_FEATURES: 'relied_on_features',
+  RELY_THIS_FEATURES: 'rely_this_features'
 };
 
-var addDate = function(dateStr, num) {
-  if (isNaN(num)) {
-    throw 'num is not Numeric';
+var infoIconOpen = '<svg class="info-icon opened" version="1.1" id="Layer_1" x="0px" y="0px"' +
+  ' viewBox="0 0 39 24" fill="#2A98EA" enable-background="new 0 0 39 24" ><path d="M11,' +
+  '17h2v-6h-2V17z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,' +
+  '20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S16.4,20,12,20z M11,9h2V7h-2V9z"/><polygon ' +
+  'points="31.3,13.2 26.8,8.7 25.8,9.8 31.3,15.3 36.8,9.8 35.7,8.7 "/></svg>';
+
+var infoIconClose = '<svg class="info-icon closed" version="1.1" id="Layer_1" x="0px" y="0px"' +
+  ' viewBox="0 0 39 24" fill="#2A98EA" enable-background="new 0 0 39 24">' +
+  '<polygon points="31.3,11.1 35.7,15.5 36.8,14.5 31.3,9 25.8,14.5 26.8,15.5 "/>' +
+  '<path d="M12,2.3c-5.5,0-10,4.5-10,10s4.5,10,10,10s10-4.5,10-10S17.5,2.3,12,2.3z"/>' +
+  '<path fill="#FFFFFF" d="M11,17.3h2v-6h-2V17.3z M11,9.3h2v-2h-2V9.3z"/></svg>';
+
+var TASK_STATUS = {
+  NAME: 'Status_Patterns',
+  COMPLETE: {
+    id: 'STATUS_COMPLETE',
+    path: '14.9,4.9 7.7,12.1 4.9,9.2 3.5,10.6 7.7,14.9 16.3,6.3',
+    color: '#FFFFFF'
+  },
+  OPEN: {
+    id: 'STATUS_OPEN',
+    path: 'M15.2,13.3l-4.5-4.5c0.4-1.1,0.2-2.5-0.7-3.4c-1-1-2.5-1.2-3.6-0.6' +
+      'l2.1,2.1L7,8.4L4.8,6.3C4.2,7.4,4.5,8.9,5.5,9.9c0.9,0.9,2.3,1.2,3.4,' +
+      '0.7l4.5,4.5c0.2,0.2,0.5,0.2,0.7,0l1.1-1.1C15.4,13.8,15.4,13.4,15.2,13.3z',
+    color: '#FFFFFF'
+  }
+};
+
+var TASK_COLORS = ['blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
+  'coral-1', 'coral-2', 'coral-3', 'pink-1', 'pink-2', 'pink-3',
+  'green-1', 'green-2', 'green-3', 'indigo-1', 'indigo-2', 'indigo-3',
+  'cyan-1', 'cyan-2', 'cyan-3', 'turquoise-1', 'turquoise-2', 'turquoise-3',
+  'grey-1', 'grey-2', 'grey-3', 'purple-1', 'purple-2', 'purple-3', ''
+];
+
+var BOX_PATTERN_PATH = '22,0 0,22 43,22 62,0';
+
+var CONNECTION_ARROW = {
+  title: 'Connection_Arrows',
+  refX: 12,
+  refY: 10,
+  markerWidth: 6,
+  markerHeight: 6,
+  fill: 'none',
+  strokeWidth: 3,
+  path: 'M 0 20L 10 10 L 0 0'
+};
+
+var CSS_CLASS = {
+  LIST_TITLE: 'listTitle',
+  LIST_BASE: 'listBase',
+  LIST_PADDING: 'listPadding',
+  LIST_CLOSED: 'listClose',
+  NAV_BASE: 'roadmapNav',
+  CHART: 'roadmapChart',
+  CHART_BASE: 'roadmapChart-b',
+  LINE: 'line-',
+  SVG: 'svg-',
+  CHART_HEADER: 'roadmapChart-h',
+  CHART_HEADER_TITLE: 'roadmapChart-h-t',
+  CHART_HEADER_DESC: 'roadmapChart-h-desc',
+  BREADCUM: 'roadmapBreadcrumb',
+  BREADCUM_ITEM: 'breadcrumb-i',
+  PROGRESSBAR_BG: 'svg-blue-3',
+  PROGRESSBAR_STRIPE: 'svg-blue-2',
+  FEATURES: 'features-',
+};
+
+var roadmapTasks = [];
+
+var print = function(title, data) {
+  console.log(title + ' ::');
+  console.log(data);
+};
+
+/**
+ * Utilities
+ */
+var Utils = function() {};
+
+// formate date to YYYY-MM-DD
+Utils.parseDate = function(dateStr) {
+  var makeDouble = function(digit) {
+    return ("0" + digit).slice(-2);
+  };
+  var date = dateStr ? new Date(dateStr) : new Date();
+  return date.getFullYear() + '-' + makeDouble(date.getMonth() + 1) + '-' + makeDouble(date.getDate());
+};
+
+Utils.addDate = function(dateStr, value) {
+  if (isNaN(value)) {
+    throw 'value is not Numeric';
   }
   var date = new Date(dateStr);
-  var newDate = new Date(date.getTime() + (parseInt(num) * 24 * 60 * 60 * 1000));
-  return newDate.getFullYear() + '-' + (newDate.getMonth() + 1) + '-' + (newDate.getDate());
+  var newDate = new Date(date.getTime() + (parseInt(value) * 24 * 60 * 60 * 1000));
+  return Utils.parseDate(newDate.toDateString());
 };
 
-var parseDate = function(dateStr) {
-  var makeDoubleDigit = function(num) {
-    if (num.length === 1) {
-      num = '0' + num;
-    }
-    return num;
-  };
-
-  if (!dateStr) {
-    var date = new Date();
-    dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+Utils.subDate = function(dateStr, value) {
+  if (isNaN(value)) {
+    throw 'value is not Numeric';
   }
-  dateStr = dateStr.split('-');
-  dateStr[1] = makeDoubleDigit(dateStr[1]);
-  dateStr[2] = makeDoubleDigit(dateStr[2]);
-  return dateStr.join('-');
+  var date = new Date(dateStr);
+  var newDate = new Date(date.getTime() - (parseInt(value) * 24 * 60 * 60 * 1000));
+  return Utils.parseDate(newDate.toDateString());
 };
 
-var parseNodeName = function(name) {
-  name = name.replace(/_/g, ' ').toLowerCase();
-  return name[0].toUpperCase() + name.slice(1);
+Utils.getTask = function(taskId) {
+  var self = this;
+  var targetTask = null;
+  roadmapTasks.forEach(function(task) {
+    if (task.id !== taskId) {
+      return;
+    }
+    targetTask = task;
+  });
+  return targetTask;
 };
 
-var textEllipsis = function(str, length) {
+Utils.addSvgClass = function(targetId, className) {
+  var classNames = $(targetId).attr('class');
+  if (!classNames) {
+    return;
+  }
+  var classList = classNames.split(' ');
+  if (classList.indexOf(className) !== -1) {
+    return;
+  }
+  classList.unshift(className);
+  $(targetId).attr('class', classList.join(' '));
+};
+
+Utils.removeSvgClass = function(targetId, className) {
+  var classNames = $(targetId).attr('class');
+  if (!classNames) {
+    return;
+  }
+  var classList = classNames.split(' ');
+  if (classList.indexOf(className) === -1) {
+    return;
+  }
+  classList.splice(classList.indexOf(className), 1);
+  $(targetId).attr('class', classList.join(' '));
+};
+
+Utils.textEllipsis = function(str, length) {
   length = length || 0;
   return length < str.length ? (str.slice(0, length) + '...') : str;
 };
 
-var toggleSvgClass = function(self, className, toggle) {
-  if (!self || !className) {
+// create div element
+// return jQuery element
+Utils.createDiv = function(id, classList, text) {
+  id = id || '';
+  text = text || '';
+  var classNames = (typeof classList === 'object') ? classList.join(' ') : '';
+  var ele = '<div id="::id::" class="::class::">::text::</div>';
+  ele = ele.replace('::id::', id)
+    .replace('::class::', classNames)
+    .replace('::text::', text);
+  return $(ele);
+};
+
+// parse name as jQuery id selector
+Utils.parseId = function(idName) {
+  if (!idName) {
     return;
   }
-  var classList = self.attr('class');
-  if (!classList) {
+  return idName.indexOf('#') === 0 ? idName : '#' + idName;
+};
+
+// set location hash
+Utils.setLocationHash = function(taskId) {
+  if (!taskId) {
     return;
   }
-  classList = classList.split(' ');
-  var index = classList.indexOf(className);
-  if (!toggle) {
-    if (index !== -1) {
-      classList.splice(index, 1);
+  window.location.assign('#' + taskId.toLowerCase());
+};
+
+Utils.getLocationHash = function() {
+  return window.location.hash.toUpperCase().replace('#', '');
+};
+
+Utils.resetLocationHash = function() {
+  window.location.hash = '';
+};
+
+Utils.isDesktopScreen = function() {
+  return $(window).width() > DESKTOP_BREAKPOINT;
+};
+
+var Connection = function(taskId, sourceId) {
+  this.sourceId = sourceId;
+  this.targetId = taskId;
+  this.id = CONNECTION_PREFIX + taskId + '_' + sourceId;
+  this.start = { x: 0, y: 0 };
+  this.interStart = { x: 0, y: 0 };
+  this.interEnd = { x: 0, y: 0 };
+  this.end = { x: 0, y: 0 };
+  this.color = '';
+};
+
+Connection.prototype.setPath = function(start, interStart, interEnd, end) {
+  var self = this;
+  self.start = start;
+  self.interStart = interStart;
+  self.interEnd = interEnd;
+  self.end = end;
+};
+
+Connection.prototype.setColor = function(color) {
+  this.color = color;
+};
+
+var TaskFeature = function(taskId, type) {
+  this.id = FEATURES_PREFIX + taskId;
+  this.taskId = taskId;
+  this.type = type;
+};
+
+TaskFeature.prototype.onClick = function() {
+  var self = this;
+  return function(e) {
+    var task = Utils.getTask(self.taskId);
+    Utils.setLocationHash(task.id);
+    $(window).scrollTop(0);
+  };
+};
+
+/**
+ * Task Nav
+ */
+var TaskNav = function(taskId, isRoot) {
+  this.taskId = taskId;
+  this.id = NAV_PREFIX + taskId;
+  this.isRoot = isRoot;
+};
+
+TaskNav.prototype.onClick = function() {
+  var self = this;
+  return function(e) {
+    e.stopPropagation();
+    if (self.isRoot) {
+      $(this).children().addClass(CSS_CLASS.LIST_CLOSED);
+    } else {
+      $(this).siblings().addClass(CSS_CLASS.LIST_CLOSED);
+      $(this).removeClass(CSS_CLASS.LIST_CLOSED);
     }
-  } else {
-    if (index === -1) {
-      classList.push(className);
-    }
+    Utils.setLocationHash(self.taskId);
+  };
+};
+
+TaskNav.prototype.onMouseOver = function() {
+  var self = this;
+  return function(e) {
+    e.stopPropagation();
+    self.mouseOver(this);
+    var task = Utils.getTask(self.taskId);
+    task.box.mouseOver();
+  };
+};
+
+TaskNav.prototype.onMouseOut = function() {
+  var self = this;
+  return function(e) {
+    e.stopPropagation();
+    self.mouseOut(this);
+    var task = Utils.getTask(self.taskId);
+    task.box.mouseOut();
+  };
+};
+
+TaskNav.prototype.mouseOut = function(target) {
+  var self = this;
+  if (!target) {
+    target = Utils.parseId(self.id);
   }
-  classList = classList.join(' ');
-  self.attr('class', classList);
+  $(target).removeClass('highlight');
 };
 
-var isBoxDown = function(target, node) {
-  node.startDate = node.startDate || new Date(1 - 1 - 1947);
-  return ((new Date(target.startDate)).getTime() > (new Date(node.startDate)).getTime()) &&
-    (target.section < node.section);
+TaskNav.prototype.mouseOver = function(target) {
+  var self = this;
+  if (!target) {
+    target = Utils.parseId(self.id);
+  }
+  $(target).addClass('highlight');
 };
 
-var isDesktopScreen = function() {
-  return $(window).width() > 1134;
+/**
+ * Task Box
+ */
+var TaskBox = function(taskId) {
+  this.taskId = taskId;
+  this.id = BOX_PREFIX + taskId;
+  this.x = 0;
+  this.y = 0;
+  this.width = 0;
+  this.statusX = 0;
 };
 
-var changeLocation = function(taskName) {
-  window.location.assign('#' + taskName.toLowerCase());
+TaskBox.prototype.setParams = function(x, y, width, statusX) {
+  var self = this;
+  self.x = x;
+  self.y = y;
+  self.width = width;
+  self.statusX = statusX;
 };
 
-// roadmap chart
+TaskBox.prototype.onClick = function () {
+  var self = this;
+  return function() {
+    Utils.setLocationHash(self.taskId);
+  };
+};
+
+TaskBox.prototype.onMouseOver = function() {
+  var self = this;
+  return function() {
+    self.mouseOver();
+  };
+};
+
+TaskBox.prototype.onMouseOut = function() {
+  var self = this;
+  return function() {
+    self.mouseOut();
+  };
+};
+
+TaskBox.prototype.mouseOver = function() {
+  var self = this;
+  var task = Utils.getTask(self.taskId);
+  task.nav.mouseOver();
+  Utils.addSvgClass(Utils.parseId(self.id), 'highlight');
+  task.target.forEach(function(targetId) {
+    var targetTask = Utils.getTask(targetId);
+    if (!targetTask) { return; }
+    targetTask.connections.forEach(function(connection) {
+      if (connection.sourceId === self.taskId) {
+        Utils.addSvgClass(Utils.parseId(connection.id), 'highlight');
+      }
+    });
+  });
+};
+
+TaskBox.prototype.mouseOut = function(target) {
+  var self = this;
+  var task = Utils.getTask(self.taskId);
+  task.nav.mouseOut();
+  Utils.removeSvgClass(Utils.parseId(self.id), 'highlight');
+  task.target.forEach(function(targetId) {
+    var targetTask = Utils.getTask(targetId);
+    if (!targetTask) { return; }
+    targetTask.connections.forEach(function(connection) {
+      if (connection.sourceId === self.taskId) {
+        Utils.removeSvgClass(Utils.parseId(connection.id), 'highlight');
+      }
+    });
+  });
+};
+
+/**
+ * Task
+ */
+var Task = function(payload, parent, isRoot) {
+  this.name = payload.name;
+  this.id = payload.id;
+  this.desc = payload.desc;
+  this.parent = parent;
+  this.target = payload.target;
+  this.source = payload.source || null;
+  this.color = payload.color;
+  this.status = payload.status;
+  this.startDate = Utils.parseDate(payload.startDate);
+  this.daysCompleted = payload.daysCompleted || 0;
+  this.order = payload.order || 1;
+  this.section = payload.section || 1;
+  this.offset = payload.offset || 0;
+  this.nav = new TaskNav(this.id, isRoot);
+  this.box = new TaskBox(this.id);
+  this.connections = [];
+};
+
+Task.prototype.isExcluded = function() {
+  var self = this;
+  return EXCLUDED_TASKS.indexOf(self.name) !== -1;
+};
+
+Task.prototype.isExternal = function() {
+  var self = this;
+  return EXCLUDED_TASKS[0] === self.name;
+};
+
+Task.prototype.isDownStream = function() {
+  var self = this;
+  return EXCLUDED_TASKS[1] === self.name;
+};
+
+/**
+ * Roadmap
+ */
 var Roadmap = function(payload) {
-  this.payload = payload;
+  this.plainData = payload.data;
+  this.targetId = payload.target;
+  this.interval = payload.interval;
   this.isChartReady = false;
-  this.isMobileChartReady = false;
-  this.excludeNodes = [ 'EXTERNAL', 'DOWN_STREAM' ];
-  this.excludeTarget = 'END';
-  this.IDs = {
-    'NAV': 'RoadmapNav',
-    'CHART': 'RoadmapChart',
-    'CHART_BASE': 'RoadmapChartBase',
-    'CHART_SVG': 'RoadmapChartSvg',
-    'CHART_SVG_GRP': 'RoadmapChartSvgGroup',
-    'LABEL_GRP': 'LabelGroup',
-    'BREADCUM': 'RoadmapBreadcum',
-    'PROGRESS': 'RoadmapProgress',
-    'TITLE': 'RoadmapTitle',
-    'DESC': 'RoadmapDesc',
-    'MOBILE_BASE': 'RoadmapChartMobileView',
-    'MOBILE_MENU': 'RoadmapChartMobileMenu',
-    'SUB_FEATURES': 'RoadmapChartSubFeatures',
-    'RELIED_ON_FEATURES': 'RoadmapChartReliedOnFeatures',
-    'RELY_THIS_FEATURES': 'RoadmapChartRelyThisFeatures'
-  };
-  this.nodes = [];
-  this.nodeColors = [ 'blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
-    'coral-1', 'coral-2', 'coral-3', 'pink-1', 'pink-2', 'pink-3',
-    'green-1', 'green-2', 'green-3', 'indigo-1', 'indigo-2', 'indigo-3',
-    'cyan-1', 'cyan-2', 'cyan-3', 'turquoise-1', 'turquoise-2', 'turquoise-3',
-    'grey-1', 'grey-2', 'grey-3', 'purple-1', 'purple-2', 'purple-3', ''
-  ];
-  this.breadcumList = [];
-  this.perUnit = 22;
-  this.progress = {
-    height: 10
-  };
-  this.taskPrefix = {
-    'ID': '_TASK_',
-    'CLASS': 'svg-',
-    'LINE': 'line-',
-    'ARROW': 'ARROW_',
-    'PATH': 'PATH_',
-    'STATUS_BOX': 'STATUS_',
-    'BOX_TEXT': 'BOX_TEXT_',
-    'FEATURE_ITEM': 'features-',
-    'FEATURE_ID': 'FEATURE_',
-    'LABEL_ID': 'LABEL_'
-  };
+  this.dateFormat = d3.time.format('%Y-%m-%d');
+  this.startDates = [];
+  this.sectionCurrentIncomingCounts = [];
+  this.activeTasks = [];
+  this.downStreamCounts = [];
   this.svg = {
     width: 0,
     height: 600,
-    padding: 15
+    padding: 20
+  };
+  this.progressBar = {
+    height: 10
   };
   this.box = {
-    width: 10,
+    width: 0,
     height: 22,
     strokeWidth: 2
   };
@@ -152,1079 +465,749 @@ var Roadmap = function(payload) {
     padding: 8,
     borderRadius: 3
   };
-  this.boxPattern = {
-    path: '22,0 0,22 43,22 62,0'
-  };
-  this.taskList = [];
-  this.dateFormat = null;
 };
 
-Roadmap.prototype.getNode = function(nodeName) {
-  var targetNode = null;
-  this.nodes.forEach(function(node) {
-    if (node.name === nodeName) {
-      targetNode = node;
-    }
-  });
-  return targetNode;
-};
-
-Roadmap.prototype.getStartDate = function(node) {
+Roadmap.prototype.getPerUnit = function() {
   var self = this;
-  var getSourceNodeStartDate = function(nodeName) {
-    var startDate = null;
-    self.nodes.forEach(function(node) {
-      if ((node.target === nodeName)) {
-        startDate = node.startDate;
-      }
-    });
-    return startDate;
-  };
+  var task = self.activeTasks[0];
+  return (self.timeScale(self.dateFormat.parse(task.startDate)) - self.timeScale(self.dateFormat.parse(Utils.subDate(task.startDate, 1))))
+};
 
-  var getPreviousNode = function(targetNode) {
-    var prevNode = null;
-    self.nodes.forEach(function(node) {
-      if ((node.order < targetNode.order) && (node.section < targetNode.section) &&
-        (node.parent === targetNode.parent)) {
-        prevNode = node;
-      }
-    });
-    return prevNode;
-  };
+Roadmap.prototype.init = function() {
+  var self = this;
+  $(window).on('hashchange', function() {
+    var hash = Utils.getLocationHash();
+    self.drawChart(hash);
+    self.updateNav(hash);
+  });
+};
 
-  if (node.order === 1) {
-    var parentNode = self.getNode(node.parent);
-    if (!parentNode) {
+Roadmap.prototype.prepareTasks = function() {
+  var self = this;
+
+  var setTask = function(task) {
+    if (!task.hasOwnProperty('children')) {
       return;
     }
-    return parentNode.startDate;
-  }
-  var prevNode = getPreviousNode(node);
-  var downStreamNodes = [];
-  if (prevNode) {
-    downStreamNodes = self.getDownStreamsNodeForTask(prevNode.name);
-  }
-  var incomings = self.getIncomings(node.name);
-  var sourceStartDate = getSourceNodeStartDate(node.name, node.section);
-  var gap = self.payload.interval + incomings.length + downStreamNodes.length + 1 + node.offset;
-  if (!sourceStartDate) {
-    sourceStartDate = self.payload.data.startDate;
-    gap *= node.order > 1 ? (node.order - 1) : node.order;
-  }
-  return addDate(sourceStartDate, gap);
-};
+    task.children.forEach(function(child) {
+      roadmapTasks.push(new Task(child, Utils.getTask(task.id), false));
+      if (child.hasOwnProperty('children')) {
+        setTask(child);
+      }
+    });
+  };
 
-Roadmap.prototype.getDownStreamsNodeForTask = function(taskName) {
-  var self = this;
-  var downStreamNodes = [];
-  self.nodes.forEach(function(node) {
-    if ((node.name === self.excludeNodes[1]) && (node.source === taskName)) {
-      downStreamNodes.push(node);
-    }
-  });
-  return downStreamNodes;
-};
-
-Roadmap.prototype.prepareStartDate = function() {
-  var self = this;
-  self.nodes.forEach(function(node, i) {
-    self.nodes[i].startDate = self.getStartDate(node);
-    self.nodes[i].endDate = addDate(node.startDate, self.payload.interval);
-  });
+  roadmapTasks.push(new Task(self.plainData, null, true));
+  setTask(self.plainData);
+  print('Task', roadmapTasks);
 };
 
 Roadmap.prototype.timeScale = function(val) {
   var self = this;
   return (d3.time.scale()
-    .domain([ d3.min(self.taskList, function(d) {
+    .domain([ d3.min(self.activeTasks, function(d) {
         return self.dateFormat.parse(d.startDate);
       }),
-      d3.max(self.taskList, function(d) {
+      d3.max(self.activeTasks, function(d) {
         return self.dateFormat.parse(d.endDate);
       })
     ])
-    .range([ 0, self.svg.width - (self.svg.padding * 2) ]))(val);
+    .range([ 0, (self.svg.width - (self.svg.padding * 2)) ]))(val);
 };
 
-// prepare data
-Roadmap.prototype.prepareNodes = function() {
+Roadmap.prototype.setNav = function() {
   var self = this;
-  var prepareNode = function(node, parent) {
-    var nodeInfo = {
-      name: node.name,
-      desc: node.desc || '',
-      color: node.color || '',
-      parent: parent || '',
-      target: node.target || '',
-      daysCompleted: node.daysCompleted || 0,
-      startDate: parseDate(node.startDate),
-      order: node.order || null,
-      section: node.section || null,
-      offset: node.offset || 0,
-      status: node.status || null
-    };
-
-    if (node.name === self.excludeNodes[0]) {
-      nodeInfo.id = node.id;
-    }
-    if (node.name === self.excludeNodes[1]) {
-      nodeInfo.id = node.id;
-      nodeInfo.source = node.source;
-    }
-    return nodeInfo;
+  var prepareNavBase = function() {
+    var navBase = Utils.createDiv(null, [CSS_CLASS.NAV_BASE]);
+    var navBaseCtx = Utils.createDiv(NAV_ID, [ 'roadmapNav-b' ]);
+    $(Utils.parseId(self.targetId)).append(navBase.append(navBaseCtx));
   };
 
-  var addChild = function(parent) {
-    if (parent.hasOwnProperty('children')) {
-      parent.children.forEach(function(child) {
-        self.nodes.push(prepareNode(child, parent.name));
-        if (child.hasOwnProperty('children')) {
-          addChild(child);
-        }
-      });
+  var setNavList = function(task) {
+    if (task.isExcluded()) {
+      return;
     }
-  };
-
-  this.nodes.push(prepareNode(this.payload.data, null));
-  addChild(this.payload.data);
-};
-
-Roadmap.prototype.setSvgHeight = function() {
-  var self = this;
-  var footerHeight = $('footer').height();
-  // var headerheight =  $('header').height();
-  self.svg.height = window.screen.availHeight - (footerHeight * 40 / 100);
-  $(self.payload.target).height(self.svg.height);
-};
-
-Roadmap.prototype.init = function() {
-  var self = this;
-  self.dateFormat = d3.time.format('%Y-%m-%d');
-  self.prepareNodes();
-  self.prepareStartDate();
-  self.setSvgHeight();
-  $(window).on('resize', function() {
-    self.clearChartSection();
-    self.cleanMobileView();
-    self.setSvgHeight();
-    var taskId = window.location.hash.slice(1).toUpperCase();
-    if (!self.taskHasChildren(taskId)) {
-      self.toggleListHighlight('#' + taskId, false);
-      taskId = self.getNode(taskId).parent;
-    }
-    self.drawChart(taskId);
-  });
-
-  $(window).on('hashchange', function() {
-    var taskId = window.location.hash.slice(1).toUpperCase();
-    self.drawChart(taskId);
-    if (taskId && (taskId !== self.payload.data.name)) {
-      self.openNavList($('#' + taskId));
+    var parentNavList = !task.parent ? $(Utils.parseId(NAV_ID)) : $(Utils.parseId(task.parent.nav.id));
+    var listClasses = [task.color];
+    if (task.nav.isRoot) {
+      listClasses.push(CSS_CLASS.LIST_TITLE);
     } else {
-      $('#' + self.nodes[0].name).children().addClass('listClose');
+      parentNavList.addClass(CSS_CLASS.LIST_CLOSED);
+      listClasses.push(CSS_CLASS.LIST_BASE);
     }
-  });
-};
-
-Roadmap.prototype.getNodeName = function(source) {
-  var self = this;
-  source = source instanceof jQuery ? source : $(source);
-  var nodeId = source.children('.box').attr('id');
-  if (!nodeId) {
-    return;
-  }
-  return nodeId.slice(self.taskPrefix.ID.length);
-};
-
-Roadmap.prototype.getPathClassList = function(targetEle, isLevelUp) {
-  var self = this;
-  var pathClass = targetEle.attr('class').split(' ')[0].slice(self.taskPrefix.LINE.length);
-  var level = parseInt(pathClass.substr(pathClass.length - 1));
-  pathClass = pathClass.substr(0, pathClass.length - 1) + (isLevelUp ? (level - 1) : level);
-  return pathClass;
-};
-
-Roadmap.prototype.openNavList = function(source, fromBox) {
-  var removeClasses = [ 'listClose' ];
-  if (fromBox) {
-    source = '#' + this.getNodeName(source);
-    removeClasses.push('highlight');
-  }
-  $('.listBase').removeClass('active');
-  $(source).addClass('active');
-  $(source).siblings().addClass('listClose');
-  $(source).parents().removeClass('listClose');
-  $(source).removeClass(removeClasses.join(' '));
-};
-
-Roadmap.prototype.toggleListHighlight = function(source, toggle, fromBox) {
-  var self = this;
-  if (fromBox) {
-    var taskId = self.getNodeName(source);
-    source = '#' + taskId;
-  }
-  return toggle ? $(source).addClass('highlight') : $(source).removeClass('highlight');
-};
-
-Roadmap.prototype.togglePathHighlight = function(taskId, toggle) {
-  var self = this;
-  var pathId = self.taskPrefix.PATH + taskId;
-  var targetEle = $('#' + pathId);
-  if (!targetEle.is('path')) {
-    return;
-  }
-  var pathClass = self.getPathClassList(targetEle, toggle);
-  targetEle.attr('marker-start', 'url(#' + (self.taskPrefix.ARROW + pathClass) + ')');
-  var targetEleDownStream = $('#' + pathId + '_DOWNSTREAM');
-  if (!toggle) {
-    toggleSvgClass(targetEle, 'highlight', false);
-    toggleSvgClass(targetEleDownStream, 'highlight', false);
-    return;
-  }
-  toggleSvgClass(targetEle, 'highlight', true);
-  toggleSvgClass(targetEleDownStream, 'highlight', true);
-};
-
-Roadmap.prototype.isTaskValid = function(taskName) {
-  var isValid = false;
-  this.taskList.forEach(function(task) {
-    if (task.name === taskName) {
-      isValid = true;
-    }
-  });
-  return isValid;
-};
-
-Roadmap.prototype.taskHasChildren = function(taskId) {
-  var self = this;
-  var check = false;
-  self.nodes.forEach(function(node) {
-    if (node.parent === taskId) {
-      check = true;
-    }
-  });
-  return check;
-};
-
-Roadmap.prototype.toggleTaskHighlight = function(source, toggle, isList) {
-  var self = this;
-  if (isList) {
-    var id = $(source).attr('id');
-    if (!self.isTaskValid(id)) {
-      return;
-    }
-    source = $('#' + self.taskPrefix.ID + id).parent('.boxBase');
-  }
-  toggleSvgClass($(source), 'highlight', toggle);
-  var taskId = self.getNodeName(source);
-  self.togglePathHighlight(taskId, toggle);
-  self.toggleListHighlight(source, toggle, true);
-};
-
-Roadmap.prototype.handleListEvents = function() {
-  var self = this;
-  var hideNav = function() {
-    $('#' + self.IDs.NAV).removeClass('open');
+    var navList = Utils.createDiv(task.nav.id, listClasses);
+    navList.append('<span class="' + CSS_CLASS.LIST_PADDING + '">' + task.name + '</span>');
+    navList.on('click', (task.nav.onClick)());
+    navList.on('mouseover', (task.nav.onMouseOver)());
+    navList.on('mouseout', (task.nav.onMouseOut)());
+    parentNavList.append(navList);
   };
 
-  $('.listTitle').on('click', function(e) {
-    e.stopPropagation();
-    $(this).children().addClass('listClose');
-    $('.listBase').removeClass('active');
-    var taskName = $(this).attr('id');
-    changeLocation(taskName);
-    if (!isDesktopScreen()) {
-      hideNav();
-      self.drawChart(taskName);
-      return;
-    }
-    self.drawChart();
-  });
-
-  $('.listBase').on('click', function(e) {
-    e.stopPropagation();
-    var taskName = $(this).attr('id');
-    self.toggleTaskHighlight(this, false, true);
-    if (!isDesktopScreen()) {
-      hideNav();
-      changeLocation(taskName);
-      self.openNavList(this);
-      self.drawChart(taskName);
-      return;
-    }
-    if (!$(this).hasClass('listClose') && (window.location.hash.slice(1).toUpperCase() === taskName)) {
-      var parent = self.getNode(taskName).parent;
-      changeLocation(parent);
-      $(this).addClass('listClose');
-      return self.drawChart(parent);
-    }
-
-    self.openNavList(this);
-    changeLocation(taskName);
-    return self.drawChart(taskName);
-  });
-
-  $('.listBase').mouseover(function(e) {
-    e.stopPropagation();
-    self.toggleListHighlight(this, true);
-    self.toggleTaskHighlight(this, true, true);
-  });
-
-  $('.listBase').mouseout(function(e) {
-    e.stopPropagation();
-    self.toggleListHighlight(this, false);
-    self.toggleTaskHighlight(this, false, true);
-  });
-};
-
-Roadmap.prototype.handleBoxEvents = function() {
-  var self = this;
-  $('.boxBase').on('click', function(e) {
-    e.stopPropagation();
-    var taskId = self.getNodeName(this);
-    // if (!self.taskHasChildren(taskId)) {
-    //   return;
-    // }
-    self.openNavList(this, true);
-    changeLocation(taskId);
-    self.drawChart(taskId);
-  });
-
-  $('.boxBase').mouseover(function(e) {
-    e.stopPropagation();
-    self.toggleTaskHighlight(this, true);
-  });
-
-  $('.boxBase').mouseout(function(e) {
-    e.stopPropagation();
-    self.toggleTaskHighlight(this, false);
-  });
-
-  $('.line-label').on('click', function(e) {
-    e.stopPropagation();
-    var taskName = $(this).attr('id').slice(self.taskPrefix.LABEL_ID.length);
-    changeLocation(taskName);
-    self.openNavList('#' + taskName);
-    self.drawChart(taskName);
-  });
-};
-
-Roadmap.prototype.handleHeaderEvents = function() {
-  var self = this;
-  $('#' + self.IDs.TITLE).on('click', function(e) {
-    e.stopPropagation();
-    $(this).parent().toggleClass('active');
-  });
-};
-
-Roadmap.prototype.drawNav = function() {
-  var self = this;
-  var classes = [ 'roadmapNav' ];
-  this.targetEle.append(createDivElement(this.IDs.NAV, classes));
-  var rootEle = $('#' + this.IDs.NAV);
-  this.nodes.forEach(function(node, i) {
-    if (self.excludeNodes.indexOf(node.name) !== -1) {
-      return;
-    }
-    var parentEle = node.parent.length > 0 ? $('#' + node.parent) : rootEle;
-    var classes = [ node.color ];
-    if (i === 0) {
-      classes.push('listTitle');
-    } else {
-      classes.push('listBase');
-    }
-    var child = createDivElement(node.name, classes);
-    var nodeName = parseNodeName(node.name);
-    child.addClass('listClose');
-    child = child.append('<span class="listPadding">' + nodeName + '</span>');
-    parentEle.append(child);
-  });
-  this.handleListEvents();
-};
-
-Roadmap.prototype.setTaskList = function(parentName) {
-  var self = this;
-  var tasks = [];
-  self.nodes.forEach(function(task) {
-    if (self.excludeNodes.indexOf(task.name) !== -1) {
-      return;
-    }
-    if (task.parent === parentName) {
-      tasks.push(task);
-    }
-  });
-  self.taskList = tasks;
-};
-
-// add breadcum element
-Roadmap.prototype.addBreadcum = function(parentId) {
-  var self = this;
-  var breadcumEle = createDivElement(self.IDs.BREADCUM, [ 'roadmapBreadcrumb' ]);
-  $(parentId).append(breadcumEle);
-};
-
-// add header element
-Roadmap.prototype.addHeader = function(parentId) {
-  var self = this;
-  var infoIconOpen = '<svg class="info-icon opened" version="1.1" id="Layer_1" x="0px" y="0px"' +
-  ' viewBox="0 0 39 24" fill="#2A98EA" enable-background="new 0 0 39 24" ><path d="M11,' +
-  '17h2v-6h-2V17z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,' +
-  '20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S16.4,20,12,20z M11,9h2V7h-2V9z"/><polygon ' +
-  'points="31.3,13.2 26.8,8.7 25.8,9.8 31.3,15.3 36.8,9.8 35.7,8.7 "/></svg>';
-
-  var infoIconClose = '<svg class="info-icon closed" version="1.1" id="Layer_1" x="0px" y="0px"' +
-  ' viewBox="0 0 39 24" enable-background="new 0 0 39 24">' +
-  '<polygon points="31.3,11.1 35.7,15.5 36.8,14.5 31.3,9 25.8,14.5 26.8,15.5 "/>' +
-  '<path d="M12,2.3c-5.5,0-10,4.5-10,10s4.5,10,10,10s10-4.5,10-10S17.5,2.3,12,2.3z"/>' +
-  '<path fill="#FFFFFF" d="M11,17.3h2v-6h-2V17.3z M11,9.3h2v-2h-2V9.3z"/></svg>';
-
-  var header = createDivElement(null, [ 'roadmapChart-h' ]);
-  var headerTitle = createDivElement(null, [ 'roadmapChart-h-t' ]);
-  var headerTitleCntx = createDivElement(self.IDs.TITLE, []);
-  var headerDesc = createDivElement(null, [ 'roadmapChart-h-desc' ]);
-  var headerDescCntx = createDivElement(self.IDs.DESC, []);
-  if (!isDesktopScreen()) {
-    var menuicon = createDivElement(self.IDs.MOBILE_MENU, [ 'roadmapChart-h-menu' ]);
-    header.append(menuicon);
-    var descTitle = createDivElement(null, [ 'roadmapChart-h-desc-title' ]);
-    descTitle.text('Description');
-    headerDesc.append(descTitle);
-  }
-  headerTitle.append(headerTitleCntx);
-  headerTitle.append(infoIconOpen);
-  headerTitle.append(infoIconClose);
-  header.append(headerTitle);
-  header.append(headerDesc.append(headerDescCntx));
-  $(parentId).append(header);
+  prepareNavBase();
+  roadmapTasks.forEach(setNavList);
 };
 
 Roadmap.prototype.prepareChart = function() {
   var self = this;
-  var roadmapChartBase = createDivElement(self.IDs.CHART_BASE, [ 'roadmapChart-b' ]);
-  var roadmapChart = createDivElement(self.IDs.CHART, [ 'roadmapChart' ]);
-  self.targetEle.append(roadmapChart.append(roadmapChartBase));
-  self.svg.width = roadmapChartBase.width();
-  var chartBaseId = '#' + self.IDs.CHART_BASE;
-  self.addBreadcum(chartBaseId);
-  self.addHeader(chartBaseId);
-  d3.selectAll(chartBaseId)
-    .append('svg')
-    .attr('id', self.IDs.CHART_SVG)
-    .attr('width', self.svg.width)
-    .attr('height', self.svg.height)
-    .append('g')
-    .attr('id', self.IDs.CHART_SVG_GRP)
-    .attr('transform', 'translate(' + self.svg.padding + ',' + (self.svg.padding + self.progress.height) + ')');
+  var setChartBase = function() {
+    var chart = Utils.createDiv(null, [CSS_CLASS.CHART]);
+    var chartBase = Utils.createDiv(CHART_ID, [CSS_CLASS.CHART_BASE]);
+    $(Utils.parseId(self.targetId)).append(chart.append(chartBase));
+    self.svg.width = chartBase.width();
+  };
 
+  var setSvg = function() {
+    d3.selectAll(Utils.parseId(CHART_ID))
+      .append('svg')
+      .attr('id', SVG_ID)
+      .attr('width', self.svg.width)
+      .attr('height', self.svg.height)
+      .attr('class', 'roadmapSvg')
+      .append('g')
+      .attr('id', SVG_BOX_GRP_ID)
+      .attr('transform', 'translate(' + self.svg.padding + ', ' + self.svg.padding + ')')
+  };
+
+  var defineTaskStatus = function() {
+    var status = d3.select(Utils.parseId(SVG_ID));
+
+    // status complete
+    status.append('svg:pattern')
+      .attr('id', TASK_STATUS.COMPLETE.id)
+      .attr('patternUnits', 'objectBoundingBox')
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .append('polygon')
+      .attr('fill', TASK_STATUS.COMPLETE.color)
+      .attr('points', TASK_STATUS.COMPLETE.path);
+
+    // status open
+    status.append('svg:pattern')
+      .attr('id', TASK_STATUS.OPEN.id)
+      .attr('patternUnits', 'objectBoundingBox')
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .append('path')
+      .attr('fill', TASK_STATUS.OPEN.color)
+      .attr('d', TASK_STATUS.OPEN.path);
+  };
+
+  var defineConnectionArrows = function() {
+    var connectionArrows = d3.select(Utils.parseId(SVG_ID))
+      .selectAll('marker')
+      .data(TASK_COLORS)
+      .enter()
+      .append('svg:marker')
+      .attr('id', function(d) {
+        return ARROW_PREFIX + d;
+      })
+      .attr('class', function(d) {
+        return CSS_CLASS.LINE + d;
+      })
+      .attr('viewBox', '0 0 20 20')
+      .attr('refX', CONNECTION_ARROW.refX)
+      .attr('refY', CONNECTION_ARROW.refY)
+      .attr('markerUnits', 'strokeWidth')
+      .attr('markerWidth', CONNECTION_ARROW.markerWidth)
+      .attr('markerHeight', CONNECTION_ARROW.markerHeight)
+      .attr('fill', CONNECTION_ARROW.fill)
+      .append('svg:path')
+      .attr('stroke-width', CONNECTION_ARROW.strokeWidth)
+      .attr('d', CONNECTION_ARROW.path);
+  };
+
+  var setChartHeader = function() {
+    var chartHeader = Utils.createDiv(null, [CSS_CLASS.CHART_HEADER]);
+    var chartHeaderTitle = Utils.createDiv(null, [CSS_CLASS.CHART_HEADER_TITLE]);
+    var chartHeaderTitleCtx = Utils.createDiv(TASK_TITLE_ID, []);
+    var chartHeaderDesc = Utils.createDiv(null, [CSS_CLASS.CHART_HEADER_DESC]);
+    var chartHeaderDescCtx = Utils.createDiv(TASK_DESC_ID);
+    var chartHeaderTitleIcon = Utils.createDiv(null, [ 'roadmapChart-h-menu' ]);
+    var menuicon = Utils.createDiv(MOBILE_MENU_ID, [ 'roadmapChart-h-menu' ]);
+    chartHeader.append(menuicon);
+    chartHeaderTitle.append(infoIconOpen);
+    chartHeaderTitle.append(infoIconClose);
+    chartHeader.append(chartHeaderTitle.append(chartHeaderTitleCtx));
+    chartHeader.append(chartHeaderDesc.append(chartHeaderDescCtx));
+    $(Utils.parseId(CHART_ID)).append(chartHeader);
+
+    // Toggle Description
+    chartHeaderTitle.on('click', function(e) {
+      e.stopPropagation();
+      $(this).toggleClass('active');
+    });
+
+    menuicon.on('click', function(e) {
+      e.stopPropagation();
+      $(Utils.parseId(NAV_ID)).parent().addClass('open');
+    });
+
+    $('.roadmapNav').on('click', function(e) {
+      e.stopPropagation();
+      if (e.target !== this) {
+        return;
+      }
+      $(this).removeClass('open');
+    });
+  };
+
+  var setBreadcum = function() {
+    var breadcum = Utils.createDiv(BREADCUM_ID, [CSS_CLASS.BREADCUM]);
+    $(Utils.parseId(CHART_ID)).append(breadcum);
+  };
+
+  setChartBase();
+  setBreadcum();
+  setChartHeader();
+  setSvg();
+  defineTaskStatus();
+  defineConnectionArrows();
   self.isChartReady = true;
 };
 
-Roadmap.prototype.prepareTaskStatus = function() {
+Roadmap.prototype.updateBreadcum = function(activeTask) {
   var self = this;
-  var statusEle = d3.select('#' + self.IDs.CHART_SVG);
-  // complete
-  statusEle.append('svg:pattern')
-    .attr('id', 'STATUS_COMPLETE')
-    .attr('patternUnits', 'objectBoundingBox')
-    .attr('width', self.box.height)
-    .attr('height', self.box.height)
-    .append('polygon')
-    .attr('fill', '#FFFFFF')
-    .attr('points', '14.9,4.9 7.7,12.1 4.9,9.2 3.5,10.6 7.7,14.9 16.3,6.3');
+  var breadcumList = [];
+  var breadcum = $(Utils.parseId(BREADCUM_ID));
+  var resetBreadcum = function() {
+    breadcum.html('');
+  };
 
-  // status open
-  statusEle.append('svg:pattern')
-    .attr('id', 'STATUS_OPEN')
-    .attr('patternUnits', 'objectBoundingBox')
-    .attr('width', self.box.height)
-    .attr('height', self.box.height)
-    .append('path')
-    .attr('fill', '#FFFFFF')
-    // jscs:disable disallowMultipleLineStrings
-    .attr('d', 'M15.2,13.3l-4.5-4.5c0.4-1.1,0.2-2.5-0.7-3.4c-1-1-2.5-1.2-3.6-0.6' +
-      'l2.1,2.1L7,8.4L4.8,6.3C4.2,7.4,4.5,8.9,5.5,9.9c0.9,0.9,2.3,1.2,3.4,' +
-      '0.7l4.5,4.5c0.2,0.2,0.5,0.2,0.7,0l1.1-1.1C15.4,13.8,15.4,13.4,15.2,13.3z');
-  // jscs:enable disallowMultipleLineStrings
+  var getParentTask = function(task) {
+    var parentTask = null;
+    roadmapTasks.forEach(function(item) {
+      if (item.id === task.id) {
+        parentTask = item.parent;
+      }
+    });
+    return parentTask;
+  };
+
+  var updateBreadcumList = function(task) {
+    breadcumList.push(task);
+    var parentTask = getParentTask(task);
+    if (parentTask) {
+      updateBreadcumList(parentTask);
+    }
+  };
+
+  resetBreadcum();
+  updateBreadcumList(activeTask);
+  breadcumList.push({
+    name: 'SAFE Network',
+    id: null
+  });
+  breadcumList.reverse();
+  var breadcumItem = null;
+  breadcumList.forEach(function(task) {
+    breadcumItem = Utils.createDiv(null, [CSS_CLASS.BREADCUM_ITEM], task.name);
+    breadcumItem.on('click', function(e) {
+      Utils.setLocationHash(task.id);
+    });
+    breadcum.append(breadcumItem);
+  });
 };
 
-Roadmap.prototype.prepareArrows = function() {
-  var self = this;
-  d3.select('#' + self.IDs.CHART_SVG)
-    .selectAll('marker')
-    .data(self.nodeColors)
-    .enter()
-    .append('svg:marker')
-    .attr('id', function(d) {
-      return self.taskPrefix.ARROW + d;
-    })
-    .attr('class', function(d) {
-      return self.taskPrefix.LINE + d;
-    })
-    .attr('viewBox', '0 0 20 20')
-    .attr('refX', '12')
-    .attr('refY', '10')
-    .attr('markerUnits', 'strokeWidth')
-    .attr('markerWidth', '6')
-    .attr('markerHeight', '6')
-    .attr('fill', 'none')
-    .append('svg:path')
-    .attr('stroke-width', 3)
-    .attr('d', 'M 0 20L 10 10 L 0 0');
+Roadmap.prototype.updateChartHeader = function(activeTask) {
+  $(Utils.parseId(TASK_TITLE_ID)).text(activeTask.name).parent().removeClass()
+    .addClass(activeTask.color + ' text roadmapChart-h-t');
+  $(Utils.parseId(TASK_DESC_ID)).text(activeTask.desc);
 };
 
-Roadmap.prototype.preparePattern = function(node) {
+Roadmap.prototype.defineBoxPattern = function(data) {
   var self = this;
-  var box = d3.select('#' + self.IDs.CHART_SVG)
-    .select('g');
-
-  var pattern = box.append('pattern')
-    .attr('id', '_PATTERN_' + node.name)
-    .attr('x', self.timeScale(self.dateFormat.parse(node.startDate)))
-    .attr('y', node.section * self.perUnit)
+  var patternId = BOX_PATTERN_PREFIX + data.name;
+  if ($(Utils.parseId(patternId)).is('pattern')) {
+    return;
+  }
+  var boxPattern = d3.select(Utils.parseId(SVG_ID))
+    .select('g')
+    .append('pattern')
+    .attr('id', patternId)
+    .attr('x', data.x)
+    .attr('y', data.y)
     .attr('width', 80)
     .attr('height', self.box.height)
     .attr('patternUnits', 'userSpaceOnUse')
-    .append('g')
-    .attr('opacity', 0.8);
+    .append('g');
 
-  pattern.append('rect')
+  boxPattern.append('rect')
     .attr('x', 0)
     .attr('y', 0)
-    .attr('class', self.taskPrefix.CLASS + node.color)
-    .attr('width', (self.timeScale(self.dateFormat.parse(node.endDate)) -
-      self.timeScale(self.dateFormat.parse(node.startDate))))
-    .attr('height', self.box.height)
+    .attr('class', data.className)
+    .attr('width', data.width)
+    .attr('height', data.height)
     .attr('opacity', 0.8);
 
-  pattern.append('polygon')
-    .attr('class', self.taskPrefix.CLASS + node.color)
-    .attr('points', self.boxPattern.path);
+  boxPattern.append('polygon')
+    .attr('class', data.className)
+    .attr('points', BOX_PATTERN_PATH);
 };
 
-Roadmap.prototype.drawBoxes = function() {
+Roadmap.prototype.drawProgressBar = function(activeTask) {
   var self = this;
-  // Box base
-  var box = d3.select('#' + self.IDs.CHART_SVG)
-    .select('g')
-    .selectAll('rect')
-    .data(self.taskList)
-    .enter();
+  var minStartVal = 0;
+
+  if (!activeTask.daysCompleted) {
+    return;
+  }
+
+  self.defineBoxPattern({
+    name: activeTask.id,
+    x: 0,
+    y: -self.svg.padding,
+    width: self.svg.width - (self.svg.padding * 2),
+    height: self.progressBar.height,
+    className: CSS_CLASS.SVG + activeTask.color
+  });
+
+  var progressBar = d3.select(Utils.parseId(SVG_BOX_GRP_ID))
+    .append('g');
+
+  // header base
+  progressBar.append('rect')
+    .attr('class', 'chart-progress-b')
+    .attr('x', 0)
+    .attr('y', -self.svg.padding)
+    .attr('width', self.svg.width - (self.svg.padding * 2))
+    .attr('height', self.progressBar.height)
+    .attr('style', 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + activeTask.id) + ')');
+
+  // progress
+  progressBar.append('rect')
+    .attr('class', CSS_CLASS.SVG + activeTask.color)
+    .attr('x', 0)
+    .attr('y', -self.svg.padding)
+    .attr('width', self.timeScale(self.dateFormat.parse(Utils.addDate(activeTask.startDate, activeTask.daysCompleted))))
+    .attr('height', self.progressBar.height);
+};
+
+Roadmap.prototype.drawBoxes = function () {
+  var self = this;
+  var box = d3.select(Utils.parseId(SVG_ID))
+  .select('g')
+  .selectAll('rect')
+  .data(self.activeTasks)
+  .enter();
 
   box.append('defs').each(function(d) {
+    if (d.isExcluded()) {
+      delete d;
+    }
     if (!d.status) {
-      self.preparePattern(d);
+      self.defineBoxPattern({
+        name: d.id,
+        x: d.box.x,
+        y: d.box.y,
+        width: d.box.width,
+        height: self.box.height,
+        className: CSS_CLASS.SVG + d.color
+      });
     }
     $(this).remove();
   });
 
   var boxBase = box.append('g')
-    .attr('class', function(d) {
-      return 'boxBase ' + (self.taskPrefix.CLASS + d.color);
-    });
+  .attr('class', function(d) {
+    return 'boxBase ' + ('svg-' + d.color);
+  })
+  .attr('id', function(d) {
+    return d.box.id;
+  });
+
+  boxBase.each(function(d) {
+    var boxGrp = d3.select(this);
+    boxGrp.on('click', (d.box.onClick)());
+    boxGrp.on('mouseover', (d.box.onMouseOver)());
+    boxGrp.on('mouseout', (d.box.onMouseOut)());
+  });
 
   boxBase.append('rect')
-    .attr('x', function(d) {
-      return self.timeScale(self.dateFormat.parse(d.startDate));
-    })
-    .attr('y', function(d) {
-      return (self.taskList.length !== 1) ? ((d.section - 1) * self.perUnit * 2) : 0;
-    })
-    .attr('width', function(d) {
-      return (self.timeScale(self.dateFormat.parse(d.endDate)) - self.timeScale(self.dateFormat.parse(d.startDate)));
-    })
-    .attr('height', self.box.height)
-    .attr('id', function(d) {
-      return self.taskPrefix.ID + d.name;
-    })
-    .attr('class', 'box')
-    .attr('style', function(d) {
-      if (!d.status) {
-        return 'fill: url(#_PATTERN_' + d.name + ')';
-      }
-    })
-    .attr('stroke', 'none');
+  .attr('x', function(d) {
+    return d.box.x;
+  })
+  .attr('y', function(d) {
+    return d.box.y;
+  })
+  .attr('width', function(d) {
+    return d.box.width;
+  })
+  .attr('height', self.box.height)
+  .attr('class', 'box')
+  .attr('style', function(d) {
+    if (!d.status) {
+      return 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + d.id) + ')';
+    }
+  })
+  .attr('stroke', 'none');
 
-  // status box
+  // status
   boxBase.append('rect')
     .attr('x', function(d) {
-      return self.timeScale(self.dateFormat.parse(d.startDate)) +
-        (self.timeScale(self.dateFormat.parse(d.endDate)) - self.timeScale(self.dateFormat.parse(d.startDate))) -
-        self.box.height;
+      return d.box.statusX;
     })
     .attr('y', function(d) {
-      return (self.taskList.length !== 1) ? ((d.section - 1) * self.perUnit * 2) : 0;
+      return (self.activeTasks.length !== 1) ? d.box.y : 0;
     })
     .attr('width', self.box.height)
     .attr('height', self.box.height)
     .attr('class', 'statusBox')
-    .attr('id', function(d) {
-      return self.taskPrefix.STATUS_BOX + d.name;
-    })
     .style('fill', function(d) {
-      if (!d.hasOwnProperty('status')) {
-        return 'url(#STATUS_OPEN)';
-      }
-      return d.status ? 'url(#STATUS_COMPLETE)' : 'url(#STATUS_OPEN)';
+      return d.status ? 'url(' + Utils.parseId(TASK_STATUS.COMPLETE.id) + ')' : 'url(' + Utils.parseId(TASK_STATUS.OPEN.id) + ')';
     });
 
-  // text
-  boxBase.append('text')
-    .text(function(d) {
-      return parseNodeName(d.name);
-    })
-    .attr('x', function(d) {
-      return ((self.perUnit / 2) + self.timeScale(self.dateFormat.parse(d.startDate)));
-    })
-    .attr('y', function(d) {
-      return (self.taskList.length !== 1) ? ((((d.section - 1) * self.perUnit) * 2) +
-        (self.perUnit / 1.3)) : (self.perUnit / 1.3);
-    })
-    .attr('id', function(d) {
-      return self.taskPrefix.BOX_TEXT + d.name;
-    })
-    .attr('class', 'taskText');
-};
-
-Roadmap.prototype.getIncomings = function(nodeName) {
-  var self = this;
-  var incomings = [];
-  self.nodes.forEach(function(task) {
-    if (task.target === nodeName) {
-      incomings.push(task);
-    }
-  });
-  incomings.sort(function(a, b) {
-    return b.name === self.excludeNodes[0];
-  });
-  return incomings;
-};
-
-Roadmap.prototype.getDownStreamsNodeForTasks = function() {
-  var self = this;
-  var downStreamNodes = [];
-  self.nodes.forEach(function(node) {
-    if (node.name !== self.excludeNodes[1]) {
-      return;
-    }
-    self.taskList.forEach(function(task) {
-      if (task.name === node.source) {
-        downStreamNodes.push(node);
-      }
-    });
-  });
-  return downStreamNodes;
-};
-
-Roadmap.prototype.drawLines = function() {
-  var self = this;
-  var incomings = null;
-
-  var addPathInfo = function(nodeId, path) {
-    self.nodes.forEach(function(node) {
-      if (node.id === nodeId) {
-        node.path = path;
-      }
-    });
-  };
-
-  var getNodeCountDetails = function(target) {
-    var downCount = 0;
-    var incomings = self.getIncomings(target.name);
-    incomings.forEach(function(node) {
-      node.startDate = node.startDate || new Date(1 - 1 - 1947);
-      if (((new Date(target.startDate)).getTime() > (new Date(node.startDate)).getTime()) &&
-        (target.section < node.section)) {
-        downCount++;
-      }
-    });
-    return {
-      down: downCount,
-      rest: incomings.length - downCount,
-      total: incomings.length
-    };
-  };
-
-  var computePath = function(target, node, order) {
-    var bottomDist = 16;
-    var path = {
-      start: {
-        x: 0,
-        y: 0
-      },
-      interTop: {
-        x: 0,
-        y: 0
-      },
-      interBot: {
-        x: 0,
-        y: 0
-      },
-      end: {
-        x: 0,
-        y: 0
-      }
-    };
-
-    var nodeCount = getNodeCountDetails(target);
-    path.start.x = self.timeScale(self.dateFormat.parse(target.startDate)) - (order * bottomDist);
-    path.start.y = (((target.section - 1) * self.perUnit) * 2) + (self.perUnit / 2);
-    path.start.y = isBoxDown(target, node) ? (path.start.y - (order * self.perUnit) +
-      ((order - nodeCount.rest) * self.perUnit * 2)) : (path.start.y - (order * self.perUnit));
-    path.interBot.x = path.start.x - bottomDist;
-    path.interBot.y = path.start.y;
-    if (node.name === self.excludeNodes[0]) {
-      path.interTop.x = path.interBot.x;
-      path.interTop.y = -path.end.y - self.svg.padding;
-      path.end = path.interTop;
-      addPathInfo(node.id, path);
-    } else {
-      path.end.x = self.timeScale(self.dateFormat.parse(node.endDate));
-      path.end.y = (((node.section - 1) * self.perUnit) * 2) + (self.perUnit / 2);
-      path.interTop.x = path.interBot.x;
-      path.interTop.y = path.end.y;
-    }
-    return [ path.start, path.interBot, path.interTop, path.end ];
-  };
-
-  var computeDownStreamPath = function(target, id) {
-    var padding = 16;
-    var path = {
-      start: {
-        x: 0,
-        y: 0
-      },
-      end: {
-        x: 0,
-        y: 0
-      }
-    };
-
-    path.start.x = self.timeScale(self.dateFormat.parse(target.endDate)) + padding;
-    path.start.y = (((target.section - 1) * self.perUnit) * 2) + (self.perUnit / 2);
-    path.end.x = path.start.x;
-    path.end.y = self.svg.height;
-    addPathInfo(id, path);
-    return [ path.start, path.end ];
-  };
-
-  var drawLine = function(node, path, isDownStream) {
-    var line = d3.svg.line()
-      .x(function(d) {
-        return d.x;
+    // text
+    boxBase.append('text')
+      .text(function(d) {
+        return d.name;
       })
-      .y(function(d) {
-        return d.y;
+      .attr('x', function(d) {
+        return ((self.box.height / 2) + d.box.x);
       })
-      .interpolate('linear');
+      .attr('y', function(d) {
+        return (self.activeTasks.length !== 1) ? ((d.box.y) +
+          (self.box.height / 1.3)) : (self.box.height / 1.3);
+      })
+      .attr('class', 'taskText');
+};
 
-    d3.select('#' + self.IDs.CHART_SVG)
+Roadmap.prototype.prepareBoxes = function(activeTask) {
+  var self = this;
+  var setDownStreamCount = function() {
+    roadmapTasks.forEach(function(task) {
+      if (task.isDownStream()) {
+        var targetTask = Utils.getTask(task.target[0]);
+        if (!self.downStreamCounts[targetTask.section]) {
+          self.downStreamCounts[targetTask.section] = 1;
+        } else {
+          self.downStreamCounts[targetTask.section] += 1;
+        }
+      }
+    });
+  };
+
+  var getIncomingTasks = function(targetTask) {
+    var incomingTasks = [];
+    roadmapTasks.forEach(function(task) {
+      if (task.target.indexOf(targetTask.id) !== -1) {
+        incomingTasks.push(task);
+      }
+    });
+    return incomingTasks;
+  };
+
+  var getIncomingNodesForSection = function(section) {
+    var incomingCount = 0;
+    var incomingTasks = [];
+    roadmapTasks.forEach(function(task, i) {
+      if (task.section === section) {
+        incomingTasks = getIncomingTasks(task);
+        task.incomingTasks = incomingTasks;
+        incomingCount += incomingTasks.length;
+      }
+    });
+    return incomingCount;
+  };
+
+  var setStartDates = function() {
+    var startDate = 0;
+    roadmapTasks.forEach(function(task) {
+      if (self.startDates[task.section - 1]) {
+        return;
+      }
+      if (task.section === 1) {
+        startDate = task.startDate;
+      } else {
+         startDate = Utils.addDate(self.startDates[task.section - 2], self.interval);
+      }
+      var downStreamCount = self.downStreamCounts[task.section - 1] ? self.downStreamCounts[task.section - 1] : 0;
+      self.startDates[task.section - 1] = Utils.addDate(startDate,
+        (getIncomingNodesForSection(task.section) + task.target.length + downStreamCount));
+    });
+  };
+
+  var setActiveTasks = function() {
+    var activeTasks = [];
+    console.log(activeTask);
+    roadmapTasks.forEach(function(task) {
+      if (!task.parent) {
+        return;
+      }
+      if (task.parent.id === activeTask.id) {
+        activeTasks.push(task);
+      }
+    });
+    if (activeTasks.length === 0) {
+      return self.activeTasks.push(activeTask);
+    }
+    self.activeTasks = activeTasks;
+  };
+
+  var setBoxParams = function() {
+    roadmapTasks.forEach(function(task) {
+      var scaledStart = self.timeScale(self.dateFormat.parse(task.startDate));
+      var scaledEnd =  self.timeScale(self.dateFormat.parse(task.endDate));
+      var boxYPos = ((task.order - 1) * self.box.height * 2);
+      if (self.activeTasks.length === 1) {
+        boxYPos = 0;
+      }
+      task.box.setParams(scaledStart,
+        boxYPos,
+        (scaledEnd - scaledStart),
+        (scaledEnd - self.box.height));
+    });
+  };
+
+  setDownStreamCount();
+  setStartDates();
+
+  roadmapTasks.forEach(function(task, i) {
+    task.startDate = self.startDates[task.section - 1];
+    task.endDate = Utils.addDate(task.startDate, self.interval);
+  });
+
+  setActiveTasks(activeTask);
+  setBoxParams();
+  self.drawBoxes();
+};
+
+Roadmap.prototype.drawLabel = function(labelData) {
+  var self = this;
+  var label = d3.select(Utils.parseId(SVG_BOX_GRP_ID));
+
+  label.append('rect')
+    .attr('rx', self.label.borderRadius)
+    .attr('ry', self.label.borderRadius)
+    .attr('x', labelData.x)
+    .attr('y', labelData.y)
+    .attr('width', self.label.width)
+    .attr('height', self.label.height)
+    .attr('style', 'font-size: 12px')
+    .attr('class', CSS_CLASS.SVG + labelData.className);
+
+  label.append('text')
+    .text(Utils.textEllipsis(labelData.desc, 7))
+    .attr('x', labelData.x + (self.label.padding / 1.3))
+    .attr('y', labelData.y + (self.label.height / 1.3))
+    .attr('class', 'labelText');
+};
+
+Roadmap.prototype.drawConnections = function () {
+  var self = this;
+
+  var line = d3.svg.line()
+  .x(function(d) {
+    return d.x;
+  })
+  .y(function(d) {
+    return d.y;
+  })
+  .interpolate('linear');
+
+  var drawConnection = function(connection) {
+    var path = [ connection.start, connection.interStart, connection.interEnd, connection.end ];
+
+      d3.select(Utils.parseId(SVG_ID))
       .select('g')
       .datum(path)
       .append('path')
-      .attr('class', self.taskPrefix.LINE + node.color)
+      .attr('id', connection.id)
+      .attr('class', CSS_CLASS.LINE + connection.color)
       .attr('d', line)
-      .attr('id', function() {
-        var id = self.taskPrefix.PATH + node.name;
-        if (isDownStream) {
-          id += '_DOWNSTREAM';
-        }
-        return id;
-      })
       .attr('fill', 'none')
       .attr('stroke-width', 2)
       .attr('marker-start', function() {
-        if (isDownStream) {
-          return '';
+        var task = Utils.getTask(connection.sourceId);
+        if (task.isDownStream()) {
+          return null;
         }
-        return node.color ? 'url(#' + self.taskPrefix.ARROW + node.color + ')' : 'url(#' + self.taskPrefix.ARROW + ')';
+        var marker = connection.color ? 'url(#' + ARROW_PREFIX + connection.color + ')' : 'url(#' + ARROW_PREFIX + ')'
+        return marker;
       });
   };
 
-  if (self.taskList.length === 1) {
+  self.activeTasks.forEach(function(task, index) {
+    if(task.connections.length === 0) {
+      return;
+    }
+    task.connections.forEach(function(connection, index) {
+      if ($(Utils.parseId(connection.id)).is('path')) {
+        return;
+      }
+      drawConnection(connection);
+    });
+  });
+};
+
+Roadmap.prototype.prepareConnections = function(activeTask) {
+  var self = this;
+  if (self.activeTasks.length === 1) {
     return;
   }
-  self.taskList.forEach(function(task) {
-    incomings = self.getIncomings(task.name);
-    incomings.forEach(function(node, i) {
-      var path = computePath(task, node, i);
-      drawLine(node, path);
-    });
-  });
-
-  var downStreamNodes = self.getDownStreamsNodeForTasks();
-  downStreamNodes.forEach(function(task) {
-    var target = null;
-    self.nodes.forEach(function(node) {
-      if (node.name === task.source) {
-        target = node;
+  var splitTask = function(targetTask) {
+    var upperTasks = [];
+    var lowerTasks = [];
+    if (!targetTask) {
+      return;
+    }
+    var incomings = targetTask.incomingTasks;
+    incomings.forEach(function(incoming) {
+      if (incoming.order > targetTask.order) {
+        lowerTasks.unshift(incoming);
+      } else {
+        upperTasks.unshift(incoming)
       }
     });
-    var path = computeDownStreamPath(target, task.id);
-    drawLine(target, path, true);
-  });
-};
-
-Roadmap.prototype.drawLabels = function(parentName) {
-  var self = this;
-  var getNodesToAddLabel = function(parentName) {
-    var resultArr = [];
-    self.nodes.forEach(function(node) {
-      if (self.excludeNodes.indexOf(node.name) !== -1 && node.parent === parentName) {
-        resultArr.push(node);
-      }
+    lowerTasks.sort(function(a, b) {
+      return a.order > b.order;
     });
-    return resultArr;
-  };
-  var nodesToAddLabel = getNodesToAddLabel(parentName);
-  var labelNode = d3.select('#' + self.IDs.CHART_SVG)
-    .select('g').append('g').attr('id', self.IDs.LABEL_GRP);
-
-  var drawLabel = function(node) {
-    var headerHeight = 100;
-    var labelGrp = labelNode
-    .append('g')
-    .attr('id', self.taskPrefix.LABEL_ID + node.id)
-    .attr('class', 'line-label');
-
-    labelGrp.append('rect')
-      .attr('rx', self.label.borderRadius)
-      .attr('ry', self.label.borderRadius)
-      .attr('x', function() {
-        if (node.name === self.excludeNodes[1]) {
-          return node.path.start.x + self.label.padding;
-        }
-        return node.path.interBot.x - (self.label.width + self.label.padding);
-      })
-      .attr('y', function() {
-        if (node.name === self.excludeNodes[1]) {
-          return node.path.end.y - (headerHeight + self.perUnit);
-        }
-        return node.path.interBot.y - (self.label.height / 2);
-      })
-      .attr('width', self.label.width)
-      .attr('height', self.label.height)
-      .attr('style', 'font-size: 12px')
-      .attr('class', function() {
-        var color = node.color;
-        if (node.name === self.excludeNodes[1]) {
-          self.nodes.forEach(function(item) {
-            if (item.name === node.id) {
-              color = item.color;
-            }
-          });
-        }
-        return self.taskPrefix.CLASS + color;
-      });
-
-    // text
-    labelGrp.append('text')
-      .text(textEllipsis(node.desc, 7))
-      .attr('x', function() {
-        if (node.name === self.excludeNodes[1]) {
-          return node.path.start.x + (self.label.padding * 1.3);
-        }
-        return node.path.interBot.x - (self.label.width + (self.label.padding / 1.3));
-      })
-      .attr('y', function() {
-        if (node.name === self.excludeNodes[1]) {
-          return node.path.end.y - ((headerHeight + self.perUnit) - (self.label.height / 1.3));
-        }
-        return node.path.interBot.y + (self.label.height / 3);
-      })
-      .attr('class', 'labelText');
-  };
-  d3.map(nodesToAddLabel, function(node) {
-    drawLabel(node);
-  });
-};
-
-Roadmap.prototype.updateBreadcum = function(parentName) {
-  var self = this;
-  var list = [];
-  self.breadcumList = [];
-  var init = function() {
-    $('#' + self.IDs.BREADCUM).html('');
-    self.breadcumList.push('SAFE Network');
-  };
-
-  var getBreadcumList = function(nodeName) {
-    self.nodes.forEach(function(node) {
-      if (node.name === nodeName && node.parent) {
-        getBreadcumList(node.parent);
-      }
+    upperTasks.sort(function(a, b) {
+      return a.order > b.order;
     });
-    list.push(nodeName);
+    return { lowerTasks: lowerTasks, upperTasks: upperTasks };
   };
-  getBreadcumList(parentName);
-  init();
-  self.breadcumList = self.breadcumList.concat(list);
-  var target = $('#' + self.IDs.BREADCUM);
-  self.breadcumList.forEach(function(item, i) {
-    var breadcumItem = createDivElement(null, [ 'breadcrumb-i' ], parseNodeName(item));
-    if (i > 0) {
-      breadcumItem.on('click', function() {
-        var targetId = item.toUpperCase();
-        self.openNavList('#' + targetId);
-        changeLocation(targetId);
-        self.drawChart(targetId);
-      });
-    }
-    target.append(breadcumItem);
+
+  self.activeTasks.forEach(function(task) {
+    var incomingCountIndex = task.section - 1;
+    var splitTasks = splitTask(task);
+    var incSecCount = function() {
+      if (isNaN(self.sectionCurrentIncomingCounts[task.section - 1])) {
+        self.sectionCurrentIncomingCounts[incomingCountIndex] = 1;
+      } else {
+        self.sectionCurrentIncomingCounts[incomingCountIndex] += 1;
+      }
+    };
+
+    var createConnection = function(targetId, start, interStart, interEnd, end, color) {
+      var connection = new Connection(task.id, targetId);
+      connection.setPath(start, interStart, interEnd, end);
+      connection.setColor(color);
+      task.connections.push(connection);
+    };
+
+    // draw upper tasks
+    splitTasks.upperTasks.forEach(function(upperTask, index) {
+      incSecCount();
+      var start = { x:0, y:0 };
+      var end = { x:0, y:0 };
+      var interStart = { x:0, y:0 };
+      var interEnd = { x:0, y:0 };
+
+      if (task.connections.length === 0 || (index === 0)) {
+        start.x = task.box.x;
+        start.y = task.box.y + (self.box.height / 2);
+      } else {
+        start.x = task.connections[index - 1].interStart.x;
+        start.y = task.connections[index - 1].interStart.y - (self.box.height / 2);
+      }
+
+      end.x = upperTask.box.x + upperTask.box.width;
+      end.y = upperTask.box.y + (self.box.height / 2);
+
+      if (index > 0) {
+        interStart.x = start.x - self.getPerUnit();
+      } else {
+        interStart.x = start.x - (self.sectionCurrentIncomingCounts[incomingCountIndex] * self.getPerUnit());
+      }
+      interStart.y = start.y;
+
+      interEnd.x = interStart.x;
+      interEnd.y = end.y;
+      if (upperTask.isExternal()) {
+        interEnd = interStart;
+        end.x = interEnd.x;
+        end.y = -self.svg.padding;
+      }
+      createConnection(upperTask.id, start, interStart, interEnd, end, upperTask.color);
+    });
+
+    // draw lower tasks
+    splitTasks.lowerTasks.forEach(function(lowerTask, index) {
+      incSecCount();
+      var start = { x:0, y:0 };
+      var end = { x:0, y:0 };
+      var interStart = { x:0, y:0 };
+      var interEnd = { x:0, y:0 };
+      index += splitTasks.upperTasks.length;
+
+      if (task.connections.length === 0 || (index === 0)) {
+        start.x = task.box.x - (index * self.getPerUnit());
+        start.y = task.box.y + (self.box.height / 2) + (index * self.getPerUnit());
+      } else {
+        start.x = task.connections[index - 1].interStart.x;
+        start.y = task.connections[index - 1].interStart.y - (index * self.getPerUnit());
+      }
+
+      if ((index - splitTasks.upperTasks.length) !== 0) {
+        start.y += ((splitTasks.lowerTasks.length + (index - splitTasks.upperTasks.length)) * self.getPerUnit());
+      }
+
+      end.x = lowerTask.box.x + lowerTask.box.width;
+      end.y = lowerTask.box.y + (self.box.height / 2);
+
+      if (index > 0) {
+        interStart.x = start.x - self.getPerUnit();
+      } else {
+        interStart.x = start.x - (self.sectionCurrentIncomingCounts[incomingCountIndex] * self.getPerUnit());
+      }
+      interStart.y = start.y;
+
+      interEnd.x = interStart.x;
+      interEnd.y = end.y;
+      if (lowerTask.isDownStream()) {
+        start.x = task.box.x + task.box.width + self.sectionCurrentIncomingCounts[incomingCountIndex] + self.getPerUnit();
+        interStart = start;
+        interEnd = interStart;
+        end.x = interEnd.x;
+        end.y = self.svg.height - $(Utils.parseId(BREADCUM_ID)).height() - $('.' + CSS_CLASS.CHART_HEADER).height() - (self.svg.padding * 2);
+        self.drawLabel({x: end.x + 16, y: end.y - self.box.height, className: lowerTask.color, desc: lowerTask.desc})
+      }
+      createConnection(lowerTask.id, start, interStart, interEnd, end, lowerTask.color);
+    });
   });
-};
-
-Roadmap.prototype.updateHeader = function(parentName) {
-  if (!parentName) {
-    return;
-  }
-  var self = this;
-  var target = null;
-  self.nodes.forEach(function(node) {
-    if (node.name === parentName) {
-      target = node;
-    }
-  });
-  var titleEle = $('#' + self.IDs.TITLE);
-  var descEle = $('#' + self.IDs.DESC);
-  titleEle.text(parseNodeName(target.name)).parent().removeClass().addClass(target.color + ' text roadmapChart-h-t');
-  if (self.taskList.length === 1) {
-    titleEle.addClass('active');
-  }
-  descEle.text(target.desc);
-};
-
-Roadmap.prototype.prepareProgressPattern = function(node) {
-  var self = this;
-  var box = d3.select('#' + self.IDs.CHART_SVG);
-  var className = self.taskPrefix.CLASS + (node.color ? node.color : 'blue-2');
-  var pattern = box.append('pattern')
-    .attr('id', '_PATTERN_' + node.name)
-    .attr('x', node.x)
-    .attr('y', node.y)
-    .attr('width', 80)
-    .attr('height', node.height)
-    .attr('patternUnits', 'userSpaceOnUse')
-    .append('g');
-
-  pattern.append('rect')
-    .attr('x', 0)
-    .attr('y', 0)
-    .attr('class', className)
-    .attr('width', node.width)
-    .attr('height', node.height)
-    .attr('opacity', 0.8);
-
-  pattern.append('polygon')
-    .attr('class', className)
-    .attr('points', self.boxPattern.path);
-};
-
-Roadmap.prototype.drawProgress = function(parentName) {
-  var self = this;
-  var target = null;
-  self.nodes.forEach(function(node) {
-    if (node.name === parentName) {
-      target = node;
-    }
-  });
-
-  var minDate = d3.min(self.taskList, function(d) {
-    return self.dateFormat.parse(d.startDate);
-  });
-  var completedDate = minDate.getFullYear() + '-' + (minDate.getMonth() + 1) +
-    '-' + (minDate.getDate() + target.daysCompleted);
-
-  self.prepareProgressPattern({
-    name: self.IDs.PROGRESS,
-    x: self.svg.padding,
-    y: 0,
-    width: self.svg.width - (self.svg.padding * 2),
-    height: self.progress.height,
-    color: target.color
-  });
-
-  var progressContainer = d3.select('#' + self.IDs.CHART_SVG)
-    .append('g')
-    .attr('id', self.IDs.PROGRESS);
-
-  // header base
-  progressContainer
-    .append('rect')
-    .attr('class', 'chart-progress-b')
-    .attr('x', self.svg.padding)
-    .attr('y', 0)
-    .attr('width', self.svg.width - (self.svg.padding * 2))
-    .attr('height', self.progress.height)
-    .attr('style', 'fill: url(#_PATTERN_' + self.IDs.PROGRESS + ')');
-
-  // progress
-  progressContainer
-    .append('rect')
-    .attr('class', self.taskPrefix.CLASS + (target.color ? target.color : 'blue-2'))
-    .attr('x', self.svg.padding)
-    .attr('y', 0)
-    .attr('width', self.timeScale(self.dateFormat.parse(completedDate)))
-    .attr('height', self.progress.height);
-};
-
-Roadmap.prototype.clearChartSection = function() {
-  $('#' + this.IDs.CHART).remove();
-  this.isChartReady = false;
+  self.drawConnections();
 };
 
 Roadmap.prototype.resetChart = function() {
-  $('#' + this.IDs.LABEL_GRP).remove();
-  $('#_PATTERN_RoadmapProgress').remove();
-  $('#RoadmapProgress').remove();
-  $('#' + this.IDs.CHART_SVG_GRP).children().remove();
+  var self = this;
+  $(Utils.parseId(SVG_BOX_GRP_ID)).children().remove();
+  self.startDates = [];
+  self.sectionCurrentIncomingCounts = [];
+  self.activeTasks = [];
+  self.downStreamCounts = [];
 };
 
-Roadmap.prototype.initChart = function() {
-  this.prepareChart();
-  this.handleHeaderEvents();
-  this.prepareTaskStatus();
-  this.prepareArrows();
-};
-
-Roadmap.prototype.drawChart = function(parentName) {
-  var locationHash = window.location.hash.slice(1);
-  if (!parentName && locationHash) {
-    parentName = locationHash.toUpperCase();
-    this.openNavList('#' + parentName);
-  } else {
-    parentName = parentName || this.nodes[0].name;
+Roadmap.prototype.drawChart = function(taskId) {
+  var self = this;
+  var locationHash = Utils.getLocationHash();
+  if (locationHash) {
+    taskId = locationHash;
   }
-
-  if (!isDesktopScreen()) {
-    return this.drawMobileChart(parentName);
+  taskId = taskId || roadmapTasks[0].id;
+  var task = Utils.getTask(taskId);
+  if (!self.isChartReady) {
+    self.prepareChart();
   }
-  if (!this.isChartReady) {
-    this.initChart();
+  self.resetChart();
+  self.updateBreadcum(task);
+  self.updateChartHeader(task);
+  if (!Utils.isDesktopScreen()) {
+    return self.drawMobileChart(task);
   }
-  this.setTaskList(parentName);
-  if (this.taskList.length === 0) {
-    this.taskList.push(this.getNode(parentName));
-  }
-  this.resetChart();
-  this.updateBreadcum(parentName);
-  this.updateHeader(parentName);
-  this.drawProgress(parentName);
-  this.drawBoxes();
-  this.drawLines();
-  this.drawLabels(parentName);
-  this.handleBoxEvents();
+  self.prepareBoxes(task);
+  self.prepareConnections(task);
+  self.drawProgressBar(task);
 };
 
-Roadmap.prototype.resetMobileView = function() {
-  $('.features-list').remove();
+Roadmap.prototype.updateNav = function(taskId) {
+  var self = this;
+  taskId = taskId || roadmapTasks[0].id;
+  var task = Utils.getTask(taskId);
+  $(Utils.parseId(task.nav.id)).click();
+  $('.roadmapNav').removeClass('open');
 };
 
-Roadmap.prototype.cleanMobileView = function() {
-  $('#' + this.IDs.MOBILE_BASE).remove();
-  this.isMobileChartReady = false;
-};
-
-Roadmap.prototype.addFeatures = function(parentName) {
+Roadmap.prototype.addFeatures = function(activeTask) {
   var self = this;
   var features = {
     sub: [],
@@ -1232,19 +1215,19 @@ Roadmap.prototype.addFeatures = function(parentName) {
     relyThis: []
   };
 
-  var mobileBase = $('#' + self.IDs.MOBILE_BASE);
+  var mobileChartBase = $(Utils.parseId(MOBILE_CHART_ID))
 
   var createBase = function(listId) {
-    if (!$('#' + listId).is('#' + listId)) {
-      mobileBase.append(createDivElement(listId, [ 'features-list' ]));
+    if (!$(Utils.parseId(listId)).is(Utils.parseId(listId))) {
+      mobileChartBase.append(Utils.createDiv(listId, [ 'features-list' ]));
     }
   };
 
   var addTitle = function(title, listId) {
-    if (!$('#' + listId).is('#' + listId)) {
+    if (!$(Utils.parseId(listId)).is(Utils.parseId(listId))) {
       return;
     }
-    $('#' + listId).append('<h3 class="features-list-h">' + title + '</h3>');
+    $(Utils.parseId(listId)).append('<h3 class="features-list-h">' + title + '</h3>');
   };
 
   var addList = function(title, list, listId) {
@@ -1252,99 +1235,68 @@ Roadmap.prototype.addFeatures = function(parentName) {
     addTitle(title, listId);
     var listBase = $('#' + listId);
     list.forEach(function(item) {
-      var name = self.excludeNodes.indexOf(item.name) !== -1 ? item.id : item.name;
-      var listEle = createDivElement(self.taskPrefix.FEATURE_ID + name,
-        [ 'features-list-i', self.taskPrefix.FEATURE_ITEM + item.color ]);
-      listEle.text(parseNodeName(item.name));
+      var task = Utils.getTask(item.taskId);
+      var name = task.name;
+      if (item.type !== TASK_FEATURE_TYPE.SUB_FEATURES) {
+        // TODO get source task name
+        // var sourceTask = Utils.getTask(task.source);
+        name = task.source;
+      }
+      var listEle = Utils.createDiv(item.id,
+        [ 'features-list-i', CSS_CLASS.FEATURES + task.color ]);
+      listEle.text(name);
+      listEle.on('click', (item.onClick)());
       listBase.append(listEle);
     });
   };
 
-  self.nodes.forEach(function(node) {
-    if (node.parent === parentName && node.name === self.excludeNodes[0]) {
-      return features.reliedOn.push(node);
+  roadmapTasks.forEach(function(task) {
+    if (!task.parent) {
+      return;
     }
-    if (node.parent === parentName && node.name === self.excludeNodes[1]) {
-      return features.relyThis.push(node);
+    if ((task.parent.id === activeTask.id) && task.isExternal()) {
+      return features.reliedOn.push(new TaskFeature(task.id, TASK_FEATURE_TYPE.RELIED_ON_FEATURES));
     }
-    if (node.parent === parentName) {
-      return features.sub.push(node);
+    if ((task.parent.id === activeTask.id) && task.isDownStream()) {
+      return features.relyThis.push(new TaskFeature(task.id, TASK_FEATURE_TYPE.RELY_THIS_FEATURES));
+    }
+    if (task.parent.id === activeTask.id) {
+      return features.sub.push(new TaskFeature(task.id, TASK_FEATURE_TYPE.SUB_FEATURES));
     }
   });
   if (features.sub.length > 0) {
-    addList('Sub-fetures:', features.sub, self.IDs.SUB_FEATURES);
+    addList('Sub-fetures:', features.sub, SUB_FEATURES_ID);
   }
   if (features.reliedOn.length > 0) {
-    addList('Features relied on:', features.reliedOn, self.IDs.RELIED_ON_FEATURES);
+    addList('Features relied on:', features.reliedOn, RELIED_ON_FEATURES_ID);
   }
   if (features.relyThis.length > 0) {
-    addList('Features that rely this:', features.relyThis, self.IDs.RELY_THIS_FEATURES);
+    addList('Features that rely this:', features.relyThis, RELY_THIS_FEATURES_ID);
   }
 };
 
-Roadmap.prototype.handleMobileEvents = function() {
-  var self = this;
-  var navEle = $('#' + self.IDs.NAV);
-
-  $('#' + self.IDs.MOBILE_MENU).on('click', function() {
-    navEle.addClass('open');
-  });
-
-  navEle.on('click', function(e) {
-    e.stopPropagation();
-    if (e.target !== this) {
-      return;
-    }
-    navEle.removeClass('open');
-  });
-
-  $(document).on('click', '.features-list-i', function(e) {
-    e.stopPropagation();
-    var taskId = $(this).attr('id').slice(self.taskPrefix.FEATURE_ID.length);
-    // if (!self.taskHasChildren(taskId)) {
-    //   return;
-    // }
-    changeLocation(taskId);
-    $(window).scrollTop(0);
-  });
+Roadmap.prototype.setMobileView = function() {
+  var mobileChart = Utils.createDiv(MOBILE_CHART_ID, [ 'roadmapChartMobile-b' ]);
+  $(Utils.parseId(CHART_ID)).append(mobileChart);
 };
 
-Roadmap.prototype.prepareMobileViewChart = function() {
-  var self = this;
-  self.clearChartSection();
-
-  //  set navigation
-  var navEle = $('#' + self.IDs.NAV);
-  var navBgClassList = [ 'roadmapNav-bg' ];
-  if (navEle.has('.' + navBgClassList[0]).length === 0) {
-    var navBg = createDivElement(null, navBgClassList);
-    navEle.append(navBg);
-  }
-
-  var mobileBase = createDivElement(self.IDs.MOBILE_BASE, [ 'roadmapChartMobile-b' ]);
-  self.targetEle.append(mobileBase);
-  self.addBreadcum('#' + self.IDs.MOBILE_BASE);
-  self.addHeader('#' + self.IDs.MOBILE_BASE);
-  self.handleMobileEvents();
-  self.isMobileChartReady = true;
+Roadmap.prototype.resetMobileView = function() {
+  $(Utils.parseId(MOBILE_CHART_ID)).remove();
 };
 
-Roadmap.prototype.drawMobileChart = function(parentName) {
+Roadmap.prototype.drawMobileChart = function(task) {
   var self = this;
-  if (!self.isMobileChartReady) {
-    self.prepareMobileViewChart();
-  }
   self.resetMobileView();
-  self.updateBreadcum(parentName);
-  self.updateHeader(parentName);
-  self.addFeatures(parentName);
+  self.setMobileView();
+  self.addFeatures(task);
 };
 
 Roadmap.prototype.draw = function() {
-  this.targetEle = $(this.payload.target);
-  this.init();
-  this.drawNav();
-  this.drawChart();
+  var self = this;
+  self.init();
+  self.prepareTasks();
+  self.setNav();
+  self.drawChart();
 };
 
 $(function() {
