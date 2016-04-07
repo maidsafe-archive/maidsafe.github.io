@@ -1,7 +1,7 @@
 {
     "name": "Network",
     "id": "NETWORK",
-    "color": "rootColor-1",
+    "color": "grey-1",
     "desc": "Network desc",
     "daysCompleted": 10,
     "target": [
@@ -29,7 +29,7 @@
           "name": "DOWN_STREAM",
           "id": "DW_MPID_CREATE_MANAGE",
           "source": "MPID_CREATE_MANAGE",
-          "color": "cyan-2",
+          "color": "red-2",
           "desc": "MPID create manage desc",
           "order": 999,
           "section": 1,
@@ -41,7 +41,7 @@
         {
             "name": "Vault",
             "id": "VAULT",
-            "color": "cyan-2",
+            "color": "red-2",
             "desc": "Vault desc",
             "daysCompleted": 10,
             "target": [
@@ -58,7 +58,7 @@
               {
                 "name": "Installers",
                 "id": "INSTALLERS",
-                "color": "cyan-3",
+                "color": "red-3",
                 "desc": "Installers desc",
                 "daysCompleted": 10,
                 "target": [
@@ -73,7 +73,7 @@
               {
                 "name": "Network Functionallity",
                 "id": "NETWORK_FUNCTIONALLITY",
-                "color": "cyan-3",
+                "color": "red-3",
                 "desc": "Network Functionallity desc",
                 "daysCompleted": 10,
                 "target": [
@@ -88,7 +88,7 @@
               {
                 "name": "Test minimum network size of",
                 "id": "TEST_MINIMUM_NETWORK_SIZE_OF",
-                "color": "cyan-3",
+                "color": "red-3",
                 "desc": "Test minimum network size of desc",
                 "daysCompleted": 10,
                 "target": [
@@ -105,7 +105,7 @@
         {
             "name": "Vault Config",
             "id": "VAULT_CONFIG",
-            "color": "coral-2",
+            "color": "pink-2",
             "desc": "Vault config desc",
             "daysCompleted": 10,
             "target": [
@@ -120,7 +120,7 @@
         {
             "name": "Public Identity",
             "id": "PUBLIC_IDENTITY",
-            "color": "green-2",
+            "color": "purple-2",
             "desc": "Public identity desc",
             "daysCompleted": 10,
             "target": [
@@ -135,7 +135,7 @@
               {
                 "name": "MPID Create/Manage",
                 "id": "MPID_CREATE_MANAGE",
-                "color": "green-3",
+                "color": "purple-3",
                 "desc": "MPID Create/Manage desc",
                 "daysCompleted": 10,
                 "target": [
@@ -150,7 +150,7 @@
               {
                 "name": "Manage Contacts",
                 "id": "MANAGE_CONTACTS",
-                "color": "green-3",
+                "color": "purple-3",
                 "desc": "Manage Contacts desc",
                 "daysCompleted": 10,
                 "target": [
@@ -167,7 +167,7 @@
         {
             "name": "Messaging",
             "id": "MESSAGING",
-            "color": "indigo-2",
+            "color": "navy-2",
             "desc": "Messaging desc",
             "daysCompleted": 10,
             "target": [
@@ -183,7 +183,7 @@
               {
                 "name": "RFC",
                 "id": "RFC",
-                "color": "indigo-3",
+                "color": "navy-3",
                 "desc": "RFC desc",
                 "daysCompleted": 10,
                 "target": [
@@ -216,7 +216,7 @@
         {
             "name": "System Update Management",
             "id": "SYSTEM_UPDATE_MANAGEMENT",
-            "color": "blue-2",
+            "color": "cyan-2",
             "desc": "System Update Management desc",
             "daysCompleted": 10,
             "target": [
@@ -231,7 +231,7 @@
         {
             "name": "Pay the Producer",
             "id": "PAY_THE_PRODUCT",
-            "color": "blue-2",
+            "color": "teal-2",
             "desc": "Pay the Producer desc",
             "daysCompleted": 10,
             "target": [
@@ -246,7 +246,7 @@
         {
             "name": "Data Sharing",
             "id": "DATA_SHARING",
-            "color": "blue-2",
+            "color": "green-2",
             "desc": "Data Sharing desc",
             "daysCompleted": 10,
             "target": [
@@ -261,7 +261,7 @@
         {
             "name": "Smart Contracts",
             "id": "SMART_CONTRACT",
-            "color": "blue-2",
+            "color": "tangerine-2",
             "desc": "Smart Contracts desc",
             "daysCompleted": 10,
             "target": [
@@ -276,7 +276,7 @@
         {
             "name": "Vault in mobile",
             "id": "VAULT_IN_MOBILE",
-            "color": "blue-2",
+            "color": "orange-2",
             "desc": "Vault in mobile desc",
             "daysCompleted": 10,
             "target": [
@@ -291,7 +291,7 @@
         {
             "name": "Vault support embedded",
             "id": "VAULT_SUPPORT_EMBEDDED",
-            "color": "blue-2",
+            "color": "brown-2",
             "desc": "Vault support embedded desc",
             "daysCompleted": 10,
             "target": [
@@ -306,7 +306,7 @@
         {
             "name": "Computation Handling in Network",
             "id": "COMPUTATION_HANDLING_IN_NETWORK",
-            "color": "blue-2",
+            "color": "charcoal-2",
             "desc": "Computation Handling in Network desc",
             "daysCompleted": 10,
             "target": [

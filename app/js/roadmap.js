@@ -63,12 +63,15 @@ var TASK_STATUS = {
   }
 };
 
-var TASK_COLORS = ['blue-1', 'blue-2', 'blue-3', 'orange-1', 'orange-2', 'orange-3',
-  'coral-1', 'coral-2', 'coral-3', 'pink-1', 'pink-2', 'pink-3',
-  'green-1', 'green-2', 'green-3', 'indigo-1', 'indigo-2', 'indigo-3',
-  'cyan-1', 'cyan-2', 'cyan-3', 'turquoise-1', 'turquoise-2', 'turquoise-3',
-  'grey-1', 'grey-2', 'grey-3', 'purple-1', 'purple-2', 'purple-3', ''
-];
+var TASK_COLORS = ['red-1', 'red-2', 'red-3', 'red-4', 'red-5', 'red-6', 'pink-1', 'pink-2',
+  'pink-3', 'pink-4', 'pink-5', 'pink-6', 'purple-1', 'purple-2', 'purple-3', 'purple-4',
+  'purple-5', 'purple-6', 'navy-1', 'navy-2', 'navy-3', 'navy-4', 'navy-5', 'navy-6', 'blue-1',
+  'blue-2', 'blue-3', 'blue-4', 'blue-5', 'blue-6', 'cyan-1', 'cyan-2', 'cyan-3', 'cyan-4', 'cyan-5',
+  'cyan-6', 'teal-1', 'teal-2', 'teal-3', 'teal-4', 'teal-5', 'teal-6', 'tangerine-1', 'tangerine-2',
+  'tangerine-3', 'tangerine-4', 'tangerine-5', 'tangerine-6', 'orange-1', 'orange-2', 'orange-3',
+  'orange-4', 'orange-5', 'orange-6', 'brown-1', 'brown-2', 'brown-3', 'brown-4', 'brown-5', 'brown-6',
+  'charcoal-1', 'charcoal-2', 'charcoal-3', 'charcoal-4', 'charcoal-5', 'charcoal-6', 'grey-1', 'grey-2',
+  'grey-3', 'grey-4', 'grey-5', 'grey-6'];
 
 var BOX_PATTERN_PATH = '22,0 0,22 43,22 62,0';
 
@@ -251,6 +254,20 @@ Utils.getChildrenTasks = function(taskId) {
   return children;
 };
 
+Utils.getMarkerArrowLevel = function(marker, isLevelup) {
+  if (!marker) {
+    return;
+  }
+  var color =  marker.slice(marker.indexOf(ARROW_PREFIX) + ARROW_PREFIX.length, marker.length - 1);
+  var level = parseInt(color.slice(-1));
+  if (level === 0) {
+    return marker;
+  }
+  level = !isLevelup ? level + 1 : level - 1;
+  color = color.slice(0, color.length - 1) + level;
+  return 'url(#' + ARROW_PREFIX + color + ')';
+};
+
 var Connection = function(taskId, sourceId) {
   this.sourceId = sourceId;
   this.targetId = taskId;
@@ -414,14 +431,20 @@ TaskBox.prototype.mouseOver = function() {
     if (!targetTask) { return; }
     targetTask.connections.forEach(function(connection) {
       if (connection.sourceId === self.taskId) {
-        Utils.addSvgClass(Utils.parseId(connection.id), 'highlight');
+        var connectionId = Utils.parseId(connection.id);
+        Utils.addSvgClass(connectionId, 'highlight');
+        var marker = $(connectionId).attr('marker-start');
+        $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(marker, true));
       }
     });
   });
   task.connections.forEach(function(connection) {
     var sourceTask = Utils.getTask(connection.sourceId);
     if (sourceTask.isDownStream()) {
-      Utils.addSvgClass(Utils.parseId(connection.id), 'highlight');
+      var connectionId = Utils.parseId(connection.id);
+      Utils.addSvgClass(connectionId, 'highlight');
+      var marker = $(connectionId).attr('marker-start');
+      $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(marker, true));
     }
   });
 };
@@ -436,14 +459,20 @@ TaskBox.prototype.mouseOut = function(target) {
     if (!targetTask) { return; }
     targetTask.connections.forEach(function(connection) {
       if (connection.sourceId === self.taskId) {
-        Utils.removeSvgClass(Utils.parseId(connection.id), 'highlight');
+        var connectionId = Utils.parseId(connection.id);
+        Utils.removeSvgClass(connectionId, 'highlight');
+        var marker = $(connectionId).attr('marker-start');
+        $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(marker, false));
       }
     });
   });
   task.connections.forEach(function(connection) {
     var sourceTask = Utils.getTask(connection.sourceId);
     if (sourceTask.isDownStream()) {
-      Utils.removeSvgClass(Utils.parseId(connection.id), 'highlight');
+      var connectionId = Utils.parseId(connection.id);
+      Utils.removeSvgClass(connectionId, 'highlight');
+      var marker = $(connectionId).attr('marker-start');
+      $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(marker, false));
     }
   });
 };
@@ -768,6 +797,9 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
     .addClass(activeTask.color + ' text roadmapChart-h-t');
   $(Utils.parseId(TASK_DESC_ID)).text(activeTask.desc);
   var task = Utils.getTask(Utils.getLocationHash());
+  if (!task) {
+    return;
+  }
   if (Utils.getChildrenTasks(task.id).length === 0) {
     $(Utils.parseId(TASK_TITLE_ID)).parent().addClass('active');
   }
