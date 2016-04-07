@@ -1,4 +1,4 @@
-{
+var jsonData = {
     "name": "SAFE Network",
     "id": "SAFE_NETWORK",
     "color": "grey-1",
@@ -547,7 +547,7 @@
                 "children": [
                   {
                     "name": "Self Authentication",
-                    "id": "SELF_AUTHENTICATION",
+                    "id": "APP_SELF_AUTHENTICATION",
                     "color": "grey-2",
                     "desc": "Launcher desc",
                     "daysCompleted": 10,
@@ -558,7 +558,38 @@
                     "section": 1,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Create Account",
+                        "id": "CREATE_ACCOUNT",
+                        "color": "grey-2",
+                        "desc": "Create Account desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "MANAGE_ACCOUNT"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Manage Account",
+                        "id": "MANAGE_ACCOUNT",
+                        "color": "grey-2",
+                        "desc": "Manage Account desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "App Management",
@@ -573,7 +604,53 @@
                     "section": 2,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Provide SAFE Drive access to authenticated apps",
+                        "id": "PROVIDE_SAFE_DRIVE_ACCESS",
+                        "color": "grey-2",
+                        "desc": "Provide SAFE Drive access desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "ADD_OR_REMOVE_APP"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "add/remove App",
+                        "id": "ADD_OR_REMOVE_APP",
+                        "color": "grey-2",
+                        "desc": "add/remove App desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "LAUNCH_APP"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Launch App",
+                        "id": "LAUNCH_APP",
+                        "color": "grey-2",
+                        "desc": "Launch App desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 3,
+                        "section": 3,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "Cross Platfrom Desktop CLI client",
@@ -584,8 +661,8 @@
                     "target": [
                         "LAUNCHER_UI"
                     ],
-                    "order": 1,
-                    "section": 2,
+                    "order": 2,
+                    "section": 1,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": []
@@ -599,8 +676,8 @@
                     "target": [
                         "LAUNCHER_APP_API"
                     ],
-                    "order": 2,
-                    "section": 3,
+                    "order": 3,
+                    "section": 2,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": []
@@ -615,7 +692,7 @@
                         "APP_INSTALLER"
                     ],
                     "order": 3,
-                    "section": 2,
+                    "section": 3,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": []
@@ -627,10 +704,10 @@
                     "desc": "Launcher App API desc",
                     "daysCompleted": 10,
                     "target": [
-                        "END"
+                        "APP_ANALYTICS"
                     ],
-                    "order": 3,
-                    "section": 2,
+                    "order": 4,
+                    "section": 4,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": []
@@ -644,23 +721,68 @@
                     "target": [
                         "END"
                     ],
-                    "order": 3,
-                    "section": 4,
+                    "order": 5,
+                    "section": 5,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": []
                   },
                   {
                     "name": "Vault Management",
-                    "id": "Vault_Management",
+                    "id": "VAULT_MANAGEMENT",
                     "color": "grey-2",
-                    "desc": "App Analytics desc",
+                    "desc": "Vault Management desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "FARMING_RATE_HISTORY"
+                    ],
+                    "order": 6,
+                    "section": 5,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Farming Rate History",
+                    "id": "FARMING_RATE_HISTORY",
+                    "color": "grey-2",
+                    "desc": "Farming Rate History desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "VAULT_ANALYTICS"
+                    ],
+                    "order": 7,
+                    "section": 6,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Vault Analytics",
+                    "id": "VAULT_ANALYTICS",
+                    "color": "grey-2",
+                    "desc": "Vault Analytics desc",
                     "daysCompleted": 10,
                     "target": [
                         "END"
                     ],
-                    "order": 3,
-                    "section": 4,
+                    "order": 8,
+                    "section": 7,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Portable App Store",
+                    "id": "PORTABLE_APP_STORE",
+                    "color": "grey-2",
+                    "desc": "Portable App Store desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 9,
+                    "section": 7,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": []
@@ -721,9 +843,9 @@
                 "target": [
                     "SAFECOIN_EXCHANGE"
                 ],
-                "order": 1,
+                "order": 5,
                 "section": 5,
-                "status": 5,
+                "status": 1,
                 "startDate": "2016-1-1",
                 "children": []
               },
@@ -760,4 +882,4 @@
             ]
         }
     ]
-}
+};

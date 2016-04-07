@@ -363,6 +363,12 @@ TaskNav.prototype.mouseClick = function(target, setHash) {
     $(target).children().addClass(CSS_CLASS.LIST_CLOSED);
   } else {
     $(target).siblings().addClass(CSS_CLASS.LIST_CLOSED);
+    $(target).children('.' + CSS_CLASS.LIST_BASE).addClass(CSS_CLASS.LIST_CLOSED);
+    var parent = $(target).parent();
+    while (parent && parent.hasClass('listBase')) {
+      parent.removeClass(CSS_CLASS.LIST_CLOSED);
+      parent = $(parent).parent();
+    }
     $(target).removeClass(CSS_CLASS.LIST_CLOSED);
   }
   if (setHash) {
@@ -983,7 +989,7 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
   var getIncomingNodesForSection = function(section) {
     var incomingCount = 0;
     var incomingTasks = [];
-    roadmapTasks.forEach(function(task) {
+    self.activeTasks.forEach(function(task) {
       if (task.section === section) {
         incomingTasks = getIncomingTasks(task);
         task.incomingTasks = incomingTasks;
@@ -1042,6 +1048,7 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
     });
   };
 
+  setActiveTasks(activeTask);
   setDownStreamCount();
   setStartDates();
 
@@ -1050,7 +1057,6 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
     task.endDate = Utils.addDate(task.startDate, self.interval);
   });
 
-  setActiveTasks(activeTask);
   setBoxParams();
   self.drawBoxes();
 };
@@ -1313,10 +1319,6 @@ Roadmap.prototype.updateNav = function(taskId) {
   taskId = taskId || roadmapTasks[0].id;
   var task = Utils.getTask(taskId);
   task.nav.mouseClick();
-  while (task.parent && task.parent.parent) {
-    task = task.parent;
-    task.nav.mouseClick();
-  }
   $('.roadmapNav').removeClass('open');
 };
 
@@ -1413,11 +1415,16 @@ Roadmap.prototype.draw = function() {
 };
 
 $(function() {
-  $.get('data/roadmapData.json', function(data) {
-    new Roadmap({
-      data: data,
-      target: '#Roadmap',
-      interval: 10
-    }).draw();
-  });
+  // $.get('data/roadmapData.json', function(data) {
+  //   new Roadmap({
+  //     data: data,
+  //     target: '#Roadmap',
+  //     interval: 10
+  //   }).draw();
+  // });
+  new Roadmap({
+    data: jsonData,
+    target: '#Roadmap',
+    interval: 10
+  }).draw();
 });
