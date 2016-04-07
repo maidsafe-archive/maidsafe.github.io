@@ -251,18 +251,12 @@ Utils.getChildrenTasks = function(taskId) {
   return children;
 };
 
-Utils.getMarkerArrowLevel = function(marker, isLevelup) {
-  if (!marker) {
-    return;
-  }
-  var color =  marker.slice(marker.indexOf(ARROW_PREFIX) + ARROW_PREFIX.length, marker.length - 1);
+Utils.getMarkerArrowLevel = function(color, isLevelup) {
+  var markerColor = color;
   var level = parseInt(color.slice(-1));
-  if (level === 0) {
-    return marker;
-  }
-  level = !isLevelup ? level + 1 : level - 1;
-  color = color.slice(0, color.length - 1) + level;
-  return 'url(#' + ARROW_PREFIX + color + ')';
+  level = !isLevelup ? level : level - 1;
+  markerColor = markerColor.slice(0, markerColor.length - 1) + level;
+  return 'url(#' + ARROW_PREFIX + markerColor + ')';
 };
 
 var Connection = function(taskId, sourceId) {
@@ -432,8 +426,7 @@ TaskBox.prototype.mouseOver = function() {
       if (connection.sourceId === self.taskId) {
         var connectionId = Utils.parseId(connection.id);
         Utils.addSvgClass(connectionId, 'highlight');
-        var marker = $(connectionId).attr('marker-start');
-        $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(marker, true));
+        $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(connection.color, true));
       }
     });
   });
@@ -442,8 +435,6 @@ TaskBox.prototype.mouseOver = function() {
     if (sourceTask.isDownStream()) {
       var connectionId = Utils.parseId(connection.id);
       Utils.addSvgClass(connectionId, 'highlight');
-      var marker = $(connectionId).attr('marker-start');
-      $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(marker, true));
     }
   });
 };
@@ -462,8 +453,7 @@ TaskBox.prototype.mouseOut = function() {
       if (connection.sourceId === self.taskId) {
         var connectionId = Utils.parseId(connection.id);
         Utils.removeSvgClass(connectionId, 'highlight');
-        var marker = $(connectionId).attr('marker-start');
-        $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(marker, false));
+        $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(connection.color, false));
       }
     });
   });
@@ -472,8 +462,6 @@ TaskBox.prototype.mouseOut = function() {
     if (sourceTask.isDownStream()) {
       var connectionId = Utils.parseId(connection.id);
       Utils.removeSvgClass(connectionId, 'highlight');
-      var marker = $(connectionId).attr('marker-start');
-      $(connectionId).attr('marker-start', Utils.getMarkerArrowLevel(marker, false));
     }
   });
 };
@@ -759,6 +747,9 @@ Roadmap.prototype.updateBreadcum = function(activeTask) {
   var getParentTask = function(task) {
     var parentTask = null;
     roadmapTasks.forEach(function(item) {
+      if (!item) {
+        return;
+      }
       if (item.id === task.id) {
         parentTask = item.parent;
       }
@@ -776,10 +767,6 @@ Roadmap.prototype.updateBreadcum = function(activeTask) {
 
   resetBreadcum();
   updateBreadcumList(activeTask);
-  breadcumList.push({
-    name: 'SAFE Network',
-    id: null
-  });
   breadcumList.reverse();
   var breadcumItem = null;
   breadcumList.forEach(function(task) {
@@ -888,7 +875,7 @@ Roadmap.prototype.drawBoxes = function() {
 
   box.append('defs').each(function(d, i) {
     if (d.isExcluded()) {
-      delete box[i];
+      return;
     }
     if (!d.status) {
       self.defineBoxPattern({

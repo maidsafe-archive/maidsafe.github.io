@@ -178,6 +178,14 @@
   -webkit-user-select: none;
 }
 
+.listBase > span {
+  width: 98%;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .listBase.listClose {
   height: 29px;
   overflow: hidden;
