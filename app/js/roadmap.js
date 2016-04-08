@@ -367,6 +367,7 @@ TaskNav.prototype.mouseClick = function(target, setHash) {
     var parent = $(target).parent();
     while (parent && parent.hasClass('listBase')) {
       parent.removeClass(CSS_CLASS.LIST_CLOSED);
+      parent.siblings().addClass(CSS_CLASS.LIST_CLOSED);
       parent = $(parent).parent();
     }
     $(target).removeClass(CSS_CLASS.LIST_CLOSED);
@@ -1238,8 +1239,8 @@ Roadmap.prototype.prepareConnections = function() {
       index += splitTasks.upperTasks.length;
 
       if (task.connections.length === 0 || (index === 0)) {
-        start.x = task.box.x - (index * self.getPerUnit());
-        start.y = task.box.y + (self.box.height / 2) + (index * self.getPerUnit());
+        start.x = task.box.x;
+        start.y = task.box.y + (self.box.height / 2);
       } else {
         start.x = task.connections[index - 1].interStart.x;
         start.y = task.connections[index - 1].interStart.y - (index * self.getPerUnit());
@@ -1263,9 +1264,10 @@ Roadmap.prototype.prepareConnections = function() {
       interEnd.y = end.y;
       if (lowerTask.isDownStream()) {
         start.x = task.box.x + task.box.width;
+        start.y = task.box.y + (self.box.height / 2);
         interStart.x = start.x + self.sectionCurrentIncomingCounts[incomingCountIndex] +
           self.getPerUnit();
-        interStart.y = start.y;  
+        interStart.y = start.y;
         interEnd = interStart;
         end.x = interEnd.x;
         end.y = self.svg.height - $(Utils.parseId(BREADCUM_ID)).height() -

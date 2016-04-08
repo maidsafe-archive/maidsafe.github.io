@@ -28,12 +28,25 @@ var jsonData = {
             "startDate": "2016-1-1",
             "children": [
                 {
-                    "name": "EXTERNAL",
-                    "id": "EX_VAULT_MANAGEMENT",
-                    "source": "VAULT_IN_MOBILE",
-                    "color": "blue-2",
-                    "desc": "Vault desc",
-                    "order": -1,
+                    "name": "DOWN_STREAM",
+                    "id": "DW_APP_SELF_AUTHENTICATION",
+                    "source": "APP_SELF_AUTHENTICATION",
+                    "color": "red-2",
+                    "desc": "App Self Authentication",
+                    "order": 999,
+                    "section": 1,
+                    "target": [
+                        "VAULT"
+                    ],
+                    "startDate": "2016-1-1"
+                },
+                {
+                    "name": "DOWN_STREAM",
+                    "id": "DW_VAULT_MANAGEMENT",
+                    "source": "VAULT_MANAGEMENT",
+                    "color": "pink-2",
+                    "desc": "vault management",
+                    "order": 999,
                     "section": 1,
                     "target": [
                         "VAULT_CONFIG"
@@ -42,14 +55,14 @@ var jsonData = {
                 },
                 {
                     "name": "DOWN_STREAM",
-                    "id": "DW_MPID_CREATE_MANAGE",
-                    "source": "MPID_CREATE_MANAGE",
-                    "color": "red-2",
-                    "desc": "MPID create manage desc",
+                    "id": "DW_SAFECOIN_WALLET_ADDRESS",
+                    "source": "SAFECOIN_WALLET_ADDRESS",
+                    "color": "purple-2",
+                    "desc": "Safecoin wallet address management",
                     "order": 999,
                     "section": 1,
                     "target": [
-                        "VAULT"
+                        "PUBLIC_IDENTITY"
                     ],
                     "startDate": "2016-1-1"
                 },
@@ -546,6 +559,32 @@ var jsonData = {
                 "status": 1,
                 "startDate": "2016-1-1",
                 "children": [
+                  {
+                      "name": "EXTERNAL",
+                      "id": "EX_VAULT",
+                      "source": "VAULT",
+                      "color": "red-2",
+                      "desc": "Vault desc",
+                      "order": -1,
+                      "section": 1,
+                      "target": [
+                          "APP_SELF_AUTHENTICATION"
+                      ],
+                      "startDate": "2016-1-1"
+                  },
+                  {
+                      "name": "EXTERNAL",
+                      "id": "EX_VAULT_CONFIG",
+                      "source": "VAULT_CONFIG",
+                      "color": "pink-2",
+                      "desc": "Vault config desc",
+                      "order": -1,
+                      "section": 1,
+                      "target": [
+                          "VAULT_MANAGEMENT"
+                      ],
+                      "startDate": "2016-1-1"
+                  },
                   {
                     "name": "Self Authentication",
                     "id": "APP_SELF_AUTHENTICATION",
@@ -1657,7 +1696,84 @@ var jsonData = {
                 "section": 6,
                 "status": 1,
                 "startDate": "2016-1-1",
-                "children": []
+                "children": [
+                  {
+                    "name": "Recent buyers/sellers",
+                    "id": "RECENT_BUYERS_OR_SELLERS",
+                    "color": "grey-2",
+                    "desc": "Recent buyers/sellers desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "EXCHANGE_VIA_BTC"
+                    ],
+                    "order": 1,
+                    "section": 1,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Exchange via BTC",
+                    "id": "EXCHANGE_VIA_BTC",
+                    "color": "grey-2",
+                    "desc": "Exchange via BTC desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "SAFECOIN_EXCHANGE_SMART_CONTRACTS"
+                    ],
+                    "order": 2,
+                    "section": 2,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": [
+                      {
+                        "name": "Buy Safecoin",
+                        "id": "BUY_SAFECOIN",
+                        "color": "grey-2",
+                        "desc": "Buy Safecoin desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "SELL_SAFECOIN"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Sell Safecoin",
+                        "id": "SELL_SAFECOIN",
+                        "color": "grey-2",
+                        "desc": "Sell Safecoin desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Smart Contracts",
+                    "id": "SAFECOIN_EXCHANGE_SMART_CONTRACTS",
+                    "color": "grey-2",
+                    "desc": "Smart Contracts desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 3,
+                    "section": 3,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "CMS",
@@ -1672,7 +1788,83 @@ var jsonData = {
                 "section": 7,
                 "status": 1,
                 "startDate": "2016-1-1",
-                "children": []
+                "children": [
+                  {
+                    "name": "Standalone App",
+                    "id": "STANDALONE_APP",
+                    "color": "grey-2",
+                    "desc": "Standalone App desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "BROWSER_INTEGRATED"
+                    ],
+                    "order": 1,
+                    "section": 1,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Browser Integrated",
+                    "id": "BROWSER_INTEGRATED",
+                    "color": "grey-2",
+                    "desc": "Browser Integrated desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "CREATE_STATIC_WEBSITES"
+                    ],
+                    "order": 2,
+                    "section": 2,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Create Static Websites",
+                    "id": "CREATE_STATIC_WEBSITES",
+                    "color": "grey-2",
+                    "desc": "Create Static Websites desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "MANAGE_NETWORK_STORAGE"
+                    ],
+                    "order": 3,
+                    "section": 3,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Manage Network Storage",
+                    "id": "MANAGE_NETWORK_STORAGE",
+                    "color": "grey-2",
+                    "desc": "Manage Network Storage desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "CROSS_MODULE_FEATURES"
+                    ],
+                    "order": 4,
+                    "section": 4,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Cross module Features",
+                    "id": "CROSS_MODULE_FEATURES",
+                    "color": "grey-2",
+                    "desc": "Cross module Features desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 5,
+                    "section": 5,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  }
+                ]
               }
             ]
         }
