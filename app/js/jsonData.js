@@ -34,7 +34,7 @@ var jsonData = {
                     "color": "red-2",
                     "desc": "App Self Authentication",
                     "order": 999,
-                    "section": 1,
+                    "section": 2,
                     "target": [
                         "VAULT"
                     ],
@@ -47,7 +47,7 @@ var jsonData = {
                     "color": "pink-2",
                     "desc": "vault management",
                     "order": 999,
-                    "section": 1,
+                    "section": 3,
                     "target": [
                         "VAULT_CONFIG"
                     ],
@@ -60,9 +60,48 @@ var jsonData = {
                     "color": "purple-2",
                     "desc": "Safecoin wallet address management",
                     "order": 999,
-                    "section": 1,
+                    "section": 3,
                     "target": [
                         "PUBLIC_IDENTITY"
+                    ],
+                    "startDate": "2016-1-1"
+                },
+                {
+                    "name": "DOWN_STREAM",
+                    "id": "DW_AGGREGATE_USER_RATINGS",
+                    "source": "AGGREGATE_USER_RATINGS",
+                    "color": "navy-2",
+                    "desc": "Aggregate user ratings",
+                    "order": 999,
+                    "section": 4,
+                    "target": [
+                        "MESSAGING"
+                    ],
+                    "startDate": "2016-1-1"
+                },
+                {
+                    "name": "EXTERNAL",
+                    "id": "DW_INSTALLERS ",
+                    "source": "INSTALLERS",
+                    "color": "red-3",
+                    "desc": "INSTALLERS",
+                    "order": -1,
+                    "section": 2,
+                    "target": [
+                        "SYSTEM_UPDATE_MANAGEMENT"
+                    ],
+                    "startDate": "2016-1-1"
+                },
+                {
+                    "name": "EXTERNAL",
+                    "id": "DW_INSTALLERS_DATA_SHARING",
+                    "source": "INSTALLERS",
+                    "color": "red-3",
+                    "desc": "INSTALLERS",
+                    "order": -1,
+                    "section": 2,
+                    "target": [
+                        "DATA_SHARING"
                     ],
                     "startDate": "2016-1-1"
                 },
@@ -83,6 +122,32 @@ var jsonData = {
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
+                        {
+                            "name": "DOWN_STREAM",
+                            "id": "DW_SYSTEM_UPDATE_MANAGEMENT",
+                            "source": "SYSTEM_UPDATE_MANAGEMENT",
+                            "color": "red-3",
+                            "desc": "System update management",
+                            "order": 999,
+                            "section": 1,
+                            "target": [
+                                "INSTALLERS"
+                            ],
+                            "startDate": "2016-1-1"
+                        },
+                        {
+                            "name": "DOWN_STREAM",
+                            "id": "DW_DATA_SHARING",
+                            "source": "DATA_SHARING",
+                            "color": "red-3",
+                            "desc": "Data sharing",
+                            "order": 999,
+                            "section": 1,
+                            "target": [
+                                "INSTALLERS"
+                            ],
+                            "startDate": "2016-1-1"
+                        },
                         {
                             "name": "Installers",
                             "id": "INSTALLERS",
@@ -222,6 +287,32 @@ var jsonData = {
                     "startDate": "2016-1-1",
                     "children": [
                         {
+                            "name": "DOWN_STREAM",
+                            "id": "DW_MANAGE_ACCOUNT",
+                            "source": "MANAGE_ACCOUNT",
+                            "color": "purple-3",
+                            "desc": "Manage account",
+                            "order": 999,
+                            "section": 1,
+                            "target": [
+                                "MPID_CREATE_MANAGE"
+                            ],
+                            "startDate": "2016-1-1"
+                        },
+                        {
+                            "name": "DOWN_STREAM",
+                            "id": "DW_USAGE_SIMPLE_SEND_RECIEVE_TO_CONTACTS",
+                            "source": "USAGE_SIMPLE_SEND_RECIEVE_TO_CONTACTS",
+                            "color": "purple-3",
+                            "desc": "Usage simple send/recieve to contacts",
+                            "order": 999,
+                            "section": 1,
+                            "target": [
+                                "MANAGE_CONTACTS"
+                            ],
+                            "startDate": "2016-1-1"
+                        },
+                        {
                             "name": "MPID Create/Manage",
                             "id": "MPID_CREATE_MANAGE",
                             "color": "purple-3",
@@ -316,6 +407,45 @@ var jsonData = {
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
+                        {
+                            "name": "DOWN_STREAM",
+                            "id": "DW_SAFECOIN_WALLET_ADDRESS",
+                            "source": "SAFECOIN_WALLET_ADDRESS",
+                            "color": "navy-3",
+                            "desc": "Safecoin wallet address",
+                            "order": 999,
+                            "section": 1,
+                            "target": [
+                                "VAULT_SAFECOIN_CONFIG"
+                            ],
+                            "startDate": "2016-1-1"
+                        },
+                        {
+                            "name": "DOWN_STREAM",
+                            "id": "DW_SAFECOIN_WALLET_ADDRESS",
+                            "source": "SAFECOIN_WALLET_ADDRESS",
+                            "color": "navy-3",
+                            "desc": "Safecoin wallet address",
+                            "order": 999,
+                            "section": 1,
+                            "target": [
+                                "FARMING"
+                            ],
+                            "startDate": "2016-1-1"
+                        },
+                        {
+                            "name": "EXTERNAL",
+                            "id": "DW_MANAGE_CONTACTS",
+                            "source": "MANAGE_CONTACTS",
+                            "color": "purple-3",
+                            "desc": "Manage contacts",
+                            "order": -1,
+                            "section": 1,
+                            "target": [
+                                "USAGE_SIMPLE_SEND_RECIEVE_TO_CONTACTS"
+                            ],
+                            "startDate": "2016-1-1"
+                        },
                         {
                             "name": "Vault - Safecoin Config",
                             "id": "VAULT_SAFECOIN_CONFIG",
@@ -600,6 +730,19 @@ var jsonData = {
                     "startDate": "2016-1-1",
                     "children": [
                       {
+                        "name": "EXTERNAL",
+                        "id": "EX_MPID_CREATE_MANAGE",
+                        "source": "MPID_CREATE_MANAGE",
+                        "color": "purple-3",
+                        "desc": "MPID create/manage",
+                        "order": -1,
+                        "section": 1,
+                        "target": [
+                            "MANAGE_ACCOUNT"
+                        ],
+                        "startDate": "2016-1-1"
+                      },
+                      {
                         "name": "Create Account",
                         "id": "CREATE_ACCOUNT",
                         "color": "grey-2",
@@ -721,6 +864,19 @@ var jsonData = {
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
+                      {
+                          "name": "DOWN_STREAM",
+                          "id": "DW_APP_SPECIFIC_GRANULARITY",
+                          "source": "APP_SPECIFIC_GRANULARITY",
+                          "color": "grey-2",
+                          "desc": "APP SPECIFIC GRANULARITY",
+                          "order": 999,
+                          "section": 1,
+                          "target": [
+                              "VANILLA_SELF_AUTH_NABAGE_APPS"
+                          ],
+                          "startDate": "2016-1-1"
+                      },
                       {
                         "name": "Vanilla - Self Auth, Nabage Apps",
                         "id": "VANILLA_SELF_AUTH_NABAGE_APPS",
@@ -966,6 +1122,19 @@ var jsonData = {
                     "startDate": "2016-1-1",
                     "children": [
                       {
+                          "name": "EXTERNAL",
+                          "id": "DW_VANILLA_SELF_AUTH_NABAGE_APPS  ",
+                          "source": "VANILLA_SELF_AUTH_NABAGE_APPS",
+                          "color": "grey-2",
+                          "desc": "Vanilla self auth nabage apps",
+                          "order": -1,
+                          "section": 1,
+                          "target": [
+                              "APP_SPECIFIC_GRANULARITY"
+                          ],
+                          "startDate": "2016-1-1"
+                      },
+                      {
                         "name": "Data Throughput from IPC apps",
                         "id": "DATA_THROUGHPUT_FROM_IPC_APPS",
                         "color": "grey-2",
@@ -1011,6 +1180,45 @@ var jsonData = {
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
+                      {
+                        "name": "EXTERNAL",
+                        "id": "EX_PUBLIC_IDENTITY",
+                        "source": "PUBLIC_IDENTITY",
+                        "color": "purple-2",
+                        "desc": "Public identity",
+                        "order": -1,
+                        "section": 3,
+                        "target": [
+                            "SAFECOIN_WALLET_ADDRESS"
+                        ],
+                        "startDate": "2016-1-1"
+                      },
+                      {
+                        "name": "EXTERNAL",
+                        "id": "EX_VAULT_SAFECOIN_CONFIG",
+                        "source": "VAULT_SAFECOIN_CONFIG",
+                        "color": "navy-3",
+                        "desc": "Vault safecoin config",
+                        "order": -1,
+                        "section": 3,
+                        "target": [
+                            "SAFECOIN_WALLET_ADDRESS"
+                        ],
+                        "startDate": "2016-1-1"
+                      },
+                      {
+                        "name": "EXTERNAL",
+                        "id": "EX_FARMING",
+                        "source": "FARMING",
+                        "color": "navy-3",
+                        "desc": "Farming",
+                        "order": -1,
+                        "section": 3,
+                        "target": [
+                            "SAFECOIN_WALLET_ADDRESS"
+                        ],
+                        "startDate": "2016-1-1"
+                      },
                       {
                         "name": "Manage Vault Config",
                         "id": "MANAGE_VAULT_CONFIG",
@@ -1148,6 +1356,19 @@ var jsonData = {
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
+                      {
+                        "name": "EXTERNAL",
+                        "id": "EX_MESSAGING",
+                        "source": "MESSAGING",
+                        "color": "pink-2",
+                        "desc": "Messaging",
+                        "order": -1,
+                        "section": 3,
+                        "target": [
+                            "AGGREGATE_USER_RATINGS"
+                        ],
+                        "startDate": "2016-1-1"
+                      },
                       {
                         "name": "Manage Portable Apps from Network Share",
                         "id": "MANAGE_PORTABLE_APPS",
