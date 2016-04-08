@@ -852,13 +852,13 @@ Roadmap.prototype.drawProgressBar = function(activeTask) {
 
   var progressBar = d3.select(Utils.parseId(SVG_BOX_GRP_ID))
     .append('g').attr('class', 'progressBar');
-
+  var baseWidth =  self.svg.width - (self.svg.padding * 2);
   // header base
   progressBar.append('rect')
     .attr('class', 'chart-progress-b')
     .attr('x', 0)
     .attr('y', -self.svg.padding)
-    .attr('width', self.svg.width - (self.svg.padding * 2))
+    .attr('width', baseWidth)
     .attr('height', self.progressBar.height)
     .attr('style', 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + activeTask.id) + ')');
 
@@ -867,7 +867,11 @@ Roadmap.prototype.drawProgressBar = function(activeTask) {
     .attr('class', CSS_CLASS.SVG + activeTask.color)
     .attr('x', 0)
     .attr('y', -self.svg.padding)
-    .attr('width', self.timeScale(self.dateFormat.parse(Utils.addDate(activeTask.startDate, activeTask.daysCompleted))))
+    .attr('width', function() {
+      // TODO find fix for overflow
+       var width = self.timeScale(self.dateFormat.parse(Utils.addDate(activeTask.startDate, activeTask.daysCompleted)));
+      return baseWidth < width ? baseWidth : width;
+    })
     .attr('height', self.progressBar.height);
 };
 
@@ -879,7 +883,7 @@ Roadmap.prototype.drawBoxes = function() {
   .data(self.activeTasks)
   .enter();
 
-  box.append('defs').each(function(d, i) {
+  box.append('defs').each(function(d) {
     if (d.isExcluded()) {
       return;
     }
@@ -1258,9 +1262,10 @@ Roadmap.prototype.prepareConnections = function() {
       interEnd.x = interStart.x;
       interEnd.y = end.y;
       if (lowerTask.isDownStream()) {
-        start.x = task.box.x + task.box.width + self.sectionCurrentIncomingCounts[incomingCountIndex] +
+        start.x = task.box.x + task.box.width;
+        interStart.x = start.x + self.sectionCurrentIncomingCounts[incomingCountIndex] +
           self.getPerUnit();
-        interStart = start;
+        interStart.y = start.y;  
         interEnd = interStart;
         end.x = interEnd.x;
         end.y = self.svg.height - $(Utils.parseId(BREADCUM_ID)).height() -

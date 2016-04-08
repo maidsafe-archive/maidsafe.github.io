@@ -1,3 +1,4 @@
+/*jshint quotmark: double */
 var jsonData = {
     "name": "SAFE Network",
     "id": "SAFE_NETWORK",
@@ -680,7 +681,113 @@ var jsonData = {
                     "section": 2,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Vanilla - Self Auth, Nabage Apps",
+                        "id": "VANILLA_SELF_AUTH_NABAGE_APPS",
+                        "color": "grey-2",
+                        "desc": "Vanilla - Self Auth, Nabage Apps (Add/Remove/SAFE Drive Access) desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "LAUNCHER_TUTORIALS"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Tutorials",
+                        "id": "LAUNCHER_TUTORIALS",
+                        "color": "grey-2",
+                        "desc": "Launcher Tutorials desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "APP_ANALYTICS_UI"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "App analytics UI",
+                        "id": "APP_ANALYTICS_UI",
+                        "color": "grey-2",
+                        "desc": "App analytics UI desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "VAULT_MANAGEMENT_UI"
+                        ],
+                        "order": 3,
+                        "section": 3,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Vault Management UI",
+                        "id": "VAULT_MANAGEMENT_UI",
+                        "color": "grey-2",
+                        "desc": "Vault Management UI desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "FARMING_RATE_HISTORY_UI"
+                        ],
+                        "order": 4,
+                        "section": 4,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Farming Rate History UI",
+                        "id": "FARMING_RATE_HISTORY_UI",
+                        "color": "grey-2",
+                        "desc": "Farming Rate History UI desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "VAULT_ANALYTICS_UI"
+                        ],
+                        "order": 5,
+                        "section": 5,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Vault Analytics UI",
+                        "id": "VAULT_ANALYTICS_UI",
+                        "color": "grey-2",
+                        "desc": "Vault Analytics UI desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "APP_SUGGESTIONS"
+                        ],
+                        "order": 6,
+                        "section": 6,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "App suggestions",
+                        "id": "APP_SUGGESTIONS",
+                        "color": "grey-2",
+                        "desc": "App suggestions desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 7,
+                        "section": 7,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "Launcher App API",
@@ -695,7 +802,69 @@ var jsonData = {
                     "section": 3,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "NFS",
+                        "id": "NFS",
+                        "color": "grey-2",
+                        "desc": "NFS desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "DNS"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": [
+                          {
+                            "name": "Sandbox",
+                            "id": "NFS_SANDBOX",
+                            "color": "grey-2",
+                            "desc": "Sandbox desc",
+                            "daysCompleted": 10,
+                            "target": [
+                                "NFS_SHARED_ACCESS"
+                            ],
+                            "order": 1,
+                            "section": 1,
+                            "status": 1,
+                            "startDate": "2016-1-1",
+                            "children": []
+                          },
+                          {
+                            "name": "Shared Folder Access to SAFE Drive",
+                            "id": "NFS_SHARED_ACCESS",
+                            "color": "grey-2",
+                            "desc": "Shared Folder Access to SAFE Drive desc",
+                            "daysCompleted": 10,
+                            "target": [
+                                "END"
+                            ],
+                            "order": 2,
+                            "section": 2,
+                            "status": 1,
+                            "startDate": "2016-1-1",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "DNS",
+                        "id": "DNS",
+                        "color": "grey-2",
+                        "desc": "DNS desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "Installer",
@@ -710,7 +879,38 @@ var jsonData = {
                     "section": 4,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Cross Platform Launcher Installer",
+                        "id": "CROSS_PLATFORM_LAUNCHER_INSTALLER",
+                        "color": "grey-2",
+                        "desc": "Cross Platform Launcher Installer desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "VAULT_BINARY_BUNDLED"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Vault Binary Bundled",
+                        "id": "VAULT_BINARY_BUNDLED",
+                        "color": "grey-2",
+                        "desc": "Vault Binary Bundled desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "App Analytics",
@@ -725,7 +925,38 @@ var jsonData = {
                     "section": 5,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Data Throughput from IPC apps",
+                        "id": "DATA_THROUGHPUT_FROM_IPC_APPS",
+                        "color": "grey-2",
+                        "desc": "Data Throughput from IPC apps desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "APP_SPECIFIC_GRANULARITY"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "App Specific Granularity",
+                        "id": "APP_SPECIFIC_GRANULARITY",
+                        "color": "grey-2",
+                        "desc": "App Specific Granularity desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "Vault Management",
@@ -740,7 +971,53 @@ var jsonData = {
                     "section": 5,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Manage Vault Config",
+                        "id": "MANAGE_VAULT_CONFIG",
+                        "color": "grey-2",
+                        "desc": "Manage Vault Config desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "SAFECOIN_WALLET_ADDRESS"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Safecoin Wallet Address",
+                        "id": "SAFECOIN_WALLET_ADDRESS",
+                        "color": "grey-2",
+                        "desc": "Safecoin Wallet Address desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "CONTROL_VAULT"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Control Vault",
+                        "id": "CONTROL_VAULT",
+                        "color": "grey-2",
+                        "desc": "Control Vault  - start/Stop/remove/Update info desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 3,
+                        "section": 3,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "Farming Rate History",
@@ -770,7 +1047,53 @@ var jsonData = {
                     "section": 7,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Data throughput from vaults",
+                        "id": "DATA_THROUGHPUT_FROM_VAULTS",
+                        "color": "grey-2",
+                        "desc": "Data throughput from vaults desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "VAULT_SPECIFIC_GRANULARITY"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Vault specific granularity",
+                        "id": "VAULT_SPECIFIC_GRANULARITY",
+                        "color": "grey-2",
+                        "desc": "Vault specific granularity desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "SAFECOIN_FARMING_HISTORY"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Safecoin Farming history",
+                        "id": "SAFECOIN_FARMING_HISTORY",
+                        "color": "grey-2",
+                        "desc": "Safecoin Farming history desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 3,
+                        "section": 3,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "Portable App Store",
@@ -785,7 +1108,68 @@ var jsonData = {
                     "section": 7,
                     "status": 1,
                     "startDate": "2016-1-1",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Manage Portable Apps from Network Share",
+                        "id": "MANAGE_PORTABLE_APPS",
+                        "color": "grey-2",
+                        "desc": "Manage Portable Apps from Network Share desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "CROSS_PLATFORM_SUPPORT"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Cross Platform Support",
+                        "id": "CROSS_PLATFORM_SUPPORT",
+                        "color": "grey-2",
+                        "desc": "Cross Platform Support desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "AGGREGATE_USER_RATINGS"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Aggregate User ratings specific to apps",
+                        "id": "AGGREGATE_USER_RATINGS",
+                        "color": "grey-2",
+                        "desc": "Aggregate User ratings specific to apps desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "MANAGE_APP_FEEDBACK"
+                        ],
+                        "order": 3,
+                        "section": 3,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Manage app feedback",
+                        "id": "MANAGE_APP_FEEDBACK",
+                        "color": "grey-2",
+                        "desc": "Manage app feedback desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 4,
+                        "section": 4,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
                   }
                 ]
               },
@@ -802,7 +1186,114 @@ var jsonData = {
                 "section": 2,
                 "status": 1,
                 "startDate": "2016-1-1",
-                "children": []
+                "children": [
+                  {
+                    "name": "Launcher Api Access",
+                    "id": "LAUNCHER_API_ACCESS",
+                    "color": "grey-2",
+                    "desc": "Launcher Api Access (restricted to anonymous actions) desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "FFI_BINDING_TO_SAFE_CORE_MODULES"
+                    ],
+                    "order": 1,
+                    "section": 1,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "FFI Binding to SAFE core Modules",
+                    "id": "FFI_BINDING_TO_SAFE_CORE_MODULES",
+                    "color": "grey-2",
+                    "desc": "FFI Binding to SAFE core Modules (Unrestricted actions with basic authentication) desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "LAUNCHER_API_ACCESS_UNRESTRICTED"
+                    ],
+                    "order": 2,
+                    "section": 2,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Launcher API Access",
+                    "id": "LAUNCHER_API_ACCESS_UNRESTRICTED",
+                    "color": "grey-2",
+                    "desc": "Launcher API Access (Unrestricted Access) desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "VIEW_PUBLIC_STATES"
+                    ],
+                    "order": 3,
+                    "section": 3,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "View Public States",
+                    "id": "VIEW_PUBLIC_STATES",
+                    "color": "grey-2",
+                    "desc": "View Public States desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "BROSWER_SUPPORT"
+                    ],
+                    "order": 4,
+                    "section": 4,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Broswer Support",
+                    "id": "BROSWER_SUPPORT",
+                    "color": "grey-3",
+                    "desc": "Broswer Support desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 5,
+                    "section": 5,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": [
+                      {
+                        "name": "Chrome",
+                        "id": "CHROME_BROWSER",
+                        "color": "grey-3",
+                        "desc": "Chrome desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "FIREFOX_BROWSER"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "Firefox",
+                        "id": "FIREFOX_BROWSER",
+                        "color": "grey-3",
+                        "desc": "Firefox desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "name": "Storage App",
@@ -817,7 +1308,113 @@ var jsonData = {
                 "section": 3,
                 "status": 1,
                 "startDate": "2016-1-1",
-                "children": []
+                "children": [
+                  {
+                    "name": "Simple app with Network data access",
+                    "id": "SIMPLE_APP_WITH_NETWORK_DATA_ACCESS",
+                    "color": "grey-2",
+                    "desc": "Simple notepad / Calendar with Network data access desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "VFS_PRIVATE_DATA"
+                    ],
+                    "order": 1,
+                    "section": 1,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "VFS - Private Data",
+                    "id": "VFS_PRIVATE_DATA",
+                    "color": "grey-2",
+                    "desc": "VFS - Private Data desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "VFS_SHARES"
+                    ],
+                    "order": 2,
+                    "section": 2,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "VFS - Shares",
+                    "id": "VFS_SHARES",
+                    "color": "grey-2",
+                    "desc": "VFS - Shares desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "VFS_VERSIONED"
+                    ],
+                    "order": 3,
+                    "section": 3,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "VFS - versioned",
+                    "id": "VFS_VERSIONED",
+                    "color": "grey-2",
+                    "desc": "Launcher desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "MEDIA_GALLERY"
+                    ],
+                    "order": 4,
+                    "section": 4,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Media Gallery (images)",
+                    "id": "MEDIA_GALLERY",
+                    "color": "grey-2",
+                    "desc": "Media Gallery (images) desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "STREAMING_AUDIO"
+                    ],
+                    "order": 5,
+                    "section": 5,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Streaming Audio",
+                    "id": "STREAMING_AUDIO",
+                    "color": "grey-2",
+                    "desc": "Streaming Audio desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "STREAMING_VIDEO"
+                    ],
+                    "order": 6,
+                    "section": 6,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Streaming Video",
+                    "id": "STREAMING_VIDEO",
+                    "color": "grey-2",
+                    "desc": "Streaming Video desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 7,
+                    "section": 7,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "Messaging",
@@ -832,7 +1429,113 @@ var jsonData = {
                 "section": 4,
                 "status": 1,
                 "startDate": "2016-1-1",
-                "children": []
+                "children": [
+                  {
+                    "name": "Public Identity Mangement",
+                    "id": "PUBLIC_IDENTITY_MANGEMENT",
+                    "color": "grey-2",
+                    "desc": "Public Identity Mangement desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "CONTACT_MANAGEMENT"
+                    ],
+                    "order": 1,
+                    "section": 1,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Contact Management",
+                    "id": "CONTACT_MANAGEMENT",
+                    "color": "grey-2",
+                    "desc": "Contact Management desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "TEXT_MESSAGING"
+                    ],
+                    "order": 2,
+                    "section": 2,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Text Messaging",
+                    "id": "TEXT_MESSAGING",
+                    "color": "grey-2",
+                    "desc": "Text Messaging desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "VOICE_MESSAGING"
+                    ],
+                    "order": 3,
+                    "section": 3,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Voice Messaging",
+                    "id": "VOICE_MESSAGING",
+                    "color": "grey-2",
+                    "desc": "Voice Messaging desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "VIDEO_MESSAGING"
+                    ],
+                    "order": 4,
+                    "section": 4,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Video Messaging",
+                    "id": "VIDEO_MESSAGING",
+                    "color": "grey-2",
+                    "desc": "Video Messaging desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "SEND_OR_RECEIVE_NETWORK_FILES"
+                    ],
+                    "order": 5,
+                    "section": 5,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Send/receive Network Files",
+                    "id": "SEND_OR_RECEIVE_NETWORK_FILES",
+                    "color": "grey-2",
+                    "desc": "Send/receive Network Files desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "MESSAGING_SEND_OR_RECEIVE_SAFECOIN"
+                    ],
+                    "order": 6,
+                    "section": 6,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Send/Receive Safecoin",
+                    "id": "MESSAGING_SEND_OR_RECEIVE_SAFECOIN",
+                    "color": "grey-2",
+                    "desc": "Send/Receive Safecoin desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 7,
+                    "section": 7,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "Safecoin Wallet",
@@ -847,7 +1550,99 @@ var jsonData = {
                 "section": 5,
                 "status": 1,
                 "startDate": "2016-1-1",
-                "children": []
+                "children": [
+                  {
+                    "name": "Safecoin Balance",
+                    "id": "SAFECOIN_BALANCE",
+                    "color": "grey-2",
+                    "desc": "Safecoin Balance desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "TRANSACTION_HISTORY"
+                    ],
+                    "order": 1,
+                    "section": 1,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Transaction History",
+                    "id": "TRANSACTION_HISTORY",
+                    "color": "grey-2",
+                    "desc": "Transaction History desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "SAFECOIN_WALLET_SEND_OR_RECEIVE_SAFECOIN"
+                    ],
+                    "order": 2,
+                    "section": 2,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  },
+                  {
+                    "name": "Send/Receive Safecoin",
+                    "id": "SAFECOIN_WALLET_SEND_OR_RECEIVE_SAFECOIN",
+                    "color": "grey-2",
+                    "desc": "Send/Receive Safecoin desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "SAFECOIN_WALLET_FARMING_RATE_HISTORY"
+                    ],
+                    "order": 3,
+                    "section": 3,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": [
+                      {
+                        "name": "Contacts",
+                        "id": "SAFECOIN_CONTACTS",
+                        "color": "grey-2",
+                        "desc": "Contacts desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "SAFECOIN_TO_PUBLIC_IDENTITIES"
+                        ],
+                        "order": 1,
+                        "section": 1,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      },
+                      {
+                        "name": "To public identities",
+                        "id": "SAFECOIN_TO_PUBLIC_IDENTITIES",
+                        "color": "grey-2",
+                        "desc": "To public identities desc",
+                        "daysCompleted": 10,
+                        "target": [
+                            "END"
+                        ],
+                        "order": 2,
+                        "section": 2,
+                        "status": 1,
+                        "startDate": "2016-1-1",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Farming Rate History",
+                    "id": "SAFECOIN_WALLET_FARMING_RATE_HISTORY",
+                    "color": "grey-2",
+                    "desc": "Farming Rate History desc",
+                    "daysCompleted": 10,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 4,
+                    "section": 4,
+                    "status": 1,
+                    "startDate": "2016-1-1",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "Safecoin Exchange",
