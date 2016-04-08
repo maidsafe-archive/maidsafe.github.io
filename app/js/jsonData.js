@@ -81,7 +81,7 @@ var jsonData = {
                 },
                 {
                     "name": "EXTERNAL",
-                    "id": "DW_INSTALLERS ",
+                    "id": "DW_INSTALLERS",
                     "source": "INSTALLERS",
                     "color": "red-3",
                     "desc": "INSTALLERS",
