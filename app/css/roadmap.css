@@ -1,6 +1,5 @@
 .roadmap {
   position: relative;
-  height: 620px;
   overflow: hidden;
   display: flex;
 }
@@ -133,7 +132,6 @@
 
 .roadmap .roadmapNav {
   width: 280px;
-  height: 100%;
   padding: 0;
   font-family: 'Open sans';
   font-size: 14px;

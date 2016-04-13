@@ -555,7 +555,7 @@ var jsonData = {
                         {
                             "name": "Private Shares",
                             "id": "PRIVATE_SHARES",
-                            "color": "navy-3",
+                            "color": "green-3",
                             "desc": "Private Shares desc",
                             "daysCompleted": 10,
                             "target": [
@@ -570,7 +570,7 @@ var jsonData = {
                         {
                             "name": "Public Shares",
                             "id": "PUBLIC_SHARES",
-                            "color": "navy-3",
+                            "color": "green-3",
                             "desc": "Public Shares desc",
                             "daysCompleted": 10,
                             "target": [
@@ -585,7 +585,7 @@ var jsonData = {
                         {
                             "name": "Open Shares",
                             "id": "OPEN_SHARES",
-                            "color": "navy-3",
+                            "color": "green-3",
                             "desc": "Open Shares desc",
                             "daysCompleted": 10,
                             "target": [

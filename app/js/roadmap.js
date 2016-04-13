@@ -800,7 +800,7 @@ Roadmap.prototype.updateSvgHeight = function() {
   var self = this;
   var footerHeight = $('footer').height();
   var headerheight =  $('header').height();
-  self.svg.height = window.screen.availHeight - headerheight - (footerHeight * 30 / 100);
+  self.svg.height = window.screen.availHeight - headerheight - (footerHeight * 50 / 100);
   $().height(self.svg.height);
 };
 

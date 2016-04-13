@@ -287,7 +287,9 @@
   .roadmapBreadcrumb {
     padding: 8px 20px;
   }
-
+  .roadmapSvg {
+    display: none;
+  }
   .roadmapChart-h {
     padding: 0;
   }
