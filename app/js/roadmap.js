@@ -534,10 +534,10 @@ var Roadmap = function(payload) {
     strokeWidth: 2
   };
   this.label = {
-    width: 65,
-    height: 12,
+    width: 85,
+    height: 15,
     padding: 8,
-    borderRadius: 3
+    borderRadius: 7
   };
 };
 
@@ -1039,6 +1039,7 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
     roadmapTasks.forEach(function(task) {
       var scaledStart = self.timeScale(self.dateFormat.parse(task.startDate));
       var scaledEnd =  self.timeScale(self.dateFormat.parse(task.endDate));
+      var incomingTasks = getIncomingTasks(task);
       var boxYPos = ((task.order - 1) * self.box.height * 2);
       if (self.activeTasks.length === 1) {
         boxYPos = 0;
@@ -1200,7 +1201,9 @@ Roadmap.prototype.prepareConnections = function() {
         start.x = task.connections[index - 1].interStart.x;
         start.y = task.connections[index - 1].interStart.y - (self.box.height / 2);
       }
-
+      if (upperTask.isExternal() && index !== 0) {
+        start.y = start.y - (self.label.height / 2);
+      }
       end.x = upperTask.box.x + upperTask.box.width;
       end.y = upperTask.box.y + (self.box.height / 2);
 

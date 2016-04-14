@@ -725,7 +725,7 @@ var jsonData = {
                         "APP_MANAGEMENT"
                     ],
                     "order": 1,
-                    "section": 1,
+                    "section": 2,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
@@ -784,7 +784,7 @@ var jsonData = {
                         "LAUNCHER_APP_API"
                     ],
                     "order": 2,
-                    "section": 2,
+                    "section": 3,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
@@ -860,7 +860,7 @@ var jsonData = {
                         "LAUNCHER_APP_API"
                     ],
                     "order": 3,
-                    "section": 2,
+                    "section": 3,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
@@ -994,7 +994,7 @@ var jsonData = {
                         "APP_INSTALLER"
                     ],
                     "order": 3,
-                    "section": 3,
+                    "section": 4,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
@@ -1071,7 +1071,7 @@ var jsonData = {
                         "APP_ANALYTICS"
                     ],
                     "order": 4,
-                    "section": 4,
+                    "section": 5,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
@@ -1117,7 +1117,7 @@ var jsonData = {
                         "END"
                     ],
                     "order": 5,
-                    "section": 5,
+                    "section": 6,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
@@ -1176,7 +1176,7 @@ var jsonData = {
                         "FARMING_RATE_HISTORY"
                     ],
                     "order": 6,
-                    "section": 5,
+                    "section": 6,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
@@ -1243,7 +1243,7 @@ var jsonData = {
                         "target": [
                             "CONTROL_VAULT"
                         ],
-                        "order": 2,
+                        "order": 3,
                         "section": 2,
                         "status": 1,
                         "startDate": "2016-1-1",
@@ -1258,7 +1258,7 @@ var jsonData = {
                         "target": [
                             "END"
                         ],
-                        "order": 3,
+                        "order": 4,
                         "section": 3,
                         "status": 1,
                         "startDate": "2016-1-1",
@@ -1276,7 +1276,7 @@ var jsonData = {
                         "VAULT_ANALYTICS"
                     ],
                     "order": 7,
-                    "section": 6,
+                    "section": 7,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": []
@@ -1291,7 +1291,7 @@ var jsonData = {
                         "END"
                     ],
                     "order": 8,
-                    "section": 7,
+                    "section": 8,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
@@ -1352,7 +1352,7 @@ var jsonData = {
                         "END"
                     ],
                     "order": 9,
-                    "section": 7,
+                    "section": 8,
                     "status": 1,
                     "startDate": "2016-1-1",
                     "children": [
