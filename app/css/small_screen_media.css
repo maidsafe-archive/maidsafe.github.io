@@ -281,11 +281,11 @@
   }
   .roadmap .roadmapNav {
     width: 300px;
-    height: inherit;
+    height: 100%;
     min-height: inherit;
   }
-  .roadmapBreadcrumb {
-    padding: 8px 20px;
+  .roadmapBreadcrumb .breadcrumb-i {
+    padding-bottom: 8px;
   }
   .roadmapSvg {
     display: none;
@@ -296,7 +296,7 @@
   .roadmapChart-h-menu {
     display: none;
   }
-  .roadmapChart-h:before {
+  /*.roadmapChart-h:before {
     content: '';
     width: 100%;
     height: 50px;
@@ -307,11 +307,22 @@
     top: 0;
     left: 0;
     z-index: -1;
-  }
+  }*/
   .roadmapChart-h-t {
+    width: 100%;
     color: white !important;
     padding-left: 20px;
     line-height: 50px;
+    position: relative;
+  }
+  .roadmapChart-h-t:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
   .roadmapChart-h-t .info-icon {
     display: none !important;

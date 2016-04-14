@@ -69,7 +69,8 @@ var TASK_COLORS = [ 'red-1', 'red-2', 'red-3', 'red-4', 'red-5', 'red-6', 'pink-
   'tangerine-3', 'tangerine-4', 'tangerine-5', 'tangerine-6', 'orange-1', 'orange-2', 'orange-3',
   'orange-4', 'orange-5', 'orange-6', 'brown-1', 'brown-2', 'brown-3', 'brown-4', 'brown-5', 'brown-6',
   'charcoal-1', 'charcoal-2', 'charcoal-3', 'charcoal-4', 'charcoal-5', 'charcoal-6', 'grey-1', 'grey-2',
-  'grey-3', 'grey-4', 'grey-5', 'grey-6' ];
+  'grey-3', 'grey-4', 'grey-5', 'grey-6', 'moss-1', 'moss-2',
+  'moss-3', 'moss-4', 'moss-5', 'moss-6' ];
 
 var BOX_PATTERN_PATH = '22,0 0,22 43,22 62,0';
 
@@ -1032,14 +1033,13 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
       return self.activeTasks.push(activeTask);
     }
     self.activeTasks = activeTasks;
-    print('Active tasks', activeTasks);
+    // print('Active tasks', activeTasks);
   };
 
   var setBoxParams = function() {
     roadmapTasks.forEach(function(task) {
       var scaledStart = self.timeScale(self.dateFormat.parse(task.startDate));
       var scaledEnd =  self.timeScale(self.dateFormat.parse(task.endDate));
-      var incomingTasks = getIncomingTasks(task);
       var boxYPos = ((task.order - 1) * self.box.height * 2);
       if (self.activeTasks.length === 1) {
         boxYPos = 0;
@@ -1222,8 +1222,8 @@ Roadmap.prototype.prepareConnections = function() {
         end.y = -self.svg.padding + self.progressBar.height;
         var sourceTask = Utils.getTask(upperTask.source);
         self.drawLabel({
-          x: interStart.x - (self.label.width + 16),
-          y: interStart.y,
+          x: interStart.x - (self.label.width + 5),
+          y: interStart.y - (self.label.height / 2),
           className: upperTask.color,
           desc: upperTask.desc,
           source: sourceTask.id
@@ -1369,13 +1369,17 @@ Roadmap.prototype.addFeatures = function(activeTask) {
     list.forEach(function(item) {
       var task = Utils.getTask(item.taskId);
       var name = task.name;
+      var color = task.color;
       if (item.type !== TASK_FEATURE_TYPE.SUB_FEATURES) {
-        // TODO get source task name
         var sourceTask = Utils.getTask(task.source);
         name = sourceTask.name || task.source;
       }
+      if (item.type === TASK_FEATURE_TYPE.RELY_THIS_FEATURES) {
+        var sourceTask = Utils.getTask(task.source);
+        color = sourceTask ? sourceTask.color : task.color;
+      }
       var listEle = Utils.createDiv(item.id,
-        [ 'features-list-i', CSS_CLASS.FEATURES + task.color ]);
+        [ 'features-list-i', CSS_CLASS.FEATURES + color ]);
       listEle.text(name);
       listEle.on('click', (item.onClick)());
       listBase.append(listEle);
@@ -1397,13 +1401,13 @@ Roadmap.prototype.addFeatures = function(activeTask) {
     }
   });
   if (features.sub.length > 0) {
-    addList('Sub-fetures:', features.sub, SUB_FEATURES_ID);
+    addList('Sub Features:', features.sub, SUB_FEATURES_ID);
   }
   if (features.reliedOn.length > 0) {
-    addList('Features relied on:', features.reliedOn, RELIED_ON_FEATURES_ID);
+    addList('Features Rely On:', features.reliedOn, RELIED_ON_FEATURES_ID);
   }
   if (features.relyThis.length > 0) {
-    addList('Features that rely this:', features.relyThis, RELY_THIS_FEATURES_ID);
+    addList('Features Rely On This:', features.relyThis, RELY_THIS_FEATURES_ID);
   }
 };
 

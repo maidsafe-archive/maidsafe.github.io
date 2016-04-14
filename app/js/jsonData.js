@@ -31,7 +31,7 @@ var jsonData = {
                     "name": "DOWN_STREAM",
                     "id": "DW_APP_SELF_AUTHENTICATION",
                     "source": "APP_SELF_AUTHENTICATION",
-                    "color": "red-2",
+                    "color": "moss-2",
                     "desc": "App Self Authentication",
                     "order": 999,
                     "section": 2,
@@ -83,7 +83,7 @@ var jsonData = {
                     "name": "EXTERNAL",
                     "id": "DW_INSTALLERS",
                     "source": "INSTALLERS",
-                    "color": "red-3",
+                    "color": "moss-3",
                     "desc": "INSTALLERS",
                     "order": -1,
                     "section": 2,
@@ -96,7 +96,7 @@ var jsonData = {
                     "name": "EXTERNAL",
                     "id": "DW_INSTALLERS_DATA_SHARING",
                     "source": "INSTALLERS",
-                    "color": "red-3",
+                    "color": "moss-3",
                     "desc": "INSTALLERS",
                     "order": -1,
                     "section": 2,
@@ -108,7 +108,7 @@ var jsonData = {
                 {
                     "name": "Vault",
                     "id": "VAULT",
-                    "color": "red-2",
+                    "color": "moss-2",
                     "desc": "Vault desc",
                     "daysCompleted": 10,
                     "target": [
@@ -126,7 +126,7 @@ var jsonData = {
                             "name": "DOWN_STREAM",
                             "id": "DW_SYSTEM_UPDATE_MANAGEMENT",
                             "source": "SYSTEM_UPDATE_MANAGEMENT",
-                            "color": "red-3",
+                            "color": "moss-3",
                             "desc": "System update management",
                             "order": 999,
                             "section": 1,
@@ -139,7 +139,7 @@ var jsonData = {
                             "name": "DOWN_STREAM",
                             "id": "DW_DATA_SHARING",
                             "source": "DATA_SHARING",
-                            "color": "red-3",
+                            "color": "moss-3",
                             "desc": "Data sharing",
                             "order": 999,
                             "section": 1,
@@ -151,7 +151,7 @@ var jsonData = {
                         {
                             "name": "Installers",
                             "id": "INSTALLERS",
-                            "color": "red-3",
+                            "color": "moss-3",
                             "desc": "Installers desc",
                             "daysCompleted": 10,
                             "target": [
@@ -166,7 +166,7 @@ var jsonData = {
                         {
                             "name": "Network Functionallity",
                             "id": "NETWORK_FUNCTIONALLITY",
-                            "color": "red-3",
+                            "color": "moss-3",
                             "desc": "Network Functionallity desc",
                             "daysCompleted": 10,
                             "target": [
@@ -180,7 +180,7 @@ var jsonData = {
                                 {
                                     "name": "TCP & uTP with UDP hole punching",
                                     "id": "TCP_AND_UTP_WITH_UDP_HOLE_PUNCHING",
-                                    "color": "red-4",
+                                    "color": "moss-4",
                                     "desc": "TCP & uTP with UDP hole punching desc",
                                     "daysCompleted": 10,
                                     "target": [
@@ -195,7 +195,7 @@ var jsonData = {
                                 {
                                     "name": "Self Authentication",
                                     "id": "SELF_AUTHENTICATION",
-                                    "color": "red-4",
+                                    "color": "moss-4",
                                     "desc": "Self Authentication desc",
                                     "daysCompleted": 10,
                                     "target": [
@@ -210,7 +210,7 @@ var jsonData = {
                                 {
                                     "name": "NFS - Storage",
                                     "id": "NFS_STORAGE",
-                                    "color": "red-4",
+                                    "color": "moss-4",
                                     "desc": "NFS - Storage desc",
                                     "daysCompleted": 10,
                                     "target": [
@@ -225,7 +225,7 @@ var jsonData = {
                                 {
                                     "name": "DNS - Create/Manage DNS Records and Services",
                                     "id": "DNS_CREATE_MANAGE",
-                                    "color": "red-4",
+                                    "color": "moss-4",
                                     "desc": "NFS - Storage desc",
                                     "daysCompleted": 10,
                                     "target": [
@@ -242,7 +242,7 @@ var jsonData = {
                         {
                             "name": "Test minimum network size of",
                             "id": "TEST_MINIMUM_NETWORK_SIZE_OF",
-                            "color": "red-3",
+                            "color": "moss-3",
                             "desc": "Test minimum network size of desc",
                             "daysCompleted": 10,
                             "target": [
@@ -672,13 +672,13 @@ var jsonData = {
             ],
             "order": 2,
             "section": 2,
-            "status": 1,
+            "status": 0,
             "startDate": "2016-1-1",
             "children": [
               {
                 "name": "Launcher",
                 "id": "LAUNCHER",
-                "color": "grey-2",
+                "color": "moss-2",
                 "desc": "Launcher desc",
                 "daysCompleted": 10,
                 "target": [
@@ -693,7 +693,7 @@ var jsonData = {
                       "name": "EXTERNAL",
                       "id": "EX_VAULT",
                       "source": "VAULT",
-                      "color": "red-2",
+                      "color": "moss-2",
                       "desc": "Vault desc",
                       "order": -1,
                       "section": 1,
@@ -718,7 +718,7 @@ var jsonData = {
                   {
                     "name": "Self Authentication",
                     "id": "APP_SELF_AUTHENTICATION",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Launcher desc",
                     "daysCompleted": 10,
                     "target": [
@@ -745,7 +745,7 @@ var jsonData = {
                       {
                         "name": "Create Account",
                         "id": "CREATE_ACCOUNT",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Create Account desc",
                         "daysCompleted": 10,
                         "target": [
@@ -760,7 +760,7 @@ var jsonData = {
                       {
                         "name": "Manage Account",
                         "id": "MANAGE_ACCOUNT",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Manage Account desc",
                         "daysCompleted": 10,
                         "target": [
@@ -777,7 +777,7 @@ var jsonData = {
                   {
                     "name": "App Management",
                     "id": "APP_MANAGEMENT",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Launcher desc",
                     "daysCompleted": 10,
                     "target": [
@@ -791,7 +791,7 @@ var jsonData = {
                       {
                         "name": "Provide SAFE Drive access to authenticated apps",
                         "id": "PROVIDE_SAFE_DRIVE_ACCESS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Provide SAFE Drive access desc",
                         "daysCompleted": 10,
                         "target": [
@@ -806,7 +806,7 @@ var jsonData = {
                       {
                         "name": "add/remove App",
                         "id": "ADD_OR_REMOVE_APP",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "add/remove App desc",
                         "daysCompleted": 10,
                         "target": [
@@ -821,7 +821,7 @@ var jsonData = {
                       {
                         "name": "Launch App",
                         "id": "LAUNCH_APP",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Launch App desc",
                         "daysCompleted": 10,
                         "target": [
@@ -838,7 +838,7 @@ var jsonData = {
                   {
                     "name": "Cross Platfrom Desktop CLI client",
                     "id": "CROSS_PLATFROM_DESKTOP_CLI_CLIENT",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Launcher desc",
                     "daysCompleted": 10,
                     "target": [
@@ -853,7 +853,7 @@ var jsonData = {
                   {
                     "name": "Launcher UI",
                     "id": "LAUNCHER_UI",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Launcher UI desc",
                     "daysCompleted": 10,
                     "target": [
@@ -868,7 +868,7 @@ var jsonData = {
                           "name": "DOWN_STREAM",
                           "id": "DW_APP_SPECIFIC_GRANULARITY",
                           "source": "APP_SPECIFIC_GRANULARITY",
-                          "color": "grey-2",
+                          "color": "moss-4",
                           "desc": "APP SPECIFIC GRANULARITY",
                           "order": 999,
                           "section": 1,
@@ -880,7 +880,7 @@ var jsonData = {
                       {
                         "name": "Vanilla - Self Auth, Nabage Apps",
                         "id": "VANILLA_SELF_AUTH_NABAGE_APPS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Vanilla - Self Auth, Nabage Apps (Add/Remove/SAFE Drive Access) desc",
                         "daysCompleted": 10,
                         "target": [
@@ -895,7 +895,7 @@ var jsonData = {
                       {
                         "name": "Tutorials",
                         "id": "LAUNCHER_TUTORIALS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Launcher Tutorials desc",
                         "daysCompleted": 10,
                         "target": [
@@ -910,7 +910,7 @@ var jsonData = {
                       {
                         "name": "App analytics UI",
                         "id": "APP_ANALYTICS_UI",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "App analytics UI desc",
                         "daysCompleted": 10,
                         "target": [
@@ -925,7 +925,7 @@ var jsonData = {
                       {
                         "name": "Vault Management UI",
                         "id": "VAULT_MANAGEMENT_UI",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Vault Management UI desc",
                         "daysCompleted": 10,
                         "target": [
@@ -940,7 +940,7 @@ var jsonData = {
                       {
                         "name": "Farming Rate History UI",
                         "id": "FARMING_RATE_HISTORY_UI",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Farming Rate History UI desc",
                         "daysCompleted": 10,
                         "target": [
@@ -955,7 +955,7 @@ var jsonData = {
                       {
                         "name": "Vault Analytics UI",
                         "id": "VAULT_ANALYTICS_UI",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Vault Analytics UI desc",
                         "daysCompleted": 10,
                         "target": [
@@ -970,7 +970,7 @@ var jsonData = {
                       {
                         "name": "App suggestions",
                         "id": "APP_SUGGESTIONS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "App suggestions desc",
                         "daysCompleted": 10,
                         "target": [
@@ -987,7 +987,7 @@ var jsonData = {
                   {
                     "name": "Launcher App API",
                     "id": "LAUNCHER_APP_API",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Launcher App API desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1001,7 +1001,7 @@ var jsonData = {
                       {
                         "name": "NFS",
                         "id": "NFS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "NFS desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1015,7 +1015,7 @@ var jsonData = {
                           {
                             "name": "Sandbox",
                             "id": "NFS_SANDBOX",
-                            "color": "grey-2",
+                            "color": "moss-5",
                             "desc": "Sandbox desc",
                             "daysCompleted": 10,
                             "target": [
@@ -1030,7 +1030,7 @@ var jsonData = {
                           {
                             "name": "Shared Folder Access to SAFE Drive",
                             "id": "NFS_SHARED_ACCESS",
-                            "color": "grey-2",
+                            "color": "moss-5",
                             "desc": "Shared Folder Access to SAFE Drive desc",
                             "daysCompleted": 10,
                             "target": [
@@ -1047,7 +1047,7 @@ var jsonData = {
                       {
                         "name": "DNS",
                         "id": "DNS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "DNS desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1064,7 +1064,7 @@ var jsonData = {
                   {
                     "name": "Installer",
                     "id": "APP_INSTALLER",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Launcher App API desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1078,7 +1078,7 @@ var jsonData = {
                       {
                         "name": "Cross Platform Launcher Installer",
                         "id": "CROSS_PLATFORM_LAUNCHER_INSTALLER",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Cross Platform Launcher Installer desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1093,7 +1093,7 @@ var jsonData = {
                       {
                         "name": "Vault Binary Bundled",
                         "id": "VAULT_BINARY_BUNDLED",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Vault Binary Bundled desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1110,7 +1110,7 @@ var jsonData = {
                   {
                     "name": "App Analytics",
                     "id": "APP_ANALYTICS",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "App Analytics desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1125,7 +1125,7 @@ var jsonData = {
                           "name": "EXTERNAL",
                           "id": "DW_VANILLA_SELF_AUTH_NABAGE_APPS  ",
                           "source": "VANILLA_SELF_AUTH_NABAGE_APPS",
-                          "color": "grey-2",
+                          "color": "moss-4",
                           "desc": "Vanilla self auth nabage apps",
                           "order": -1,
                           "section": 1,
@@ -1137,7 +1137,7 @@ var jsonData = {
                       {
                         "name": "Data Throughput from IPC apps",
                         "id": "DATA_THROUGHPUT_FROM_IPC_APPS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Data Throughput from IPC apps desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1152,7 +1152,7 @@ var jsonData = {
                       {
                         "name": "App Specific Granularity",
                         "id": "APP_SPECIFIC_GRANULARITY",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "App Specific Granularity desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1169,7 +1169,7 @@ var jsonData = {
                   {
                     "name": "Vault Management",
                     "id": "VAULT_MANAGEMENT",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Vault Management desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1222,7 +1222,7 @@ var jsonData = {
                       {
                         "name": "Manage Vault Config",
                         "id": "MANAGE_VAULT_CONFIG",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Manage Vault Config desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1237,7 +1237,7 @@ var jsonData = {
                       {
                         "name": "Safecoin Wallet Address",
                         "id": "SAFECOIN_WALLET_ADDRESS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Safecoin Wallet Address desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1252,7 +1252,7 @@ var jsonData = {
                       {
                         "name": "Control Vault",
                         "id": "CONTROL_VAULT",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Control Vault  - start/Stop/remove/Update info desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1269,7 +1269,7 @@ var jsonData = {
                   {
                     "name": "Farming Rate History",
                     "id": "FARMING_RATE_HISTORY",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Farming Rate History desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1284,7 +1284,7 @@ var jsonData = {
                   {
                     "name": "Vault Analytics",
                     "id": "VAULT_ANALYTICS",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Vault Analytics desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1298,7 +1298,7 @@ var jsonData = {
                       {
                         "name": "Data throughput from vaults",
                         "id": "DATA_THROUGHPUT_FROM_VAULTS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Data throughput from vaults desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1313,7 +1313,7 @@ var jsonData = {
                       {
                         "name": "Vault specific granularity",
                         "id": "VAULT_SPECIFIC_GRANULARITY",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Vault specific granularity desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1328,7 +1328,7 @@ var jsonData = {
                       {
                         "name": "Safecoin Farming history",
                         "id": "SAFECOIN_FARMING_HISTORY",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Safecoin Farming history desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1345,7 +1345,7 @@ var jsonData = {
                   {
                     "name": "Portable App Store",
                     "id": "PORTABLE_APP_STORE",
-                    "color": "grey-2",
+                    "color": "moss-3",
                     "desc": "Portable App Store desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1372,7 +1372,7 @@ var jsonData = {
                       {
                         "name": "Manage Portable Apps from Network Share",
                         "id": "MANAGE_PORTABLE_APPS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Manage Portable Apps from Network Share desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1387,7 +1387,7 @@ var jsonData = {
                       {
                         "name": "Cross Platform Support",
                         "id": "CROSS_PLATFORM_SUPPORT",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Cross Platform Support desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1402,7 +1402,7 @@ var jsonData = {
                       {
                         "name": "Aggregate User ratings specific to apps",
                         "id": "AGGREGATE_USER_RATINGS",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Aggregate User ratings specific to apps desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1417,7 +1417,7 @@ var jsonData = {
                       {
                         "name": "Manage app feedback",
                         "id": "MANAGE_APP_FEEDBACK",
-                        "color": "grey-2",
+                        "color": "moss-4",
                         "desc": "Manage app feedback desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1436,7 +1436,7 @@ var jsonData = {
               {
                 "name": "Firefox Browser Addon",
                 "id": "FIREFOX_BROWSER_ADDON",
-                "color": "grey-2",
+                "color": "pink-2",
                 "desc": "Firefox Browser Addon desc",
                 "daysCompleted": 10,
                 "target": [
@@ -1450,7 +1450,7 @@ var jsonData = {
                   {
                     "name": "Launcher Api Access",
                     "id": "LAUNCHER_API_ACCESS",
-                    "color": "grey-2",
+                    "color": "pink-3",
                     "desc": "Launcher Api Access (restricted to anonymous actions) desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1465,7 +1465,7 @@ var jsonData = {
                   {
                     "name": "FFI Binding to SAFE core Modules",
                     "id": "FFI_BINDING_TO_SAFE_CORE_MODULES",
-                    "color": "grey-2",
+                    "color": "pink-3",
                     "desc": "FFI Binding to SAFE core Modules (Unrestricted actions with basic authentication) desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1480,7 +1480,7 @@ var jsonData = {
                   {
                     "name": "Launcher API Access",
                     "id": "LAUNCHER_API_ACCESS_UNRESTRICTED",
-                    "color": "grey-2",
+                    "color": "pink-3",
                     "desc": "Launcher API Access (Unrestricted Access) desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1495,7 +1495,7 @@ var jsonData = {
                   {
                     "name": "View Public States",
                     "id": "VIEW_PUBLIC_STATES",
-                    "color": "grey-2",
+                    "color": "pink-3",
                     "desc": "View Public States desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1510,7 +1510,7 @@ var jsonData = {
                   {
                     "name": "Broswer Support",
                     "id": "BROSWER_SUPPORT",
-                    "color": "grey-3",
+                    "color": "pink-3",
                     "desc": "Broswer Support desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1524,7 +1524,7 @@ var jsonData = {
                       {
                         "name": "Chrome",
                         "id": "CHROME_BROWSER",
-                        "color": "grey-3",
+                        "color": "pink-4",
                         "desc": "Chrome desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1539,7 +1539,7 @@ var jsonData = {
                       {
                         "name": "Firefox",
                         "id": "FIREFOX_BROWSER",
-                        "color": "grey-3",
+                        "color": "pink-4",
                         "desc": "Firefox desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1558,7 +1558,7 @@ var jsonData = {
               {
                 "name": "Storage App",
                 "id": "STORAGE_APP",
-                "color": "grey-2",
+                "color": "purple-2",
                 "desc": "Storage App desc",
                 "daysCompleted": 10,
                 "target": [
@@ -1572,7 +1572,7 @@ var jsonData = {
                   {
                     "name": "Simple app with Network data access",
                     "id": "SIMPLE_APP_WITH_NETWORK_DATA_ACCESS",
-                    "color": "grey-2",
+                    "color": "purple-3",
                     "desc": "Simple notepad / Calendar with Network data access desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1587,7 +1587,7 @@ var jsonData = {
                   {
                     "name": "VFS - Private Data",
                     "id": "VFS_PRIVATE_DATA",
-                    "color": "grey-2",
+                    "color": "purple-3",
                     "desc": "VFS - Private Data desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1602,7 +1602,7 @@ var jsonData = {
                   {
                     "name": "VFS - Shares",
                     "id": "VFS_SHARES",
-                    "color": "grey-2",
+                    "color": "purple-3",
                     "desc": "VFS - Shares desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1617,7 +1617,7 @@ var jsonData = {
                   {
                     "name": "VFS - versioned",
                     "id": "VFS_VERSIONED",
-                    "color": "grey-2",
+                    "color": "purple-3",
                     "desc": "Launcher desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1632,7 +1632,7 @@ var jsonData = {
                   {
                     "name": "Media Gallery (images)",
                     "id": "MEDIA_GALLERY",
-                    "color": "grey-2",
+                    "color": "purple-3",
                     "desc": "Media Gallery (images) desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1647,7 +1647,7 @@ var jsonData = {
                   {
                     "name": "Streaming Audio",
                     "id": "STREAMING_AUDIO",
-                    "color": "grey-2",
+                    "color": "purple-3",
                     "desc": "Streaming Audio desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1662,7 +1662,7 @@ var jsonData = {
                   {
                     "name": "Streaming Video",
                     "id": "STREAMING_VIDEO",
-                    "color": "grey-2",
+                    "color": "purple-3",
                     "desc": "Streaming Video desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1679,7 +1679,7 @@ var jsonData = {
               {
                 "name": "Messaging",
                 "id": "APP_MESSAGING",
-                "color": "grey-2",
+                "color": "navy-2",
                 "desc": "Messaging desc",
                 "daysCompleted": 10,
                 "target": [
@@ -1693,7 +1693,7 @@ var jsonData = {
                   {
                     "name": "Public Identity Mangement",
                     "id": "PUBLIC_IDENTITY_MANGEMENT",
-                    "color": "grey-2",
+                    "color": "navy-3",
                     "desc": "Public Identity Mangement desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1708,7 +1708,7 @@ var jsonData = {
                   {
                     "name": "Contact Management",
                     "id": "CONTACT_MANAGEMENT",
-                    "color": "grey-2",
+                    "color": "navy-3",
                     "desc": "Contact Management desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1723,7 +1723,7 @@ var jsonData = {
                   {
                     "name": "Text Messaging",
                     "id": "TEXT_MESSAGING",
-                    "color": "grey-2",
+                    "color": "navy-3",
                     "desc": "Text Messaging desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1738,7 +1738,7 @@ var jsonData = {
                   {
                     "name": "Voice Messaging",
                     "id": "VOICE_MESSAGING",
-                    "color": "grey-2",
+                    "color": "navy-3",
                     "desc": "Voice Messaging desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1753,7 +1753,7 @@ var jsonData = {
                   {
                     "name": "Video Messaging",
                     "id": "VIDEO_MESSAGING",
-                    "color": "grey-2",
+                    "color": "navy-3",
                     "desc": "Video Messaging desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1768,7 +1768,7 @@ var jsonData = {
                   {
                     "name": "Send/receive Network Files",
                     "id": "SEND_OR_RECEIVE_NETWORK_FILES",
-                    "color": "grey-2",
+                    "color": "navy-3",
                     "desc": "Send/receive Network Files desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1783,7 +1783,7 @@ var jsonData = {
                   {
                     "name": "Send/Receive Safecoin",
                     "id": "MESSAGING_SEND_OR_RECEIVE_SAFECOIN",
-                    "color": "grey-2",
+                    "color": "navy-3",
                     "desc": "Send/Receive Safecoin desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1800,7 +1800,7 @@ var jsonData = {
               {
                 "name": "Safecoin Wallet",
                 "id": "SAFECOIN_WALLET",
-                "color": "grey-2",
+                "color": "blue-2",
                 "desc": "Safecoin Wallet desc",
                 "daysCompleted": 10,
                 "target": [
@@ -1814,7 +1814,7 @@ var jsonData = {
                   {
                     "name": "Safecoin Balance",
                     "id": "SAFECOIN_BALANCE",
-                    "color": "grey-2",
+                    "color": "blue-3",
                     "desc": "Safecoin Balance desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1829,7 +1829,7 @@ var jsonData = {
                   {
                     "name": "Transaction History",
                     "id": "TRANSACTION_HISTORY",
-                    "color": "grey-2",
+                    "color": "blue-3",
                     "desc": "Transaction History desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1844,7 +1844,7 @@ var jsonData = {
                   {
                     "name": "Send/Receive Safecoin",
                     "id": "SAFECOIN_WALLET_SEND_OR_RECEIVE_SAFECOIN",
-                    "color": "grey-2",
+                    "color": "blue-3",
                     "desc": "Send/Receive Safecoin desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1858,7 +1858,7 @@ var jsonData = {
                       {
                         "name": "Contacts",
                         "id": "SAFECOIN_CONTACTS",
-                        "color": "grey-2",
+                        "color": "blue-4",
                         "desc": "Contacts desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1873,7 +1873,7 @@ var jsonData = {
                       {
                         "name": "To public identities",
                         "id": "SAFECOIN_TO_PUBLIC_IDENTITIES",
-                        "color": "grey-2",
+                        "color": "blue-4",
                         "desc": "To public identities desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1890,7 +1890,7 @@ var jsonData = {
                   {
                     "name": "Farming Rate History",
                     "id": "SAFECOIN_WALLET_FARMING_RATE_HISTORY",
-                    "color": "grey-2",
+                    "color": "blue-3",
                     "desc": "Farming Rate History desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1907,7 +1907,7 @@ var jsonData = {
               {
                 "name": "Safecoin Exchange",
                 "id": "SAFECOIN_EXCHANGE",
-                "color": "grey-2",
+                "color": "cyan-2",
                 "desc": "Safecoin Exchange desc",
                 "daysCompleted": 10,
                 "target": [
@@ -1921,7 +1921,7 @@ var jsonData = {
                   {
                     "name": "Recent buyers/sellers",
                     "id": "RECENT_BUYERS_OR_SELLERS",
-                    "color": "grey-2",
+                    "color": "cyan-3",
                     "desc": "Recent buyers/sellers desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1936,7 +1936,7 @@ var jsonData = {
                   {
                     "name": "Exchange via BTC",
                     "id": "EXCHANGE_VIA_BTC",
-                    "color": "grey-2",
+                    "color": "cyan-3",
                     "desc": "Exchange via BTC desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1950,7 +1950,7 @@ var jsonData = {
                       {
                         "name": "Buy Safecoin",
                         "id": "BUY_SAFECOIN",
-                        "color": "grey-2",
+                        "color": "cyan-4",
                         "desc": "Buy Safecoin desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1965,7 +1965,7 @@ var jsonData = {
                       {
                         "name": "Sell Safecoin",
                         "id": "SELL_SAFECOIN",
-                        "color": "grey-2",
+                        "color": "cyan-4",
                         "desc": "Sell Safecoin desc",
                         "daysCompleted": 10,
                         "target": [
@@ -1982,7 +1982,7 @@ var jsonData = {
                   {
                     "name": "Smart Contracts",
                     "id": "SAFECOIN_EXCHANGE_SMART_CONTRACTS",
-                    "color": "grey-2",
+                    "color": "cyan-3",
                     "desc": "Smart Contracts desc",
                     "daysCompleted": 10,
                     "target": [
@@ -1999,7 +1999,7 @@ var jsonData = {
               {
                 "name": "CMS",
                 "id": "CMS",
-                "color": "grey-2",
+                "color": "teal-2",
                 "desc": "CMS desc",
                 "daysCompleted": 10,
                 "target": [
@@ -2013,7 +2013,7 @@ var jsonData = {
                   {
                     "name": "Standalone App",
                     "id": "STANDALONE_APP",
-                    "color": "grey-2",
+                    "color": "teal-3",
                     "desc": "Standalone App desc",
                     "daysCompleted": 10,
                     "target": [
@@ -2028,7 +2028,7 @@ var jsonData = {
                   {
                     "name": "Browser Integrated",
                     "id": "BROWSER_INTEGRATED",
-                    "color": "grey-2",
+                    "color": "teal-3",
                     "desc": "Browser Integrated desc",
                     "daysCompleted": 10,
                     "target": [
@@ -2043,7 +2043,7 @@ var jsonData = {
                   {
                     "name": "Create Static Websites",
                     "id": "CREATE_STATIC_WEBSITES",
-                    "color": "grey-2",
+                    "color": "teal-3",
                     "desc": "Create Static Websites desc",
                     "daysCompleted": 10,
                     "target": [
@@ -2058,7 +2058,7 @@ var jsonData = {
                   {
                     "name": "Manage Network Storage",
                     "id": "MANAGE_NETWORK_STORAGE",
-                    "color": "grey-2",
+                    "color": "teal-3",
                     "desc": "Manage Network Storage desc",
                     "daysCompleted": 10,
                     "target": [
@@ -2073,7 +2073,7 @@ var jsonData = {
                   {
                     "name": "Cross module Features",
                     "id": "CROSS_MODULE_FEATURES",
-                    "color": "grey-2",
+                    "color": "teal-3",
                     "desc": "Cross module Features desc",
                     "daysCompleted": 10,
                     "target": [

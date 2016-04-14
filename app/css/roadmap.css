@@ -30,13 +30,16 @@
 .roadmapChart-h .roadmapChart-h-menu {
   width: 50px;
   height: 50px;
-  margin-left: 8px;
   float: left;
   background-image: url(../img/roadmap_menu_icon.svg);
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
 }
 
 .roadmapChart-h-t {
@@ -2726,4 +2729,215 @@
 }
 .svg-grey-6:active .box {
     fill: #b0bec5 !important;
+}
+
+/*moss 1*/
+.moss-1.text {
+  color: #50512b;
+}
+
+.moss-1:before {
+  background-color: #50512b;
+}
+
+.svg-moss-1,.svg-moss-1 .box,.moss-1.text .info-icon {
+  fill: #50512b;
+}
+
+.line-moss-1,.svg-moss-1 .box {
+  stroke: #50512b;
+}
+
+.features-moss-1:before {
+  background-color: #50512b !important;
+}
+
+/*moss 2*/
+.moss-2.text {
+  color: #747535;
+}
+
+.moss-2:before {
+  background-color: #747535;
+}
+
+.svg-moss-2,.svg-moss-2 .box,.moss-2.text .info-icon {
+  fill: #747535;
+}
+
+.line-moss-2,.svg-moss-2 .box {
+  stroke: #747535;
+}
+
+.features-moss-2:before {
+  background-color: #747535 !important;
+}
+
+.moss-2.highlight:before {
+  border: 2px solid #50512b;
+}
+
+.svg-moss-2.highlight .box,.line-moss-2.highlight {
+  stroke-width: 3px !important;
+  stroke: #50512b;
+}
+
+.moss-2:active:before {
+  background-color: #50512b;
+}
+
+.svg-moss-2:active .box {
+  fill: #50512b !important;
+}
+
+/*moss 3*/
+.moss-3.text {
+  color: #888e35;
+}
+
+.moss-3:before {
+  background-color: #888e35;
+}
+
+.svg-moss-3,.svg-moss-3 .box,.moss-3.text .info-icon {
+  fill: #888e35;
+}
+
+.line-moss-3,.svg-moss-3 .box {
+  stroke: #888e35;
+}
+
+.features-moss-3:before {
+  background-color: #888e35 !important;
+}
+
+.moss-3.highlight:before {
+  border: 2px solid #747535;
+}
+
+.svg-moss-3.highlight .box,.line-moss-3.highlight {
+  stroke-width: 3px !important;
+  stroke: #747535;
+}
+
+.moss-3:active:before {
+  background-color: #747535;
+}
+
+.svg-moss-3:active .box {
+  fill: #747535 !important;
+}
+
+/*moss 4*/
+.moss-4.text {
+  color: #adad44;
+}
+
+.moss-4:before {
+  background-color: #adad44;
+}
+
+.svg-moss-4,.svg-moss-4 .box,.moss-4.text .info-icon {
+  fill: #adad44;
+}
+
+.line-moss-4,.svg-moss-4 .box {
+  stroke: #adad44;
+}
+
+.features-moss-4:before {
+  background-color: #adad44 !important;
+}
+
+.moss-4.highlight:before {
+  border: 2px solid #888e35;
+}
+
+.svg-moss-4.highlight .box,.line-moss-4.highlight {
+  stroke-width: 3px !important;
+  stroke: #888e35;
+}
+
+.moss-4:active:before {
+  background-color: #888e35;
+}
+
+.svg-moss-4:active .box {
+  fill: #888e35 !important;
+}
+
+/*moss 5*/
+.moss-5.text {
+  color: #c4c153;
+}
+
+.moss-5:before {
+  background-color: #c4c153;
+}
+
+.svg-moss-5,.svg-moss-5 .box,.moss-5.text .info-icon {
+  fill: #c4c153;
+}
+
+.line-moss-5,.svg-moss-5 .box {
+  stroke: #c4c153;
+}
+
+.features-moss-5:before {
+  background-color: #c4c153 !important;
+}
+
+.moss-5.highlight:before {
+  border: 2px solid #adad44;
+}
+
+.svg-moss-5.highlight .box,.line-moss-5.highlight {
+  stroke-width: 3px !important;
+  stroke: #adad44;
+}
+
+.moss-5:active:before {
+  background-color: #adad44;
+}
+
+.svg-moss-5:active .box {
+  fill: #adad44 !important;
+}
+
+/*moss 6*/
+.moss-6.text {
+  color: #cecb63;
+}
+
+.moss-6:before {
+  background-color: #cecb63;
+}
+
+.svg-moss-6,.svg-moss-6 .box,.moss-6.text .info-icon {
+  fill: #cecb63;
+}
+
+.line-moss-6,.svg-moss-6 .box {
+  stroke: #cecb63;
+}
+
+.features-moss-6:before {
+  background-color: #cecb63 !important;
+}
+
+.moss-6.highlight:before {
+  border: 2px solid #c4c153;
+}
+
+.svg-moss-6.highlight .box,.line-moss-6.highlight {
+  stroke-width: 3px !important;
+  stroke: #c4c153;
+}
+
+.moss-6:active:before {
+  background-color: #c4c153;
+}
+
+.svg-moss-6:active .box {
+  fill: #c4c153 !important;
 }
