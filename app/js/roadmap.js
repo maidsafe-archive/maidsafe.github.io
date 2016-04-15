@@ -296,6 +296,13 @@ Utils.resetStartDate = function() {
   })
 };
 
+Utils.getColorLevelDown = function(color) {
+  if (!color) {
+    throw 'Invalid color';
+  }
+  var level = parseInt(color.slice(-1));
+  return color.slice(0, -1) + (level + 1);
+};
 var Connection = function(taskId, sourceId) {
   this.sourceId = sourceId;
   this.targetId = taskId;
@@ -1118,7 +1125,7 @@ Roadmap.prototype.drawBoxes = function() {
       .datum([ start, end])
       .attr('d', line)
       .attr('stroke-width', 5)
-      .attr('class', CSS_CLASS.LINE + d.color);
+      .attr('class', CSS_CLASS.LINE + Utils.getColorLevelDown(d.color));
     }
   });
 
