@@ -254,8 +254,14 @@
 }
 
 .mvp .box {
-  fill: #fb8c00;
-  stroke: #ef6c00;
+  fill: #ffdd50;
+  stroke: #ffb92c;
+}
+.mvp:hover .box {
+ stroke-width: 3px !important;
+}
+.mvp:hover text {
+  font-weight: bold;
 }
 
 .box.highlight {

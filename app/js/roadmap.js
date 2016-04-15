@@ -74,8 +74,13 @@ var TASK_STATUS = {
   },
   PLANNED: {
     id: 'STATUS_PLANNED',
-    path: 'M-460.4,281h-2.7c-0.4,0-0.7,0.3-0.7,0.7v1c0.8,0,1.4,0.6,1.4,1.4h2c0.4,0,0.7-0.3,0.7-0.7v-1.7C-459.8,281.3-460.1,281-460.4,281zM-454.4,276h-6.8c-0.9,0-1.6,0.7-1.6,1.6v1.4h2.3c1.5,0,2.7,1.2,2.7,2.7v1.3h3.4c0.9,0,1.6-0.7,1.6-1.6v-3.8C-452.8,276.8-453.5,276-454.4,276zM-463.8,283.7h-1.2c-0.2,0-0.4,0.2-0.4,0.4v1.2c0,0.2,0.2,0.4,0.4,0.4h1.2c0.2,0,0.4-0.2,0.4-0.4v-1.2C-463.4,283.8-463.6,283.7-463.8,283.7z',
+    path: 'M14.7,5.1H7.9C7,5.1,6.3,5.9,6.3,6.8v1.4h2.3c1.5,0,2.7,1.2,2.7,2.7v1.3h3.4c0.9,0,1.6-0.7,1.6-1.6V6.8C16.3,5.9,15.6,5.1,14.7,5.1zM8.7,10.1H6c-0.4,0-0.7,0.3-0.7,0.7v1c0.8,0,1.4,0.6,1.4,1.4h2c0.4,0,0.7-0.3,0.7-0.7v-1.7C9.3,10.4,9,10.1,8.7,10.1zM5.3,12.9H4.1c-0.2,0-0.4,0.2-0.4,0.4v1.2c0,0.2,0.2,0.4,0.4,0.4h1.2c0.2,0,0.4-0.2,0.4-0.4v-1.2C5.7,12.9,5.5,12.9,5.3,12.9z',
     color: '#FFFFFF'
+  },
+  PLANNED_DARK: {
+    id: 'STATUS_PLANNED_DARK',
+    path: 'M14.7,5.1H7.9C7,5.1,6.3,5.9,6.3,6.8v1.4h2.3c1.5,0,2.7,1.2,2.7,2.7v1.3h3.4c0.9,0,1.6-0.7,1.6-1.6V6.8C16.3,5.9,15.6,5.1,14.7,5.1zM8.7,10.1H6c-0.4,0-0.7,0.3-0.7,0.7v1c0.8,0,1.4,0.6,1.4,1.4h2c0.4,0,0.7-0.3,0.7-0.7v-1.7C9.3,10.4,9,10.1,8.7,10.1zM5.3,12.9H4.1c-0.2,0-0.4,0.2-0.4,0.4v1.2c0,0.2,0.2,0.4,0.4,0.4h1.2c0.2,0,0.4-0.2,0.4-0.4v-1.2C5.7,12.9,5.5,12.9,5.3,12.9z',
+    color: '#000000'
   }
 };
 
@@ -124,7 +129,7 @@ var CSS_CLASS = {
 };
 
 var roadmapTasks = [];
-
+var DEFAULT_START_DATE = null;
 var print = function(title, data) {
   console.log(title + ' ::');
   console.log(data);
@@ -206,6 +211,9 @@ Utils.textEllipsis = function(str, length) {
 
 Utils.truncateBoxText = function(box) {
   var task = Utils.getTask(box.taskId);
+  if (!task) {
+    return;
+  }
   var text = task.name;
   var textPadding = 4;
   var boxWidth = Math.floor($(Utils.parseId(box.id)).children('.box').attr('width'));
@@ -263,6 +271,9 @@ Utils.isDesktopScreen = function() {
 Utils.getChildrenTasks = function(taskId) {
   var children = [];
   roadmapTasks.forEach(function(task) {
+    if (task.isExcluded()) {
+      return;
+    }
     if (task.parent && task.parent.id === taskId) {
       children.unshift(task);
     }
@@ -276,6 +287,13 @@ Utils.getMarkerArrowLevel = function(color, isLevelup) {
   level = !isLevelup ? level : level - 1;
   markerColor = markerColor.slice(0, markerColor.length - 1) + level;
   return 'url(#' + ARROW_PREFIX + markerColor + ')';
+};
+
+Utils.resetStartDate = function() {
+  roadmapTasks.forEach(function(task, i) {
+    roadmapTasks[i].startDate = Utils.parseDate(DEFAULT_START_DATE);
+    roadmapTasks[i].endDate = roadmapTasks[i].startDate;
+  })
 };
 
 var Connection = function(taskId, sourceId) {
@@ -363,6 +381,9 @@ TaskNav.prototype.mouseOut = function(target) {
     target = Utils.parseId(self.id);
   }
   $(target).removeClass('highlight');
+  var hash = Utils.getLocationHash();
+  var activeTask = Utils.getTask(hash);
+  $(Utils.parseId(activeTask.nav.id)).addClass('highlight');
 };
 
 TaskNav.prototype.mouseOver = function(target) {
@@ -390,6 +411,8 @@ TaskNav.prototype.mouseClick = function(target, setHash) {
       parent = $(parent).parent();
     }
     $(target).removeClass(CSS_CLASS.LIST_CLOSED);
+    $('.listBase').removeClass('highlight');
+    $(target).addClass('highlight');
   }
   if (setHash) {
     Utils.setLocationHash(self.taskId);
@@ -406,14 +429,16 @@ var TaskBox = function(taskId) {
   this.y = 0;
   this.width = 0;
   this.statusX = 0;
+  this.childrenCount = 0;
 };
 
-TaskBox.prototype.setParams = function(x, y, width, statusX) {
+TaskBox.prototype.setParams = function(x, y, width, statusX, childrenCount) {
   var self = this;
   self.x = x;
   self.y = y;
   self.width = width;
   self.statusX = statusX;
+  self.childrenCount = childrenCount;
 };
 
 TaskBox.prototype.onClick = function() {
@@ -552,7 +577,8 @@ var Roadmap = function(payload) {
   this.box = {
     width: 0,
     height: 22,
-    strokeWidth: 2
+    strokeWidth: 2,
+    strokeDasharray: 5
   };
   this.label = {
     width: 85,
@@ -623,7 +649,7 @@ Roadmap.prototype.setNav = function() {
   };
 
   var setNavList = function(task) {
-    if (task.isExcluded()) {
+    if (task.isExcluded() || task.id === MVP_ID) {
       return;
     }
     var parentNavList = !task.parent ? $(Utils.parseId(NAV_ID)) : $(Utils.parseId(task.parent.nav.id));
@@ -636,7 +662,9 @@ Roadmap.prototype.setNav = function() {
     }
     var navList = Utils.createDiv(task.nav.id, listClasses);
     navList.append('<span class="' + CSS_CLASS.LIST_PADDING + '">' + task.name + '</span>');
-    navList.on('click', (task.nav.onClick)());
+    if (Utils.getChildrenTasks(task.id).length > 1) {
+      navList.on('click', (task.nav.onClick)());
+    }
     navList.on('mouseover', (task.nav.onMouseOver)());
     navList.on('mouseout', (task.nav.onMouseOut)());
     parentNavList.append(navList);
@@ -719,6 +747,16 @@ Roadmap.prototype.prepareChart = function() {
       .append('path')
       .attr('fill', TASK_STATUS.PLANNED.color)
       .attr('d', TASK_STATUS.PLANNED.path);
+
+    // status planned
+    status.append('svg:pattern')
+      .attr('id', TASK_STATUS.PLANNED_DARK.id)
+      .attr('patternUnits', 'objectBoundingBox')
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .append('path')
+      .attr('fill', TASK_STATUS.PLANNED_DARK.color)
+      .attr('d', TASK_STATUS.PLANNED_DARK.path);
   };
 
   var defineConnectionArrows = function() {
@@ -898,108 +936,109 @@ Roadmap.prototype.drawProgressBar = function(activeTask) {
     return;
   }
 
-  self.defineBoxPattern({
-    name: activeTask.id,
-    x: 0,
-    y: -self.svg.padding,
-    width: self.svg.width - (self.svg.padding * 2),
-    height: self.progressBar.height,
-    className: CSS_CLASS.SVG + activeTask.color
-  });
+    self.defineBoxPattern({
+      name: activeTask.id,
+      x: 0,
+      y: -self.svg.padding,
+      width: self.svg.width - (self.svg.padding * 2),
+      height: self.progressBar.height,
+      className: CSS_CLASS.SVG + activeTask.color
+    });
 
-  var progressBar = d3.select(Utils.parseId(SVG_BOX_GRP_ID))
-    .append('g').attr('class', 'progressBar');
-  var baseWidth =  self.svg.width - (self.svg.padding * 2);
+    var progressBar = d3.select(Utils.parseId(SVG_BOX_GRP_ID))
+      .append('g').attr('class', 'progressBar');
+    var baseWidth =  self.svg.width - (self.svg.padding * 2);
 
-  var completed = baseWidth * activeTask.daysCompleted / 100;
-  var inProgress = (baseWidth * activeTask.inProgress / 100);
-  var planned = (baseWidth * activeTask.planned / 100);
+    var completed = baseWidth * activeTask.daysCompleted / 100;
+    var inProgress = (baseWidth * activeTask.inProgress / 100);
+    var planned = (baseWidth * activeTask.planned / 100);
 
-  // progress completed
-  progressBar.append('rect')
-    .attr('class', CSS_CLASS.SVG + activeTask.color)
-    .attr('x', completed + inProgress)
-    .attr('y', -self.svg.padding)
-    .attr('width', planned)
-    .attr('height', self.progressBar.height)
-    .attr('opacity', 0.8);
+    // progress completed
+    progressBar.append('rect')
+      .attr('class', CSS_CLASS.SVG + activeTask.color)
+      .attr('x', completed + inProgress)
+      .attr('y', -self.svg.padding)
+      .attr('width', planned)
+      .attr('height', self.progressBar.height)
+      .attr('opacity', 0.8);
 
-  // progress completed
-  progressBar.append('rect')
-    .attr('class', 'chart-progress-b')
-    .attr('x', completed)
-    .attr('y', -self.svg.padding)
-    .attr('width', inProgress)
-    .attr('height', self.progressBar.height)
-    .attr('style', 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + activeTask.id) + ')');
+    // progress completed
+    progressBar.append('rect')
+      .attr('class', 'chart-progress-b')
+      .attr('x', completed)
+      .attr('y', -self.svg.padding)
+      .attr('width', inProgress)
+      .attr('height', self.progressBar.height)
+      .attr('style', 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + activeTask.id) + ')');
 
-  // progress completed
-  progressBar.append('rect')
-    .attr('class', CSS_CLASS.SVG + activeTask.color)
-    .attr('x', 0)
-    .attr('y', -self.svg.padding)
-    .attr('width',completed)
-    .attr('height', self.progressBar.height);
+    // progress completed
+    progressBar.append('rect')
+      .attr('class', CSS_CLASS.SVG + activeTask.color)
+      .attr('x', 0)
+      .attr('y', -self.svg.padding)
+      .attr('width',completed)
+      .attr('height', self.progressBar.height);
 
-  // progress status planned
-  progressBar.append('rect')
-    .attr('class', CSS_CLASS.SVG + activeTask.color)
-    .attr('x', baseWidth - self.box.height)
-    .attr('y', -self.svg.padding + self.progressBar.height)
-    .attr('width', self.box.height)
-    .attr('height', self.box.height)
-    .style('fill', 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')');
+    // progress status planned
+    progressBar.append('rect')
+      .attr('class', CSS_CLASS.SVG + activeTask.color)
+      .attr('x', baseWidth - self.box.height)
+      .attr('y', -self.svg.padding + self.progressBar.height)
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .style('fill', 'url(' + Utils.parseId(TASK_STATUS.PLANNED_DARK.id) + ')');
 
-    // progress status open
-  progressBar.append('rect')
-    .attr('class', CSS_CLASS.SVG + activeTask.color)
-    .attr('x', (completed + inProgress) - self.box.height)
-    .attr('y', -self.svg.padding + self.progressBar.height)
-    .attr('width', self.box.height)
-    .attr('height', self.box.height)
-    .style('fill', 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')');
+      // progress status open
+    progressBar.append('rect')
+      .attr('class', CSS_CLASS.SVG + activeTask.color)
+      .attr('x', (completed + inProgress) - self.box.height)
+      .attr('y', -self.svg.padding + self.progressBar.height)
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .style('fill', 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')');
+  // progress status completed
 
-       // progress status open
-  progressBar.append('rect')
-    .attr('class', CSS_CLASS.SVG + activeTask.color)
-    .attr('x', completed - self.box.height)
-    .attr('y', -self.svg.padding + self.progressBar.height)
-    .attr('width', self.box.height)
-    .attr('height', self.box.height)
-    .style('fill', 'url(' + Utils.parseId(TASK_STATUS.COMPLETE_DARK.id) + ')');
+    progressBar.append('rect')
+      .attr('class', CSS_CLASS.SVG + activeTask.color)
+      .attr('x', completed - self.box.height)
+      .attr('y', -self.svg.padding + self.progressBar.height)
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .style('fill', 'url(' + Utils.parseId(TASK_STATUS.COMPLETE_DARK.id) + ')');
 
-  progressBar.append('text')
-  .text('completed ' + activeTask.daysCompleted + '%')
-  .attr('x', (completed - self.box.height) - 95)
-  .attr('y', self.progressBar.height - 5)
-  .style('font-size', 12);
+    progressBar.append('text')
+      .text('completed ' + activeTask.daysCompleted + '%')
+      .attr('x', (completed - self.box.height) - 95)
+      .attr('y', self.progressBar.height - 5)
+      .style('font-size', 12);
 
-  progressBar.append('text')
-  .text('In progress ' + activeTask.inProgress + '%')
-  .attr('x', (completed + inProgress - self.box.height) - 95)
-  .attr('y', self.progressBar.height - 5)
-  .style('font-size', 12);
+    progressBar.append('text')
+      .text('In progress ' + activeTask.inProgress + '%')
+      .attr('x', (completed + inProgress - self.box.height) - 95)
+      .attr('y', self.progressBar.height - 5)
+      .style('font-size', 12);
 
-  progressBar.append('text')
-    .text('Planned ' + activeTask.planned + '%')
-    .attr('x', (baseWidth - self.box.height) - 80)
-    .attr('y', self.progressBar.height - 5)
-    .style('font-size', 12);
+    progressBar.append('text')
+      .text('Planned ' + activeTask.planned + '%')
+      .attr('x', (baseWidth - self.box.height) - 80)
+      .attr('y', self.progressBar.height - 5)
+      .style('font-size', 12);
 
-  progressBar.append('path')
-      .datum([{x: baseWidth, y: -self.svg.padding}, {x:baseWidth, y: 4}])
+    var pathEnd = (-self.svg.padding + self.progressBar.height + 22);
+    progressBar.append('path')
+      .datum([{x: baseWidth, y: -self.svg.padding}, {x:baseWidth, y: pathEnd}])
       .attr('d', line)
       .attr('stroke-width', 1)
       .attr('stroke', '#282828');
 
-  progressBar.append('path')
-      .datum([{x: completed + inProgress, y: -self.svg.padding}, {x:completed + inProgress, y: 4}])
+    progressBar.append('path')
+      .datum([{x: completed + inProgress, y: -self.svg.padding}, {x:completed + inProgress, y: pathEnd}])
       .attr('d', line)
       .attr('stroke-width', 1)
       .attr('stroke', '#282828');
 
-  progressBar.append('path')
-      .datum([{x: completed, y: -self.svg.padding}, {x:completed, y: 4}])
+    progressBar.append('path')
+      .datum([{x: completed, y: -self.svg.padding}, {x:completed, y: pathEnd}])
       .attr('d', line)
       .attr('stroke-width', 1)
       .attr('stroke', '#282828');
@@ -1007,6 +1046,15 @@ Roadmap.prototype.drawProgressBar = function(activeTask) {
 
 Roadmap.prototype.drawBoxes = function() {
   var self = this;
+  var line = d3.svg.line()
+  .x(function(d) {
+    return d.x;
+  })
+  .y(function(d) {
+    return d.y;
+  })
+  .interpolate('linear');
+
   var box = d3.select(Utils.parseId(SVG_ID))
   .select('g')
   .selectAll('rect')
@@ -1042,10 +1090,36 @@ Roadmap.prototype.drawBoxes = function() {
   });
 
   boxBase.each(function(d) {
+    var group = this;
+    if (d.id === MVP_ID) {
+      return;
+    }
     var boxGrp = d3.select(this);
-    boxGrp.on('click', (d.box.onClick)());
     boxGrp.on('mouseover', (d.box.onMouseOver)());
+    if (d.box.childrenCount > 1) {
+      boxGrp.on('click', (d.box.onClick)());
+    }
     boxGrp.on('mouseout', (d.box.onMouseOut)());
+
+    if (d.box.childrenCount <= 1) {
+      return;
+    }
+    var childWidth = ((d.box.width - (4 * (d.box.childrenCount + 1)))/ d.box.childrenCount) ;
+    var lastPos = {x: 0, y: 0};
+    var start = {x: 0, y: 0};
+    var end = {x: 0, y: 0};
+    for(var i = 0; i < d.box.childrenCount; i++) {
+      start.x = (i === 0 ? d.box.x : lastPos.x) + 4;
+      start.y = d.box.y + self.box.height + self.box.strokeWidth + 3;
+      end.x = start.x + childWidth;
+      end.y = start.y;
+      lastPos = end;
+      d3.select(group).append('path')
+      .datum([ start, end])
+      .attr('d', line)
+      .attr('stroke-width', 5)
+      .attr('class', CSS_CLASS.LINE + d.color);
+    }
   });
 
   boxBase.append('rect')
@@ -1074,7 +1148,7 @@ Roadmap.prototype.drawBoxes = function() {
   .attr('stroke', 'none')
   .attr('stroke-dasharray', function(d) {
     if (d.status === 2) {
-      return 8;
+      return self.box.strokeDasharray;
     }
     return 'none';
   })
@@ -1143,8 +1217,7 @@ Roadmap.prototype.drawBoxes = function() {
     return ((self.box.height / 2) + d.box.x);
   })
   .attr('y', function(d) {
-    return (self.activeTasks.length !== 1) ? ((d.box.y) +
-      (self.box.height / 1.3)) : (self.box.height / 1.3);
+    return d.box.y + (self.box.height / 1.3);
   })
   .attr('class', 'taskText')
   .style('fill', function(d) {
@@ -1194,7 +1267,7 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
   };
 
   var setStartDates = function() {
-    var startDate = 0;
+    var startDate = null;
     roadmapTasks.forEach(function(task) {
       if (self.startDates[task.section - 1]) {
         return;
@@ -1228,18 +1301,20 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
     // print('Active tasks', activeTasks);
   };
 
-  var setBoxParams = function() {
+  var setBoxParams = function() {;
+    var progressBarTaskSpacing = 18;
     roadmapTasks.forEach(function(task) {
       var scaledStart = self.timeScale(self.dateFormat.parse(task.startDate));
       var scaledEnd =  self.timeScale(self.dateFormat.parse(task.endDate));
-      var boxYPos = ((task.order - 1) * self.box.height * 2);
+      var boxYPos = ((task.order - 1) * self.box.height * 2) + progressBarTaskSpacing;
       if (self.activeTasks.length === 1) {
-        boxYPos = 0;
+        boxYPos = progressBarTaskSpacing;
       }
       task.box.setParams(scaledStart,
         boxYPos,
         (scaledEnd - scaledStart),
-        (scaledEnd - self.box.height));
+        (scaledEnd - self.box.height),
+        Utils.getChildrenTasks(task.id).length);
     });
   };
 
@@ -1271,8 +1346,17 @@ Roadmap.prototype.drawLabel = function(labelData) {
     .attr('y', labelData.y)
     .attr('width', self.label.width)
     .attr('height', self.label.height)
+    .attr('stroke-width', function() {
+      return labelData.stroke ? self.box.strokeWidth : 0;
+    })
     .attr('style', 'font-size: 12px')
-    .attr('class', CSS_CLASS.SVG + labelData.className);
+    .attr('class', function() {
+      var classNames = CSS_CLASS.SVG + labelData.className;
+      if (labelData.stroke) {
+        classNames += ' ' + (CSS_CLASS.LINE + labelData.stroke);
+      }
+      return classNames;
+    });
 
   label.append('text')
     .text(Utils.textEllipsis(labelData.desc, 7))
@@ -1477,7 +1561,8 @@ Roadmap.prototype.prepareConnections = function() {
           y: end.y - (self.box.height * self.sectionCurrentIncomingCounts[incomingCountIndex]),
           className: labelColor,
           desc: lowerTask.desc,
-          source: sourceTask.id
+          source: sourceTask.id,
+          stroke: lowerTask.color
         };
         // if end downstream
         if (interStart.x > baseWidth) {
@@ -1621,6 +1706,7 @@ Roadmap.prototype.drawMobileChart = function(task) {
 
 Roadmap.prototype.draw = function() {
   var self = this;
+  DEFAULT_START_DATE = self.plainData.startDate;
   self.init();
   self.prepareTasks();
   self.setNav();
