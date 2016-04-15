@@ -16,6 +16,7 @@ var MOBILE_CHART_ID = 'Mobile_chart';
 var SUB_FEATURES_ID = 'Sub_feature';
 var RELIED_ON_FEATURES_ID = 'Relied_on_features';
 var RELY_THIS_FEATURES_ID = 'Rely_this_features';
+var MVP_ID = 'MVP';
 
 var NAV_PREFIX = 'NAV_';
 var BOX_PREFIX = 'BOX_';
@@ -52,11 +53,28 @@ var TASK_STATUS = {
     path: '14.9,4.9 7.7,12.1 4.9,9.2 3.5,10.6 7.7,14.9 16.3,6.3',
     color: '#FFFFFF'
   },
+  COMPLETE_DARK: {
+    id: 'STATUS_COMPLETE_DARK',
+    path: '14.9,4.9 7.7,12.1 4.9,9.2 3.5,10.6 7.7,14.9 16.3,6.3',
+    color: '#000000'
+  },
   OPEN: {
     id: 'STATUS_OPEN',
     path: 'M15.2,13.3l-4.5-4.5c0.4-1.1,0.2-2.5-0.7-3.4c-1-1-2.5-1.2-3.6-0.6' +
       'l2.1,2.1L7,8.4L4.8,6.3C4.2,7.4,4.5,8.9,5.5,9.9c0.9,0.9,2.3,1.2,3.4,' +
       '0.7l4.5,4.5c0.2,0.2,0.5,0.2,0.7,0l1.1-1.1C15.4,13.8,15.4,13.4,15.2,13.3z',
+    color: '#FFFFFF'
+  },
+  OPEN_DARK: {
+    id: 'STATUS_OPEN_DARK',
+    path: 'M15.2,13.3l-4.5-4.5c0.4-1.1,0.2-2.5-0.7-3.4c-1-1-2.5-1.2-3.6-0.6' +
+      'l2.1,2.1L7,8.4L4.8,6.3C4.2,7.4,4.5,8.9,5.5,9.9c0.9,0.9,2.3,1.2,3.4,' +
+      '0.7l4.5,4.5c0.2,0.2,0.5,0.2,0.7,0l1.1-1.1C15.4,13.8,15.4,13.4,15.2,13.3z',
+    color: '#000000'
+  },
+  PLANNED: {
+    id: 'STATUS_PLANNED',
+    path: 'M-460.4,281h-2.7c-0.4,0-0.7,0.3-0.7,0.7v1c0.8,0,1.4,0.6,1.4,1.4h2c0.4,0,0.7-0.3,0.7-0.7v-1.7C-459.8,281.3-460.1,281-460.4,281zM-454.4,276h-6.8c-0.9,0-1.6,0.7-1.6,1.6v1.4h2.3c1.5,0,2.7,1.2,2.7,2.7v1.3h3.4c0.9,0,1.6-0.7,1.6-1.6v-3.8C-452.8,276.8-453.5,276-454.4,276zM-463.8,283.7h-1.2c-0.2,0-0.4,0.2-0.4,0.4v1.2c0,0.2,0.2,0.4,0.4,0.4h1.2c0.2,0,0.4-0.2,0.4-0.4v-1.2C-463.4,283.8-463.6,283.7-463.8,283.7z',
     color: '#FFFFFF'
   }
 };
@@ -486,6 +504,8 @@ var Task = function(payload, parent, isRoot) {
   this.status = payload.status;
   this.startDate = Utils.parseDate(payload.startDate);
   this.daysCompleted = payload.daysCompleted || 0;
+  this.inProgress = payload.inProgress || 0;
+  this.planned = payload.planned || 0;
   this.order = payload.order || 1;
   this.section = payload.section || 1;
   this.offset = payload.offset || 0;
@@ -660,6 +680,16 @@ Roadmap.prototype.prepareChart = function() {
       .attr('fill', TASK_STATUS.COMPLETE.color)
       .attr('points', TASK_STATUS.COMPLETE.path);
 
+    // status complete dark
+    status.append('svg:pattern')
+      .attr('id', TASK_STATUS.COMPLETE_DARK.id)
+      .attr('patternUnits', 'objectBoundingBox')
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .append('polygon')
+      .attr('fill', TASK_STATUS.COMPLETE_DARK.color)
+      .attr('points', TASK_STATUS.COMPLETE_DARK.path);
+
     // status open
     status.append('svg:pattern')
       .attr('id', TASK_STATUS.OPEN.id)
@@ -669,6 +699,26 @@ Roadmap.prototype.prepareChart = function() {
       .append('path')
       .attr('fill', TASK_STATUS.OPEN.color)
       .attr('d', TASK_STATUS.OPEN.path);
+
+    // status open dark
+    status.append('svg:pattern')
+      .attr('id', TASK_STATUS.OPEN_DARK.id)
+      .attr('patternUnits', 'objectBoundingBox')
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .append('path')
+      .attr('fill', TASK_STATUS.OPEN_DARK.color)
+      .attr('d', TASK_STATUS.OPEN_DARK.path);
+
+    // status planned
+    status.append('svg:pattern')
+      .attr('id', TASK_STATUS.PLANNED.id)
+      .attr('patternUnits', 'objectBoundingBox')
+      .attr('width', self.box.height)
+      .attr('height', self.box.height)
+      .append('path')
+      .attr('fill', TASK_STATUS.PLANNED.color)
+      .attr('d', TASK_STATUS.PLANNED.path);
   };
 
   var defineConnectionArrows = function() {
@@ -835,6 +885,15 @@ Roadmap.prototype.defineBoxPattern = function(data) {
 
 Roadmap.prototype.drawProgressBar = function(activeTask) {
   var self = this;
+  var line = d3.svg.line()
+  .x(function(d) {
+    return d.x;
+  })
+  .y(function(d) {
+    return d.y;
+  })
+  .interpolate('linear');
+
   if (!activeTask.daysCompleted) {
     return;
   }
@@ -851,26 +910,99 @@ Roadmap.prototype.drawProgressBar = function(activeTask) {
   var progressBar = d3.select(Utils.parseId(SVG_BOX_GRP_ID))
     .append('g').attr('class', 'progressBar');
   var baseWidth =  self.svg.width - (self.svg.padding * 2);
-  // header base
+
+  var completed = baseWidth * activeTask.daysCompleted / 100;
+  var inProgress = (baseWidth * activeTask.inProgress / 100);
+  var planned = (baseWidth * activeTask.planned / 100);
+
+  // progress completed
+  progressBar.append('rect')
+    .attr('class', CSS_CLASS.SVG + activeTask.color)
+    .attr('x', completed + inProgress)
+    .attr('y', -self.svg.padding)
+    .attr('width', planned)
+    .attr('height', self.progressBar.height)
+    .attr('opacity', 0.8);
+
+  // progress completed
   progressBar.append('rect')
     .attr('class', 'chart-progress-b')
-    .attr('x', 0)
+    .attr('x', completed)
     .attr('y', -self.svg.padding)
-    .attr('width', baseWidth)
+    .attr('width', inProgress)
     .attr('height', self.progressBar.height)
     .attr('style', 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + activeTask.id) + ')');
 
-  // progress
+  // progress completed
   progressBar.append('rect')
     .attr('class', CSS_CLASS.SVG + activeTask.color)
     .attr('x', 0)
     .attr('y', -self.svg.padding)
-    .attr('width', function() {
-      // TODO find fix for overflow
-       var width = self.timeScale(self.dateFormat.parse(Utils.addDate(activeTask.startDate, activeTask.daysCompleted)));
-      return baseWidth < width ? baseWidth : width;
-    })
+    .attr('width',completed)
     .attr('height', self.progressBar.height);
+
+  // progress status planned
+  progressBar.append('rect')
+    .attr('class', CSS_CLASS.SVG + activeTask.color)
+    .attr('x', baseWidth - self.box.height)
+    .attr('y', -self.svg.padding + self.progressBar.height)
+    .attr('width', self.box.height)
+    .attr('height', self.box.height)
+    .style('fill', 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')');
+
+    // progress status open
+  progressBar.append('rect')
+    .attr('class', CSS_CLASS.SVG + activeTask.color)
+    .attr('x', (completed + inProgress) - self.box.height)
+    .attr('y', -self.svg.padding + self.progressBar.height)
+    .attr('width', self.box.height)
+    .attr('height', self.box.height)
+    .style('fill', 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')');
+
+       // progress status open
+  progressBar.append('rect')
+    .attr('class', CSS_CLASS.SVG + activeTask.color)
+    .attr('x', completed - self.box.height)
+    .attr('y', -self.svg.padding + self.progressBar.height)
+    .attr('width', self.box.height)
+    .attr('height', self.box.height)
+    .style('fill', 'url(' + Utils.parseId(TASK_STATUS.COMPLETE_DARK.id) + ')');
+
+  progressBar.append('text')
+  .text('completed ' + activeTask.daysCompleted + '%')
+  .attr('x', (completed - self.box.height) - 95)
+  .attr('y', self.progressBar.height - 5)
+  .style('font-size', 12);
+
+  progressBar.append('text')
+  .text('In progress ' + activeTask.inProgress + '%')
+  .attr('x', (completed + inProgress - self.box.height) - 95)
+  .attr('y', self.progressBar.height - 5)
+  .style('font-size', 12);
+
+  progressBar.append('text')
+    .text('Planned ' + activeTask.planned + '%')
+    .attr('x', (baseWidth - self.box.height) - 80)
+    .attr('y', self.progressBar.height - 5)
+    .style('font-size', 12);
+
+  progressBar.append('path')
+      .datum([{x: baseWidth, y: -self.svg.padding}, {x:baseWidth, y: 4}])
+      .attr('d', line)
+      .attr('stroke-width', 1)
+      .attr('stroke', '#282828');
+
+  progressBar.append('path')
+      .datum([{x: completed + inProgress, y: -self.svg.padding}, {x:completed + inProgress, y: 4}])
+      .attr('d', line)
+      .attr('stroke-width', 1)
+      .attr('stroke', '#282828');
+
+  progressBar.append('path')
+      .datum([{x: completed, y: -self.svg.padding}, {x:completed, y: 4}])
+      .attr('d', line)
+      .attr('stroke-width', 1)
+      .attr('stroke', '#282828');
 };
 
 Roadmap.prototype.drawBoxes = function() {
@@ -900,6 +1032,9 @@ Roadmap.prototype.drawBoxes = function() {
 
   var boxBase = box.append('g')
   .attr('class', function(d) {
+    if (d.id === MVP_ID) {
+      return 'boxBase mvp';
+    }
     return 'boxBase ' + ('svg-' + d.color);
   })
   .attr('id', function(d) {
@@ -915,12 +1050,18 @@ Roadmap.prototype.drawBoxes = function() {
 
   boxBase.append('rect')
   .attr('x', function(d) {
+    if (d.id === MVP_ID) {
+      return d.box.x + 5;
+    }
     return d.box.x;
   })
   .attr('y', function(d) {
     return d.box.y;
   })
   .attr('width', function(d) {
+    if (d.id === MVP_ID) {
+      return self.box.height;
+    }
     return d.box.width;
   })
   .attr('height', self.box.height)
@@ -930,11 +1071,38 @@ Roadmap.prototype.drawBoxes = function() {
       return 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + d.id) + ')';
     }
   })
-  .attr('stroke', 'none');
+  .attr('stroke', 'none')
+  .attr('stroke-dasharray', function(d) {
+    if (d.status === 2) {
+      return 8;
+    }
+    return 'none';
+  })
+  .attr('opacity', function(d) {
+    if (d.status === 2) {
+      return 0.8;
+    }
+    return 1;
+  })
+  .style('transform', function(d) {
+    if (d.id === MVP_ID) {
+      return 'rotate(45deg)'
+    }
+    return '';
+  })
+  .style('transform-origin', function(d) {
+    if (d.id === MVP_ID) {
+      return 'center'
+    }
+    return '';
+  });
 
   // status
   boxBase.append('rect')
     .attr('x', function(d) {
+      if (d.id === MVP_ID) {
+        return d.box.x + (self.box.height * 3) + 8;
+      }
       return d.box.statusX;
     })
     .attr('y', function(d) {
@@ -944,23 +1112,47 @@ Roadmap.prototype.drawBoxes = function() {
     .attr('height', self.box.height)
     .attr('class', 'statusBox')
     .style('fill', function(d) {
-      return d.status ? 'url(' + Utils.parseId(TASK_STATUS.COMPLETE.id) + ')' :
-        'url(' + Utils.parseId(TASK_STATUS.OPEN.id) + ')';
+      if (d.id === MVP_ID) {
+        return 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')';
+      }
+      if (d.status === 0) {
+        return 'url(' + Utils.parseId(TASK_STATUS.OPEN.id) + ')';
+      }
+      if (d.status === 1) {
+        return 'url(' + Utils.parseId(TASK_STATUS.COMPLETE.id) + ')';
+      }
+      if (d.status === 2) {
+        return 'url(' + Utils.parseId(TASK_STATUS.PLANNED.id) + ')';
+      }
+      // return d.status ? 'url(' + Utils.parseId(TASK_STATUS.COMPLETE.id) + ')' :
+        // 'url(' + Utils.parseId(TASK_STATUS.OPEN.id) + ')';
     });
 
   // text
   boxBase.append('text')
   .text(function(d) {
+    if (d.id === MVP_ID) {
+      return d.name;
+    }
     return Utils.truncateBoxText(d.box);
   })
   .attr('x', function(d) {
+    if (d.id === MVP_ID) {
+      return d.box.x + self.box.height + 16;
+    }
     return ((self.box.height / 2) + d.box.x);
   })
   .attr('y', function(d) {
     return (self.activeTasks.length !== 1) ? ((d.box.y) +
       (self.box.height / 1.3)) : (self.box.height / 1.3);
   })
-  .attr('class', 'taskText');
+  .attr('class', 'taskText')
+  .style('fill', function(d) {
+    if (d.id === MVP_ID) {
+      return '#000000';
+    }
+    return '';
+  });
 };
 
 Roadmap.prototype.prepareBoxes = function(activeTask) {
@@ -1401,13 +1593,13 @@ Roadmap.prototype.addFeatures = function(activeTask) {
     }
   });
   if (features.sub.length > 0) {
-    addList('Sub Features:', features.sub, SUB_FEATURES_ID);
+    addList('Sub features:', features.sub, SUB_FEATURES_ID);
   }
   if (features.reliedOn.length > 0) {
-    addList('Features Rely On:', features.reliedOn, RELIED_ON_FEATURES_ID);
+    addList('Features relied on:', features.reliedOn, RELIED_ON_FEATURES_ID);
   }
   if (features.relyThis.length > 0) {
-    addList('Features Rely On This:', features.relyThis, RELY_THIS_FEATURES_ID);
+    addList('Features relying on this:', features.relyThis, RELY_THIS_FEATURES_ID);
   }
 };
 
