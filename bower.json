@@ -9,6 +9,7 @@
     "bootstrap": "*",
     "open-sans-fontface": "~1.4.2",
     "d3": "~3.5.13",
-    "easyfont-roboto-mono": "easyfont/roboto-mono"
+    "easyfont-roboto-mono": "easyfont/roboto-mono",
+    "html5shiv": "~3.7.3"
   }
 }

@@ -146,26 +146,36 @@ Utils.parseDate = function(dateStr) {
   var makeDouble = function(digit) {
     return ('0' + digit).slice(-2);
   };
-  var date = dateStr ? new Date(dateStr) : new Date();
-  return date.getFullYear() + '-' + makeDouble(date.getMonth() + 1) + '-' + makeDouble(date.getDate());
+  if (dateStr instanceof Date) {
+    dateStr = dateStr.getFullYear() + '-' + makeDouble(dateStr.getMonth() + 1) + '-' + makeDouble(dateStr.getDate());
+  } else {
+    dateStr = dateStr.split('-');
+    dateStr[1] = makeDouble(dateStr[1]);
+    dateStr[2] = makeDouble(dateStr[2]);
+    dateStr = dateStr.join('-');
+  }
+  // console.log(dateStr);
+  // var date = dateStr ? new Date(dateStr) : new Date();
+  // return date.getFullYear() + '-' + makeDouble(date.getMonth() + 1) + '-' + makeDouble(date.getDate());
+  return dateStr;
 };
 
 Utils.addDate = function(dateStr, value) {
   if (isNaN(value)) {
     throw 'value is not Numeric';
   }
-  var date = new Date(dateStr);
+  var date = new Date(Utils.parseDate(dateStr));
   var newDate = new Date(date.getTime() + (parseInt(value) * 24 * 60 * 60 * 1000));
-  return Utils.parseDate(newDate.toDateString());
+  return Utils.parseDate(newDate);
 };
 
 Utils.subDate = function(dateStr, value) {
   if (isNaN(value)) {
     throw 'value is not Numeric';
   }
-  var date = new Date(dateStr);
+  var date = new Date(Utils.parseDate(dateStr));
   var newDate = new Date(date.getTime() - (parseInt(value) * 24 * 60 * 60 * 1000));
-  return Utils.parseDate(newDate.toDateString());
+  return Utils.parseDate(newDate);
 };
 
 Utils.getTask = function(taskId) {
@@ -894,7 +904,7 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
   }
 };
 
-Roadmap.prototype.updateSvgHeight = function() {
+Roadmap.prototype.updateSvgDimensions = function() {
   var self = this;
   var headerheight =  $('header').height();
   self.svg.height = window.screen.height - 180;
@@ -1020,19 +1030,19 @@ Roadmap.prototype.drawProgressBar = function(activeTask) {
       .text('completed ' + activeTask.daysCompleted + '%')
       .attr('x', (completed - self.box.height) - 95)
       .attr('y', self.progressBar.height - 5)
-      .style('font-size', 12);
+      .attr('style', 'font-size:13px');
 
     progressBar.append('text')
       .text('In progress ' + activeTask.inProgress + '%')
       .attr('x', (completed + inProgress - self.box.height) - 95)
       .attr('y', self.progressBar.height - 5)
-      .style('font-size', 12);
+      .attr('style', 'font-size:13px');
 
     progressBar.append('text')
       .text('Planned ' + activeTask.planned + '%')
       .attr('x', (baseWidth - self.box.height) - 80)
       .attr('y', self.progressBar.height - 5)
-      .style('font-size', 12);
+      .attr('style', 'font-size:13px');
 
     var pathEnd = (-self.svg.padding + self.progressBar.height + 22);
     progressBar.append('path')
@@ -1168,18 +1178,6 @@ Roadmap.prototype.drawBoxes = function() {
     }
     return 1;
   })
-  .style('transform', function(d) {
-    if (d.id === MVP_ID) {
-      return 'rotate(45deg)'
-    }
-    return '';
-  })
-  .style('transform-origin', function(d) {
-    if (d.id === MVP_ID) {
-      return 'center'
-    }
-    return '';
-  });
 
   // status
   boxBase.append('rect')
@@ -1608,7 +1606,7 @@ Roadmap.prototype.drawChart = function(taskId) {
   taskId = taskId || roadmapTasks[0].id;
   var task = Utils.getTask(taskId);
   self.resetChart();
-  self.updateSvgHeight();
+  self.updateSvgDimensions();
   self.prepareChart();
   self.updateBreadcum(task);
   self.updateChartHeader(task);
