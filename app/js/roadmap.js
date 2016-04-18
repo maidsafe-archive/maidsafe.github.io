@@ -895,7 +895,7 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
 Roadmap.prototype.updateSvgHeight = function() {
   var self = this;
   var headerheight =  $('header').height();
-  self.svg.height = window.screen.height - (headerheight * 2);
+  self.svg.height = window.screen.height - 180;
 };
 
 Roadmap.prototype.defineBoxPattern = function(data) {
