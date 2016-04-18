@@ -3,6 +3,7 @@ var $ = window.$;
 var d3 = window.d3;
 
 var DESKTOP_BREAKPOINT = 1134;
+var NAV_WIDTH = 280;
 
 var NAV_ID = 'RoadmapNav';
 var CHART_ID = 'RoadmapChart';
@@ -653,6 +654,7 @@ Roadmap.prototype.setNav = function() {
     var navBase = Utils.createDiv(null, [ CSS_CLASS.NAV_BASE ]);
     var navBaseCtx = Utils.createDiv(NAV_ID, [ 'roadmapNav-b' ]);
     $(Utils.parseId(self.targetId)).append(navBase.append(navBaseCtx));
+    navBase.width(NAV_WIDTH);
   };
 
   var setNavList = function(task) {
@@ -687,7 +689,7 @@ Roadmap.prototype.prepareChart = function() {
     var chart = Utils.createDiv(null, [ CSS_CLASS.CHART ]);
     var chartBase = Utils.createDiv(CHART_ID, [ CSS_CLASS.CHART_BASE ]);
     $(Utils.parseId(self.targetId)).append(chart.append(chartBase));
-    self.svg.width = chartBase.width();
+    self.svg.width = window.screen.width - NAV_WIDTH;
   };
 
   var setSvg = function() {
@@ -896,6 +898,7 @@ Roadmap.prototype.updateSvgHeight = function() {
   var self = this;
   var headerheight =  $('header').height();
   self.svg.height = window.screen.height - 180;
+  self.svg.width = window.screen.width - NAV_WIDTH;
 };
 
 Roadmap.prototype.defineBoxPattern = function(data) {
