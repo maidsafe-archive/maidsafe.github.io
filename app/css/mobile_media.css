@@ -320,7 +320,7 @@
 
   /* Roadmap */
   .roadmap {
-    display: flex;
+    /*display: flex;*/
     height: auto;
   }
   .roadmapBreadcrumb {

@@ -3,7 +3,7 @@ var $ = window.$;
 var d3 = window.d3;
 
 var DESKTOP_BREAKPOINT = 1134;
-var NAV_WIDTH = 280;
+var NAV_WIDTH = $(window).width() * 20 / 100;
 
 var NAV_ID = 'RoadmapNav';
 var CHART_ID = 'RoadmapChart';
@@ -622,9 +622,16 @@ Roadmap.prototype.init = function() {
     self.drawChart(hash);
     self.updateNav(hash);
   });
-  $(window).resize(function() {
-    window.location.reload();
-    window.location.href = window.location.href;
+  // $(window).resize(function() {
+  //   window.location.reload();
+  //   window.location.href = window.location.href;
+  // });
+  $(window).bind('resize', function(e) {
+    if (window.RT) clearTimeout(window.RT);
+    window.RT = setTimeout(function()
+    {
+      this.location.reload(false); /* false to get page from cache */
+    }, 200);
   });
 };
 
@@ -668,7 +675,7 @@ Roadmap.prototype.setNav = function() {
     var navBaseCtx = Utils.createDiv(NAV_ID, [ 'roadmapNav-b' ]);
     $(Utils.parseId(self.targetId)).append(navBase.append(navBaseCtx));
     if (Utils.isDesktopScreen()) {
-      navBase.width(NAV_WIDTH);
+      // navBase.width(NAV_WIDTH);
       navBase.css('min-height', self.svg.height)
     }
   };
@@ -733,7 +740,7 @@ Roadmap.prototype.prepareChart = function() {
     var chart = Utils.createDiv(null, [ CSS_CLASS.CHART ]);
     var chartBase = Utils.createDiv(CHART_ID, [ CSS_CLASS.CHART_BASE ]);
     $(Utils.parseId(self.targetId)).append(chart.append(chartBase));
-    self.svg.width = $(window).width() - NAV_WIDTH - 2;
+    self.svg.width = $(window).width() - NAV_WIDTH - 1;
   };
 
   var setSvg = function() {
@@ -1735,7 +1742,6 @@ Roadmap.prototype.addFeatures = function(activeTask) {
 Roadmap.prototype.setMobileView = function() {
   var mobileChart = Utils.createDiv(MOBILE_CHART_ID, [ 'roadmapChartMobile-b' ]);
   $(Utils.parseId(CHART_ID)).append(mobileChart);
-  $(mobileChart).width($(window).width() - NAV_WIDTH - 2);
 };
 
 Roadmap.prototype.resetMobileView = function() {

@@ -1,9 +1,10 @@
 .roadmap {
   position: relative;
   overflow: hidden;
-  /*display: flex;*/
+  display: block;
 }
 .roadmapChart {
+  width: 80%;
   padding: 0 !important;
 }
 .roadmapChart-h {
@@ -135,7 +136,7 @@
 }
 
 .roadmap .roadmapNav {
-  width: 280px;
+  width: 20%;
   padding: 0;
   font-family: 'Open sans';
   font-size: 14px;
@@ -218,7 +219,7 @@
 }
 
 .roadmap .roadmapChart {
-  flex: 1;
+  width: 80%;
   padding: 0 0 0 5px;
   float: left;
   height: 100%;

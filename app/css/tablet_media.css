@@ -276,13 +276,17 @@
 
   /* Roadmap */
   .roadmap {
-    display: flex;
+    /*display: flex;*/
     height: auto;
     min-height: 600px;
   }
   .roadmap .roadmapNav {
+    width: 30%;
     height: 100%;
     min-height: inherit;
+  }
+  .roadmap .roadmapChart {
+    width: 70%;
   }
  .roadmapBreadcrumb .breadcrumb-i {
     padding-bottom: 8px;
