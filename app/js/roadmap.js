@@ -1254,6 +1254,12 @@ Roadmap.prototype.drawBoxes = function() {
       if (d.status === 2) {
         return 'url(' + Utils.parseId(TASK_STATUS.PLANNED.id) + ')';
       }
+    })
+    .attr('opacity', function(d) {
+      if (d.id.indexOf(MVP_ID) !== -1) {
+        return 0;
+      }
+      return 1;
     });
 
   // text
