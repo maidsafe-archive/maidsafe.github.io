@@ -1663,11 +1663,11 @@ var jsonData = {
         "inProgress": 33,
         "planned": 25,
         "target": [
-          "END"
+          "MVP_2"
         ],
         "order": 7,
-        "section": 3,
-        "status": 2,
+        "section": 1,
+        "status": 0,
         "startDate": "2016-1-1",
         "children": [
         {
@@ -1683,7 +1683,7 @@ var jsonData = {
           ],
           "order": 1,
           "section": 1,
-          "status": 2,
+          "status": 1,
           "startDate": "2016-1-1",
           "children": []
         },
@@ -1700,7 +1700,7 @@ var jsonData = {
           ],
           "order": 2,
           "section": 2,
-          "status": 2,
+          "status": 1,
           "startDate": "2016-1-1",
           "children": []
         },
@@ -1713,11 +1713,11 @@ var jsonData = {
           "inProgress": 33,
           "planned": 25,
           "target": [
-            "MSG"
+            "END"
           ],
           "order": 3,
           "section": 3,
-          "status": 2,
+          "status": 1,
           "startDate": "2016-1-1",
           "children": []
         },
@@ -1730,9 +1730,9 @@ var jsonData = {
           "inProgress": 33,
           "planned": 25,
           "target": [
-            "CROSS_MODULE_FEATURES"
+            "END"
           ],
-          "order": 4,
+          "order": 2,
           "section": 4,
           "status": 2,
           "startDate": "2016-1-1",
@@ -1749,8 +1749,8 @@ var jsonData = {
           "target": [
             "END"
           ],
-          "order": 5,
-          "section": 5,
+          "order": 3,
+          "section": 4,
           "status": 2,
           "startDate": "2016-1-1",
           "children": []
