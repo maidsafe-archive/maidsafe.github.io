@@ -681,7 +681,7 @@ Roadmap.prototype.setNav = function() {
   };
 
   var setNavList = function(task) {
-    if (task.isExcluded() || task.id === MVP_ID) {
+    if (task.isExcluded() || task.id.indexOf(MVP_ID) !== -1) {
       return;
     }
     var parentNavList = !task.parent ? $(Utils.parseId(NAV_ID)) : $(Utils.parseId(task.parent.nav.id));
@@ -1143,7 +1143,7 @@ Roadmap.prototype.drawBoxes = function() {
 
   var boxBase = box.append('g')
   .attr('class', function(d) {
-    if (d.id === MVP_ID) {
+    if (d.id.indexOf(MVP_ID) !== -1) {
       return 'boxBase mvp';
     }
     return 'boxBase ' + ('svg-' + d.color);
@@ -1154,7 +1154,7 @@ Roadmap.prototype.drawBoxes = function() {
 
   boxBase.each(function(d) {
     var boxGrp = d3.select(this);
-    if (d.id === MVP_ID) {
+    if (d.id.indexOf(MVP_ID) !== -1) {
       var boxExtend = 5;
       boxGrp.append('path')
       .datum([ { x: d.box.x, y: d.box.y + (self.box.height / 2) },
@@ -1221,7 +1221,7 @@ Roadmap.prototype.drawBoxes = function() {
     if (d.status === 2) {
       return 0.8;
     }
-    if (d.id === MVP_ID) {
+    if (d.id.indexOf(MVP_ID) !== -1) {
       return 0;
     }
     return 1;
@@ -1230,7 +1230,7 @@ Roadmap.prototype.drawBoxes = function() {
   // status
   boxBase.append('rect')
     .attr('x', function(d) {
-      if (d.id === MVP_ID) {
+      if (d.id.indexOf(MVP_ID) !== -1) {
         return d.box.x + (self.box.height * 6) + 16;
       }
       return d.box.statusX;
@@ -1242,7 +1242,7 @@ Roadmap.prototype.drawBoxes = function() {
     .attr('height', self.box.height)
     .attr('class', 'statusBox')
     .style('fill', function(d) {
-      if (d.id === MVP_ID) {
+      if (d.id.indexOf(MVP_ID) !== -1) {
         return 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')';
       }
       if (d.status === 0) {
@@ -1259,13 +1259,13 @@ Roadmap.prototype.drawBoxes = function() {
   // text
   boxBase.append('text')
   .text(function(d) {
-    if (d.id === MVP_ID) {
+    if (d.id.indexOf(MVP_ID) !== -1) {
       return d.name;
     }
     return Utils.truncateBoxText(d.box);
   })
   .attr('x', function(d) {
-    if (d.id === MVP_ID) {
+    if (d.id.indexOf(MVP_ID) !== -1) {
       return d.box.x + self.box.height + 16;
     }
     return ((self.box.height / 2) + d.box.x);
@@ -1275,7 +1275,7 @@ Roadmap.prototype.drawBoxes = function() {
   })
   .attr('class', 'taskText')
   .style('fill', function(d) {
-    if (d.id === MVP_ID) {
+    if (d.id.indexOf(MVP_ID) !== -1) {
       return '#000000';
     }
     return '';
@@ -1711,7 +1711,7 @@ Roadmap.prototype.addFeatures = function(activeTask) {
   };
 
   d3.map(roadmapTasks, function(task) {
-    if (!task.parent || task.id === MVP_ID) {
+    if (!task.parent || task.id.indexOf(MVP_ID) !== -1) {
       return;
     }
     if ((task.parent.id === activeTask.id) && task.isExternal()) {
