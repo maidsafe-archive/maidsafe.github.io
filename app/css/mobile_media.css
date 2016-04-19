@@ -320,6 +320,7 @@
 
   /* Roadmap */
   .roadmap {
+    display: flex;
     height: auto;
   }
   .roadmapBreadcrumb {
@@ -339,6 +340,7 @@
     left: -100% !important;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 98;
+    overflow: hidden;
   }
   .roadmap .roadmapNav.open {
      left: 0 !important;
@@ -346,6 +348,7 @@
   .roadmap .roadmapNav .roadmapNav-b {
     width: 80%;
     padding-top: 70px;
+    overflow: auto;
   }
   .roadmap .roadmapChart {
     width: 100%;

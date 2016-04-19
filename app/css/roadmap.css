@@ -1,7 +1,7 @@
 .roadmap {
   position: relative;
   overflow: hidden;
-  display: flex;
+  /*display: flex;*/
 }
 .roadmapChart {
   padding: 0 !important;

@@ -436,6 +436,7 @@ TaskNav.prototype.mouseClick = function(target, setHash) {
   if (setHash) {
     Utils.setLocationHash(self.taskId);
   }
+  $(window).scrollTop(0);
 };
 
 /**
@@ -621,8 +622,9 @@ Roadmap.prototype.init = function() {
     self.drawChart(hash);
     self.updateNav(hash);
   });
-  $(window).on('resize', function() {
+  $(window).resize(function() {
     window.location.reload();
+    window.location.href = window.location.href;
   });
 };
 
@@ -665,7 +667,10 @@ Roadmap.prototype.setNav = function() {
     var navBase = Utils.createDiv(null, [ CSS_CLASS.NAV_BASE ]);
     var navBaseCtx = Utils.createDiv(NAV_ID, [ 'roadmapNav-b' ]);
     $(Utils.parseId(self.targetId)).append(navBase.append(navBaseCtx));
-    navBase.width(NAV_WIDTH);
+    if (Utils.isDesktopScreen()) {
+      navBase.width(NAV_WIDTH);
+      navBase.css('min-height', self.svg.height)
+    }
   };
 
   var setNavList = function(task) {
@@ -696,15 +701,43 @@ Roadmap.prototype.setNav = function() {
 
 Roadmap.prototype.prepareChart = function() {
   var self = this;
+  // var container = null;
+  // function zoomed() {
+  //   container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+  // }
+  //
+  // function dragstarted(d) {
+  //   d3.event.sourceEvent.stopPropagation();
+  //   d3.select(this).classed("dragging", true);
+  // }
+  //
+  // function dragged(d) {
+  //   d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
+  // }
+  //
+  // function dragended(d) {
+  //   d3.select(this).classed("dragging", false);
+  // }
+  //
+  // var zoom = d3.behavior.zoom()
+  //   .scaleExtent([1, 10])
+  //   .on("zoom", zoomed);
+  //
+  // var drag = d3.behavior.drag()
+  //   .origin(function(d) { return d; })
+  //   .on("dragstart", dragstarted)
+  //   .on("drag", dragged)
+  //   .on("dragend", dragended);
+
   var setChartBase = function() {
     var chart = Utils.createDiv(null, [ CSS_CLASS.CHART ]);
     var chartBase = Utils.createDiv(CHART_ID, [ CSS_CLASS.CHART_BASE ]);
     $(Utils.parseId(self.targetId)).append(chart.append(chartBase));
-    self.svg.width = window.screen.width - NAV_WIDTH;
+    self.svg.width = $(window).width() - NAV_WIDTH - 2;
   };
 
   var setSvg = function() {
-    d3.selectAll(Utils.parseId(CHART_ID))
+    container = d3.selectAll(Utils.parseId(CHART_ID))
       .append('svg')
       .attr('id', SVG_ID)
       .attr('width', self.svg.width)
@@ -712,7 +745,9 @@ Roadmap.prototype.prepareChart = function() {
       .attr('class', 'roadmapSvg')
       .append('g')
       .attr('id', SVG_BOX_GRP_ID)
-      .attr('transform', 'translate(' + self.svg.padding + ', ' + self.svg.padding + ')');
+      .attr('transform', 'translate(' + self.svg.padding + ', ' + self.svg.padding + ')')
+      // .call(zoom);
+
   };
 
   var defineTaskStatus = function() {
@@ -909,7 +944,7 @@ Roadmap.prototype.updateSvgDimensions = function() {
   var self = this;
   var headerheight =  $('header').height();
   self.svg.height = window.screen.height - 180;
-  self.svg.width = window.screen.width - NAV_WIDTH;
+  self.svg.width = $(window).width() - NAV_WIDTH - 2;
 };
 
 Roadmap.prototype.defineBoxPattern = function(data) {
@@ -1102,7 +1137,6 @@ Roadmap.prototype.drawBoxes = function() {
   var boxBase = box.append('g')
   .attr('class', function(d) {
     if (d.id === MVP_ID) {
-      console.log(d);
       return 'boxBase mvp';
     }
     return 'boxBase ' + ('svg-' + d.color);
@@ -1674,7 +1708,7 @@ Roadmap.prototype.addFeatures = function(activeTask) {
   };
 
   d3.map(roadmapTasks, function(task) {
-    if (!task.parent) {
+    if (!task.parent || task.id === MVP_ID) {
       return;
     }
     if ((task.parent.id === activeTask.id) && task.isExternal()) {
@@ -1701,6 +1735,7 @@ Roadmap.prototype.addFeatures = function(activeTask) {
 Roadmap.prototype.setMobileView = function() {
   var mobileChart = Utils.createDiv(MOBILE_CHART_ID, [ 'roadmapChartMobile-b' ]);
   $(Utils.parseId(CHART_ID)).append(mobileChart);
+  $(mobileChart).width($(window).width() - NAV_WIDTH - 2);
 };
 
 Roadmap.prototype.resetMobileView = function() {

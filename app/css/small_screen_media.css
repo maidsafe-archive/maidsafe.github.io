@@ -276,11 +276,11 @@
   /* #Post 3 */
   /* Roadmap */
   .roadmap {
+    display: flex;
     height: auto;
     min-height: 600px;
   }
   .roadmap .roadmapNav {
-    width: 300px;
     height: 100%;
     min-height: inherit;
   }
@@ -337,8 +337,5 @@
     font-size: 19px;
     color: #282828;
     font-weight: 600;
-  }
-  .listTitle {
-    width: 80%;
   }
 }
