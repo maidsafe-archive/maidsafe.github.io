@@ -253,19 +253,11 @@
   stroke-width: 2px;
 }
 
-.mvp .box {
+.mvp .mvpbox {
   fill: #ffdd50;
   stroke: #ffb92c;
-  -webkit-transform: rotate(45deg);
-   -moz-transform: rotate(45deg);
-   -ms-transform: rotate(45deg);
-   transform: rotate(45deg);
-   -webkit-transform-origin: center center 0px;
-   -moz-transform-origin: center center 0px;
-   -ms-transform-origin: center center 0px;
-   transform-origin: center center 0px;
 }
-.mvp:hover .box {
+.mvp:hover .mvpbox {
   stroke-width: 3px !important;
 }
 .mvp:hover text {
