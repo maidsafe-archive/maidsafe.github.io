@@ -1155,11 +1155,12 @@ Roadmap.prototype.drawBoxes = function() {
   boxBase.each(function(d) {
     var boxGrp = d3.select(this);
     if (d.id === MVP_ID) {
+      var boxExtend = 5;
       boxGrp.append('path')
       .datum([ { x: d.box.x, y: d.box.y + (self.box.height / 2) },
-        { x: d.box.x + (self.box.height / 2), y: d.box.y },
-        { x: d.box.x + self.box.height, y: d.box.y + (self.box.height / 2) },
-        { x: d.box.x + (self.box.height / 2), y: d.box.y + self.box.height },
+        { x: d.box.x + boxExtend + (self.box.height / 2), y: d.box.y - boxExtend },
+        { x: d.box.x + self.box.height + (boxExtend * 2), y: d.box.y + (self.box.height / 2) },
+        { x: d.box.x + boxExtend + (self.box.height / 2), y: d.box.y + self.box.height + boxExtend},
         { x: d.box.x, y: d.box.y + (self.box.height / 2) } ])
       .attr('d', line)
       .attr('class', 'mvpbox')
@@ -1230,7 +1231,7 @@ Roadmap.prototype.drawBoxes = function() {
   boxBase.append('rect')
     .attr('x', function(d) {
       if (d.id === MVP_ID) {
-        return d.box.x + (self.box.height * 3);
+        return d.box.x + (self.box.height * 6) + 16;
       }
       return d.box.statusX;
     })
@@ -1265,7 +1266,7 @@ Roadmap.prototype.drawBoxes = function() {
   })
   .attr('x', function(d) {
     if (d.id === MVP_ID) {
-      return d.box.x + self.box.height + 8;
+      return d.box.x + self.box.height + 16;
     }
     return ((self.box.height / 2) + d.box.x);
   })
@@ -1558,7 +1559,6 @@ Roadmap.prototype.prepareConnections = function() {
       }
       createConnection(upperTask.id, start, interStart, interEnd, end, upperTask.color);
     });
-
     // draw lower tasks
     d3.map(splitTasks.lowerTasks, function(lowerTask, index) {
       var start = { x: 0, y: 0 };
@@ -1573,7 +1573,6 @@ Roadmap.prototype.prepareConnections = function() {
       } else {
         incSecCount(task);
         start.x = task.connections[index - 1].interStart.x;
-        console.log(task.connections[index - 1].interStart.y, index - splitTasks.upperTasks.length)
         start.y = task.connections[index - 1].interStart.y + ((index - splitTasks.upperTasks.length) * (self.box.height));
       }
 
@@ -1593,7 +1592,7 @@ Roadmap.prototype.prepareConnections = function() {
         start.x = task.box.x + task.box.width;
         start.y = task.box.y + (self.box.height / 2);
         var baseWidth = (self.svg.width - (self.svg.padding * 2));
-        interStart.x = start.x + self.sectionCurrentIncomingCounts[incomingCountIndex] * (self.getPerUnit() / 2);
+        interStart.x = start.x + (self.sectionCurrentIncomingCounts[incomingCountIndex] || 1) * (self.getPerUnit() / 2);
         if (interStart.x > baseWidth) {
           interStart.x =  start.x + 8;
         }

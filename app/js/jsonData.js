@@ -36,9 +36,9 @@ var jsonData = {
           "id": "CORE_NETWORK",
           "color": "pink-2",
           "desc": "Network Functionallity desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
           "target": [
             "MVP"
           ],
@@ -50,11 +50,11 @@ var jsonData = {
               {
                 "name": "TCP & uTP with UDP hole punching",
                 "id": "TCP_AND_UTP_WITH_UDP_HOLE_PUNCHING",
-                "color": "moss-4",
+                "color": "pink-3",
                 "desc": "TCP & uTP with UDP hole punching desc",
-                "daysCompleted": 42,
-                "inProgress": 33,
-                "planned": 25,
+                "daysCompleted": 100,
+                "inProgress": 0,
+                "planned": 0,
                 "target": [
                   "SELF_AUTHENTICATION"
                 ],
@@ -67,11 +67,11 @@ var jsonData = {
               {
                 "name": "Self Authentication",
                 "id": "SELF_AUTHENTICATION",
-                "color": "moss-4",
+                "color": "pink-3",
                 "desc": "Self Authentication desc",
-                "daysCompleted": 42,
-                "inProgress": 33,
-                "planned": 25,
+                "daysCompleted": 100,
+                "inProgress": 0,
+                "planned": 0,
                 "target": [
                   "NFS_STORAGE"
                 ],
@@ -84,11 +84,11 @@ var jsonData = {
               {
                 "name": "NFS - Storage",
                 "id": "NFS_STORAGE",
-                "color": "moss-4",
+                "color": "pink-3",
                 "desc": "NFS - Storage desc",
-                "daysCompleted": 42,
-                "inProgress": 33,
-                "planned": 25,
+                "daysCompleted": 100,
+                "inProgress": 0,
+                "planned": 0,
                 "target": [
                   "DNS_CREATE_MANAGE"
                 ],
@@ -101,11 +101,11 @@ var jsonData = {
               {
                 "name": "DNS - Create/Manage DNS Records and Services",
                 "id": "DNS_CREATE_MANAGE",
-                "color": "moss-4",
+                "color": "pink-3",
                 "desc": "NFS - Storage desc",
-                "daysCompleted": 42,
-                "inProgress": 33,
-                "planned": 25,
+                "daysCompleted": 100,
+                "inProgress": 0,
+                "planned": 0,
                 "target": [
                   "END"
                 ],
@@ -156,9 +156,9 @@ var jsonData = {
           "id": "VAULT_CONFIG",
           "color": "blue-2",
           "desc": "User configuration options for vaults",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
           "target": [
             "MVP"
           ],
@@ -170,11 +170,11 @@ var jsonData = {
             {
               "name": "Max Capacity",
               "id": "MAX_CAPACITY",
-              "color": "pink-3",
+              "color": "blue-3",
               "desc": "",
-              "daysCompleted": 42,
-              "inProgress": 33,
-              "planned": 25,
+              "daysCompleted": 100,
+              "inProgress": 0,
+              "planned": 0,
               "target": [
                 "END"
               ],
@@ -186,11 +186,11 @@ var jsonData = {
             }, {
               "name": "Wallet Address",
               "id": "WALLET_ADDRESS",
-              "color": "pink-3",
+              "color": "blue-3",
               "desc": "",
-              "daysCompleted": 42,
-              "inProgress": 33,
-              "planned": 25,
+              "daysCompleted": 100,
+              "inProgress": 0,
+              "planned": 0,
               "target": [
                 "END"
               ],
@@ -205,11 +205,11 @@ var jsonData = {
         {
           "name": "Desktop Installers",
           "id": "INSTALLERS",
-          "color": "moss-3",
+          "color": "cyan-2",
           "desc": "Installers desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
           "target": [
             "MVP"
           ],
@@ -221,11 +221,11 @@ var jsonData = {
             {
               "name": "OS X",
               "id": "OSX",
-              "color": "moss-4",
+              "color": "cyan-3",
               "desc": "",
-              "daysCompleted": 42,
-              "inProgress": 33,
-              "planned": 25,
+              "daysCompleted": 100,
+              "inProgress": 0,
+              "planned": 0,
               "target": [
                 "END"
               ],
@@ -237,11 +237,11 @@ var jsonData = {
             }, {
               "name": "Windows",
               "id": "WINDOWS",
-              "color": "moss-4",
+              "color": "cyan-3",
               "desc": "",
-              "daysCompleted": 42,
-              "inProgress": 33,
-              "planned": 25,
+              "daysCompleted": 100,
+              "inProgress": 0,
+              "planned": 0,
               "target": [
                 "END"
               ],
@@ -253,11 +253,11 @@ var jsonData = {
             }, {
               "name": "Linux",
               "id": "LINUX",
-              "color": "moss-4",
+              "color": "cyan-3",
               "desc": "",
-              "daysCompleted": 42,
-              "inProgress": 33,
-              "planned": 25,
+              "daysCompleted": 100,
+              "inProgress": 0,
+              "planned": 0,
               "target": [
                 "END"
               ],
@@ -272,7 +272,7 @@ var jsonData = {
         {
           "name": "Test remote network",
           "id": "TEST_MINIMUM_NETWORK_SIZE_OF",
-          "color": "moss-3",
+          "color": "teal-2",
           "desc": "Test remote network desc",
           "daysCompleted": 42,
           "inProgress": 33,
@@ -283,24 +283,6 @@ var jsonData = {
           "order": 7,
           "section": 1,
           "status": 0,
-          "startDate": "2016-1-1",
-          "children": []
-        },
-
-        {
-          "name": "Contact Management",
-          "id": "PUBLIC_IDENTITY_PLANNED",
-          "color": "purple-2",
-          "desc": "Public identity desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
-          "target": [
-            "END"
-          ],
-          "order": 11,
-          "section": 4,
-          "status": 2,
           "startDate": "2016-1-1",
           "children": []
         },
@@ -322,192 +304,242 @@ var jsonData = {
           "children": []
         },
         {
-          "name": "Messaging",
-          "id": "MESSAGING",
-          "color": "navy-2",
-          "desc": "Messaging desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
+          "name": "Contact Management",
+          "id": "NETWORK_CONTACT_MANAGEMENT",
+          "color": "green-2",
+          "desc": "Public identity desc",
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
           "target": [
             "END"
           ],
-          "order": 3,
-          "section": 4,
-          "status": 2,
-          "startDate": "2016-1-1",
-          "children": [{
-            "name": "RFC",
-            "id": "RFC",
-            "color": "navy-3",
-            "desc": "RFC desc",
-            "daysCompleted": 42,
-            "inProgress": 33,
-            "planned": 25,
-            "target": [
-              "SYSTEM_LEVEL_MESSAGING_FOR_SAFECOIN"
-            ],
-            "order": 1,
-            "section": 1,
-            "status": 0,
-            "startDate": "2016-1-1",
-            "children": []
-          }, {
-            "name": "System Level Messaging for Safecoin",
-            "id": "SYSTEM_LEVEL_MESSAGING_FOR_SAFECOIN",
-            "color": "navy-3",
-            "desc": "System Level Messaging for Safecoin desc",
-            "daysCompleted": 42,
-            "inProgress": 33,
-            "planned": 25,
-            "target": [
-              "END"
-            ],
-            "order": 2,
-            "section": 2,
-            "status": 0,
-            "startDate": "2016-1-1",
-            "children": []
-          }]
-        },
-        {
-          "name": "Safecoin",
-          "id": "SAFECOIN",
-          "color": "blue-2",
-          "desc": "Safecoin desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
-          "target": [
-            "END"
-          ],
-          "order": 8,
-          "section": 4,
-          "status": 2,
-          "startDate": "2016-1-1",
-          "children": [{
-            "name": "DOWN_STREAM",
-            "id": "DW_SAFECOIN_WALLET_ADDRESS",
-            "source": "SAFECOIN_WALLET_ADDRESS",
-            "color": "navy-3",
-            "desc": "Safecoin wallet address",
-            "order": 999,
-            "section": 1,
-            "target": [
-              "VAULT_SAFECOIN_CONFIG"
-            ],
-            "startDate": "2016-1-1"
-          }, {
-            "name": "DOWN_STREAM",
-            "id": "DW_SAFECOIN_WALLET_ADDRESS",
-            "source": "SAFECOIN_WALLET_ADDRESS",
-            "color": "navy-3",
-            "desc": "Safecoin wallet address",
-            "order": 999,
-            "section": 1,
-            "target": [
-              "FARMING"
-            ],
-            "startDate": "2016-1-1"
-          }, {
-            "name": "EXTERNAL",
-            "id": "DW_MANAGE_CONTACTS",
-            "source": "MANAGE_CONTACTS",
-            "color": "purple-3",
-            "desc": "Manage contacts",
-            "order": -1,
-            "section": 1,
-            "target": [
-              "USAGE_SIMPLE_SEND_RECIEVE_TO_CONTACTS"
-            ],
-            "startDate": "2016-1-1"
-          }, {
-            "name": "Vault - Safecoin Config",
-            "id": "VAULT_SAFECOIN_CONFIG",
-            "color": "navy-3",
-            "desc": "Vault - Safecoin Config desc",
-            "daysCompleted": 42,
-            "inProgress": 33,
-            "planned": 25,
-            "target": [
-              "FARMING"
-            ],
-            "order": 1,
-            "section": 1,
-            "status": 0,
-            "startDate": "2016-1-1",
-            "children": []
-          }, {
-            "name": "Farming",
-            "id": "FARMING",
-            "color": "navy-3",
-            "desc": "Farming desc",
-            "daysCompleted": 42,
-            "inProgress": 33,
-            "planned": 25,
-            "target": [
-              "USAGE_SIMPLE_SEND_RECIEVE_TO_CONTACTS"
-            ],
-            "order": 2,
-            "section": 2,
-            "status": 0,
-            "startDate": "2016-1-1",
-            "children": []
-          }, {
-            "name": "Usage - Simple Send/Recieve to Contacts",
-            "id": "USAGE_SIMPLE_SEND_RECIEVE_TO_CONTACTS",
-            "color": "navy-3",
-            "desc": "Usage - Simple Send/Recieve to Contacts desc",
-            "daysCompleted": 42,
-            "inProgress": 33,
-            "planned": 25,
-            "target": [
-              "TRADING"
-            ],
-            "order": 3,
-            "section": 3,
-            "status": 0,
-            "startDate": "2016-1-1",
-            "children": []
-          }, {
-            "name": "Trading",
-            "id": "TRADING",
-            "color": "navy-3",
-            "desc": "Trading desc",
-            "daysCompleted": 42,
-            "inProgress": 33,
-            "planned": 25,
-            "target": [
-              "END"
-            ],
-            "order": 4,
-            "section": 4,
-            "status": 0,
-            "startDate": "2016-1-1",
-            "children": []
-          }]
-        },
-        {
-          "name": "Autonomous Updates",
-          "id": "AUTONOMOUS_UPDATES",
-          "color": "cyan-2",
-          "desc": "System Update Management desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
-          "target": [
-            "END"
-          ],
-          "order": 5,
-          "section": 4,
+          "order": 2,
+          "section": 3,
           "status": 2,
           "startDate": "2016-1-1",
           "children": []
         },
         {
+          "name": "Messaging",
+          "id": "MESSAGING",
+          "color": "tangerine-2",
+          "desc": "Messaging desc",
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
+          "target": [
+            "END"
+          ],
+          "order": 3,
+          "section": 3,
+          "status": 2,
+          "startDate": "2016-1-1",
+          "children": [
+            {
+              "name": "RFC",
+              "id": "RFC",
+              "color": "tangerine-3",
+              "desc": "RFC desc",
+              "daysCompleted": 42,
+              "inProgress": 33,
+              "planned": 25,
+              "target": [
+                "SYSTEM_LEVEL_MESSAGING_FOR_SAFECOIN"
+              ],
+              "order": 1,
+              "section": 1,
+              "status": 2,
+              "startDate": "2016-1-1",
+              "children": []
+            },
+            {
+              "name": "System Level Messaging for Safecoin",
+              "id": "SYSTEM_LEVEL_MESSAGING_FOR_SAFECOIN",
+              "color": "tangerine-3",
+              "desc": "System Level Messaging for Safecoin desc",
+              "daysCompleted": 42,
+              "inProgress": 33,
+              "planned": 25,
+              "target": [
+                "END"
+              ],
+              "order": 2,
+              "section": 2,
+              "status": 2,
+              "startDate": "2016-1-1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Safecoin",
+          "id": "SAFECOIN",
+          "color": "orange-2",
+          "desc": "Safecoin desc",
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
+          "target": [
+            "END"
+          ],
+          "order": 4,
+          "section": 3,
+          "status": 2,
+          "startDate": "2016-1-1",
+          "children": [
+            {
+              "name": "DOWN_STREAM",
+              "id": "DW_SAFECOIN_WALLET_ADDRESS_VAULT_SAFECOIN_CONFIG",
+              "source": "SAFECOIN_WALLET_ADDRESS",
+              "color": "orange-3",
+              "desc": "Safecoin wallet address",
+              "order": 999,
+              "section": 1,
+              "target": [
+                "VAULT_SAFECOIN_CONFIG"
+              ],
+              "startDate": "2016-1-1"
+            },
+            {
+              "name": "DOWN_STREAM",
+              "id": "DW_SAFECOIN_WALLET_ADDRESS",
+              "source": "SAFECOIN_WALLET_ADDRESS",
+              "color": "orange-3",
+              "desc": "Safecoin wallet address",
+              "order": 999,
+              "section": 1,
+              "target": [
+                "FARMING"
+              ],
+              "startDate": "2016-1-1"
+            },
+            {
+              "name": "Vault - Safecoin Config",
+              "id": "VAULT_SAFECOIN_CONFIG",
+              "color": "orange-3",
+              "desc": "Vault - Safecoin Config desc",
+              "daysCompleted": 42,
+              "inProgress": 33,
+              "planned": 25,
+              "target": [
+                "FARMING"
+              ],
+              "order": 1,
+              "section": 1,
+              "status": 2,
+              "startDate": "2016-1-1",
+              "children": []
+            },
+            {
+              "name": "Farming",
+              "id": "FARMING",
+              "color": "orange-3",
+              "desc": "Farming desc",
+              "daysCompleted": 42,
+              "inProgress": 33,
+              "planned": 25,
+              "target": [
+                "USAGE_SIMPLE_SEND_RECIEVE_TO_CONTACTS"
+              ],
+              "order": 2,
+              "section": 2,
+              "status": 2,
+              "startDate": "2016-1-1",
+              "children": []
+            },
+            {
+              "name": "Usage - Simple Send/Recieve to Contacts",
+              "id": "USAGE_SIMPLE_SEND_RECIEVE_TO_CONTACTS",
+              "color": "orange-3",
+              "desc": "Usage - Simple Send/Recieve to Contacts desc",
+              "daysCompleted": 42,
+              "inProgress": 33,
+              "planned": 25,
+              "target": [
+                "TRADING"
+              ],
+              "order": 3,
+              "section": 3,
+              "status": 2,
+              "startDate": "2016-1-1",
+              "children": []
+            },
+            {
+              "name": "Trading",
+              "id": "TRADING",
+              "color": "orange-3",
+              "desc": "Trading desc",
+              "daysCompleted": 42,
+              "inProgress": 33,
+              "planned": 25,
+              "target": [
+                "END"
+              ],
+              "order": 4,
+              "section": 4,
+              "status": 2,
+              "startDate": "2016-1-1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Data Management",
+          "id": "DATA_SHARING",
+          "color": "brown-2",
+          "desc": "Data Sharing desc",
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
+          "target": [
+            "END"
+          ],
+          "order": 5,
+          "section": 3,
+          "status": 2,
+          "startDate": "2016-1-1",
+          "children": [
+            {
+              "name": "Private Data",
+              "id": "PRIVATE_SHARES",
+              "color": "brown-3",
+              "desc": "Private Shares desc",
+              "daysCompleted": 42,
+              "inProgress": 33,
+              "planned": 25,
+              "target": [
+                "PUBLIC_SHARES"
+              ],
+              "order": 1,
+              "section": 1,
+              "status": 2,
+              "startDate": "2016-1-1",
+              "children": []
+            },
+            {
+              "name": "Public Data",
+              "id": "PUBLIC_SHARES",
+              "color": "brown-3",
+              "desc": "Public Shares desc",
+              "daysCompleted": 42,
+              "inProgress": 33,
+              "planned": 25,
+              "target": [
+                "END"
+              ],
+              "order": 2,
+              "section": 2,
+              "status": 2,
+              "startDate": "2016-1-1",
+              "children": []
+            }
+          ]
+        },
+        {
           "name": "Pay the Producer",
           "id": "PAY_THE_PRODUCT",
-          "color": "teal-2",
+          "color": "charcoal-2",
           "desc": "Pay the Producer desc",
           "daysCompleted": 42,
           "inProgress": 33,
@@ -515,91 +547,25 @@ var jsonData = {
           "target": [
             "END"
           ],
-          "order": 4,
-          "section": 4,
+          "order": 6,
+          "section": 3,
           "status": 2,
           "startDate": "2016-1-1",
           "children": []
-        },
-        {
-          "name": "Data Management",
-          "id": "DATA_SHARING",
-          "color": "green-2",
-          "desc": "Data Sharing desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
-          "target": [
-            "END"
-          ],
-          "order": 9,
-          "section": 4,
-          "status": 2,
-          "startDate": "2016-1-1",
-          "children": [ {
-            "name": "Private Data",
-            "id": "PRIVATE_SHARES",
-            "color": "green-3",
-            "desc": "Private Shares desc",
-            "daysCompleted": 42,
-            "inProgress": 33,
-            "planned": 25,
-            "target": [
-              "PUBLIC_SHARES"
-            ],
-            "order": 1,
-            "section": 1,
-            "status": 0,
-            "startDate": "2016-1-1",
-            "children": []
-          }, {
-            "name": "Public Data",
-            "id": "PUBLIC_SHARES",
-            "color": "green-3",
-            "desc": "Public Shares desc",
-            "daysCompleted": 42,
-            "inProgress": 33,
-            "planned": 25,
-            "target": [
-              "END"
-            ],
-            "order": 2,
-            "section": 2,
-            "status": 0,
-            "startDate": "2016-1-1",
-            "children": []
-          }]
         },
         {
           "name": "Smart Contracts",
           "id": "SMART_CONTRACT",
-          "color": "tangerine-2",
+          "color": "grey-2",
           "desc": "Smart Contracts desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
           "target": [
             "END"
           ],
-          "order": 6,
-          "section": 4,
-          "status": 2,
-          "startDate": "2016-1-1",
-          "children": []
-        },
-        {
-          "name": "Vault - Mobile",
-          "id": "VAULT_IN_MOBILE",
-          "color": "orange-2",
-          "desc": "Vault in mobile desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
-          "target": [
-            "END"
-          ],
-          "order": 2,
-          "section": 4,
+          "order": 7,
+          "section": 3,
           "status": 2,
           "startDate": "2016-1-1",
           "children": []
@@ -607,16 +573,50 @@ var jsonData = {
         {
           "name": "Vault - ARM Devices",
           "id": "VAULT_SUPPORT_EMBEDDED",
-          "color": "brown-2",
+          "color": "red-2",
           "desc": "Vault support embedded desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
+          "target": [
+            "END"
+          ],
+          "order": 8,
+          "section": 3,
+          "status": 2,
+          "startDate": "2016-1-1",
+          "children": []
+        },
+        {
+          "name": "Vault - Mobile",
+          "id": "VAULT_IN_MOBILE",
+          "color": "pink-3",
+          "desc": "Vault in mobile desc",
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
+          "target": [
+            "END"
+          ],
+          "order": 9,
+          "section": 3,
+          "status": 2,
+          "startDate": "2016-1-1",
+          "children": []
+        },
+        {
+          "name": "Autonomous Updates",
+          "id": "AUTONOMOUS_UPDATES",
+          "color": "cyan-3",
+          "desc": "System Update Management desc",
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
           "target": [
             "END"
           ],
           "order": 10,
-          "section": 4,
+          "section": 3,
           "status": 2,
           "startDate": "2016-1-1",
           "children": []
@@ -624,16 +624,16 @@ var jsonData = {
         {
           "name": "Computation Handling",
           "id": "COMPUTATION_HANDLING_IN_NETWORK",
-          "color": "charcoal-2",
+          "color": "navy-3",
           "desc": "Computation Handling in Network desc",
-          "daysCompleted": 42,
-          "inProgress": 33,
-          "planned": 25,
+          "daysCompleted": 100,
+          "inProgress": 0,
+          "planned": 0,
           "target": [
             "END"
           ],
-          "order": 7,
-          "section": 4,
+          "order": 11,
+          "section": 3,
           "status": 2,
           "startDate": "2016-1-1",
           "children": []
