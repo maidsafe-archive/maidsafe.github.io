@@ -131,7 +131,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99;
 }
 
 header.invert {
@@ -1374,7 +1374,10 @@ header.invert .secNavButton:after {
 .team-img .team-img-i img[title='Krishna'] {
   background-color: #ab9643;
 }
-.team-img .team-img-i img[title='Justine'] {
+.team-img .team-img-i img[title='Shankar'] {
+  background-color: #ab9643;
+}
+.team-img .team-img-i img[title='Andreas'] {
   background-color: #795055;
 }
 .team-img .team-img-i img[title='Ross'] {
@@ -1403,9 +1406,6 @@ header.invert .secNavButton:after {
 }
 .team-img .team-img-i img[title='Qi'] {
   background-color: #f76051;
-}
-.team-img .team-img-i img[title='Peter'] {
-  background-color: #729ec2;
 }
 /* #Team images */
 /* Box 3 */

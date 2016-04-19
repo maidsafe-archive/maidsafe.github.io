@@ -81,4 +81,7 @@
   #main-wrapper {
     position: static;
   }
+  .roadmapChartMobile-b {
+    display: none;
+  }
 }

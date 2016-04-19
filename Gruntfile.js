@@ -258,6 +258,17 @@ module.exports = function (grunt) {
             'fonts/**/*'
           ],
           dest: '<%= yeoman.dist %>/css'
+        },
+        {
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/_bower_components/easyfont-roboto-mono',
+          src: [
+            // Copy css imports from _bower_components.
+            // 'Open Sans fonts to dist/css folder'
+            'fonts/**/*'
+          ],
+          dest: '<%= yeoman.dist %>/'
         }]
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
