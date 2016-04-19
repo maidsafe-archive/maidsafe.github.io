@@ -4,9 +4,9 @@ var jsonData = {
   "id": "SAFE_NETWORK",
   "color": "grey-1",
   "desc": "SAFE Network desc",
-  "daysCompleted": 42,
-  "inProgress": 33,
-  "planned": 25,
+  "daysCompleted": 100,
+  "inProgress": 0,
+  "planned": 0,
   "target": [
     "END"
   ],
