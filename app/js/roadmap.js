@@ -4,6 +4,9 @@ var d3 = window.d3;
 
 var DESKTOP_BREAKPOINT = 1134;
 var NAV_WIDTH = $(window).width() * 20 / 100;
+var plainData = {};
+var interval = 10;
+var targetId = null;
 
 var NAV_ID = 'RoadmapNav';
 var CHART_ID = 'RoadmapChart';
@@ -134,6 +137,36 @@ var DEFAULT_START_DATE = null;
 var print = function(title, data) {
   console.log(title + ' ::');
   console.log(data);
+};
+
+var init = function(self) {
+  if (!self) {
+    self = new Roadmap({
+      payload: plainData,
+      interval: interval,
+      target: targetId
+    });
+  }
+  var windowWidth = 0;
+  $(window).on('load', function() {
+    windowWidth = $(window).width();
+  });
+
+  $(window).on('hashchange', function() {
+    var hash = Utils.getLocationHash();
+    self.drawChart(hash);
+    self.updateNav(hash);
+  });
+  $(window).bind('resize', function(e) {
+    if (windowWidth != $(window).width()) {
+      if (window.RT) clearTimeout(window.RT);
+      window.RT = setTimeout(function()
+      {
+        // this.location.reload(false); /* false to get page from cache */
+        self.draw();
+      }, 200);
+    }
+  });
 };
 
 /**
@@ -578,9 +611,9 @@ Task.prototype.isDownStream = function() {
  * Roadmap
  */
 var Roadmap = function(payload) {
-  this.plainData = payload.data;
-  this.targetId = payload.target;
-  this.interval = payload.interval;
+  this.plainData = plainData = payload.data;
+  this.targetId = targetId = payload.target;
+  this.interval = interval = payload.interval;
   this.dateFormat = d3.time.format('%Y-%m-%d');
   this.startDates = [];
   this.sectionCurrentIncomingCounts = [];
@@ -615,26 +648,6 @@ Roadmap.prototype.getPerUnit = function() {
     self.timeScale(self.dateFormat.parse(Utils.subDate(task.startDate, 1))));
 };
 
-Roadmap.prototype.init = function() {
-  var self = this;
-  $(window).on('hashchange', function() {
-    var hash = Utils.getLocationHash();
-    self.drawChart(hash);
-    self.updateNav(hash);
-  });
-  // $(window).resize(function() {
-  //   window.location.reload();
-  //   window.location.href = window.location.href;
-  // });
-  $(window).bind('resize', function(e) {
-    if (window.RT) clearTimeout(window.RT);
-    window.RT = setTimeout(function()
-    {
-      this.location.reload(false); /* false to get page from cache */
-    }, 200);
-  });
-};
-
 Roadmap.prototype.prepareTasks = function() {
   var self = this;
 
@@ -649,9 +662,9 @@ Roadmap.prototype.prepareTasks = function() {
       }
     });
   };
-
+  roadmapTasks = [];
   roadmapTasks.push(new Task(self.plainData, null, true));
-  setTask(self.plainData);
+  setTask(plainData);
   print('Task', roadmapTasks);
 };
 
@@ -708,34 +721,6 @@ Roadmap.prototype.setNav = function() {
 
 Roadmap.prototype.prepareChart = function() {
   var self = this;
-  // var container = null;
-  // function zoomed() {
-  //   container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-  // }
-  //
-  // function dragstarted(d) {
-  //   d3.event.sourceEvent.stopPropagation();
-  //   d3.select(this).classed("dragging", true);
-  // }
-  //
-  // function dragged(d) {
-  //   d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
-  // }
-  //
-  // function dragended(d) {
-  //   d3.select(this).classed("dragging", false);
-  // }
-  //
-  // var zoom = d3.behavior.zoom()
-  //   .scaleExtent([1, 10])
-  //   .on("zoom", zoomed);
-  //
-  // var drag = d3.behavior.drag()
-  //   .origin(function(d) { return d; })
-  //   .on("dragstart", dragstarted)
-  //   .on("drag", dragged)
-  //   .on("dragend", dragended);
-
   var setChartBase = function() {
     var chart = Utils.createDiv(null, [ CSS_CLASS.CHART ]);
     var chartBase = Utils.createDiv(CHART_ID, [ CSS_CLASS.CHART_BASE ]);
@@ -1702,7 +1687,7 @@ Roadmap.prototype.addFeatures = function(activeTask) {
       var color = task.color;
       if (item.type !== TASK_FEATURE_TYPE.SUB_FEATURES) {
         var sourceTask = Utils.getTask(task.source);
-        name = sourceTask.name || task.source;
+        name = sourceTask && sourceTask.name ? sourceTask.name : task.source.replace(/_/g, ' ');
       }
       if (item.type === TASK_FEATURE_TYPE.RELY_THIS_FEATURES) {
         var sourceTask = Utils.getTask(task.source);
@@ -1737,6 +1722,7 @@ Roadmap.prototype.addFeatures = function(activeTask) {
     addList('Features relied on:', features.reliedOn, RELIED_ON_FEATURES_ID);
   }
   if (features.relyThis.length > 0) {
+    console.log(features.relyThis)
     addList('Features relying on this:', features.relyThis, RELY_THIS_FEATURES_ID);
   }
 };
@@ -1759,8 +1745,8 @@ Roadmap.prototype.drawMobileChart = function(task) {
 
 Roadmap.prototype.draw = function() {
   var self = this;
-  DEFAULT_START_DATE = self.plainData.startDate;
-  self.init();
+  init(self);
+  $(Utils.parseId(self.targetId)).empty();
   self.prepareTasks();
   self.setNav();
   self.drawChart();
@@ -1768,16 +1754,11 @@ Roadmap.prototype.draw = function() {
 };
 
 $(function() {
-  // $.get('data/roadmapData.json', function(data) {
-  //   new Roadmap({
-  //     data: data,
-  //     target: '#Roadmap',
-  //     interval: 10
-  //   }).draw();
-  // });
-  new Roadmap({
-    data: jsonData,
-    target: '#Roadmap',
-    interval: 10
-  }).draw();
+  $.get('data/roadmapData.json', function(data) {
+    new Roadmap({
+      data: data,
+      target: '#Roadmap',
+      interval: 10
+    }).draw();
+  });
 });
