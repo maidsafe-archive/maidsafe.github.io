@@ -718,7 +718,7 @@
                         },
                         {
                             "name": "Messaging",
-                            "id": "MSG",
+                            "id": "DEV_MSG",
                             "color": "purple-3",
                             "desc": "Launcher Api Access (restricted to anonymous actions) desc",
                             "daysCompleted": 100,
@@ -770,7 +770,7 @@
                     "children": [
                         {
                             "name": "Authorisation Approval",
-                            "id": "AUTH_API",
+                            "id": "AUTH_APPROVAL",
                             "color": "navy-3",
                             "desc": "Launcher Api Access (restricted to anonymous actions) desc",
                             "daysCompleted": 100,
@@ -822,7 +822,7 @@
                     "children": [
                         {
                             "name": "Route .safenet TLD",
-                            "id": "AUTH_API",
+                            "id": "ROUTE_SAFENET",
                             "color": "blue-3",
                             "desc": "Launcher Api Access (restricted to anonymous actions) desc",
                             "daysCompleted": 100,
