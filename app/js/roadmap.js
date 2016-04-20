@@ -4,6 +4,9 @@ var d3 = window.d3;
 
 var DESKTOP_BREAKPOINT = 1134;
 var NAV_WIDTH = $(window).width() * 20 / 100;
+var plainData = {};
+var interval = 10;
+var targetId = null;
 
 var NAV_ID = 'RoadmapNav';
 var CHART_ID = 'RoadmapChart';
@@ -75,12 +78,20 @@ var TASK_STATUS = {
   },
   PLANNED: {
     id: 'STATUS_PLANNED',
-    path: 'M14.7,5.1H7.9C7,5.1,6.3,5.9,6.3,6.8v1.4h2.3c1.5,0,2.7,1.2,2.7,2.7v1.3h3.4c0.9,0,1.6-0.7,1.6-1.6V6.8C16.3,5.9,15.6,5.1,14.7,5.1zM8.7,10.1H6c-0.4,0-0.7,0.3-0.7,0.7v1c0.8,0,1.4,0.6,1.4,1.4h2c0.4,0,0.7-0.3,0.7-0.7v-1.7C9.3,10.4,9,10.1,8.7,10.1zM5.3,12.9H4.1c-0.2,0-0.4,0.2-0.4,0.4v1.2c0,0.2,0.2,0.4,0.4,0.4h1.2c0.2,0,0.4-0.2,0.4-0.4v-1.2C5.7,12.9,5.5,12.9,5.3,12.9z',
+    path: 'M14.7,5.1H7.9C7,5.1,6.3,5.9,6.3,6.8v1.4h2.3c1.5,0,2.7,1.2,2.7,2.7v1.3' +
+    'h3.4c0.9,0,1.6-0.7,1.6-1.6V6.8C16.3,5.9,15.6,5.1,14.7,5.1zM8.7,10.1H6' +
+    'c-0.4,0-0.7,0.3-0.7,0.7v1c0.8,0,1.4,0.6,1.4,1.4h2c0.4,0,0.7-0.3,0.7-0.7v-1.7' +
+    'C9.3,10.4,9,10.1,8.7,10.1zM5.3,12.9H4.1c-0.2,0-0.4,0.2-0.4,0.4v1.2' +
+    'c0,0.2,0.2,0.4,0.4,0.4h1.2c0.2,0,0.4-0.2,0.4-0.4v-1.2C5.7,12.9,5.5,12.9,5.3,12.9z',
     color: '#FFFFFF'
   },
   PLANNED_DARK: {
     id: 'STATUS_PLANNED_DARK',
-    path: 'M14.7,5.1H7.9C7,5.1,6.3,5.9,6.3,6.8v1.4h2.3c1.5,0,2.7,1.2,2.7,2.7v1.3h3.4c0.9,0,1.6-0.7,1.6-1.6V6.8C16.3,5.9,15.6,5.1,14.7,5.1zM8.7,10.1H6c-0.4,0-0.7,0.3-0.7,0.7v1c0.8,0,1.4,0.6,1.4,1.4h2c0.4,0,0.7-0.3,0.7-0.7v-1.7C9.3,10.4,9,10.1,8.7,10.1zM5.3,12.9H4.1c-0.2,0-0.4,0.2-0.4,0.4v1.2c0,0.2,0.2,0.4,0.4,0.4h1.2c0.2,0,0.4-0.2,0.4-0.4v-1.2C5.7,12.9,5.5,12.9,5.3,12.9z',
+    path: 'M14.7,5.1H7.9C7,5.1,6.3,5.9,6.3,6.8v1.4h2.3c1.5,0,2.7,1.2,2.7,2.7v1.3' +
+    'h3.4c0.9,0,1.6-0.7,1.6-1.6V6.8C16.3,5.9,15.6,5.1,14.7,5.1zM8.7,10.1H6' +
+    'c-0.4,0-0.7,0.3-0.7,0.7v1c0.8,0,1.4,0.6,1.4,1.4h2c0.4,0,0.7-0.3,0.7-0.7v-1.7' +
+    'C9.3,10.4,9,10.1,8.7,10.1zM5.3,12.9H4.1c-0.2,0-0.4,0.2-0.4,0.4v1.2' +
+    'c0,0.2,0.2,0.4,0.4,0.4h1.2c0.2,0,0.4-0.2,0.4-0.4v-1.2C5.7,12.9,5.5,12.9,5.3,12.9z',
     color: '#000000'
   }
 };
@@ -130,7 +141,9 @@ var CSS_CLASS = {
 };
 
 var roadmapTasks = [];
+var Roadmap = null;
 var DEFAULT_START_DATE = null;
+
 var print = function(title, data) {
   console.log(title + ' ::');
   console.log(data);
@@ -301,9 +314,10 @@ Utils.getMarkerArrowLevel = function(color, isLevelup) {
 };
 
 Utils.resetStartDate = function() {
-  d3.map(roadmapTasks, function(task) {
-    roadmapTasks[i].startDate = Utils.parseDate(DEFAULT_START_DATE);
-    roadmapTasks[i].endDate = roadmapTasks[i].startDate;
+  d3.map(roadmapTasks, function(task, i) {
+    task.startDate = Utils.parseDate(DEFAULT_START_DATE);
+    task.endDate = roadmapTasks[i].startDate;
+    roadmapTasks[i] = task;
   });
 };
 
@@ -313,6 +327,36 @@ Utils.getColorLevelDown = function(color) {
   }
   var level = parseInt(color.slice(-1));
   return color.slice(0, -1) + (level + 1);
+};
+
+var init = function(self) {
+  if (!self) {
+    self = new Roadmap({
+      payload: plainData,
+      interval: interval,
+      target: targetId
+    });
+  }
+  var windowWidth = 0;
+  $(window).on('load', function() {
+    windowWidth = $(window).width();
+  });
+
+  $(window).on('hashchange', function() {
+    var hash = Utils.getLocationHash();
+    self.drawChart(hash);
+    self.updateNav(hash);
+  });
+  $(window).bind('resize', function() {
+    if (windowWidth !== $(window).width()) {
+      if (window.RT) {
+        clearTimeout(window.RT);
+      }
+      window.RT = setTimeout(function() {
+        self.draw();
+      }, 200);
+    }
+  });
 };
 
 var Connection = function(taskId, sourceId) {
@@ -352,8 +396,10 @@ TaskFeature.prototype.onClick = function() {
     if (task.isExcluded()) {
       taskId = task.source;
     }
-    Utils.setLocationHash(taskId);
-    $(window).scrollTop(0);
+    if (Utils.getChildrenTasks(taskId).length > 0) {
+      Utils.setLocationHash(taskId);
+      $(window).scrollTop(0);
+    }
   };
 };
 
@@ -577,10 +623,10 @@ Task.prototype.isDownStream = function() {
 /**
  * Roadmap
  */
-var Roadmap = function(payload) {
-  this.plainData = payload.data;
-  this.targetId = payload.target;
-  this.interval = payload.interval;
+Roadmap = function(payload) {
+  this.plainData = plainData = payload.data;
+  this.targetId = targetId = payload.target;
+  this.interval = interval = payload.interval;
   this.dateFormat = d3.time.format('%Y-%m-%d');
   this.startDates = [];
   this.sectionCurrentIncomingCounts = [];
@@ -615,26 +661,6 @@ Roadmap.prototype.getPerUnit = function() {
     self.timeScale(self.dateFormat.parse(Utils.subDate(task.startDate, 1))));
 };
 
-Roadmap.prototype.init = function() {
-  var self = this;
-  $(window).on('hashchange', function() {
-    var hash = Utils.getLocationHash();
-    self.drawChart(hash);
-    self.updateNav(hash);
-  });
-  // $(window).resize(function() {
-  //   window.location.reload();
-  //   window.location.href = window.location.href;
-  // });
-  $(window).bind('resize', function(e) {
-    if (window.RT) clearTimeout(window.RT);
-    window.RT = setTimeout(function()
-    {
-      this.location.reload(false); /* false to get page from cache */
-    }, 200);
-  });
-};
-
 Roadmap.prototype.prepareTasks = function() {
   var self = this;
 
@@ -649,9 +675,9 @@ Roadmap.prototype.prepareTasks = function() {
       }
     });
   };
-
+  roadmapTasks = [];
   roadmapTasks.push(new Task(self.plainData, null, true));
-  setTask(self.plainData);
+  setTask(plainData);
   print('Task', roadmapTasks);
 };
 
@@ -675,8 +701,7 @@ Roadmap.prototype.setNav = function() {
     var navBaseCtx = Utils.createDiv(NAV_ID, [ 'roadmapNav-b' ]);
     $(Utils.parseId(self.targetId)).append(navBase.append(navBaseCtx));
     if (Utils.isDesktopScreen()) {
-      // navBase.width(NAV_WIDTH);
-      navBase.css('min-height', self.svg.height)
+      navBase.css('min-height', self.svg.height);
     }
   };
 
@@ -708,38 +733,12 @@ Roadmap.prototype.setNav = function() {
 
 Roadmap.prototype.prepareChart = function() {
   var self = this;
-  // var container = null;
-  // function zoomed() {
-  //   container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-  // }
-  //
-  // function dragstarted(d) {
-  //   d3.event.sourceEvent.stopPropagation();
-  //   d3.select(this).classed("dragging", true);
-  // }
-  //
-  // function dragged(d) {
-  //   d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
-  // }
-  //
-  // function dragended(d) {
-  //   d3.select(this).classed("dragging", false);
-  // }
-  //
-  // var zoom = d3.behavior.zoom()
-  //   .scaleExtent([1, 10])
-  //   .on("zoom", zoomed);
-  //
-  // var drag = d3.behavior.drag()
-  //   .origin(function(d) { return d; })
-  //   .on("dragstart", dragstarted)
-  //   .on("drag", dragged)
-  //   .on("dragend", dragended);
-
+  var container = null;
   var setChartBase = function() {
     var chart = Utils.createDiv(null, [ CSS_CLASS.CHART ]);
     var chartBase = Utils.createDiv(CHART_ID, [ CSS_CLASS.CHART_BASE ]);
     $(Utils.parseId(self.targetId)).append(chart.append(chartBase));
+    NAV_WIDTH = $(window).width() * 20 / 100;
     self.svg.width = $(window).width() - NAV_WIDTH - 1;
   };
 
@@ -752,9 +751,7 @@ Roadmap.prototype.prepareChart = function() {
       .attr('class', 'roadmapSvg')
       .append('g')
       .attr('id', SVG_BOX_GRP_ID)
-      .attr('transform', 'translate(' + self.svg.padding + ', ' + self.svg.padding + ')')
-      // .call(zoom);
-
+      .attr('transform', 'translate(' + self.svg.padding + ', ' + self.svg.padding + ')');
   };
 
   var defineTaskStatus = function() {
@@ -949,7 +946,6 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
 
 Roadmap.prototype.updateSvgDimensions = function() {
   var self = this;
-  var headerheight =  $('header').height();
   self.svg.height = window.screen.height - 180;
   self.svg.width = $(window).width() - NAV_WIDTH - 2;
 };
@@ -986,125 +982,125 @@ Roadmap.prototype.defineBoxPattern = function(data) {
 
 Roadmap.prototype.drawProgressBar = function(activeTask) {
   var self = this;
-  var line = d3.svg.line()
-  .x(function(d) {
-    return d.x;
-  })
-  .y(function(d) {
-    return d.y;
-  })
-  .interpolate('linear');
+  // var line = d3.svg.line()
+  // .x(function(d) {
+  //   return d.x;
+  // })
+  // .y(function(d) {
+  //   return d.y;
+  // })
+  // .interpolate('linear');
 
   if (!activeTask.daysCompleted) {
     return;
   }
 
-    self.defineBoxPattern({
-      name: activeTask.id,
-      x: 0,
-      y: -self.svg.padding,
-      width: self.svg.width - (self.svg.padding * 2),
-      height: self.progressBar.height,
-      className: CSS_CLASS.SVG + activeTask.color
-    });
+  self.defineBoxPattern({
+    name: activeTask.id,
+    x: 0,
+    y: -self.svg.padding,
+    width: self.svg.width - (self.svg.padding * 2),
+    height: self.progressBar.height,
+    className: CSS_CLASS.SVG + activeTask.color
+  });
 
-    var progressBar = d3.select(Utils.parseId(SVG_BOX_GRP_ID))
-      .append('g').attr('class', 'progressBar');
-    var baseWidth =  self.svg.width - (self.svg.padding * 2);
+  var progressBar = d3.select(Utils.parseId(SVG_BOX_GRP_ID))
+    .append('g').attr('class', 'progressBar');
+  var baseWidth =  self.svg.width - (self.svg.padding * 2);
 
-    var completed = baseWidth * activeTask.daysCompleted / 100;
-    var inProgress = (baseWidth * activeTask.inProgress / 100);
-    var planned = (baseWidth * activeTask.planned / 100);
+  var completed = baseWidth * activeTask.daysCompleted / 100;
+  var inProgress = (baseWidth * activeTask.inProgress / 100);
+  var planned = (baseWidth * activeTask.planned / 100);
 
-    // progress completed
-    progressBar.append('rect')
-      .attr('class', CSS_CLASS.SVG + activeTask.color)
-      .attr('x', completed + inProgress)
-      .attr('y', -self.svg.padding)
-      .attr('width', planned)
-      .attr('height', self.progressBar.height)
-      .attr('opacity', 0.8);
+  // progress completed
+  progressBar.append('rect')
+    .attr('class', CSS_CLASS.SVG + activeTask.color)
+    .attr('x', completed + inProgress)
+    .attr('y', -self.svg.padding)
+    .attr('width', planned)
+    .attr('height', self.progressBar.height)
+    .attr('opacity', 0.8);
 
-    // progress completed
-    progressBar.append('rect')
-      .attr('class', 'chart-progress-b')
-      .attr('x', completed)
-      .attr('y', -self.svg.padding)
-      .attr('width', inProgress)
-      .attr('height', self.progressBar.height)
-      .attr('style', 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + activeTask.id) + ')');
+  // progress completed
+  progressBar.append('rect')
+    .attr('class', 'chart-progress-b')
+    .attr('x', completed)
+    .attr('y', -self.svg.padding)
+    .attr('width', inProgress)
+    .attr('height', self.progressBar.height)
+    .attr('style', 'fill: url(' + Utils.parseId(BOX_PATTERN_PREFIX + activeTask.id) + ')');
 
-    // progress completed
-    progressBar.append('rect')
-      .attr('class', CSS_CLASS.SVG + activeTask.color)
-      .attr('x', 0)
-      .attr('y', -self.svg.padding)
-      .attr('width',completed)
-      .attr('height', self.progressBar.height);
+  // progress completed
+  progressBar.append('rect')
+    .attr('class', CSS_CLASS.SVG + activeTask.color)
+    .attr('x', 0)
+    .attr('y', -self.svg.padding)
+    .attr('width', completed)
+    .attr('height', self.progressBar.height);
 
-    // progress status planned
-    // progressBar.append('rect')
-    //   .attr('class', CSS_CLASS.SVG + activeTask.color)
-    //   .attr('x', baseWidth - self.box.height)
-    //   .attr('y', -self.svg.padding + self.progressBar.height)
-    //   .attr('width', self.box.height)
-    //   .attr('height', self.box.height)
-    //   .style('fill', 'url(' + Utils.parseId(TASK_STATUS.PLANNED_DARK.id) + ')');
+  // progress status planned
+  // progressBar.append('rect')
+  //   .attr('class', CSS_CLASS.SVG + activeTask.color)
+  //   .attr('x', baseWidth - self.box.height)
+  //   .attr('y', -self.svg.padding + self.progressBar.height)
+  //   .attr('width', self.box.height)
+  //   .attr('height', self.box.height)
+  //   .style('fill', 'url(' + Utils.parseId(TASK_STATUS.PLANNED_DARK.id) + ')');
 
-      // progress status open
-    // progressBar.append('rect')
-    //   .attr('class', CSS_CLASS.SVG + activeTask.color)
-    //   .attr('x', (completed + inProgress) - self.box.height)
-    //   .attr('y', -self.svg.padding + self.progressBar.height)
-    //   .attr('width', self.box.height)
-    //   .attr('height', self.box.height)
-    //   .style('fill', 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')');
+  // progress status open
+  // progressBar.append('rect')
+  //   .attr('class', CSS_CLASS.SVG + activeTask.color)
+  //   .attr('x', (completed + inProgress) - self.box.height)
+  //   .attr('y', -self.svg.padding + self.progressBar.height)
+  //   .attr('width', self.box.height)
+  //   .attr('height', self.box.height)
+  //   .style('fill', 'url(' + Utils.parseId(TASK_STATUS.OPEN_DARK.id) + ')');
   // progress status completed
 
-    // progressBar.append('rect')
-    //   .attr('class', CSS_CLASS.SVG + activeTask.color)
-    //   .attr('x', completed - self.box.height)
-    //   .attr('y', -self.svg.padding + self.progressBar.height)
-    //   .attr('width', self.box.height)
-    //   .attr('height', self.box.height)
-    //   .style('fill', 'url(' + Utils.parseId(TASK_STATUS.COMPLETE_DARK.id) + ')');
+  // progressBar.append('rect')
+  //   .attr('class', CSS_CLASS.SVG + activeTask.color)
+  //   .attr('x', completed - self.box.height)
+  //   .attr('y', -self.svg.padding + self.progressBar.height)
+  //   .attr('width', self.box.height)
+  //   .attr('height', self.box.height)
+  //   .style('fill', 'url(' + Utils.parseId(TASK_STATUS.COMPLETE_DARK.id) + ')');
 
-    // progressBar.append('text')
-    //   .text('completed ' + activeTask.daysCompleted + '%')
-    //   .attr('x', (completed - self.box.height) - 95)
-    //   .attr('y', self.progressBar.height - 5)
-    //   .attr('style', 'font-size:13px');
-    //
-    // progressBar.append('text')
-    //   .text('In progress ' + activeTask.inProgress + '%')
-    //   .attr('x', (completed + inProgress - self.box.height) - 95)
-    //   .attr('y', self.progressBar.height - 5)
-    //   .attr('style', 'font-size:13px');
-    //
-    // progressBar.append('text')
-    //   .text('Planned ' + activeTask.planned + '%')
-    //   .attr('x', (baseWidth - self.box.height) - 80)
-    //   .attr('y', self.progressBar.height - 5)
-    //   .attr('style', 'font-size:13px');
+  // progressBar.append('text')
+  //   .text('completed ' + activeTask.daysCompleted + '%')
+  //   .attr('x', (completed - self.box.height) - 95)
+  //   .attr('y', self.progressBar.height - 5)
+  //   .attr('style', 'font-size:13px');
+  //
+  // progressBar.append('text')
+  //   .text('In progress ' + activeTask.inProgress + '%')
+  //   .attr('x', (completed + inProgress - self.box.height) - 95)
+  //   .attr('y', self.progressBar.height - 5)
+  //   .attr('style', 'font-size:13px');
+  //
+  // progressBar.append('text')
+  //   .text('Planned ' + activeTask.planned + '%')
+  //   .attr('x', (baseWidth - self.box.height) - 80)
+  //   .attr('y', self.progressBar.height - 5)
+  //   .attr('style', 'font-size:13px');
 
-    // var pathEnd = (-self.svg.padding + self.progressBar.height + 22);
-    // progressBar.append('path')
-    //   .datum([{x: baseWidth, y: -self.svg.padding}, {x:baseWidth, y: pathEnd}])
-    //   .attr('d', line)
-    //   .attr('stroke-width', 1)
-    //   .attr('stroke', '#282828');
-    //
-    // progressBar.append('path')
-    //   .datum([{x: completed + inProgress, y: -self.svg.padding}, {x:completed + inProgress, y: pathEnd}])
-    //   .attr('d', line)
-    //   .attr('stroke-width', 1)
-    //   .attr('stroke', '#282828');
-    //
-    // progressBar.append('path')
-    //   .datum([{x: completed, y: -self.svg.padding}, {x:completed, y: pathEnd}])
-    //   .attr('d', line)
-    //   .attr('stroke-width', 1)
-    //   .attr('stroke', '#282828');
+  // var pathEnd = (-self.svg.padding + self.progressBar.height + 22);
+  // progressBar.append('path')
+  //   .datum([{x: baseWidth, y: -self.svg.padding}, {x:baseWidth, y: pathEnd}])
+  //   .attr('d', line)
+  //   .attr('stroke-width', 1)
+  //   .attr('stroke', '#282828');
+  //
+  // progressBar.append('path')
+  //   .datum([{x: completed + inProgress, y: -self.svg.padding}, {x:completed + inProgress, y: pathEnd}])
+  //   .attr('d', line)
+  //   .attr('stroke-width', 1)
+  //   .attr('stroke', '#282828');
+  //
+  // progressBar.append('path')
+  //   .datum([{x: completed, y: -self.svg.padding}, {x:completed, y: pathEnd}])
+  //   .attr('d', line)
+  //   .attr('stroke-width', 1)
+  //   .attr('stroke', '#282828');
 };
 
 Roadmap.prototype.drawBoxes = function() {
@@ -1160,10 +1156,10 @@ Roadmap.prototype.drawBoxes = function() {
       .datum([ { x: d.box.x, y: d.box.y + (self.box.height / 2) },
         { x: d.box.x + boxExtend + (self.box.height / 2), y: d.box.y - boxExtend },
         { x: d.box.x + self.box.height + (boxExtend * 2), y: d.box.y + (self.box.height / 2) },
-        { x: d.box.x + boxExtend + (self.box.height / 2), y: d.box.y + self.box.height + boxExtend},
+        { x: d.box.x + boxExtend + (self.box.height / 2), y: d.box.y + self.box.height + boxExtend },
         { x: d.box.x, y: d.box.y + (self.box.height / 2) } ])
       .attr('d', line)
-      .attr('class', 'mvpbox')
+      .attr('class', 'mvpbox');
       return;
     }
     boxGrp.on('mouseover', (d.box.onMouseOver)());
@@ -1175,18 +1171,18 @@ Roadmap.prototype.drawBoxes = function() {
     if (d.box.childrenCount <= 1) {
       return;
     }
-    var childWidth = ((d.box.width - (4 * (d.box.childrenCount + 1)))/ d.box.childrenCount) ;
-    var lastPos = {x: 0, y: 0};
-    var start = {x: 0, y: 0};
-    var end = {x: 0, y: 0};
-    for(var i = 0; i < d.box.childrenCount; i++) {
+    var childWidth = ((d.box.width - (4 * (d.box.childrenCount + 1))) / d.box.childrenCount) ;
+    var lastPos = { x: 0, y: 0 };
+    var start = { x: 0, y: 0 };
+    var end = { x: 0, y: 0 };
+    for (var i = 0; i < d.box.childrenCount; i++) {
       start.x = (i === 0 ? d.box.x : lastPos.x) + 4;
       start.y = d.box.y + self.box.height + self.box.strokeWidth + 3;
       end.x = start.x + childWidth;
       end.y = start.y;
       lastPos = end;
       boxGrp.append('path')
-      .datum([ start, end])
+      .datum([ start, end ])
       .attr('d', line)
       .attr('stroke-width', 5)
       .attr('class', CSS_CLASS.LINE + Utils.getColorLevelDown(d.color));
@@ -1225,7 +1221,7 @@ Roadmap.prototype.drawBoxes = function() {
       return 0;
     }
     return 1;
-  })
+  });
 
   // status
   boxBase.append('rect')
@@ -1361,7 +1357,7 @@ Roadmap.prototype.prepareBoxes = function(activeTask) {
     // print('Active tasks', activeTasks);
   };
 
-  var setBoxParams = function() {;
+  var setBoxParams = function() {
     var progressBarTaskSpacing = 18;
     d3.map(roadmapTasks, function(task) {
       var scaledStart = self.timeScale(self.dateFormat.parse(task.startDate));
@@ -1554,7 +1550,7 @@ Roadmap.prototype.prepareConnections = function() {
         interEnd = interStart;
         end.x = interEnd.x;
         end.y = -self.svg.padding + self.progressBar.height;
-        var sourceTask = Utils.getTask(upperTask.source);
+        // var sourceTask = Utils.getTask(upperTask.source);
         // self.drawLabel({
         //   x: interStart.x - (self.label.width + 5),
         //   y: interStart.y - (self.label.height / 2),
@@ -1579,7 +1575,8 @@ Roadmap.prototype.prepareConnections = function() {
       } else {
         incSecCount(task);
         start.x = task.connections[index - 1].interStart.x;
-        start.y = task.connections[index - 1].interStart.y + ((index - splitTasks.upperTasks.length) * (self.box.height));
+        start.y = task.connections[index - 1].interStart.y +
+          ((index - splitTasks.upperTasks.length) * (self.box.height));
       }
 
       end.x = lowerTask.box.x + lowerTask.box.width;
@@ -1700,12 +1697,13 @@ Roadmap.prototype.addFeatures = function(activeTask) {
       var task = Utils.getTask(item.taskId);
       var name = task.name;
       var color = task.color;
+      var sourceTask = null;
       if (item.type !== TASK_FEATURE_TYPE.SUB_FEATURES) {
-        var sourceTask = Utils.getTask(task.source);
-        name = sourceTask.name || task.source;
+        sourceTask = Utils.getTask(task.source);
+        name = sourceTask && sourceTask.name ? sourceTask.name : task.source.replace(/_/g, ' ');
       }
       if (item.type === TASK_FEATURE_TYPE.RELY_THIS_FEATURES) {
-        var sourceTask = Utils.getTask(task.source);
+        sourceTask = Utils.getTask(task.source);
         color = sourceTask ? sourceTask.color : task.color;
       }
       var listEle = Utils.createDiv(item.id,
@@ -1759,8 +1757,8 @@ Roadmap.prototype.drawMobileChart = function(task) {
 
 Roadmap.prototype.draw = function() {
   var self = this;
-  DEFAULT_START_DATE = self.plainData.startDate;
-  self.init();
+  init(self);
+  $(Utils.parseId(self.targetId)).empty();
   self.prepareTasks();
   self.setNav();
   self.drawChart();
@@ -1768,16 +1766,11 @@ Roadmap.prototype.draw = function() {
 };
 
 $(function() {
-  // $.get('data/roadmapData.json', function(data) {
-  //   new Roadmap({
-  //     data: data,
-  //     target: '#Roadmap',
-  //     interval: 10
-  //   }).draw();
-  // });
-  new Roadmap({
-    data: jsonData,
-    target: '#Roadmap',
-    interval: 10
-  }).draw();
+  $.get('data/roadmapData.json', function(data) {
+    new Roadmap({
+      data: data,
+      target: '#Roadmap',
+      interval: 10
+    }).draw();
+  });
 });

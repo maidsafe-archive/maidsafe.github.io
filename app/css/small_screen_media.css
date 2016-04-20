@@ -332,8 +332,9 @@
     display: none !important;
   }
   .roadmapChart-h-desc {
-    display: block !important;
-    padding: 8px 20px 0;
+    /*display: block !important;
+    padding: 8px 20px 0;*/
+    display: none;
   }
   .roadmapChart-h-desc-title {
     display: block;
