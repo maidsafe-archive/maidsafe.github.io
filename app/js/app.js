@@ -182,6 +182,9 @@ $(function() {
   });
 });
 
+$(window).resize(function() {
+  loadTeamBanner();
+});
 /**
  * Change header on scroll
  */
