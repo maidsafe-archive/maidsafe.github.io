@@ -738,6 +738,7 @@ Roadmap.prototype.prepareChart = function() {
     var chart = Utils.createDiv(null, [ CSS_CLASS.CHART ]);
     var chartBase = Utils.createDiv(CHART_ID, [ CSS_CLASS.CHART_BASE ]);
     $(Utils.parseId(self.targetId)).append(chart.append(chartBase));
+    NAV_WIDTH = $(window).width() * 20 / 100;
     self.svg.width = $(window).width() - NAV_WIDTH - 1;
   };
 
