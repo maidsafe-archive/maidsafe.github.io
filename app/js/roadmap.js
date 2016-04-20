@@ -396,7 +396,6 @@ TaskFeature.prototype.onClick = function() {
     if (task.isExcluded()) {
       taskId = task.source;
     }
-    console.log(Utils.getChildrenTasks(taskId))
     if (Utils.getChildrenTasks(taskId).length > 0) {
       Utils.setLocationHash(taskId);
       $(window).scrollTop(0);
