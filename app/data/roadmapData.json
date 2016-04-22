@@ -1631,6 +1631,23 @@
                     ]
                 },
                 {
+                    "name": "Mobile Client",
+                    "id": "MOBILE_CLIENT",
+                    "color": "blue-3",
+                    "desc": "",
+                    "daysCompleted": 100,
+                    "inProgress": 0,
+                    "planned": 0,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 7,
+                    "section": 3,
+                    "status": 2,
+                    "startDate": "2016-1-1",
+                    "children": []
+                },
+                {
                     "name": "Examples",
                     "id": "CMS",
                     "color": "grey-2",
