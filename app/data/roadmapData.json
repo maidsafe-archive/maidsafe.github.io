@@ -1631,9 +1631,9 @@
                     ]
                 },
                 {
-                    "name": "Mobile Client",
-                    "id": "MOBILE_CLIENT",
-                    "color": "blue-3",
+                    "name": "Launcher - ARM Devices",
+                    "id": "LAUNCHER_ARM_DEVICES",
+                    "color": "purple-4",
                     "desc": "",
                     "daysCompleted": 100,
                     "inProgress": 0,
@@ -1642,6 +1642,23 @@
                         "END"
                     ],
                     "order": 7,
+                    "section": 3,
+                    "status": 2,
+                    "startDate": "2016-1-1",
+                    "children": []
+                },
+                {
+                    "name": "Launcher - Mobile",
+                    "id": "LAUNCHER_MOBILE",
+                    "color": "blue-3",
+                    "desc": "",
+                    "daysCompleted": 100,
+                    "inProgress": 0,
+                    "planned": 0,
+                    "target": [
+                        "END"
+                    ],
+                    "order": 8,
                     "section": 3,
                     "status": 2,
                     "startDate": "2016-1-1",
