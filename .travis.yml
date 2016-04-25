@@ -16,7 +16,7 @@ before_install:
   - nvm install $NODE_VERSION
   - npm install -g grunt-cli
   - npm install -g bower
-  - rvm install 2.0.0
+  - rvm install 2.2.0
   - gem install bundler
   - bundle install
 
