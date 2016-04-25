@@ -188,48 +188,67 @@ header .sec-2 {
 
 /* Primary Navigation */
 header .sec-2 .primary-nav {
+  height: 100%;
   display: block;
   margin: 0 16px 0 0;
   padding: 0;
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   right: 0;
   float: right;
 }
 
 header .sec-2 .primary-nav li {
   list-style: none;
-  display: inline-block;
+  display: table;
+  height: 100%;
   text-align: center;
   position: relative;
   float: left;
-  margin-left: 40px;
-}
-
-header .sec-2 .primary-nav > li:hover a {
-  color: rgb(85, 147, 215);
 }
 
 header .sec-2 .primary-nav > li a {
-  display: block;
+  display: table-cell;
+  vertical-align: bottom;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  line-height: 32px;
   padding: 0;
   color: #FFF;
+  padding: 0 20px 9px;
+  border-width: 0 0 4px;
+  border-style: solid;
+  border-color: transparent;
 }
 
-header .sec-2 .primary-nav > li.link-button {
-  background-color: transparent;
-  border-radius: 5px;
-  border: 2px solid #FFF;
+header .sec-2 .primary-nav > li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
+
+header .sec-2 .primary-nav > li a:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+header.invert .sec-2 .primary-nav > li a:hover {
+  background-color: rgba(85,146,215, 0.1);
+}
+
+header.invert .sec-2 .primary-nav > li a:active {
+  background-color: rgba(85,146,215, 0.2);
+}
+
+header .sec-2 .primary-nav > li.active a {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #FFF;
+}
+header.invert .sec-2 .primary-nav > li.active a {
+  background-color: rgba(85,146,215, 0.1);
+  border-color: #5593d7;
+}
+
 
 header .sec-2 .primary-nav > li.link-button a {
-  color: white;
-  padding: 0 16px;
-  line-height: 30px;
+  margin-bottom: -40px;
 }
 
 /* Secondary Navigation */
@@ -307,15 +326,6 @@ header.invert .sec-2 .primary-nav > li a {
 
 header.invert .sec-2 .primary-nav > li:hover a {
   color: rgb(85, 147, 215);
-}
-
-header.invert .sec-2 .primary-nav > li.link-button {
-  background-color: rgb(85, 147, 215);
-  border-color: rgb(85, 147, 215);
-}
-
-header.invert .sec-2 .primary-nav > li.link-button a {
-  color: #FFF;
 }
 
 header.invert .secNavButton {
