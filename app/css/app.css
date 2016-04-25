@@ -30,6 +30,10 @@ a, a:hover {
 .root.sub-page-2 {
   padding-bottom: 120px;
 }
+.root.sub-page-3 {
+  padding-top: 70px;
+  padding-bottom: 0px;
+}
 
 /* apply button */
 .apply-but {
@@ -1499,3 +1503,157 @@ header.invert .secNavButton:after {
   width: calc(100% - 115px);
 }
 /* #Credits */
+
+/* alpha page */
+.al-title {
+  padding-bottom: 25px !important;
+}
+
+.al-content {
+  width: 960px;
+  margin: 0 auto 45px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #7f7f7f;
+  font-size: 18px;
+  font-weight: normal;
+  color: #606060;
+}
+
+.al-content.last-content {
+  border: 0;
+  padding-bottom: 80px;
+}
+
+.al-content p {
+  padding: 20px 0 0;
+}
+
+.al-content a {
+  text-decoration: none;
+  color: #5593d7;
+}
+.al-subtitle {
+  padding: 0;
+  margin: 0;
+  font-size: 38px;
+  font-weight: 600;
+  color: #606060;
+  padding-bottom: 20px !important;
+}
+
+.al-subcontent {
+  margin-top: 45px;
+}
+.al-subcontent-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #808080;
+}
+.al-content ul {
+  padding-top: 20px;
+}
+.al-content ul li {
+  list-style-type: disc;
+}
+
+.al-highlight-content {
+  width: 100%;
+  padding: 20px 25px;
+  background-color: #f8f4f0;
+}
+
+.al-highlight-content-title {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #eea450;
+}
+
+.al-highlight-content-bold {
+  padding: 20px 0 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.al-highlight-content a {
+  text-decoration: none;
+  color: #eea450;
+}
+
+.al-banner {
+  background-image: url('../img/alpha_bg.png');
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 380px;
+}
+
+.al-banner-cont {
+  display: table;
+  width: 480px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.al-banner-cont p {
+  font-size: 18px;
+  font-weight: normal;
+  color: #FFF;
+  padding-bottom: 40px;
+  text-align: left;
+}
+
+.al-banner-inner-cont {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.al-banner-title {
+  padding: 0;
+  margin: 0;
+  font-size: 38px;
+  font-weight: 600;
+  color: #FFF;
+  padding-bottom: 25px !important;
+}
+
+.al-btn {
+  background-color: #FFF !important;
+  font-size: 16px !important
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  padding: 0 20px !important;
+  line-height: 32px !important;
+  color: #5592d7 !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  border: 2px solid #FFF !important;
+  border-radius: 5px !important;
+}
+
+.al-btn:hover {
+  background-color: transparent !important;
+  color: #FFF !important;
+}
+
+.al-btn:active {
+  /*background-color:  !important;*/
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  color: #FFF !important;
+}
+
+.al-btn.invert {
+  background-color: #5592d7 !important;
+  color: #FFF !important;
+  border-color: #5592d7 !important;
+}
+.al-btn.invert:hover {
+  background-color: #FFF !important;
+  color: #5592d7 !important;
+}
+.al-btn.invert:active {
+  background-color: rgba(85,146,215, 0.5) !important;
+  color: #FFF !important;
+}
