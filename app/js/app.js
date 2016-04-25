@@ -121,15 +121,14 @@ var setActiveNav = function() {
   var pNav = $('.primary-nav');
   var pNavChildren = pNav.children();
   pNavChildren.removeClass('active');
-  for (let i = 0; i < pNavChildren.length ; i++) {
-   var hash = $(pNavChildren[i]).children('a').attr('href').split('/');
-   hash = hash[hash.length - 1];
-   var path = location.pathname.split('/');
-   path = path[path.length - 1];
-   if (hash && hash === path) {
-     console.log(hash, path);
-     return $(pNavChildren[i]).addClass('active');
-   }
+  for (var i = 0; i < pNavChildren.length ; i++) {
+    var hash = $(pNavChildren[i]).children('a').attr('href').split('/');
+    hash = hash[hash.length - 1];
+    var path = window.location.pathname.split('/');
+    path = path[path.length - 1];
+    if (hash && hash === path) {
+      return $(pNavChildren[i]).addClass('active');
+    }
   }
 };
 
