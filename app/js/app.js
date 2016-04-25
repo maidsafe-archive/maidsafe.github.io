@@ -7,7 +7,7 @@ var updateHeader = function() {
     $('#site-logo').addClass('invert');
     $('#secNav').addClass('invert');
     $('#secNavButton').addClass('invert');
-    $('.al-btn').addClass('invert');
+    $('#alphaBtn').addClass('invert');
     return;
   }
   $('header').removeClass('onScroll');
@@ -19,7 +19,7 @@ var updateHeader = function() {
 
   $('#secNav').removeClass('invert');
   $('#secNavButton').removeClass('invert');
-  $('.al-btn').removeClass('invert');
+  $('#alphaBtn').removeClass('invert');
 };
 
 var showMobPrimaryNav = function() {

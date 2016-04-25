@@ -414,4 +414,12 @@
     width: 100%;
     padding-top: 16px;
   }
+  .al-content {
+    width: 100%;
+    padding: 0 16px;
+  }
+  .al-banner-cont {
+    width: 100%;
+    padding: 0 16px;
+  }
 }
