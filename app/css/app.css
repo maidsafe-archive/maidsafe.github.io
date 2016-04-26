@@ -250,6 +250,9 @@ header.invert .sec-2 .primary-nav > li.active a {
 header .sec-2 .primary-nav > li.link-button a {
   margin-bottom: -40px;
 }
+header .sec-2 .primary-nav > li.link-button .al-btn {
+  margin-right: 15px;
+}
 
 /* Secondary Navigation */
 header .secondary-nav {
