@@ -127,7 +127,7 @@ var setActiveNav = function() {
     var path = window.location.pathname.split('/');
     path = path[path.length - 1];
     if (path === 'alpha_release.html') {
-      return $('#alphaBtn').parent().css('display', 'none');
+      $('#alphaBtn').removeClass();
     }
     if (hash && hash === path) {
       return $(pNavChildren[i]).addClass('active');
