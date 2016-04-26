@@ -417,6 +417,7 @@
   .al-content {
     width: 100%;
     padding: 0 16px;
+    border-color: transparent;
   }
   .al-banner-cont {
     width: 100%;
