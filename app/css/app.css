@@ -5,7 +5,9 @@ body {
   background-color: white;
   -webkit-overflow-scrolling: touch;
 }
-
+table {
+  table-layout: fixed;
+}
 a, a:hover {
   text-decoration: none;
   color: #333;
@@ -917,9 +919,10 @@ header.invert .secNavButton:after {
   background-color: transparent;
   width: 960px;
   margin: 0 auto;
-  display: table;
+  display: table !important;
   color: white;
   position: relative;
+  table-layout: fixed;
 }
 
 .post-1 .media {

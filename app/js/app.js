@@ -2,7 +2,10 @@
 
 var INTRO_VIDEO_SRC = 'https://www.youtube.com/embed/bXOaxjvefGc';
 var updateHeader = function() {
-  if (window.scrollY > 0) {
+  var supportPageOffset = window.pageXOffset !== undefined;
+  var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+  var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+  if (y > 0) {
     $('header').addClass('invert onScroll');
     $('#site-logo').addClass('invert');
     $('#secNav').addClass('invert');
@@ -200,6 +203,7 @@ $(function() {
     Modal.close();
     $('#IntroVideo').attr('src', 'about:blank');
   });
+  $(window).on("scroll", updateHeader);
 });
 
 $(window).resize(function() {
@@ -208,4 +212,3 @@ $(window).resize(function() {
 /**
  * Change header on scroll
  */
-$(window).scroll(updateHeader);
