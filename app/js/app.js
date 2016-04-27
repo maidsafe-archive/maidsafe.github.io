@@ -3,8 +3,9 @@
 var INTRO_VIDEO_SRC = 'https://www.youtube.com/embed/bXOaxjvefGc';
 var updateHeader = function() {
   var supportPageOffset = window.pageXOffset !== undefined;
-  var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
-  var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+  var isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+  var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop :
+    document.body.scrollTop;
   if (y > 0) {
     $('header').addClass('invert onScroll');
     $('#site-logo').addClass('invert');
@@ -203,7 +204,7 @@ $(function() {
     Modal.close();
     $('#IntroVideo').attr('src', 'about:blank');
   });
-  $(window).on("scroll", updateHeader);
+  $(window).on('scroll', updateHeader);
 });
 
 $(window).resize(function() {
