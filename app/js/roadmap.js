@@ -947,36 +947,43 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
 Roadmap.prototype.updateSvgDimensions = function() {
   var self = this;
   var SVG_MIN_HEIGHT = 500;
-  var navHeight = $('.roadmapNav').height();
-  var rectGroupHeight = $(Utils.parseId(SVG_BOX_GRP_ID))[0].getBoundingClientRect().height;
-  self.svg.height = rectGroupHeight < SVG_MIN_HEIGHT ? SVG_MIN_HEIGHT : rectGroupHeight;
-  self.svg.height = navHeight < self.svg.height ? self.svg.height : navHeight;
-  self.svg.width = $(window).width() - NAV_WIDTH - 2;
-  self.svg.height = (self.svg.height) - 70;
-
-  var svg = $(Utils.parseId(SVG_ID))[0];
-  // console.log(navHeight, rectGroupHeight, self.svg.height, self.svg.width);
-  svg.setAttribute('width', self.svg.width);
-  svg.setAttribute('height', self.svg.height);
-
+  var ts = null;
+  ts = setTimeout(function() {
+    $('.roadmapNav').css('min-height', 0);
+    var navHeight = $('.roadmapNav').height();
+    var rectGroupHeight = $(Utils.parseId(SVG_BOX_GRP_ID))[0].getBoundingClientRect().height;
+    self.svg.width = $(window).width() - NAV_WIDTH - 2;
+    self.svg.height = rectGroupHeight > navHeight ? rectGroupHeight : navHeight;
+    if (self.svg.height < SVG_MIN_HEIGHT) {
+      self.svg.height = SVG_MIN_HEIGHT;
+    }
+    self.svg.height = self.svg.height - 70;
+    console.log(navHeight, rectGroupHeight, self.svg.height);
+    var svg = $(Utils.parseId(SVG_ID))[0];
+    svg.setAttribute('width', self.svg.width);
+    svg.setAttribute('height', self.svg.height);
+    if (Utils.isDesktopScreen()) {
+      $('.roadmapNav').css('min-height', self.svg.height + 70);
+    }
+    ts = null;
+    self.addLegend();
+  }, 200);
   if (Utils.isDesktopScreen()) {
-    $('.roadmapNav').css('min-height', self.svg.height + 70);
+    $('.root').css('min-height', 0);
+    $('.root').css('min-height', $(document).height() - $('footer').height());
   }
-  $('.root').css('min-height', 0);
-  $('.root').css('min-height', $(document).height() - $('footer').height());
 };
 
 Roadmap.prototype.addLegend = function() {
   var self = this;
   var svgBase = d3.select(Utils.parseId(SVG_ID)).selectAll('g');
-
   svgBase.append('pattern')
     .attr('id', 'completedLegend')
     .attr('patternUnits', 'objectBoundingBox')
     .attr('width', '30')
     .attr('height', '30')
     .append('image')
-    .attr('xlink:href', './img/key_complete.svg')
+    .attr('xlink:href', './img/roadmap_legends/key_complete.svg')
     .attr('x', '0')
     .attr('y', '0')
     .attr('width', '30')
@@ -988,7 +995,7 @@ Roadmap.prototype.addLegend = function() {
     .attr('width', '30')
     .attr('height', '30')
     .append('image')
-    .attr('xlink:href', './img/key_planned.svg')
+    .attr('xlink:href', './img/roadmap_legends/key_planned.svg')
     .attr('x', '0')
     .attr('y', '0')
     .attr('width', '30')
@@ -1000,7 +1007,7 @@ Roadmap.prototype.addLegend = function() {
     .attr('width', '30')
     .attr('height', '30')
     .append('image')
-    .attr('xlink:href', './img/key_in_progress.svg')
+    .attr('xlink:href', './img/roadmap_legends/key_in_progress.svg')
     .attr('x', '0')
     .attr('y', '0')
     .attr('width', '30')
@@ -1754,7 +1761,6 @@ Roadmap.prototype.drawChart = function(taskId) {
   self.prepareConnections(task);
   self.drawProgressBar(task);
   self.updateSvgDimensions();
-  self.addLegend();
 };
 
 Roadmap.prototype.updateNav = function(taskId) {
