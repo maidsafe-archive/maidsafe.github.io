@@ -1013,40 +1013,39 @@ Roadmap.prototype.addLegend = function() {
   .attr('y', self.svg.height - 110)
   .attr('width', 30)
   .attr('height', 30)
-  .attr('fill', 'url(#completedLegend)')
+  .attr('fill', 'url(#completedLegend)');
 
   svgBase.append('text')
   .text('Complete')
   .attr('x', 40)
   .attr('y', self.svg.height - 90)
-  .attr('style', 'font-size: 13px;')
+  .attr('style', 'font-size: 13px;');
 
   svgBase.append('rect')
   .attr('x', 0)
   .attr('y', self.svg.height - 80)
   .attr('width', 30)
   .attr('height', 30)
-  .attr('fill', 'url(#inProgressLegend)')
+  .attr('fill', 'url(#inProgressLegend)');
 
   svgBase.append('text')
   .text('In Progress')
   .attr('x', 40)
   .attr('y', self.svg.height - 60)
-  .attr('style', 'font-size: 13px;')
+  .attr('style', 'font-size: 13px;');
 
   svgBase.append('rect')
   .attr('x', 0)
   .attr('y', self.svg.height - 50)
   .attr('width', 30)
   .attr('height', 30)
-  .attr('fill', 'url(#plannedLegend)')
+  .attr('fill', 'url(#plannedLegend)');
 
   svgBase.append('text')
   .text('Planned')
   .attr('x', 40)
   .attr('y', self.svg.height - 30)
-  .attr('style', 'font-size: 13px;')
-
+  .attr('style', 'font-size: 13px;');
 };
 
 Roadmap.prototype.defineBoxPattern = function(data) {
