@@ -700,9 +700,6 @@ Roadmap.prototype.setNav = function() {
     var navBase = Utils.createDiv(null, [ CSS_CLASS.NAV_BASE ]);
     var navBaseCtx = Utils.createDiv(NAV_ID, [ 'roadmapNav-b' ]);
     $(Utils.parseId(self.targetId)).append(navBase.append(navBaseCtx));
-    if (Utils.isDesktopScreen()) {
-      navBase.css('min-height', self.svg.height);
-    }
   };
 
   var setNavList = function(task) {
@@ -946,8 +943,22 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
 
 Roadmap.prototype.updateSvgDimensions = function() {
   var self = this;
-  self.svg.height = window.screen.height - 180;
+  var navHeight = $(Utils.parseId(NAV_ID)).height();
+  var rectGroupHeight = $(Utils.parseId(SVG_BOX_GRP_ID))[0].getBoundingClientRect().height;
+  // self.svg.height = window.screen.height - 180;
+  self.svg.height = (navHeight > rectGroupHeight ? navHeight : rectGroupHeight) - 70;
   self.svg.width = $(window).width() - NAV_WIDTH - 2;
+  $(Utils.parseId(SVG_ID)).width(self.svg.width);
+  $(Utils.parseId(SVG_ID)).height(self.svg.height);
+  if (Utils.isDesktopScreen()) {
+    $(Utils.parseId(NAV_ID)).css('min-height', self.svg.height);
+  }
+  var footerDim = $('.app-footer')[0].getBoundingClientRect();
+  if ($(window).height() > (footerDim.top + footerDim.height)) {
+    $('.app-footer').addClass('fixed-footer');
+  } else {
+    $('.app-footer').removeClass('fixed-footer');
+  }
 };
 
 Roadmap.prototype.defineBoxPattern = function(data) {
@@ -1648,7 +1659,6 @@ Roadmap.prototype.drawChart = function(taskId) {
   taskId = taskId || roadmapTasks[0].id;
   var task = Utils.getTask(taskId);
   self.resetChart();
-  self.updateSvgDimensions();
   self.prepareChart();
   self.updateBreadcum(task);
   self.updateChartHeader(task);
@@ -1658,6 +1668,7 @@ Roadmap.prototype.drawChart = function(taskId) {
   self.prepareBoxes(task);
   self.prepareConnections(task);
   self.drawProgressBar(task);
+  self.updateSvgDimensions();
 };
 
 Roadmap.prototype.updateNav = function(taskId) {

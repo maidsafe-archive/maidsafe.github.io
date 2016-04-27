@@ -36,6 +36,10 @@ a, a:hover {
   padding-top: 70px;
   padding-bottom: 0px;
 }
+.root.sub-page-4 {
+  padding-top: 70px;
+  padding-bottom: 40px;
+}
 
 /* apply button */
 .apply-but {
@@ -1007,9 +1011,14 @@ header.invert .secNavButton:after {
 
 /*Footer*/
 .app-footer {
+  width: 100%;
   background-color: #1C6FAD;
 }
 
+.app-footer.fixed-footer {
+  position: absolute;
+  bottom: 0;
+}
 .app-footer .app-footer-b {
   width: 960px;
   margin: 0 auto;
