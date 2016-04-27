@@ -700,6 +700,9 @@ Roadmap.prototype.setNav = function() {
     var navBase = Utils.createDiv(null, [ CSS_CLASS.NAV_BASE ]);
     var navBaseCtx = Utils.createDiv(NAV_ID, [ 'roadmapNav-b' ]);
     $(Utils.parseId(self.targetId)).append(navBase.append(navBaseCtx));
+    // if (Utils.isDesktopScreen()) {
+    //   navBase.css('min-height', self.svg.height);
+    // }
   };
 
   var setNavList = function(task) {
@@ -943,15 +946,19 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
 
 Roadmap.prototype.updateSvgDimensions = function() {
   var self = this;
-  var navHeight = $(Utils.parseId(NAV_ID)).height();
+  var SVG_MIN_HEIGHT = 500;
   var rectGroupHeight = $(Utils.parseId(SVG_BOX_GRP_ID))[0].getBoundingClientRect().height;
-  // self.svg.height = window.screen.height - 180;
-  self.svg.height = (navHeight > rectGroupHeight ? navHeight : rectGroupHeight) - 70;
+  self.svg.height = rectGroupHeight < SVG_MIN_HEIGHT ? SVG_MIN_HEIGHT : rectGroupHeight;
   self.svg.width = $(window).width() - NAV_WIDTH - 2;
-  $(Utils.parseId(SVG_ID)).width(self.svg.width);
-  $(Utils.parseId(SVG_ID)).height(self.svg.height);
+  self.svg.height = (self.svg.height) - 70;
+
+  var svg = $(Utils.parseId(SVG_ID))[0];
+  // console.log(navHeight, rectGroupHeight, self.svg.height, self.svg.width);
+  svg.setAttribute('width', self.svg.width);
+  svg.setAttribute('height', self.svg.height);
+
   if (Utils.isDesktopScreen()) {
-    $(Utils.parseId(NAV_ID)).css('min-height', self.svg.height);
+    $('.roadmapNav').css('height', self.svg.height + 70);
   }
   var footerDim = $('.app-footer')[0].getBoundingClientRect();
   if ($(window).height() > (footerDim.top + footerDim.height)) {
@@ -959,6 +966,87 @@ Roadmap.prototype.updateSvgDimensions = function() {
   } else {
     $('.app-footer').removeClass('fixed-footer');
   }
+};
+
+Roadmap.prototype.addLegend = function() {
+  var self = this;
+  var svgBase = d3.select(Utils.parseId(SVG_ID)).selectAll('g');
+
+  svgBase.append('pattern')
+    .attr('id', 'completedLegend')
+    .attr('patternUnits', 'objectBoundingBox')
+    .attr('width', '30')
+    .attr('height', '30')
+    .append('image')
+    .attr('xlink:href', 'img/key_complete.svg')
+    .attr('x', '0')
+    .attr('y', '0')
+    .attr('width', '30')
+    .attr('height', '30');
+
+  svgBase.append('pattern')
+    .attr('id', 'plannedLegend')
+    .attr('patternUnits', 'objectBoundingBox')
+    .attr('width', '30')
+    .attr('height', '30')
+    .append('image')
+    .attr('xlink:href', 'img/key_planned.svg')
+    .attr('x', '0')
+    .attr('y', '0')
+    .attr('width', '30')
+    .attr('height', '30');
+
+  svgBase.append('pattern')
+    .attr('id', 'inProgressLegend')
+    .attr('patternUnits', 'objectBoundingBox')
+    .attr('width', '30')
+    .attr('height', '30')
+    .append('image')
+    .attr('xlink:href', 'img/key_in_progress.svg')
+    .attr('x', '0')
+    .attr('y', '0')
+    .attr('width', '30')
+    .attr('height', '30');
+
+  svgBase.append('rect')
+  .attr('x', 0)
+  .attr('y', self.svg.height - 110)
+  .attr('width', 30)
+  .attr('height', 30)
+  .attr('fill', 'url(#completedLegend)')
+
+  svgBase.append('text')
+  .text('Complete')
+  .attr('x', 40)
+  .attr('y', self.svg.height - 90)
+  .attr('style', 'font-size: 13px;')
+
+  svgBase.append('rect')
+  .attr('x', 0)
+  .attr('y', self.svg.height - 80)
+  .attr('width', 30)
+  .attr('height', 30)
+  .attr('fill', 'url(#inProgressLegend)')
+
+  svgBase.append('text')
+  .text('In Progress')
+  .attr('x', 40)
+  .attr('y', self.svg.height - 60)
+  .attr('style', 'font-size: 13px;')
+
+  svgBase.append('rect')
+  .attr('x', 0)
+  .attr('y', self.svg.height - 50)
+  .attr('width', 30)
+  .attr('height', 30)
+  .attr('fill', 'url(#plannedLegend)')
+
+  svgBase.append('text')
+  .text('Planned')
+  .attr('x', 40)
+  .attr('y', self.svg.height - 30)
+  .attr('style', 'font-size: 13px;')
+
 };
 
 Roadmap.prototype.defineBoxPattern = function(data) {
@@ -1669,6 +1757,7 @@ Roadmap.prototype.drawChart = function(taskId) {
   self.prepareConnections(task);
   self.drawProgressBar(task);
   self.updateSvgDimensions();
+  self.addLegend();
 };
 
 Roadmap.prototype.updateNav = function(taskId) {
