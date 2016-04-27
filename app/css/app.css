@@ -1015,10 +1015,6 @@ header.invert .secNavButton:after {
   background-color: #1C6FAD;
 }
 
-.app-footer.fixed-footer {
-  position: absolute;
-  bottom: 0;
-}
 .app-footer .app-footer-b {
   width: 960px;
   margin: 0 auto;

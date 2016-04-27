@@ -947,8 +947,10 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
 Roadmap.prototype.updateSvgDimensions = function() {
   var self = this;
   var SVG_MIN_HEIGHT = 500;
+  var navHeight = $('.roadmapNav').height();
   var rectGroupHeight = $(Utils.parseId(SVG_BOX_GRP_ID))[0].getBoundingClientRect().height;
   self.svg.height = rectGroupHeight < SVG_MIN_HEIGHT ? SVG_MIN_HEIGHT : rectGroupHeight;
+  self.svg.height = navHeight < self.svg.height ? self.svg.height : navHeight;
   self.svg.width = $(window).width() - NAV_WIDTH - 2;
   self.svg.height = (self.svg.height) - 70;
 
@@ -958,14 +960,10 @@ Roadmap.prototype.updateSvgDimensions = function() {
   svg.setAttribute('height', self.svg.height);
 
   if (Utils.isDesktopScreen()) {
-    $('.roadmapNav').css('height', self.svg.height + 70);
+    $('.roadmapNav').css('min-height', self.svg.height + 70);
   }
-  var footerDim = $('.app-footer')[0].getBoundingClientRect();
-  if ($(window).height() > (footerDim.top + footerDim.height)) {
-    $('.app-footer').addClass('fixed-footer');
-  } else {
-    $('.app-footer').removeClass('fixed-footer');
-  }
+  $('.root').css('min-height', 0);
+  $('.root').css('min-height', $(document).height() - $('footer').height());
 };
 
 Roadmap.prototype.addLegend = function() {
@@ -978,7 +976,7 @@ Roadmap.prototype.addLegend = function() {
     .attr('width', '30')
     .attr('height', '30')
     .append('image')
-    .attr('xlink:href', 'img/key_complete.svg')
+    .attr('xlink:href', './img/key_complete.svg')
     .attr('x', '0')
     .attr('y', '0')
     .attr('width', '30')
@@ -990,7 +988,7 @@ Roadmap.prototype.addLegend = function() {
     .attr('width', '30')
     .attr('height', '30')
     .append('image')
-    .attr('xlink:href', 'img/key_planned.svg')
+    .attr('xlink:href', './img/key_planned.svg')
     .attr('x', '0')
     .attr('y', '0')
     .attr('width', '30')
@@ -1002,7 +1000,7 @@ Roadmap.prototype.addLegend = function() {
     .attr('width', '30')
     .attr('height', '30')
     .append('image')
-    .attr('xlink:href', 'img/key_in_progress.svg')
+    .attr('xlink:href', './img/key_in_progress.svg')
     .attr('x', '0')
     .attr('y', '0')
     .attr('width', '30')
