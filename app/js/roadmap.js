@@ -1,6 +1,7 @@
 /*global window:false */
 var $ = window.$;
 var d3 = window.d3;
+var document = window.document;
 
 var DESKTOP_BREAKPOINT = 1134;
 var NAV_WIDTH = $(window).width() * 20 / 100;
