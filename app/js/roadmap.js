@@ -958,7 +958,6 @@ Roadmap.prototype.updateSvgDimensions = function() {
     if (self.svg.height < SVG_MIN_HEIGHT) {
       self.svg.height = SVG_MIN_HEIGHT;
     }
-    self.svg.height = self.svg.height - 70;
     console.log(navHeight, rectGroupHeight, self.svg.height);
     var svg = $(Utils.parseId(SVG_ID))[0];
     svg.setAttribute('width', self.svg.width);
@@ -968,11 +967,11 @@ Roadmap.prototype.updateSvgDimensions = function() {
     }
     ts = null;
     self.addLegend();
+    if (Utils.isDesktopScreen()) {
+      $('.root').css('min-height', 0);
+      $('.root').css('min-height', $(document).height() - $('footer').height());
+    }
   }, 200);
-  if (Utils.isDesktopScreen()) {
-    $('.root').css('min-height', 0);
-    $('.root').css('min-height', $(document).height() - $('footer').height());
-  }
 };
 
 Roadmap.prototype.addLegend = function() {
