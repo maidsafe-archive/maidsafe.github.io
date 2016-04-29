@@ -1,6 +1,7 @@
 /*global window:false */
 var $ = window.$;
 var d3 = window.d3;
+var document = window.document;
 
 var DESKTOP_BREAKPOINT = 1134;
 var NAV_WIDTH = $(window).width() * 20 / 100;
@@ -700,9 +701,9 @@ Roadmap.prototype.setNav = function() {
     var navBase = Utils.createDiv(null, [ CSS_CLASS.NAV_BASE ]);
     var navBaseCtx = Utils.createDiv(NAV_ID, [ 'roadmapNav-b' ]);
     $(Utils.parseId(self.targetId)).append(navBase.append(navBaseCtx));
-    if (Utils.isDesktopScreen()) {
-      navBase.css('min-height', self.svg.height);
-    }
+    // if (Utils.isDesktopScreen()) {
+    //   navBase.css('min-height', self.svg.height);
+    // }
   };
 
   var setNavList = function(task) {
@@ -946,8 +947,111 @@ Roadmap.prototype.updateChartHeader = function(activeTask) {
 
 Roadmap.prototype.updateSvgDimensions = function() {
   var self = this;
-  self.svg.height = window.screen.height - 180;
-  self.svg.width = $(window).width() - NAV_WIDTH - 2;
+  var SVG_MIN_HEIGHT = 500;
+  var ts = null;
+  ts = setTimeout(function() {
+    $('.roadmapNav').css('min-height', 0);
+    var navHeight = $('.roadmapNav').height();
+    var rectGroupHeight = $(Utils.parseId(SVG_BOX_GRP_ID))[0].getBoundingClientRect().height;
+    self.svg.width = $(window).width() - NAV_WIDTH - 2;
+    self.svg.height = rectGroupHeight > navHeight ? rectGroupHeight : navHeight;
+    if (self.svg.height < SVG_MIN_HEIGHT) {
+      self.svg.height = SVG_MIN_HEIGHT;
+    }
+    console.log(navHeight, rectGroupHeight, self.svg.height);
+    var svg = $(Utils.parseId(SVG_ID))[0];
+    svg.setAttribute('width', self.svg.width);
+    svg.setAttribute('height', self.svg.height);
+    if (Utils.isDesktopScreen()) {
+      $('.roadmapNav').css('min-height', self.svg.height + 70);
+    }
+    clearTimeout(ts);
+    self.addLegend();
+    if (Utils.isDesktopScreen()) {
+      $('.root').css('min-height', 0);
+      $('.root').css('min-height', $(document).height() - $('footer').height());
+    }
+  }, 200);
+};
+
+Roadmap.prototype.addLegend = function() {
+  var self = this;
+  var svgBase = d3.select(Utils.parseId(SVG_ID)).select('g');
+
+  svgBase.append('pattern')
+    .attr('id', 'completedLegend')
+    .attr('patternUnits', 'objectBoundingBox')
+    .attr('width', '30')
+    .attr('height', '30')
+    .append('image')
+    .attr('xlink:href', './img/roadmap_legends/key_complete.svg')
+    .attr('x', '0')
+    .attr('y', '0')
+    .attr('width', '30')
+    .attr('height', '30');
+
+  svgBase.append('pattern')
+    .attr('id', 'plannedLegend')
+    .attr('patternUnits', 'objectBoundingBox')
+    .attr('width', '30')
+    .attr('height', '30')
+    .append('image')
+    .attr('xlink:href', './img/roadmap_legends/key_planned.svg')
+    .attr('x', '0')
+    .attr('y', '0')
+    .attr('width', '30')
+    .attr('height', '30');
+
+  svgBase.append('pattern')
+    .attr('id', 'inProgressLegend')
+    .attr('patternUnits', 'objectBoundingBox')
+    .attr('width', '30')
+    .attr('height', '30')
+    .append('image')
+    .attr('xlink:href', './img/roadmap_legends/key_in_progress.svg')
+    .attr('x', '0')
+    .attr('y', '0')
+    .attr('width', '30')
+    .attr('height', '30');
+
+  svgBase.append('rect')
+  .attr('x', 0)
+  .attr('y', self.svg.height - 110)
+  .attr('width', 30)
+  .attr('height', 30)
+  .attr('fill', 'url(#completedLegend)');
+
+  svgBase.append('text')
+  .text('Complete')
+  .attr('x', 40)
+  .attr('y', self.svg.height - 90)
+  .attr('style', 'font-size: 13px;fill: #616161;font-weight: 600;');
+
+  svgBase.append('rect')
+  .attr('x', 0)
+  .attr('y', self.svg.height - 80)
+  .attr('width', 30)
+  .attr('height', 30)
+  .attr('fill', 'url(#inProgressLegend)');
+
+  svgBase.append('text')
+  .text('In Progress')
+  .attr('x', 40)
+  .attr('y', self.svg.height - 60)
+  .attr('style', 'font-size: 13px;fill: #616161;font-weight: 600;');
+
+  svgBase.append('rect')
+  .attr('x', 0)
+  .attr('y', self.svg.height - 50)
+  .attr('width', 30)
+  .attr('height', 30)
+  .attr('fill', 'url(#plannedLegend)');
+
+  svgBase.append('text')
+  .text('Planned')
+  .attr('x', 40)
+  .attr('y', self.svg.height - 30)
+  .attr('style', 'font-size: 13px;fill: #616161;font-weight: 600;');
 };
 
 Roadmap.prototype.defineBoxPattern = function(data) {
@@ -1648,7 +1752,6 @@ Roadmap.prototype.drawChart = function(taskId) {
   taskId = taskId || roadmapTasks[0].id;
   var task = Utils.getTask(taskId);
   self.resetChart();
-  self.updateSvgDimensions();
   self.prepareChart();
   self.updateBreadcum(task);
   self.updateChartHeader(task);
@@ -1658,6 +1761,7 @@ Roadmap.prototype.drawChart = function(taskId) {
   self.prepareBoxes(task);
   self.prepareConnections(task);
   self.drawProgressBar(task);
+  self.updateSvgDimensions();
 };
 
 Roadmap.prototype.updateNav = function(taskId) {
