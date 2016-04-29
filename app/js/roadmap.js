@@ -965,7 +965,7 @@ Roadmap.prototype.updateSvgDimensions = function() {
     if (Utils.isDesktopScreen()) {
       $('.roadmapNav').css('min-height', self.svg.height + 70);
     }
-    ts = null;
+    clearTimeout(ts);
     self.addLegend();
     if (Utils.isDesktopScreen()) {
       $('.root').css('min-height', 0);
@@ -976,7 +976,8 @@ Roadmap.prototype.updateSvgDimensions = function() {
 
 Roadmap.prototype.addLegend = function() {
   var self = this;
-  var svgBase = d3.select(Utils.parseId(SVG_ID)).selectAll('g');
+  var svgBase = d3.select(Utils.parseId(SVG_ID)).select('g');
+
   svgBase.append('pattern')
     .attr('id', 'completedLegend')
     .attr('patternUnits', 'objectBoundingBox')
@@ -1024,7 +1025,7 @@ Roadmap.prototype.addLegend = function() {
   .text('Complete')
   .attr('x', 40)
   .attr('y', self.svg.height - 90)
-  .attr('style', 'font-size: 13px;');
+  .attr('style', 'font-size: 13px;fill: #616161;font-weight: 600;');
 
   svgBase.append('rect')
   .attr('x', 0)
@@ -1037,7 +1038,7 @@ Roadmap.prototype.addLegend = function() {
   .text('In Progress')
   .attr('x', 40)
   .attr('y', self.svg.height - 60)
-  .attr('style', 'font-size: 13px;');
+  .attr('style', 'font-size: 13px;fill: #616161;font-weight: 600;');
 
   svgBase.append('rect')
   .attr('x', 0)
@@ -1050,7 +1051,7 @@ Roadmap.prototype.addLegend = function() {
   .text('Planned')
   .attr('x', 40)
   .attr('y', self.svg.height - 30)
-  .attr('style', 'font-size: 13px;');
+  .attr('style', 'font-size: 13px;fill: #616161;font-weight: 600;');
 };
 
 Roadmap.prototype.defineBoxPattern = function(data) {
