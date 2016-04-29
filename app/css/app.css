@@ -31,6 +31,11 @@ a, a:hover {
   padding-bottom: 120px;
 }
 
+.root.sub-page-4 {
+  padding-top: 70px;
+  padding-bottom: 40px;
+}
+
 /* apply button */
 .apply-but {
   padding-top: 80px;
