@@ -26,7 +26,7 @@ a, a:hover {
 }
 
 .root {
-  padding-bottom: 160px;
+  padding-bottom: 80px;
 }
 
 .root.sub-page-2 {
@@ -940,6 +940,8 @@ header.invert .secNavButton:after {
   display: table-cell;
   vertical-align: middle;
   width: 480px;
+  position: relative;
+  z-index: 99;
 }
 
 .post-1 .content .title {
