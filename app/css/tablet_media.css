@@ -118,7 +118,9 @@
     text-align: left;
     padding-top: 340px;
   }
-
+  .post-1.adjust .content {
+    padding-top: 380px;
+  }
   .post-1 .content .title {
     margin-top: 0;
     text-align: center;
@@ -337,5 +339,8 @@
     font-size: 19px;
     color: #282828;
     font-weight: 600;
+  }
+  .al-content {
+    width: 480px;
   }
 }

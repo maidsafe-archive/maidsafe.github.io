@@ -140,6 +140,9 @@
     padding: 340px 16px 0;
     position: relative;
   }
+  .post-1.adjust .content {
+    padding-top: 380px;
+  }
   .post-1 .content .title {
     margin-top: 0;
     text-align: center;
@@ -413,5 +416,14 @@
   .listTitle {
     width: 100%;
     padding-top: 16px;
+  }
+  .al-content {
+    width: 100%;
+    padding: 0 16px;
+    border-color: transparent;
+  }
+  .al-banner-cont {
+    width: 100%;
+    padding: 0 16px;
   }
 }
