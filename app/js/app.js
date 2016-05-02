@@ -2,11 +2,16 @@
 
 var INTRO_VIDEO_SRC = 'https://www.youtube.com/embed/bXOaxjvefGc';
 var updateHeader = function() {
-  if (window.scrollY > 0) {
+  var supportPageOffset = window.pageXOffset !== undefined;
+  var isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+  var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop :
+    document.body.scrollTop;
+  if (y > 0) {
     $('header').addClass('invert onScroll');
     $('#site-logo').addClass('invert');
     $('#secNav').addClass('invert');
     $('#secNavButton').addClass('invert');
+    $('#alphaBtn').addClass('invert');
     return;
   }
   $('header').removeClass('onScroll');
@@ -18,6 +23,7 @@ var updateHeader = function() {
 
   $('#secNav').removeClass('invert');
   $('#secNavButton').removeClass('invert');
+  $('#alphaBtn').removeClass('invert');
 };
 
 var showMobPrimaryNav = function() {
@@ -115,6 +121,24 @@ var accordian = function() {
   });
 };
 
+var setActiveNav = function() {
+  var pNav = $('.primary-nav');
+  var pNavChildren = pNav.children();
+  pNavChildren.removeClass('active');
+  for (var i = 0; i < pNavChildren.length ; i++) {
+    var hash = $(pNavChildren[i]).children('a').attr('href').split('/');
+    hash = hash[hash.length - 1];
+    var path = window.location.pathname.split('/');
+    path = path[path.length - 1];
+    if (path === 'alpha_release.html') {
+      $('#alphaBtn').removeClass();
+    }
+    if (hash && hash === path) {
+      return $(pNavChildren[i]).addClass('active');
+    }
+  }
+};
+
 /**
  * Typing effecting
  */
@@ -166,7 +190,7 @@ $(function() {
   accordian();
   showMobPrimaryNav();
   loadTeamBanner();
-
+  setActiveNav();
   // Intro video
   $('#IntroVideoTrigger').on('click', function(e) {
     e.preventDefault();
@@ -180,6 +204,7 @@ $(function() {
     Modal.close();
     $('#IntroVideo').attr('src', 'about:blank');
   });
+  $(window).on('scroll', updateHeader);
 });
 
 $(window).resize(function() {
@@ -188,4 +213,3 @@ $(window).resize(function() {
 /**
  * Change header on scroll
  */
-$(window).scroll(updateHeader);

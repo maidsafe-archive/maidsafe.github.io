@@ -128,4 +128,8 @@
   .roadmapChartMobile-b {
     display: none;
   }
+
+  .al-content {
+    width: 1170px;
+  }
 }

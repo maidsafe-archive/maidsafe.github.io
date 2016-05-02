@@ -1,0 +1,139 @@
+---
+layout: base
+title: MaidSafe - Alpha Release
+description: MaidSafe's distributed platform enables the creation of fast and secure applications that help ensure digital privacy, security and freedom for all.
+keywords: Distributed Platform, MaidSafe
+headerClass: invert
+rootClass: sub-page-3
+---
+<div class="content-1 diff al-title">
+    <h3>SAFE Network Alpha-1</h3>
+</div>
+<div class="al-content">
+  <p>
+    We are delighted to announce the immediate availability of the alpha release of the SAFE Network, which incorporates
+    user hosted network nodes (Vaults), client nodes (Launcher) and some initial demo client applications.
+  </p>
+  <p>
+    This release enables users out with MaidSafe to contribute their resources to the network for the first time and is
+    an important first step into a new paradigm of secure, private and free range of Internet
+    services. These services initially include storage of private data, creation of public names and services (such as web
+    sites) and a very basic Network File System.
+  </p>
+  <p>
+    Our <a href="./roadmap.html">roadmap</a> defines up and coming network features.
+  </p>
+</div>
+
+<div class="al-content">
+  <h3 class="al-subtitle">What is it?</h3>
+  <p>
+    This is the alpha-1 release of the SAFE Network, a network that connects users computers together to create an
+    alternative to a server based internet infrastructure.
+  </p>
+  <p>
+    This release is available for 64 bit desktop versions of Windows, Mac and Linux and includes the following items:
+  </p>
+  <div class="al-subcontent">
+    <h3 class="al-subcontent-title">Vault (Network node)</h3>
+    <p>
+      When you download something from the SAFE Network, the data comes from a collection of many distributed
+      vaults.
+    </p>
+    <ul>
+      <li>Runs in the background.</li>
+      <li>Contributes resources to the Network.</li>
+    </ul>
+  </div>
+  <div class="al-subcontent">
+    <h3 class="al-subcontent-title">Launcher (Client node)</h3>
+    <p>
+      Launcher is the way you connect to the SAFE Network. You use the Launcher to login securely to the network and
+      to authenticate our apps.
+    </p>
+    <ul>
+      <li>Create credentials and login without the knowledge or permission of any third party - Self Authentication.</li>
+      <li>Authenticates your apps and allows them to connect to the SAFE Network.</li>
+    </ul>
+  </div>
+  <div class="al-subcontent">
+    <h3 class="al-subcontent-title">Demo App</h3>
+    <p>
+      The Demo app allows you to try out the core features.
+    </p>
+    <ul>
+      <li>Create your public identity.</li>
+      <li>Store and manage your public data.</li>
+      <li>Store and retrieve your private data.</li>
+    </ul>
+  </div>
+  <div class="al-highlight-content">
+    <h3 class="al-highlight-content-title">IMPORTANT:</h3>
+    <h4 class="al-highlight-content-bold">Please do not run a vault unless you are happy with this temporary limitation.</h4>
+    <p>
+      Vaults <a href="#">will</a> log their information to a server to allow measurement of the core algorithms. We have
+      attempted to ensure that no personal information will be logged, but advise users to assume everything is
+      logged. This information will be used by the development team to track and improve network performance
+      during this phase.
+    </p>
+  </div>
+</div>
+<div class="al-content">
+  <h3 class="al-subtitle">Objectives</h3>
+  <p>
+    The purpose of this release is to validate the code in a real world setting, helping us establish if the network
+    enables connections via certain types of routers (NAT Traversal), identify bugs and
+    generally obtain feedback that helps us improve the user experience within future releases.
+  </p>
+</div>
+<div class="al-content">
+  <h3 class="al-subtitle">What is an alpha release?</h3>
+  <div class="al-highlight-content">
+    <h3 class="al-highlight-content-title">IMPORTANT:</h3>
+    <p>
+      This software should be considered as an alpha release meaning that the software will be unstable and will
+      cause data loss.
+    </p>
+  </div>
+  <p>
+    During the course of making improvements, MaidSafe will need to restart the network from time to time and this
+    will result in the loss of all data and registered public identities. For clarity, MaidSafe cannot remotely stop user
+    Vaults, rather we will periodically release new Vaults that will form a new network.
+  </p>
+  <p>
+    This software does not contain all the features that we envisage during future alpha and beta releases, the implementation of
+    safecoin and messaging will be added in due course and will be communicated the <a href="./roadmap.html">development roadmap</a>.
+  </p>
+</div>
+<div class="al-content last-content">
+  <h3 class="al-subtitle">Limitations</h3>
+  <p>
+    As an alpha this release has some technical limitations (listed below) that require the user to be either directly
+    connected, or forward a TCP port and specify that in the Crust config file. This alpha is therefore aimed at technical
+    users.
+  </p>
+  <ul>
+    <li>To run a vault, it is currently necessary to be either directly connected or forward a TCP port and specify that in the Crust config file.</li>
+    <li>File size will currently be limited to 5Mb.</li>
+    <li>Vault size will currently be limited to 30 MB (30 chunks).</li>
+    <li>Storage per client account is limited to 50 MB (50 chunks).</li>
+    <li>Churn handling - replacing connections and relocating data after nodes joined or left the network - is still very rudimentary. It will almost certainly fail if there are hundreds of megabytes of data to relocate, which is why we set a low Vault size limit for now and ignore the one set in the Vault config file.</li>
+    <li>Zombie data: If there is heavy churn it can happen that a client requests deletion of data while that same data is being relocated. In that case, sometimes the data comes back from the dead after its deletion.</li>
+    <li>Known issue - occasionally the client may not receive enough “agreeing” responses from a network operation in order to decide the result. This causes the client to hang. It should just be restarted if this happens.</li>
+    <li>There is still a lot of work to be done in the Routing library for it to make the security guarantees needed not only for safecoin but also for preventing anyone from taking over the network entirely. There are a lot of known attacks that the network is vulnerable to.</li>
+  </ul>
+</div>
+
+<div class="al-banner">
+  <div class="al-banner-cont">
+    <div class="al-banner-inner-cont">
+      <h3 class="al-banner-title">Get the SAFE Network Alpha!</h3>
+      <p>
+        The following downloads are an early preview or alpha
+        version of the core network that enables users to
+        contribute and become part of the SAFE Network.
+      </p>
+      <a class="al-btn" href="#">Get the Alpha</a>
+    </div>
+  </div>
+</div>
